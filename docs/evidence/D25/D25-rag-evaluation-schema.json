@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/d25-rag-evaluation-dataset.json",
+  "title": "D25 RAG evaluation dataset",
+  "type": "object",
+  "required": ["datasetVersion", "benchmarkId", "frozenOn", "knowledgeBaseline", "classificationRules", "cases"],
+  "properties": {
+    "datasetVersion": {"type": "string"},
+    "benchmarkId": {"type": "string"},
+    "frozenOn": {"type": "string", "format": "date"},
+    "knowledgeBaseline": {"type": "object"},
+    "classificationRules": {"type": "object"},
+    "cases": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "required": [
+          "caseId", "category", "question", "userContext",
+          "expectedDecision", "expectedAnswerPoints", "expectedEvidence",
+          "forbiddenClaims", "acceptanceCriteria", "sourceStatus"
+        ],
+        "properties": {
+          "caseId": {"type": "string", "pattern": "^D25-EVAL-[0-9]{3}$"},
+          "category": {
+            "type": "string",
+            "enum": ["answerable", "unanswerable", "permission", "fault-code", "boundary"]
+          },
+          "question": {"type": "string", "minLength": 1},
+          "userContext": {"type": "object"},
+          "expectedDecision": {
+            "type": "string",
+            "enum": ["answer", "abstain", "deny", "clarify"]
+          },
+          "expectedAnswerPoints": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "expectedEvidence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["documentId", "documentVersion", "versionStatus", "chunkId", "section", "page", "requiredFacts"],
+              "properties": {
+                "documentId": {"type": "string", "minLength": 1},
+                "documentVersion": {"type": ["string", "null"]},
+                "versionStatus": {"type": "string"},
+                "chunkId": {"type": "string", "minLength": 1},
+                "section": {"type": "string"},
+                "page": {"type": ["integer", "null"]},
+                "requiredFacts": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {"type": "string"}
+                }
+              }
+            }
+          },
+          "missingEvidence": {"type": "string"},
+          "forbiddenClaims": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string"}
+          },
+          "acceptanceCriteria": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string"}
+          },
+          "sourceStatus": {
+            "type": "string",
+            "enum": ["真实资料支持", "当前缺少资料", "待业务确认"]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": true
+}

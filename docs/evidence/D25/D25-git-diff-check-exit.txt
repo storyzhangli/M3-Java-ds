@@ -1,0 +1,2 @@
+trackedDiffCheckExit=0
+untrackedTrailingWhitespaceLines=0

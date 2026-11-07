@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/d25-knowledge-document.json",
+  "title": "KnowledgeDocument metadata",
+  "description": "D25 design contract. This is not a production database table.",
+  "type": "object",
+  "required": [
+    "documentId",
+    "title",
+    "documentType",
+    "sourceSystem",
+    "sourceFileId",
+    "fileName",
+    "version",
+    "status",
+    "tenantId",
+    "plantScopes",
+    "visibility",
+    "permissionPolicyId",
+    "language",
+    "contentSha256",
+    "parseStatus",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "documentId": {
+      "type": "string",
+      "pattern": "^[A-Z0-9][A-Z0-9-]{2,63}$",
+      "description": "Stable business identifier; immutable across versions."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "documentType": {
+      "type": "string",
+      "enum": ["manual", "guide", "spec", "fault_code_catalog", "work_order", "other"]
+    },
+    "sourceSystem": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "sourceFileId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "fileName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255
+    },
+    "storageUri": {
+      "type": "string",
+      "pattern": "^(internal|https|s3)://",
+      "description": "Opaque object-store locator. Do not store a local absolute path."
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "Immutable document version snapshot."
+    },
+    "status": {
+      "type": "string",
+      "enum": ["DRAFT", "IN_REVIEW", "PUBLISHED", "ARCHIVED"]
+    },
+    "effectiveFrom": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "effectiveUntil": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "tenantId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "plantScopes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 64}
+    },
+    "orgScopes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 64}
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["PUBLIC", "INTERNAL", "RESTRICTED"]
+    },
+    "permissionPolicyId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128,
+      "description": "Stable reference to the authoritative ACL policy, not an ACL label."
+    },
+    "permissionPolicyVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+    },
+    "summary": {
+      "type": ["string", "null"],
+      "maxLength": 1000
+    },
+    "contentSha256": {
+      "type": "string",
+      "pattern": "^[A-Fa-f0-9]{64}$"
+    },
+    "parseStatus": {
+      "type": "string",
+      "enum": ["PENDING", "PARSING", "PARSED", "FAILED"]
+    },
+    "deviceFamilies": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 100}
+    },
+    "deviceModels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 100}
+    },
+    "applicability": {
+      "type": ["string", "null"],
+      "maxLength": 1000
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "submittedAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "reviewedAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "publishedAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "archivedAt": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "createdByPrincipalId": {
+      "type": "string",
+      "maxLength": 128
+    },
+    "reviewedByPrincipalId": {
+      "type": ["string", "null"],
+      "maxLength": 128
+    },
+    "extensionProperties": {
+      "type": "object",
+      "description": "Controlled low-cardinality extensions only; not an ACL bypass.",
+      "additionalProperties": {
+        "type": ["string", "number", "boolean", "null"]
+      }
+    }
+  },
+  "additionalProperties": false
+}
