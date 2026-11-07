@@ -1,0 +1,43 @@
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Maven
+target/
+dependency-reduced-pom.xml
+pom.xml.versionsBackup
+.factorypath
+
+# Gradle
+.gradle/
+build/
+
+#IDEA
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+.jython_cache/
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+# D01 Spring AI：本地真实配置与环境变量文件可能包含真实 API Key，禁止入库
+**/application-local.yml
+**/application-local.properties
+.env
+.env.*
+# 自己测试用,不上传仓库管理
+#/D01/D01_SpringAI_init/src/test/java/com/zl/d01/springai/self/
+# 临时文件目录,不上传
+/docs/temp_docs/
