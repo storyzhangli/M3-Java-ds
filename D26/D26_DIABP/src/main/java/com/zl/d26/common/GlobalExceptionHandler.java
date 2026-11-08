@@ -2,6 +2,7 @@ package com.zl.d26.common;
 
 import com.zl.d26.model.ModelFailure;
 import com.zl.d26.model.ModelFailureClassifier;
+import com.zl.d26.knowledge.document.KnowledgeDocumentException;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.client.ResourceAccessException;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartException;
 
 import java.io.IOException;
 
@@ -32,6 +35,30 @@ public class GlobalExceptionHandler {
 
     public GlobalExceptionHandler(ModelFailureClassifier failureClassifier) {
         this.failureClassifier = failureClassifier;
+    }
+
+    /** 知识文档业务错误：使用稳定业务码和已清洗的用户提示。 */
+    @ExceptionHandler(KnowledgeDocumentException.class)
+    public Result<Void> handleKnowledgeDocument(KnowledgeDocumentException ex) {
+        log.warn("知识文档处理失败，code={}，异常类型={}",
+                ex.getResultCode().name(), ex.getClass().getSimpleName());
+        return Result.fail(ex.getResultCode().getCode(), ex.getMessage());
+    }
+
+    /** Servlet Multipart 在进入 Controller 前拒绝超限请求。 */
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public Result<Void> handleMaxUploadSize(MaxUploadSizeExceededException ex) {
+        log.warn("上传文件超过容器限制，异常类型={}", ex.getClass().getSimpleName());
+        return Result.fail(ResultCode.DOCUMENT_FILE_INVALID.getCode(),
+                "上传文件超过服务端大小限制");
+    }
+
+    /** Multipart 帧、请求解析等容器级错误，不向客户端回显内部信息。 */
+    @ExceptionHandler(MultipartException.class)
+    public Result<Void> handleMultipart(MultipartException ex) {
+        log.warn("Multipart 请求处理失败，异常类型={}", ex.getClass().getSimpleName());
+        return Result.fail(ResultCode.DOCUMENT_FILE_INVALID.getCode(),
+                "上传文件请求格式不合法");
     }
 
     /**

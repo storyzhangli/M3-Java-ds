@@ -22,6 +22,21 @@ public enum ResultCode {
     /** AI 服务端暂不可用：上游 5xx/超时/限流且重试耗尽。 */
     AI_UNAVAILABLE(5002, "AI 服务暂不可用，请稍后重试"),
 
+    /** 知识文档不存在。 */
+    DOCUMENT_NOT_FOUND(4041, "知识文档不存在"),
+
+    /** 当前文档状态不允许执行导入。 */
+    DOCUMENT_STATE_CONFLICT(4091, "知识文档当前状态不允许导入"),
+
+    /** 文件内容已由其他文档导入。 */
+    DOCUMENT_DUPLICATE(4092, "相同内容的文档已存在"),
+
+    /** 上传文件不满足安全或格式要求。 */
+    DOCUMENT_FILE_INVALID(4101, "上传文件不合法"),
+
+    /** 文件基础解析失败。 */
+    DOCUMENT_PARSE_FAILED(4221, "文件基础解析失败"),
+
     /** 未预期的系统兜底错误。 */
     SYSTEM_ERROR(5000, "系统繁忙，请稍后重试");
 

@@ -30,6 +30,12 @@ spring:
       database: ${REDIS_DATABASE:0}
       timeout: 3s
 
+  servlet:
+    multipart:
+      # 与业务层 KnowledgeImportProperties 使用同一环境变量，形成容器与业务双层限制。
+      max-file-size: ${KNOWLEDGE_MAX_FILE_SIZE:5MB}
+      max-request-size: ${KNOWLEDGE_MAX_REQUEST_SIZE:6MB}
+
   ai:
     # D26 安全 fallback：应用提供唯一 RetryTemplate Bean；若该 Bean 因装配异常缺失，
     # Spring AI 自动配置也只会执行 1 次，不会回退到默认 10 次。
@@ -63,6 +69,18 @@ mybatis-plus:
 # D01 应用自定义开关（与 spring.ai.* 官方前缀分离）
 # --------------------------------------------------------------------------
 app:
+  knowledge:
+    import:
+      # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。
+      max-file-size: ${KNOWLEDGE_MAX_FILE_SIZE:5MB}
+      max-parsed-chars: ${KNOWLEDGE_MAX_PARSED_CHARS:2000000}
+      allowed-extensions:
+        - txt
+        - md
+        - markdown
+        - html
+        - htm
+        - pdf
   ai:
     # 单一应用配置源。真实 Key 只通过环境变量/安全配置注入，默认空值。
     mode: ${AI_MODE:mock}
