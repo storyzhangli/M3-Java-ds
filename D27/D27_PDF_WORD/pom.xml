@@ -91,6 +91,15 @@
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-pdf-document-reader</artifactId>
         </dependency>
+        <!--
+            D27：页面级 PDF 文本提取直接使用 PDFBox。
+            版本由 spring-ai-bom/Spring Boot 依赖治理提供，当前解析为 3.0.7；
+            此处只把直接使用的 API 声明为显式依赖，避免依赖其他组件的偶然传递关系。
+        -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+        </dependency>
         <!-- HTML / Jsoup -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
@@ -170,6 +179,7 @@
                     <systemPropertyVariables>
                         <spring.profiles.active>test</spring.profiles.active>
                         <app.ai.mode>mock</app.ai.mode>
+                        <pdfbox.fontcache>${maven.multiModuleProjectDirectory}/../docs/temp_docs/D27/pdfbox-cache</pdfbox.fontcache>
                         <!--
                             测试真实模式装配时使用显式无效值，覆盖宿主环境可能存在的真实键；
                             非 Auth Mock 模式不需要 Key。真实调用只能由独立授权流程发起。

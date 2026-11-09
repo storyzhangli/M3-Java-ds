@@ -1,0 +1,14 @@
+ D27/D27_PDF_WORD/pom.xml                           |  12 +-
+ .../document/KnowledgeDocumentController.java      |   6 +
+ .../document/KnowledgeDocumentParser.java          |  94 +++++++++++-
+ .../document/KnowledgeDocumentService.java         |  66 +++++++-
+ .../document/KnowledgeImportProperties.java        |   5 +-
+ .../document/dto/KnowledgeDocumentView.java        |   1 +
+ .../repository/KnowledgeDocumentRepository.java    |   8 +
+ .../MybatisKnowledgeDocumentRepository.java        |  56 ++++++-
+ .../src/main/resources/application.yml             |   4 +
+ .../resources/db/schema-knowledge-document.sql     |  22 +++
+ .../KnowledgeDocumentImportIntegrationTest.java    | 134 ++++++++++++++++-
+ .../d27/document/KnowledgeDocumentParserTest.java  | 166 +++++++++++++++++++--
+ D27/pom.xml                                        |   9 +-
+ 13 files changed, 557 insertions(+), 26 deletions(-)

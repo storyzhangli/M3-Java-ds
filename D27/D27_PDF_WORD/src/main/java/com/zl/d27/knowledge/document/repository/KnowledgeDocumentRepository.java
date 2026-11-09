@@ -1,8 +1,11 @@
 package com.zl.d27.knowledge.document.repository;
 
 import com.zl.d27.knowledge.document.KnowledgeDocument;
+import com.zl.d27.knowledge.document.KnowledgeDocumentPage;
+import com.zl.d27.knowledge.document.ExtractedPage;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -21,7 +24,12 @@ public interface KnowledgeDocumentRepository {
                             LocalDateTime updatedAt);
 
     void complete(String documentId, String contentType, String parsedText,
+                  List<ExtractedPage> pages, String parserName, String parserVersion,
                   LocalDateTime updatedAt);
+
+    List<KnowledgeDocumentPage> findExtractedPages(String documentId);
+
+    int countExtractedPages(String documentId);
 
     void fail(String documentId, String errorCode, String errorMessage,
               LocalDateTime updatedAt);

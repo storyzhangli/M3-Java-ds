@@ -24,9 +24,12 @@ public class KnowledgeImportProperties {
     @Min(1)
     private int maxParsedChars = 2_000_000;
 
+    @Min(1)
+    private int maxPdfPages = 2_000;
+
     @NotEmpty
     private List<String> allowedExtensions = new ArrayList<>(List.of(
-            "txt", "md", "markdown", "html", "htm", "pdf"));
+            "txt", "md", "markdown", "html", "htm", "pdf", "docx"));
 
     @AssertTrue(message = "知识文档最大文件大小必须大于 0")
     public boolean isMaxFileSizePositive() {

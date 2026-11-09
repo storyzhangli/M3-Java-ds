@@ -6,7 +6,13 @@ import com.zl.d27.knowledge.document.repository.KnowledgeDocumentRepository;
 import com.zl.d27.support.AbstractPersistenceCleanupTest;
 import com.zl.d27.knowledge.document.KnowledgeDocumentException;
 import com.zl.d27.knowledge.document.KnowledgeDocumentService;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.Standard14Fonts;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -18,6 +24,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.MessageDigest;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -57,6 +65,7 @@ class KnowledgeDocumentImportIntegrationTest extends AbstractPersistenceCleanupT
     @AfterEach
     void cleanupKnowledgeDocuments() {
         for (String id : createdDocumentIds) {
+            jdbcTemplate.update("DELETE FROM knowledge_document_page WHERE document_id = ?", id);
             jdbcTemplate.update("DELETE FROM knowledge_document_content WHERE document_id = ?", id);
             jdbcTemplate.update("DELETE FROM knowledge_document WHERE document_id = ?", id);
         }
@@ -209,8 +218,109 @@ class KnowledgeDocumentImportIntegrationTest extends AbstractPersistenceCleanupT
         assertThat(documentStatus(documentId)).isEqualTo("PROCESSING");
 
         documentRepository.complete(documentId, "text/plain", "解析文本",
-                LocalDateTime.now());
+                List.of(), "UTF-8 text", "built-in", LocalDateTime.now());
         assertThat(documentStatus(documentId)).isEqualTo("COMPLETED");
+    }
+
+    @Test
+    void pdfImportShouldPersistPageBoundariesAndExposeSourceMetadata() throws Exception {
+        JsonNode registration = register("ut_doc_pdf_pages", "PDF 页面定位手册", "2.1");
+        String documentId = registration.path("documentId").asText();
+        byte[] pdf = pdfWithPages("First page safety", "", "Third page troubleshooting");
+
+        mockMvc.perform(multipart(BASE_URL + "/{id}/import", documentId)
+                        .file(file("manual.pdf", "application/pdf", pdf)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(200))
+                .andExpect(jsonPath("$.data.status").value("COMPLETED"))
+                .andExpect(jsonPath("$.data.pageCount").value(3))
+                .andExpect(jsonPath("$.data.parserName").doesNotExist());
+
+        String aggregatePdfText = jdbcTemplate.queryForObject("""
+                SELECT parsed_text FROM knowledge_document_content WHERE document_id = ?
+                """, String.class, documentId);
+        Integer pageRows = jdbcTemplate.queryForObject("""
+                SELECT COUNT(*) FROM knowledge_document_page WHERE document_id = ?
+                """, Integer.class, documentId);
+        assertThat(aggregatePdfText).isNull();
+        assertThat(pageRows).isEqualTo(3);
+
+        mockMvc.perform(get(BASE_URL + "/{id}/pages", documentId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(200))
+                .andExpect(jsonPath("$.data.documentId").value(documentId))
+                .andExpect(jsonPath("$.data.source").value("ut_doc_pdf_pages"))
+                .andExpect(jsonPath("$.data.title").value("PDF 页面定位手册"))
+                .andExpect(jsonPath("$.data.version").value("2.1"))
+                .andExpect(jsonPath("$.data.pageCount").value(3))
+                .andExpect(jsonPath("$.data.pages[0].pageNumber").value(1))
+                .andExpect(jsonPath("$.data.pages[0].content").value(
+                        org.hamcrest.Matchers.containsString("First page safety")))
+                .andExpect(jsonPath("$.data.pages[1].pageNumber").value(2))
+                .andExpect(jsonPath("$.data.pages[1].blankPage").value(true))
+                .andExpect(jsonPath("$.data.pages[1].content").value(""))
+                .andExpect(jsonPath("$.data.pages[2].pageNumber").value(3))
+                .andExpect(jsonPath("$.data.pages[2].content").value(
+                        org.hamcrest.Matchers.containsString("Third page troubleshooting")))
+                .andExpect(jsonPath("$.data.pages[2].parserName").value("Apache PDFBox"))
+                .andExpect(jsonPath("$.data.pages[2].parserVersion").value("3.0.7"));
+    }
+
+    @Test
+    void pagesEndpointShouldRejectDocumentBeforeParsingCompletes() throws Exception {
+        String documentId = register("ut_doc_pdf_pending", "尚未导入", "1")
+                .path("documentId").asText();
+
+        mockMvc.perform(get(BASE_URL + "/{id}/pages", documentId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(4091))
+                .andExpect(jsonPath("$.msg").value(
+                        org.hamcrest.Matchers.containsString("尚未完成解析")));
+    }
+
+    @Test
+    void realCanonPdfShouldPreserveAllElevenPhysicalPages() throws Exception {
+        Path source = Path.of(
+                "E:\\AI\\project\\AI-Learning-one\\M3-Java\\docs\\proj_docs",
+                "D27-佳能用户手册-DB-测试素材.pdf");
+        Assumptions.assumeTrue(Files.isRegularFile(source), "configured real PDF is unavailable");
+        String documentId = register(
+                "D27-佳能用户手册-DB-测试素材.pdf",
+                "Canon PIXMA MP500 User Manual",
+                "metadata-2026-10-24")
+                .path("documentId").asText();
+        byte[] pdf = Files.readAllBytes(source);
+
+        MvcResult result = mockMvc.perform(multipart(BASE_URL + "/{id}/import", documentId)
+                        .file(file(source.getFileName().toString(), "application/pdf", pdf)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(200))
+                .andExpect(jsonPath("$.data.pageCount").value(11))
+                .andReturn();
+        assertThat(body(result).path("data").path("parsedChars").asInt()).isGreaterThan(8_000);
+
+        MvcResult pagesResult = mockMvc.perform(get(BASE_URL + "/{id}/pages", documentId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(200))
+                .andExpect(jsonPath("$.data.pageCount").value(11))
+                .andReturn();
+        JsonNode data = body(pagesResult).path("data");
+        JsonNode pages = data.path("pages");
+        assertThat(pages).hasSize(11);
+        for (int index = 0; index < pages.size(); index++) {
+            assertThat(pages.get(index).path("pageNumber").asInt()).isEqualTo(index + 1);
+        }
+        assertThat(pages.get(0).path("content").asText())
+                .contains("Canon PIXMA MP500", "INTRODUCTION", "SAFETY INFORMATION");
+        assertThat(pages.get(1).path("content").asText())
+                .contains("Figure 3.1", "SETUP", "Unpacking");
+        assertThat(pages.get(9).path("content").asText())
+                .contains("Cannot scan from", "Error message on");
+        assertThat(pages.get(10).path("content").asText()).contains("Privacy details");
+        assertThat(data.path("source").asText())
+                .isEqualTo("D27-佳能用户手册-DB-测试素材.pdf");
+        assertThat(data.path("pages").get(0).path("parserVersion").asText())
+                .isEqualTo("3.0.7");
     }
 
     @Test
@@ -305,6 +415,28 @@ class KnowledgeDocumentImportIntegrationTest extends AbstractPersistenceCleanupT
 
     private MockMultipartFile file(String name, String contentType, byte[] content) {
         return new MockMultipartFile("file", name, contentType, content);
+    }
+
+    private byte[] pdfWithPages(String... texts) throws Exception {
+        try (PDDocument document = new PDDocument();
+             java.io.ByteArrayOutputStream output = new java.io.ByteArrayOutputStream()) {
+            PDType1Font font = new PDType1Font(Standard14Fonts.FontName.HELVETICA);
+            for (String text : texts) {
+                PDPage page = new PDPage();
+                document.addPage(page);
+                if (!text.isEmpty()) {
+                    try (PDPageContentStream content = new PDPageContentStream(document, page)) {
+                        content.beginText();
+                        content.setFont(font, 12);
+                        content.newLineAtOffset(50, 700);
+                        content.showText(text);
+                        content.endText();
+                    }
+                }
+            }
+            document.save(output);
+            return output.toByteArray();
+        }
     }
 
     private String sha256(byte[] content) throws Exception {

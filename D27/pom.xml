@@ -39,6 +39,8 @@
             - 禁止升级到 Spring AI 2.x，禁止使用动态版本（LATEST/RELEASE/区间版本）。
         -->
         <spring-ai.version>1.1.8</spring-ai.version>
+        <!-- D27：与 spring-ai-pdf-document-reader 1.1.8 实际传递版本保持一致。 -->
+        <pdfbox.version>3.0.7</pdfbox.version>
     </properties>
     <!--
     依赖版本统一管理：继承父 POM 后，通过 import 引入两个 BOM，
@@ -57,6 +59,11 @@
                 <version>${spring-ai.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.pdfbox</groupId>
+                <artifactId>pdfbox</artifactId>
+                <version>${pdfbox.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>

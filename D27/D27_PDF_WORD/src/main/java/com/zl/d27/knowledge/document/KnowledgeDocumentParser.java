@@ -1,7 +1,10 @@
 package com.zl.d27.knowledge.document;
 
 import com.zl.d27.common.ResultCode;
-import com.zl.d27.knowledge.document.KnowledgeImportProperties;
+import org.apache.pdfbox.Loader;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.util.Version;
 import org.apache.tika.Tika;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
@@ -17,6 +20,7 @@ import java.nio.charset.CodingErrorAction;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.HexFormat;
 import java.util.List;
 import java.util.Locale;
@@ -35,11 +39,16 @@ public class KnowledgeDocumentParser {
 
     private static final Set<String> PDF_EXTENSIONS = Set.of("pdf");
 
+    private static final Set<String> DOCX_EXTENSIONS = Set.of("docx");
+
     private static final Set<String> TEXT_MIME_TYPES = Set.of(
             "text/plain", "text/markdown", "text/x-markdown", "text/x-web-markdown");
 
     private static final Set<String> HTML_MIME_TYPES = Set.of(
             "text/html", "application/xhtml+xml");
+
+    private static final Set<String> DOCX_MIME_TYPES = Set.of(
+            "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
 
     private final KnowledgeImportProperties properties;
 
@@ -96,17 +105,29 @@ public class KnowledgeDocumentParser {
             throw parseFailure("无法识别文件内容类型", ex);
         }
 
-        String text;
+        String text = "";
+        List<ExtractedPage> pages = List.of();
+        String parserName;
+        String parserVersion;
         if (TEXT_EXTENSIONS.contains(file.extension())) {
             requireMime(file.extension(), detectedType, TEXT_MIME_TYPES);
             text = decodeUtf8(file.content());
+            parserName = "UTF-8 text";
+            parserVersion = "built-in";
         } else if (HTML_EXTENSIONS.contains(file.extension())) {
             requireMime(file.extension(), detectedType, HTML_MIME_TYPES);
             decodeUtf8(file.content());
             text = readWithTika(file);
+            parserName = "Apache Tika";
+            parserVersion = tikaVersion();
         } else if (PDF_EXTENSIONS.contains(file.extension())) {
             requireMime(file.extension(), detectedType, Set.of("application/pdf"));
+            return parsePdf(file);
+        } else if (DOCX_EXTENSIONS.contains(file.extension())) {
+            requireMime(file.extension(), detectedType, DOCX_MIME_TYPES);
             text = readWithTika(file);
+            parserName = "Apache Tika";
+            parserVersion = tikaVersion();
         } else {
             throw invalid("不支持的文件扩展名");
         }
@@ -118,7 +139,52 @@ public class KnowledgeDocumentParser {
         if (normalized.length() > properties.getMaxParsedChars()) {
             throw parseFailure("解析文本超过配置上限");
         }
-        return new ParsedFile(detectedType, normalized);
+        return new ParsedFile(detectedType, normalized, pages, parserName, parserVersion);
+    }
+
+    private ParsedFile parsePdf(InspectedFile file) {
+        try (PDDocument document = Loader.loadPDF(file.content())) {
+            int pageCount = document.getNumberOfPages();
+            if (pageCount == 0) {
+                throw parseFailure("PDF 不包含有效页面");
+            }
+            if (pageCount > properties.getMaxPdfPages()) {
+                throw parseFailure("PDF 页数超过配置上限");
+            }
+
+            List<ExtractedPage> pages = new ArrayList<>(pageCount);
+            int totalCharacters = 0;
+            int nonBlankPages = 0;
+            for (int pageNumber = 1; pageNumber <= pageCount; pageNumber++) {
+                PDFTextStripper stripper = new PDFTextStripper();
+                stripper.setStartPage(pageNumber);
+                stripper.setEndPage(pageNumber);
+                String extracted = stripper.getText(document);
+                boolean blank = !StringUtils.hasText(extracted);
+                String content = blank ? "" : extracted.strip();
+                if (!blank) {
+                    nonBlankPages++;
+                }
+                totalCharacters += content.length();
+                if (totalCharacters > properties.getMaxParsedChars()) {
+                    throw parseFailure("解析文本超过配置上限");
+                }
+                pages.add(new ExtractedPage(pageNumber, content, blank));
+            }
+            if (nonBlankPages == 0) {
+                throw parseFailure("PDF 未解析出可用文本，扫描型 PDF 需要 OCR");
+            }
+            return new ParsedFile(
+                    "application/pdf",
+                    null,
+                    List.copyOf(pages),
+                    "Apache PDFBox",
+                    Version.getVersion());
+        } catch (KnowledgeDocumentException ex) {
+            throw ex;
+        } catch (Exception ex) {
+            throw parseFailure("PDF 解析失败", ex);
+        }
     }
 
     private String readWithTika(InspectedFile file) {
@@ -151,6 +217,11 @@ public class KnowledgeDocumentParser {
                     "文本文件不是合法 UTF-8 编码",
                     ex);
         }
+    }
+
+    private String tikaVersion() {
+        String version = Tika.class.getPackage().getImplementationVersion();
+        return StringUtils.hasText(version) ? version : "unknown";
     }
 
     private void requireMime(String extension, String detectedType, Set<String> allowed) {
@@ -216,6 +287,21 @@ public class KnowledgeDocumentParser {
             byte[] content) {
     }
 
-    public record ParsedFile(String contentType, String text) {
+    public record ParsedFile(
+            String contentType,
+            String parsedText,
+            List<ExtractedPage> pages,
+            String parserName,
+            String parserVersion) {
+
+        public ParsedFile {
+            pages = pages == null ? List.of() : List.copyOf(pages);
+        }
+
+        public int characterCount() {
+            return pages.isEmpty()
+                    ? (parsedText == null ? 0 : parsedText.length())
+                    : pages.stream().mapToInt(ExtractedPage::characterCount).sum();
+        }
     }
 }

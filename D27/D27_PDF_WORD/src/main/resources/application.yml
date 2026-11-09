@@ -74,6 +74,7 @@ app:
       # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。
       max-file-size: ${KNOWLEDGE_MAX_FILE_SIZE:5MB}
       max-parsed-chars: ${KNOWLEDGE_MAX_PARSED_CHARS:2000000}
+      max-pdf-pages: ${KNOWLEDGE_MAX_PDF_PAGES:2000}
       allowed-extensions:
         - txt
         - md
@@ -81,6 +82,7 @@ app:
         - html
         - htm
         - pdf
+        - docx
   ai:
     # 单一应用配置源。真实 Key 只通过环境变量/安全配置注入，默认空值。
     mode: ${AI_MODE:mock}
@@ -174,6 +176,8 @@ app:
       - /favicon.ico
       # 设备对话请求/响应包含故障描述和候选摘要，不进入通用正文访问日志。
       - /api/v1/equipment/chat
+      # 页面提取接口返回原文文本，不进入通用请求/响应正文日志。
+      - /api/v1/knowledge/documents/*/pages
       # D14：SSE 异步流式响应不能被请求/响应缓存包装器缓冲，否则增量无法实时推送且过滤器提前收尾会截断流，
       # 因此整条路径跳过正文缓存过滤器；TraceIdFilter 独立生效，requestId 照常生成与回写。
       - /api/v1/ai/chat/stream

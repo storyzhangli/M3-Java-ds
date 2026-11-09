@@ -2,6 +2,8 @@ package com.zl.d27.knowledge.document;
 
 import com.zl.d27.common.ResultCode;
 import com.zl.d27.knowledge.document.KnowledgeDocumentStatus;
+import com.zl.d27.knowledge.document.dto.KnowledgeDocumentExtractionView;
+import com.zl.d27.knowledge.document.dto.KnowledgeDocumentPageView;
 import com.zl.d27.knowledge.document.dto.KnowledgeDocumentRegistrationRequest;
 import com.zl.d27.knowledge.document.dto.KnowledgeDocumentView;
 import com.zl.d27.knowledge.document.repository.KnowledgeDocumentRepository;
@@ -12,6 +14,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -45,7 +48,7 @@ public class KnowledgeDocumentService {
         document.setUpdatedAt(now);
         repository.register(document);
         log.info("知识文档已登记，documentId={}，version={}", document.getDocumentId(), document.getVersion());
-        return view(document, null, false);
+        return view(document, null, 0, false);
     }
 
     public KnowledgeDocumentView importFile(String documentId, MultipartFile file) {
@@ -66,7 +69,7 @@ public class KnowledgeDocumentService {
 
         if (document.getStatus() == KnowledgeDocumentStatus.COMPLETED) {
             if (inspected.contentHash().equals(document.getContentHash())) {
-                return view(document, null, true);
+                return view(document, null, repository.countExtractedPages(documentId), true);
             }
             throw new KnowledgeDocumentException(
                     ResultCode.DOCUMENT_STATE_CONFLICT,
@@ -104,11 +107,23 @@ public class KnowledgeDocumentService {
         try {
             KnowledgeDocumentParser.ParsedFile parsed = parser.parse(inspected);
             LocalDateTime completedAt = LocalDateTime.now();
-            repository.complete(documentId, parsed.contentType(), parsed.text(), completedAt);
+            repository.complete(
+                    documentId,
+                    parsed.contentType(),
+                    parsed.parsedText(),
+                    parsed.pages(),
+                    parsed.parserName(),
+                    parsed.parserVersion(),
+                    completedAt);
             KnowledgeDocument completed = requireDocument(documentId);
-            log.info("知识文档导入完成，documentId={}，contentType={}，chars={}",
-                    documentId, parsed.contentType(), parsed.text().length());
-            return view(completed, parsed.text().length(), false);
+            log.info("知识文档导入完成，documentId={}，contentType={}，chars={}，pages={}，parser={} {}",
+                    documentId,
+                    parsed.contentType(),
+                    parsed.characterCount(),
+                    parsed.pages().size(),
+                    parsed.parserName(),
+                    parsed.parserVersion());
+            return view(completed, parsed.characterCount(), parsed.pages().size(), false);
         } catch (RuntimeException ex) {
             try {
                 repository.fail(documentId,
@@ -124,7 +139,41 @@ public class KnowledgeDocumentService {
     }
 
     public KnowledgeDocumentView detail(String documentId) {
-        return view(requireDocument(documentId), null, false);
+        return view(
+                requireDocument(documentId),
+                null,
+                repository.countExtractedPages(documentId),
+                false);
+    }
+
+    public KnowledgeDocumentExtractionView extraction(String documentId) {
+        KnowledgeDocument document = requireDocument(documentId);
+        if (document.getStatus() != KnowledgeDocumentStatus.COMPLETED) {
+            throw new KnowledgeDocumentException(
+                    ResultCode.DOCUMENT_STATE_CONFLICT,
+                    "知识文档尚未完成解析，不能读取页面结果");
+        }
+        List<KnowledgeDocumentPage> storedPages = repository.findExtractedPages(documentId);
+        List<KnowledgeDocumentPageView> pages = storedPages.stream()
+                .map(page -> new KnowledgeDocumentPageView(
+                        page.pageNumber(),
+                        page.content(),
+                        page.characterCount(),
+                        page.blankPage(),
+                        page.parserName(),
+                        page.parserVersion(),
+                        page.updatedAt()))
+                .toList();
+        return new KnowledgeDocumentExtractionView(
+                document.getDocumentId(),
+                document.getSourceSystem(),
+                document.getTitle(),
+                document.getVersion(),
+                document.getContentType(),
+                document.getStatus().name(),
+                pages.size(),
+                document.getUpdatedAt(),
+                pages);
     }
 
     private KnowledgeDocument requireDocument(String documentId) {
@@ -165,7 +214,7 @@ public class KnowledgeDocumentService {
     }
 
     private KnowledgeDocumentView view(KnowledgeDocument document, Integer parsedChars,
-                                       boolean duplicate) {
+                                       int pageCount, boolean duplicate) {
         return new KnowledgeDocumentView(
                 document.getDocumentId(),
                 document.getSourceSystem(),
@@ -178,6 +227,7 @@ public class KnowledgeDocumentService {
                 document.getFileSize(),
                 document.getContentHash(),
                 parsedChars,
+                pageCount,
                 document.getErrorCode(),
                 document.getErrorMessage(),
                 duplicate);

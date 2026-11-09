@@ -2,6 +2,7 @@ package com.zl.d27.knowledge.document;
 
 import com.zl.d27.common.Result;
 import com.zl.d27.knowledge.document.KnowledgeDocumentService;
+import com.zl.d27.knowledge.document.dto.KnowledgeDocumentExtractionView;
 import com.zl.d27.knowledge.document.dto.KnowledgeDocumentRegistrationRequest;
 import com.zl.d27.knowledge.document.dto.KnowledgeDocumentView;
 import jakarta.validation.Valid;
@@ -45,5 +46,10 @@ public class KnowledgeDocumentController {
     @GetMapping("/{documentId}")
     public Result<KnowledgeDocumentView> detail(@PathVariable String documentId) {
         return Result.success(service.detail(documentId));
+    }
+
+    @GetMapping("/{documentId}/pages")
+    public Result<KnowledgeDocumentExtractionView> pages(@PathVariable String documentId) {
+        return Result.success(service.extraction(documentId));
     }
 }

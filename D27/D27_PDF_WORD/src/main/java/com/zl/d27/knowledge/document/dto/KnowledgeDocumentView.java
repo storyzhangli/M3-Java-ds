@@ -17,6 +17,7 @@ public record KnowledgeDocumentView(
         Long fileSize,
         String contentHash,
         Integer parsedChars,
+        Integer pageCount,
         String errorCode,
         String errorMessage,
         boolean duplicate) {

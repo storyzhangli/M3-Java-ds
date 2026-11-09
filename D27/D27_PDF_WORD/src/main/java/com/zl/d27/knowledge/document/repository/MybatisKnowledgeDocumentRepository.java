@@ -3,17 +3,22 @@ package com.zl.d27.knowledge.document.repository;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.zl.d27.common.ResultCode;
+import com.zl.d27.knowledge.document.ExtractedPage;
 import com.zl.d27.knowledge.document.KnowledgeDocument;
 import com.zl.d27.knowledge.document.KnowledgeDocumentException;
+import com.zl.d27.knowledge.document.KnowledgeDocumentPage;
 import com.zl.d27.knowledge.document.KnowledgeDocumentStatus;
 import com.zl.d27.knowledge.document.mapper.KnowledgeDocumentContentMapper;
 import com.zl.d27.knowledge.document.mapper.KnowledgeDocumentMapper;
+import com.zl.d27.knowledge.document.mapper.KnowledgeDocumentPageMapper;
 import com.zl.d27.knowledge.document.po.KnowledgeDocumentContentPO;
+import com.zl.d27.knowledge.document.po.KnowledgeDocumentPagePO;
 import com.zl.d27.knowledge.document.po.KnowledgeDocumentPO;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -23,10 +28,14 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
 
     private final KnowledgeDocumentContentMapper contentMapper;
 
+    private final KnowledgeDocumentPageMapper pageMapper;
+
     public MybatisKnowledgeDocumentRepository(KnowledgeDocumentMapper documentMapper,
-                                              KnowledgeDocumentContentMapper contentMapper) {
+                                              KnowledgeDocumentContentMapper contentMapper,
+                                              KnowledgeDocumentPageMapper pageMapper) {
         this.documentMapper = documentMapper;
         this.contentMapper = contentMapper;
+        this.pageMapper = pageMapper;
     }
 
     @Override
@@ -84,6 +93,8 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
 
         contentMapper.delete(new LambdaQueryWrapper<KnowledgeDocumentContentPO>()
                 .eq(KnowledgeDocumentContentPO::getDocumentId, documentId));
+        pageMapper.delete(new LambdaQueryWrapper<KnowledgeDocumentPagePO>()
+                .eq(KnowledgeDocumentPagePO::getDocumentId, documentId));
         KnowledgeDocumentContentPO contentPO = new KnowledgeDocumentContentPO();
         contentPO.setDocumentId(documentId);
         contentPO.setContent(content);
@@ -95,6 +106,7 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
     @Override
     @Transactional
     public void complete(String documentId, String contentType, String parsedText,
+                         List<ExtractedPage> pages, String parserName, String parserVersion,
                          LocalDateTime updatedAt) {
         int updated = documentMapper.update(null,
                 new LambdaUpdateWrapper<KnowledgeDocumentPO>()
@@ -117,6 +129,36 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
                         .eq(KnowledgeDocumentContentPO::getDocumentId, documentId)
                         .set(KnowledgeDocumentContentPO::getParsedText, parsedText)
                         .set(KnowledgeDocumentContentPO::getUpdatedAt, updatedAt));
+        for (ExtractedPage page : pages) {
+            KnowledgeDocumentPagePO pagePO = new KnowledgeDocumentPagePO();
+            pagePO.setDocumentId(documentId);
+            pagePO.setPageNumber(page.pageNumber());
+            pagePO.setContent(page.content());
+            pagePO.setCharacterCount(page.characterCount());
+            pagePO.setBlankPage(page.blankPage());
+            pagePO.setParserName(parserName);
+            pagePO.setParserVersion(parserVersion);
+            pagePO.setUpdatedAt(updatedAt);
+            pageMapper.insert(pagePO);
+        }
+    }
+
+    @Override
+    public List<KnowledgeDocumentPage> findExtractedPages(String documentId) {
+        return pageMapper.selectList(
+                        new LambdaQueryWrapper<KnowledgeDocumentPagePO>()
+                                .eq(KnowledgeDocumentPagePO::getDocumentId, documentId)
+                                .orderByAsc(KnowledgeDocumentPagePO::getPageNumber))
+                .stream()
+                .map(this::toPageDomain)
+                .toList();
+    }
+
+    @Override
+    public int countExtractedPages(String documentId) {
+        return Math.toIntExact(pageMapper.selectCount(
+                new LambdaQueryWrapper<KnowledgeDocumentPagePO>()
+                        .eq(KnowledgeDocumentPagePO::getDocumentId, documentId)));
     }
 
     @Override
@@ -173,6 +215,18 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
         document.setCreatedAt(po.getCreatedAt());
         document.setUpdatedAt(po.getUpdatedAt());
         return document;
+    }
+
+    private KnowledgeDocumentPage toPageDomain(KnowledgeDocumentPagePO po) {
+        return new KnowledgeDocumentPage(
+                po.getDocumentId(),
+                po.getPageNumber(),
+                po.getContent(),
+                po.getCharacterCount(),
+                Boolean.TRUE.equals(po.getBlankPage()),
+                po.getParserName(),
+                po.getParserVersion(),
+                po.getUpdatedAt());
     }
 
     private String safe(String value, int max) {
