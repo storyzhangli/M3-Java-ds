@@ -1,0 +1,3 @@
+warning: in the working copy of 'D28/D28_TCASS/src/main/resources/application.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D28/D28_TCASS/src/test/java/com/zl/d28/document/KnowledgeDocumentImportIntegrationTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D28/D28_TCASS/src/test/java/com/zl/d28/document/RealPdfSourceEvidenceTest.java', LF will be replaced by CRLF the next time Git touches it

@@ -83,6 +83,13 @@ app:
         - htm
         - pdf
         - docx
+    chunking:
+      # D28 长度单位统一为 Unicode 码点，不是 Java UTF-16 code unit，也不是 Token。
+      default-strategy: ${KNOWLEDGE_CHUNK_STRATEGY:FIXED_LENGTH}
+      chunk-size: ${KNOWLEDGE_CHUNK_SIZE:480}
+      overlap: ${KNOWLEDGE_CHUNK_OVERLAP:60}
+      min-chunk-size: ${KNOWLEDGE_CHUNK_MIN_SIZE:80}
+      max-chunk-size: ${KNOWLEDGE_CHUNK_MAX_SIZE:720}
   ai:
     # 单一应用配置源。真实 Key 只通过环境变量/安全配置注入，默认空值。
     mode: ${AI_MODE:mock}
@@ -178,6 +185,9 @@ app:
       - /api/v1/equipment/chat
       # 页面提取接口返回原文文本，不进入通用请求/响应正文日志。
       - /api/v1/knowledge/documents/*/pages
+      # Chunk 预览返回原文片段，不进入通用请求/响应正文日志。
+      - /api/v1/knowledge/documents/*/chunks
+      - /api/v1/knowledge/documents/*/chunks/**
       # D14：SSE 异步流式响应不能被请求/响应缓存包装器缓冲，否则增量无法实时推送且过滤器提前收尾会截断流，
       # 因此整条路径跳过正文缓存过滤器；TraceIdFilter 独立生效，requestId 照常生成与回写。
       - /api/v1/ai/chat/stream

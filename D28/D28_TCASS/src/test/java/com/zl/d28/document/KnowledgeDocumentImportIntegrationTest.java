@@ -279,9 +279,21 @@ class KnowledgeDocumentImportIntegrationTest extends AbstractPersistenceCleanupT
     }
 
     @Test
+    void chunksEndpointShouldRejectDocumentBeforeParsingCompletes() throws Exception {
+        String documentId = register("ut_doc_chunk_pending", "尚未切分", "1")
+                .path("documentId").asText();
+
+        mockMvc.perform(get(BASE_URL + "/{id}/chunks", documentId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(4091))
+                .andExpect(jsonPath("$.msg").value(
+                        org.hamcrest.Matchers.containsString("尚未完成解析")));
+    }
+
+    @Test
     void realCanonPdfShouldPreserveAllElevenPhysicalPages() throws Exception {
         Path source = Path.of(
-                "E:\\AI\\project\\AI-Learning-one\\M3-Java\\docs\\proj_docs",
+                "E:\\AI\\project\\AI-Learning-two-lp\\M3-Java-ds\\docs\\proj_docs",
                 "D28-佳能用户手册-DB-测试素材.pdf");
         Assumptions.assumeTrue(Files.isRegularFile(source), "configured real PDF is unavailable");
         String documentId = register(
@@ -321,6 +333,27 @@ class KnowledgeDocumentImportIntegrationTest extends AbstractPersistenceCleanupT
                 .isEqualTo("D28-佳能用户手册-DB-测试素材.pdf");
         assertThat(data.path("pages").get(0).path("parserVersion").asText())
                 .isEqualTo("3.0.7");
+
+        mockMvc.perform(get(BASE_URL + "/{id}/chunks", documentId)
+                        .queryParam("strategy", "STRUCTURE_AWARE"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(200))
+                .andExpect(jsonPath("$.data.documentId").value(documentId))
+                .andExpect(jsonPath("$.data.title").value("Canon PIXMA MP500 User Manual"))
+                .andExpect(jsonPath("$.data.version").value("metadata-2026-10-24"))
+                .andExpect(jsonPath("$.data.strategy").value("STRUCTURE_AWARE"))
+                .andExpect(jsonPath("$.data.metrics.chunkCount").isNumber())
+                .andExpect(jsonPath("$.data.chunks[0].chunkIndex").value(1))
+                .andExpect(jsonPath("$.data.chunks[0].sources").isArray())
+                .andExpect(jsonPath("$.data.chunks[0].pageNumbers").isArray());
+
+        mockMvc.perform(get(BASE_URL + "/{id}/chunks/compare", documentId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(200))
+                .andExpect(jsonPath("$.data.fixedLength.strategy").value("FIXED_LENGTH"))
+                .andExpect(jsonPath("$.data.structureAware.strategy").value("STRUCTURE_AWARE"))
+                .andExpect(jsonPath("$.data.fixedLength.documentId").value(documentId))
+                .andExpect(jsonPath("$.data.structureAware.documentId").value(documentId));
     }
 
     @Test

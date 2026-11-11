@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class RealPdfSourceEvidenceTest {
 
     private static final Path SOURCE = Path.of(
-            "E:\\AI\\project\\AI-Learning-one\\M3-Java\\docs\\proj_docs",
+            "E:\\AI\\project\\AI-Learning-two-lp\\M3-Java-ds\\docs\\proj_docs",
             "D28-佳能用户手册-DB-测试素材.pdf");
 
     @Test

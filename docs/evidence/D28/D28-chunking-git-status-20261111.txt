@@ -1,0 +1,44 @@
+ M D28/D28_TCASS/src/main/resources/application.yml
+ M D28/D28_TCASS/src/test/java/com/zl/d28/document/KnowledgeDocumentImportIntegrationTest.java
+ M D28/D28_TCASS/src/test/java/com/zl/d28/document/RealPdfSourceEvidenceTest.java
+ M docs/evidence/D28/D28-java-pdf-extraction.json
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkBoundaryType.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkSource.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkSourceDocument.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkStrategy.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkingComparison.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkingMetrics.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkingProperties.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/ChunkingResult.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/CleanedDocument.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/CleanedPage.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/CleanedParagraph.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/DocumentChunk.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/DocumentChunker.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/DocumentPageText.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/KnowledgeDocumentChunkingController.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/KnowledgeDocumentChunkingService.java
+?? D28/D28_TCASS/src/main/java/com/zl/d28/knowledge/chunking/TextCleaner.java
+?? D28/D28_TCASS/src/test/java/com/zl/d28/chunking/ChunkingPropertiesValidationTest.java
+?? D28/D28_TCASS/src/test/java/com/zl/d28/chunking/DocumentChunkerTest.java
+?? D28/D28_TCASS/src/test/java/com/zl/d28/chunking/RealPdfChunkingComparisonTest.java
+?? D28/D28_TCASS/src/test/java/com/zl/d28/chunking/TextCleanerTest.java
+?? docs/evidence/D28/D28-chunking-acceptance-20261111.md
+?? docs/evidence/D28/D28-chunking-comparison.json
+?? docs/evidence/D28/D28-chunking-evidence-index-20261111.md
+?? docs/evidence/D28/D28-chunking-final-audit-20261111.md
+?? docs/evidence/D28/D28-chunking-git-diff-check-20261111.txt
+?? docs/evidence/D28/D28-chunking-git-diff-check-exit-20261111.txt
+?? docs/evidence/D28/D28-chunking-git-staged-20261111.txt
+?? docs/evidence/D28/D28-chunking-git-status-20261111.txt
+?? docs/evidence/D28/D28-chunking-git-untracked-20261111.txt
+?? docs/evidence/D28/D28-chunking-index-20261111.md
+?? docs/evidence/D28/D28-chunking-jar-sha256-20261111.txt
+?? docs/evidence/D28/D28-chunking-project-scan-20261111.md
+?? docs/evidence/D28/D28-chunking-sensitive-scan-20261111.md
+?? docs/evidence/D28/D28-chunking-surefire-summary-20261111.txt
+?? docs/evidence/D28/D28-chunking-test-summary-20261111.md
+?? docs/evidence/D28/D28-cleaning-before-after-20261111.md
+?? docs/evidence/D28/D28-strategy-comparison-20261111.md
+?? "docs/proj_docs/D28-\346\226\207\346\234\254\346\270\205\346\264\227\344\270\216Chunk\345\210\207\345\210\206\345\212\237\350\203\275\345\256\236\347\216\260\345\205\250\351\207\217\350\257\264\346\230\216.md"
+?? "docs/proj_docs/D28-\346\226\207\346\234\254\346\270\205\346\264\227\344\270\216Chunk\345\210\207\345\210\206\346\212\200\346\234\257\345\216\237\347\220\206\345\217\212\346\223\215\344\275\234\345\256\236\350\267\265\346\214\207\345\215\227.md"
