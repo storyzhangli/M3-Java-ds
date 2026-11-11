@@ -1,0 +1,13 @@
+M	D27/D27_PDF_WORD/pom.xml
+M	D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeDocumentController.java
+M	D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeDocumentParser.java
+M	D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeDocumentService.java
+M	D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeImportProperties.java
+M	D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/dto/KnowledgeDocumentView.java
+M	D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/repository/KnowledgeDocumentRepository.java
+M	D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/repository/MybatisKnowledgeDocumentRepository.java
+M	D27/D27_PDF_WORD/src/main/resources/application.yml
+M	D27/D27_PDF_WORD/src/main/resources/db/schema-knowledge-document.sql
+M	D27/D27_PDF_WORD/src/test/java/com/zl/d27/document/KnowledgeDocumentImportIntegrationTest.java
+M	D27/D27_PDF_WORD/src/test/java/com/zl/d27/document/KnowledgeDocumentParserTest.java
+M	D27/pom.xml

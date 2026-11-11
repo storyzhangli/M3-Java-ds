@@ -1,0 +1,13 @@
+warning: in the working copy of 'D27/D27_PDF_WORD/pom.xml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeDocumentController.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeDocumentParser.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeDocumentService.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/KnowledgeImportProperties.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/dto/KnowledgeDocumentView.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/repository/KnowledgeDocumentRepository.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/java/com/zl/d27/knowledge/document/repository/MybatisKnowledgeDocumentRepository.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/resources/application.yml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/main/resources/db/schema-knowledge-document.sql', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/test/java/com/zl/d27/document/KnowledgeDocumentImportIntegrationTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/D27_PDF_WORD/src/test/java/com/zl/d27/document/KnowledgeDocumentParserTest.java', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'D27/pom.xml', LF will be replaced by CRLF the next time Git touches it
