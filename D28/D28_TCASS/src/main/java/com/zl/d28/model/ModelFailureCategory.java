@@ -1,0 +1,22 @@
+package com.zl.d28.model;
+
+/**
+ * 模型调用内部失败分类。该分类不直接作为 API 合同暴露。
+ */
+public enum ModelFailureCategory {
+    PARAMETER_ERROR,
+    AUTHENTICATION_FAILED,
+    AUTHORIZATION_FAILED,
+    MODEL_OR_RESOURCE_NOT_FOUND,
+    BUSINESS_REJECTED,
+    QUOTA_EXHAUSTED,
+    RATE_LIMITED,
+    UPSTREAM_UNAVAILABLE,
+    CONNECT_FAILURE,
+    READ_TIMEOUT,
+    DEADLINE_EXCEEDED,
+    INVALID_RESPONSE,
+    NETWORK_IO,
+    CANCELLED,
+    UNKNOWN
+}
