@@ -354,6 +354,21 @@ class KnowledgeDocumentImportIntegrationTest extends AbstractPersistenceCleanupT
                 .andExpect(jsonPath("$.data.structureAware.strategy").value("STRUCTURE_AWARE"))
                 .andExpect(jsonPath("$.data.fixedLength.documentId").value(documentId))
                 .andExpect(jsonPath("$.data.structureAware.documentId").value(documentId));
+
+        mockMvc.perform(get(BASE_URL + "/{id}/embeddings", documentId)
+                        .queryParam("strategy", "STRUCTURE_AWARE"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.code").value(200))
+                .andExpect(jsonPath("$.data.documentId").value(documentId))
+                .andExpect(jsonPath("$.data.model.provider").value("LOCAL"))
+                .andExpect(jsonPath("$.data.model.modelName").value("local-hash-ngram-v1"))
+                .andExpect(jsonPath("$.data.model.dimensions").value(384))
+                .andExpect(jsonPath("$.data.index.vectorSpaceId").isNotEmpty())
+                .andExpect(jsonPath("$.data.chunkCount").isNumber())
+                .andExpect(jsonPath("$.data.embeddings[0].dimensions").value(384))
+                .andExpect(jsonPath("$.data.embeddings[0].vector.length()").value(384))
+                .andExpect(jsonPath("$.data.usage.inputTokens")
+                        .value(org.hamcrest.Matchers.nullValue()));
     }
 
     @Test

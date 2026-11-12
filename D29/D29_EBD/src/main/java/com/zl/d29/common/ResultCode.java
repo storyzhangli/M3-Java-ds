@@ -37,6 +37,15 @@ public enum ResultCode {
     /** 文件基础解析失败。 */
     DOCUMENT_PARSE_FAILED(4221, "文件基础解析失败"),
 
+    /** Embedding 输入为空、纯空白或超过模型上限。 */
+    EMBEDDING_INPUT_INVALID(4002, "Embedding 输入不合法"),
+
+    /** Embedding 返回空向量、维度错误或非法数值。 */
+    EMBEDDING_RESPONSE_INVALID(4222, "Embedding 响应不合法"),
+
+    /** 目标向量索引与当前模型向量空间不兼容。 */
+    VECTOR_INDEX_INCOMPATIBLE(4093, "向量索引不兼容"),
+
     /** 未预期的系统兜底错误。 */
     SYSTEM_ERROR(5000, "系统繁忙，请稍后重试");
 

@@ -4,6 +4,7 @@ import com.zl.d29.common.AiConfigurationException;
 import com.zl.d29.common.Result;
 import com.zl.d29.common.ResultCode;
 import com.zl.d29.knowledge.document.KnowledgeDocumentException;
+import com.zl.d29.knowledge.embedding.EmbeddingException;
 import com.zl.d29.model.ModelFailure;
 import com.zl.d29.model.ModelFailureClassifier;
 import jakarta.servlet.http.HttpServletResponse;
@@ -44,6 +45,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(KnowledgeDocumentException.class)
     public Result<Void> handleKnowledgeDocument(KnowledgeDocumentException ex) {
         log.warn("知识文档处理失败，code={}，异常类型={}",
+                ex.getResultCode().name(), ex.getClass().getSimpleName());
+        return Result.fail(ex.getResultCode().getCode(), ex.getMessage());
+    }
+
+    /** Embedding 输入、响应和索引兼容性错误。 */
+    @ExceptionHandler(EmbeddingException.class)
+    public Result<Void> handleEmbedding(EmbeddingException ex) {
+        log.warn("Embedding 处理失败，code={}，异常类型={}",
                 ex.getResultCode().name(), ex.getClass().getSimpleName());
         return Result.fail(ex.getResultCode().getCode(), ex.getMessage());
     }

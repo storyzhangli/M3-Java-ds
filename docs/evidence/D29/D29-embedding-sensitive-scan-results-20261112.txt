@@ -1,0 +1,9 @@
+D29 Embedding security scan
+Generated: 2026-11-12 18:37:09 +08:00
+Git HEAD: ada34418bdece0ca3102d4683bc1d8bc9665cb1f
+WORKSPACE_SK_STYLE_KEY_FILES=0
+LOG_SK_STYLE_KEY_FILES=0
+HEAD_SK_STYLE_KEY_HITS=0
+STAGED_DIFF_LINES=0
+EMBEDDING_ENDPOINT_OR_VECTOR_LOG_HITS=0
+NOTE=No real cloud API call. API-key fields are environment placeholders or fixed non-functional test fixtures.

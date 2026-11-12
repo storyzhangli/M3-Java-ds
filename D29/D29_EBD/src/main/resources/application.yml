@@ -69,6 +69,22 @@ mybatis-plus:
 # D01 应用自定义开关（与 spring.ai.* 官方前缀分离）
 # --------------------------------------------------------------------------
 app:
+  embedding:
+    # D29 默认使用无 Key、零 API 费用的本地确定性 Embedding 模型。
+    provider: ${EMBEDDING_PROVIDER:LOCAL}
+    model-name: ${EMBEDDING_MODEL:local-hash-ngram-v1}
+    model-version: ${EMBEDDING_MODEL_VERSION:2026.11}
+    dimensions: ${EMBEDDING_DIMENSIONS:384}
+    max-input-length: ${EMBEDDING_MAX_INPUT_LENGTH:12000}
+    length-unit: ${EMBEDDING_LENGTH_UNIT:UNICODE_CODE_POINTS}
+    distance-metric: ${EMBEDDING_DISTANCE_METRIC:COSINE}
+    index-version: ${EMBEDDING_INDEX_VERSION:d29-local-384-v1}
+    api-url: ${EMBEDDING_API_URL:local://hash-ngram}
+    # 仅用于未来远程适配器。真实值只能由环境变量注入，禁止写入文件或日志。
+    api-key: ${EMBEDDING_API_KEY:}
+    key-required: ${EMBEDDING_KEY_REQUIRED:false}
+    cost-per-million-input-tokens-usd: ${EMBEDDING_COST_PER_MILLION_INPUT_TOKENS_USD:0}
+    enabled: ${EMBEDDING_ENABLED:true}
   knowledge:
     import:
       # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。
@@ -188,6 +204,9 @@ app:
       # Chunk 预览返回原文片段，不进入通用请求/响应正文日志。
       - /api/v1/knowledge/documents/*/chunks
       - /api/v1/knowledge/documents/*/chunks/**
+      # Embedding 预览可能包含完整向量，不进入通用请求/响应正文日志。
+      - /api/v1/knowledge/documents/*/embeddings
+      - /api/v1/embeddings/**
       # D14：SSE 异步流式响应不能被请求/响应缓存包装器缓冲，否则增量无法实时推送且过滤器提前收尾会截断流，
       # 因此整条路径跳过正文缓存过滤器；TraceIdFilter 独立生效，requestId 照常生成与回写。
       - /api/v1/ai/chat/stream

@@ -1,0 +1,23 @@
+D29 Embedding classes in final executable JAR
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/ChunkEmbedding.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/ChunkEmbeddingService$1.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/ChunkEmbeddingService.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/DistanceMetric.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingBatchResult.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingController.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingCostEstimate.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingException.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingLengthUnit.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingModelCatalog.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingModelConfiguration.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingModelDescriptor.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingProperties.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingProvider.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingUsage.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/EmbeddingVectorValidator.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/IndexCompatibility.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/IndexCompatibilityValidator.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/LocalHashNgramEmbeddingModel.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/VectorIndexMetadata.class
+BOOT-INF/classes/com/zl/d29/knowledge/embedding/VectorSpaceIdentity.class

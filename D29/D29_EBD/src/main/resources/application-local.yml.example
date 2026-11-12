@@ -16,6 +16,22 @@
 #        $env:AI_API_KEY = <通过秘密管理器注入>
 # ============================================================================
 app:
+  # D29：默认本地模型无需 Key；远程候选如切换，仅允许环境变量注入密钥。
+  embedding:
+    provider: ${EMBEDDING_PROVIDER:LOCAL}
+    model-name: ${EMBEDDING_MODEL:local-hash-ngram-v1}
+    model-version: ${EMBEDDING_MODEL_VERSION:2026.11}
+    dimensions: ${EMBEDDING_DIMENSIONS:384}
+    max-input-length: ${EMBEDDING_MAX_INPUT_LENGTH:12000}
+    length-unit: ${EMBEDDING_LENGTH_UNIT:UNICODE_CODE_POINTS}
+    distance-metric: ${EMBEDDING_DISTANCE_METRIC:COSINE}
+    index-version: ${EMBEDDING_INDEX_VERSION:d29-local-384-v1}
+    api-url: ${EMBEDDING_API_URL:local://hash-ngram}
+    # 禁止在复制后的文件中填写真实值。
+    api-key: ${EMBEDDING_API_KEY:}
+    key-required: ${EMBEDDING_KEY_REQUIRED:false}
+    cost-per-million-input-tokens-usd: ${EMBEDDING_COST_PER_MILLION_INPUT_TOKENS_USD:0}
+    enabled: ${EMBEDDING_ENABLED:true}
   ai:
     mode: ${AI_MODE:deepseek}
     model: ${AI_MODEL:deepseek-flash}
