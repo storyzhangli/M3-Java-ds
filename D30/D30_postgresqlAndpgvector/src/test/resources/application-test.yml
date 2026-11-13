@@ -5,3 +5,8 @@ app:
   ai:
     history:
       default-owner: ut-default
+  # D30：历史 @SpringBootTest 测试环境不装配 pgvector 向量库（无 PG 凭据，避免上下文启动失败）。
+  # 真实向量验收由 PgVectorStoreRealIntegrationTest 独立执行（D30_PG_INTEGRATION=true 门控，真连 PG）。
+  vectorstore:
+    pgvector:
+      enabled: false

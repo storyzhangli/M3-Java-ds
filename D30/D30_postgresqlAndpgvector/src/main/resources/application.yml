@@ -85,6 +85,26 @@ app:
     key-required: ${EMBEDDING_KEY_REQUIRED:false}
     cost-per-million-input-tokens-usd: ${EMBEDDING_COST_PER_MILLION_INPUT_TOKENS_USD:0}
     enabled: ${EMBEDDING_ENABLED:true}
+  # --------------------------------------------------------------------------
+  # D30 新增：PostgreSQL/pgvector 向量存储（唯一向量库，独立于 MySQL 主数据源）。
+  # - 凭据只允许环境变量注入（PG_VECTOR_PASSWORD 等），禁止硬编码真实密码入库；
+  # - initialize-schema 固定 false：表结构由外部幂等 DDL 管理（scripts 见 docs/temp_docs/D30）；
+  # - remove-existing-vector-store-table 固定 false：禁止应用启动自动删除已有向量数据；
+  # - 维度必须与 app.embedding.dimensions（384）一致，装配时由代码强校验。
+  # --------------------------------------------------------------------------
+  vectorstore:
+    pgvector:
+      url: ${PG_VECTOR_URL:jdbc:postgresql://192.168.200.153:5432/spring_ai}
+      username: ${PG_VECTOR_USERNAME:postgres}
+      password: ${PG_VECTOR_PASSWORD:}
+      schema-name: ${PG_VECTOR_SCHEMA:public}
+      table-name: ${PG_VECTOR_TABLE:vector_store}
+      dimensions: ${PG_VECTOR_DIMENSIONS:384}
+      distance-metric: ${PG_VECTOR_DISTANCE_METRIC:COSINE}
+      index-type: ${PG_VECTOR_INDEX_TYPE:HNSW}
+      initialize-schema: ${PG_VECTOR_INITIALIZE_SCHEMA:false}
+      remove-existing-vector-store-table: ${PG_VECTOR_REMOVE_EXISTING:false}
+      max-document-batch-size: ${PG_VECTOR_MAX_BATCH_SIZE:10000}
   knowledge:
     import:
       # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。

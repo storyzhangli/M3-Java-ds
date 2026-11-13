@@ -133,6 +133,24 @@
             <artifactId>reactor-netty-http</artifactId>
         </dependency>
 
+        <!--
+            D30 新增：PostgreSQL/pgvector 向量存储（唯一向量库）。
+            - spring-ai-starter-vector-store-pgvector：PgVectorStore + 自动配置，
+              版本由父 POM spring-ai-bom:1.1.8 统一治理，此处不写 <version>；
+            - org.postgresql:postgresql：PG JDBC 驱动，版本由 Spring Boot 3.5.16
+              dependencyManagement 统一治理。
+            注意：主数据源仍为 MySQL（chat/prompt 业务），PG 仅作为向量库的
+            独立数据源，由 PgVectorDataSourceConfiguration 显式构造。
+        -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-vector-store-pgvector</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
         <!-- Lombok：与既有统一返回体/DTO 风格保持一致，optional 不向下游传递 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
