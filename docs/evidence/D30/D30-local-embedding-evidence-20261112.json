@@ -15,7 +15,7 @@
   "inputTokens" : null,
   "estimatedApiCostUsd" : 0,
   "costBasis" : "LOCAL_COMPUTE_NO_API_FEE",
-  "elapsedMs" : 7,
+  "elapsedMs" : 5,
   "chunkCount" : 4,
   "officialCandidates" : [ {
     "provider" : "OPENAI",

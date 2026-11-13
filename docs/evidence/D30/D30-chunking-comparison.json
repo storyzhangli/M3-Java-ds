@@ -103,11 +103,11 @@
     "minimumCharacterCount" : 135,
     "maximumCharacterCount" : 468,
     "boundaryCounts" : {
-      "SENTENCE" : 24,
-      "WHITESPACE" : 0,
+      "HARD_LIMIT" : 0,
       "DOCUMENT_END" : 1,
+      "WHITESPACE" : 0,
       "PARAGRAPH" : 0,
-      "HARD_LIMIT" : 0
+      "SENTENCE" : 24
     },
     "lengthDistribution" : {
       "300-399" : 3,
@@ -599,11 +599,11 @@
     "minimumCharacterCount" : 309,
     "maximumCharacterCount" : 697,
     "boundaryCounts" : {
-      "SENTENCE" : 0,
-      "WHITESPACE" : 0,
+      "HARD_LIMIT" : 0,
       "DOCUMENT_END" : 1,
+      "WHITESPACE" : 0,
       "PARAGRAPH" : 16,
-      "HARD_LIMIT" : 0
+      "SENTENCE" : 0
     },
     "lengthDistribution" : {
       "300-399" : 1,
