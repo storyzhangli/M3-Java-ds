@@ -1,0 +1,977 @@
+{
+  "sourceType" : "local-real-pdf",
+  "source" : "E:\\AI\\project\\AI-Learning-two-lp\\M3-Java-ds\\docs\\proj_docs\\D28-佳能用户手册-DB-测试素材.pdf",
+  "fileName" : "D28-佳能用户手册-DB-测试素材.pdf",
+  "sha256" : "566a1f050d7cf512c750d1c0f5e699438d839dca7b0cf1266ef282c8dfbee83a",
+  "documentId" : "D30-CANON-MP500-REAL",
+  "title" : "Canon PIXMA MP500 All-In-One User Manual",
+  "version" : "metadata-2026-10-24",
+  "parserName" : "Apache PDFBox",
+  "parserVersion" : "3.0.7",
+  "pageCount" : 11,
+  "originalCharacterCount" : 9289,
+  "cleanedCharacterCount" : 9215,
+  "paragraphCount" : 63,
+  "lengthUnit" : "UNICODE_CODE_POINTS",
+  "note" : "Character counts are not model token counts.",
+  "cleaningPages" : [ {
+    "pageNumber" : 1,
+    "originalCharacterCount" : 1518,
+    "cleanedCharacterCount" : 1491,
+    "paragraphCount" : 7,
+    "originalPreview" : "Saved from manuals.plus.\r\nOpen the live page for links to other documents and user manuals.\r\nManuals.plus /\r\n› Canon /\r\n› Canon PIXMA MP500 All-In-One Photo Printer, Copier, and Scanner User Manual\r\nCanon MP500\r\nCanon PIXMA MP500 All-In-One Photo Printer, Copier, and\r\nScanner User Manual\r\n1. INTRODUCTION\r\nThis manual provides essential instructions for the safe and efficient use of your Canon PIXMA MP500 All-In-One device.\r\nIt covers setup, operation, maintenance, and troubleshooting for printin",
+    "cleanedPreview" : "Saved from manuals.plus.\nOpen the live page for links to other documents and user manuals.\nManuals.plus /\n› Canon /\n› Canon PIXMA MP500 All-In-One Photo Printer, Copier, and Scanner User Manual\nCanon MP500\nCanon PIXMA MP500 All-In-One Photo Printer, Copier, and\nScanner User Manual\n1. INTRODUCTION\nThis manual provides essential instructions for the safe and efficient use of your Canon PIXMA MP500 All-In-One device.\nIt covers setup, operation, maintenance, and troubleshooting for printing, copying"
+  }, {
+    "pageNumber" : 2,
+    "originalCharacterCount" : 1153,
+    "cleanedCharacterCount" : 1139,
+    "paragraphCount" : 11,
+    "originalPreview" : "Figure 3.1: The Canon PIXMA MP500 printer alongside its original packaging box and a set of individual ink cartridges.\r\n4. SETUP\r\nFollow these steps to set up your Canon PIXMA MP500:\r\n1. Unpacking: Remove the printer from its packaging. Remove all protective tapes and packing materials from the\r\nexterior and interior of the printer.\r\n2. Connect Power: Connect the power cord to the printer and then to a wall outlet. Do not connect the USB cable yet.\r\n3. Power On: Press the ON/OFF button to turn o",
+    "cleanedPreview" : "Figure 3.1: The Canon PIXMA MP500 printer alongside its original packaging box and a set of individual ink cartridges.\n4. SETUP\nFollow these steps to set up your Canon PIXMA MP500:\n1. Unpacking: Remove the printer from its packaging. Remove all protective tapes and packing materials from the\nexterior and interior of the printer.\n2. Connect Power: Connect the power cord to the printer and then to a wall outlet. Do not connect the USB cable yet.\n3. Power On: Press the ON/OFF button to turn on the "
+  }, {
+    "pageNumber" : 3,
+    "originalCharacterCount" : 135,
+    "cleanedCharacterCount" : 135,
+    "paragraphCount" : 1,
+    "originalPreview" : "Figure 4.1: A visual quick setup guide illustrating the initial steps for connecting power, installing ink, and setting up the printer.",
+    "cleanedPreview" : "Figure 4.1: A visual quick setup guide illustrating the initial steps for connecting power, installing ink, and setting up the printer."
+  }, {
+    "pageNumber" : 4,
+    "originalCharacterCount" : 303,
+    "cleanedCharacterCount" : 299,
+    "paragraphCount" : 4,
+    "originalPreview" : "Figure 4.2: The rear panel of the printer, highlighting the power input and USB connection port.\r\n5. BASIC OPERATION\r\nThe Canon PIXMA MP500 offers printing, copying, and scanning functionalities. The 2.5-inch color LCD screen and\r\ncontrol panel facilitate direct operations.\r\n5.1. Control Panel Overview",
+    "cleanedPreview" : "Figure 4.2: The rear panel of the printer, highlighting the power input and USB connection port.\n5. BASIC OPERATION\nThe Canon PIXMA MP500 offers printing, copying, and scanning functionalities. The 2.5-inch color LCD screen and\ncontrol panel facilitate direct operations.\n5.1. Control Panel Overview"
+  }, {
+    "pageNumber" : 5,
+    "originalCharacterCount" : 1038,
+    "cleanedCharacterCount" : 1023,
+    "paragraphCount" : 8,
+    "originalPreview" : "Figure 5.1: The top view of the printer, featuring the control panel with various buttons and the integrated 2.5-inch color LCD screen.\r\nON/OFF Button: Powers the device on or off.\r\nCOPY Button: Initiates a copy operation.\r\nSCAN Button: Initiates a scan operation.\r\nMEMORY CARD Slot: For direct printing from memory cards.\r\nLCD Screen: Displays menus, settings, and preview images.\r\nNavigation Buttons: Used to navigate menus and adjust settings on the LCD.\r\nBlack/Color Buttons: Selects black & whit",
+    "cleanedPreview" : "Figure 5.1: The top view of the printer, featuring the control panel with various buttons and the integrated 2.5-inch color LCD screen.\nON/OFF Button: Powers the device on or off.\nCOPY Button: Initiates a copy operation.\nSCAN Button: Initiates a scan operation.\nMEMORY CARD Slot: For direct printing from memory cards.\nLCD Screen: Displays menus, settings, and preview images.\nNavigation Buttons: Used to navigate menus and adjust settings on the LCD.\nBlack/Color Buttons: Selects black & white or co"
+  }, {
+    "pageNumber" : 6,
+    "originalCharacterCount" : 653,
+    "cleanedCharacterCount" : 645,
+    "paragraphCount" : 7,
+    "originalPreview" : "Figure 5.2: The printer's LCD display showing options for copying, including number of copies, magnification, paper size, and paper type.\r\n5.3. Scanning Documents and Photos\r\n1. Ensure the printer is powered on and connected to your computer.\r\n2. Lift the document cover and place the item face-down on the scanner glass.\r\n3. Close the document cover.\r\n4. You can initiate a scan from the printer's control panel by pressing the SCAN button, or from your computer using\r\nthe installed Canon scanning ",
+    "cleanedPreview" : "Figure 5.2: The printer's LCD display showing options for copying, including number of copies, magnification, paper size, and paper type.\n5.3. Scanning Documents and Photos\n1. Ensure the printer is powered on and connected to your computer.\n2. Lift the document cover and place the item face-down on the scanner glass.\n3. Close the document cover.\n4. You can initiate a scan from the printer's control panel by pressing the SCAN button, or from your computer using\nthe installed Canon scanning softwa"
+  }, {
+    "pageNumber" : 7,
+    "originalCharacterCount" : 534,
+    "cleanedCharacterCount" : 528,
+    "paragraphCount" : 5,
+    "originalPreview" : "Figure 5.3: The scanner bed of the PIXMA MP500 with the document cover open, ready for placing documents or photos.\r\n5.4. Printing from a Computer\r\nTo print from your computer, ensure the printer drivers are installed and the printer is connected via USB. Select the\r\nCanon PIXMA MP500 as your printer in your application's print dialog, adjust settings as needed, and click print.\r\n6. INK CARTRIDGE MANAGEMENT\r\nThe Canon PIXMA MP500 uses five individual ink tanks. Replace cartridges when indicated ",
+    "cleanedPreview" : "Figure 5.3: The scanner bed of the PIXMA MP500 with the document cover open, ready for placing documents or photos.\n5.4. Printing from a Computer\nTo print from your computer, ensure the printer drivers are installed and the printer is connected via USB. Select the\nCanon PIXMA MP500 as your printer in your application's print dialog, adjust settings as needed, and click print.\n6. INK CARTRIDGE MANAGEMENT\nThe Canon PIXMA MP500 uses five individual ink tanks. Replace cartridges when indicated by th"
+  }, {
+    "pageNumber" : 8,
+    "originalCharacterCount" : 497,
+    "cleanedCharacterCount" : 491,
+    "paragraphCount" : 7,
+    "originalPreview" : "Figure 6.1: A close-up view of the individual ink cartridges used by the PIXMA MP500, showing their distinct colors.\r\n6.1. Replacing Ink Cartridges\r\n1. Ensure the printer is powered on.\r\n2. Open the printer's top cover. The print head holder will move to the replacement position.\r\n3. Press the tab on the empty ink cartridge and lift it out.\r\n4. Unpack a new ink cartridge, remove the orange protective cap, and insert it firmly into the correct slot until it clicks.\r\n5. Close the printer cover.",
+    "cleanedPreview" : "Figure 6.1: A close-up view of the individual ink cartridges used by the PIXMA MP500, showing their distinct colors.\n6.1. Replacing Ink Cartridges\n1. Ensure the printer is powered on.\n2. Open the printer's top cover. The print head holder will move to the replacement position.\n3. Press the tab on the empty ink cartridge and lift it out.\n4. Unpack a new ink cartridge, remove the orange protective cap, and insert it firmly into the correct slot until it clicks.\n5. Close the printer cover."
+  }, {
+    "pageNumber" : 9,
+    "originalCharacterCount" : 1181,
+    "cleanedCharacterCount" : 1162,
+    "paragraphCount" : 5,
+    "originalPreview" : "Figure 6.2: An internal view of the printer, showing the print head carriage with all five ink cartridges correctly installed and illuminated.\r\n7. MAINTENANCE\r\nPrint Head Cleaning: If print quality declines (e.g., streaks, missing colors), perform a print head cleaning from the\r\nprinter's maintenance menu or through the printer driver on your computer.\r\nPrint Head Alignment: If printed text or lines appear misaligned, perform a print head alignment.\r\nCleaning the Scanner Glass: Regularly wipe th",
+    "cleanedPreview" : "Figure 6.2: An internal view of the printer, showing the print head carriage with all five ink cartridges correctly installed and illuminated.\n7. MAINTENANCE\nPrint Head Cleaning: If print quality declines (e.g., streaks, missing colors), perform a print head cleaning from the\nprinter's maintenance menu or through the printer driver on your computer.\nPrint Head Alignment: If printed text or lines appear misaligned, perform a print head alignment.\nCleaning the Scanner Glass: Regularly wipe the sca"
+  }, {
+    "pageNumber" : 10,
+    "originalCharacterCount" : 1815,
+    "cleanedCharacterCount" : 1777,
+    "paragraphCount" : 7,
+    "originalPreview" : "Cannot scan from\r\ncomputer.\r\nEnsure the USB cable is securely connected. Verify that printer drivers and scanning\r\nsoftware are correctly installed. Restart both the printer and computer.\r\nError message on\r\nLCD.\r\nRefer to the specific error code displayed on the LCD screen and consult the full electronic\r\nmanual on the Setup CD-ROM for detailed solutions.\r\nProblem Solution\r\n9. SPECIFICATIONS\r\nModel Name: Canon PIXMA MP500\r\nFunctions: Print, Copy, Scan\r\nPrinting Technology: Inkjet\r\nPrint Resoluti",
+    "cleanedPreview" : "Cannot scan from\ncomputer.\nEnsure the USB cable is securely connected. Verify that printer drivers and scanning\nsoftware are correctly installed. Restart both the printer and computer.\nError message on\nLCD.\nRefer to the specific error code displayed on the LCD screen and consult the full electronic\nmanual on the Setup CD-ROM for detailed solutions.\nProblem Solution\n9. SPECIFICATIONS\nModel Name: Canon PIXMA MP500\nFunctions: Print, Copy, Scan\nPrinting Technology: Inkjet\nPrint Resolution (Color): U"
+  }, {
+    "pageNumber" : 11,
+    "originalCharacterCount" : 462,
+    "cleanedCharacterCount" : 453,
+    "paragraphCount" : 1,
+    "originalPreview" : "After a successful submission, we securely hash the supplied account or form email before sending it to Microsoft Advertising for\r\nconversion attribution. Privacy details.\r\nQuestion\r\nExample: How do I reset this device or fix this error?\r\nDetails\r\nModel number, symptoms, what you tried, or the section of the manual you are using.\r\nSubmit question\r\nOpen the live page\r\nhttps://manuals.plus/asin/B000AYFP6A\r\nMore documents and user manuals: https://manuals.plus/",
+    "cleanedPreview" : "After a successful submission, we securely hash the supplied account or form email before sending it to Microsoft Advertising for\nconversion attribution. Privacy details.\nQuestion\nExample: How do I reset this device or fix this error?\nDetails\nModel number, symptoms, what you tried, or the section of the manual you are using.\nSubmit question\nOpen the live page\nhttps://manuals.plus/asin/B000AYFP6A\nMore documents and user manuals: https://manuals.plus/"
+  } ],
+  "fixedLength" : {
+    "strategy" : "FIXED_LENGTH",
+    "chunkSize" : 480,
+    "overlap" : 60,
+    "minChunkSize" : 80,
+    "maxChunkSize" : 720,
+    "chunkCount" : 25,
+    "averageCharacterCount" : 426.2,
+    "minimumCharacterCount" : 135,
+    "maximumCharacterCount" : 468,
+    "boundaryCounts" : {
+      "SENTENCE" : 24,
+      "WHITESPACE" : 0,
+      "DOCUMENT_END" : 1,
+      "PARAGRAPH" : 0,
+      "HARD_LIMIT" : 0
+    },
+    "lengthDistribution" : {
+      "300-399" : 3,
+      "100-199" : 1,
+      "400-499" : 21
+    },
+    "chunks" : [ {
+      "chunkIndex" : 1,
+      "characterCount" : 419,
+      "content" : "Saved from manuals.plus.\nOpen the live page for links to other documents and user manuals.\nManuals.plus /\n› Canon /\n› Canon PIXMA MP500 All-In-One Photo Printer, Copier, and Scanner User Manual\nCanon MP500\nCanon PIXMA MP500 All-In-One Photo Printer, Copier, and\nScanner User Manual\n\n1. INTRODUCTION\n\nThis manual provides essential instructions for the safe and efficient use of your Canon PIXMA MP500 All-In-One device.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 1 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 2,
+      "characterCount" : 381,
+      "content" : "d efficient use of your Canon PIXMA MP500 All-In-One device.\nIt covers setup, operation, maintenance, and troubleshooting for printing, copying, and scanning functions. Please read\nthis manual thoroughly before using the product and retain it for future reference.\n\n2. SAFETY INFORMATION\n\nPower Source: Connect the device only to a grounded power outlet with the specified voltage.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 1 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 3,
+      "characterCount" : 447,
+      "content" : " only to a grounded power outlet with the specified voltage.\nPlacement: Place the device on a stable, level surface, away from direct sunlight, heat sources, and excessive dust\nor moisture. Ensure adequate ventilation.\nHandling Ink Cartridges: Handle ink cartridges carefully to avoid spills. Keep them out of reach of children.\nInternal Components: Do not attempt to open or repair the device yourself. Refer all servicing to qualified\npersonnel.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 1 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 4,
+      "characterCount" : 441,
+      "content" : "device yourself. Refer all servicing to qualified\npersonnel.\nCleaning: Use a soft, dry cloth for cleaning. Avoid liquid cleaners directly on the device.\n\n3. PACKAGE CONTENTS\n\nVerify that all items are present in the package:\nCanon PIXMA MP500 All-In-One Printer\nInk Cartridges (Set of 5 individual tanks)\nPower Cord\nSetup CD-ROM (Software/Drivers)\nSetup Guide / Instruction Sheet\nUSB Cable (may be sold separately in some regions)\n\nFigure 3.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 1, 2 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 5,
+      "characterCount" : 468,
+      "content" : "SB Cable (may be sold separately in some regions)\n\nFigure 3.1: The Canon PIXMA MP500 printer alongside its original packaging box and a set of individual ink cartridges.\n\n4. SETUP\n\nFollow these steps to set up your Canon PIXMA MP500:\n\n1. Unpacking: Remove the printer from its packaging. Remove all protective tapes and packing materials from the\nexterior and interior of the printer.\n\n2. Connect Power: Connect the power cord to the printer and then to a wall outlet.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 1, 2 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 6,
+      "characterCount" : 433,
+      "content" : "ect the power cord to the printer and then to a wall outlet. Do not connect the USB cable yet.\n\n3. Power On: Press the ON/OFF button to turn on the printer.\n\n4. Install Ink Cartridges: Open the printer cover. The print head holder will move to the installation position. Install\nthe five individual ink cartridges into their corresponding slots. Ensure they click into place.\n\n5. Load Paper: Load plain paper into the paper tray.\n\n6.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 2 ],
+      "sources" : [ {
+        "pageNumber" : 2,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 8
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 9
+      } ]
+    }, {
+      "chunkIndex" : 7,
+      "characterCount" : 430,
+      "content" : "e.\n\n5. Load Paper: Load plain paper into the paper tray.\n\n6. Install Software: Insert the Setup CD-ROM into your computer's CD-ROM drive and follow the on-screen\ninstructions to install the drivers and software.\n\n7. Connect USB: When prompted by the software installation, connect the USB cable from the printer to your\ncomputer.\n\n8. Perform Alignment: Follow the on-screen instructions to perform print head alignment.\n\nFigure 4.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 2, 3 ],
+      "sources" : [ {
+        "pageNumber" : 2,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 8
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 9
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 10
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 11
+      }, {
+        "pageNumber" : 3,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 8,
+      "characterCount" : 467,
+      "content" : "een instructions to perform print head alignment.\n\nFigure 4.1: A visual quick setup guide illustrating the initial steps for connecting power, installing ink, and setting up the printer.\n\nFigure 4.2: The rear panel of the printer, highlighting the power input and USB connection port.\n\n5. BASIC OPERATION\n\nThe Canon PIXMA MP500 offers printing, copying, and scanning functionalities. The 2.5-inch color LCD screen and\ncontrol panel facilitate direct operations.\n\n5.1.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 2, 3, 4 ],
+      "sources" : [ {
+        "pageNumber" : 2,
+        "paragraphIndex" : 11
+      }, {
+        "pageNumber" : 3,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 4
+      } ]
+    }, {
+      "chunkIndex" : 9,
+      "characterCount" : 461,
+      "content" : "screen and\ncontrol panel facilitate direct operations.\n\n5.1. Control Panel Overview\n\nFigure 5.1: The top view of the printer, featuring the control panel with various buttons and the integrated 2.5-inch color LCD screen.\nON/OFF Button: Powers the device on or off.\nCOPY Button: Initiates a copy operation.\nSCAN Button: Initiates a scan operation.\nMEMORY CARD Slot: For direct printing from memory cards.\nLCD Screen: Displays menus, settings, and preview images.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 4, 5 ],
+      "sources" : [ {
+        "pageNumber" : 4,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 10,
+      "characterCount" : 467,
+      "content" : "s.\nLCD Screen: Displays menus, settings, and preview images.\nNavigation Buttons: Used to navigate menus and adjust settings on the LCD.\nBlack/Color Buttons: Selects black & white or color for copying/printing.\nStart Button: Confirms selections or begins operations.\n\n5.2. Copying Documents\n\n1. Ensure the printer is powered on and paper is loaded.\n\n2. Lift the document cover and place the document face-down on the scanner glass, aligning it with the guide mark.\n\n3.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 5 ],
+      "sources" : [ {
+        "pageNumber" : 5,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 11,
+      "characterCount" : 452,
+      "content" : "n on the scanner glass, aligning it with the guide mark.\n\n3. Close the document cover.\n\n4. On the control panel, press the COPY button.\n\n5. Use the navigation buttons and LCD screen to select copy settings such as number of copies, paper type, and size.\n\n6. Press the Black or Color button to start copying.\n\nFigure 5.2: The printer's LCD display showing options for copying, including number of copies, magnification, paper size, and paper type.\n\n5.3.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 5, 6 ],
+      "sources" : [ {
+        "pageNumber" : 5,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 8
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 2
+      } ]
+    }, {
+      "chunkIndex" : 12,
+      "characterCount" : 429,
+      "content" : " of copies, magnification, paper size, and paper type.\n\n5.3. Scanning Documents and Photos\n\n1. Ensure the printer is powered on and connected to your computer.\n\n2. Lift the document cover and place the item face-down on the scanner glass.\n\n3. Close the document cover.\n\n4. You can initiate a scan from the printer's control panel by pressing the SCAN button, or from your computer using\nthe installed Canon scanning software.\n\n5.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 6 ],
+      "sources" : [ {
+        "pageNumber" : 6,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 7
+      } ]
+    }, {
+      "chunkIndex" : 13,
+      "characterCount" : 456,
+      "content" : "ur computer using\nthe installed Canon scanning software.\n\n5. Follow the on-screen prompts on the printer's LCD or your computer to select scan settings (e.g., document type,\nresolution, destination).\n\nFigure 5.3: The scanner bed of the PIXMA MP500 with the document cover open, ready for placing documents or photos.\n\n5.4. Printing from a Computer\n\nTo print from your computer, ensure the printer drivers are installed and the printer is connected via USB.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 6, 7 ],
+      "sources" : [ {
+        "pageNumber" : 6,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 14,
+      "characterCount" : 461,
+      "content" : " drivers are installed and the printer is connected via USB. Select the\nCanon PIXMA MP500 as your printer in your application's print dialog, adjust settings as needed, and click print.\n\n6. INK CARTRIDGE MANAGEMENT\n\nThe Canon PIXMA MP500 uses five individual ink tanks. Replace cartridges when indicated by the printer's LCD or\nsoftware.\n\nFigure 6.1: A close-up view of the individual ink cartridges used by the PIXMA MP500, showing their distinct colors.\n\n6.1.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 7, 8 ],
+      "sources" : [ {
+        "pageNumber" : 7,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 2
+      } ]
+    }, {
+      "chunkIndex" : 15,
+      "characterCount" : 446,
+      "content" : "sed by the PIXMA MP500, showing their distinct colors.\n\n6.1. Replacing Ink Cartridges\n\n1. Ensure the printer is powered on.\n\n2. Open the printer's top cover. The print head holder will move to the replacement position.\n\n3. Press the tab on the empty ink cartridge and lift it out.\n\n4. Unpack a new ink cartridge, remove the orange protective cap, and insert it firmly into the correct slot until it clicks.\n\n5. Close the printer cover.\n\nFigure 6.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 8, 9 ],
+      "sources" : [ {
+        "pageNumber" : 8,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 16,
+      "characterCount" : 404,
+      "content" : "lot until it clicks.\n\n5. Close the printer cover.\n\nFigure 6.2: An internal view of the printer, showing the print head carriage with all five ink cartridges correctly installed and illuminated.\n\n7. MAINTENANCE\n\nPrint Head Cleaning: If print quality declines (e.g., streaks, missing colors), perform a print head cleaning from the\nprinter's maintenance menu or through the printer driver on your computer.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 8, 9 ],
+      "sources" : [ {
+        "pageNumber" : 8,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 17,
+      "characterCount" : 426,
+      "content" : "tenance menu or through the printer driver on your computer.\nPrint Head Alignment: If printed text or lines appear misaligned, perform a print head alignment.\nCleaning the Scanner Glass: Regularly wipe the scanner glass with a soft, lint-free cloth and a mild glass cleaner\n(applied to the cloth, not directly to the glass) to ensure clear scans.\nExterior Cleaning: Wipe the exterior of the printer with a soft, dry cloth.\n\n8.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 9 ],
+      "sources" : [ {
+        "pageNumber" : 9,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 4
+      } ]
+    }, {
+      "chunkIndex" : 18,
+      "characterCount" : 457,
+      "content" : "Wipe the exterior of the printer with a soft, dry cloth.\n\n8. TROUBLESHOOTING\n\nProblem Solution\nPrinter does not power\non.\nCheck power cord connection to both the printer and the wall outlet. Ensure the outlet is\nfunctional.\nPoor print quality\n(streaks, faded colors).\nCheck ink levels and replace empty cartridges. Perform print head cleaning and alignment.\nPaper jams.\nRemove jammed paper carefully, following instructions in the printer's LCD or software.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 9 ],
+      "sources" : [ {
+        "pageNumber" : 9,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 19,
+      "characterCount" : 462,
+      "content" : "ly, following instructions in the printer's LCD or software.\nEnsure paper is loaded correctly and not creased.\n\nCannot scan from\ncomputer.\nEnsure the USB cable is securely connected. Verify that printer drivers and scanning\nsoftware are correctly installed. Restart both the printer and computer.\nError message on\nLCD.\nRefer to the specific error code displayed on the LCD screen and consult the full electronic\nmanual on the Setup CD-ROM for detailed solutions.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 9, 10 ],
+      "sources" : [ {
+        "pageNumber" : 9,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 20,
+      "characterCount" : 463,
+      "content" : "lectronic\nmanual on the Setup CD-ROM for detailed solutions.\nProblem Solution\n\n9. SPECIFICATIONS\n\nModel Name: Canon PIXMA MP500\nFunctions: Print, Copy, Scan\nPrinting Technology: Inkjet\nPrint Resolution (Color): Up to 9600 x 2400 dpi\nPrint Resolution (Black): Up to 600 x 600 dpi\nPrint Speed (Black): Up to 29 ppm\nPrint Speed (Color): Up to 19 ppm\nScanner Type: Flatbed, Photo\nScan Resolution (Optical): 1200 x 2400 dpi\nCopy Speed (Black): Up to 29 cpm\nDisplay: 2.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 10 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 21,
+      "characterCount" : 395,
+      "content" : "1200 x 2400 dpi\nCopy Speed (Black): Up to 29 cpm\nDisplay: 2.5-inch Color LCD\nConnectivity: USB 2.0, Memory Card Slots\nDimensions (W x D x H): 17.7 x 16.8 x 8.1 inches (approx.)\nWeight: 22 pounds (approx.)\n\n10. WARRANTY AND SUPPORT\n\nThe Canon PIXMA MP500 comes with a one-year limited warranty from the date of purchase. This warranty covers\ndefects in materials and workmanship under normal use.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 10 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 22,
+      "characterCount" : 388,
+      "content" : "overs\ndefects in materials and workmanship under normal use.\nFor warranty claims, technical support, or service inquiries, please contact Canon customer support. Refer to the\ndocumentation included with your product or visit the official Canon website for current contact information and support\nresources.\nNote: Product support for the PIXMA MP500 may be limited as it is an older model.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 10 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 23,
+      "characterCount" : 424,
+      "content" : " for the PIXMA MP500 may be limited as it is an older model. Please check the Canon website for\nthe most up-to-date information regarding driver availability and service options.\n\nASK A QUESTION ABOUT THIS MANUAL\n\nAsk about setup, troubleshooting, compatibility, parts, safety, or missing instructions. Manuals+ will review the question\nand use this page’s manual context to help answer it.\nName\nAnonymous\nEmail\nyou@example.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 10 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 7
+      } ]
+    }, {
+      "chunkIndex" : 24,
+      "characterCount" : 443,
+      "content" : "context to help answer it.\nName\nAnonymous\nEmail\nyou@example.com\n\nAfter a successful submission, we securely hash the supplied account or form email before sending it to Microsoft Advertising for\nconversion attribution. Privacy details.\nQuestion\nExample: How do I reset this device or fix this error?\nDetails\nModel number, symptoms, what you tried, or the section of the manual you are using.\nSubmit question\nOpen the live page\nhttps://manuals.",
+      "endBoundary" : "SENTENCE",
+      "pageNumbers" : [ 10, 11 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 11,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 25,
+      "characterCount" : 135,
+      "content" : "e using.\nSubmit question\nOpen the live page\nhttps://manuals.plus/asin/B000AYFP6A\nMore documents and user manuals: https://manuals.plus/",
+      "endBoundary" : "DOCUMENT_END",
+      "pageNumbers" : [ 11 ],
+      "sources" : [ {
+        "pageNumber" : 11,
+        "paragraphIndex" : 1
+      } ]
+    } ]
+  },
+  "structureAware" : {
+    "strategy" : "STRUCTURE_AWARE",
+    "chunkSize" : 480,
+    "overlap" : 60,
+    "minChunkSize" : 80,
+    "maxChunkSize" : 720,
+    "chunkCount" : 17,
+    "averageCharacterCount" : 598.5294117647059,
+    "minimumCharacterCount" : 309,
+    "maximumCharacterCount" : 697,
+    "boundaryCounts" : {
+      "SENTENCE" : 0,
+      "WHITESPACE" : 0,
+      "DOCUMENT_END" : 1,
+      "PARAGRAPH" : 16,
+      "HARD_LIMIT" : 0
+    },
+    "lengthDistribution" : {
+      "300-399" : 1,
+      "400-499" : 1,
+      "600+" : 11,
+      "500-599" : 4
+    },
+    "chunks" : [ {
+      "chunkIndex" : 1,
+      "characterCount" : 623,
+      "content" : "Saved from manuals.plus.\nOpen the live page for links to other documents and user manuals.\nManuals.plus /\n› Canon /\n› Canon PIXMA MP500 All-In-One Photo Printer, Copier, and Scanner User Manual\nCanon MP500\nCanon PIXMA MP500 All-In-One Photo Printer, Copier, and\nScanner User Manual\n\n1. INTRODUCTION\n\nThis manual provides essential instructions for the safe and efficient use of your Canon PIXMA MP500 All-In-One device.\nIt covers setup, operation, maintenance, and troubleshooting for printing, copying, and scanning functions. Please read\nthis manual thoroughly before using the product and retain it for future reference.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 1 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 2,
+      "characterCount" : 656,
+      "content" : "before using the product and retain it for future reference.\n\n2. SAFETY INFORMATION\n\nPower Source: Connect the device only to a grounded power outlet with the specified voltage.\nPlacement: Place the device on a stable, level surface, away from direct sunlight, heat sources, and excessive dust\nor moisture. Ensure adequate ventilation.\nHandling Ink Cartridges: Handle ink cartridges carefully to avoid spills. Keep them out of reach of children.\nInternal Components: Do not attempt to open or repair the device yourself. Refer all servicing to qualified\npersonnel.\nCleaning: Use a soft, dry cloth for cleaning. Avoid liquid cleaners directly on the device.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 1 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 3,
+      "characterCount" : 673,
+      "content" : " for cleaning. Avoid liquid cleaners directly on the device.\n\n3. PACKAGE CONTENTS\n\nVerify that all items are present in the package:\nCanon PIXMA MP500 All-In-One Printer\nInk Cartridges (Set of 5 individual tanks)\nPower Cord\nSetup CD-ROM (Software/Drivers)\nSetup Guide / Instruction Sheet\nUSB Cable (may be sold separately in some regions)\n\nFigure 3.1: The Canon PIXMA MP500 printer alongside its original packaging box and a set of individual ink cartridges.\n\n4. SETUP\n\nFollow these steps to set up your Canon PIXMA MP500:\n\n1. Unpacking: Remove the printer from its packaging. Remove all protective tapes and packing materials from the\nexterior and interior of the printer.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 1, 2 ],
+      "sources" : [ {
+        "pageNumber" : 1,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 1,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 4
+      } ]
+    }, {
+      "chunkIndex" : 4,
+      "characterCount" : 668,
+      "content" : "ing materials from the\nexterior and interior of the printer.\n\n2. Connect Power: Connect the power cord to the printer and then to a wall outlet. Do not connect the USB cable yet.\n\n3. Power On: Press the ON/OFF button to turn on the printer.\n\n4. Install Ink Cartridges: Open the printer cover. The print head holder will move to the installation position. Install\nthe five individual ink cartridges into their corresponding slots. Ensure they click into place.\n\n5. Load Paper: Load plain paper into the paper tray.\n\n6. Install Software: Insert the Setup CD-ROM into your computer's CD-ROM drive and follow the on-screen\ninstructions to install the drivers and software.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 2 ],
+      "sources" : [ {
+        "pageNumber" : 2,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 8
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 9
+      } ]
+    }, {
+      "chunkIndex" : 5,
+      "characterCount" : 680,
+      "content" : " on-screen\ninstructions to install the drivers and software.\n\n7. Connect USB: When prompted by the software installation, connect the USB cable from the printer to your\ncomputer.\n\n8. Perform Alignment: Follow the on-screen instructions to perform print head alignment.\n\nFigure 4.1: A visual quick setup guide illustrating the initial steps for connecting power, installing ink, and setting up the printer.\n\nFigure 4.2: The rear panel of the printer, highlighting the power input and USB connection port.\n\n5. BASIC OPERATION\n\nThe Canon PIXMA MP500 offers printing, copying, and scanning functionalities. The 2.5-inch color LCD screen and\ncontrol panel facilitate direct operations.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 2, 3, 4 ],
+      "sources" : [ {
+        "pageNumber" : 2,
+        "paragraphIndex" : 9
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 10
+      }, {
+        "pageNumber" : 2,
+        "paragraphIndex" : 11
+      }, {
+        "pageNumber" : 3,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 6,
+      "characterCount" : 672,
+      "content" : "r LCD screen and\ncontrol panel facilitate direct operations.\n\n5.1. Control Panel Overview\n\nFigure 5.1: The top view of the printer, featuring the control panel with various buttons and the integrated 2.5-inch color LCD screen.\nON/OFF Button: Powers the device on or off.\nCOPY Button: Initiates a copy operation.\nSCAN Button: Initiates a scan operation.\nMEMORY CARD Slot: For direct printing from memory cards.\nLCD Screen: Displays menus, settings, and preview images.\nNavigation Buttons: Used to navigate menus and adjust settings on the LCD.\nBlack/Color Buttons: Selects black & white or color for copying/printing.\nStart Button: Confirms selections or begins operations.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 4, 5 ],
+      "sources" : [ {
+        "pageNumber" : 4,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 4,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 7,
+      "characterCount" : 648,
+      "content" : "ing.\nStart Button: Confirms selections or begins operations.\n\n5.2. Copying Documents\n\n1. Ensure the printer is powered on and paper is loaded.\n\n2. Lift the document cover and place the document face-down on the scanner glass, aligning it with the guide mark.\n\n3. Close the document cover.\n\n4. On the control panel, press the COPY button.\n\n5. Use the navigation buttons and LCD screen to select copy settings such as number of copies, paper type, and size.\n\n6. Press the Black or Color button to start copying.\n\nFigure 5.2: The printer's LCD display showing options for copying, including number of copies, magnification, paper size, and paper type.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 5, 6 ],
+      "sources" : [ {
+        "pageNumber" : 5,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 5,
+        "paragraphIndex" : 8
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 8,
+      "characterCount" : 691,
+      "content" : "number of copies, magnification, paper size, and paper type.\n\n5.3. Scanning Documents and Photos\n\n1. Ensure the printer is powered on and connected to your computer.\n\n2. Lift the document cover and place the item face-down on the scanner glass.\n\n3. Close the document cover.\n\n4. You can initiate a scan from the printer's control panel by pressing the SCAN button, or from your computer using\nthe installed Canon scanning software.\n\n5. Follow the on-screen prompts on the printer's LCD or your computer to select scan settings (e.g., document type,\nresolution, destination).\n\nFigure 5.3: The scanner bed of the PIXMA MP500 with the document cover open, ready for placing documents or photos.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 6, 7 ],
+      "sources" : [ {
+        "pageNumber" : 6,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 6,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 9,
+      "characterCount" : 664,
+      "content" : " document cover open, ready for placing documents or photos.\n\n5.4. Printing from a Computer\n\nTo print from your computer, ensure the printer drivers are installed and the printer is connected via USB. Select the\nCanon PIXMA MP500 as your printer in your application's print dialog, adjust settings as needed, and click print.\n\n6. INK CARTRIDGE MANAGEMENT\n\nThe Canon PIXMA MP500 uses five individual ink tanks. Replace cartridges when indicated by the printer's LCD or\nsoftware.\n\nFigure 6.1: A close-up view of the individual ink cartridges used by the PIXMA MP500, showing their distinct colors.\n\n6.1. Replacing Ink Cartridges\n\n1. Ensure the printer is powered on.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 7, 8 ],
+      "sources" : [ {
+        "pageNumber" : 7,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 7,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 10,
+      "characterCount" : 516,
+      "content" : "placing Ink Cartridges\n\n1. Ensure the printer is powered on.\n\n2. Open the printer's top cover. The print head holder will move to the replacement position.\n\n3. Press the tab on the empty ink cartridge and lift it out.\n\n4. Unpack a new ink cartridge, remove the orange protective cap, and insert it firmly into the correct slot until it clicks.\n\n5. Close the printer cover.\n\nFigure 6.2: An internal view of the printer, showing the print head carriage with all five ink cartridges correctly installed and illuminated.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 8, 9 ],
+      "sources" : [ {
+        "pageNumber" : 8,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 8,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 11,
+      "characterCount" : 633,
+      "content" : "all five ink cartridges correctly installed and illuminated.\n\n7. MAINTENANCE\n\nPrint Head Cleaning: If print quality declines (e.g., streaks, missing colors), perform a print head cleaning from the\nprinter's maintenance menu or through the printer driver on your computer.\nPrint Head Alignment: If printed text or lines appear misaligned, perform a print head alignment.\nCleaning the Scanner Glass: Regularly wipe the scanner glass with a soft, lint-free cloth and a mild glass cleaner\n(applied to the cloth, not directly to the glass) to ensure clear scans.\nExterior Cleaning: Wipe the exterior of the printer with a soft, dry cloth.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 9 ],
+      "sources" : [ {
+        "pageNumber" : 9,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 12,
+      "characterCount" : 511,
+      "content" : "ng: Wipe the exterior of the printer with a soft, dry cloth.\n\n8. TROUBLESHOOTING\n\nProblem Solution\nPrinter does not power\non.\nCheck power cord connection to both the printer and the wall outlet. Ensure the outlet is\nfunctional.\nPoor print quality\n(streaks, faded colors).\nCheck ink levels and replace empty cartridges. Perform print head cleaning and alignment.\nPaper jams.\nRemove jammed paper carefully, following instructions in the printer's LCD or software.\nEnsure paper is loaded correctly and not creased.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 9 ],
+      "sources" : [ {
+        "pageNumber" : 9,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 9,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 13,
+      "characterCount" : 429,
+      "content" : " software.\nEnsure paper is loaded correctly and not creased.\n\nCannot scan from\ncomputer.\nEnsure the USB cable is securely connected. Verify that printer drivers and scanning\nsoftware are correctly installed. Restart both the printer and computer.\nError message on\nLCD.\nRefer to the specific error code displayed on the LCD screen and consult the full electronic\nmanual on the Setup CD-ROM for detailed solutions.\nProblem Solution",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 9, 10 ],
+      "sources" : [ {
+        "pageNumber" : 9,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 1
+      } ]
+    }, {
+      "chunkIndex" : 14,
+      "characterCount" : 590,
+      "content" : "on the Setup CD-ROM for detailed solutions.\nProblem Solution\n\n9. SPECIFICATIONS\n\nModel Name: Canon PIXMA MP500\nFunctions: Print, Copy, Scan\nPrinting Technology: Inkjet\nPrint Resolution (Color): Up to 9600 x 2400 dpi\nPrint Resolution (Black): Up to 600 x 600 dpi\nPrint Speed (Black): Up to 29 ppm\nPrint Speed (Color): Up to 19 ppm\nScanner Type: Flatbed, Photo\nScan Resolution (Optical): 1200 x 2400 dpi\nCopy Speed (Black): Up to 29 cpm\nDisplay: 2.5-inch Color LCD\nConnectivity: USB 2.0, Memory Card Slots\nDimensions (W x D x H): 17.7 x 16.8 x 8.1 inches (approx.)\nWeight: 22 pounds (approx.)",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 10 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 1
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 2
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 3
+      } ]
+    }, {
+      "chunkIndex" : 15,
+      "characterCount" : 697,
+      "content" : ".7 x 16.8 x 8.1 inches (approx.)\nWeight: 22 pounds (approx.)\n\n10. WARRANTY AND SUPPORT\n\nThe Canon PIXMA MP500 comes with a one-year limited warranty from the date of purchase. This warranty covers\ndefects in materials and workmanship under normal use.\nFor warranty claims, technical support, or service inquiries, please contact Canon customer support. Refer to the\ndocumentation included with your product or visit the official Canon website for current contact information and support\nresources.\nNote: Product support for the PIXMA MP500 may be limited as it is an older model. Please check the Canon website for\nthe most up-to-date information regarding driver availability and service options.",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 10 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 3
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 4
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 5
+      } ]
+    }, {
+      "chunkIndex" : 16,
+      "characterCount" : 309,
+      "content" : "formation regarding driver availability and service options.\n\nASK A QUESTION ABOUT THIS MANUAL\n\nAsk about setup, troubleshooting, compatibility, parts, safety, or missing instructions. Manuals+ will review the question\nand use this page’s manual context to help answer it.\nName\nAnonymous\nEmail\nyou@example.com",
+      "endBoundary" : "PARAGRAPH",
+      "pageNumbers" : [ 10 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 5
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 6
+      }, {
+        "pageNumber" : 10,
+        "paragraphIndex" : 7
+      } ]
+    }, {
+      "chunkIndex" : 17,
+      "characterCount" : 515,
+      "content" : "text to help answer it.\nName\nAnonymous\nEmail\nyou@example.com\n\nAfter a successful submission, we securely hash the supplied account or form email before sending it to Microsoft Advertising for\nconversion attribution. Privacy details.\nQuestion\nExample: How do I reset this device or fix this error?\nDetails\nModel number, symptoms, what you tried, or the section of the manual you are using.\nSubmit question\nOpen the live page\nhttps://manuals.plus/asin/B000AYFP6A\nMore documents and user manuals: https://manuals.plus/",
+      "endBoundary" : "DOCUMENT_END",
+      "pageNumbers" : [ 10, 11 ],
+      "sources" : [ {
+        "pageNumber" : 10,
+        "paragraphIndex" : 7
+      }, {
+        "pageNumber" : 11,
+        "paragraphIndex" : 1
+      } ]
+    } ]
+  },
+  "fixedSemanticBoundaryChunks" : 1,
+  "structureSemanticBoundaryChunks" : 17
+}

@@ -1,0 +1,122 @@
+{
+  "callType" : "REAL_LOCAL_MODEL",
+  "sourceCatalog" : "src/main/resources/knowledge/equipment-fault-corpus.json",
+  "provider" : "LOCAL",
+  "modelName" : "local-hash-ngram-v1",
+  "modelVersion" : "2026.11",
+  "dimensions" : 384,
+  "vectorSpaceId" : "vs_3b71fef23531baa9fc398678092333d4",
+  "indexVersion" : "d30-local-384-v1",
+  "distanceMetric" : "COSINE",
+  "inputLengthUnit" : "UNICODE_CODE_POINTS",
+  "apiKeyRequired" : false,
+  "pricePerMillionInputTokensUsd" : 0,
+  "usageStatus" : "NOT_APPLICABLE",
+  "inputTokens" : null,
+  "estimatedApiCostUsd" : 0,
+  "costBasis" : "LOCAL_COMPUTE_NO_API_FEE",
+  "elapsedMs" : 7,
+  "chunkCount" : 4,
+  "officialCandidates" : [ {
+    "provider" : "OPENAI",
+    "modelName" : "text-embedding-3-small",
+    "modelVersion" : "current",
+    "dimensions" : 1536,
+    "maxInputLength" : 8192,
+    "lengthUnit" : "TOKENS",
+    "vectorSpaceId" : "vs_60b3f4a90aaf65a8d7a735a130646327",
+    "indexVersion" : "openai-3-small-1536-v1",
+    "distanceMetric" : "COSINE",
+    "costPerMillionInputTokensUsd" : 0.02,
+    "keyRequired" : true,
+    "apiUrl" : "https://api.openai.com/v1/embeddings"
+  }, {
+    "provider" : "OPENAI",
+    "modelName" : "text-embedding-3-large",
+    "modelVersion" : "current",
+    "dimensions" : 3072,
+    "maxInputLength" : 8192,
+    "lengthUnit" : "TOKENS",
+    "vectorSpaceId" : "vs_79e34895affde22ed3e5c5f765da1200",
+    "indexVersion" : "openai-3-large-3072-v1",
+    "distanceMetric" : "COSINE",
+    "costPerMillionInputTokensUsd" : 0.13,
+    "keyRequired" : true,
+    "apiUrl" : "https://api.openai.com/v1/embeddings"
+  } ],
+  "samples" : [ {
+    "documentId" : "DOC-CNC-COOLING-001",
+    "title" : "数控机床冷却系统维护手册（教学夹具）",
+    "version" : "teaching-fixture-2026.11",
+    "chunkIndex" : 1,
+    "pageNumbers" : [ 12 ],
+    "sources" : [ {
+      "pageNumber" : 12,
+      "paragraphIndex" : 1
+    } ],
+    "inputCharacters" : 69,
+    "inputHash" : "bf8b700e79265a630edb1c2fa685f0b0adf04c423753c0ad9a4dce74cec4f490",
+    "dimensions" : 384,
+    "l2Norm" : 1.000000001133461,
+    "attempts" : 1,
+    "vectorPrefix" : [ 0.0, 0.06975789, -0.06975789, 0.0, -0.06975789, 0.0, 0.0, 0.0 ],
+    "textPreview" : "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。"
+  }, {
+    "documentId" : "DOC-CNC-COOLING-001",
+    "title" : "数控机床冷却系统维护手册（教学夹具）",
+    "version" : "teaching-fixture-2026.11",
+    "chunkIndex" : 2,
+    "pageNumbers" : [ 15 ],
+    "sources" : [ {
+      "pageNumber" : 15,
+      "paragraphIndex" : 1
+    } ],
+    "inputCharacters" : 72,
+    "inputHash" : "74f239999cc55e835d6e64089d6a0b94d41ed2f589459b71c2f7c0d04a9b58b4",
+    "dimensions" : 384,
+    "l2Norm" : 0.9999999983228163,
+    "attempts" : 1,
+    "vectorPrefix" : [ 0.0, 0.12342118, 0.0, -0.072894536, 0.0, 0.0, 0.0, 0.0 ],
+    "textPreview" : "若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20%时判定温度传感器老化，需要更换并重新校准。"
+  }, {
+    "documentId" : "D30-MIXED-SAMPLE",
+    "title" : "中英文混合设备说明",
+    "version" : "2026.11",
+    "chunkIndex" : 3,
+    "pageNumbers" : [ 2 ],
+    "sources" : [ {
+      "pageNumber" : 2,
+      "paragraphIndex" : 1
+    } ],
+    "inputCharacters" : 66,
+    "inputHash" : "4414dc3278860c08791a17a52186408e484c2f98daf8365ec244969fb9bbeeda",
+    "dimensions" : 384,
+    "l2Norm" : 0.9999999937241505,
+    "attempts" : 1,
+    "vectorPrefix" : [ 0.0, 0.08308443, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+    "textPreview" : "设备型号 PIXMA MP500；Check USB 2.0 connection and restart the printer."
+  }, {
+    "documentId" : "D30-LONG-SAMPLE",
+    "title" : "设备故障排查长文本",
+    "version" : "2026.11",
+    "chunkIndex" : 4,
+    "pageNumbers" : [ 6, 9, 10 ],
+    "sources" : [ {
+      "pageNumber" : 6,
+      "paragraphIndex" : 1
+    }, {
+      "pageNumber" : 9,
+      "paragraphIndex" : 1
+    }, {
+      "pageNumber" : 10,
+      "paragraphIndex" : 1
+    } ],
+    "inputCharacters" : 535,
+    "inputHash" : "dd8e06cacd82d440be8f3e682e61b2e7112b26abb9fcb1d47f87c3f16c6a5175",
+    "dimensions" : 384,
+    "l2Norm" : 1.0000000077488762,
+    "attempts" : 1,
+    "vectorPrefix" : [ 0.12120311, 0.016802318, 0.0, -0.024240622, -0.024240622, 0.0, 0.024240622, 0.0 ],
+    "textPreview" : "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。 若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20"
+  } ]
+}
