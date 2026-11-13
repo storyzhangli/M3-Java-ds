@@ -1,0 +1,27 @@
+# D30 证据 08：Git 提交记录
+
+- 分支：master
+- 提交：`6048010 feat(D30): integrate PostgreSQL pgvector vector store`
+- 变更：24 files changed, 2639 insertions(+)
+- 未执行 push（未经明确授权不推送）
+
+## 提交范围（仅 D30 相关）
+
+- 修改 3：`D30_postgresqlAndpgvector/pom.xml`、`src/main/resources/application.yml`、
+  `src/test/resources/application-test.yml`
+- 新增 7 主类：`com.zl.d30.knowledge.vectorstore.*`（Properties/IndexType/EnvironmentReport/
+  EnvironmentVerifier/StoreConfiguration/KnowledgeVectorStoreService/VectorSearchHit）
+- 新增 5 测试类：同包 test 目录（含真实集成测试）
+- 新增证据 7 份：`docs/evidence/D30/01..07`
+- 新增文档 2 份：`docs/proj_docs/D30-PostgreSQL-pgvector项目迭代实施记录.md`、
+  `D30-PostgreSQL-pgvector技术原理与实践指南.md`
+
+## 明确未提交（说明）
+
+- `docs/temp_docs/D30/*`：临时脚本与日志（.gitignore 已忽略，交用户决定去留）
+- `logs/D30/*`：运行日志（*.log 规则忽略，可能含连接信息）
+- `docs/evidence/D30/D30-chunking-comparison.json`、`D30-local-embedding-evidence-20261112.json`：
+  历史证据文件被本次 mvn test 重跑刷新（仅 Map 键序与时间戳差异），未纳入提交
+- `docs/proj_docs/D30 项目迭代任务书 Prompt：PostgreSQL  pgvector.md`：用户上传的任务书副本，
+  任务开始前即未跟踪，保持原状
+- 未提交任何密码/API Key（凭据仅经环境变量传递）
