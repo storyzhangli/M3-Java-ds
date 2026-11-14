@@ -87,7 +87,7 @@ app:
     enabled: ${EMBEDDING_ENABLED:true}
   # --------------------------------------------------------------------------
   # 新增：PostgreSQL/pgvector 向量存储（唯一向量库，独立于 MySQL 主数据源）。
-  # - 凭据优先环境变量注入（PG_VECTOR_PASSWORD 等），默认是本地内网环境的数据库密码；
+  # - 密码必须由环境变量 PG_VECTOR_PASSWORD 注入，文件内不得保存真实口令；
   # - initialize-schema 固定 false：表结构由外部幂等 DDL 管理（scripts 见 docs/temp_docs/D31）；
   # - remove-existing-vector-store-table 固定 false：禁止应用启动自动删除已有向量数据；
   # - 维度必须与 app.embedding.dimensions（384）一致，装配时由代码强校验。
@@ -96,7 +96,8 @@ app:
     pgvector:
       url: ${PG_VECTOR_URL:jdbc:postgresql://192.168.200.153:5432/spring_ai}
       username: ${PG_VECTOR_USERNAME:postgres}
-      password: ${PG_VECTOR_PASSWORD:Postgres@2026}
+      # 无默认值：缺失时 PgVectorStoreProperties.requireValid() 启动即失败（fail-fast）
+      password: ${PG_VECTOR_PASSWORD:}
       schema-name: ${PG_VECTOR_SCHEMA:public}
       table-name: ${PG_VECTOR_TABLE:vector_store}
       dimensions: ${PG_VECTOR_DIMENSIONS:384}
@@ -105,6 +106,18 @@ app:
       initialize-schema: ${PG_VECTOR_INITIALIZE_SCHEMA:false}
       remove-existing-vector-store-table: ${PG_VECTOR_REMOVE_EXISTING:false}
       max-document-batch-size: ${PG_VECTOR_MAX_BATCH_SIZE:10000}
+  # --------------------------------------------------------------------------
+  # D31 向量索引编排：稳定 ID、批量、重试和核对（与 vectorstore 分离，避免污染官方前缀）。
+  # --------------------------------------------------------------------------
+  vector-index:
+    default-strategy: ${VECTOR_INDEX_DEFAULT_STRATEGY:FIXED_LENGTH}
+    batch-size: ${VECTOR_INDEX_BATCH_SIZE:100}
+    max-attempts: ${VECTOR_INDEX_MAX_ATTEMPTS:5}
+    stuck-minutes: ${VECTOR_INDEX_STUCK_MINUTES:30}
+    retry-backoff-ms: ${VECTOR_INDEX_RETRY_BACKOFF_MS:500}
+    split-version: ${VECTOR_INDEX_SPLIT_VERSION:split-v1}
+    reconcile-enabled: ${VECTOR_INDEX_RECONCILE_ENABLED:false}
+    reconcile-cron: ${VECTOR_INDEX_RECONCILE_CRON:0 0 2 * * *}
   knowledge:
     import:
       # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。

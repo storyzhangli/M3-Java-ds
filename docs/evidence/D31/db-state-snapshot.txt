@@ -1,0 +1,77 @@
+# D31 数据库状态快照（只读采集）
+生成时间: 2026-11-14T20:00:18.920864500
+
+## MySQL
+url=jdbc:mysql://127.0.0.1:3306/ai_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+version=9.7.0-commercial
+database=ai_db
+
+### vector_index_task
+exists=true
+rows=0
+ddl:
+CREATE TABLE `vector_index_task` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '代理主键',
+  `document_id` varchar(64) NOT NULL COMMENT '文档业务标识',
+  `version` varchar(64) NOT NULL COMMENT '文档版本（业务给定）',
+  `strategy` varchar(32) NOT NULL COMMENT '切分策略 FIXED_LENGTH/STRUCTURE_AWARE',
+  `content_hash` char(64) NOT NULL COMMENT '索引载荷指纹 SHA-256（chunkIndex:content 拼接）',
+  `split_version` varchar(64) NOT NULL COMMENT '切分算法版本（参与稳定 ID）',
+  `vector_space_id` varchar(128) NOT NULL COMMENT '向量空间标识（模型+版本+维度，参与稳定 ID）',
+  `chunk_count` int NOT NULL DEFAULT '0' COMMENT '该版本 Chunk 总数',
+  `status` varchar(16) NOT NULL DEFAULT 'PENDING' COMMENT 'PENDING/INDEXING/COMPLETED/PARTIAL/FAILED/SUPERSEDED',
+  `stage` varchar(24) NOT NULL DEFAULT '' COMMENT '最后进入阶段：REGISTER/EMBED_WRITE/VERIFY/SWITCH/CLEANUP',
+  `error_code` varchar(64) NOT NULL DEFAULT '' COMMENT '失败错误码（不含堆栈与凭据）',
+  `error_message` varchar(500) NOT NULL DEFAULT '' COMMENT '安全错误摘要',
+  `attempt_count` int NOT NULL DEFAULT '0' COMMENT '已尝试次数（含首次）',
+  `next_retry_at` datetime(6) DEFAULT NULL COMMENT '下次计划重试时间，NULL 表示不等待',
+  `created_at` datetime(6) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(6) NOT NULL COMMENT '状态更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_vector_task_doc_version` (`document_id`,`version`),
+  KEY `idx_vector_task_status_retry` (`status`,`next_retry_at`),
+  KEY `idx_vector_task_status_updated` (`status`,`updated_at`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='D31 文档向量索引状态表（状态机与轻量 Outbox）'
+
+### vector_chunk_index
+exists=true
+rows=0
+ddl:
+CREATE TABLE `vector_chunk_index` (
+  `id` bigint NOT NULL AUTO_INCREMENT COMMENT '代理主键',
+  `document_id` varchar(64) NOT NULL COMMENT '所属文档业务标识',
+  `version` varchar(64) NOT NULL COMMENT '所属文档版本',
+  `strategy` varchar(32) NOT NULL COMMENT '切分策略',
+  `chunk_id` char(36) NOT NULL COMMENT '稳定 Chunk 标识（UUID v5，36 字符含横线）',
+  `chunk_index` int NOT NULL COMMENT '版本与策略内的 Chunk 顺序，从 0 开始',
+  `content` mediumtext NOT NULL COMMENT 'Chunk 文本快照（Outbox 载荷，供缺失重建）',
+  `chunk_content_hash` char(64) NOT NULL COMMENT 'Chunk 文本内容指纹 SHA-256',
+  `character_count` int NOT NULL COMMENT 'Chunk 字符长度（Unicode 码点）',
+  `page_numbers` varchar(255) NOT NULL DEFAULT '' COMMENT '来源页码，逗号分隔（可空串）',
+  `status` varchar(16) NOT NULL DEFAULT 'PENDING' COMMENT '快照状态 PENDING/INDEXED/FAILED',
+  `created_at` datetime(6) NOT NULL COMMENT '创建时间',
+  `updated_at` datetime(6) NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_vector_chunk_chunk_id` (`chunk_id`),
+  UNIQUE KEY `uk_vector_chunk_doc_version_index` (`document_id`,`version`,`chunk_index`),
+  KEY `idx_vector_chunk_document` (`document_id`,`version`)
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='D31 Chunk 稳定关联表（幂等键与孤儿核对）'
+
+## PostgreSQL / pgvector
+url=jdbc:postgresql://192.168.200.153:5432/spring_ai
+version=PostgreSQL 18.7 (Debian 18.7-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+pgvector.version=0.8.7
+
+### public.vector_store（主表，本次只读未写入）
+rows=0
+columns=[id|uuid, content|text, metadata|json, embedding|USER-DEFINED]
+indexes=[CREATE INDEX spring_ai_vector_index ON public.vector_store USING hnsw (embedding vector_cosine_ops), CREATE UNIQUE INDEX vector_store_pkey ON public.vector_store USING btree (id)]
+
+### public.d31_it_vector_store（D31 集成测试独立表）
+exists=true
+rows=0
+columns=[id|uuid, content|text, metadata|json, embedding|USER-DEFINED]
+indexes=[CREATE INDEX d31_it_vector_store_hnsw_idx ON public.d31_it_vector_store USING hnsw (embedding vector_cosine_ops), CREATE UNIQUE INDEX d31_it_vector_store_pkey ON public.d31_it_vector_store USING btree (id)]
+
+### 既有实验表 public.d31_vector_store（未触碰）
+rows=0

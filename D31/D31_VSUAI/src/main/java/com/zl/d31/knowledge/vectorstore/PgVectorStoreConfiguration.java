@@ -83,6 +83,18 @@ public class PgVectorStoreConfiguration implements DisposableBean {
     }
 
     /**
+     * PG 向量表只读访问（计数与对账）。
+     *
+     * <p>依赖 {@link PgVectorStore} 参数保证装配顺序：pgJdbcTemplate 字段在
+     * {@link #pgVectorStore} 内初始化，本 Bean 只在其后读取。</p>
+     */
+    @Bean
+    public PgVectorAccess pgVectorAccess(PgVectorStore pgVectorStore,
+                                         PgVectorStoreProperties properties) {
+        return new PgVectorAccess(this.pgJdbcTemplate, properties);
+    }
+
+    /**
      * 启动完成后输出一次只读环境报告（连接失败时 Hikari fail-fast 已阻止启动，此处只记录详情）。
      */
     @Bean

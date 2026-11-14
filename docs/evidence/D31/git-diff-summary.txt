@@ -1,0 +1,75 @@
+# D31 Git 变更摘要（提交前采集）
+时间: 2026-11-14 20:03:35
+仓库根: E:\AI\project\AI-Learning-two-lp\M3-Java-ds
+分支: master
+HEAD: d6594cae320e1c83b93ebfb7cec67dad6a01a7cf
+
+## git status --porcelain
+ M D31/D31_VSUAI/src/main/java/com/zl/d31/common/GlobalExceptionHandler.java
+ M D31/D31_VSUAI/src/main/java/com/zl/d31/common/ResultCode.java
+ M D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorstore/PgVectorStoreConfiguration.java
+ M D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorstore/PgVectorStoreProperties.java
+ M D31/D31_VSUAI/src/main/resources/application.yml
+ M D31/D31_VSUAI/src/test/java/com/zl/d31/vectorstore/PgVectorStoreConfigurationGuardTest.java
+ M D31/D31_VSUAI/src/test/java/com/zl/d31/vectorstore/PgVectorStorePropertiesTest.java
+?? D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/
+?? D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorstore/PgVectorAccess.java
+?? D31/D31_VSUAI/src/main/resources/db/schema-vector-index.sql
+?? D31/D31_VSUAI/src/test/java/com/zl/d31/vectorindex/
+?? docs/evidence/D31/db-state-snapshot.txt
+?? docs/evidence/D31/scenario-summary.md
+?? docs/evidence/D31/surefire-content-hasher-unit.xml
+?? docs/evidence/D31/surefire-stable-chunk-id-unit.xml
+?? docs/evidence/D31/surefire-vector-index-integration.xml
+?? docs/evidence/D31/surefire-vector-index-properties-unit.xml
+?? "docs/proj_docs/D31-\345\220\221\351\207\217\345\205\245\345\272\223\346\233\264\346\226\260\344\270\216\345\271\202\347\255\211\346\212\200\346\234\257\345\216\237\347\220\206\344\270\216\345\256\236\350\267\265\346\214\207\345\215\227.md"
+?? "docs/proj_docs/D31-\345\220\221\351\207\217\345\205\245\345\272\223\346\233\264\346\226\260\344\270\216\345\271\202\347\255\211\351\241\271\347\233\256\350\277\255\344\273\243\345\256\236\346\226\275\350\256\260\345\275\225.md"
+
+## git diff --stat（已跟踪文件）
+ .../java/com/zl/d31/common/GlobalExceptionHandler.java  |  9 +++++++++
+ .../src/main/java/com/zl/d31/common/ResultCode.java     |  6 ++++++
+ .../vectorstore/PgVectorStoreConfiguration.java         | 12 ++++++++++++
+ .../knowledge/vectorstore/PgVectorStoreProperties.java  |  5 +++++
+ D31/D31_VSUAI/src/main/resources/application.yml        | 17 +++++++++++++++--
+ .../PgVectorStoreConfigurationGuardTest.java            |  2 ++
+ .../zl/d31/vectorstore/PgVectorStorePropertiesTest.java | 13 +++++++++++++
+ 7 files changed, 62 insertions(+), 2 deletions(-)
+
+## 未跟踪文件清单（仅 D31 相关）
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/VectorIndexException.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/config/VectorIndexProperties.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/config/VectorIndexSchedulingConfiguration.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/controller/VectorIndexController.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/dto/ChunkIndexView.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/dto/ReconciliationReportView.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/dto/VectorIndexResultView.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/dto/VectorIndexTaskView.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/model/ChunkRowStatus.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/model/VectorIndexStage.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/model/VectorIndexStatus.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/repository/VectorChunkRepository.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/repository/VectorChunkRow.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/repository/VectorIndexTaskRow.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/service/DocumentVectorIndexService.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/service/VectorIndexReconcileScheduler.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/service/VectorReconciliationService.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/support/ContentHasher.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorindex/support/StableChunkIdGenerator.java
+D31/D31_VSUAI/src/main/java/com/zl/d31/knowledge/vectorstore/PgVectorAccess.java
+D31/D31_VSUAI/src/main/resources/db/schema-vector-index.sql
+D31/D31_VSUAI/src/test/java/com/zl/d31/vectorindex/ContentHasherTest.java
+D31/D31_VSUAI/src/test/java/com/zl/d31/vectorindex/StableChunkIdGeneratorTest.java
+D31/D31_VSUAI/src/test/java/com/zl/d31/vectorindex/VectorIndexPropertiesTest.java
+D31/D31_VSUAI/src/test/java/com/zl/d31/vectorindex/VectorIndexRealIntegrationTest.java
+docs/evidence/D31/db-state-snapshot.txt
+docs/evidence/D31/scenario-summary.md
+docs/evidence/D31/surefire-content-hasher-unit.xml
+docs/evidence/D31/surefire-stable-chunk-id-unit.xml
+docs/evidence/D31/surefire-vector-index-integration.xml
+docs/evidence/D31/surefire-vector-index-properties-unit.xml
+"docs/proj_docs/D31-\345\220\221\351\207\217\345\205\245\345\272\223\346\233\264\346\226\260\344\270\216\345\271\202\347\255\211\346\212\200\346\234\257\345\216\237\347\220\206\344\270\216\345\256\236\350\267\265\346\214\207\345\215\227.md"
+"docs/proj_docs/D31-\345\220\221\351\207\217\345\205\245\345\272\223\346\233\264\346\226\260\344\270\216\345\271\202\347\255\211\351\241\271\347\233\256\350\277\255\344\273\243\345\256\236\346\226\275\350\256\260\345\275\225.md"
+
+## 说明
+- 本次变更仅涉及 D31 模块源码、D31 测试、D31 文档与 D31 证据。
+- 未包含任何口令、密钥或连接凭据；日志与临时脚本位于 logs/D31 与 docs/temp_docs/D31，未纳入提交。

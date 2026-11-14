@@ -72,6 +72,11 @@ public class PgVectorStoreProperties {
         if (username == null || username.isBlank()) {
             throw new IllegalArgumentException("pgvector 用户名不能为空");
         }
+        if (password == null || password.isBlank()) {
+            throw new IllegalArgumentException(
+                    "pgvector 密码为空：必须通过环境变量 PG_VECTOR_PASSWORD 或启动参数注入，"
+                            + "禁止在配置文件中保存真实口令");
+        }
         if (dimensions < 1 || dimensions > 8192) {
             throw new IllegalArgumentException("pgvector 维度必须在 1-8192");
         }

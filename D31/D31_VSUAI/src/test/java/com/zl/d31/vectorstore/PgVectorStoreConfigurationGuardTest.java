@@ -22,6 +22,8 @@ class PgVectorStoreConfigurationGuardTest {
         PgVectorStoreProperties properties = new PgVectorStoreProperties();
         properties.setUrl("jdbc:postgresql://127.0.0.1:5432/spring_ai");
         properties.setUsername("postgres");
+        // 占位口令：仅满足非空校验，本测试在连接数据库前即被守卫拒绝
+        properties.setPassword("it-placeholder-password");
         properties.setDimensions(dimensions);
         properties.setDistanceMetric(DistanceMetric.COSINE);
         return properties;

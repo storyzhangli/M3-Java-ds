@@ -18,7 +18,20 @@ class PgVectorStorePropertiesTest {
         PgVectorStoreProperties properties = new PgVectorStoreProperties();
         properties.setUrl("jdbc:postgresql://192.168.200.153:5432/spring_ai");
         properties.setUsername("postgres");
+        // 占位口令：仅用于通过非空校验，真实值一律由环境变量注入
+        properties.setPassword("it-placeholder-password");
         return properties;
+    }
+
+    @Test
+    @DisplayName("密码为空时 requireValid 拒绝：必须环境变量注入，禁止文件内保存口令")
+    void requireValidRejectsBlankPassword() {
+        PgVectorStoreProperties properties = defaults();
+        properties.setPassword(" ");
+
+        assertThatThrownBy(properties::requireValid)
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining("PG_VECTOR_PASSWORD");
     }
 
     @Test

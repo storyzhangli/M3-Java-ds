@@ -2,6 +2,7 @@ package com.zl.d31.common;
 
 import com.zl.d31.knowledge.document.KnowledgeDocumentException;
 import com.zl.d31.knowledge.embedding.EmbeddingException;
+import com.zl.d31.knowledge.vectorindex.VectorIndexException;
 import com.zl.d31.model.ModelFailure;
 import com.zl.d31.model.ModelFailureClassifier;
 import jakarta.servlet.http.HttpServletResponse;
@@ -51,6 +52,14 @@ public class GlobalExceptionHandler {
     public Result<Void> handleEmbedding(EmbeddingException ex) {
         log.warn("Embedding 处理失败，code={}，异常类型={}",
                 ex.getResultCode().name(), ex.getClass().getSimpleName());
+        return Result.fail(ex.getResultCode().getCode(), ex.getMessage());
+    }
+
+    /** 向量索引任务失败（写入/核对/状态冲突），已记录可恢复状态。 */
+    @ExceptionHandler(VectorIndexException.class)
+    public Result<Void> handleVectorIndex(VectorIndexException ex) {
+        log.warn("向量索引处理失败，code={}，errorCode={}",
+                ex.getResultCode().name(), ex.getErrorCode());
         return Result.fail(ex.getResultCode().getCode(), ex.getMessage());
     }
 

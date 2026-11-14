@@ -46,6 +46,12 @@ public enum ResultCode {
     /** 目标向量索引与当前模型向量空间不兼容。 */
     VECTOR_INDEX_INCOMPATIBLE(4093, "向量索引不兼容"),
 
+    /** 向量索引任务状态冲突（并发或状态前置条件不满足）。 */
+    VECTOR_INDEX_STATE_CONFLICT(4094, "向量索引任务状态冲突"),
+
+    /** 向量索引写入或数量核对失败（已记录可恢复状态，可重试）。 */
+    VECTOR_INDEX_FAILED(4223, "向量索引处理失败"),
+
     /** 未预期的系统兜底错误。 */
     SYSTEM_ERROR(5000, "系统繁忙，请稍后重试");
 
