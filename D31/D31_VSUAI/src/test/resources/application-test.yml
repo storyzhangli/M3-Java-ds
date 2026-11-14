@@ -1,0 +1,12 @@
+# test profile 覆盖配置（由 maven-surefire-plugin 激活 spring.profiles.active=test）。
+# 仅覆盖历史默认归属：测试中未显式带 X-Dev-User 的请求统一归 ut-default，
+# 清理基类按 ut_ 前缀回收，避免污染 dev-user 的手工演示数据。
+app:
+  ai:
+    history:
+      default-owner: ut-default
+  # 历史 @SpringBootTest 测试环境不装配 pgvector 向量库（无 PG 凭据，避免上下文启动失败）。
+  # 真实向量验收由 PgVectorStoreRealIntegrationTest 独立执行（D31_PG_INTEGRATION=true 门控，真连 PG）。
+  vectorstore:
+    pgvector:
+      enabled: false
