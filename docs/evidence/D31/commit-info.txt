@@ -1,0 +1,68 @@
+# D31 Git 提交信息（提交后采集）
+采集时间: 2026-11-14 20:04:24
+分支: master
+HEAD: a95c8ec5758cb4405acaa51a5225dfd792153227
+短 ID: a95c8ec
+
+## git log -1
+commit a95c8ec5758cb4405acaa51a5225dfd792153227
+Author:     ZhangLi <1447036742@qq.com>
+AuthorDate: Sat Nov 14 20:04:13 2026 +0800
+Commit:     ZhangLi <1447036742@qq.com>
+CommitDate: Sat Nov 14 20:04:13 2026 +0800
+
+    D31 向量入库、更新与幂等实现
+    
+    - 稳定 UUID v5 Chunk ID + MySQL 状态/关联双表，唯一约束兜底并发
+    - 新版本先写后切，旧版本 SUPERSEDED 后才清理
+    - Outbox 快照先落库，失败落账 + 快照幂等恢复 + 迟到任务拒绝回写
+    - 按文档/版本删除可重复执行，跨库核对与补偿（孤儿/缺失/数量/卡住）
+    - PG 密码改为环境变量注入，缺失即 fail-fast
+
+## git show --stat --oneline
+a95c8ec D31 向量入库、更新与幂等实现
+ .../com/zl/d31/common/GlobalExceptionHandler.java  |   9 +
+ .../main/java/com/zl/d31/common/ResultCode.java    |   6 +
+ .../vectorindex/VectorIndexException.java          |  36 +
+ .../vectorindex/config/VectorIndexProperties.java  |  69 ++
+ .../config/VectorIndexSchedulingConfiguration.java |  15 +
+ .../controller/VectorIndexController.java          | 111 +++
+ .../knowledge/vectorindex/dto/ChunkIndexView.java  |  30 +
+ .../vectorindex/dto/ReconciliationReportView.java  |  53 ++
+ .../vectorindex/dto/VectorIndexResultView.java     |  34 +
+ .../vectorindex/dto/VectorIndexTaskView.java       |  42 ++
+ .../vectorindex/model/ChunkRowStatus.java          |  16 +
+ .../vectorindex/model/VectorIndexStage.java        |  22 +
+ .../vectorindex/model/VectorIndexStatus.java       |  28 +
+ .../repository/VectorChunkRepository.java          | 363 ++++++++++
+ .../vectorindex/repository/VectorChunkRow.java     |  38 +
+ .../vectorindex/repository/VectorIndexTaskRow.java |  44 ++
+ .../service/DocumentVectorIndexService.java        | 775 +++++++++++++++++++++
+ .../service/VectorIndexReconcileScheduler.java     |  36 +
+ .../service/VectorReconciliationService.java       | 242 +++++++
+ .../vectorindex/support/ContentHasher.java         |  31 +
+ .../support/StableChunkIdGenerator.java            | 102 +++
+ .../d31/knowledge/vectorstore/PgVectorAccess.java  |  67 ++
+ .../vectorstore/PgVectorStoreConfiguration.java    |  12 +
+ .../vectorstore/PgVectorStoreProperties.java       |   5 +
+ D31/D31_VSUAI/src/main/resources/application.yml   |  17 +-
+ .../src/main/resources/db/schema-vector-index.sql  |  77 ++
+ .../com/zl/d31/vectorindex/ContentHasherTest.java  |  32 +
+ .../vectorindex/StableChunkIdGeneratorTest.java    |  66 ++
+ .../d31/vectorindex/VectorIndexPropertiesTest.java |  72 ++
+ .../VectorIndexRealIntegrationTest.java            | 718 +++++++++++++++++++
+ .../PgVectorStoreConfigurationGuardTest.java       |   2 +
+ .../vectorstore/PgVectorStorePropertiesTest.java   |  13 +
+ docs/evidence/D31/db-state-snapshot.txt            |  77 ++
+ docs/evidence/D31/git-diff-summary.txt             |  75 ++
+ docs/evidence/D31/scenario-summary.md              |  65 ++
+ docs/evidence/D31/surefire-content-hasher-unit.xml |  69 ++
+ .../evidence/D31/surefire-stable-chunk-id-unit.xml |  70 ++
+ .../D31/surefire-vector-index-integration.xml      | 169 +++++
+ .../D31/surefire-vector-index-properties-unit.xml  |  72 ++
+ ...256\236\350\267\265\346\214\207\345\215\227.md" | 385 ++++++++++
+ ...256\236\346\226\275\350\256\260\345\275\225.md" | 471 +++++++++++++
+ 41 files changed, 4634 insertions(+), 2 deletions(-)
+
+## 提交后工作区状态
+<clean>
