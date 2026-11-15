@@ -118,6 +118,16 @@ app:
     split-version: ${VECTOR_INDEX_SPLIT_VERSION:split-v1}
     reconcile-enabled: ${VECTOR_INDEX_RECONCILE_ENABLED:false}
     reconcile-cron: ${VECTOR_INDEX_RECONCILE_CRON:0 0 2 * * *}
+  # --------------------------------------------------------------------------
+  # 相似度检索（D32）：Top-K、查询长度与相似度下限。
+  # - similarity-threshold 语义为余弦相似度下限（0.0 等价"接受全部"），框架内部换算为距离阈值；
+  # - 本次不预设业务阈值：阈值必须来自真实标注与分数分布分析，不能拍脑袋设置。
+  # --------------------------------------------------------------------------
+  retrieval:
+    default-top-k: ${RETRIEVAL_DEFAULT_TOP_K:5}
+    max-top-k: ${RETRIEVAL_MAX_TOP_K:50}
+    max-query-length: ${RETRIEVAL_MAX_QUERY_LENGTH:2000}
+    similarity-threshold: ${RETRIEVAL_SIMILARITY_THRESHOLD:0.0}
   knowledge:
     import:
       # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。

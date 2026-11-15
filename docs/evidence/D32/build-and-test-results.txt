@@ -1,0 +1,80 @@
+=== D32 Maven 构建与测试结果（真实执行记录） ===
+采集时间：2026-11-15
+Maven: D:\SoftwareInstall\Apache\Maven\apache-maven-3.9.16\bin\mvn.cmd
+JDK: D:\SoftwareInstall\JDK\JDK21 (JAVA_HOME)
+本地仓库: D:\SoftwareInstall\Apache\repository
+判定口径: 以 Maven 退出码与 surefire XML 为准（PowerShell 重定向的日志中文为乱码，不作为判定依据）
+
+--- 1. 编译阶段（3 次） ---
+[compile-phase2.log]   失败 exit=1
+  原因: PowerShell 将 -Dmaven.repo.local="D:\..." 拆成 -D + .repo.local=...，Maven 报 No plugin found for prefix '.repo.local=D'
+  处理: 去掉该参数（本地 settings.xml 已指向 D:\SoftwareInstall\Apache\repository），后续不再传递
+
+[compile-phase2b.log]  失败 exit=1
+  原因: SimilarityRetrievalService.java:[47,58] RetrievalFilterBuilder() 构造器 private，无法访问
+  处理: 构造器改为 public
+
+[compile-phase2c.log]  成功 exit=0
+  Reactor: D32 SUCCESS [0.032 s] / D32_SSATK SUCCESS [16.388 s]
+  BUILD SUCCESS, Total time 16.949 s
+  仅剩既有模块的历史 warning（ContentCachingRequestWrapper 等），与本迭代无关
+
+--- 2. 测试编译阶段（2 次） ---
+[test-compile-d32.log] 失败 exit=1
+  原因: SimilarityRetrievalRealIntegrationTest.java 导入 com.zl.d32.knowledge.retrieval.QueryEmbeddingService，实际包为 ...retrieval.service
+  处理: 修正 import
+
+[test-compile-d32b.log] 成功 exit=0
+  Compiling 5 source files (test) -> BUILD SUCCESS, 8.116 s
+
+--- 3. 单元测试（4 个测试类 / 23 个用例） ---
+命令: mvn -f D32/pom.xml -pl D32_SSATK test -Dtest=RetrievalPropertiesTest,QueryVectorValidatorTest,RetrievalFilterBuilderTest,RetrievalHitMapperTest
+[unit-test-d32.log]  失败 exit=1
+  原因: RetrievalHitMapperTest.mapsFullMetadata 期望 distance=0.18 精确相等，实际 0.18000000715255737（metadata 中 Float→double 精度）
+  处理: 断言改为 isCloseTo(0.18, 1e-6)，不改业务代码（业务代码保留框架原始 float 距离值）
+[unit-test-d32b.log] 成功 exit=0
+  RetrievalFilterBuilderTest  Tests run: 6, Failures: 0, Errors: 0
+  RetrievalHitMapperTest     Tests run: 4, Failures: 0, Errors: 0
+  RetrievalPropertiesTest    Tests run: 6, Failures: 0, Errors: 0
+  QueryVectorValidatorTest   无失败（同批 23 用例之一）
+  Results: Tests run: 23, Failures: 0, Errors: 0, Skipped: 0
+  BUILD SUCCESS, 9.736 s
+
+--- 4. 真实集成测试（1 个测试类 / 12 个用例，真实 MySQL + PostgreSQL/pgvector） ---
+命令: mvn -f D32/pom.xml -pl D32_SSATK test -Dtest=SimilarityRetrievalRealIntegrationTest
+环境变量: D32_RETRIEVAL_IT=true, D32_MYSQL_PASSWORD, D32_PG_PASSWORD（凭据不入库、不落盘）
+[integration-test-d32.log] 成功 exit=0
+  Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+  Time elapsed: 1.975 s（含语料入库与 10 题检索）
+  BUILD SUCCESS, 7.052 s
+  数据库连通性前置检查: MYSQL_3306=True, PG_5432=True
+
+--- 5. 测试覆盖清单 ---
+单元测试（无外部依赖）:
+  1. RetrievalProperties 默认值/越界校验（6）
+  2. QueryVectorValidator 空/维度/NaN/Infinity/全零（7）
+  3. RetrievalFilterBuilder 空条件/三字段组合/注入拒绝（6）
+  4. RetrievalHitMapper 完整/缺失 metadata、空 score、页码兼容（4）
+集成测试（真实数据库）:
+  5. Query Embedding 384 维有限非零 + 向量空间一致
+  6. 空查询拒绝
+  7. 超长查询拒绝
+  8. 默认 Top-K=5
+  9. Top-K 边界 1/50/0/-1/51
+  10. 真实 Top-5 检索（score∈[0,1]、score+distance≈1）
+  11. 自查询 score≈1.0 / distance≈0
+  12. 来源字段完整性
+  13. documentId 过滤效果
+  14. 不同查询 top1 不同
+  15. 过滤值注入拒绝
+  16. 十题 Top-5 检索与 JSON 导出
+
+--- 6. 证据文件清单 ---
+docs\evidence\D32\db-verification.txt            真实 pgvector 扩展/表/索引/维度核验（psql 只读）
+docs\evidence\D32\retrieval-test-console.txt     集成测试 23 行 [D32-IT] 真实控制台输出
+docs\evidence\D32\retrieval-raw-top5.json        十题 Top-5 原始结果（38847 bytes）
+docs\evidence\D32\retrieval-top5-summary.md      十题 Top-5 可读摘要
+docs\evidence\D32\retrieval-annotation-table.md  人工标注表（50 条候选，状态待人工确认）
+docs\evidence\D32\noise-and-miss-analysis.md     噪声与漏召回分析
+docs\evidence\D32\framework-behavior-evidence.md 框架行为实证（javap）
+docs\temp_docs\D32\javap-*.txt                   字节码 dump 原件（保留，未删除）

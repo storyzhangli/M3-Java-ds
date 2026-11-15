@@ -1,0 +1,66 @@
+=== D32 数据库独立核验（psql 只读） ===
+=== 1. pgvector 扩展版本 ===
+ extname | extversion 
+---------+------------
+ vector  | 0.8.7
+(1 row)
+
+=== 2. 主表 vector_store 列结构 ===
+ ordinal_position | column_name |  data_type   | udt_name 
+------------------+-------------+--------------+----------
+                1 | id          | uuid         | uuid
+                2 | content     | text         | text
+                3 | metadata    | json         | json
+                4 | embedding   | USER-DEFINED | vector
+(4 rows)
+
+=== 3. 索引（主表与 D32 集成测试表） ===
+      tablename      |          indexname           |                                                     indexdef                                                     
+---------------------+------------------------------+------------------------------------------------------------------------------------------------------------------
+ d32_it_vector_store | d32_it_vector_store_hnsw_idx | CREATE INDEX d32_it_vector_store_hnsw_idx ON public.d32_it_vector_store USING hnsw (embedding vector_cosine_ops)
+ d32_it_vector_store | d32_it_vector_store_pkey     | CREATE UNIQUE INDEX d32_it_vector_store_pkey ON public.d32_it_vector_store USING btree (id)
+ vector_store        | spring_ai_vector_index       | CREATE INDEX spring_ai_vector_index ON public.vector_store USING hnsw (embedding vector_cosine_ops)
+ vector_store        | vector_store_pkey            | CREATE UNIQUE INDEX vector_store_pkey ON public.vector_store USING btree (id)
+(4 rows)
+
+=== 4. 行数（集成测试已按隔离约定清理 d32_it_vector_store） ===
+     table_name      | rows 
+---------------------+------
+ vector_store        |    0
+ d32_it_vector_store |    0
+(2 rows)
+
+=== 5. 主表向量维度（应为 384） ===
+ dims 
+------
+(0 rows)
+
+=== 6. COSINE 距离算子 <=> 自距离实测（同一向量自距离应为 0） ===
+ id | self_distance 
+----+---------------
+(0 rows)
+
+=== 7. 检索 SQL 形状实测：WHERE embedding <=> 自身 < 1（等价 similarity>0，接受全部语义） ===
+ rows_distance_lt_1 
+--------------------
+                  0
+(1 row)
+
+
+
+=== 8. 向量列类型（format_type，验证 384 维约束） ===
+vector_store:
+embedding_type 
+----------------
+ vector(384)
+(1 row)
+
+d32_it_vector_store:
+embedding_type 
+----------------
+ vector(384)
+(1 row)
+
+=== 说明 ===
+主表 vector_store 当前 0 行：D30/D31 的真实语料入库只在隔离测试表执行，生产主表尚未写入。
+D32 真实检索验收在独立表 d32_it_vector_store 完成，测试后按隔离约定清理（表结构与 HNSW 索引保留）。

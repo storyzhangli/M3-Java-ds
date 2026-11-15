@@ -1,0 +1,31 @@
+=== D32 集成测试真实控制台证据（surefire system-out 提取，共 12 个 testcase 块） ===
+提取时间: 2026-11-15 18:24:00
+测试类: com.zl.d32.retrieval.SimilarityRetrievalRealIntegrationTest
+结果: tests=12 failures=0 errors=0 skipped=0 (BUILD SUCCESS, exit 0)
+数据库: MySQL 127.0.0.1:3306/ai_db + PostgreSQL 192.168.200.153:5432/spring_ai (pgvector 0.8.7, vector(384))
+隔离: PG 独立表 d32_it_vector_store；MySQL documentId 前缀 d32-it-（测试后已删除）
+
+=== [D32-IT] 断言输出 ===
+[D32-IT] 语料入库完成: documents=3, chunks=8, version=corpus-v1
+[D32-IT] QueryEmbedding dims=384 vectorSpace=vs_3b71fef23531baa9fc398678092333d4 norm=1.000000 first5=[0.0, 0.0, 0.0, 0.0, 0.0] elapsedMs=0
+[D32-IT] 空查询拒绝通过: errorCode=QUERY_BLANK
+[D32-IT] 超长查询拒绝通过: errorCode=QUERY_TOO_LONG
+[D32-IT] 默认 TopK 通过: effectiveTopK=5 hits=5
+[D32-IT] TopK 边界通过: top1=1 top50=4
+[D32-IT] 真实 Top5 通过: hits=5 top1=4a934d8c-2d93-5617-8794-b7ef3f9f5690 score=0.352904 distance=0.647096 elapsedMs=4
+[D32-IT] 自查询语义通过: chunkId=4a934d8c-2d93-5617-8794-b7ef3f9f5690 score=1.000000 distance=0.000000
+[D32-IT] 来源映射通过: documentId=d32-it-DOC-CNC-COOLING-001 version=corpus-v1 chunkIndex=2 pages=[18] title=数控机床冷却系统维护手册（教学夹具）
+[D32-IT] 过滤通过: 无过滤 hits=7 文档数=3 -> 过滤后 hits=2
+[D32-IT] 查询差异通过: coolingTop1=0a8851e0-d458-5e4d-9290-86724cd670a6 workorderTop1=0b4ae9e9-9adb-52d6-ae3d-c00d180dd5f0
+[D32-IT] 过滤值注入拒绝通过: errorCode=FILTER_VALUE_INVALID
+[D32-IT] Q1 hits=5 top1=4a934d8c-2d93-5617-8794-b7ef3f9f5690 score=0.364774
+[D32-IT] Q2 hits=5 top1=1953ab8a-d017-5709-9b6d-f55976114a7e score=0.418780
+[D32-IT] Q3 hits=5 top1=4a934d8c-2d93-5617-8794-b7ef3f9f5690 score=0.157734
+[D32-IT] Q4 hits=5 top1=1e14fe51-f740-5617-ac93-f5a31c6304c4 score=0.375498
+[D32-IT] Q5 hits=5 top1=36dadae9-0239-5916-b54f-8a28ccb33039 score=0.353140
+[D32-IT] Q6 hits=5 top1=8557707b-a7ce-5111-be40-5bdc3b29e350 score=0.558432
+[D32-IT] Q7 hits=5 top1=0b4ae9e9-9adb-52d6-ae3d-c00d180dd5f0 score=0.348055
+[D32-IT] Q8 hits=5 top1=8557707b-a7ce-5111-be40-5bdc3b29e350 score=0.440969
+[D32-IT] Q9 hits=5 top1=4a934d8c-2d93-5617-8794-b7ef3f9f5690 score=0.112298
+[D32-IT] Q10 hits=5 top1=1e14fe51-f740-5617-ac93-f5a31c6304c4 score=0.368173
+[D32-IT] 评估快照已导出: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D32\retrieval-raw-top5.json (38847 bytes)
