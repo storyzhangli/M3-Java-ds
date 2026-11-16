@@ -128,6 +128,15 @@ app:
     max-top-k: ${RETRIEVAL_MAX_TOP_K:50}
     max-query-length: ${RETRIEVAL_MAX_QUERY_LENGTH:2000}
     similarity-threshold: ${RETRIEVAL_SIMILARITY_THRESHOLD:0.0}
+  # --------------------------------------------------------------------------
+  # RAG 最小闭环（D33）：上下文组装与生成约束。
+  # - max-context-chars 为 Unicode 码点字符预算，不伪称 Token；
+  # - top-k 为空时沿用 app.retrieval.default-top-k；min-score 为余弦相似度下限过滤。
+  # --------------------------------------------------------------------------
+  rag:
+    top-k: ${RAG_TOP_K:}
+    max-context-chars: ${RAG_MAX_CONTEXT_CHARS:4000}
+    min-score: ${RAG_MIN_SCORE:0.0}
   knowledge:
     import:
       # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。

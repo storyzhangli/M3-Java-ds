@@ -1,0 +1,292 @@
+=== D33 Phase1 环境探测 ===
+探测时间: 2026-11-16 23:03:52
+
+--- 1. mvn -v ---
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: D:\SoftwareInstall\Apache\Maven\apache-maven-3.9.16
+Java version: 21.0.7, vendor: Oracle Corporation, runtime: D:\SoftwareInstall\JDK\JDK21
+Default locale: zh_CN, platform encoding: UTF-8
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+
+--- 2. git 基线核对 ---
+HEAD: 640d9d5c88617d9916c73425a63aa42497e516ab
+branch: master
+remote: origin	git@github.com:storyzhangli/M3-Java-ds.git (fetch)
+git log --oneline -5:
+  640d9d5 D33 项目迭代任务书更新 01
+  a796ec8 D33 项目迭代任务书
+  bec595e D33 项目基础骨架
+  78ad75f D33 费曼口述
+  f855537 D33 知识笔记
+git status --short:
+  (clean)
+
+--- 3. 模块目录与 pom 关键依赖 ---
+D33 模块: D33_CAARMCL
+模块 pom 存在: True
+parent pom: True
+  dependency[pgvector]: True
+  dependency[deepseek]: True
+  dependency[mybatis-plus]: True
+  dependency[starter-test]: True
+  dependency[data-redis]: True
+  dependency[reactor-netty]: True
+  dependency[tika]: True
+  dependency[jsoup]: True
+  dependency[pdf-document-reader]: True
+  dependency[markdown-document-reader]: True
+
+--- 4. 数据库连通性 ---
+  PG 192.168.200.153:5432 可达: True
+  MySQL 127.0.0.1:3306 可达: True
+  PGVECTOR_DB_PASSWORD 环境变量已设置: False
+  MYSQL_PASSWORD 环境变量已设置: False
+
+--- 5. pgvector 扩展版本（口令可用时） ---
+  跳过（PGVECTOR_DB_PASSWORD 未设置，不尝试连接）
+
+--- 6. com.zl.d33 包结构（文件名清单） ---
+  D33SpringAiApplication.java
+  common\AiConfigurationException.java
+  common\GlobalExceptionHandler.java
+  common\Result.java
+  common\ResultCode.java
+  config\AiConstants.java
+  config\AiProperties.java
+  config\ConversationRedisProperties.java
+  config\DeepSeekChatModelConfiguration.java
+  config\ModelCallConfiguration.java
+  config\ModelCallProperties.java
+  config\PromptCacheProperties.java
+  controller\ChatController.java
+  controller\ChatStreamController.java
+  conversation\ConversationMemory.java
+  conversation\HistoryMessageConverter.java
+  conversation\RedisSessionPayload.java
+  conversation\RoleConversationService.java
+  conversation\model\ConversationMessage.java
+  conversation\model\ConversationSession.java
+  dto\ChatReplyResponse.java
+  dto\ChatRequest.java
+  dto\CitationDto.java
+  dto\RoleChatReplyResponse.java
+  dto\SsePayloads.java
+  equipment\EquipmentCandidateExtractor.java
+  equipment\EquipmentCandidateParser.java
+  equipment\EquipmentChatController.java
+  equipment\EquipmentChatService.java
+  equipment\EquipmentClarificationPolicy.java
+  equipment\EquipmentFacts.java
+  equipment\EquipmentInformationExtractor.java
+  equipment\dto\EquipmentChatResponse.java
+  equipment\model\CandidateSourceType.java
+  equipment\model\CandidateStatus.java
+  equipment\model\EquipmentTicketCandidate.java
+  equipment\model\TicketCategory.java
+  history\ChatHistoryService.java
+  history\HistoryController.java
+  history\config\HistoryProperties.java
+  history\config\MybatisPlusConfig.java
+  history\dto\MessageView.java
+  history\dto\PageView.java
+  history\dto\SessionView.java
+  history\mapper\ChatSessionMapper.java
+  history\mapper\HistoryMessageMapper.java
+  history\model\ChatSession.java
+  history\model\HistoryMessage.java
+  history\model\MessageStatus.java
+  history\model\SessionStatus.java
+  history\po\ChatSessionPO.java
+  history\po\HistoryMessagePO.java
+  knowledge\CitationRegistry.java
+  knowledge\KnowledgeChatOrchestrator.java
+  knowledge\KnowledgeChunk.java
+  knowledge\KnowledgeCorpus.java
+  knowledge\KnowledgeProperties.java
+  knowledge\KnowledgeRetrievalService.java
+  knowledge\chunking\ChunkBoundaryType.java
+  knowledge\chunking\ChunkingComparison.java
+  knowledge\chunking\ChunkingMetrics.java
+  knowledge\chunking\ChunkingProperties.java
+  knowledge\chunking\ChunkingResult.java
+  knowledge\chunking\ChunkSource.java
+  knowledge\chunking\ChunkSourceDocument.java
+  knowledge\chunking\ChunkStrategy.java
+  knowledge\chunking\CleanedDocument.java
+  knowledge\chunking\CleanedPage.java
+  knowledge\chunking\CleanedParagraph.java
+  knowledge\chunking\DocumentChunk.java
+  knowledge\chunking\DocumentChunker.java
+  knowledge\chunking\DocumentPageText.java
+  knowledge\chunking\KnowledgeDocumentChunkingController.java
+  knowledge\chunking\KnowledgeDocumentChunkingService.java
+  knowledge\chunking\TextCleaner.java
+  knowledge\document\ExtractedPage.java
+  knowledge\document\KnowledgeDocument.java
+  knowledge\document\KnowledgeDocumentController.java
+  knowledge\document\KnowledgeDocumentException.java
+  knowledge\document\KnowledgeDocumentPage.java
+  knowledge\document\KnowledgeDocumentParser.java
+  knowledge\document\KnowledgeDocumentService.java
+  knowledge\document\KnowledgeDocumentStatus.java
+  knowledge\document\KnowledgeImportProperties.java
+  knowledge\document\dto\KnowledgeDocumentExtractionView.java
+  knowledge\document\dto\KnowledgeDocumentPageView.java
+  knowledge\document\dto\KnowledgeDocumentRegistrationRequest.java
+  knowledge\document\dto\KnowledgeDocumentView.java
+  knowledge\document\mapper\KnowledgeDocumentContentMapper.java
+  knowledge\document\mapper\KnowledgeDocumentMapper.java
+  knowledge\document\mapper\KnowledgeDocumentPageMapper.java
+  knowledge\document\po\KnowledgeDocumentContentPO.java
+  knowledge\document\po\KnowledgeDocumentPagePO.java
+  knowledge\document\po\KnowledgeDocumentPO.java
+  knowledge\document\repository\KnowledgeDocumentRepository.java
+  knowledge\document\repository\MybatisKnowledgeDocumentRepository.java
+  knowledge\embedding\ChunkEmbedding.java
+  knowledge\embedding\ChunkEmbeddingService.java
+  knowledge\embedding\DistanceMetric.java
+  knowledge\embedding\EmbeddingBatchResult.java
+  knowledge\embedding\EmbeddingController.java
+  knowledge\embedding\EmbeddingCostEstimate.java
+  knowledge\embedding\EmbeddingException.java
+  knowledge\embedding\EmbeddingLengthUnit.java
+  knowledge\embedding\EmbeddingModelCatalog.java
+  knowledge\embedding\EmbeddingModelConfiguration.java
+  knowledge\embedding\EmbeddingModelDescriptor.java
+  knowledge\embedding\EmbeddingProperties.java
+  knowledge\embedding\EmbeddingProvider.java
+  knowledge\embedding\EmbeddingUsage.java
+  knowledge\embedding\EmbeddingVectorValidator.java
+  knowledge\embedding\IndexCompatibility.java
+  knowledge\embedding\IndexCompatibilityValidator.java
+  knowledge\embedding\LocalHashNgramEmbeddingModel.java
+  knowledge\embedding\VectorIndexMetadata.java
+  knowledge\embedding\VectorSpaceIdentity.java
+  knowledge\retrieval\RetrievalException.java
+  knowledge\retrieval\config\RetrievalProperties.java
+  knowledge\retrieval\controller\KnowledgeRetrievalController.java
+  knowledge\retrieval\dto\RetrievalHitView.java
+  knowledge\retrieval\dto\RetrievalQueryRequest.java
+  knowledge\retrieval\dto\RetrievalResponse.java
+  knowledge\retrieval\model\QueryVector.java
+  knowledge\retrieval\service\CorpusIndexService.java
+  knowledge\retrieval\service\QueryEmbeddingService.java
+  knowledge\retrieval\service\SimilarityRetrievalService.java
+  knowledge\retrieval\support\QueryVectorValidator.java
+  knowledge\retrieval\support\RetrievalFilterBuilder.java
+  knowledge\retrieval\support\RetrievalHitMapper.java
+  knowledge\vectorindex\VectorIndexException.java
+  knowledge\vectorindex\config\VectorIndexProperties.java
+  knowledge\vectorindex\config\VectorIndexSchedulingConfiguration.java
+  knowledge\vectorindex\controller\VectorIndexController.java
+  knowledge\vectorindex\dto\ChunkIndexView.java
+  knowledge\vectorindex\dto\ReconciliationReportView.java
+  knowledge\vectorindex\dto\VectorIndexResultView.java
+  knowledge\vectorindex\dto\VectorIndexTaskView.java
+  knowledge\vectorindex\model\ChunkRowStatus.java
+  knowledge\vectorindex\model\VectorIndexStage.java
+  knowledge\vectorindex\model\VectorIndexStatus.java
+  knowledge\vectorindex\repository\VectorChunkRepository.java
+  knowledge\vectorindex\repository\VectorChunkRow.java
+  knowledge\vectorindex\repository\VectorIndexTaskRow.java
+  knowledge\vectorindex\service\DocumentVectorIndexService.java
+  knowledge\vectorindex\service\VectorIndexReconcileScheduler.java
+  knowledge\vectorindex\service\VectorReconciliationService.java
+  knowledge\vectorindex\support\ContentHasher.java
+  knowledge\vectorindex\support\StableChunkIdGenerator.java
+  knowledge\vectorstore\KnowledgeVectorStoreService.java
+  knowledge\vectorstore\PgVectorAccess.java
+  knowledge\vectorstore\PgVectorEnvironmentReport.java
+  knowledge\vectorstore\PgVectorEnvironmentVerifier.java
+  knowledge\vectorstore\PgVectorIndexType.java
+  knowledge\vectorstore\PgVectorStoreConfiguration.java
+  knowledge\vectorstore\PgVectorStoreProperties.java
+  knowledge\vectorstore\VectorSearchHit.java
+  logging\AccessLogAutoConfiguration.java
+  logging\AccessLogProperties.java
+  logging\CachedBodyAccessLogFilter.java
+  logging\ControllerAccessLogAspect.java
+  logging\LogMaskingUtils.java
+  logging\TraceIdFilter.java
+  model\ClassifiedResponseErrorHandler.java
+  model\ModelAttemptRetryPolicy.java
+  model\ModelFailure.java
+  model\ModelFailureCategory.java
+  model\ModelFailureClassifier.java
+  model\ModelRetryBackOffPolicy.java
+  model\ModelRetryListener.java
+  model\NonRetryableModelException.java
+  model\RetryableModelException.java
+  observability\ModelCallRecorder.java
+  observability\ModelTokenUsage.java
+  observability\TokenUsageExtractor.java
+  prompt\InMemoryPromptTemplateRepository.java
+  prompt\MybatisPromptTemplateRepository.java
+  prompt\MybatisPromptTemplateVersionRepository.java
+  prompt\PromptSeedInitializer.java
+  prompt\PromptTemplateController.java
+  prompt\PromptTemplateRepository.java
+  prompt\PromptTemplateService.java
+  prompt\PromptTemplateValidator.java
+  prompt\PromptTemplateVersionInitializer.java
+  prompt\PromptTemplateVersionRepository.java
+  prompt\PromptTemplateVersionService.java
+  prompt\dto\PromptTemplateSummary.java
+  prompt\dto\PromptTemplateUpsertRequest.java
+  prompt\dto\PromptTemplateVersionView.java
+  prompt\dto\PromptTemplateView.java
+  prompt\dto\TemplateStatusUpdateRequest.java
+  prompt\mapper\PromptTemplateMapper.java
+  prompt\mapper\PromptTemplateVersionMapper.java
+  prompt\model\PromptScenes.java
+  prompt\model\PromptTemplateEntity.java
+  prompt\model\TemplateStatus.java
+  prompt\model\TemplateVariable.java
+  prompt\po\PromptTemplatePO.java
+  prompt\po\PromptTemplateVersionPO.java
+  service\AiChatResult.java
+  service\AiChatService.java
+  service\ChatInvocation.java
+  service\DeepSeekAiChatService.java
+  service\MockAiChatService.java
+  service\ReasoningEffort.java
+  service\StreamChunk.java
+  service\ThinkingSettings.java
+  service\ThinkingSettingsResolver.java
+
+--- 7. 测试目录现状 ---
+  Java 测试类数量: 0
+  resource: application-test.yml
+
+--- 8. 任务书列出的复用类存在性核对 ---
+  KnowledgeDocumentService: 存在 (document)
+  MybatisKnowledgeDocumentRepository: 存在 (repository)
+  KnowledgeDocumentParser: 存在 (document)
+  KnowledgeDocumentController: 存在 (document)
+  DocumentChunker: 存在 (chunking)
+  KnowledgeDocumentChunkingService: 存在 (chunking)
+  StableChunkIdGenerator: 存在 (support)
+  ChunkingProperties: 存在 (chunking)
+  ChunkEmbeddingService: 存在 (embedding)
+  LocalHashNgramEmbeddingModel: 存在 (embedding)
+  EmbeddingModelConfiguration: 存在 (embedding)
+  EmbeddingModelCatalog: 存在 (embedding)
+  EmbeddingVectorValidator: 存在 (embedding)
+  DocumentVectorIndexService: 存在 (service)
+  KnowledgeVectorStoreService: 存在 (vectorstore)
+  PgVectorAccess: 存在 (vectorstore)
+  PgVectorStoreConfiguration: 存在 (vectorstore)
+  VectorChunkRepository: 存在 (repository)
+  VectorReconciliationService: 存在 (service)
+  SimilarityRetrievalService: 存在 (service)
+  QueryEmbeddingService: 存在 (service)
+  RetrievalFilterBuilder: 存在 (support)
+  RetrievalHitMapper: 存在 (support)
+  VectorSpaceIdentity: 存在 (embedding)
+  EmbeddingLengthUnit: 存在 (embedding)
+  ModelAttemptRetryPolicy: 存在 (model)
+  ModelRetryBackOffPolicy: 存在 (model)
+  ModelFailureClassifier: 存在 (model)
+  CitationRegistry: 存在 (knowledge)
+  KnowledgeChatOrchestrator: 存在 (knowledge)
+  PgVectorEnvironmentVerifier: 存在 (vectorstore)
