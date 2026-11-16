@@ -102,7 +102,7 @@
 
 ### 阶段一：脚本化环境探测
 
-写 PowerShell 探测脚本到 `docs\temp_docs\probe_d33.ps1`，输出落盘 `docs\evidence\D33\00-env-probe.txt`。只采集事实：`mvn -v`、`git status --short`、`git log --oneline -5`、PG/pgvector 容器与连接可用性（只报存在性，不打印口令）、`PgVectorEnvironmentVerifier` 结果、模块目录与 pom 关键依赖核对。Agent 只读探测输出，不遍历全仓库。
+写 PowerShell 探测脚本到 `docs\temp_docs\D33\probe_d33.ps1`，输出落盘 `docs\evidence\D33\00-env-probe.txt`。只采集事实：`mvn -v`、`git status --short`、`git log --oneline -5`、PG/pgvector 容器与连接可用性（只报存在性，不打印口令）、`PgVectorEnvironmentVerifier` 结果、模块目录与 pom 关键依赖核对。Agent 只读探测输出，不遍历全仓库。
 
 ### 阶段二：按需精读与设计
 
@@ -179,7 +179,7 @@
 ## 5. 今日必须交付的工程材料
 
 1. 最小 RAG HTTP 接口及请求、响应对象（含来源列表与检索/生成状态字段）。
-2. 端到端演示脚本：从文档导入开始，演示向量检索与回答，落 `docs\temp_docs\`，输出留痕到 `docs\evidence\D33\`；脚本不硬编码密钥、不破坏现有数据。
+2. 端到端演示脚本：从文档导入开始，演示向量检索与回答，落 `docs\temp_docs\D33\`，输出留痕到 `docs\evidence\D33\`；脚本不硬编码密钥、不破坏现有数据。
 3. **RAG 完整调用链时序图**：Mermaid `sequenceDiagram`，参与方含 Client、RagController、RagOrchestrator、RetrievalService、QueryEmbeddingService、VectorStore、ContextAssemblyService、GenerationService、ChatModel；体现正常流程、空检索跳过 ChatModel 分支、检索异常与模型超时分支；节点/消息文本英文双引号，Typora 0.11.18 兼容。
 4. 技术设计与测试记录，放入 `docs\proj_docs\` 与 `docs\evidence\D33\`。
 5. 实际 Maven 测试结果及日志（真实命令、真实通过/失败/skip 数）。
@@ -217,14 +217,13 @@ D33-R01
 - 禁止 Docker prune、删除数据卷、重建现有数据库容器等破坏性操作；禁止批量删除/覆盖历史文档与向量数据。
 - 禁止启用 `remove-existing-vector-store-table` 或应用启动自动删除向量表；禁止改动 pgvector 容器端口映射与数据卷。
 - 不提交数据库密码、模型 API Key 或其他敏感信息；不暴露内部异常堆栈与连接信息。
-- 不修改 D30–D32 历史快照及无关模块；不自动删除 `docs\temp_docs` 下临时文件。
+- 不修改 D30–D32 历史快照及无关模块；不自动删除 `docs\temp_docs\D33` 下临时文件。
 - 数据库、Embedding 或 ChatModel 不可用时，停止对应真实链路验收并记录阻塞，不得伪造成功。
 
 ## 7. 熔断与 Token 治理
 
 - 同一根因连续 2 次修复失败 → 强制输出《根因诊断记录》（现象/已试方案/差异/下一步假设），停止盲目迭代。
 - 测试失败且原因不明 → 只读第一个失败用例堆栈，不把完整日志喂回。
-- 单模块迭代目标 130 万–180 万 Token；300 万触发统计检查、400 万人工复核、500 万暂停重新切片。
 - 禁止全仓库 grep、读完整构建日志、重复输出架构分析、多 Agent 重复扫描同一模块；预算不构成跳过工程工作的理由。
 
 ## 8. 验收清单（完成后自检）
@@ -238,4 +237,4 @@ D33-R01
 - [ ] 维度固定 384、距离度量 COSINE（HNSW + vector_cosine_ops），经 VectorSpaceIdentity 隔离，无混用不兼容向量。
 - [ ] `mvn clean test` 本机真实执行，摘要落盘，结果可复现。
 - [ ] 无真实 API Key 入库；时序图、演示脚本、两份 D33 文档交付，命名规范。
-- [ ] `docs\temp_docs\` 临时脚本保留未删；Git diff 仅含 D33 模块与 docs/，无其他模块改动。
+- [ ] `docs\temp_docs\D33\` 临时脚本保留未删；Git diff 仅含 D33 模块与 docs/，无其他模块改动。
