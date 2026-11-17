@@ -44,6 +44,7 @@ public class RagRetrievalService {
         return new RetrievedChunk(
                 hit.chunkId(), hit.documentId(), hit.version(), hit.chunkIndex(),
                 hit.title(), hit.pageNumbers() == null ? List.of() : hit.pageNumbers(),
-                hit.strategy(), hit.content(), hit.score(), hit.distance());
+                hit.strategy(), hit.content(), hit.score(), hit.distance(),
+                hit.lifecycleStatus(), hit.effectiveAt(), hit.expiresAt());
     }
 }

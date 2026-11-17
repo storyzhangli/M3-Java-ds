@@ -1,19 +1,18 @@
 package com.zl.d34.rag.model;
 
 import com.zl.d34.dto.CitationDto;
-import com.zl.d34.rag.model.RagStatus;
 
 import java.util.List;
 
 /**
- * RAG 最小闭环响应（数据对象，不含业务逻辑）。
+ * RAG 证据链路响应（数据对象，不含业务逻辑）。
  *
  * <p>来源语义声明（诚实约束）：{@code sources} 是<b>进入上下文、提供给模型的证据来源</b>，
  * 不是"模型实际引用来源"；模型实际引用见 {@code citedSourceIds} 与 {@code citedSources}。
  * 本项目无法验证模型逐条引用真实性，因此不声称来源均被模型引用。</p>
  *
  * @param query                  原始问题
- * @param status                 链路状态（五态）
+ * @param status                 链路状态（七态）
  * @param statusMessage          状态说明（拒答原因/失败摘要）
  * @param answer                 清洗后的回答（仅 SUCCESS 非空）
  * @param sources                提供给模型的证据来源（进入上下文的全部 Chunk）
@@ -29,6 +28,9 @@ import java.util.List;
  * @param generationModel        生成模型标识（未生成时为 null）
  * @param mocked                 生成是否为离线模拟
  * @param elapsedMillis          全链路耗时
+ * @param decision               证据评估业务决策（ANSWER/CLARIFY/REFUSE/CONFLICT）
+ * @param reasonCode             决策原因码（八类，见 {@link RagReasonCode}）
+ * @param decisionDetail         决策明细（澄清问题/冲突分组/缺失信息/充分性）
  */
 public record RagResponse(String query,
                           RagStatus status,
@@ -46,7 +48,10 @@ public record RagResponse(String query,
                           int droppedUnknownMarkers,
                           String generationModel,
                           boolean mocked,
-                          long elapsedMillis) {
+                          long elapsedMillis,
+                          RagDecision decision,
+                          RagReasonCode reasonCode,
+                          RagDecisionDetail decisionDetail) {
 
     /** 固定语义常量：来源列表 = 提供给模型的证据来源。 */
     public static final String SOURCES_SEMANTIC = "PROVIDED_TO_MODEL";

@@ -22,6 +22,9 @@ public class RagProperties {
     /** 命中的余弦相似度下限；0.0 表示不额外过滤（与检索阈值语义一致）。 */
     private double minScore = 0.0;
 
+    /** 证据评估配置。 */
+    private Evidence evidence = new Evidence();
+
     /**
      * 配置自检，非法组合立即失败。
      */
@@ -34,6 +37,29 @@ public class RagProperties {
         }
         if (Double.isNaN(minScore) || minScore < 0.0 || minScore > 1.0) {
             throw new IllegalArgumentException("app.rag.min-score 必须是 0.0..1.0 之间的余弦相似度下限");
+        }
+        if (evidence == null) {
+            throw new IllegalArgumentException("app.rag.evidence 不能为 null");
+        }
+        evidence.validate();
+    }
+
+    /**
+     * 证据评估门禁配置。
+     *
+     * <p>相关度阈值无实测依据时按可配置项处理，默认 0.15，不硬编码承诺值。</p>
+     */
+    @Data
+    public static class Evidence {
+
+        /** 相关证据的余弦相似度下限；低于该值的命中视为仅关键词相似（低相关）。 */
+        private double relevantScore = 0.15;
+
+        void validate() {
+            if (Double.isNaN(relevantScore) || relevantScore < 0.0 || relevantScore > 1.0) {
+                throw new IllegalArgumentException(
+                        "app.rag.evidence.relevant-score 必须是 0.0..1.0 之间的余弦相似度下限");
+            }
         }
     }
 }

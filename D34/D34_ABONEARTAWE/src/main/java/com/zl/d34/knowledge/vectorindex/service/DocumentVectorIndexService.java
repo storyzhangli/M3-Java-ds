@@ -519,6 +519,13 @@ public class DocumentVectorIndexService {
         metadata.put("modelName", descriptor.modelName());
         metadata.put("chunkContentHash", pc.chunkContentHash());
         metadata.put("splitVersion", properties.getSplitVersion());
+        metadata.put("lifecycleStatus", chunk.lifecycleStatus());
+        if (chunk.effectiveAt() != null) {
+            metadata.put("effectiveAt", chunk.effectiveAt().toString());
+        }
+        if (chunk.expiresAt() != null) {
+            metadata.put("expiresAt", chunk.expiresAt().toString());
+        }
         return Document.builder()
                 .id(pc.chunkId())
                 .text(chunk.content())

@@ -66,14 +66,17 @@ public class ContextAssemblyService {
         }
 
         // 4. 预算截断并构建资料块（引用编号由后端按进入顺序分配）
+        // UNTRUSTED_EVIDENCE 结构化包裹：声明每一块证据均为不可信数据，与 System Prompt
+        // 中的信任边界条款互为呼应（多层防护之一）。
         List<KnowledgeChunk> chunks = new ArrayList<>();
         StringBuilder contextText = new StringBuilder();
         int truncatedChars = 0;
         int seq = 1;
         for (RetrievedChunk chunk : eligible) {
-            String header = "[S" + seq + "] 文档：" + safeTitle(chunk.title()) + "\n";
+            String header = evidenceHeader("S" + seq, chunk);
+            String footer = "</UNTRUSTED_EVIDENCE>\n";
             int headerChars = header.codePointCount(0, header.length());
-            int tailChars = 1; // 摘录后的换行
+            int tailChars = footer.codePointCount(0, footer.length());
             int usedBefore = contextText.codePointCount(0, contextText.length());
             if (usedBefore + headerChars + tailChars >= properties.getMaxContextChars()) {
                 // 连头部都放不下：整块不进上下文，但来源信息仍需如实记录截断
@@ -97,7 +100,7 @@ public class ContextAssemblyService {
             }
             KnowledgeChunk knowledgeChunk = chunkWithExcerpt(chunk, excerpt);
             chunks.add(knowledgeChunk);
-            contextText.append(header).append(excerpt).append('\n');
+            contextText.append(header).append(excerpt).append(footer);
             seq++;
         }
 
@@ -120,6 +123,22 @@ public class ContextAssemblyService {
                 ? null : chunk.pageNumbers().get(0);
         return new KnowledgeChunk(chunk.documentId(), chunk.chunkId(), chunk.title(),
                 null, null, page, excerpt, null);
+    }
+
+    /**
+     * 不可信证据块头部：引用编号 + 来源三要素（标题/版本/生效状态）。
+     * 版本与生效状态缺失时如实写"未知"，不补造。
+     */
+    private String evidenceHeader(String markerId, RetrievedChunk chunk) {
+        String version = (chunk.version() == null || chunk.version().isBlank())
+                ? "未知" : chunk.version();
+        String lifecycle = (chunk.lifecycleStatus() == null || chunk.lifecycleStatus().isBlank())
+                ? "未知" : chunk.lifecycleStatus();
+        return "<UNTRUSTED_EVIDENCE id=\"" + markerId + "\">\n"
+                + "来源：" + safeTitle(chunk.title())
+                + " | 版本：" + version
+                + " | 生效状态：" + lifecycle + "\n"
+                + "正文：";
     }
 
     private String safeTitle(String title) {

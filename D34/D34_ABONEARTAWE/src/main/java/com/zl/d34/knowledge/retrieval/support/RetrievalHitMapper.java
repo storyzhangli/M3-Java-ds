@@ -3,6 +3,10 @@ package com.zl.d34.knowledge.retrieval.support;
 import com.zl.d34.knowledge.retrieval.dto.RetrievalHitView;
 import org.springframework.ai.document.Document;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +46,10 @@ public final class RetrievalHitMapper {
                 document.getScore(),
                 asDouble(metadata.get("distance")),
                 SCORE_SEMANTIC,
-                DISTANCE_SEMANTIC);
+                DISTANCE_SEMANTIC,
+                asString(metadata.get("lifecycleStatus")),
+                asLocalDateTime(metadata.get("effectiveAt")),
+                asLocalDateTime(metadata.get("expiresAt")));
     }
 
     static String asString(Object value) {
@@ -101,5 +108,25 @@ public final class RetrievalHitMapper {
             }
         }
         return List.of();
+    }
+
+    /**
+     * 时间解析：兼容 ISO 字符串（jsonb 常见形态）、LocalDateTime、Instant 三种真实形态。
+     */
+    static LocalDateTime asLocalDateTime(Object value) {
+        if (value == null) {
+            return null;
+        }
+        if (value instanceof LocalDateTime localDateTime) {
+            return localDateTime;
+        }
+        if (value instanceof Instant instant) {
+            return LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+        }
+        try {
+            return LocalDateTime.parse(value.toString().strip());
+        } catch (DateTimeParseException ex) {
+            return null;
+        }
     }
 }
