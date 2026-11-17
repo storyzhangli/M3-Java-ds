@@ -30,5 +30,5 @@ D34-R02（Phase4 测试修复与全量通过 + Phase5 文档证据切片）
 - docs/evidence/D34/evaluation-metrics.json（7 指标）
 
 ## 遗留问题
-- Level 5 真实端到端依赖 `PGVECTOR_DB_PASSWORD`（当前未设置）与真实 ChatModel 凭据：凭据未提供，Level 5 如实标阻塞，L1–L4 已全部达成（Mock 未冒充真实端到端）。
+- Level 5 真实端到端依赖 `PG_VECTOR_PASSWORD`（当前未设置）与真实 ChatModel 凭据：凭据未提供，Level 5 如实标阻塞，L1–L4 已全部达成（Mock 未冒充真实端到端）。
 - MySQL `knowledge_document` 表 lifecycle 三列属 schema 变更：DDL 脚本已放 `docs\temp_docs\D34\d34-mysql-lifecycle-ddl.sql`，待用户手动执行，未自动 ALTER。

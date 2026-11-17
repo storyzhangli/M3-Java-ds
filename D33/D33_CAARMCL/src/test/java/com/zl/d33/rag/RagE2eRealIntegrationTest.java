@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Level 5 真实端到端：真实 PostgreSQL+pgvector + 真实 ChatModel（DeepSeek）。
  *
  * <p>门控：仅当环境变量 {@code D33_RAG_E2E=true} 时运行；同时要求环境变量
- * {@code PGVECTOR_DB_PASSWORD}（PG 口令）与 {@code AI_API_KEY}（DeepSeek Key）。
+ * {@code PG_VECTOR_PASSWORD}（PG 口令）与 {@code AI_API_KEY}（DeepSeek Key）。
  * 三者任一缺失时本测试跳过，Level 5 标记为阻塞，禁止用 Mock 冒充真实端到端。</p>
  *
  * <p>数据隔离：语料以 {@code e2e-rag-} 前缀独立入库，测试结束后按 documentId
@@ -67,9 +67,9 @@ class RagE2eRealIntegrationTest {
     @BeforeAll
     static void beforeAll() {
         // 凭据缺失时快速失败并给出明确提示，而不是在 Spring 装配阶段报晦涩错误
-        String password = System.getenv("PGVECTOR_DB_PASSWORD");
+        String password = System.getenv("PG_VECTOR_PASSWORD");
         String apiKey = System.getenv("AI_API_KEY");
-        assertNotNull(password, "缺少环境变量 PGVECTOR_DB_PASSWORD，无法连接真实 pgvector");
+        assertNotNull(password, "缺少环境变量 PG_VECTOR_PASSWORD，无法连接真实 pgvector");
         assertNotNull(apiKey, "缺少环境变量 AI_API_KEY，无法调用真实 ChatModel");
     }
 

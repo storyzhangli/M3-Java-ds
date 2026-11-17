@@ -19,7 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  *
  * <p>执行前置条件（全部满足才执行，否则整类跳过并计入"阻塞"，绝不 Mock 冒充）：
  * 1. 系统属性 {@code D34_RAG_E2E=true}；
- * 2. 环境变量 {@code PGVECTOR_DB_PASSWORD} 已设置（真实 PG 口令，缺失 fail-fast）；
+ * 2. 环境变量 {@code PG_VECTOR_PASSWORD} 已设置（真实 PG 口令，缺失 fail-fast）；
  * 3. 环境变量 {@code AI_API_KEY} 已设置（真实模型凭据）。
  * 向量库 192.168.200.153:5432 需预置 d34-local-384-v1 向量空间与测试语料。</p>
  */
@@ -32,10 +32,10 @@ class RagE2eRealIntegrationTest {
 
     @BeforeEach
     void assertCredentials() {
-        String pgPassword = System.getenv("PGVECTOR_DB_PASSWORD");
+        String pgPassword = System.getenv("PG_VECTOR_PASSWORD");
         String apiKey = System.getenv("AI_API_KEY");
         assertThat(pgPassword)
-                .as("PGVECTOR_DB_PASSWORD 必须设置（缺失 fail-fast，不持久化）")
+                .as("PG_VECTOR_PASSWORD 必须设置（缺失 fail-fast，不持久化）")
                 .isNotBlank();
         assertThat(apiKey).as("AI_API_KEY 必须设置").isNotBlank();
     }

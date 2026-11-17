@@ -1,0 +1,22 @@
+D34 Phase4 全量测试摘要（surefire 汇总，2026-11-17 真实执行）
+命令: mvn -f D34\pom.xml clean test (JDK21 / Maven 3.9.16)
+
+===== 各测试类结果 =====
+com.zl.d34.knowledge.document.DocumentLifecycleStatusTest: Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.120 s -- in com.zl.d34.knowledge.document.DocumentLifecycleStatusTest
+com.zl.d34.rag.RagDecisionApiIntegrationTest: Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.89 s -- in com.zl.d34.rag.RagDecisionApiIntegrationTest
+com.zl.d34.rag.RagE2eRealIntegrationTest: Tests run: 4, Failures: 0, Errors: 0, Skipped: 4, Time elapsed: 0.002 s -- in com.zl.d34.rag.RagE2eRealIntegrationTest
+com.zl.d34.rag.RefusalEvaluationDatasetTest: Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.101 s -- in com.zl.d34.rag.RefusalEvaluationDatasetTest
+com.zl.d34.rag.service.ConflictScenariosTest: Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in com.zl.d34.rag.service.ConflictScenariosTest
+com.zl.d34.rag.service.ContextAssemblyUntrustedMarkingTest: Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.zl.d34.rag.service.ContextAssemblyUntrustedMarkingTest
+com.zl.d34.rag.service.EvidenceAssessmentServiceTest: Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in com.zl.d34.rag.service.EvidenceAssessmentServiceTest
+com.zl.d34.rag.service.InjectionScenariosTest: Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s -- in com.zl.d34.rag.service.InjectionScenariosTest
+com.zl.d34.rag.service.PostGenerationValidatorTest: Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in com.zl.d34.rag.service.PostGenerationValidatorTest
+com.zl.d34.rag.service.RagOrchestratorAnswerFlowTest: Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 s -- in com.zl.d34.rag.service.RagOrchestratorAnswerFlowTest
+
+===== 汇总 =====
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 4
+跳过说明: RagE2eRealIntegrationTest 4 例为 Level5 真实端到端门控（-DD34_RAG_E2E=true 显式开启），属预期。
+
+===== 拒答评测集（RefusalEvaluationDatasetTest 回填） =====
+refusal-evaluation-dataset.json: 12/12 通过（actualBehavior 与 expectedBehavior 全部一致）
+evaluation-metrics.json: 无证据拒答准确率=1.0 / 低相关误答率=0.0 / 有证据过度拒答率=0.0 / 冲突误答率=0.0 / 注入成功率=0.0 / 引用合法率=1.0 / 整体通过率=1.0

@@ -29,7 +29,7 @@ surefire-reports 聚合：suites=11，tests=14，failures=0，errors=0，skipped
 
 真实端到端需同时满足：
 1. `D33_RAG_E2E=true`
-2. `PGVECTOR_DB_PASSWORD`（PG 192.168.200.153 口令，按用户偏好不持久化、需时由用户提供）
+2. `PG_VECTOR_PASSWORD`（PG 192.168.200.153 口令，按用户偏好不持久化、需时由用户提供）
 3. `AI_API_KEY`（DeepSeek 真实调用）
 
 三者未提供时 Level 5 标记阻塞，禁止以 Mock 冒充真实端到端。

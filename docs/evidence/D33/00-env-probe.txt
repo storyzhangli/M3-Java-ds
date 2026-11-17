@@ -39,11 +39,11 @@ parent pom: True
 --- 4. 数据库连通性 ---
   PG 192.168.200.153:5432 可达: True
   MySQL 127.0.0.1:3306 可达: True
-  PGVECTOR_DB_PASSWORD 环境变量已设置: False
+  PG_VECTOR_PASSWORD 环境变量已设置: False
   MYSQL_PASSWORD 环境变量已设置: False
 
 --- 5. pgvector 扩展版本（口令可用时） ---
-  跳过（PGVECTOR_DB_PASSWORD 未设置，不尝试连接）
+  跳过（PG_VECTOR_PASSWORD 未设置，不尝试连接）
 
 --- 6. com.zl.d33 包结构（文件名清单） ---
   D33SpringAiApplication.java

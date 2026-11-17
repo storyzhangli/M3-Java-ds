@@ -205,7 +205,7 @@ dependency-tree.txt 存在: True
 
 ## 8. PostgreSQL/pgvector 可用性（不打印口令）
 PG 192.168.200.153:5432 TCP => True
-PGVECTOR_DB_PASSWORD 已设置: False
+PG_VECTOR_PASSWORD 已设置: False
 AI_API_KEY 已设置: True
 MySQL 127.0.0.1:3306 TCP => True
 ## 9. application.yml 关键配置段（app.ai / app.rag / app.vectorstore / app.embedding）

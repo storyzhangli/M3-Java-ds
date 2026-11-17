@@ -42,7 +42,7 @@ D34-R01
 ## 测试
 - 离线单测（Mockito，从零建立）：EvidenceAssessmentService 全分支、生命周期过滤、冲突专项 4 项、注入专项 6 项、PostGenerationValidator、编排拒答零调用、MockMvc 集成。
 - 拒答评测集 12 用例（离线 fixture 执行器回填 actualBehavior/passed），7 指标按公式计算。
-- 真实端到端 RagE2eRealIntegrationTest（门控 D34_RAG_E2E，需 PGVECTOR_DB_PASSWORD；AI_API_KEY 已设置）。
+- 真实端到端 RagE2eRealIntegrationTest（门控 D34_RAG_E2E，需 PG_VECTOR_PASSWORD；AI_API_KEY 已设置）。
 - Phase4 执行后补录真实数字。
 
 ## 证据
@@ -51,5 +51,5 @@ D34-R01
 - docs/evidence/D34/ 其余文件 Phase4/Phase5 落盘
 
 ## 遗留问题
-- Level 5 真实端到端需用户提供 PGVECTOR_DB_PASSWORD（AI_API_KEY 已设置）。
+- Level 5 真实端到端需用户提供 PG_VECTOR_PASSWORD（AI_API_KEY 已设置）。
 - MySQL knowledge_document 表生命周期列 DDL：脚本落 temp_docs 待用户执行（不自动 ALTER）。

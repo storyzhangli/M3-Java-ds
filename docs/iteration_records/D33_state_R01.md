@@ -27,4 +27,4 @@ D33-R01
 - 后续：设计记录、测试结果、端到端输出
 
 ## 遗留问题
-- Level 5 真实端到端依赖 PGVECTOR_DB_PASSWORD 与 AI_API_KEY（用户提供后执行，不 Mock 冒充）。
+- Level 5 真实端到端依赖 PG_VECTOR_PASSWORD 与 AI_API_KEY（用户提供后执行，不 Mock 冒充）。
