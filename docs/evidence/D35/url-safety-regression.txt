@@ -1,0 +1,73 @@
+# D35 R03 URL 安全回归证据
+
+## 1. 执行信息（真实）
+
+- 测试命令：`& "D:\SoftwareInstall\Apache\Maven\apache-maven-3.9.16\bin\mvn.cmd" -B -f "E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D35\pom.xml" clean test`
+- 开始时间：2026-11-18 21:53:03（UTC+8）
+- 结束时间：2026-11-18 21:53:53（UTC+8）
+- 结果：**BUILD SUCCESS，EXIT=0**
+- 相关测试类：`com.zl.d35.rag.support.UrlSafetyPolicyTest`
+- **Tests run: 29, Failures: 0, Errors: 0, Skipped: 0**
+- 完整日志：`docs/evidence/D35/mvn-clean-test-R03.txt`（第 146 行下方为上述统计）
+
+## 2. 任务书表格逐项映射（逐条真实执行结果）
+
+| 测试类别 | 测试输入 | 预期 | 对应测试方法 | 实际 |
+| --- | --- | --- | --- | --- |
+| 合法 HTTPS | `https://example.com/manual.pdf` | 允许 | `safeHttpsAccepted` | PASS |
+| 合法 HTTP | `http://example.com/manual.pdf` | 允许 | `safeHttpAccepted` | PASS |
+| IPv4 loopback | `http://127.0.0.1:8080/x` | 拒绝 | `localhostAndPrivateIpv4Rejected` | PASS |
+| IPv4 私网 | `http://192.168.1.10/x` | 拒绝 | `localhostAndPrivateIpv4Rejected` | PASS |
+| IPv4 查询参数 | `https://127.0.0.1?x=1` | 拒绝 | `localhostAndPrivateIpv4Rejected` | PASS |
+| IPv6 loopback | `https://[::1]/admin` | 拒绝 | `unsafeIpv6Rejected` | PASS |
+| IPv6 unspecified | `https://[::]/admin` | 拒绝 | `unsafeIpv6Rejected` | PASS |
+| IPv6 链路本地 | `https://[fe80::1]/admin` | 拒绝 | `unsafeIpv6Rejected` | PASS |
+| IPv6 ULA | `https://[fc00::1]/admin` | 拒绝 | `unsafeIpv6Rejected` | PASS |
+| UserInfo 绕过 | `https://trusted.com@127.0.0.1/` | 拒绝 | `userInfoSpoofRejected` | PASS |
+| 危险协议 | `javascript:alert(1)` | 拒绝 | `dangerousProtocolRejected` | PASS |
+| 文件协议 | `file:///C:/Windows/system32/config/SAM` | 拒绝 | `dangerousProtocolRejected` | PASS |
+| 空值 | `null`、`""`、`"   "` | 拒绝 | `nullAndBlankNotSafe` | PASS |
+| 公网 IPv6 允许 | `https://[2001:4860:4860::8888]/dns` | 允许 | `publicIpv6Accepted` | PASS |
+
+附加边界（任务书未逐条列出、本轮主动补充）：
+
+| 场景 | 输入 | 预期 | 实际 |
+| --- | --- | --- | --- |
+| IPv4 回环整段 | `http://127.0.0.2/x` | 拒绝 | PASS |
+| 云元数据 | `http://169.254.169.254/latest/meta-data` | 拒绝 | PASS |
+| 前导零八进制变体 | `http://0127.0.0.1/x` | 拒绝 | PASS |
+| 私网边界不误伤 | `http://172.15.0.1/x` | 允许 | PASS |
+| 非默认端口不误伤 | `https://example.com:8443/manual.pdf` | 允许 | PASS |
+| userinfo 带密码 | `https://user:pass@example.com/manual.pdf` | 拒绝 | PASS |
+| ULA fd 段 | `https://[fd12:3456::1]/admin` | 拒绝 | PASS |
+| 协议相对地址 | `//example.com/x` | 拒绝 | PASS |
+| 相对路径 | `/etc/passwd`、`manual.pdf` | 拒绝 | PASS |
+| 盘符绝对路径 | `C:\Users\zl\secret.txt`、`D:/data/secret.pdf` | 拒绝 | PASS |
+
+## 3. 修复前问题定位（静态代码分析证据，非执行证据）
+
+旧实现 `extractHost` 使用字符串拆分，静态阅读确认以下两处绕过：
+
+1. **IPv6 字面量**：`https://[::1]/admin` 的 authority 为 `[::1]`，`host.equals("::1")` 因方括号不命中，**放行**。
+2. **仅查询参数**：`https://127.0.0.1?x=1` 无 `/`，authority 为 `127.0.0.1?x=1`，不匹配 `127.0.0.1` 与私网正则，**放行**。
+3. `userinfo` 旧实现取 `@` 之后，`https://trusted.com@127.0.0.1/` 可拒绝，但依赖字符串位置假设，改由 URI 解析后规则化。
+
+**诚实标注**：以上三点来自对旧版本源码的静态阅读，未保留"旧实现实际运行失败"的测试日志；本轮证据为修复后 29 个测试全部通过。
+
+## 4. 修复方式
+
+`UrlSafetyPolicy` 改为 `java.net.URI` 解析：
+
+- `URI#isAbsolute`/`isOpaque` 拒绝相对路径与 opaque 形态；scheme 白名单 http/https；
+- `URI#getRawUserInfo` 非空一律拒绝（userinfo 视觉欺骗）；
+- `URI#getHost` 取 Host，IPv6 方括号剥离后交给 `InetAddress` 判定回环/未指定/链路本地/site-local/ULA(fc00::/7)/组播；
+- IPv4 严格 4 段数值判定：0/8、10/8、127/8、169.254/16、172.16/12、192.168/16、224/4 拒绝；前导零变体拒绝；
+- IPv4-mapped IPv6（::ffff:0:0/96）提取低 32 位按 IPv4 规则判定；
+- zone id（`%eth0`）一律拒绝；
+- 域名沿用 localhost/`.localhost` 后缀拒绝。
+
+## 5. 明确未覆盖（能力边界）
+
+- 不做服务端 URL 抓取，因此不涉及 DNS Rebinding、域名解析到内网等 SSRF 场景（任务书明确本次不扩展）。
+- IDN / 含下划线域名由 `URI#getHost` 返回 null 时按拒绝处理，未单独构造 IDN 用例。
+- 不修改前端 `isSafeUrl` 逻辑范围（前端仍只作补充校验，服务端强制口径不变）。

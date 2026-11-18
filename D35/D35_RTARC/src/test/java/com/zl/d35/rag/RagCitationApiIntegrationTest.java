@@ -62,7 +62,7 @@ class RagCitationApiIntegrationTest {
     }
 
     @Test
-    @DisplayName("D35-011 主链路 SUCCESS：引用溯源字段透出（sourceId/pageNumbers/paragraphIndex）")
+    @DisplayName("D35-011 主链路 SUCCESS：引用溯源字段透出（sourceId/pageNumbers/paragraphIndex/documentVersion）")
     void successCarriesCitationTraceFields() throws Exception {
         when(retrievalService.retrieve(any())).thenReturn(List.of(
                 CitationTestFixtures.chunkR2Active()));
@@ -74,6 +74,7 @@ class RagCitationApiIntegrationTest {
                 .andExpect(jsonPath("$.data.citedSourceIds[0]").value("S1"))
                 .andExpect(jsonPath("$.data.citedSources[0].id").value("S1"))
                 .andExpect(jsonPath("$.data.citedSources[0].sourceId").value("doc-r2"))
+                .andExpect(jsonPath("$.data.citedSources[0].documentVersion").value("V2.0"))
                 .andExpect(jsonPath("$.data.citedSources[0].pageNumbers[0]").value(15))
                 .andExpect(jsonPath("$.data.citedSources[0].paragraphIndex").value(3))
                 .andExpect(jsonPath("$.data.citedSources[0].excerpt").isNotEmpty());
@@ -91,7 +92,7 @@ class RagCitationApiIntegrationTest {
     }
 
     @Test
-    @DisplayName("D35-013 SSE 与同步同语义：citedSources 与 sources 消费同一溯源结构")
+    @DisplayName("D35-013 SSE 与同步同语义：citedSources 与 sources 消费同一溯源结构（含 documentVersion）")
     void sseAndSyncShareSameCitationShape() throws Exception {
         when(retrievalService.retrieve(any())).thenReturn(List.of(
                 CitationTestFixtures.chunkR2Active()));
@@ -101,7 +102,9 @@ class RagCitationApiIntegrationTest {
                 .andExpect(status().isOk())
                 // 同步 API 的 sources（全部来源）与 citedSources（实际引用）字段口径一致
                 .andExpect(jsonPath("$.data.sources[0].sourceId").value("doc-r2"))
+                .andExpect(jsonPath("$.data.sources[0].documentVersion").value("V2.0"))
                 .andExpect(jsonPath("$.data.sources[0].pageNumbers[0]").value(15))
-                .andExpect(jsonPath("$.data.sources[0].paragraphIndex").value(3));
+                .andExpect(jsonPath("$.data.sources[0].paragraphIndex").value(3))
+                .andExpect(jsonPath("$.data.citedSources[0].documentVersion").value("V2.0"));
     }
 }

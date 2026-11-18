@@ -1,0 +1,49 @@
+# D35 R03 文档版本回归证据（documentVersion）
+
+## 1. 执行信息（真实）
+
+- 测试命令：`& "D:\SoftwareInstall\Apache\Maven\apache-maven-3.9.16\bin\mvn.cmd" -B -f "E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D35\pom.xml" clean test`
+- 执行时间：2026-11-18 21:53:03 → 21:53:53（UTC+8）
+- 结果：**BUILD SUCCESS，EXIT=0**
+- 版本相关测试类与统计：
+  - `com.zl.d35.rag.CitationVersionContractTest`：**Tests run: 5, Failures: 0, Errors: 0, Skipped: 0**
+  - `com.zl.d35.rag.RagCitationApiIntegrationTest`（同步 API 契约）：**Tests run: 3, Failures: 0, Errors: 0, Skipped: 0**
+- 完整日志：`docs/evidence/D35/mvn-clean-test-R03.txt`
+
+## 2. 任务书场景逐项映射
+
+| 场景 | 预期 | 对应测试 | 实际 |
+| --- | --- | --- | --- |
+| 正常版本 V1 | 返回 V1 | `CitationVersionContractTest.versionV1Transferred`（fixture `V1.0`） | PASS |
+| 正常版本 V2 | 返回 V2 | `CitationVersionContractTest.versionV2Transferred`（fixture `V2.0`） | PASS |
+| 同一文档不同版本 | 每条引用保持对应 Chunk 真实版本 | `sameDocumentDifferentVersionsKeptPerChunk`（同 documentId=doc-same，V1.0/V2.0 两条引用各自保持） | PASS |
+| 版本缺失 | 返回 null，不补造 | `missingVersionNotInvented`（序列化后不含 `documentVersion` 字段） | PASS |
+| 同步接口 | documentVersion 字段正确 | `RagCitationApiIntegrationTest.successCarriesCitationTraceFields`（断言 `citedSources[0].documentVersion = V2.0`） | PASS |
+| SSE 接口 | 与同步接口一致 | `sseCitationsCarrySameVersionField`（`SsePayloads.Citations` 与同步侧同一 `CitationDto`，序列化均含 `documentVersion:V2.0`） | PASS |
+
+## 3. 同步 API 真实响应证据（从 access log 摘录）
+
+`mvn-clean-test-R03.txt` 中 `POST /api/v1/rag/answer` 的 `HTTP_RESPONSE` 响应体包含（已由测试断言校验）：
+
+```json
+"sources":[{"id":"S1","sourceId":"doc-r2","documentId":"doc-r2","documentVersion":"V2.0","chunkId":"c-r2-01","title":"R2 型水泵维护手册","page":15,"pageNumbers":[15,16,17],"paragraphIndex":3,"score":0.62,"excerpt":"..."}]
+"citedSources":[{"id":"S1","sourceId":"doc-r2","documentId":"doc-r2","documentVersion":"V2.0",...}]
+```
+
+上述为 MockMvc 集成测试（检索/AI/核验器以 `@MockBean` 隔离），**不是真实 pgvector 数据库端到端测试**，如实标注。
+
+## 4. 版本来源与不覆盖原则（实现事实）
+
+- `documentVersion` 来源链路：入库 metadata `version`（`VectorMetadataBuilder.buildTrace` 已写）→ `RetrievalHitMapper` 读 `metadata.version` → `RetrievalHitView.version` → `RetrievedChunk.version` → `RetrievedChunk.toKnowledgeChunk` 写入 `KnowledgeChunk.documentVersion` → `CitationRegistry.toDto` 映射到 `CitationDto.documentVersion`。
+- 版本按**每条检索命中的 Chunk 自身 metadata** 透传，不查询数据库"当前最新版本"，因此同一 sourceId 的 V1 检索结果不会被 V2 覆盖（由 `sameDocumentDifferentVersionsKeptPerChunk` 守住）。
+- 版本缺失（历史存量未写 version 的向量）如实为 null，DTO 序列化时按 `@JsonInclude(NON_NULL)` 隐藏，不补造。
+
+## 5. SSE 契约证据的边界说明
+
+- `SsePayloads.Citations` 与同步响应共用同一 `CitationDto` 类型（编译期同一契约），测试验证其 JSON 序列化均包含 `documentVersion`。
+- **未执行**真实 `/api/v1/chat/stream` SSE 端点端到端测试（该端点依赖 `KnowledgeChatOrchestrator` 流式链路与模型/历史服务，本轮未新增该端点集成测试）。该缺口如实记录，不以契约级测试冒充端点端到端测试。
+
+## 6. 未覆盖
+
+- 真实 pgvector 存量数据中 version 实际取值分布未抽样（Level 5 真实端到端未执行，原因见 D35_state_R03.md）。
+- 语料 JSON（`KnowledgeCorpus`）无文档版本字段，语料链路 `documentVersion` 恒为 null（如实缺失，不补造）。

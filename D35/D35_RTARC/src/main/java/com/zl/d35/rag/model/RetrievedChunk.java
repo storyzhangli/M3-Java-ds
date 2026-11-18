@@ -72,11 +72,16 @@ public record RetrievedChunk(String chunkId,
         return toKnowledgeChunk(CitationText.DEFAULT_EXCERPT_MAX_CHARS);
     }
 
-    /** 指定引用片段上限的映射（可配 {@code app.rag.citation.excerpt-max-chars}）。 */
+    /**
+     * 指定引用片段上限的映射（可配 {@code app.rag.citation.excerpt-max-chars}）。
+     *
+     * <p>D35 R03：{@code version} 随检索命中逐条透传为 {@code documentVersion}，
+     * 保证同一 sourceId 的 V1/V2 片段各自保持真实版本，不被当前最新版本覆盖。</p>
+     */
     public KnowledgeChunk toKnowledgeChunk(int excerptMaxChars) {
         Integer page = (pageNumbers == null || pageNumbers.isEmpty()) ? null : pageNumbers.get(0);
         List<Integer> pages = (pageNumbers == null || pageNumbers.isEmpty()) ? null : pageNumbers;
-        return new KnowledgeChunk(documentId, chunkId, title, null, null, page, pages,
+        return new KnowledgeChunk(documentId, version, chunkId, title, null, null, page, pages,
                 paragraphIndex, CitationText.excerpt(content, excerptMaxChars), score, null);
     }
 

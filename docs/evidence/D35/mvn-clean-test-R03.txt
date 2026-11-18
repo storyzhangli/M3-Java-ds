@@ -1,0 +1,165 @@
+# D35 R03 mvn clean test (URL safety + documentVersion)
+# command: & "D:\SoftwareInstall\Apache\Maven\apache-maven-3.9.16\bin\mvn.cmd" -B -f "E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D35\pom.xml" clean test
+# start: 2026-11-18 21:53:03
+
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] D35                                                                [pom]
+[INFO] D35_RTARC                                                          [jar]
+[INFO] 
+[INFO] --------------------------< org.ai.m3.ds:D35 >--------------------------
+[INFO] Building D35 1.0-SNAPSHOT                                          [1/2]
+[INFO]   from pom.xml
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ D35 ---
+[INFO] 
+[INFO] -----------------------< org.ai.m3.ds:D35_RTARC >-----------------------
+[INFO] Building D35_RTARC 1.0-SNAPSHOT                                    [2/2]
+[INFO]   from D35_RTARC\pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ D35_RTARC ---
+[INFO] Deleting E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D35\D35_RTARC\target
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (resolve-dependency-paths) @ D35_RTARC ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D35_RTARC ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 15 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D35_RTARC ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 231 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/main/java/com/zl/d35/logging/CachedBodyAccessLogFilter.java:[65,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/main/java/com/zl/d35/model/ClassifiedResponseErrorHandler.java:[32,17] org.springframework.web.client.ResponseErrorHandler �е� handleError(org.springframework.http.client.ClientHttpResponse) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/main/java/com/zl/d35/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D35\D35_RTARC\src\main\java\com\zl\d35\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/main/java/com/zl/d35/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D35_RTARC ---
+[INFO] Copying 1 resource from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D35_RTARC ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 10 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[42,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[42,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[42,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[42,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[42,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[45,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[45,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[45,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[45,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[45,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[48,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[48,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[48,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[48,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D35/D35_RTARC/src/test/java/com/zl/d35/rag/RagCitationApiIntegrationTest.java:[48,6] org.springframework.boot.test.mock.mockito �е� org.springframework.boot.test.mock.mockito.MockBean �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ D35_RTARC ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.zl.d35.knowledge.vectorstore.VectorMetadataBuilderTest
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.235 s -- in com.zl.d35.knowledge.vectorstore.VectorMetadataBuilderTest
+[INFO] Running com.zl.d35.rag.CitationRegistryFieldTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 s -- in com.zl.d35.rag.CitationRegistryFieldTest
+[INFO] Running com.zl.d35.rag.CitationVersionContractTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.298 s -- in com.zl.d35.rag.CitationVersionContractTest
+[INFO] Running com.zl.d35.rag.RagCitationApiIntegrationTest
+21:53:40.577 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.zl.d35.rag.RagCitationApiIntegrationTest]: RagCitationApiIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:53:40.958 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.zl.d35.D35SpringAiApplication for test class com.zl.d35.rag.RagCitationApiIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-18 21:53:41.910 INFO  [background-preinit] [traceId=] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.3.Final
+2026-11-18 21:53:41.979 INFO  [main] [traceId=] c.z.d.r.RagCitationApiIntegrationTest - Starting RagCitationApiIntegrationTest using Java 21.0.7 with PID 24392 (started by zl in E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D35\D35_RTARC)
+2026-11-18 21:53:41.981 INFO  [main] [traceId=] c.z.d.r.RagCitationApiIntegrationTest - The following 1 profile is active: "test"
+2026-11-18 21:53:44.268 INFO  [main] [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-18 21:53:44.273 INFO  [main] [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-18 21:53:44.438 INFO  [main] [traceId=] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 0 Redis repository interfaces.
+2026-11-18 21:53:46.334 INFO  [main] [traceId=] c.zl.d35.knowledge.KnowledgeCorpus - �豸����֪ʶ���ϼ�����ɣ��ĵ���=3��Ƭ����=8
+2026-11-18 21:53:49.795 INFO  [main] [traceId=] o.s.b.a.w.s.WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2026-11-18 21:53:50.588 INFO  [main] [traceId=] c.b.m.s.MybatisPlusApplicationContextAware - Register ApplicationContext instances org.springframework.web.context.support.GenericWebApplicationContext@3009eed7
+2026-11-18 21:53:51.037 INFO  [main] [traceId=] o.s.a.v.pgvector.PgVectorStore - Using the vector table name: vector_store. Is empty: false
+2026-11-18 21:53:51.039 INFO  [main] [traceId=] o.s.a.v.pgvector.PgVectorStore - Initializing PGVectorStore schema for table: vector_store in schema: public
+2026-11-18 21:53:51.039 INFO  [main] [traceId=] o.s.a.v.pgvector.PgVectorStore - vectorTableValidationsEnabled false
+2026-11-18 21:53:51.443 INFO  [main] [traceId=] o.s.b.t.m.w.SpringBootMockServletContext - Initializing Spring TestDispatcherServlet ''
+2026-11-18 21:53:51.443 INFO  [main] [traceId=] o.s.t.w.s.TestDispatcherServlet - Initializing Servlet ''
+2026-11-18 21:53:51.444 INFO  [main] [traceId=] o.s.t.w.s.TestDispatcherServlet - Completed initialization in 1 ms
+2026-11-18 21:53:51.664 INFO  [main] [traceId=] c.z.d.r.RagCitationApiIntegrationTest - Started RagCitationApiIntegrationTest in 10.478 seconds (process running for 14.0)
+2026-11-18 21:53:51.858 INFO  [main] [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-18 21:53:52.109 INFO  [main] [traceId=] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@67156d4d
+2026-11-18 21:53:52.111 INFO  [main] [traceId=] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-18 21:53:52.219 INFO  [main] [traceId=] c.z.d.p.PromptTemplateVersionInitializer - Prompt ģ����ʷ���ջ�������ɣ�����ģ����=10
+2026-11-18 21:53:52.264 INFO  [main] [traceId=] c.z.d35.prompt.PromptSeedInitializer - Prompt ���ӳ�ʼ����ɣ����� 0 �������������ݿ��Ѵ��ڣ�8 ����ʧ�� 0 ������Դ=prompt-templates/seed-templates.json
+2026-11-18 21:53:52.494 INFO  [main] [traceId=28775ac1f6aa42339d53f596a9a19451] c.z.d.rag.service.GenerationService - RAG ������ɣ�model=mock-model��answerChars=30�����ñ��=[S1]������δ֪���=0
+2026-11-18 21:53:52.531 INFO  [main] [traceId=28775ac1f6aa42339d53f596a9a19451] ACCESS_LOG - {"event":"CONTROLLER_ACCESS","traceId":"28775ac1f6aa42339d53f596a9a19451","requestId":"28775ac1f6aa42339d53f596a9a19451","controllerMethod":"RagController#answer","elapsedMs":44,"args":{"request":{"value":"{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\",\"topK\":null,\"documentId\":null,\"version\":null,\"strategy\":null}","truncated":false}},"result":"{\"code\":200,\"msg\":\"success\",\"data\":{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\",\"status\":\"SUCCESS\",\"statusMessage\":\"�ش�ɹ�����\",\"answer\":\"ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�[S1]\",\"sources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"citedSourceIds\":[\"S1\"],\"citedSources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"retrievalHitCount\":1,\"retrievalElapsedMillis\":2,\"scoreSemantic\":\"COSINE_SIMILARITY\",\"contextChunkCount\":1,\"contextUsedChars\":160,\"contextTruncatedChars\":0,\"droppedUnknownMarkers\":0,\"generationModel\":\"mock-model\",\"mocked\":true,\"elapsedMillis\":24,\"decision\":\"ANSWER\",\"reasonCode\":null,\"decisionDetail\":{\"clarificationQuestion\":null,\"missingInformation\":[],\"conflictGroups\":[],\"reason\":\"�ش�ɹ�����\",\"sufficiency\":\"DIRECT\"}}}","resultTruncated":false}
+2026-11-18 21:53:52.576 INFO  [main] [traceId=28775ac1f6aa42339d53f596a9a19451] ACCESS_LOG - {"event":"HTTP_REQUEST","traceId":"28775ac1f6aa42339d53f596a9a19451","requestId":"28775ac1f6aa42339d53f596a9a19451","method":"POST","uri":"/api/v1/rag/answer","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"85"},"requestBody":{"contentType":"application/json","size":85,"body":"{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\"}","truncated":false}}
+2026-11-18 21:53:52.579 INFO  [main] [traceId=28775ac1f6aa42339d53f596a9a19451] ACCESS_LOG - {"event":"HTTP_RESPONSE","traceId":"28775ac1f6aa42339d53f596a9a19451","requestId":"28775ac1f6aa42339d53f596a9a19451","method":"POST","uri":"/api/v1/rag/answer","httpStatus":200,"elapsedMs":197,"responseBody":{"contentType":"application/json","size":1519,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\",\"status\":\"SUCCESS\",\"statusMessage\":\"�ش�ɹ�����\",\"answer\":\"ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�[S1]\",\"sources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"citedSourceIds\":[\"S1\"],\"citedSources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"retrievalHitCount\":1,\"retrievalElapsedMillis\":2,\"scoreSemantic\":\"COSINE_SIMILARITY\",\"contextChunkCount\":1,\"contextUsedChars\":160,\"contextTruncatedChars\":0,\"droppedUnknownMarkers\":0,\"generationModel\":\"mock-model\",\"mocked\":true,\"elapsedMillis\":24,\"decision\":\"ANSWER\",\"reasonCode\":null,\"decisionDetail\":{\"clarificationQuestion\":null,\"missingInformation\":[],\"conflictGroups\":[],\"reason\":\"�ش�ɹ�����\",\"sufficiency\":\"DIRECT\"}}}","truncated":false}}
+2026-11-18 21:53:52.705 WARN  [main] [traceId=ea3c8b3393a94423836c2f486edb0102] c.z.d.common.GlobalExceptionHandler - ����У��ʧ��: ��ѯ���ݲ���Ϊ��
+2026-11-18 21:53:52.708 INFO  [main] [traceId=ea3c8b3393a94423836c2f486edb0102] ACCESS_LOG - {"event":"HTTP_REQUEST","traceId":"ea3c8b3393a94423836c2f486edb0102","requestId":"ea3c8b3393a94423836c2f486edb0102","method":"POST","uri":"/api/v1/rag/answer","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"12"},"requestBody":{"contentType":"application/json","size":12,"body":"{\"query\":\"\"}","truncated":false}}
+2026-11-18 21:53:52.710 INFO  [main] [traceId=ea3c8b3393a94423836c2f486edb0102] ACCESS_LOG - {"event":"HTTP_RESPONSE","traceId":"ea3c8b3393a94423836c2f486edb0102","requestId":"ea3c8b3393a94423836c2f486edb0102","method":"POST","uri":"/api/v1/rag/answer","httpStatus":200,"elapsedMs":20,"responseBody":{"contentType":"application/json","size":58,"body":"{\"code\":4001,\"msg\":\"��ѯ���ݲ���Ϊ��\",\"data\":null}","truncated":false}}
+2026-11-18 21:53:52.730 INFO  [main] [traceId=244b7315599f4082a34d401c3fe0a7b5] c.z.d.rag.service.GenerationService - RAG ������ɣ�model=mock-model��answerChars=30�����ñ��=[S1]������δ֪���=0
+2026-11-18 21:53:52.734 INFO  [main] [traceId=244b7315599f4082a34d401c3fe0a7b5] ACCESS_LOG - {"event":"CONTROLLER_ACCESS","traceId":"244b7315599f4082a34d401c3fe0a7b5","requestId":"244b7315599f4082a34d401c3fe0a7b5","controllerMethod":"RagController#answer","elapsedMs":4,"args":{"request":{"value":"{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\",\"topK\":null,\"documentId\":null,\"version\":null,\"strategy\":null}","truncated":false}},"result":"{\"code\":200,\"msg\":\"success\",\"data\":{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\",\"status\":\"SUCCESS\",\"statusMessage\":\"�ش�ɹ�����\",\"answer\":\"ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�[S1]\",\"sources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"citedSourceIds\":[\"S1\"],\"citedSources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"retrievalHitCount\":1,\"retrievalElapsedMillis\":0,\"scoreSemantic\":\"COSINE_SIMILARITY\",\"contextChunkCount\":1,\"contextUsedChars\":160,\"contextTruncatedChars\":0,\"droppedUnknownMarkers\":0,\"generationModel\":\"mock-model\",\"mocked\":true,\"elapsedMillis\":4,\"decision\":\"ANSWER\",\"reasonCode\":null,\"decisionDetail\":{\"clarificationQuestion\":null,\"missingInformation\":[],\"conflictGroups\":[],\"reason\":\"�ش�ɹ�����\",\"sufficiency\":\"DIRECT\"}}}","resultTruncated":false}
+2026-11-18 21:53:52.736 INFO  [main] [traceId=244b7315599f4082a34d401c3fe0a7b5] ACCESS_LOG - {"event":"HTTP_REQUEST","traceId":"244b7315599f4082a34d401c3fe0a7b5","requestId":"244b7315599f4082a34d401c3fe0a7b5","method":"POST","uri":"/api/v1/rag/answer","query":null,"clientIp":"127.0.0.1","headers":{"Content-Type":"application/json;charset=UTF-8","Content-Length":"85"},"requestBody":{"contentType":"application/json","size":85,"body":"{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\"}","truncated":false}}
+2026-11-18 21:53:52.740 INFO  [main] [traceId=244b7315599f4082a34d401c3fe0a7b5] ACCESS_LOG - {"event":"HTTP_RESPONSE","traceId":"244b7315599f4082a34d401c3fe0a7b5","requestId":"244b7315599f4082a34d401c3fe0a7b5","method":"POST","uri":"/api/v1/rag/answer","httpStatus":200,"elapsedMs":10,"responseBody":{"contentType":"application/json","size":1518,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"query\":\"�豸�ͺ��� R2���������� E50�����������죬Ŀǰ��ͣ��\",\"status\":\"SUCCESS\",\"statusMessage\":\"�ش�ɹ�����\",\"answer\":\"ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�[S1]\",\"sources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"citedSourceIds\":[\"S1\"],\"citedSources\":[{\"id\":\"S1\",\"sourceId\":\"doc-r2\",\"documentId\":\"doc-r2\",\"documentVersion\":\"V2.0\",\"chunkId\":\"c-r2-01\",\"title\":\"R2 ��ˮ��ά���ֲ�\",\"page\":15,\"pageNumbers\":[15,16,17],\"paragraphIndex\":3,\"score\":0.62,\"excerpt\":\"R2 ��ˮ�ó������ϣ�E50 ��ʾ�������������������裺��ͣ��йѹ����ж��������ϴ��ѹ����ֵӦ�趨Ϊ 2.5MPa�����߻ᵼ��������ȡ�\"}],\"retrievalHitCount\":1,\"retrievalElapsedMillis\":0,\"scoreSemantic\":\"COSINE_SIMILARITY\",\"contextChunkCount\":1,\"contextUsedChars\":160,\"contextTruncatedChars\":0,\"droppedUnknownMarkers\":0,\"generationModel\":\"mock-model\",\"mocked\":true,\"elapsedMillis\":4,\"decision\":\"ANSWER\",\"reasonCode\":null,\"decisionDetail\":{\"clarificationQuestion\":null,\"missingInformation\":[],\"conflictGroups\":[],\"reason\":\"�ش�ɹ�����\",\"sufficiency\":\"DIRECT\"}}}","truncated":false}}
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.43 s -- in com.zl.d35.rag.RagCitationApiIntegrationTest
+[INFO] Running com.zl.d35.rag.RagRequestValidationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in com.zl.d35.rag.RagRequestValidationTest
+[INFO] Running com.zl.d35.rag.service.CitationExistenceValidatorTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.130 s -- in com.zl.d35.rag.service.CitationExistenceValidatorTest
+[INFO] Running com.zl.d35.rag.service.PostGenerationValidatorUrlTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 s -- in com.zl.d35.rag.service.PostGenerationValidatorUrlTest
+[INFO] Running com.zl.d35.rag.support.CitationTextTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.zl.d35.rag.support.CitationTextTest
+[INFO] Running com.zl.d35.rag.support.UrlSafetyPolicyTest
+[INFO] Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 s -- in com.zl.d35.rag.support.UrlSafetyPolicyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 65, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary for D35 1.0-SNAPSHOT:
+[INFO] 
+[INFO] D35 ................................................ SUCCESS [  0.185 s]
+[INFO] D35_RTARC .......................................... SUCCESS [ 47.686 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  48.549 s
+[INFO] Finished at: 2026-11-18T21:53:53+08:00
+[INFO] ------------------------------------------------------------------------
+
+# end: 2026-11-18 21:53:53
+# EXIT=0

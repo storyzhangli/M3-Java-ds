@@ -124,8 +124,8 @@ public class CitationRegistry {
 
     private CitationDto toDto(String id, KnowledgeChunk chunk) {
         String safeUrl = UrlSafetyPolicy.isSafe(chunk.url()) ? chunk.url() : null;
-        return new CitationDto(id, chunk.documentId(), chunk.documentId(), chunk.chunkId(),
-                chunk.title(), chunk.sourceType(), chunk.section(), chunk.page(),
+        return new CitationDto(id, chunk.documentId(), chunk.documentId(), chunk.documentVersion(),
+                chunk.chunkId(), chunk.title(), chunk.sourceType(), chunk.section(), chunk.page(),
                 chunk.pageNumbers(), chunk.paragraphIndex(), chunk.score(), chunk.excerpt(),
                 safeUrl);
     }
