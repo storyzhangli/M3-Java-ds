@@ -219,6 +219,19 @@ public class VectorChunkRepository {
     }
 
     /**
+     * 按稳定 chunkId 批量查询仍存在的关联行（引用存在性核验，避免逐条 N+1）。
+     * 返回存在的 chunkId 集合，未命中即视为已删除/失效（删除竞态）。
+     */
+    public List<String> findExistingChunkIds(Collection<String> chunkIds) {
+        if (chunkIds == null || chunkIds.isEmpty()) {
+            return List.of();
+        }
+        String sql = "SELECT chunk_id FROM vector_chunk_index WHERE chunk_id IN ("
+                + placeholders(chunkIds.size()) + ")";
+        return jdbcTemplate.queryForList(sql, String.class, chunkIds.toArray());
+    }
+
+    /**
      * 批量写入/覆盖 Chunk 关联行（Outbox 快照阶段，状态通常为 PENDING）。
      *
      * <p>批量提交减少往返；唯一键冲突仍由 ON DUPLICATE KEY UPDATE 兜底，重复执行不产生新行。</p>

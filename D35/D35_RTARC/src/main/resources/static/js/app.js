@@ -4,7 +4,7 @@
  * 关键约束：
  * 1. 角色清单来自服务端 GET /roles，前端只展示，最终是否允许对话由服务端模板状态决定；
  * 2. 切换角色必然重置会话：服务端禁止同一 sessionId 跨角色，前端先清空本地上下文；
- * 3. 所有服务端文本都通过 textContent/createTextNode 渲染，不拼 innerHTML，避免脚本注入；
+ * 3. 所有服务端文本都通过 textContent/createTextNode 渲染，不拼接 HTML 字符串，避免脚本注入；
  * 4. SSE 分帧交给独立的 SseParser.createSseParser（回调式 API），兼容 LF/CR/CRLF 与跨块边界，
  *    ReadableStream 结束时必须调用 flush() 刷新残余事件块；
  * 5. 会话标识由 start 事件回传，后续轮次原样带回，服务端据此从 COMPLETED 历史选取上下文窗口；
@@ -116,7 +116,7 @@
         sessionId = null;
         currentController = null;
         sending = false;
-        messageList.innerHTML = '';
+        messageList.replaceChildren();
         messageList.appendChild(emptyTip);
         sessionTip.textContent = '尚未建立会话';
         sendBtn.disabled = false;
@@ -389,7 +389,8 @@
 
     /**
      * 渲染结构化引用来源。全部使用 createElement/textContent，
-     * 摘录、标题等服务端数据没有任何 HTML 执行面，也不展示本机路径与相似度分数。
+     * 摘录、标题等服务端数据没有任何 HTML 执行面，也不展示相似度分数；
+     * 外链仅当服务端返回且通过 http/https 校验才渲染，且带 noopener/noreferrer。
      */
     function renderCitations(regions, citations) {
         if (citations.length === 0) {
@@ -402,9 +403,15 @@
 
             var head = document.createElement('div');
             head.className = 'citation-head';
+            var pages = Array.isArray(item.pageNumbers) && item.pageNumbers.length > 0
+                ? item.pageNumbers
+                : (typeof item.page === 'number' ? [item.page] : []);
+            var pageText = formatPageRange(pages);
             head.textContent = '[' + item.id + '] ' + (item.title || '未命名文档')
                 + (item.section ? '｜' + item.section : '')
-                + (typeof item.page === 'number' ? '｜第 ' + item.page + ' 页' : '');
+                + (pageText ? '｜' + pageText : '')
+                + (typeof item.paragraphIndex === 'number'
+                    ? '｜第 ' + item.paragraphIndex + ' 段' : '');
 
             var excerpt = document.createElement('div');
             excerpt.className = 'citation-excerpt';
@@ -412,15 +419,56 @@
 
             var meta = document.createElement('div');
             meta.className = 'citation-meta';
-            meta.textContent = 'documentId=' + item.documentId + '｜chunkId=' + item.chunkId
-                + '｜sourceType=' + item.sourceType;
+            meta.textContent = 'sourceId=' + item.sourceId + '｜documentId=' + item.documentId
+                + '｜chunkId=' + item.chunkId + '｜sourceType=' + item.sourceType;
 
             li.appendChild(head);
             li.appendChild(excerpt);
             li.appendChild(meta);
+
+            if (isSafeUrl(item.url)) {
+                var link = document.createElement('a');
+                link.href = item.url;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.className = 'citation-link';
+                link.textContent = '查看原文';
+                li.appendChild(link);
+            }
+
             regions.citationList.appendChild(li);
         });
         messageList.scrollTop = messageList.scrollHeight;
+    }
+
+    /** 页码列表压缩显示：连续用范围（15-17），非连续用顿号分隔。 */
+    function formatPageRange(pages) {
+        if (!pages || pages.length === 0) {
+            return '';
+        }
+        var ranges = [];
+        var start = pages[0];
+        var prev = pages[0];
+        for (var i = 1; i < pages.length; i++) {
+            if (pages[i] === prev + 1) {
+                prev = pages[i];
+                continue;
+            }
+            ranges.push(start === prev ? String(start) : (start + '-' + prev));
+            start = pages[i];
+            prev = pages[i];
+        }
+        ranges.push(start === prev ? String(start) : (start + '-' + prev));
+        return '第 ' + ranges.join('、') + ' 页';
+    }
+
+    /** 前端补充校验：仅 http/https 前缀（服务端已做完整协议黑名单，此处只作最外层兜底）。 */
+    function isSafeUrl(url) {
+        if (typeof url !== 'string' || !url) {
+            return false;
+        }
+        var value = url.toLowerCase();
+        return value.indexOf('http://') === 0 || value.indexOf('https://') === 0;
     }
 
     function finishAnswer(regions, text, errorState) {

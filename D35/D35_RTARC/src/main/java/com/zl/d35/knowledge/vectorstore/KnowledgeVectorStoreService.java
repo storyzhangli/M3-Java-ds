@@ -93,16 +93,7 @@ public class KnowledgeVectorStoreService {
     }
 
     private Document toVectorDocument(DocumentChunk chunk) {
-        Map<String, Object> metadata = new LinkedHashMap<>();
-        metadata.put("documentId", chunk.documentId());
-        metadata.put("title", chunk.title());
-        metadata.put("version", chunk.version());
-        metadata.put("chunkIndex", chunk.chunkIndex());
-        metadata.put("strategy", chunk.strategy() == null ? null : chunk.strategy().name());
-        metadata.put("pageNumbers", chunk.pageNumbers());
-        metadata.put("characterCount", chunk.characterCount());
-        metadata.put("vectorSpaceId", descriptor.vectorSpaceId());
-        metadata.put("modelName", descriptor.modelName());
+        Map<String, Object> metadata = new LinkedHashMap<>(VectorMetadataBuilder.buildTrace(chunk, descriptor));
         return new Document(UUID.randomUUID().toString(), chunk.content(), metadata);
     }
 

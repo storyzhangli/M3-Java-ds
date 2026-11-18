@@ -22,6 +22,7 @@ import com.zl.d35.knowledge.vectorindex.repository.VectorIndexTaskRow;
 import com.zl.d35.knowledge.vectorindex.support.ContentHasher;
 import com.zl.d35.knowledge.vectorindex.support.StableChunkIdGenerator;
 import com.zl.d35.knowledge.vectorstore.PgVectorAccess;
+import com.zl.d35.knowledge.vectorstore.VectorMetadataBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
@@ -505,18 +506,7 @@ public class DocumentVectorIndexService {
 
     private Document toVectorDocument(PreparedChunk pc) {
         DocumentChunk chunk = pc.chunk();
-        Map<String, Object> metadata = new LinkedHashMap<>();
-        metadata.put("documentId", chunk.documentId());
-        if (chunk.title() != null) {
-            metadata.put("title", chunk.title());
-        }
-        metadata.put("version", chunk.version());
-        metadata.put("chunkIndex", chunk.chunkIndex());
-        metadata.put("strategy", chunk.strategy() == null ? null : chunk.strategy().name());
-        metadata.put("pageNumbers", chunk.pageNumbers());
-        metadata.put("characterCount", chunk.characterCount());
-        metadata.put("vectorSpaceId", descriptor.vectorSpaceId());
-        metadata.put("modelName", descriptor.modelName());
+        Map<String, Object> metadata = new LinkedHashMap<>(VectorMetadataBuilder.buildTrace(chunk, descriptor));
         metadata.put("chunkContentHash", pc.chunkContentHash());
         metadata.put("splitVersion", properties.getSplitVersion());
         metadata.put("lifecycleStatus", chunk.lifecycleStatus());

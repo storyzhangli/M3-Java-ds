@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "iteration": "D35",
+    "dataset": "引用溯源与返回契约核验用例集",
+    "totalCases": 14,
+    "testClassSummary": "8 个测试类，47 个测试方法全部通过（mvn clean test EXIT=0）"
+  },
+  "cases": [
+    {
+      "caseId": "D35-001",
+      "scenario": "伪造引用",
+      "setup": "CitationRegistry 分配 S1，答案含合法 [S1] 与伪造 [S99]",
+      "sourceIds": ["S1"],
+      "expected": "保留 [S1]，删除 [S99]，droppedUnknownMarkers=1",
+      "actual": "sanitized=压力阈值 2.5MPa。[S1]，droppedUnknownMarkers=1",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-002",
+      "scenario": "页码缺失",
+      "setup": "RetrievedChunk 无 pageNumbers，toKnowledgeChunk 映射",
+      "sourceIds": ["S1"],
+      "expected": "page=null、pageNumbers=null、paragraphIndex=null，不补造",
+      "actual": "page=null、pageNumbers=null、paragraphIndex=null",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-003",
+      "scenario": "多个来源",
+      "setup": "两个 chunk 进入 CitationRegistry",
+      "sourceIds": ["S1", "S2"],
+      "expected": "稳定分配 S1/S2，sourceId 映射真实 documentId",
+      "actual": "S1->doc-r2，S2->doc-r2-tune",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-004",
+      "scenario": "页码列表透传",
+      "setup": "跨页 chunk pageNumbers=[15,16,17]、paragraphIndex=3、score=0.62",
+      "sourceIds": ["S1"],
+      "expected": "完整列表与段落索引、分数端到端透传",
+      "actual": "pageNumbers=[15,16,17]、paragraphIndex=3、score=0.62",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-005",
+      "scenario": "片段合规（有限截取）",
+      "setup": "长文本与代理对边界样本",
+      "sourceIds": ["S1"],
+      "expected": "excerpt ≤ 200 UTF-16 + 省略号，代理对不切断，null 返回 null",
+      "actual": "6 个测试全部通过，代理对回退不切断",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-006",
+      "scenario": "URL 协议黑名单",
+      "setup": "javascript:/data:/file:/ftp:/localhost/内网/盘符路径样本",
+      "sourceIds": [],
+      "expected": "全部拒绝，仅 http(s) 合法外链放行",
+      "actual": "16 个测试全部通过，危险协议与本机/内网全拒绝",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-007",
+      "scenario": "虚构 URL 拦截",
+      "setup": "答案含 http://、javascript:、file:、盘符路径、ftp 内网",
+      "sourceIds": ["S1"],
+      "expected": "PostGenerationValidator 判 FABRICATED_URL 失败",
+      "actual": "6 个 URL 样本全拦截 + 1 个合法答案通过，共 7 测试通过",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-008",
+      "scenario": "metadata 段落索引映射",
+      "setup": "DocumentChunk.sources 含 paragraphIndex，共用 VectorMetadataBuilder",
+      "sourceIds": [],
+      "expected": "paragraphIndex 真实非空才写，取首个非空，缺失不补造",
+      "actual": "3 个测试通过，公共溯源键齐全",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-009",
+      "scenario": "删除竞态批量核验",
+      "setup": "mock repository 返回部分存在 chunkId",
+      "sourceIds": ["c1", "c2", "c3"],
+      "expected": "批量一次查询，缺失 [c2,c3] 被识别，去重后核验",
+      "actual": "4 个测试通过，缺失与去重均正确",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-010",
+      "scenario": "入参校验",
+      "setup": "Bean Validation 校验 RagRequest",
+      "sourceIds": [],
+      "expected": "空 query/topK 越界拦截，合法通过",
+      "actual": "3 个测试通过",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-011",
+      "scenario": "主链路溯源契约",
+      "setup": "MockMvc POST /api/v1/rag/answer，mock 检索+AI+核验",
+      "sourceIds": ["S1"],
+      "expected": "SUCCESS，citedSources 含 sourceId/pageNumbers/paragraphIndex/excerpt",
+      "actual": "status=SUCCESS，sourceId=doc-r2，pageNumbers[0]=15，paragraphIndex=3",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-012",
+      "scenario": "空 query 拦截",
+      "setup": "POST body {\"query\":\"\"}",
+      "sourceIds": [],
+      "expected": "HTTP 200 + 业务码 4001，data 为空",
+      "actual": "code=4001，data 不存在",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-013",
+      "scenario": "SSE 与同步同语义",
+      "setup": "sources 与 citedSources 消费同一 CitationDto 溯源结构",
+      "sourceIds": ["S1"],
+      "expected": "sources[0] 与 citedSources[0] 字段口径一致",
+      "actual": "sources[0].sourceId=doc-r2，pageNumbers[0]=15，paragraphIndex=3",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    },
+    {
+      "caseId": "D35-014",
+      "scenario": "前端安全渲染",
+      "setup": "static 目录全量扫描 innerHTML + URL 协议前端兜底",
+      "sourceIds": [],
+      "expected": "innerHTML 零命中，危险 URL 不渲染链接",
+      "actual": "grep innerHTML=0 命中，isSafeUrl 仅放行 http/https",
+      "passed": true,
+      "executionStatus": "PASS",
+      "failureReason": null
+    }
+  ]
+}

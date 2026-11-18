@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "iteration": "D35",
+    "metrics": "引用溯源与返回契约 7 指标",
+    "evidenceBasis": "mvn clean test（47 测试全绿）+ static 目录 innerHTML 扫描（0 命中）"
+  },
+  "metrics": [
+    {
+      "key": "citation_legality_rate",
+      "name": "引用合法率",
+      "formula": "合法引用编号保留数 / 答案中引用编号总数",
+      "value": 1.0,
+      "denominator": 1,
+      "note": "D35-001：合法 [S1] 保留 1/1"
+    },
+    {
+      "key": "fabricated_citation_block_rate",
+      "name": "伪造引用拦截率",
+      "formula": "被删除的未知编号数 / 伪造编号总数",
+      "value": 1.0,
+      "denominator": 1,
+      "note": "D35-001：伪造 [S99] 删除 1/1"
+    },
+    {
+      "key": "dangling_citation_rate",
+      "name": "悬空引用率",
+      "formula": "泄漏到响应的失效引用数 / 总引用数",
+      "value": 0.0,
+      "denominator": 3,
+      "note": "D35-009：3 个 chunkId 中 2 个失效被识别拦截，0 泄漏"
+    },
+    {
+      "key": "page_traceability_rate",
+      "name": "页码可溯源率",
+      "formula": "页码列表完整透传的引用数 / 有页码的引用总数",
+      "value": 1.0,
+      "denominator": 1,
+      "note": "D35-004：跨页 [15,16,17] 完整透传；页码缺失不补造（D35-002）"
+    },
+    {
+      "key": "excerpt_compliance_rate",
+      "name": "片段合规率",
+      "formula": "excerpt ≤ 上限且来自原文不改写的片段数 / 片段总数",
+      "value": 1.0,
+      "denominator": 6,
+      "note": "D35-005：6 个测试全部符合 ≤200 UTF-16、代理对不切断、null 不伪造"
+    },
+    {
+      "key": "dangerous_protocol_fabricated_url_leak_count",
+      "name": "危险协议/虚构URL泄漏数（目标 0）",
+      "formula": "泄漏到响应/渲染的非法 URL 数",
+      "value": 0,
+      "denominator": null,
+      "note": "D35-006（16 测试）+ D35-007（7 测试）全部拦截；D35-014 前端 innerHTML=0、仅 http(s) 渲染链接"
+    },
+    {
+      "key": "overall_pass_rate",
+      "name": "整体通过率",
+      "formula": "通过的测试方法数 / 测试方法总数",
+      "value": 1.0,
+      "denominator": 47,
+      "note": "Tests run: 47, Failures: 0, Errors: 0, Skipped: 0"
+    }
+  ]
+}

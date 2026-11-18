@@ -1,6 +1,7 @@
 package com.zl.d35.rag.model;
 
 import com.zl.d35.knowledge.KnowledgeChunk;
+import com.zl.d35.rag.support.CitationText;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.List;
  * @param chunkIndex      块序号
  * @param title           文档标题
  * @param pageNumbers     页码列表（可能为空）
+ * @param paragraphIndex  段落索引（真实切分来源，可能为 null）
  * @param strategy        切分策略
  * @param content         Chunk 原文（不可信数据）
  * @param score           余弦相似度（可能为 null）
@@ -36,6 +38,7 @@ public record RetrievedChunk(String chunkId,
                              Integer chunkIndex,
                              String title,
                              List<Integer> pageNumbers,
+                             Integer paragraphIndex,
                              String strategy,
                              String content,
                              Double score,
@@ -44,20 +47,37 @@ public record RetrievedChunk(String chunkId,
                              LocalDateTime effectiveAt,
                              LocalDateTime expiresAt) {
 
-    /** 兼容构造器：无生命周期元数据的检索结果（历史存量数据）。 */
+    /** 兼容构造器：无段落索引、无生命周期元数据的检索结果（历史存量数据）。 */
     public RetrievedChunk(String chunkId, String documentId, String version, Integer chunkIndex,
                           String title, List<Integer> pageNumbers, String strategy,
                           String content, Double score, Double distance) {
-        this(chunkId, documentId, version, chunkIndex, title, pageNumbers, strategy, content,
+        this(chunkId, documentId, version, chunkIndex, title, pageNumbers, null, strategy, content,
                 score, distance, null, null, null);
     }
 
+    /** 兼容构造器：有段落索引、无生命周期元数据。 */
+    public RetrievedChunk(String chunkId, String documentId, String version, Integer chunkIndex,
+                          String title, List<Integer> pageNumbers, Integer paragraphIndex,
+                          String strategy, String content, Double score, Double distance) {
+        this(chunkId, documentId, version, chunkIndex, title, pageNumbers, paragraphIndex, strategy,
+                content, score, distance, null, null, null);
+    }
+
     /**
-     * 映射为引用注册表可用的知识片段；页码取第一个（检索结果无章节与来源类型）。
+     * 映射为引用注册表可用的知识片段（默认引用片段上限）：页码取第一个（兼容单值），
+     * 同时保留完整页码列表与段落索引；摘录为有限截取（来自原文不改写）；
+     * 检索结果无章节/来源类型/URL，如实置 null。
      */
     public KnowledgeChunk toKnowledgeChunk() {
+        return toKnowledgeChunk(CitationText.DEFAULT_EXCERPT_MAX_CHARS);
+    }
+
+    /** 指定引用片段上限的映射（可配 {@code app.rag.citation.excerpt-max-chars}）。 */
+    public KnowledgeChunk toKnowledgeChunk(int excerptMaxChars) {
         Integer page = (pageNumbers == null || pageNumbers.isEmpty()) ? null : pageNumbers.get(0);
-        return new KnowledgeChunk(documentId, chunkId, title, null, null, page, content, null);
+        List<Integer> pages = (pageNumbers == null || pageNumbers.isEmpty()) ? null : pageNumbers;
+        return new KnowledgeChunk(documentId, chunkId, title, null, null, page, pages,
+                paragraphIndex, CitationText.excerpt(content, excerptMaxChars), score, null);
     }
 
     /** 分数归一化：null 视为 0，保证排序稳定。 */

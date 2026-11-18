@@ -22,6 +22,9 @@ public class RagProperties {
     /** 命中的余弦相似度下限；0.0 表示不额外过滤（与检索阈值语义一致）。 */
     private double minScore = 0.0;
 
+    /** 引用片段配置。 */
+    private Citation citation = new Citation();
+
     /** 证据评估配置。 */
     private Evidence evidence = new Evidence();
 
@@ -38,10 +41,31 @@ public class RagProperties {
         if (Double.isNaN(minScore) || minScore < 0.0 || minScore > 1.0) {
             throw new IllegalArgumentException("app.rag.min-score 必须是 0.0..1.0 之间的余弦相似度下限");
         }
+        if (citation == null) {
+            throw new IllegalArgumentException("app.rag.citation 不能为 null");
+        }
+        citation.validate();
         if (evidence == null) {
             throw new IllegalArgumentException("app.rag.evidence 不能为 null");
         }
         evidence.validate();
+    }
+
+    /**
+     * 引用片段配置（引用溯源契约）。
+     */
+    @Data
+    public static class Citation {
+
+        /** 引用片段上限（UTF-16 字符），默认 200，来自原文有限截取。 */
+        private int excerptMaxChars = 200;
+
+        void validate() {
+            if (excerptMaxChars < 1 || excerptMaxChars > 10_000) {
+                throw new IllegalArgumentException(
+                        "app.rag.citation.excerpt-max-chars 必须在 1..10000 范围内");
+            }
+        }
     }
 
     /**

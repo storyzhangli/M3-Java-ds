@@ -1,6 +1,7 @@
 package com.zl.d35.rag.service;
 
 import com.zl.d35.common.ResultCode;
+import com.zl.d35.dto.CitationDto;
 import com.zl.d35.equipment.EquipmentFacts;
 import com.zl.d35.equipment.EquipmentInformationExtractor;
 import com.zl.d35.knowledge.retrieval.RetrievalException;
@@ -43,6 +44,8 @@ public class RagOrchestrator {
 
     private final PostGenerationValidator postGenerationValidator;
 
+    private final CitationExistenceValidator citationExistenceValidator;
+
     private final EquipmentInformationExtractor equipmentExtractor;
 
     private final RagProperties properties;
@@ -52,6 +55,7 @@ public class RagOrchestrator {
                            ContextAssemblyService assemblyService,
                            GenerationService generationService,
                            PostGenerationValidator postGenerationValidator,
+                           CitationExistenceValidator citationExistenceValidator,
                            EquipmentInformationExtractor equipmentExtractor,
                            RagProperties properties) {
         this.retrievalService = retrievalService;
@@ -59,6 +63,7 @@ public class RagOrchestrator {
         this.assemblyService = assemblyService;
         this.generationService = generationService;
         this.postGenerationValidator = postGenerationValidator;
+        this.citationExistenceValidator = citationExistenceValidator;
         this.equipmentExtractor = equipmentExtractor;
         this.properties = properties;
         this.properties.validate();
@@ -216,6 +221,23 @@ public class RagOrchestrator {
                     RagDecision.REFUSE, validation.reasonCode(),
                     new RagDecisionDetail(null, List.of(), List.of(),
                             validation.detail(), assessment.sufficiency()));
+        }
+        // 7. 引用存在性核验：检索后、响应前文档/Chunk 被删的删除竞态（批量，避免 N+1）
+        CitationExistenceValidator.ExistenceResult existence = citationExistenceValidator.validate(
+                outcome.citedSources().stream().map(CitationDto::chunkId).toList());
+        if (existence.hasMissing()) {
+            log.info("RAG 引用存在性核验失败：query=[{}]，失效 chunkId={}",
+                    truncate(query, 40), existence.missingChunkIds());
+            return new RagResponse(query, RagStatus.GENERATION_FAILED,
+                    "引用的来源在响应返回前已被删除或失效，已拦截", null,
+                    context.citations(), List.of(), List.of(),
+                    retrieved.size(), retrievalElapsedTotal, SCORE_SEMANTIC,
+                    context.chunkCount(), context.usedChars(), context.truncatedChars(),
+                    outcome.droppedUnknownMarkers(), outcome.model(), outcome.mocked(), elapsed,
+                    RagDecision.REFUSE, RagReasonCode.CITATION_TARGET_DELETED,
+                    new RagDecisionDetail(null, List.of(), List.of(),
+                            RagReasonCode.CITATION_TARGET_DELETED.description(),
+                            assessment.sufficiency()));
         }
         return new RagResponse(query, RagStatus.SUCCESS, RagStatus.SUCCESS.description(),
                 outcome.content(), context.citations(), outcome.citedSourceIds(),

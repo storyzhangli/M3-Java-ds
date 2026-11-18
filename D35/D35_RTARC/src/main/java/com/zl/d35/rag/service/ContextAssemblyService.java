@@ -98,7 +98,8 @@ public class ContextAssemblyService {
                 excerpt = chunk.content().substring(0, cutIndex) + "…";
                 truncatedChars += contentChars - (remaining - 1);
             }
-            KnowledgeChunk knowledgeChunk = chunkWithExcerpt(chunk, excerpt);
+            KnowledgeChunk knowledgeChunk = chunk.toKnowledgeChunk(
+                    properties.getCitation().getExcerptMaxChars());
             chunks.add(knowledgeChunk);
             contextText.append(header).append(excerpt).append(footer);
             seq++;
@@ -116,13 +117,6 @@ public class ContextAssemblyService {
         return new AssembledContext(registry, contextText.toString(),
                 registry.allCitations(), List.copyOf(chunks), chunks.size(),
                 usedChars, truncatedChars, true);
-    }
-
-    private KnowledgeChunk chunkWithExcerpt(RetrievedChunk chunk, String excerpt) {
-        Integer page = (chunk.pageNumbers() == null || chunk.pageNumbers().isEmpty())
-                ? null : chunk.pageNumbers().get(0);
-        return new KnowledgeChunk(chunk.documentId(), chunk.chunkId(), chunk.title(),
-                null, null, page, excerpt, null);
     }
 
     /**

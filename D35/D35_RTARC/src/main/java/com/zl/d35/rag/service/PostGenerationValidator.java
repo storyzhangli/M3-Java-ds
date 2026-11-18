@@ -37,6 +37,15 @@ public class PostGenerationValidator {
     private static final Pattern CITATION_MARKER = Pattern.compile("\\[s\\d{1,3}]");
 
     /**
+     * 无来源 URL / 本机路径 / 危险协议：证据不提供 URL，答案中出现即视为模型/用户拼接（FABRICATED_URL）。
+     * 覆盖 http(s) 链接、javascript:/data:/file:/ftp: 危险协议、Windows 盘符绝对路径。
+     */
+    private static final Pattern FABRICATED_URL_PATTERN = Pattern.compile(
+            "(?:https?://|javascript:|data:|file:|ftp:)[^\\s]*"
+                    + "|[A-Za-z]:[\\\\/]\\S*",
+            Pattern.CASE_INSENSITIVE);
+
+    /**
      * 校验生成答案的事实支持关系。
      *
      * @param answer          引用清洗后的答案（未知编号已被删除）
@@ -85,6 +94,13 @@ public class PostGenerationValidator {
                 return ValidationOutcome.failure(RagReasonCode.UNSUPPORTED_CLAIM,
                         "答案中出现证据不支持的数值参数: " + paramMatcher.group());
             }
+        }
+
+        // 3. 无来源 URL / 本机路径 / 危险协议：证据不提供 URL，答案中出现即视为拼接
+        Matcher urlMatcher = FABRICATED_URL_PATTERN.matcher(lowerAnswer);
+        if (urlMatcher.find()) {
+            return ValidationOutcome.failure(RagReasonCode.FABRICATED_URL,
+                    "答案中出现无来源或危险协议的链接/本机路径: " + urlMatcher.group());
         }
         return ValidationOutcome.ok();
     }

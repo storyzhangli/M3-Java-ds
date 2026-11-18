@@ -21,6 +21,7 @@ import java.util.List;
  * @param chunkIndex      块序号
  * @param title           文档标题
  * @param pageNumbers     页码（可能为空列表）
+ * @param paragraphIndex  段落索引（D35 新增，真实切分来源，可能为 null）
  * @param strategy        切分策略
  * @param content         Chunk 原文
  * @param score           余弦相似度（可能为 null，若适配器未返回）
@@ -38,6 +39,7 @@ public record RetrievalHitView(int rank,
                                Integer chunkIndex,
                                String title,
                                List<Integer> pageNumbers,
+                               Integer paragraphIndex,
                                String strategy,
                                String content,
                                Double score,
@@ -48,12 +50,22 @@ public record RetrievalHitView(int rank,
                                LocalDateTime effectiveAt,
                                LocalDateTime expiresAt) {
 
-    /** 兼容构造器：无生命周期元数据的历史命中。 */
+    /** 兼容构造器：无段落索引、无生命周期元数据的历史命中。 */
     public RetrievalHitView(int rank, String chunkId, String documentId, String version,
                             Integer chunkIndex, String title, List<Integer> pageNumbers,
                             String strategy, String content, Double score, Double distance,
                             String scoreSemantic, String distanceSemantic) {
-        this(rank, chunkId, documentId, version, chunkIndex, title, pageNumbers, strategy,
+        this(rank, chunkId, documentId, version, chunkIndex, title, pageNumbers, null, strategy,
                 content, score, distance, scoreSemantic, distanceSemantic, null, null, null);
+    }
+
+    /** 兼容构造器：有段落索引、无生命周期元数据。 */
+    public RetrievalHitView(int rank, String chunkId, String documentId, String version,
+                            Integer chunkIndex, String title, List<Integer> pageNumbers,
+                            Integer paragraphIndex, String strategy, String content, Double score,
+                            Double distance, String scoreSemantic, String distanceSemantic) {
+        this(rank, chunkId, documentId, version, chunkIndex, title, pageNumbers, paragraphIndex,
+                strategy, content, score, distance, scoreSemantic, distanceSemantic,
+                null, null, null);
     }
 }

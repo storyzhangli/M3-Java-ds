@@ -1,7 +1,7 @@
 package com.zl.d35.rag.model;
 
 /**
- * RAG 证据决策稳定原因码（八类，与 HTTP 层 {@code ResultCode} 体系并存，不另建体系）。
+ * RAG 证据决策稳定原因码（十类，与 HTTP 层 {@code ResultCode} 体系并存，不另建体系）。
  */
 public enum RagReasonCode {
 
@@ -27,7 +27,13 @@ public enum RagReasonCode {
     UNSUPPORTED_CLAIM("输出含无证据支持的设备参数或故障码"),
 
     /** 生成后校验未通过的受控失败。 */
-    GENERATION_VALIDATION_FAILED("生成后校验未通过的受控失败");
+    GENERATION_VALIDATION_FAILED("生成后校验未通过的受控失败"),
+
+    /** 引用指向的文档/Chunk 在检索后、响应前被删除或失效（删除竞态）。 */
+    CITATION_TARGET_DELETED("引用指向的文档或片段已删除或失效"),
+
+    /** 答案中出现无来源 URL、本机路径或危险协议（模型/用户拼接）。 */
+    FABRICATED_URL("答案中出现无来源或危险协议的链接或本机路径");
 
     private final String description;
 

@@ -1,0 +1,40 @@
+===== D35 Phase1 环境探测 =====
+时间: 2026-11-18 18:20:23
+
+===== mvn -v =====
+Apache Maven 3.9.16 (2bdd9fddda4b155ebf8000e807eb73fd829a51d5)
+Maven home: D:\SoftwareInstall\Apache\Maven\apache-maven-3.9.16
+Java version: 21.0.7, vendor: Oracle Corporation, runtime: D:\SoftwareInstall\JDK\JDK21
+Default locale: zh_CN, platform encoding: UTF-8
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+
+===== git status --short =====
+
+===== git log --oneline -5 =====
+e666212 D35 项目基础骨架
+8f71d97 D35 费曼口述
+2204954 D35 知识笔记
+ac695ba D33/D34 阶段文件迁移到evidence目录
+6135d26 D33/D34 阶段文件迁移目录归档
+
+===== 环境变量（仅 True/False，不打印值）=====
+PG_VECTOR_PASSWORD 已设置: True
+AI_API_KEY 已设置: True
+MYSQL_PASSWORD 已设置: False
+
+===== 网络可达性（不打印口令）=====
+PG 192.168.200.153:5432 TcpTestSucceeded: True
+MySQL 127.0.0.1:3306 TcpTestSucceeded: True
+
+===== 目录结构 =====
+D35_RTARC/src/main/java 存在: True
+D35_RTARC/src/test 存在: True
+main Java 文件数: 226
+test Java 文件数: 0
+
+file-inventory.txt 已生成: 244 文件
+citation-symbol-scan.txt 已生成: 143 处命中
+
+===== effective-pom / dependency-tree =====
+effective-pom EXIT=0
+dependency-tree EXIT=0

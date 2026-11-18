@@ -41,6 +41,7 @@ public final class RetrievalHitMapper {
                 asInteger(metadata.get("chunkIndex")),
                 asString(metadata.get("title")),
                 asIntegerList(metadata.get("pageNumbers")),
+                asInteger(metadata.get("paragraphIndex")),
                 asString(metadata.get("strategy")),
                 document.getText(),
                 document.getScore(),

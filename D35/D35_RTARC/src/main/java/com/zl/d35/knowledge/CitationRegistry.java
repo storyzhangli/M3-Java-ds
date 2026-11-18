@@ -2,6 +2,7 @@ package com.zl.d35.knowledge;
 
 import com.zl.d35.dto.CitationDto;
 import com.zl.d35.knowledge.KnowledgeChunk;
+import com.zl.d35.rag.support.UrlSafetyPolicy;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -122,8 +123,11 @@ public class CitationRegistry {
     }
 
     private CitationDto toDto(String id, KnowledgeChunk chunk) {
-        return new CitationDto(id, chunk.documentId(), chunk.chunkId(), chunk.title(),
-                chunk.sourceType(), chunk.section(), chunk.page(), chunk.excerpt(), chunk.url());
+        String safeUrl = UrlSafetyPolicy.isSafe(chunk.url()) ? chunk.url() : null;
+        return new CitationDto(id, chunk.documentId(), chunk.documentId(), chunk.chunkId(),
+                chunk.title(), chunk.sourceType(), chunk.section(), chunk.page(),
+                chunk.pageNumbers(), chunk.paragraphIndex(), chunk.score(), chunk.excerpt(),
+                safeUrl);
     }
 
     /**
