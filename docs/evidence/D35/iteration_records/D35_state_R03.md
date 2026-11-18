@@ -90,4 +90,7 @@
 
 ## Git 提交
 
-- 本轮整改提交编号：（提交后回填，见最终 commit 记录）
+- 本轮整改提交编号：`d27c5ad46dfa0882bf91eb40a18a26ed43dc2b9c`（短号 `d27c5ad`）
+  ——「D35 R03 整改：URL 安全校验改用 URI 解析、Citation 补齐 documentVersion、引用语义边界说明」
+  （14 files changed, +888/-103；仅 D35 模块 + D35 文档/证据，无 target/surefire/密钥进入提交）
+- 整改基线实现提交：`80097b0413780ddc10c89421f1ce32ea22aa1b99`（8.4/10 验收版本）。
