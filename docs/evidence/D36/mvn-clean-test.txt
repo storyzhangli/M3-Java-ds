@@ -1,0 +1,73 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< org.ai.m3.ds:D36_SPCE >------------------------
+[INFO] Building D36_SPCE 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ D36_SPCE ---
+[INFO] Deleting E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D36\D36_SPCE\target
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (resolve-dependency-paths) @ D36_SPCE ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D36_SPCE ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 15 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D36_SPCE ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 249 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D36/D36_SPCE/src/main/java/com/zl/d36/logging/CachedBodyAccessLogFilter.java:[66,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D36/D36_SPCE/src/main/java/com/zl/d36/model/ClassifiedResponseErrorHandler.java:[32,17] org.springframework.web.client.ResponseErrorHandler �е� handleError(org.springframework.http.client.ClientHttpResponse) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D36/D36_SPCE/src/main/java/com/zl/d36/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D36\D36_SPCE\src\main\java\com\zl\d36\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D36/D36_SPCE/src/main/java/com/zl/d36/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D36_SPCE ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D36_SPCE ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 6 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ D36_SPCE ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.zl.d36.experiment.ChunkIdMappingTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.226 s -- in com.zl.d36.experiment.ChunkIdMappingTest
+[INFO] Running com.zl.d36.experiment.ChunkingParametersTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.zl.d36.experiment.ChunkingParametersTest
+[INFO] Running com.zl.d36.experiment.ExperimentIsolationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.zl.d36.experiment.ExperimentIsolationTest
+[INFO] Running com.zl.d36.experiment.MetricsCalculationTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in com.zl.d36.experiment.MetricsCalculationTest
+[INFO] Running com.zl.d36.experiment.RetrievalParametersTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s -- in com.zl.d36.experiment.RetrievalParametersTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  39.257 s
+[INFO] Finished at: 2026-11-19T18:01:00+08:00
+[INFO] ------------------------------------------------------------------------

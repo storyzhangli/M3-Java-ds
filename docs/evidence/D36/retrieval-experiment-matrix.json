@@ -1,0 +1,54 @@
+{
+  "matrix" : {
+    "strategy" : "FIXED_LENGTH",
+    "lengthUnit" : "CODE_POINT",
+    "warmupRuns" : 1,
+    "repeatRuns" : 3,
+    "corpusResource" : "knowledge/equipment-fault-corpus.json",
+    "questionResource" : "docs/evidence/D25/rag-design/questions.jsonl",
+    "questionCount" : 10,
+    "embeddingModel" : "local-hash-ngram-v1",
+    "distanceMetric" : "COSINE",
+    "dimensions" : 384,
+    "groups" : [ {
+      "groupId" : "G0",
+      "chunkSize" : 480,
+      "overlap" : 60,
+      "topK" : 5,
+      "similarityThreshold" : 0.0,
+      "changedVariable" : "基线（骨架真实配置）"
+    }, {
+      "groupId" : "G1",
+      "chunkSize" : 200,
+      "overlap" : 60,
+      "topK" : 5,
+      "similarityThreshold" : 0.0,
+      "changedVariable" : "只改 chunk size（480→200）"
+    }, {
+      "groupId" : "G2",
+      "chunkSize" : 480,
+      "overlap" : 20,
+      "topK" : 5,
+      "similarityThreshold" : 0.0,
+      "changedVariable" : "只改 overlap（60→20）"
+    }, {
+      "groupId" : "G3",
+      "chunkSize" : 480,
+      "overlap" : 60,
+      "topK" : 10,
+      "similarityThreshold" : 0.0,
+      "changedVariable" : "只改 Top-K（5→10）"
+    }, {
+      "groupId" : "G4",
+      "chunkSize" : 480,
+      "overlap" : 60,
+      "topK" : 5,
+      "similarityThreshold" : 0.25,
+      "changedVariable" : "只改阈值（0.00→0.25）"
+    } ]
+  },
+  "fingerprints" : {
+    "questionsSha256" : "44426b1771c379343a2239147af0adf4c4d9a2d80e547e0bcf3259c65634750a",
+    "corpusSha256" : "aad6ac4df5585aad5078d1c94df4e5093af15a9730e230149cfde0940335ab0b"
+  }
+}

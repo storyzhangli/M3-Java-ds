@@ -1,0 +1,118 @@
+[ {
+  "groupId" : "G0",
+  "entries" : [ {
+    "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+    "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 12, 15, 18 ],
+    "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ]
+  }, {
+    "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+    "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 6, 9, 10 ],
+    "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ]
+  }, {
+    "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+    "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 3, 7 ],
+    "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ]
+  } ]
+}, {
+  "groupId" : "G1",
+  "entries" : [ {
+    "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+    "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 12, 15, 18 ],
+    "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ]
+  }, {
+    "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+    "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+    "chunkIndex" : 1,
+    "pageNumbers" : [ 15, 18 ],
+    "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ]
+  }, {
+    "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+    "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 6, 9 ],
+    "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ]
+  }, {
+    "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+    "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+    "chunkIndex" : 1,
+    "pageNumbers" : [ 9, 10 ],
+    "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ]
+  }, {
+    "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+    "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 3, 7 ],
+    "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ]
+  } ]
+}, {
+  "groupId" : "G2",
+  "entries" : [ {
+    "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+    "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 12, 15, 18 ],
+    "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ]
+  }, {
+    "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+    "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 6, 9, 10 ],
+    "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ]
+  }, {
+    "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+    "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 3, 7 ],
+    "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ]
+  } ]
+}, {
+  "groupId" : "G3",
+  "entries" : [ {
+    "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+    "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 12, 15, 18 ],
+    "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ]
+  }, {
+    "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+    "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 6, 9, 10 ],
+    "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ]
+  }, {
+    "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+    "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 3, 7 ],
+    "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ]
+  } ]
+}, {
+  "groupId" : "G4",
+  "entries" : [ {
+    "vectorChunkId" : "09d52e62-0d57-5ca0-b7af-6026f1148c9a",
+    "documentId" : "d36exp-g4-DOC-CNC-COOLING-001",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 12, 15, 18 ],
+    "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ]
+  }, {
+    "vectorChunkId" : "252a4cbb-55e3-5b7c-a2f3-e633681f07e3",
+    "documentId" : "d36exp-g4-DOC-SERVO-TROUBLE-002",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 6, 9, 10 ],
+    "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ]
+  }, {
+    "vectorChunkId" : "fd7532f0-2413-5704-af31-873ee37a881a",
+    "documentId" : "d36exp-g4-DOC-WORKORDER-SPEC-003",
+    "chunkIndex" : 0,
+    "pageNumbers" : [ 3, 7 ],
+    "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ]
+  } ]
+} ]

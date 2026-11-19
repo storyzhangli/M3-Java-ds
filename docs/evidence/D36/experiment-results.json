@@ -1,0 +1,4712 @@
+[ {
+  "groupId" : "G0",
+  "questions" : [ {
+    "questionId" : "Q01",
+    "question" : "数控机床出现主轴过热报警，应该先检查什么？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 6.2432,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 5.6908,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 6.1758,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q02",
+    "question" : "冷却液充足但设备仍然反复过热报警，下一步怎么判断？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 7.0373,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 5.0407,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 5.2593,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q03",
+    "question" : "冷却泵出现异响并且流量下降，应该如何处理？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 5.1986,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.7961,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.1571,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 6,
+    "noiseCount" : 5,
+    "precision" : 0.16666666666666666,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q04",
+    "question" : "伺服驱动器反复报过载，应该按什么顺序排查？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.1165,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 5.0785,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.4301,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q05",
+    "question" : "伺服系统出现位置偏差计数器溢出报警，通常是什么原因？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 5.2136,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.9394,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 5.1134,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q06",
+    "question" : "导致整条产线停机的设备故障应该定几级工单？响应时限是多少？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 5.1611,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.9268,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 5.4943,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q07",
+    "question" : "工单关闭时必须填写哪些内容？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.8495,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.3476,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.2732,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q08",
+    "question" : "冷却泵排气后流量仍然不足，需要怎么维修？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.1587,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.1714,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.4651,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q09",
+    "question" : "伺服机械卡滞还没有排除之前，可以提高电流限幅吗？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.3325,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.8433,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.2652,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q10",
+    "question" : "数控机台主轴温度太高一直报警，该怎么处理？",
+    "category" : "paraphrase",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.2919,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.6008,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.1684,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId" : "d36exp-g0-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "26aa36e7-1ee0-5e80-ac4f-9ead708aaead",
+        "documentId" : "d36exp-g0-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "44abaa45-f390-5974-beb5-fd130c0bc3e2",
+        "documentId" : "d36exp-g0-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  } ]
+}, {
+  "groupId" : "G1",
+  "questions" : [ {
+    "questionId" : "Q01",
+    "question" : "数控机床出现主轴过热报警，应该先检查什么？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 5.5726,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.3463160991668701,
+        "distance" : 0.6536839008331299
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.16886413097381592,
+        "distance" : 0.8311358690261841
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.15704381465911865,
+        "distance" : 0.8429561853408813
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12777256965637207,
+        "distance" : 0.8722274303436279
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 5.0669,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.3463160991668701,
+        "distance" : 0.6536839008331299
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.16886413097381592,
+        "distance" : 0.8311358690261841
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.15704381465911865,
+        "distance" : 0.8429561853408813
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12777256965637207,
+        "distance" : 0.8722274303436279
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 5.384,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.3463160991668701,
+        "distance" : 0.6536839008331299
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.16886413097381592,
+        "distance" : 0.8311358690261841
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.15704381465911865,
+        "distance" : 0.8429561853408813
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12777256965637207,
+        "distance" : 0.8722274303436279
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q02",
+    "question" : "冷却液充足但设备仍然反复过热报警，下一步怎么判断？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 5.7673,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.24337869882583618,
+        "distance" : 0.7566213011741638
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.11243325471878052,
+        "distance" : 0.8875667452812195
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.3457,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2433786392211914,
+        "distance" : 0.7566213607788086
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.11243325471878052,
+        "distance" : 0.8875667452812195
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.551,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2433786392211914,
+        "distance" : 0.7566213607788086
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.11243325471878052,
+        "distance" : 0.8875667452812195
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q03",
+    "question" : "冷却泵出现异响并且流量下降，应该如何处理？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.6459,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.20276343822479248,
+        "distance" : 0.7972365617752075
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.0982164740562439,
+        "distance" : 0.9017835259437561
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.09167182445526123,
+        "distance" : 0.9083281755447388
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.07079911231994629,
+        "distance" : 0.9292008876800537
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.0977,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.20276343822479248,
+        "distance" : 0.7972365617752075
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.0982164740562439,
+        "distance" : 0.9017835259437561
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.09167182445526123,
+        "distance" : 0.9083281755447388
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.07079911231994629,
+        "distance" : 0.9292008876800537
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.9096,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.20276343822479248,
+        "distance" : 0.7972365617752075
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.0982164740562439,
+        "distance" : 0.9017835259437561
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.09167182445526123,
+        "distance" : 0.9083281755447388
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.07079911231994629,
+        "distance" : 0.9292008876800537
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 6,
+    "noiseCount" : 5,
+    "precision" : 0.16666666666666666,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q04",
+    "question" : "伺服驱动器反复报过载，应该按什么顺序排查？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.7743,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.2991443872451782,
+        "distance" : 0.7008556127548218
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15847986936569214,
+        "distance" : 0.8415201306343079
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1355707049369812,
+        "distance" : 0.8644292950630188
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.06457620859146118,
+        "distance" : 0.9354237914085388
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.8311,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.2991443872451782,
+        "distance" : 0.7008556127548218
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15847986936569214,
+        "distance" : 0.8415201306343079
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1355707049369812,
+        "distance" : 0.8644292950630188
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.06457620859146118,
+        "distance" : 0.9354237914085388
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.1215,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.2991443872451782,
+        "distance" : 0.7008556127548218
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15847986936569214,
+        "distance" : 0.8415201306343079
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1355707049369812,
+        "distance" : 0.8644292950630188
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.06457620859146118,
+        "distance" : 0.9354237914085388
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q05",
+    "question" : "伺服系统出现位置偏差计数器溢出报警，通常是什么原因？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.7017,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.26141995191574097,
+        "distance" : 0.738580048084259
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.19501256942749023,
+        "distance" : 0.8049874305725098
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.11786901950836182,
+        "distance" : 0.8821309804916382
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.06640005111694336,
+        "distance" : 0.9335999488830566
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 5.0937,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.26141995191574097,
+        "distance" : 0.738580048084259
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.19501256942749023,
+        "distance" : 0.8049874305725098
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.11786901950836182,
+        "distance" : 0.8821309804916382
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.06640005111694336,
+        "distance" : 0.9335999488830566
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.6567,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.26141995191574097,
+        "distance" : 0.738580048084259
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.19501256942749023,
+        "distance" : 0.8049874305725098
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.11786901950836182,
+        "distance" : 0.8821309804916382
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.06640005111694336,
+        "distance" : 0.9335999488830566
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q06",
+    "question" : "导致整条产线停机的设备故障应该定几级工单？响应时限是多少？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.9121,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.158064603805542,
+        "distance" : 0.841935396194458
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.12485235929489136,
+        "distance" : 0.8751476407051086
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.00885772705078125,
+        "distance" : 0.9911422729492188
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 6.1561,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.158064603805542,
+        "distance" : 0.841935396194458
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.12485235929489136,
+        "distance" : 0.8751476407051086
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.00885772705078125,
+        "distance" : 0.9911422729492188
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.7437,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.158064603805542,
+        "distance" : 0.841935396194458
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.12485235929489136,
+        "distance" : 0.8751476407051086
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.00885772705078125,
+        "distance" : 0.9911422729492188
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q07",
+    "question" : "工单关闭时必须填写哪些内容？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.2985,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10417121648788452,
+        "distance" : 0.8958287835121155
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.03436458110809326,
+        "distance" : 0.9656354188919067
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.1352,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10417121648788452,
+        "distance" : 0.8958287835121155
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.03436458110809326,
+        "distance" : 0.9656354188919067
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.4691,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10417121648788452,
+        "distance" : 0.8958287835121155
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.03436458110809326,
+        "distance" : 0.9656354188919067
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q08",
+    "question" : "冷却泵排气后流量仍然不足，需要怎么维修？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.3259,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2720695734024048,
+        "distance" : 0.7279304265975952
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1324610710144043,
+        "distance" : 0.8675389289855957
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.02916175127029419,
+        "distance" : 0.9708382487297058
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.022779464721679688,
+        "distance" : 0.9772205352783203
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.4385,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2720695734024048,
+        "distance" : 0.7279304265975952
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1324610710144043,
+        "distance" : 0.8675389289855957
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.02916175127029419,
+        "distance" : 0.9708382487297058
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.022779464721679688,
+        "distance" : 0.9772205352783203
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.306,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2720695734024048,
+        "distance" : 0.7279304265975952
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1324610710144043,
+        "distance" : 0.8675389289855957
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.02916175127029419,
+        "distance" : 0.9708382487297058
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.022779464721679688,
+        "distance" : 0.9772205352783203
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q09",
+    "question" : "伺服机械卡滞还没有排除之前，可以提高电流限幅吗？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.9729,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.2663878798484802,
+        "distance" : 0.7336121201515198
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.1267576813697815,
+        "distance" : 0.8732423186302185
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.051664531230926514,
+        "distance" : 0.9483354687690735
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.031021714210510254,
+        "distance" : 0.9689782857894897
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.8159,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.2663878798484802,
+        "distance" : 0.7336121201515198
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.1267576813697815,
+        "distance" : 0.8732423186302185
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.051664531230926514,
+        "distance" : 0.9483354687690735
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.031021714210510254,
+        "distance" : 0.9689782857894897
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.115,
+      "effectiveTopK" : 5,
+      "hitCount" : 5,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.2663878798484802,
+        "distance" : 0.7336121201515198
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.1267576813697815,
+        "distance" : 0.8732423186302185
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.051664531230926514,
+        "distance" : 0.9483354687690735
+      }, {
+        "rank" : 5,
+        "vectorChunkId" : "ffe1c2a2-c7dd-51c6-b466-22ddb315ae9c",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.031021714210510254,
+        "distance" : 0.9689782857894897
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q10",
+    "question" : "数控机台主轴温度太高一直报警，该怎么处理？",
+    "category" : "paraphrase",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.7103,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15684950351715088,
+        "distance" : 0.8431504964828491
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.09730488061904907,
+        "distance" : 0.9026951193809509
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03647118806838989,
+        "distance" : 0.9635288119316101
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.831,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15684950351715088,
+        "distance" : 0.8431504964828491
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.09730488061904907,
+        "distance" : 0.9026951193809509
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03647118806838989,
+        "distance" : 0.9635288119316101
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.0466,
+      "effectiveTopK" : 5,
+      "hitCount" : 4,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "79590451-49db-5396-8a22-b222a974d871",
+        "documentId" : "d36exp-g1-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15684950351715088,
+        "distance" : 0.8431504964828491
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "8ef73d75-b54d-5f77-9bc3-10f85ceb4f2c",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02" ],
+        "score" : 0.09730488061904907,
+        "distance" : 0.9026951193809509
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "a6656372-70dc-59e6-97bd-fe6e86240347",
+        "documentId" : "d36exp-g1-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 4,
+        "vectorChunkId" : "409b2996-934e-5ee7-8f85-848c57093769",
+        "documentId" : "d36exp-g1-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 1,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03647118806838989,
+        "distance" : 0.9635288119316101
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  } ]
+}, {
+  "groupId" : "G2",
+  "questions" : [ {
+    "questionId" : "Q01",
+    "question" : "数控机床出现主轴过热报警，应该先检查什么？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.2876,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.0457,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.8871,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q02",
+    "question" : "冷却液充足但设备仍然反复过热报警，下一步怎么判断？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.9969,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.7703,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.281,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q03",
+    "question" : "冷却泵出现异响并且流量下降，应该如何处理？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.0922,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.6839,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.7288,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 6,
+    "noiseCount" : 5,
+    "precision" : 0.16666666666666666,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q04",
+    "question" : "伺服驱动器反复报过载，应该按什么顺序排查？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.4858,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.7311,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.3018,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q05",
+    "question" : "伺服系统出现位置偏差计数器溢出报警，通常是什么原因？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.5528,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.3092,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.2783,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q06",
+    "question" : "导致整条产线停机的设备故障应该定几级工单？响应时限是多少？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.176,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.306,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.3975,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q07",
+    "question" : "工单关闭时必须填写哪些内容？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.9886,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.7025,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.0223,
+      "effectiveTopK" : 5,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q08",
+    "question" : "冷却泵排气后流量仍然不足，需要怎么维修？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.3431,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.4124,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.5612,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q09",
+    "question" : "伺服机械卡滞还没有排除之前，可以提高电流限幅吗？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.9883,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.2049,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.5537,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q10",
+    "question" : "数控机台主轴温度太高一直报警，该怎么处理？",
+    "category" : "paraphrase",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.3118,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.1371,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.7814,
+      "effectiveTopK" : 5,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId" : "d36exp-g2-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "9f3fe0a1-047f-5130-a5a4-395b2ca736a0",
+        "documentId" : "d36exp-g2-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "f497986b-6486-5bd9-945b-adb8f6f41ddc",
+        "documentId" : "d36exp-g2-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  } ]
+}, {
+  "groupId" : "G3",
+  "questions" : [ {
+    "questionId" : "Q01",
+    "question" : "数控机床出现主轴过热报警，应该先检查什么？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.8773,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.1753,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 4.3418,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.17001384496688843,
+        "distance" : 0.8299861550331116
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.10733264684677124,
+        "distance" : 0.8926673531532288
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q02",
+    "question" : "冷却液充足但设备仍然反复过热报警，下一步怎么判断？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.1517,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 4.0848,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.592,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.045275092124938965,
+        "distance" : 0.954724907875061
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q03",
+    "question" : "冷却泵出现异响并且流量下降，应该如何处理？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.8459,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.9592,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.195,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.15562951564788818,
+        "distance" : 0.8443704843521118
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.0763891339302063,
+        "distance" : 0.9236108660697937
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 6,
+    "noiseCount" : 5,
+    "precision" : 0.16666666666666666,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q04",
+    "question" : "伺服驱动器反复报过载，应该按什么顺序排查？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.9702,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.2924,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.7523,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2281370759010315,
+        "distance" : 0.7718629240989685
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.18555474281311035,
+        "distance" : 0.8144452571868896
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.06265026330947876,
+        "distance" : 0.9373497366905212
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q05",
+    "question" : "伺服系统出现位置偏差计数器溢出报警，通常是什么原因？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.815,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.4539,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.1228,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.2222927212715149,
+        "distance" : 0.7777072787284851
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.12543779611587524,
+        "distance" : 0.8745622038841248
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08098530769348145,
+        "distance" : 0.9190146923065186
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q06",
+    "question" : "导致整条产线停机的设备故障应该定几级工单？响应时限是多少？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.5389,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.9444,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.7252,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.20624732971191406,
+        "distance" : 0.7937526702880859
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.005031287670135498,
+        "distance" : 0.9949687123298645
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q07",
+    "question" : "工单关闭时必须填写哪些内容？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.9266,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.5859,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.4481,
+      "effectiveTopK" : 10,
+      "hitCount" : 2,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.10374420881271362,
+        "distance" : 0.8962557911872864
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 5,
+    "noiseCount" : 4,
+    "precision" : 0.2,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q08",
+    "question" : "冷却泵排气后流量仍然不足，需要怎么维修？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.5445,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.8718,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.5311,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.227852463722229,
+        "distance" : 0.772147536277771
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.03193467855453491,
+        "distance" : 0.9680653214454651
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.0077378153800964355,
+        "distance" : 0.9922621846199036
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q09",
+    "question" : "伺服机械卡滞还没有排除之前，可以提高电流限幅吗？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.7017,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.5234,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.2684,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08317327499389648,
+        "distance" : 0.9168267250061035
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.04563438892364502,
+        "distance" : 0.954365611076355
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q10",
+    "question" : "数控机台主轴温度太高一直报警，该怎么处理？",
+    "category" : "paraphrase",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 4.2023,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 3.0276,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.7622,
+      "effectiveTopK" : 10,
+      "hitCount" : 3,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId" : "d36exp-g3-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.1190187931060791,
+        "distance" : 0.8809812068939209
+      }, {
+        "rank" : 2,
+        "vectorChunkId" : "b2f0cd15-36dc-55bb-b639-1d49954479c4",
+        "documentId" : "d36exp-g3-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.08162730932235718,
+        "distance" : 0.9183726906776428
+      }, {
+        "rank" : 3,
+        "vectorChunkId" : "cf9232b4-15da-519c-9a17-eef82282cea5",
+        "documentId" : "d36exp-g3-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.07826530933380127,
+        "distance" : 0.9217346906661987
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 8,
+    "noiseCount" : 7,
+    "precision" : 0.125,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  } ]
+}, {
+  "groupId" : "G4",
+  "questions" : [ {
+    "questionId" : "Q01",
+    "question" : "数控机床出现主轴过热报警，应该先检查什么？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.5069,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "09d52e62-0d57-5ca0-b7af-6026f1148c9a",
+        "documentId" : "d36exp-g4-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.5188,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "09d52e62-0d57-5ca0-b7af-6026f1148c9a",
+        "documentId" : "d36exp-g4-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 3.853,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "09d52e62-0d57-5ca0-b7af-6026f1148c9a",
+        "documentId" : "d36exp-g4-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.35039734840393066,
+        "distance" : 0.6496026515960693
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 3,
+    "noiseCount" : 2,
+    "precision" : 0.3333333333333333,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q02",
+    "question" : "冷却液充足但设备仍然反复过热报警，下一步怎么判断？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.1886,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "09d52e62-0d57-5ca0-b7af-6026f1148c9a",
+        "documentId" : "d36exp-g4-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.9826,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "09d52e62-0d57-5ca0-b7af-6026f1148c9a",
+        "documentId" : "d36exp-g4-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.5786,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "09d52e62-0d57-5ca0-b7af-6026f1148c9a",
+        "documentId" : "d36exp-g4-DOC-CNC-COOLING-001",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ],
+        "score" : 0.2546845078468323,
+        "distance" : 0.7453154921531677
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 3,
+    "noiseCount" : 2,
+    "precision" : 0.3333333333333333,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q03",
+    "question" : "冷却泵出现异响并且流量下降，应该如何处理？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.3682,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.554,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.9876,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    } ],
+    "hit" : false,
+    "relevantCount" : 0,
+    "returnedCount" : 0,
+    "noiseCount" : 0,
+    "precision" : 0.0,
+    "recall" : 0.0,
+    "repeatConsistent" : true,
+    "reasonCode" : "ZERO_HITS_AFTER_THRESHOLD"
+  }, {
+    "questionId" : "Q04",
+    "question" : "伺服驱动器反复报过载，应该按什么顺序排查？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.0374,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.7423,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 1.9242,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    } ],
+    "hit" : false,
+    "relevantCount" : 0,
+    "returnedCount" : 0,
+    "noiseCount" : 0,
+    "precision" : 0.0,
+    "recall" : 0.0,
+    "repeatConsistent" : true,
+    "reasonCode" : "ZERO_HITS_AFTER_THRESHOLD"
+  }, {
+    "questionId" : "Q05",
+    "question" : "伺服系统出现位置偏差计数器溢出报警，通常是什么原因？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 1.6589,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.3435,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 1.9038,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    } ],
+    "hit" : false,
+    "relevantCount" : 0,
+    "returnedCount" : 0,
+    "noiseCount" : 0,
+    "precision" : 0.0,
+    "recall" : 0.0,
+    "repeatConsistent" : true,
+    "reasonCode" : "ZERO_HITS_AFTER_THRESHOLD"
+  }, {
+    "questionId" : "Q06",
+    "question" : "导致整条产线停机的设备故障应该定几级工单？响应时限是多少？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.7022,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "fd7532f0-2413-5704-af31-873ee37a881a",
+        "documentId" : "d36exp-g4-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.9728,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "fd7532f0-2413-5704-af31-873ee37a881a",
+        "documentId" : "d36exp-g4-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.7058,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "fd7532f0-2413-5704-af31-873ee37a881a",
+        "documentId" : "d36exp-g4-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.4558780789375305,
+        "distance" : 0.5441219210624695
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 2,
+    "noiseCount" : 1,
+    "precision" : 0.5,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q07",
+    "question" : "工单关闭时必须填写哪些内容？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-WORKORDER-SPEC-003-C02" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.3793,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "fd7532f0-2413-5704-af31-873ee37a881a",
+        "documentId" : "d36exp-g4-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.3374,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "fd7532f0-2413-5704-af31-873ee37a881a",
+        "documentId" : "d36exp-g4-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 1.938,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "fd7532f0-2413-5704-af31-873ee37a881a",
+        "documentId" : "d36exp-g4-DOC-WORKORDER-SPEC-003",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ],
+        "score" : 0.27688688039779663,
+        "distance" : 0.7231131196022034
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 2,
+    "noiseCount" : 1,
+    "precision" : 0.5,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q08",
+    "question" : "冷却泵排气后流量仍然不足，需要怎么维修？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C03" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 3.4748,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.0709,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 1.6426,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    } ],
+    "hit" : false,
+    "relevantCount" : 0,
+    "returnedCount" : 0,
+    "noiseCount" : 0,
+    "precision" : 0.0,
+    "recall" : 0.0,
+    "repeatConsistent" : true,
+    "reasonCode" : "ZERO_HITS_AFTER_THRESHOLD"
+  }, {
+    "questionId" : "Q09",
+    "question" : "伺服机械卡滞还没有排除之前，可以提高电流限幅吗？",
+    "category" : "retrieval",
+    "expectedLogicalIds" : [ "DOC-SERVO-TROUBLE-002-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.3479,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "252a4cbb-55e3-5b7c-a2f3-e633681f07e3",
+        "documentId" : "d36exp-g4-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      } ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.2315,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "252a4cbb-55e3-5b7c-a2f3-e633681f07e3",
+        "documentId" : "d36exp-g4-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      } ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.0286,
+      "effectiveTopK" : 5,
+      "hitCount" : 1,
+      "hits" : [ {
+        "rank" : 1,
+        "vectorChunkId" : "252a4cbb-55e3-5b7c-a2f3-e633681f07e3",
+        "documentId" : "d36exp-g4-DOC-SERVO-TROUBLE-002",
+        "chunkIndex" : 0,
+        "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ],
+        "score" : 0.27149754762649536,
+        "distance" : 0.7285024523735046
+      } ]
+    } ],
+    "hit" : true,
+    "relevantCount" : 1,
+    "returnedCount" : 3,
+    "noiseCount" : 2,
+    "precision" : 0.3333333333333333,
+    "recall" : 1.0,
+    "repeatConsistent" : true,
+    "reasonCode" : null
+  }, {
+    "questionId" : "Q10",
+    "question" : "数控机台主轴温度太高一直报警，该怎么处理？",
+    "category" : "paraphrase",
+    "expectedLogicalIds" : [ "DOC-CNC-COOLING-001-C01" ],
+    "runs" : [ {
+      "runIndex" : 1,
+      "elapsedMs" : 2.6332,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 2,
+      "elapsedMs" : 2.3697,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    }, {
+      "runIndex" : 3,
+      "elapsedMs" : 2.3631,
+      "effectiveTopK" : 5,
+      "hitCount" : 0,
+      "hits" : [ ]
+    } ],
+    "hit" : false,
+    "relevantCount" : 0,
+    "returnedCount" : 0,
+    "noiseCount" : 0,
+    "precision" : 0.0,
+    "recall" : 0.0,
+    "repeatConsistent" : true,
+    "reasonCode" : "ZERO_HITS_AFTER_THRESHOLD"
+  } ]
+} ]

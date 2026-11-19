@@ -1,0 +1,136 @@
+[ {
+  "groupId" : "G0",
+  "parameters" : {
+    "groupId" : "G0",
+    "chunkSize" : 480,
+    "overlap" : 60,
+    "topK" : 5,
+    "similarityThreshold" : 0.0,
+    "changedVariable" : "基线（骨架真实配置）"
+  },
+  "indexedChunkCount" : 3,
+  "evaluableQuestionCount" : 10,
+  "hitQuestionCount" : 10,
+  "hitRate" : 1.0,
+  "microPrecision" : 0.1388888888888889,
+  "averageRecall" : 1.0,
+  "averageNoise" : 6.2,
+  "latency" : {
+    "sampleCount" : 30,
+    "avgMs" : 4.76134,
+    "p50Ms" : 4.698449999999999,
+    "p95Ms" : 6.21287,
+    "maxMs" : 7.0373
+  },
+  "zeroHitQuestionIds" : [ ],
+  "divergedQuestionIds" : [ ],
+  "reasonCodes" : [ "K_EXCEEDS_INDEXED_CHUNKS" ]
+}, {
+  "groupId" : "G1",
+  "parameters" : {
+    "groupId" : "G1",
+    "chunkSize" : 200,
+    "overlap" : 60,
+    "topK" : 5,
+    "similarityThreshold" : 0.0,
+    "changedVariable" : "只改 chunk size（480→200）"
+  },
+  "indexedChunkCount" : 5,
+  "evaluableQuestionCount" : 10,
+  "hitQuestionCount" : 10,
+  "hitRate" : 1.0,
+  "microPrecision" : 0.1388888888888889,
+  "averageRecall" : 1.0,
+  "averageNoise" : 6.2,
+  "latency" : {
+    "sampleCount" : 30,
+    "avgMs" : 4.3932166666666665,
+    "p50Ms" : 4.49475,
+    "p95Ms" : 5.679684999999999,
+    "maxMs" : 6.1561
+  },
+  "zeroHitQuestionIds" : [ ],
+  "divergedQuestionIds" : [ ],
+  "reasonCodes" : [ ]
+}, {
+  "groupId" : "G2",
+  "parameters" : {
+    "groupId" : "G2",
+    "chunkSize" : 480,
+    "overlap" : 20,
+    "topK" : 5,
+    "similarityThreshold" : 0.0,
+    "changedVariable" : "只改 overlap（60→20）"
+  },
+  "indexedChunkCount" : 3,
+  "evaluableQuestionCount" : 10,
+  "hitQuestionCount" : 10,
+  "hitRate" : 1.0,
+  "microPrecision" : 0.1388888888888889,
+  "averageRecall" : 1.0,
+  "averageNoise" : 6.2,
+  "latency" : {
+    "sampleCount" : 30,
+    "avgMs" : 3.543976666666666,
+    "p50Ms" : 3.4490999999999996,
+    "p95Ms" : 4.356325,
+    "maxMs" : 4.7311
+  },
+  "zeroHitQuestionIds" : [ ],
+  "divergedQuestionIds" : [ ],
+  "reasonCodes" : [ "K_EXCEEDS_INDEXED_CHUNKS" ]
+}, {
+  "groupId" : "G3",
+  "parameters" : {
+    "groupId" : "G3",
+    "chunkSize" : 480,
+    "overlap" : 60,
+    "topK" : 10,
+    "similarityThreshold" : 0.0,
+    "changedVariable" : "只改 Top-K（5→10）"
+  },
+  "indexedChunkCount" : 3,
+  "evaluableQuestionCount" : 10,
+  "hitQuestionCount" : 10,
+  "hitRate" : 1.0,
+  "microPrecision" : 0.1388888888888889,
+  "averageRecall" : 1.0,
+  "averageNoise" : 6.2,
+  "latency" : {
+    "sampleCount" : 30,
+    "avgMs" : 3.3410566666666672,
+    "p50Ms" : 3.2804,
+    "p95Ms" : 4.149425,
+    "maxMs" : 4.3418
+  },
+  "zeroHitQuestionIds" : [ ],
+  "divergedQuestionIds" : [ ],
+  "reasonCodes" : [ "K_EXCEEDS_INDEXED_CHUNKS" ]
+}, {
+  "groupId" : "G4",
+  "parameters" : {
+    "groupId" : "G4",
+    "chunkSize" : 480,
+    "overlap" : 60,
+    "topK" : 5,
+    "similarityThreshold" : 0.25,
+    "changedVariable" : "只改阈值（0.00→0.25）"
+  },
+  "indexedChunkCount" : 3,
+  "evaluableQuestionCount" : 10,
+  "hitQuestionCount" : 5,
+  "hitRate" : 0.5,
+  "microPrecision" : 0.38461538461538464,
+  "averageRecall" : 0.5,
+  "averageNoise" : 0.8,
+  "latency" : {
+    "sampleCount" : 30,
+    "avgMs" : 2.5115399999999997,
+    "p50Ms" : 2.3745000000000003,
+    "p95Ms" : 3.492455,
+    "maxMs" : 3.853
+  },
+  "zeroHitQuestionIds" : [ "Q03", "Q04", "Q05", "Q08", "Q10" ],
+  "divergedQuestionIds" : [ ],
+  "reasonCodes" : [ "ZERO_HITS_AFTER_THRESHOLD", "K_EXCEEDS_INDEXED_CHUNKS" ]
+} ]
