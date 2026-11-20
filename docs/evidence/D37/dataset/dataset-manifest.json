@@ -1,0 +1,22 @@
+{
+  "datasetVersion": "v1.0",
+  "questionsFile": "rag-evaluation-questions.v1.0.jsonl",
+  "questionsSha256": "896bceaa1ede76dc40577a8b97473a532ba1984414ab0e52d61c0fffa5234bec",
+  "corpusFile": "knowledge/equipment-fault-corpus.json",
+  "corpusSha256": "aad6ac4df5585aad5078d1c94df4e5093af15a9730e230149cfde0940335ab0b",
+  "embedding": {
+    "provider": "LOCAL",
+    "modelName": "local-hash-ngram-v1",
+    "modelVersion": "2026.11",
+    "dimensions": 384,
+    "distanceMetric": "COSINE",
+    "indexVersion": "d37-local-384-v1"
+  },
+  "evaluator": {
+    "version": "v1.0",
+    "sourceSha256": "72cda994d2368dac1173360f3272d3386934f6709f34d2a36d2db508196a1fdd"
+  },
+  "frozenAt": "2026-11-20",
+  "frozenBy": "manual-v1",
+  "notes": "问题集先冻结后评测；看结果反改标注须升版本并写变更说明。语料与 Embedding 版本绑定不可变。评测器版本哈希由评测器首次运行回填。"
+}
