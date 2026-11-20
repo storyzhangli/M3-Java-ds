@@ -1,0 +1,15 @@
+# test profile 覆盖配置（由 maven-surefire-plugin 激活 spring.profiles.active=test）。
+# 仅覆盖历史默认归属：测试中未显式带 X-Dev-User 的请求统一归 ut-default。
+app:
+  ai:
+    history:
+      default-owner: ut-default
+  # 历史 @SpringBootTest 测试环境不装配 pgvector 向量库（无 PG 凭据，避免上下文启动失败）。
+  # 真实向量验收由 Level 5 独立执行（PG_VECTOR_PASSWORD 门控，真连 PG）。
+  vectorstore:
+    pgvector:
+      enabled: false
+  # 引用片段上限保持默认 200（UTF-16 字符），与生产默认一致。
+  rag:
+    citation:
+      excerpt-max-chars: 200

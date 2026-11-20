@@ -1,0 +1,6 @@
+# experiment profile：真实对照实验专用（由 D37_EXP_RUN=true 与 -Dsurefire.spring.profile=experiment 触发）。
+# 继承主 application.yml 的真实 PG/MySQL 数据源，仅打开 pgvector 装配（test profile 为关闭）。
+app:
+  vectorstore:
+    pgvector:
+      enabled: true
