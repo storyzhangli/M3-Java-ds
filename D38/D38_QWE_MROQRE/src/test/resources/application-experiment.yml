@@ -4,3 +4,6 @@ app:
   vectorstore:
     pgvector:
       enabled: true
+    # D38：对照实验只跑本地链路，two_ 百炼链路不装配（避免额外计费与上下文干扰）。
+    two-pgvector:
+      enabled: false

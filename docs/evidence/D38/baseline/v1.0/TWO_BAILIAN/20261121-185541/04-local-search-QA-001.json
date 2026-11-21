@@ -1,0 +1,135 @@
+{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "query": "数控机床主轴出现过热报警，第一步应该检查什么？",
+    "requestedTopK": 5,
+    "effectiveTopK": 5,
+    "filterDescription": null,
+    "hits": [
+      {
+        "rank": 1,
+        "chunkId": "a52bb129-b29e-5021-a60f-1523ad3dfc44",
+        "documentId": "DOC-CNC-COOLING-001",
+        "version": "corpus-v1",
+        "chunkIndex": 0,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          12
+        ],
+        "paragraphIndex": 0,
+        "strategy": "FIXED_LENGTH",
+        "content": "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。",
+        "score": 0.32280629873275757,
+        "distance": 0.6771937012672424,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 2,
+        "chunkId": "79590451-49db-5396-8a22-b222a974d871",
+        "documentId": "d36exp-g1-DOC-CNC-COOLING-001",
+        "version": "exp-g1-v1",
+        "chunkIndex": 0,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          12,
+          15,
+          18
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。\n\n若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20%时判定温度传感器老化，需要更换并重新校准。\n\n冷却泵异响伴随流量下降时，优先检查吸入口滤网与管路气塞；",
+        "score": 0.2775510549545288,
+        "distance": 0.7224489450454712,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 3,
+        "chunkId": "3724961c-283d-58d0-accf-125f3962156c",
+        "documentId": "d36exp-g0-DOC-CNC-COOLING-001",
+        "version": "exp-g0-v1",
+        "chunkIndex": 0,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          12,
+          15,
+          18
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。\n\n若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20%时判定温度传感器老化，需要更换并重新校准。\n\n冷却泵异响伴随流量下降时，优先检查吸入口滤网与管路气塞；排气后流量仍不足需更换泵体密封件，禁止在系统带压状态下拆卸管路。",
+        "score": 0.2761272192001343,
+        "distance": 0.7238727807998657,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 4,
+        "chunkId": "786557b8-5b00-5c0f-ac74-7a65e14ad4fa",
+        "documentId": "d36exp-g2-DOC-CNC-COOLING-001",
+        "version": "exp-g2-v1",
+        "chunkIndex": 0,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          12,
+          15,
+          18
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。\n\n若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20%时判定温度传感器老化，需要更换并重新校准。\n\n冷却泵异响伴随流量下降时，优先检查吸入口滤网与管路气塞；排气后流量仍不足需更换泵体密封件，禁止在系统带压状态下拆卸管路。",
+        "score": 0.2761272192001343,
+        "distance": 0.7238727807998657,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 5,
+        "chunkId": "6d5dabfc-ba63-5ca6-b6f2-163e2eb72333",
+        "documentId": "d36exp-g3-DOC-CNC-COOLING-001",
+        "version": "exp-g3-v1",
+        "chunkIndex": 0,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          12,
+          15,
+          18
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。\n\n若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20%时判定温度传感器老化，需要更换并重新校准。\n\n冷却泵异响伴随流量下降时，优先检查吸入口滤网与管路气塞；排气后流量仍不足需更换泵体密封件，禁止在系统带压状态下拆卸管路。",
+        "score": 0.2761272192001343,
+        "distance": 0.7238727807998657,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      }
+    ],
+    "hitCount": 5,
+    "elapsedMillis": 31,
+    "scoreSemantic": "COSINE_SIMILARITY",
+    "distanceSemantic": "COSINE_DISTANCE",
+    "queryEmbedding": {
+      "dimensions": 384,
+      "vectorSpaceId": "vs_3b71fef23531baa9fc398678092333d4",
+      "modelName": "local-hash-ngram-v1",
+      "elapsedMillis": 10
+    }
+  }
+}

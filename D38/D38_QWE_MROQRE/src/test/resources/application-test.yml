@@ -9,6 +9,9 @@ app:
   vectorstore:
     pgvector:
       enabled: false
+    # D38：two_ 百炼链路同样不在历史测试上下文装配（无 PG/百炼凭据，避免启动失败与计费）。
+    two-pgvector:
+      enabled: false
   # 引用片段上限保持默认 200（UTF-16 字符），与生产默认一致。
   rag:
     citation:

@@ -1,0 +1,5 @@
+{
+  "PG_VECTOR_PASSWORD": true,
+  "DASHSCOPE_API_KEY": true,
+  "BAILIAN_EMBEDDING_BASE_URL": true
+}

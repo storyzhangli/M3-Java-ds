@@ -1,0 +1,23 @@
+{
+  "probeId": "P2-batch",
+  "timestamp": "2026-11-21 17:34:57",
+  "httpStatus": 200,
+  "batchCount": 2,
+  "indexes": [
+    0,
+    1
+  ],
+  "dimensionsPerItem": [
+    1024,
+    1024
+  ],
+  "l2Norms": [
+    1.0,
+    1.0
+  ],
+  "usage": {
+    "prompt_tokens": 40,
+    "total_tokens": 40
+  },
+  "elapsedMs": 623
+}

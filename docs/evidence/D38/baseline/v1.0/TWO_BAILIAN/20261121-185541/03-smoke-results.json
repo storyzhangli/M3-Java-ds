@@ -1,0 +1,197 @@
+[
+  {
+    "questionId": "QA-001",
+    "scenario": "ANSWERABLE",
+    "verdict": "PASS",
+    "availabilityOnly": false,
+    "documentHit": true,
+    "chunkHit": true,
+    "hitCount": 5,
+    "hitDocumentIds": [
+      "DOC-CNC-COOLING-001",
+      "DOC-SERVO-TROUBLE-002"
+    ],
+    "hitLogicalChunkIds": [
+      "DOC-CNC-COOLING-001-C01",
+      "DOC-CNC-COOLING-001-C02",
+      "DOC-SERVO-TROUBLE-002-C01",
+      "DOC-SERVO-TROUBLE-002-C02",
+      "DOC-CNC-COOLING-001-C03"
+    ],
+    "hitScores": [
+      0.8668223470449448,
+      0.7452323734760284,
+      0.5544465184211731,
+      0.5295102596282959,
+      0.4359273314476013
+    ],
+    "expectedDocumentIds": [
+      "DOC-CNC-COOLING-001"
+    ],
+    "expectedChunkIds": [
+      "DOC-CNC-COOLING-001-C01"
+    ],
+    "retrievalElapsedMillis": 245
+  },
+  {
+    "questionId": "QA-004",
+    "scenario": "ANSWERABLE",
+    "verdict": "PASS",
+    "availabilityOnly": false,
+    "documentHit": true,
+    "chunkHit": true,
+    "hitCount": 5,
+    "hitDocumentIds": [
+      "DOC-CNC-COOLING-001",
+      "DOC-SERVO-TROUBLE-002"
+    ],
+    "hitLogicalChunkIds": [
+      "DOC-CNC-COOLING-001-C02",
+      "DOC-CNC-COOLING-001-C01",
+      "DOC-SERVO-TROUBLE-002-C02",
+      "DOC-CNC-COOLING-001-C03",
+      "DOC-SERVO-TROUBLE-002-C01"
+    ],
+    "hitScores": [
+      0.8145819902420044,
+      0.7792705744504929,
+      0.47805726528167725,
+      0.46702027320861816,
+      0.4648541808128357
+    ],
+    "expectedDocumentIds": [
+      "DOC-CNC-COOLING-001"
+    ],
+    "expectedChunkIds": [
+      "DOC-CNC-COOLING-001-C01",
+      "DOC-CNC-COOLING-001-C02"
+    ],
+    "retrievalElapsedMillis": 301
+  },
+  {
+    "questionId": "QU-001",
+    "scenario": "UNANSWERABLE",
+    "verdict": "PASS",
+    "availabilityOnly": true,
+    "documentHit": true,
+    "chunkHit": true,
+    "hitCount": 5,
+    "hitDocumentIds": [
+      "DOC-CNC-COOLING-001",
+      "DOC-SERVO-TROUBLE-002"
+    ],
+    "hitLogicalChunkIds": [
+      "DOC-CNC-COOLING-001-C03",
+      "DOC-CNC-COOLING-001-C01",
+      "DOC-SERVO-TROUBLE-002-C02",
+      "DOC-CNC-COOLING-001-C02",
+      "DOC-SERVO-TROUBLE-002-C03"
+    ],
+    "hitScores": [
+      0.4358641505241394,
+      0.41007864475250244,
+      0.39726436138153076,
+      0.36644065380096436,
+      0.35359692573547363
+    ],
+    "expectedDocumentIds": [],
+    "expectedChunkIds": [],
+    "retrievalElapsedMillis": 261
+  },
+  {
+    "questionId": "QU-003",
+    "scenario": "UNANSWERABLE",
+    "verdict": "PASS",
+    "availabilityOnly": true,
+    "documentHit": true,
+    "chunkHit": true,
+    "hitCount": 5,
+    "hitDocumentIds": [
+      "DOC-CNC-COOLING-001",
+      "DOC-SERVO-TROUBLE-002"
+    ],
+    "hitLogicalChunkIds": [
+      "DOC-CNC-COOLING-001-C01",
+      "DOC-CNC-COOLING-001-C02",
+      "DOC-CNC-COOLING-001-C03",
+      "DOC-SERVO-TROUBLE-002-C01",
+      "DOC-SERVO-TROUBLE-002-C02"
+    ],
+    "hitScores": [
+      0.7270211279392242,
+      0.5681375861167908,
+      0.5608917474746704,
+      0.5056040585041046,
+      0.4807276725769043
+    ],
+    "expectedDocumentIds": [],
+    "expectedChunkIds": [],
+    "retrievalElapsedMillis": 248
+  },
+  {
+    "questionId": "QT-001",
+    "scenario": "TERMINOLOGY",
+    "verdict": "PASS",
+    "availabilityOnly": false,
+    "documentHit": true,
+    "chunkHit": true,
+    "hitCount": 5,
+    "hitDocumentIds": [
+      "DOC-SERVO-TROUBLE-002",
+      "DOC-CNC-COOLING-001",
+      "DOC-WORKORDER-SPEC-003"
+    ],
+    "hitLogicalChunkIds": [
+      "DOC-SERVO-TROUBLE-002-C02",
+      "DOC-SERVO-TROUBLE-002-C01",
+      "DOC-CNC-COOLING-001-C01",
+      "DOC-CNC-COOLING-001-C02",
+      "DOC-WORKORDER-SPEC-003-C01"
+    ],
+    "hitScores": [
+      0.7515409290790558,
+      0.6403329074382782,
+      0.5372505784034729,
+      0.5196704566478729,
+      0.3985910415649414
+    ],
+    "expectedDocumentIds": [
+      "DOC-SERVO-TROUBLE-002"
+    ],
+    "expectedChunkIds": [
+      "DOC-SERVO-TROUBLE-002-C02"
+    ],
+    "retrievalElapsedMillis": 285
+  },
+  {
+    "questionId": "QF-001",
+    "scenario": "BOUNDARY",
+    "verdict": "PASS",
+    "availabilityOnly": true,
+    "documentHit": true,
+    "chunkHit": true,
+    "hitCount": 5,
+    "hitDocumentIds": [
+      "DOC-SERVO-TROUBLE-002",
+      "DOC-CNC-COOLING-001",
+      "DOC-WORKORDER-SPEC-003"
+    ],
+    "hitLogicalChunkIds": [
+      "DOC-SERVO-TROUBLE-002-C02",
+      "DOC-CNC-COOLING-001-C02",
+      "DOC-CNC-COOLING-001-C01",
+      "DOC-WORKORDER-SPEC-003-C01",
+      "DOC-SERVO-TROUBLE-002-C01"
+    ],
+    "hitScores": [
+      0.5780913531780243,
+      0.5744576454162598,
+      0.5233165323734283,
+      0.47687089443206787,
+      0.46423041820526123
+    ],
+    "expectedDocumentIds": [],
+    "expectedChunkIds": [],
+    "retrievalElapsedMillis": 268
+  }
+]

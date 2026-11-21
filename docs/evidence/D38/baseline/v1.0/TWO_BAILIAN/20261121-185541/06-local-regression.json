@@ -1,0 +1,16 @@
+{
+  "questionId": "QA-001",
+  "d37Baseline": {
+    "chunkHit": true,
+    "actualDecision": "ANSWER",
+    "verdict": "PASS",
+    "documentHit": true
+  },
+  "current": {
+    "chunkHit": true,
+    "actualDecision": "ANSWER",
+    "documentHit": true
+  },
+  "qualityFieldsMatch": true,
+  "note": "只对照质量字段；耗时/分数分布单独记录，不与 two_ 基线混算。本地 vector_store 含 D36 实验残留文档（d36exp-*），D37 基线同样含此噪声，属已知环境事实。"
+}

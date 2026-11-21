@@ -1,0 +1,127 @@
+{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "query": "设备总是报警，帮我看看什么原因。",
+    "requestedTopK": 5,
+    "effectiveTopK": 5,
+    "filterDescription": null,
+    "hits": [
+      {
+        "rank": 1,
+        "chunkId": "a12a14c3-7707-5e3b-bc71-3903fb509288",
+        "documentId": "DOC-SERVO-TROUBLE-002",
+        "version": "corpus-v1",
+        "chunkIndex": 1,
+        "title": "伺服电机常见故障排查指南（教学夹具）",
+        "pageNumbers": [
+          9
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "位置偏差计数器溢出报警多与编码器线缆屏蔽层接地不良有关，应断电检查编码器接头针脚与拖链内线缆弯折半径，确认无断线后重新回零。",
+        "score": 0.5780913531780243,
+        "distance": 0.4219086468219757,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 2,
+        "chunkId": "1f793d79-f0be-5797-9085-25f26febf15d",
+        "documentId": "DOC-CNC-COOLING-001",
+        "version": "corpus-v1",
+        "chunkIndex": 1,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          15
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20%时判定温度传感器老化，需要更换并重新校准。",
+        "score": 0.5744576454162598,
+        "distance": 0.42554235458374023,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 3,
+        "chunkId": "ea725981-8e17-5c80-bdb3-ec19d5009497",
+        "documentId": "DOC-CNC-COOLING-001",
+        "version": "corpus-v1",
+        "chunkIndex": 0,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          12
+        ],
+        "paragraphIndex": 0,
+        "strategy": "FIXED_LENGTH",
+        "content": "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。",
+        "score": 0.5233165323734283,
+        "distance": 0.47668346762657166,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 4,
+        "chunkId": "7c3a53dd-82cc-5c0c-858b-ff070f6c35e0",
+        "documentId": "DOC-WORKORDER-SPEC-003",
+        "version": "corpus-v1",
+        "chunkIndex": 0,
+        "title": "设备故障工单分级与响应规范（教学夹具）",
+        "pageNumbers": [
+          3
+        ],
+        "paragraphIndex": 0,
+        "strategy": "FIXED_LENGTH",
+        "content": "导致整条产线停机的设备故障定为一级工单，要求15分钟内响应、2小时内给出临时处置方案；单机可绕行的故障定为二级工单，响应时限为2小时。",
+        "score": 0.47687089443206787,
+        "distance": 0.5231291055679321,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 5,
+        "chunkId": "e13d05a9-a547-5298-a5b4-0f26d37aacd1",
+        "documentId": "DOC-SERVO-TROUBLE-002",
+        "version": "corpus-v1",
+        "chunkIndex": 0,
+        "title": "伺服电机常见故障排查指南（教学夹具）",
+        "pageNumbers": [
+          6
+        ],
+        "paragraphIndex": 0,
+        "strategy": "FIXED_LENGTH",
+        "content": "伺服驱动器反复报过载时，先核对负载惯量与加减速时间参数，再检查电机动力线端子扭矩；机械卡滞排除前不得盲目提高电流限幅。",
+        "score": 0.46423041820526123,
+        "distance": 0.5357695817947388,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      }
+    ],
+    "hitCount": 5,
+    "elapsedMillis": 268,
+    "scoreSemantic": "COSINE_SIMILARITY",
+    "distanceSemantic": "COSINE_DISTANCE",
+    "queryEmbedding": {
+      "dimensions": 1024,
+      "vectorSpaceId": "vs_3a789450fd0d86601065c98057ac1adb",
+      "modelName": "qwen3.7-text-embedding",
+      "elapsedMillis": 110
+    }
+  }
+}

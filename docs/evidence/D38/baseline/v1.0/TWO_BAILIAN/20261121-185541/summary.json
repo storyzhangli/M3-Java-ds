@@ -1,0 +1,23 @@
+{
+  "iteration": "D38-R01",
+  "generatedAt": "2026-11-21 18:55:46",
+  "backend": "TWO_BAILIAN",
+  "model": "qwen3.7-text-embedding",
+  "dimensions": 1024,
+  "smokeTotal": 6,
+  "smokePass": 6,
+  "smokeFail": 0,
+  "smokeBlocked": 0,
+  "smokeNotRun": 0,
+  "fourStateSumCheck": true,
+  "idempotencyPass": true,
+  "rerunApiCalls": 0,
+  "ledgerBefore": 2,
+  "ledgerAfter": 17,
+  "newApiCallsThisRun": 15,
+  "budgetLimit": 18,
+  "budgetPass": true,
+  "localRegressionQualityMatch": true,
+  "secretScanPass": true,
+  "twoRagAnswerStretch": "NOT RUN（任务书授权可选，本轮预算优先冒烟与回归）"
+}

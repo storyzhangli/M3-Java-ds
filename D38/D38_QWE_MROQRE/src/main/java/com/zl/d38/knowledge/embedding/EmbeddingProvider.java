@@ -5,5 +5,7 @@ package com.zl.d38.knowledge.embedding;
  */
 public enum EmbeddingProvider {
     LOCAL,
-    OPENAI
+    OPENAI,
+    /** 阿里云百炼（DashScope compatible-mode），D38 two_ 隔离链路专用。 */
+    BAILIAN
 }

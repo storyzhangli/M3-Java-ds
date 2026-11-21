@@ -1,0 +1,45 @@
+{
+  "code": 200,
+  "msg": "success",
+  "data": [
+    {
+      "documentId": "DOC-CNC-COOLING-001",
+      "version": "corpus-v1",
+      "strategy": "FIXED_LENGTH",
+      "status": "COMPLETED",
+      "stage": "CLEANUP",
+      "chunkCount": 3,
+      "processed": 0,
+      "idempotent": true,
+      "attemptCount": 1,
+      "errorCode": "",
+      "errorMessage": ""
+    },
+    {
+      "documentId": "DOC-SERVO-TROUBLE-002",
+      "version": "corpus-v1",
+      "strategy": "FIXED_LENGTH",
+      "status": "COMPLETED",
+      "stage": "CLEANUP",
+      "chunkCount": 3,
+      "processed": 0,
+      "idempotent": true,
+      "attemptCount": 1,
+      "errorCode": "",
+      "errorMessage": ""
+    },
+    {
+      "documentId": "DOC-WORKORDER-SPEC-003",
+      "version": "corpus-v1",
+      "strategy": "FIXED_LENGTH",
+      "status": "COMPLETED",
+      "stage": "CLEANUP",
+      "chunkCount": 2,
+      "processed": 0,
+      "idempotent": true,
+      "attemptCount": 1,
+      "errorCode": "",
+      "errorMessage": ""
+    }
+  ]
+}

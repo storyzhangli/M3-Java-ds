@@ -1,0 +1,26 @@
+{
+  "probeId": "P1-single",
+  "timestamp": "2026-11-21 17:34:35",
+  "url": "https://ws-b5h7p6oc83qc6dn5.cn-beijing.maas.aliyuncs.com/compatible-mode/v1/embeddings",
+  "modelRequested": "qwen3.7-text-embedding",
+  "modelEcho": "qwen3.7-text-embedding",
+  "httpStatus": 200,
+  "dimensions": 1024,
+  "l2Norm": 1.0,
+  "vectorSample8": [
+    0.023624761030077934,
+    -0.037147898226976395,
+    0.017433444038033485,
+    -0.03535567596554756,
+    0.0007993722683750093,
+    0.021995466202497482,
+    0.04627194255590439,
+    -0.08048711717128754
+  ],
+  "usage": {
+    "prompt_tokens": 18,
+    "total_tokens": 18
+  },
+  "elapsedMs": 563,
+  "encodingFormat": "float"
+}

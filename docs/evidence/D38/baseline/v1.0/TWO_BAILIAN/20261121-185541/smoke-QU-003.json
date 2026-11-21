@@ -1,0 +1,127 @@
+{
+  "code": 200,
+  "msg": "success",
+  "data": {
+    "query": "伺服电机的冷却液液位低于下刻线，应该怎么处理？",
+    "requestedTopK": 5,
+    "effectiveTopK": 5,
+    "filterDescription": null,
+    "hits": [
+      {
+        "rank": 1,
+        "chunkId": "ea725981-8e17-5c80-bdb3-ec19d5009497",
+        "documentId": "DOC-CNC-COOLING-001",
+        "version": "corpus-v1",
+        "chunkIndex": 0,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          12
+        ],
+        "paragraphIndex": 0,
+        "strategy": "FIXED_LENGTH",
+        "content": "数控机床出现主轴过热报警时，应先检查冷却液液位与冷却泵运行声音，再检查散热器滤网是否堵塞；冷却液液位低于下刻线时必须停机补充同型号冷却液。",
+        "score": 0.7270211279392242,
+        "distance": 0.27297887206077576,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 2,
+        "chunkId": "1f793d79-f0be-5797-9085-25f26febf15d",
+        "documentId": "DOC-CNC-COOLING-001",
+        "version": "corpus-v1",
+        "chunkIndex": 1,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          15
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "若冷却液充足但仍反复过热报警，应使用万用表测量主轴温度传感器阻值；阻值跳变或与常温对照值偏差超过20%时判定温度传感器老化，需要更换并重新校准。",
+        "score": 0.5681375861167908,
+        "distance": 0.43186241388320923,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 3,
+        "chunkId": "ad5dd576-de88-5544-b12b-693f5e107040",
+        "documentId": "DOC-CNC-COOLING-001",
+        "version": "corpus-v1",
+        "chunkIndex": 2,
+        "title": "数控机床冷却系统维护手册（教学夹具）",
+        "pageNumbers": [
+          18
+        ],
+        "paragraphIndex": 2,
+        "strategy": "FIXED_LENGTH",
+        "content": "冷却泵异响伴随流量下降时，优先检查吸入口滤网与管路气塞；排气后流量仍不足需更换泵体密封件，禁止在系统带压状态下拆卸管路。",
+        "score": 0.5608917474746704,
+        "distance": 0.4391082525253296,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 4,
+        "chunkId": "e13d05a9-a547-5298-a5b4-0f26d37aacd1",
+        "documentId": "DOC-SERVO-TROUBLE-002",
+        "version": "corpus-v1",
+        "chunkIndex": 0,
+        "title": "伺服电机常见故障排查指南（教学夹具）",
+        "pageNumbers": [
+          6
+        ],
+        "paragraphIndex": 0,
+        "strategy": "FIXED_LENGTH",
+        "content": "伺服驱动器反复报过载时，先核对负载惯量与加减速时间参数，再检查电机动力线端子扭矩；机械卡滞排除前不得盲目提高电流限幅。",
+        "score": 0.5056040585041046,
+        "distance": 0.4943959414958954,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      },
+      {
+        "rank": 5,
+        "chunkId": "a12a14c3-7707-5e3b-bc71-3903fb509288",
+        "documentId": "DOC-SERVO-TROUBLE-002",
+        "version": "corpus-v1",
+        "chunkIndex": 1,
+        "title": "伺服电机常见故障排查指南（教学夹具）",
+        "pageNumbers": [
+          9
+        ],
+        "paragraphIndex": 1,
+        "strategy": "FIXED_LENGTH",
+        "content": "位置偏差计数器溢出报警多与编码器线缆屏蔽层接地不良有关，应断电检查编码器接头针脚与拖链内线缆弯折半径，确认无断线后重新回零。",
+        "score": 0.4807276725769043,
+        "distance": 0.5192723274230957,
+        "scoreSemantic": "COSINE_SIMILARITY",
+        "distanceSemantic": "COSINE_DISTANCE",
+        "lifecycleStatus": "ACTIVE",
+        "effectiveAt": null,
+        "expiresAt": null
+      }
+    ],
+    "hitCount": 5,
+    "elapsedMillis": 248,
+    "scoreSemantic": "COSINE_SIMILARITY",
+    "distanceSemantic": "COSINE_DISTANCE",
+    "queryEmbedding": {
+      "dimensions": 1024,
+      "vectorSpaceId": "vs_3a789450fd0d86601065c98057ac1adb",
+      "modelName": "qwen3.7-text-embedding",
+      "elapsedMillis": 104
+    }
+  }
+}
