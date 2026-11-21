@@ -1,0 +1,27 @@
+metric_scope,metric,A_PURE_VECTOR,B_HYBRID_RRF,delta_pp,note
+OVERALL,FAIL 题数,6,5,-1（改善）,QA-005 FAIL→PASS
+OVERALL,PASS 题数,14,15,+1,20 问题级（round1；3 轮已证逐轮一致）
+OVERALL,MacroRecall（有期望 10 题）,0.9000,1.0000,+10.00pp,决策规则①Δ≥0 满足
+ANSWERABLE,HitRate@5(文档级),0.4000,0.8000,+40.00pp,QA-002/QA-005 documentHit False→True
+ANSWERABLE,MacroRecall@5,0.8000,1.0000,+20.00pp,QA-005 真实漏召修复
+ANSWERABLE,microPrecision@5,0.3333,0.3750,+4.17pp,<+5pp 但规则为 OR 分支②已由 QA-005 满足
+ANSWERABLE,误拒率,0.2000,0.2000,0.00pp,QA-003 CLARIFY 属决策层，检索不改变
+TERMINOLOGY,HitRate@5,1.0000,1.0000,0.00pp,
+TERMINOLOGY,MacroRecall@5,1.0000,1.0000,0.00pp,
+TERMINOLOGY,microPrecision@5,0.3571,0.3571,0.00pp,
+TERMINOLOGY,误拒率,0.8000,0.8000,0.00pp,基线缺陷如实复现（4/5 CLARIFY）
+UNANSWERABLE,误答率(题级),0.0000,0.0000,0.00pp,QU 五题决策 REFUSE/CLARIFY 与 A 逐题一致
+UNANSWERABLE,documentHit 误检,0,0,0,QU 误检零新增（决策规则③）
+BOUNDARY,误答率(题级),0.0000,0.0000,0.00pp,QF-005 两组均 REFUSE 未翻案
+BOUNDARY,documentHit 误检,0,0,0,
+LATENCY,retrievalElapsed 均值,4.2ms,5.8ms,+36.5%,B 组 vector 段 5.8+keyword≈0+fusion≈0；决策规则④≤100% 满足
+LABEL,MISS_RECALL_FILTERED,1,0,-1,QA-005
+LABEL,METADATA_PAGE_LOCATION_MISSING,1,0,-1,页码缺失行被融合替换（附带改善）
+LABEL,HIGH_NOISE_PRECISION,18,18,0,噪声面持平
+LABEL,REFUSAL_FALSE_NEGATIVE,5,5,0,QT/QA CLARIFY 决策层标签，与检索策略无关
+LABEL,新增注入/引用类,0,0,0,决策规则⑤满足
+RESIDUAL,d34-real 注入残留命中,2,0,-2,小样本方向性观察（残留行不可区分性见 measurability-boundary）
+RESIDUAL,d36exp 副本命中,78,74,-4,BM25 倾向提升原始 uuid 行（chunkId tie-break 效应）
+RESIDUAL,原始 DOC-* 命中,18,24,+6,同上
+REQUEST,请求错误数,0,0,0,C10：240 条 0 错误
+CONSISTENCY,跨 run 质量投影,一致,一致,PASS,2 策略×2 次运行逐字节 diff 全过（C11）

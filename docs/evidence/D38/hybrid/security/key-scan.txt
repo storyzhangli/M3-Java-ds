@@ -1,0 +1,6 @@
+scan_time=2026-11-21T22:58:37
+evidence+evaluator hits=0
+logs hits=0
+C17 PASS
+FIXTURE_ADDED=0
+surefire-reports/target/out 提交核验在 git 阶段执行

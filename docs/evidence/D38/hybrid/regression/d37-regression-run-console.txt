@@ -1,0 +1,6 @@
+=== D37 ������� ===
+���: PGVECTOR
+����Ŀ¼: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D38\hybrid\regression\baseline\v1.0\PGVECTOR\20261121-223704
+��̬: {PASS=14, FAIL=6}
+�������ֶο���һ����: һ��
+�˳���: 1

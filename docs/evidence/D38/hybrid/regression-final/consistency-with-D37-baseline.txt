@@ -1,0 +1,13 @@
+# D38-R02 P3 回归门禁（最终 jar 22:46:00，@Autowired+控制器修正后）
+对比时间: 2026-11-21 22:48:06
+jar: D38_QWE_MROQRE-1.0-SNAPSHOT.jar 205538301 bytes @2026-11-21 22:46:00
+实例: A3 PID 13992 (8080, --app.hybrid.enabled=false)
+基线文件: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D37\baseline\v1.0\PGVECTOR\20261120-205151\raw-results.jsonl
+回归文件: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D38\hybrid\regression-final\baseline\v1.0\PGVECTOR\20261121-224748\raw-results.jsonl
+投影口径: 全字段除计时(queryEmbeddingMs/retrievalElapsedMillis/totalElapsedMillis/inMemorySearchMs)与浮点 hitScores，逐行逐字段比对
+基线条数: 60  回归条数: 60
+不一致行数: 0
+四态: 回归记录级 {PASS=42; FAIL=18}（60 条=20 问×3 轮）; 冻结基线记录级同为 {PASS=42; FAIL=18}（其 summary 题级 {PASS=14; FAIL=6} 即 42/18÷3），口径一致
+结论: BASELINE_REGRESSION_PASS
+备注: 22:37 首轮（regression\ 目录）为中间 jar（缺 HybridRagController 修复）执行亦 PASS，保留为过程证据
+

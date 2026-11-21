@@ -1,0 +1,3 @@
+port=8080 enabled=false: hybrid_search code=5000 rag_answer code=5000 decision=
+port=8081 enabled=true: hybrid_search code=200 rag_answer code=200 decision=ANSWER
+jar=205538301@22:46:00 A_PID=13992 B_PID=9404 time=2026-11-21 22:48:23

@@ -1,0 +1,8 @@
+{
+  "baseUrl" : "http://127.0.0.1:8081",
+  "port" : 8081,
+  "datasetSha256" : "896bceaa1ede76dc40577a8b97473a532ba1984414ab0e52d61c0fffa5234bec",
+  "corpusSha256" : "aad6ac4df5585aad5078d1c94df4e5093af15a9730e230149cfde0940335ab0b",
+  "hybridAvailable" : true,
+  "aiMode" : "mock"
+}

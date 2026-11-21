@@ -1,0 +1,23 @@
+{
+  "keywordRoute": "IN_PROCESS_INVERTED",
+  "keywordRouteBasis": "KP1 实测：已装扩展仅 hstore/plpgsql/uuid-ossp/vector；无 zhparser/pg_jieba；to_tsvector('simple') 中文整段成单一/碎片 lexeme；禁 CREATE EXTENSION（H8）",
+  "featureSubset": "w+b+t",
+  "featureSubsetBasis": "KP3 夹具实测：w: 对英文/编码整词增益；中文精确匹配靠 b:/t: n-gram；c: 单码点区分度低默认停用；w+b+t 输出与 LocalHashNgramEmbeddingModel.extractFeatures 规则一致性经 TokenProbe 夹具对照通过",
+  "bm25": { "k1": 1.2, "b": 0.75 },
+  "rrfK": 60,
+  "candidateTopN": 10,
+  "topK": 5,
+  "threshold": 0.0,
+  "tableRowCount": 30,
+  "tableRowCountNote": "KP2 实测 vector_store 全表 30 行 = DOC-* 8 + d36exp-* 17 + d34-real-* 3 + hex-documentId 2；任务书编制预估 d36exp 30 行与实测不符，按 H7 如实记录实测值继续（D4：倒排必须镜像全表行集）",
+  "corpusHash": "AAD6AC4DF5585AAD5078D1C94DF4E5093AF15A9730E230149CFDE0940335AB0B",
+  "datasetHash": "896BCEAA1EDE76DC40577A8B97473A532BA1984414AB0E52D61C0FFFA5234BEC",
+  "corpusMd5Check": "语料 8 片段本地 excerpt UTF-8 MD5 与 PG DOC-* 8 行 md5(content) 逐行一致（kp2-corpus-local-md5.txt vs kp2-rows.txt），无 CORPUS_DRIFT",
+  "chunkIdForm": "PG uuid id 即 RetrievalHitView.chunkId（RetrievalHitMapper document.getId()）；metadata 中另有 chunkId/contentHash 键但既有链路以 id 为稳定键，倒排以 id 为连接键保证两路对齐",
+  "metadataColumnType": "json（非 jsonb，information_schema 实测）",
+  "vectorSpaceDistribution": "vs_3b71fef23531baa9fc398678092333d4=25 行 + 旧形态 'local|local-hashing-embedding|local-v1|384'=5 行（如实记录，不做空间过滤——向量路现状即跨行 COSINE 检索）",
+  "kp4Adjudication": "(a) RetrievedChunk.normalizedScore() 对 null 返回 0.0（源码 89-91 行），EvidenceAssessmentService 相关性过滤 >=0.15 天然滤除 KEYWORD_ONLY，全滤则 LOW_RELEVANCE 拒答；混合检索响应仍保留 KEYWORD_ONLY；禁止伪造余弦",
+  "frozenAt": "2026-11-21T23:05:00+08:00",
+  "probedAt": "2026-11-21T22:40:00+08:00",
+  "gitHeadAtFreeze": "abdd132c8b11ba8dbcd601324330b4dbbb701ef0"
+}

@@ -1,0 +1,51 @@
+SET
+       tag        
+------------------
+ sample-uuid-rows
+
+                  id                  |             content_head             |         doc         | cidx |                space                
+--------------------------------------+--------------------------------------+---------------------+------+-------------------------------------
+ a52bb129-b29e-5021-a60f-1523ad3dfc44 | 数控机床出现主轴过热报警时，应先检查 | DOC-CNC-COOLING-001 | 0    | vs_3b71fef23531baa9fc398678092333d4
+ 941cfa55-a79e-5bcf-929e-21af67f896a1 | 若冷却液充足但仍反复过热报警，应使用 | DOC-CNC-COOLING-001 | 1    | vs_3b71fef23531baa9fc398678092333d4
+ a7a1bce6-d4d0-59af-b1ab-4e22ce3449cf | 冷却泵异响伴随流量下降时，优先检查吸 | DOC-CNC-COOLING-001 | 2    | vs_3b71fef23531baa9fc398678092333d4
+
+         tag          
+----------------------
+ metadata-column-type
+
+  data_type   
+--------------
+ uuid
+ text
+ json
+ USER-DEFINED
+
+         tag          
+----------------------
+ residual-rows-docids
+
+                         doc                         | count 
+-----------------------------------------------------+-------
+ 21cd26c1bfe172866ea8767426161c8c                    |     1
+ d34-real-conflict-d0b2a1452a5d4cfaad1a5ec07c506a50  |     2
+ d34-real-injection-d0b2a1452a5d4cfaad1a5ec07c506a50 |     1
+ d36exp-g0-DOC-CNC-COOLING-001                       |     1
+ d36exp-g0-DOC-SERVO-TROUBLE-002                     |     1
+ d36exp-g0-DOC-WORKORDER-SPEC-003                    |     1
+ d36exp-g1-DOC-CNC-COOLING-001                       |     2
+ d36exp-g1-DOC-SERVO-TROUBLE-002                     |     2
+ d36exp-g1-DOC-WORKORDER-SPEC-003                    |     1
+ d36exp-g2-DOC-CNC-COOLING-001                       |     1
+ d36exp-g2-DOC-SERVO-TROUBLE-002                     |     1
+ d36exp-g2-DOC-WORKORDER-SPEC-003                    |     1
+ d36exp-g3-DOC-CNC-COOLING-001                       |     1
+ d36exp-g3-DOC-SERVO-TROUBLE-002                     |     1
+ d36exp-g3-DOC-WORKORDER-SPEC-003                    |     1
+ d36exp-g4-DOC-CNC-COOLING-001                       |     1
+ d36exp-g4-DOC-SERVO-TROUBLE-002                     |     1
+ d36exp-g4-DOC-WORKORDER-SPEC-003                    |     1
+ d57fc9f7a28e4ae87f20d558720fe6a0                    |     1
+ DOC-CNC-COOLING-001                                 |     3
+ DOC-SERVO-TROUBLE-002                               |     3
+ DOC-WORKORDER-SPEC-003                              |     2
+

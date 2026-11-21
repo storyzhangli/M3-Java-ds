@@ -185,6 +185,21 @@ app:
     min-score: ${RAG_MIN_SCORE:0.0}
     evidence:
       relevant-score: ${RAG_EVIDENCE_RELEVANT_SCORE:0.15}
+  # ------------------------------------------------------------------
+  # D38-R02 新增：混合检索实验分支（关键词 BM25 + 向量 + RRF 融合）。
+  # - enabled 默认 false：关闭时 hybrid 全部 Bean 不装配，主链路零行为差异（H2）；
+  # - 以下参数为探测门禁（KP1-KP4）裁决后的冻结值，实验期禁止看结果调参
+  #   （docs/evidence/D38/hybrid/probe/hybrid-params.json）；
+  # - 倒排只读加载 vector_store 全表行集（含 d36exp/d34 残留，D4），零写入零 DDL；
+  # - test/experiment profile 显式关闭（沿用 two-pgvector 先例）。
+  # ------------------------------------------------------------------
+  hybrid:
+    enabled: ${HYBRID_ENABLED:false}
+    feature-subset: ${HYBRID_FEATURE_SUBSET:w+b+t}
+    bm25-k1: ${HYBRID_BM25_K1:1.2}
+    bm25-b: ${HYBRID_BM25_B:0.75}
+    rrf-k: ${HYBRID_RRF_K:60}
+    candidate-top-n: ${HYBRID_CANDIDATE_TOP_N:10}
   knowledge:
     import:
       # 业务层复核上限，避免直接调用 Service 绕过 Multipart 配置。
@@ -309,6 +324,8 @@ app:
       - /api/v1/embeddings/**
       # D38：two_ 检索响应含命中原文与分数，与本地检索同等排除正文访问日志。
       - /api/v1/two/**
+      # D38-R02：混合检索/混合问答响应含两路命中原文与融合分数，同等排除正文访问日志。
+      - /api/v1/hybrid/**
       # D14：SSE 异步流式响应不能被请求/响应缓存包装器缓冲，否则增量无法实时推送且过滤器提前收尾会截断流，
       # 因此整条路径跳过正文缓存过滤器；TraceIdFilter 独立生效，requestId 照常生成与回写。
       - /api/v1/ai/chat/stream

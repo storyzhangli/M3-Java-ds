@@ -1,0 +1,35 @@
+{
+  "manifestVersion": "d38-hybrid-r02-v1.0",
+  "dataset": {
+    "path": "docs/evidence/D37/dataset/rag-evaluation-questions.v1.0.jsonl",
+    "sha256": "896BCEAA1EDE76DC40577A8B97473A532BA1984414AB0E52D61C0FFFA5234BEC",
+    "questionCount": 20,
+    "scenarioSplit": { "QA": 5, "QU": 5, "QT": 5, "QF": 5 },
+    "note": "H4 只读引用 D37 冻结数据集，执行时 Get-FileHash 实测一致（TASK_NARRATIVE §Phase0）"
+  },
+  "corpus": {
+    "path": "D38/D38_QWE_MROQRE/src/main/resources/knowledge/equipment-fault-corpus.json",
+    "sha256": "AAD6AC4DF5585AAD5078D1C94DF4E5093AF15A9730E230149CFDE0940335AB0B",
+    "documentCount": 3,
+    "chunkCount": 8
+  },
+  "baselineAnchor": {
+    "path": "docs/evidence/D37/baseline/v1.0/PGVECTOR/20261120-205151/",
+    "role": "PURE_VECTOR 对照组质量锚（P3 回归门禁 diff 基准）",
+    "keyMetrics": { "pass": 14, "fail": 6, "qaHitRate": 0.4, "qaMacroRecall": 0.8, "qaPrecision": 0.3333, "qaFalseRefuseRate": 0.2, "qtFalseRefuseRate": 0.8 }
+  },
+  "vectorStoreSnapshot": {
+    "table": "public.vector_store",
+    "rowCount": 30,
+    "docPrefixRows": 8,
+    "residualRows": 22,
+    "rowsManifest": "docs/evidence/D38/hybrid/probe/kp2-rows.txt",
+    "note": "H8 禁清理残留；R02 全程只读"
+  },
+  "twoTrack": {
+    "table": "public.two_vector_store",
+    "rowCount": 8,
+    "scope": "R02 NOT RUN，零触碰",
+    "ledgerEntriesMustRemain": 17
+  }
+}

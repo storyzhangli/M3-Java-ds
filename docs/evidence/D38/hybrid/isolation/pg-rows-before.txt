@@ -1,0 +1,3 @@
+--- write before snapshot ---
+vector_store|30
+two_vector_store|8

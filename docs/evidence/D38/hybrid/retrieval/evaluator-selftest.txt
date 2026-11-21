@@ -1,0 +1,19 @@
+# D38 R02 hybrideval 纯函数自测报告
+
+自测项: 11
+PASS: 11
+FAIL: 0
+
+## 明细
+
+- PASS - RRF-01 BOTH 项首位且分数=1/62+1/61
+- PASS - RRF-02 向量rank1(1/61)>关键词rank2(1/62)
+- PASS - RRF-03 origin 三态标注
+- PASS - RRF-04 缺席路不贡献分数
+- PASS - RRF-05 同分 chunkId 升序
+- PASS - RRF-06 topK=3 截断且保序
+- PASS - RRF-07 rrfK=20 生效
+- PASS - RRF-08 rank 从 1 起算
+- PASS - RRF-09 融合确定性
+- PASS - PROJ-01 浮点分不同但投影一致
+- PASS - PROJ-02 排序不同投影必须不同（排序进投影）

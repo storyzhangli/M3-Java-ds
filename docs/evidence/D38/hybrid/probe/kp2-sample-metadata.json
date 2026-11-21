@@ -1,0 +1,17 @@
+{
+    "title": "数控机床冷却系统维护手册（教学夹具）",
+    "version": "corpus-v1",
+    "strategy": "FIXED_LENGTH",
+    "modelName": "local-hash-ngram-v1",
+    "chunkIndex": 0,
+    "documentId": "DOC-CNC-COOLING-001",
+    "pageNumbers": [
+        12
+    ],
+    "splitVersion": "split-v1",
+    "vectorSpaceId": "vs_3b71fef23531baa9fc398678092333d4",
+    "characterCount": 69,
+    "paragraphIndex": 0,
+    "lifecycleStatus": "ACTIVE",
+    "chunkContentHash": "bf8b700e79265a630edb1c2fa685f0b0adf04c423753c0ad9a4dce74cec4f490"
+}

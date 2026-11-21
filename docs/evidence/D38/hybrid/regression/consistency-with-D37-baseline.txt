@@ -1,0 +1,9 @@
+# D38-R02 P3 回归门禁：enabled=false 新 jar 实例 vs D37 冻结基线
+对比时间: 2026-11-21 22:37:22
+基线文件: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D37\baseline\v1.0\PGVECTOR\20261120-205151\raw-results.jsonl
+回归文件: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D38\hybrid\regression\baseline\v1.0\PGVECTOR\20261121-223704\raw-results.jsonl
+投影口径: 全字段除计时(queryEmbeddingMs/retrievalElapsedMillis/totalElapsedMillis/inMemorySearchMs)与浮点 hitScores，逐行逐字段序列化后比对
+基线条数: 60  回归条数: 60
+不一致行数: 0
+结论: BASELINE_REGRESSION_PASS
+附加: 四态分布回归={PASS=14,FAIL=6} 基线={PASS=14,FAIL=6}；跨轮质量字段一致性=一致（回归 run 内）

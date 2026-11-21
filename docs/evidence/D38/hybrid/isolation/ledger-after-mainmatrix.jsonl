@@ -1,0 +1,17 @@
+{"seq":1,"purpose":"P1-single-probe","timestamp":"2026-11-21 17:34:57","httpStatus":200,"promptTokens":18,"totalTokens":18,"elapsedMs":563}
+{"seq":2,"purpose":"P2-batch-probe","timestamp":"2026-11-21 17:34:57","httpStatus":200,"usage":{"prompt_tokens":40,"total_tokens":40},"elapsedMs":623}
+{"seq":3,"purpose":"app-embed","timestamp":"2026-11-21T18:55:42.6954285+08:00","httpStatus":200,"promptTokens":175,"totalTokens":175,"elapsedMs":736,"batchSize":3,"attempt":1}
+{"seq":4,"purpose":"app-embed","timestamp":"2026-11-21T18:55:43.1102082+08:00","httpStatus":200,"promptTokens":172,"totalTokens":172,"elapsedMs":162,"batchSize":3,"attempt":1}
+{"seq":5,"purpose":"app-embed","timestamp":"2026-11-21T18:55:43.6438211+08:00","httpStatus":200,"promptTokens":114,"totalTokens":114,"elapsedMs":431,"batchSize":2,"attempt":1}
+{"seq":6,"purpose":"app-embed","timestamp":"2026-11-21T18:55:44.4274471+08:00","httpStatus":200,"promptTokens":27,"totalTokens":27,"elapsedMs":96,"batchSize":1,"attempt":1}
+{"seq":7,"purpose":"app-embed","timestamp":"2026-11-21T18:55:44.5482502+08:00","httpStatus":200,"promptTokens":27,"totalTokens":27,"elapsedMs":108,"batchSize":1,"attempt":1}
+{"seq":8,"purpose":"app-embed","timestamp":"2026-11-21T18:55:44.8896802+08:00","httpStatus":200,"promptTokens":32,"totalTokens":32,"elapsedMs":135,"batchSize":1,"attempt":1}
+{"seq":9,"purpose":"app-embed","timestamp":"2026-11-21T18:55:45.0409315+08:00","httpStatus":200,"promptTokens":32,"totalTokens":32,"elapsedMs":146,"batchSize":1,"attempt":1}
+{"seq":10,"purpose":"app-embed","timestamp":"2026-11-21T18:55:45.2050727+08:00","httpStatus":200,"promptTokens":27,"totalTokens":27,"elapsedMs":132,"batchSize":1,"attempt":1}
+{"seq":11,"purpose":"app-embed","timestamp":"2026-11-21T18:55:45.3216357+08:00","httpStatus":200,"promptTokens":27,"totalTokens":27,"elapsedMs":110,"batchSize":1,"attempt":1}
+{"seq":12,"purpose":"app-embed","timestamp":"2026-11-21T18:55:45.456832+08:00","httpStatus":200,"promptTokens":29,"totalTokens":29,"elapsedMs":99,"batchSize":1,"attempt":1}
+{"seq":13,"purpose":"app-embed","timestamp":"2026-11-21T18:55:45.5936494+08:00","httpStatus":200,"promptTokens":29,"totalTokens":29,"elapsedMs":131,"batchSize":1,"attempt":1}
+{"seq":14,"purpose":"app-embed","timestamp":"2026-11-21T18:55:45.7499856+08:00","httpStatus":200,"promptTokens":28,"totalTokens":28,"elapsedMs":128,"batchSize":1,"attempt":1}
+{"seq":15,"purpose":"app-embed","timestamp":"2026-11-21T18:55:45.894469+08:00","httpStatus":200,"promptTokens":28,"totalTokens":28,"elapsedMs":138,"batchSize":1,"attempt":1}
+{"seq":16,"purpose":"app-embed","timestamp":"2026-11-21T18:55:46.0288281+08:00","httpStatus":200,"promptTokens":24,"totalTokens":24,"elapsedMs":104,"batchSize":1,"attempt":1}
+{"seq":17,"purpose":"app-embed","timestamp":"2026-11-21T18:55:46.1803726+08:00","httpStatus":200,"promptTokens":24,"totalTokens":24,"elapsedMs":143,"batchSize":1,"attempt":1}

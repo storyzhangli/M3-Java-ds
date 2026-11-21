@@ -1,0 +1,15 @@
+topK=51: HTTP=200 code=4001 msg=topK 必须在 1..50 之间，实际传入 51
+topK=0: code=4001 msg=topK 必须在 1..50 之间，实际传入 0
+emptyQuery: code=4001 msg=查询内容不能为空
+noHit: code=200 total=5 hitsCount=5 (EMPTY 非 FAILED)
+fields(data): query,requestedTopK,effectiveTopK,candidateTopN,filterDescription,scoreSemantic,hits,total,vectorHits,keywordHits,fusionTrace,vectorElapsedMillis,keywordElapsedMillis,fusionElapsedMillis,totalElapsedMillis,queryEmbedding,index
+--- fusionTrace(液压机查询) ---
+4bd51e0b|BOTH|v=6|k=1|rrf=0.031545|vsim=0.0369731783866882
+fbdce4f0|BOTH|v=7|k=2|rrf=0.031054|vsim=0.0369731783866882
+ffe1c2a2|VECTOR_ONLY|v=1|k=|rrf=0.016393|vsim=0.0984139442443848
+b96863a4|VECTOR_ONLY|v=2|k=|rrf=0.016129|vsim=0.0950320363044739
+8ef73d75|VECTOR_ONLY|v=3|k=|rrf=0.015873|vsim=0.0764482617378235
+scoreSemantic=RRF hitScoreSemantic=RRF
+KEYWORD_ONLY count=0 其中 vectorSimilarity null: 0（无伪造余弦）
+rebuild: code=200 indexInfo={"docCount":30,"termCount":1045,"postingCount":5770,"buildMillis":5,"fingerprint":"a6a6bd4fe0aed45c14d1c059339d2a156cbc75c86fa4af4d31e14aec69e31b07"}
+time=2026-11-21 22:52:44

@@ -1,0 +1,16 @@
+{
+  "caseSet": "C08 RRF 正确性交叉核对（后端实现值 vs 独立手算，同一查询 QA-005）",
+  "frozenParams": { "rrfK": 60, "candidateTopN": 10, "topK": 5, "tieBreak": "同分 chunkId 升序" },
+  "formula": "rrfScore(d) = Σ_route 1/(rrfK + rank_route(d))，rank 从 1 起，缺席路不贡献",
+  "handcheck": [
+    { "chunkIdPrefix": "6b36e2fc", "origin": "BOTH", "vectorRank": 1, "keywordRank": 1, "hand": "1/61+1/61=0.0327869", "response": 0.032787, "match": true },
+    { "chunkIdPrefix": "409b2996", "origin": "BOTH", "vectorRank": 2, "keywordRank": 2, "hand": "1/62+1/62=0.0322581", "response": 0.032258, "match": true },
+    { "chunkIdPrefix": "252a4cbb", "origin": "BOTH", "vectorRank": 3, "keywordRank": 4, "hand": "1/63+1/64=0.0314980", "response": 0.031498, "match": true },
+    { "chunkIdPrefix": "a52bb129", "origin": "BOTH", "vectorRank": 7, "keywordRank": 3, "hand": "1/67+1/63=0.0307984", "response": 0.030798, "match": true },
+    { "chunkIdPrefix": "cf9232b4", "origin": "BOTH", "vectorRank": 4, "keywordRank": 6, "hand": "1/64+1/66=0.0307765", "response": 0.030777, "match": true }
+  ],
+  "orderingCheck": "响应 rrfScore 严格降序输出；同分情形由 SelfTest RRF-05 与后端 RrfFusionServiceTest 夹具锁定 chunkId 升序",
+  "kParamSensitivityProbe": "冻结值 k=60 生效（若 k=20 则 top1 应为 2/21=0.0952）",
+  "evaluatorMirror": "SelfTest 11/11 PASS（评测器独立镜像实现 RrfFusion 与后端交叉，retrieval/evaluator-selftest.txt）",
+  "verdict": "C08 PASS"
+}

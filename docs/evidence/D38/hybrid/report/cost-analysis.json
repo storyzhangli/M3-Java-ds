@@ -1,0 +1,31 @@
+{
+  "caseSet": "D38-R02 C15 成本核算（runs/hybrid-20261121-2250 + startup/isolation/retrieval 证据）",
+  "remoteCalls": {
+    "deepseek": 0,
+    "bailianEmbedding": 0,
+    "tokenConsumed": 0,
+    "proof": "结构性零远程：LOCAL Embedding + mock 生成（env-probe aiMode=mock）；two_ 台账跑前/跑后 SHA-256 逐字节一致（9A620A58…E10E，17 条，余 1 预算未动用，isolation/ledger-{before,after}-mainmatrix.jsonl）"
+  },
+  "hybridBuild": {
+    "initialLoadMillis": 91,
+    "initialLoadNote": "含 PG 网络 RTT（跨机 192.168.200.153），一次性启动成本",
+    "inProcessRebuildMillis": [5, 5],
+    "indexStats": { "docs": 30, "terms": 1045, "postings": 5770 },
+    "fingerprintStableAcrossBuilds": true,
+    "fingerprint": "a6a6bd4fe0aed45c14d1c059339d2a156cbc75c86fa4af4d31e14aec69e31b07",
+    "serializedBytes": "N/A——IndexInfo 未实现该字段（任务书 P1.4 项，实现缺口，R03 补，不估算填充）",
+    "heapDelta": "N/A——未做 GC 粗测（30 行/1045 项量级内存占用定性可忽略；H7 不填 0）"
+  },
+  "latencyMillis": {
+    "basis": "记录级（60 条/策略/run1）；毫秒分辨率，0=亚毫秒；耗时只报分布不进质量投影",
+    "A_retrievalElapsed": { "avg": 3.82, "p50": 4.0, "p95": 5.0, "min": 2, "max": 8 },
+    "B_retrievalElapsed_vectorSegment": { "avg": 5.08, "p50": 5.0, "p95": 7.0, "min": 4, "max": 7 },
+    "B_keywordSearch": "58/60 条 <1ms，2 例外（1,5ms，首两 warmup 后冷路径）",
+    "B_fusion": "60/60 条 <1ms",
+    "retrievalSegmentDelta": "+33%（5.08/3.82，主要来源：向量路 candidateTopN=10 vs topK=5 多取 5 条）",
+    "endToEndTotal": { "A": 26.72, "B": 30.80, "deltaPct": "+15.3%" },
+    "existingCostNote": "两组 retrievalElapsed 均含既有双重 Embedding（SearchRequest 文本重算）行为，口径相同可直接对比（R01 偏差 2 既有，非本轮引入）"
+  },
+  "decisionGateCheck": "平均耗时增量 ≤100% 满足（检索段 +33%）",
+  "storageCost": "零新增：无 DDL、无新表、无索引对象；内存倒排进程级，重启即重建（1s 内）"
+}

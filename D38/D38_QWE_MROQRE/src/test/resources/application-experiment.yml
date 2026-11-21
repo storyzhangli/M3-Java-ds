@@ -7,3 +7,6 @@ app:
     # D38：对照实验只跑本地链路，two_ 百炼链路不装配（避免额外计费与上下文干扰）。
     two-pgvector:
       enabled: false
+  # D38-R02：D36 对照实验上下文不装配混合检索分支（默认即关，显式声明保持口径一致）。
+  hybrid:
+    enabled: false
