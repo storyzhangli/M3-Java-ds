@@ -1,0 +1,12 @@
+# experiment profile：真实对照实验专用（由 D39_EXP_RUN=true 与 -Dsurefire.spring.profile=experiment 触发）。
+# 继承主 application.yml 的真实 PG/MySQL 数据源，仅打开 pgvector 装配（test profile 为关闭）。
+app:
+  vectorstore:
+    pgvector:
+      enabled: true
+    # 对照实验只跑本地链路，two_ 百炼链路不装配（避免额外计费与上下文干扰）。
+    two-pgvector:
+      enabled: false
+  # 对照实验上下文不装配混合检索分支（默认即关，显式声明保持口径一致）。
+  hybrid:
+    enabled: false
