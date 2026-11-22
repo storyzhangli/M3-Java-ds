@@ -24,7 +24,11 @@ public record ChunkRow(String chunkId,
                        String content,
                        String lifecycleStatus,
                        LocalDateTime effectiveAt,
-                       LocalDateTime expiresAt) {
+                       LocalDateTime expiresAt,
+                       // D39 追加：权限三键（metadata 缺失=true，fail-closed 由谓词判定，不补造）
+                       String tenantId,
+                       String deptId,
+                       String deviceId) {
 
     public ChunkRow {
         pageNumbers = pageNumbers == null ? List.of() : List.copyOf(pageNumbers);

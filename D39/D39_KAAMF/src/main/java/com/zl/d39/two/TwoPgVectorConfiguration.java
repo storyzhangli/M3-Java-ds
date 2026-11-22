@@ -3,8 +3,11 @@ package com.zl.d39.two;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import com.zl.d39.common.AiConfigurationException;
+import com.zl.d39.access.AccessPolicyService;
 import com.zl.d39.knowledge.KnowledgeCorpus;
 import com.zl.d39.knowledge.chunking.KnowledgeDocumentChunkingService;
+import com.zl.d39.knowledge.document.repository.KnowledgeDocumentRepository;
+import org.springframework.beans.factory.ObjectProvider;
 import com.zl.d39.knowledge.embedding.DistanceMetric;
 import com.zl.d39.knowledge.embedding.EmbeddingModelDescriptor;
 import com.zl.d39.knowledge.embedding.EmbeddingProperties;
@@ -79,7 +82,10 @@ public class TwoPgVectorConfiguration implements DisposableBean {
                                                  RetrievalProperties retrievalProperties,
                                                  KnowledgeCorpus knowledgeCorpus,
                                                  KnowledgeDocumentChunkingService chunkingService,
-                                                 PlatformTransactionManager transactionManager) {
+                                                 PlatformTransactionManager transactionManager,
+                                                 // D39：权限三键读取端口 + 过滤策略（access 关闭时 provider 为 null → 不过滤，零差异）
+                                                 KnowledgeDocumentRepository documentMetaRepository,
+                                                 ObjectProvider<AccessPolicyService> accessPolicyProvider) {
         EmbeddingProperties embeddingProperties = Binder.get(environment)
                 .bind("app.embedding.two", Bindable.of(EmbeddingProperties.class))
                 .orElseGet(EmbeddingProperties::new);
@@ -117,11 +123,12 @@ public class TwoPgVectorConfiguration implements DisposableBean {
 
         DocumentVectorIndexService twoIndexService = new DocumentVectorIndexService(
                 twoStore, twoAccess, twoRepository, idGenerator, hasher,
-                vectorIndexProperties, descriptor, chunkingService, transactionManager);
+                vectorIndexProperties, descriptor, chunkingService, transactionManager,
+                documentMetaRepository);
         QueryEmbeddingService twoQueryEmbeddingService = new QueryEmbeddingService(
                 embeddingModel, descriptor, retrievalProperties);
         SimilarityRetrievalService twoRetrievalService = new SimilarityRetrievalService(
-                twoStore, twoQueryEmbeddingService, retrievalProperties);
+                twoStore, twoQueryEmbeddingService, retrievalProperties, accessPolicyProvider);
         TwoCorpusIndexService twoCorpusIndexService = new TwoCorpusIndexService(
                 knowledgeCorpus, twoIndexService);
 

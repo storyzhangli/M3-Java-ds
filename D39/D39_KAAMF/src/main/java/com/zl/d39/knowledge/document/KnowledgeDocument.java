@@ -52,4 +52,12 @@ public class KnowledgeDocument {
 
     /** 过期时间（null 视为不设过期）。 */
     private LocalDateTime expiresAt;
+
+    // ---- D39 追加：知识权限范围（null=无标签，权限空间外，D3；遗留行保持 NULL 禁补值 H6）----
+
+    private String tenantId;
+
+    private String deptId;
+
+    private String deviceId;
 }

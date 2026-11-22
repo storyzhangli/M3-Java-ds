@@ -1,0 +1,14 @@
+{
+  "timestamp" : "2026-11-22 19:05:08",
+  "aiApiKeyPresent" : true,
+  "aiMode" : "",
+  "chatModelAvailable" : false,
+  "fullMode" : "offline",
+  "pgPortReachable" : true,
+  "httpReachable" : false,
+  "embeddingInitializable" : true,
+  "corpusLoadable" : true,
+  "finalMode" : "offline",
+  "retrievalBackend" : "BLOCKED",
+  "degradationReason" : "强制 PGVECTOR 但 PG 端口或应用 HTTP 不可达（PG=true，HTTP=false）"
+}

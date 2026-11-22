@@ -1,0 +1,74 @@
+[
+  {
+    "name": "d39-fx-d2p771.pdf",
+    "documentId": "c6772a8a59604014bc3d86738d4e59b5",
+    "tenantId": "T1",
+    "deptId": "D2",
+    "deviceId": "ALL",
+    "impCode": 200,
+    "impStatus": "COMPLETED",
+    "pageCount": 1,
+    "idxCode": 200,
+    "idxData": "{\"documentId\":\"c6772a8a59604014bc3d86738d4e59b5\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}"
+  },
+  {
+    "name": "d39-fx-t1pub.pdf",
+    "documentId": "4e9a5d5b43a2451686c40cc41f4a0426",
+    "tenantId": "T1",
+    "deptId": "ALL",
+    "deviceId": "ALL",
+    "impCode": 200,
+    "impStatus": "COMPLETED",
+    "pageCount": 1,
+    "idxCode": 200,
+    "idxData": "{\"documentId\":\"4e9a5d5b43a2451686c40cc41f4a0426\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}"
+  },
+  {
+    "name": "d39-fx-t2d1.pdf",
+    "documentId": "ac89ecf5e5864b1fb99ff2c5c4480d2d",
+    "tenantId": "T2",
+    "deptId": "D1",
+    "deviceId": "ALL",
+    "impCode": 200,
+    "impStatus": "COMPLETED",
+    "pageCount": 1,
+    "idxCode": 200,
+    "idxData": "{\"documentId\":\"ac89ecf5e5864b1fb99ff2c5c4480d2d\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}"
+  },
+  {
+    "name": "d39-fx-t1d1devall.pdf",
+    "documentId": "5dcf079b38d04b179bb1e4daf98101a8",
+    "tenantId": "T1",
+    "deptId": "D1",
+    "deviceId": "ALL",
+    "impCode": 200,
+    "impStatus": "COMPLETED",
+    "pageCount": 1,
+    "idxCode": 200,
+    "idxData": "{\"documentId\":\"5dcf079b38d04b179bb1e4daf98101a8\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}"
+  },
+  {
+    "name": "d39-fx-t1d2b.pdf",
+    "documentId": "4feb2f2cea394ae78a635017233a5f93",
+    "tenantId": "T1",
+    "deptId": "D2",
+    "deviceId": "DEV-B",
+    "impCode": 200,
+    "impStatus": "COMPLETED",
+    "pageCount": 1,
+    "idxCode": 200,
+    "idxData": "{\"documentId\":\"4feb2f2cea394ae78a635017233a5f93\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}"
+  },
+  {
+    "name": "d39-fx-t1d1a.pdf",
+    "documentId": "5fd9f2113b6d4f19aea48eaab8466001",
+    "tenantId": "T1",
+    "deptId": "D1",
+    "deviceId": "DEV-A",
+    "impCode": 200,
+    "impStatus": "COMPLETED",
+    "pageCount": 1,
+    "idxCode": 200,
+    "idxData": "{\"documentId\":\"5fd9f2113b6d4f19aea48eaab8466001\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}"
+  }
+]

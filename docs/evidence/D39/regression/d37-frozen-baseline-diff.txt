@@ -1,0 +1,5 @@
+D39 R01 回归门禁——D37 冻结基线逐行质量字段对照（沿用 D38 R02 C05 口径）
+对照基线: docs\evidence\D37\baseline\v1.0\PGVECTOR\20261120-205151\baseline.csv (60 行)
+当前运行: docs\evidence\D39\regression\baseline\d39r01-post3rounds\PGVECTOR\20261122-192054\baseline.csv (60 行, access=false, two_=false, 清理后 30 行数据态)
+对照列: hitCount,returnedDocumentCount,returnedChunkCount,relevantDocumentCount,relevantChunkCount,noiseCount,documentHit,chunkHit,actualDecision,labels,hitDocumentIds,hitLogicalChunkIds
+差异项: 0

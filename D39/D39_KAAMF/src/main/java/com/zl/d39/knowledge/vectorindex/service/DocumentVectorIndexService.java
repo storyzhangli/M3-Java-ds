@@ -7,6 +7,8 @@ import com.zl.d39.knowledge.chunking.ChunkStrategy;
 import com.zl.d39.knowledge.chunking.ChunkingResult;
 import com.zl.d39.knowledge.chunking.DocumentChunk;
 import com.zl.d39.knowledge.chunking.KnowledgeDocumentChunkingService;
+import com.zl.d39.knowledge.document.KnowledgeDocument;
+import com.zl.d39.knowledge.document.repository.KnowledgeDocumentRepository;
 import com.zl.d39.knowledge.embedding.EmbeddingModelDescriptor;
 import com.zl.d39.knowledge.vectorindex.VectorIndexException;
 import com.zl.d39.knowledge.vectorindex.config.VectorIndexProperties;
@@ -85,6 +87,9 @@ public class DocumentVectorIndexService {
 
     private final TransactionTemplate transactionTemplate;
 
+    /** D39：权限三键元数据读取端口（Spring 无条件装配；仅用于写入链读取，不参与过滤）。 */
+    private final KnowledgeDocumentRepository documentMetaRepository;
+
     public DocumentVectorIndexService(VectorStore vectorStore,
                                       PgVectorAccess pgVectorAccess,
                                       VectorChunkRepository repository,
@@ -93,7 +98,8 @@ public class DocumentVectorIndexService {
                                       VectorIndexProperties properties,
                                       EmbeddingModelDescriptor descriptor,
                                       KnowledgeDocumentChunkingService chunkingService,
-                                      PlatformTransactionManager transactionManager) {
+                                      PlatformTransactionManager transactionManager,
+                                      KnowledgeDocumentRepository documentMetaRepository) {
         this.vectorStore = vectorStore;
         this.pgVectorAccess = pgVectorAccess;
         this.repository = repository;
@@ -103,6 +109,7 @@ public class DocumentVectorIndexService {
         this.descriptor = descriptor;
         this.chunkingService = chunkingService;
         this.transactionTemplate = new TransactionTemplate(transactionManager);
+        this.documentMetaRepository = documentMetaRepository;
     }
 
     // ------------------------------------------------------------------
@@ -201,6 +208,10 @@ public class DocumentVectorIndexService {
 
         List<PreparedChunk> prepared = prepare(normalized);
 
+        // D39：读取文档权限三键（无标签/无行=null → 不写权限键，与骨架逐字节一致）
+        KnowledgeDocument accessMeta = documentMetaRepository.findByDocumentId(documentId)
+                .orElse(null);
+
         // 阶段 1：Outbox 快照完整落库（MySQL 本地事务）。
         // 先存快照再写向量：任何一步中断都能从完整快照按稳定 ID 幂等重建。
         LocalDateTime snapshotTime = LocalDateTime.now();
@@ -220,7 +231,7 @@ public class DocumentVectorIndexService {
                 List<Document> documents = new ArrayList<>(batch.size());
                 List<String> batchIds = new ArrayList<>(batch.size());
                 for (PreparedChunk pc : batch) {
-                    documents.add(toVectorDocument(pc));
+                    documents.add(toVectorDocument(pc, accessMeta));
                     batchIds.add(pc.chunkId());
                 }
                 // 框架原生 DB 级 Upsert：稳定 UUID 冲突即更新，不产生重复行
@@ -504,9 +515,13 @@ public class DocumentVectorIndexService {
         return result;
     }
 
-    private Document toVectorDocument(PreparedChunk pc) {
+    private Document toVectorDocument(PreparedChunk pc, KnowledgeDocument accessMeta) {
         DocumentChunk chunk = pc.chunk();
-        Map<String, Object> metadata = new LinkedHashMap<>(VectorMetadataBuilder.buildTrace(chunk, descriptor));
+        Map<String, Object> metadata = new LinkedHashMap<>(VectorMetadataBuilder.buildTrace(
+                chunk, descriptor,
+                accessMeta == null ? null : accessMeta.getTenantId(),
+                accessMeta == null ? null : accessMeta.getDeptId(),
+                accessMeta == null ? null : accessMeta.getDeviceId()));
         metadata.put("chunkContentHash", pc.chunkContentHash());
         metadata.put("splitVersion", properties.getSplitVersion());
         metadata.put("lifecycleStatus", chunk.lifecycleStatus());

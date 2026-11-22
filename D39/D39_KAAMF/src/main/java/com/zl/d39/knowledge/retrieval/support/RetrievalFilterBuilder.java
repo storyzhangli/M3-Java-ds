@@ -30,6 +30,15 @@ public final class RetrievalFilterBuilder {
      * 构造过滤表达式；三个条件均为可选，全部为空时返回 {@code null}（不过滤）。
      */
     public Filter.Expression build(String documentId, String version, String strategy) {
+        FilterExpressionBuilder.Op expression = buildOp(documentId, version, strategy);
+        return expression == null ? null : expression.build();
+    }
+
+    /**
+     * D39：Op 级构造（供与权限谓词在 {@link FilterExpressionBuilder.Op} 层 AND 组合后再 build；
+     * {@code Filter.Expression} 终态不可二次组合）。语义与 {@link #build} 逐字一致，零行为变化。
+     */
+    public FilterExpressionBuilder.Op buildOp(String documentId, String version, String strategy) {
         FilterExpressionBuilder builder = new FilterExpressionBuilder();
         FilterExpressionBuilder.Op expression = null;
         if (StringUtils.hasText(documentId)) {
@@ -43,7 +52,7 @@ public final class RetrievalFilterBuilder {
             FilterExpressionBuilder.Op next = builder.eq("strategy", requireSafe(strategy, "strategy"));
             expression = expression == null ? next : builder.and(expression, next);
         }
-        return expression == null ? null : expression.build();
+        return expression;
     }
 
     /**

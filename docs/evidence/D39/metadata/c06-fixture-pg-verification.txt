@@ -1,0 +1,19 @@
+D39-R01 P4 fixture evidence (2026-11-22)
+- Chain: POST register(adminT1, three-key in body) -> POST import(pdf) -> POST vector-index. 6 docs x 2 chunks COMPLETED.
+- Format note: HTTP vector-index reads page-level text; skeleton parser produces pages ONLY for PDF.
+  Fixtures therefore generated as single-page A4 PDFs (PDFBox + simhei.ttf, D39PdfFixtureGen.java),
+  read-back self-check: extracted non-whitespace == source, marker "D2P-771" literal intact.
+- Drift fixes discovered during P4 (documented in driftNote, ALL additive/no-backfill/no-touch legacy):
+  1) knowledge_document/page legacy column layout (source/content_length/blank; missing source_system,
+     file_name, content_type, file_size, character_count, blank_page, parser_name, parser_version)
+     -> d39-schema-align-ddl.sql (pure ADD COLUMN, idempotent x2 rounds OK).
+  2) knowledge_document_page.created_at NOT NULL without default broke MP INSERT (strict mode 1364)
+     -> c04b MODIFY created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6).
+  3) PRODUCTION BUG in skeleton: DocumentChunker emitted 1-based chunkIndex while
+     DocumentVectorIndexService.normalize requires 0..n-1 (HTTP vector-index chain was NEVER functional);
+     all existing vector_store rows verified 0-based (min=0). Fix: chunks.size()+1 -> chunks.size().
+     Rebuild + package (BUILD SUCCESS) + instance restart.
+- ExecuteTwoDdl lesson: stdin pipe mode is IGNORED (arg "-" skips DDL); DML must go through a file path.
+- PG vector_store: total=42, with_tenant=12 (C07: legacy 30 rows untouched, no keys).
+- Three-key combos (each 2 chunks): T1/ALL/ALL, T1/D1/ALL, T1/D1/DEV-A, T1/D2/ALL, T1/D2/DEV-B, T2/D1/ALL.
+- Fixture documentIds in registered-documents.json (d39-fx-* titles, source_system=D39-R01-FIXTURE).

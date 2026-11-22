@@ -1,5 +1,6 @@
 package com.zl.d39.hybrid.controller;
 
+import com.zl.d39.access.AccessGuard;
 import com.zl.d39.common.Result;
 import com.zl.d39.hybrid.HybridSearchService;
 import com.zl.d39.hybrid.dto.HybridSearchResponse;
@@ -7,6 +8,7 @@ import com.zl.d39.hybrid.keyword.InvertedIndex;
 import com.zl.d39.hybrid.keyword.KeywordSearchService;
 import com.zl.d39.knowledge.retrieval.dto.RetrievalQueryRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,6 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * <p>Result 包装、HTTP 恒 200、code 判成败口径与既有端点一致；
  * 响应 hits 分数语义为 RRF（见 {@link HybridSearchService#SCORE_SEMANTIC_RRF}）。</p>
+ *
+ * <p>D39：search=FILTER_REQUIRED（HybridSearchService 双路前置过滤+RRF 闭包）；
+ * rebuild=ADMIN_ONLY。关闭态零差异。</p>
  */
 @Slf4j
 @RestController
@@ -27,10 +32,14 @@ public class HybridSearchController {
 
     private final KeywordSearchService keywordSearchService;
 
+    private final ObjectProvider<AccessGuard> accessGuardProvider;
+
     public HybridSearchController(HybridSearchService hybridSearchService,
-                                  KeywordSearchService keywordSearchService) {
+                                  KeywordSearchService keywordSearchService,
+                                  ObjectProvider<AccessGuard> accessGuardProvider) {
         this.hybridSearchService = hybridSearchService;
         this.keywordSearchService = keywordSearchService;
+        this.accessGuardProvider = accessGuardProvider;
     }
 
     /**
@@ -46,6 +55,10 @@ public class HybridSearchController {
      */
     @PostMapping("/api/v1/hybrid/index/rebuild")
     public Result<RebuildView> rebuild() {
+        AccessGuard guard = accessGuardProvider.getIfAvailable();
+        if (guard != null) {
+            guard.requireAdmin();
+        }
         log.info("触发倒排重建（只读加载，零写入）");
         InvertedIndex.IndexStats stats = keywordSearchService.rebuild();
         String fingerprint = keywordSearchService.currentIndex().fingerprint();

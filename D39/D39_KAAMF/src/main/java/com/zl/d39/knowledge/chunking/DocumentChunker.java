@@ -86,7 +86,11 @@ public class DocumentChunker {
                     document.documentId(),
                     document.title(),
                     document.version(),
-                    chunks.size() + 1,
+                    // D39-R01 修复：chunkIndex 必须 0-based（chunks.size()），与
+                    // DocumentVectorIndexService.normalize 的 0..n-1 连续校验及全部存量
+                    // vector_store 数据（实测 min=0）一致；骨架原值 chunks.size()+1 使
+                    // HTTP vector-index 链路（indexFromPages）从未可用。
+                    chunks.size(),
                     strategy,
                     content,
                     codePointLength(content),

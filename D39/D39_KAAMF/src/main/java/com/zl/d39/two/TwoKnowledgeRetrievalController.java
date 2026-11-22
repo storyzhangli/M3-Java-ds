@@ -1,5 +1,6 @@
 package com.zl.d39.two;
 
+import com.zl.d39.access.AccessGuard;
 import com.zl.d39.common.Result;
 import com.zl.d39.knowledge.retrieval.dto.RetrievalQueryRequest;
 import com.zl.d39.knowledge.retrieval.dto.RetrievalResponse;
@@ -33,23 +34,34 @@ public class TwoKnowledgeRetrievalController {
 
     private final TwoSpaceComponents components;
 
-    public TwoKnowledgeRetrievalController(TwoSpaceComponents components) {
+    private final org.springframework.beans.factory.ObjectProvider<AccessGuard> accessGuardProvider;
+
+    public TwoKnowledgeRetrievalController(TwoSpaceComponents components,
+                                           org.springframework.beans.factory.ObjectProvider<AccessGuard> accessGuardProvider) {
         this.components = components;
+        this.accessGuardProvider = accessGuardProvider;
     }
 
     /**
      * two_ 语料入库（幂等）：重复调用命中幂等短路，0 次远程 Embedding 调用。
+     * D39：ADMIN_ONLY（写操作收口；关闭态 guard bean 缺席=零差异）。
      */
     @PostMapping("/api/v1/two/knowledge/retrieval/corpus/index")
     public Result<List<VectorIndexResultView>> indexCorpus(
             @RequestParam(name = "version", defaultValue = TwoCorpusIndexService.DEFAULT_CORPUS_VERSION)
             String version,
             @RequestParam(name = "strategy", required = false) String strategy) {
+        AccessGuard guard = accessGuardProvider.getIfAvailable();
+        if (guard != null) {
+            guard.requireAdmin();
+        }
         return Result.success(components.corpusIndexService().indexCorpus(version, strategy));
     }
 
     /**
      * two_ Top-K 相似度检索：查询向量化与入库向量同属 two_ 空间。
+     * D39：FILTER_REQUIRED——two_ 检索服务在 TwoPgVectorConfiguration 已接入权限策略
+     * （同一 vectorFilter 谓词下推），关闭态不过滤。
      */
     @PostMapping("/api/v1/two/knowledge/retrieval/search")
     public Result<RetrievalResponse> search(@RequestBody RetrievalQueryRequest request) {

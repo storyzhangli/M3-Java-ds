@@ -1,5 +1,8 @@
 package com.zl.d39.hybrid;
 
+import com.zl.d39.access.AccessPolicyService;
+import com.zl.d39.access.AuthContext;
+import com.zl.d39.access.AuthContextHolder;
 import com.zl.d39.common.ResultCode;
 import com.zl.d39.hybrid.config.HybridProperties;
 import com.zl.d39.hybrid.dto.HybridSearchResponse;
@@ -14,6 +17,7 @@ import com.zl.d39.knowledge.retrieval.service.SimilarityRetrievalService;
 import com.zl.d39.knowledge.retrieval.support.RetrievalHitMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
@@ -51,16 +55,21 @@ public class HybridSearchService {
 
     private final RetrievalProperties retrievalProperties;
 
+    /** D39：权限策略端口（关闭态 bean 缺席 → scope=null → 两路行为与骨架一致，零差异）。 */
+    private final ObjectProvider<AccessPolicyService> accessPolicyProvider;
+
     public HybridSearchService(SimilarityRetrievalService similarityRetrievalService,
                                KeywordSearchService keywordSearchService,
                                RrfFusionService rrfFusionService,
                                HybridProperties hybridProperties,
-                               RetrievalProperties retrievalProperties) {
+                               RetrievalProperties retrievalProperties,
+                               ObjectProvider<AccessPolicyService> accessPolicyProvider) {
         this.similarityRetrievalService = similarityRetrievalService;
         this.keywordSearchService = keywordSearchService;
         this.rrfFusionService = rrfFusionService;
         this.hybridProperties = hybridProperties;
         this.retrievalProperties = retrievalProperties;
+        this.accessPolicyProvider = accessPolicyProvider;
     }
 
     /**
@@ -83,6 +92,19 @@ public class HybridSearchService {
         int effectiveTopK = resolveTopK(request.topK());
         int candidateTopN = hybridProperties.getCandidateTopN();
 
+        // D39：权限范围解析（先于双路；RRF 融合输入已双侧过滤 → 融合结果闭包于授权集合）
+        AccessPolicyService policy = accessPolicyProvider == null
+                ? null : accessPolicyProvider.getIfAvailable();
+        AccessPolicyService.PermissionScope permissionScope = null;
+        if (policy != null) {
+            AuthContext context = AuthContextHolder.get();
+            if (context == null) {
+                throw new RetrievalException(ResultCode.PARAM_INVALID,
+                        "缺少服务端可信身份，检索被拒绝", "AUTH_CONTEXT_MISSING");
+            }
+            permissionScope = policy.scopeFor(context);
+        }
+
         // 1. 向量路（只读复用；RetrievalException 原样上抛=FAILED）
         long vectorStart = System.nanoTime();
         RetrievalResponse vectorResponse = similarityRetrievalService.search(
@@ -100,7 +122,8 @@ public class HybridSearchService {
         List<KeywordMatchView> keywordHits;
         try {
             keywordHits = keywordSearchService.search(query, candidateTopN,
-                    request.documentId(), request.version(), request.strategy());
+                    request.documentId(), request.version(), request.strategy(),
+                    permissionScope);
         } catch (RetrievalException ex) {
             throw ex;
         } catch (RuntimeException ex) {

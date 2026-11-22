@@ -91,7 +91,10 @@ public final class HybridIndexLoader {
                 content,
                 textOrNull(metadata, "lifecycleStatus"),
                 dateTimeOrNull(metadata, "effectiveAt"),
-                dateTimeOrNull(metadata, "expiresAt"));
+                dateTimeOrNull(metadata, "expiresAt"),
+                textOrNull(metadata, "tenantId"),
+                textOrNull(metadata, "deptId"),
+                textOrNull(metadata, "deviceId"));
     }
 
     private static String textOrNull(JsonNode node, String field) {

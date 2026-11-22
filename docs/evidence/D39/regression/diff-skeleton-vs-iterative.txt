@@ -1,0 +1,5 @@
+D39 R01 回归门禁 diff 报告（骨架 776de40 vs 迭代工作树, PGVECTOR, access=false, 同数据态42行）
+对照A(骨架): E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D39\regression\baseline\d39r01-skeleton\PGVECTOR\20261122-190810
+对照B(迭代): E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D39\regression\baseline\d39r01-precleanup\PGVECTOR\20261122-190601
+逐题对比数: 20
+差异项: 0

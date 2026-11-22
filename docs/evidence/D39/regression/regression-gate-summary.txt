@@ -1,0 +1,7 @@
+D39 R01 回归门禁总结（三轮 PGVECTOR / access=false / TopK5 / Rounds≥1）
+1) skeleton@776de40 数据态42行 : PASS=14 FAIL=6
+2) iterative@d39r01 数据态42行: PASS=14 FAIL=6，与(1)逐题 verdict/dh/ch/hit集合 全一致 => D39 代码零回归
+3) iterative 数据态30行(清理后): PASS=14 FAIL=6，轮间一致性=一致
+post vs skeleton 逐题差异数: 0
+6 FAIL 定性: PGVECTOR 后端在 D37 时期从未有基线（当时 8080 无服务全部 BLOCKED），失败模式为 CLARIFY 阈值判定(5项,docHit/chunkHit 均=True)与 top5 窗口排序(1项)，两轮骨架/迭代完全同态 => 存量行为，非 D39 引入
+

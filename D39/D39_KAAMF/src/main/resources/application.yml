@@ -329,3 +329,14 @@ app:
       # D14：SSE 异步流式响应不能被请求/响应缓存包装器缓冲，否则增量无法实时推送且过滤器提前收尾会截断流，
       # 因此整条路径跳过正文缓存过滤器；TraceIdFilter 独立生效，requestId 照常生成与回写。
       - /api/v1/ai/chat/stream
+
+  # ------------------------------------------------------------------
+  # D39 新增：知识权限与元数据过滤（服务端可信身份 + 文档三键元数据 + 三轨 Top-K 前过滤）。
+  # enabled=false（默认）：过滤器与策略 Bean 不装配，行为与骨架基线提交 776de40 零差异；
+  # enabled=true：Authorization Bearer → SHA-256 → d39_auth_principal → AuthContext，
+  # /api/v1/** 统一 fail-closed（AUTH_* 稳定拒绝），检索结果限权与文档暴露面收口生效。
+  # ------------------------------------------------------------------
+  access:
+    enabled: ${APP_ACCESS_ENABLED:false}
+    protected-path-patterns:
+      - /api/v1/*

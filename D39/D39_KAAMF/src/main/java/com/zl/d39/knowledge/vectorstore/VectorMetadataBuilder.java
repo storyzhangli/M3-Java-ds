@@ -24,6 +24,16 @@ public final class VectorMetadataBuilder {
      */
     public static Map<String, Object> buildTrace(DocumentChunk chunk,
                                                  EmbeddingModelDescriptor descriptor) {
+        return buildTrace(chunk, descriptor, null, null, null);
+    }
+
+    /**
+     * D39 重载：追加权限范围三键（tenantId/deptId/deviceId），真实非空才写——
+     * 无标签文档写入的 metadata 与两参重载逐字节一致（零差异基线）。
+     */
+    public static Map<String, Object> buildTrace(DocumentChunk chunk,
+                                                 EmbeddingModelDescriptor descriptor,
+                                                 String tenantId, String deptId, String deviceId) {
         Map<String, Object> metadata = new LinkedHashMap<>();
         metadata.put("documentId", chunk.documentId());
         if (chunk.title() != null) {
@@ -40,6 +50,15 @@ public final class VectorMetadataBuilder {
         metadata.put("characterCount", chunk.characterCount());
         metadata.put("vectorSpaceId", descriptor.vectorSpaceId());
         metadata.put("modelName", descriptor.modelName());
+        if (tenantId != null) {
+            metadata.put("tenantId", tenantId);
+        }
+        if (deptId != null) {
+            metadata.put("deptId", deptId);
+        }
+        if (deviceId != null) {
+            metadata.put("deviceId", deviceId);
+        }
         return metadata;
     }
 }

@@ -1,0 +1,8 @@
+QUERY: SELECT token_sha256, user_id, tenant_id, dept_id, device_scopes, role, enabled, expires_at, created_at FROM d39_auth_principal ORDER BY user_id
+token_sha256 | user_id | tenant_id | dept_id | device_scopes | role | enabled | expires_at | created_at
+55e3089a1cce6b7f8ee32d2d51b296f6c7da62b5606fdd2060f76e3f5eaff5da | adminT1 | T1 | D-HQ | [] | ADMIN | 1 | null | 2026-11-22 16:44:46
+23cd4ea754b0e61f6277d4635273d47b3c66396cc8d2c002189545e2de4eaeaf | expiredUser | T1 | D2 | ["DEV-B"] | USER | 1 | 2020-01-01 00:00:00 | 2026-11-22 16:44:46
+d51b31ef4886ed40d02632578df74220c0ba487cb9a6175ed3a8373b4928ee7c | userA | T1 | D1 | ["DEV-A"] | USER | 1 | null | 2026-11-22 16:44:46
+a18268d5ce2daedda7d3da5138b801b12fba5c3694ee4b622ad0835ea8454530 | userB | T1 | D2 | ["DEV-B"] | USER | 1 | null | 2026-11-22 16:44:46
+e7553e947ae8d5c44c07817292c33b6f088b3e6e1ab5aaae71a31a9ea41627bd | userC | T2 | D1 | ["DEV-A"] | USER | 1 | null | 2026-11-22 16:44:46
+DONE

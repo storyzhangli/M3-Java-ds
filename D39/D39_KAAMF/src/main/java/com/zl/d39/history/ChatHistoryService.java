@@ -83,6 +83,12 @@ public class ChatHistoryService {
      * @param headerValue 请求头原始值，空白时取默认归属
      */
     public String resolveOwner(String headerValue) {
+        // D39：enabled 态下服务端可信身份优先，客户端 X-Dev-User 头不再决定归属（防会话冒读 D5）；
+        // 关闭态 ThreadLocal 恒为 null → 逐字走原逻辑（零差异 H1）
+        com.zl.d39.access.AuthContext context = com.zl.d39.access.AuthContextHolder.get();
+        if (context != null) {
+            return context.userId();
+        }
         if (!StringUtils.hasText(headerValue)) {
             return properties.getDefaultOwner();
         }

@@ -1,6 +1,7 @@
 package com.zl.d39.knowledge.document.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
@@ -21,4 +22,18 @@ public class KnowledgeDocumentRegistrationRequest {
     @NotBlank(message = "version 不能为空")
     @Size(max = 64, message = "version 长度不能超过64")
     private String version;
+
+    // ---- D39 追加（可选；未传=无标签=权限空间外 D3；值域对齐既有白名单字符集 D2）----
+
+    @Size(max = 64, message = "tenantId 长度不能超过64")
+    @Pattern(regexp = "^$|[A-Za-z0-9._:-]+", message = "tenantId 仅允许字母、数字、点、下划线、冒号、连字符")
+    private String tenantId;
+
+    @Size(max = 64, message = "deptId 长度不能超过64")
+    @Pattern(regexp = "^$|[A-Za-z0-9._:-]+", message = "deptId 仅允许字母、数字、点、下划线、冒号、连字符")
+    private String deptId;
+
+    @Size(max = 64, message = "deviceId 长度不能超过64")
+    @Pattern(regexp = "^$|[A-Za-z0-9._:-]+", message = "deviceId 仅允许字母、数字、点、下划线、冒号、连字符")
+    private String deviceId;
 }

@@ -192,6 +192,10 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
         po.setErrorMessage(safe(document.getErrorMessage(), 500));
         po.setCreatedAt(document.getCreatedAt());
         po.setUpdatedAt(document.getUpdatedAt());
+        // D39：权限范围三列透传（null 原样写 NULL，禁补默认值 H6）
+        po.setTenantId(document.getTenantId());
+        po.setDeptId(document.getDeptId());
+        po.setDeviceId(document.getDeviceId());
         return po;
     }
 
@@ -211,6 +215,10 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
         document.setErrorMessage(po.getErrorMessage());
         document.setCreatedAt(po.getCreatedAt());
         document.setUpdatedAt(po.getUpdatedAt());
+        // D39：权限范围三列透传
+        document.setTenantId(po.getTenantId());
+        document.setDeptId(po.getDeptId());
+        document.setDeviceId(po.getDeviceId());
         return document;
     }
 

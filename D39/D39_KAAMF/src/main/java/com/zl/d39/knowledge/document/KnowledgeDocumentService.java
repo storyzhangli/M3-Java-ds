@@ -45,6 +45,10 @@ public class KnowledgeDocumentService {
         document.setSourceSystem(request.getSource().strip());
         document.setTitle(request.getTitle().strip());
         document.setVersion(request.getVersion().strip());
+        // D39：权限三键透传（未传保持 null=权限空间外，禁止补默认值）
+        document.setTenantId(blankToNull(request.getTenantId()));
+        document.setDeptId(blankToNull(request.getDeptId()));
+        document.setDeviceId(blankToNull(request.getDeviceId()));
         document.setStatus(KnowledgeDocumentStatus.PENDING);
         document.setErrorCode("");
         document.setErrorMessage("");
@@ -187,6 +191,18 @@ public class KnowledgeDocumentService {
                         "知识文档不存在: " + documentId));
     }
 
+    /**
+     * D39：按 documentId 读取权限范围三键（供文档级访问校验；不存在时抛既有 NOT_FOUND）。
+     */
+    public KnowledgeDocument documentForScope(String documentId) {
+        return requireDocument(documentId);
+    }
+
+    /** D39：空串/空白归一为 null（未传=无标签=权限空间外），其余 strip 后保留。 */
+    private static String blankToNull(String value) {
+        return value == null || value.isBlank() ? null : value.strip();
+    }
+
     private KnowledgeDocumentException duplicate(KnowledgeDocument existing) {
         return new KnowledgeDocumentException(
                 ResultCode.DOCUMENT_DUPLICATE,
@@ -234,6 +250,9 @@ public class KnowledgeDocumentService {
                 pageCount,
                 document.getErrorCode(),
                 document.getErrorMessage(),
-                duplicate);
+                duplicate,
+                document.getTenantId(),
+                document.getDeptId(),
+                document.getDeviceId());
     }
 }

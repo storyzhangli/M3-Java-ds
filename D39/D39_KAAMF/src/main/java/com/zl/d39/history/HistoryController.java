@@ -1,5 +1,7 @@
 package com.zl.d39.history;
 
+import com.zl.d39.access.AuthContext;
+import com.zl.d39.access.AuthContextFilter;
 import com.zl.d39.common.Result;
 import com.zl.d39.history.ChatHistoryService;
 import com.zl.d39.history.config.HistoryProperties;
@@ -66,6 +68,14 @@ public class HistoryController {
     }
 
     private String resolveOwner(HttpServletRequest request) {
+        // D39-R01 暴露面收口：访问控制开启时，AuthContextFilter 已建立服务端可信身份
+        // （request attribute 必然存在，缺失即链路已被 4001 拒绝），会话归属一律取
+        // AuthContext.userId，X-Dev-User 头不再参与归属判定（防伪造读他人会话）。
+        Object ctx = request.getAttribute(AuthContextFilter.REQUEST_ATTRIBUTE);
+        if (ctx instanceof AuthContext auth) {
+            return auth.userId();
+        }
+        // access 关闭态：保持骨架开发头行为，零差异
         return historyService.resolveOwner(request.getHeader(properties.getDevUserHeader()));
     }
 

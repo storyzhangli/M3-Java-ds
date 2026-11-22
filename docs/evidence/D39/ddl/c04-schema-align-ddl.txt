@@ -1,0 +1,12 @@
+D39-R01 schema-align DDL execution record (2026-11-22 18:3x)
+Root cause: real MySQL ai_db knowledge_document/knowledge_document_page were legacy-column tables
+  (source/content_length/blank, missing source_system/file_name/content_type/file_size/
+   character_count/blank_page/parser_name/parser_version) while all 14 repo modules'
+  schema-knowledge-document.sql + D39 PO contract expect the new column names.
+  Symptom: POST /api/v1/knowledge/documents -> code 5000,
+  SQLSyntaxErrorException: Unknown column 'source_system'.
+Fix: docs\temp_docs\D39\ddl\d39-schema-align-ddl.sql — PURELY ADDITIVE (ADD COLUMN only),
+  no rename, no drop, no backfill, existing columns and 3 legacy rows untouched.
+Round1: 40 statements DDL OK, 0 errors. Round2 (idempotency): 40 statements DDL OK (all skip branches), 0 errors.
+Rows before/after: knowledge_document=3 (unchanged), knowledge_document_page legacy rows unchanged.
+Note: PG vector_store(30)/two_vector_store(8) not touched by this DDL.

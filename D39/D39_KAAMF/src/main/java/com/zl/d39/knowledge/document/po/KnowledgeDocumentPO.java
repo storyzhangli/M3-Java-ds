@@ -39,4 +39,12 @@ public class KnowledgeDocumentPO {
     private LocalDateTime createdAt;
 
     private LocalDateTime updatedAt;
+
+    // ---- D39 追加：权限范围列（MyBatis-Plus 驼峰↔下划线自动映射；遗留行为 NULL）----
+
+    private String tenantId;
+
+    private String deptId;
+
+    private String deviceId;
 }

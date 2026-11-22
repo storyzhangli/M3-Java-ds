@@ -20,5 +20,9 @@ public record KnowledgeDocumentView(
         Integer pageCount,
         String errorCode,
         String errorMessage,
-        boolean duplicate) {
+        boolean duplicate,
+        // D39 追加：权限范围三键（无标签为 null）
+        String tenantId,
+        String deptId,
+        String deviceId) {
 }

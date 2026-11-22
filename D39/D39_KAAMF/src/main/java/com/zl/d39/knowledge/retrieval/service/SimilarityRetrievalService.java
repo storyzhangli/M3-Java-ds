@@ -1,5 +1,8 @@
 package com.zl.d39.knowledge.retrieval.service;
 
+import com.zl.d39.access.AccessPolicyService;
+import com.zl.d39.access.AuthContext;
+import com.zl.d39.access.AuthContextHolder;
 import com.zl.d39.common.ResultCode;
 import com.zl.d39.knowledge.retrieval.RetrievalException;
 import com.zl.d39.knowledge.retrieval.config.RetrievalProperties;
@@ -15,6 +18,9 @@ import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.ai.vectorstore.filter.Filter;
+import org.springframework.ai.vectorstore.filter.FilterExpressionBuilder;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
@@ -49,13 +55,25 @@ public class SimilarityRetrievalService {
 
     private final RetrievalHitMapper hitMapper = new RetrievalHitMapper();
 
+    /** D39：权限策略端口；provider 为 null 或目标 bean 缺席（enabled=false）→ 完全不过滤（零差异 H1）。 */
+    private final ObjectProvider<AccessPolicyService> accessPolicyProvider;
+
     public SimilarityRetrievalService(VectorStore vectorStore,
                                       QueryEmbeddingService queryEmbeddingService,
                                       RetrievalProperties properties) {
+        this(vectorStore, queryEmbeddingService, properties, null);
+    }
+
+    @Autowired
+    public SimilarityRetrievalService(VectorStore vectorStore,
+                                      QueryEmbeddingService queryEmbeddingService,
+                                      RetrievalProperties properties,
+                                      ObjectProvider<AccessPolicyService> accessPolicyProvider) {
         this.vectorStore = vectorStore;
         this.queryEmbeddingService = queryEmbeddingService;
         this.properties = properties;
         this.properties.validate();
+        this.accessPolicyProvider = accessPolicyProvider;
     }
 
     /**
@@ -68,8 +86,26 @@ public class SimilarityRetrievalService {
         long start = System.nanoTime();
         int effectiveTopK = resolveTopK(request.topK());
         QueryVector queryVector = queryEmbeddingService.embed(request.query());
-        Filter.Expression filter = filterBuilder.build(
-                request.documentId(), request.version(), request.strategy());
+        FilterExpressionBuilder.Op combinedOp =
+                filterBuilder.buildOp(request.documentId(), request.version(), request.strategy());
+
+        // D39：权限谓词在 Top-K 之前下推（KP4 实证过滤先于截断）；关闭态=恒不进入本分支
+        String permissionDescription = null;
+        AccessPolicyService policy = accessPolicyProvider == null
+                ? null : accessPolicyProvider.getIfAvailable();
+        if (policy != null) {
+            AuthContext context = AuthContextHolder.get();
+            if (context == null) {
+                // fail-closed：enabled 态下未经过滤器上下文（内部直调/异步泄漏）一律拒绝
+                throw new RetrievalException(ResultCode.PARAM_INVALID,
+                        "缺少服务端可信身份，检索被拒绝", "AUTH_CONTEXT_MISSING");
+            }
+            permissionDescription = policy.describeScope(policy.scopeFor(context));
+            FilterExpressionBuilder.Op permissionOp = policy.vectorFilterOp(context);
+            FilterExpressionBuilder b = new FilterExpressionBuilder();
+            combinedOp = combinedOp == null ? permissionOp : b.and(combinedOp, permissionOp);
+        }
+        Filter.Expression filter = combinedOp == null ? null : combinedOp.build();
 
         SearchRequest.Builder builder = SearchRequest.builder()
                 .query(queryVector.query())
@@ -98,12 +134,12 @@ public class SimilarityRetrievalService {
         long elapsedMillis = (System.nanoTime() - start) / 1_000_000L;
         log.info("相似度检索完成: query=[{}], topK={}, filter=[{}], hits={}, elapsedMs={}",
                 truncate(queryVector.query(), 40), effectiveTopK,
-                filterDescription(request), hits.size(), elapsedMillis);
+                filterDescription(request, permissionDescription), hits.size(), elapsedMillis);
         return new RetrievalResponse(
                 queryVector.query(),
                 request.topK(),
                 effectiveTopK,
-                filterDescription(request),
+                filterDescription(request, permissionDescription),
                 List.copyOf(hits),
                 hits.size(),
                 elapsedMillis,
@@ -127,8 +163,8 @@ public class SimilarityRetrievalService {
         return value;
     }
 
-    private String filterDescription(RetrievalQueryRequest request) {
-        List<String> parts = new ArrayList<>(3);
+    private String filterDescription(RetrievalQueryRequest request, String permissionDescription) {
+        List<String> parts = new ArrayList<>(4);
         if (request.documentId() != null && !request.documentId().isBlank()) {
             parts.add("documentId=" + request.documentId().strip());
         }
@@ -137,6 +173,10 @@ public class SimilarityRetrievalService {
         }
         if (request.strategy() != null && !request.strategy().isBlank()) {
             parts.add("strategy=" + request.strategy().strip());
+        }
+        // D39：enabled 态追加权限范围描述；关闭态 permissionDescription=null → 输出与骨架一致
+        if (permissionDescription != null) {
+            parts.add("perm[" + permissionDescription + "]");
         }
         return parts.isEmpty() ? null : String.join(", ", parts);
     }

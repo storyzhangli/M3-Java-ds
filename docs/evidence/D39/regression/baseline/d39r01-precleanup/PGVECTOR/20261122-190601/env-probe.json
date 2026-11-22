@@ -1,0 +1,14 @@
+{
+  "timestamp" : "2026-11-22 19:06:00",
+  "aiApiKeyPresent" : true,
+  "aiMode" : "",
+  "chatModelAvailable" : false,
+  "fullMode" : "offline",
+  "pgPortReachable" : true,
+  "httpReachable" : true,
+  "embeddingInitializable" : true,
+  "corpusLoadable" : true,
+  "finalMode" : "offline",
+  "retrievalBackend" : "PGVECTOR",
+  "degradationReason" : null
+}

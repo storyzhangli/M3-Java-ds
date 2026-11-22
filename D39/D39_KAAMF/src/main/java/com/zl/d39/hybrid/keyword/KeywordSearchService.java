@@ -1,5 +1,6 @@
 package com.zl.d39.hybrid.keyword;
 
+import com.zl.d39.access.AccessPolicyService;
 import com.zl.d39.common.ResultCode;
 import com.zl.d39.hybrid.config.HybridProperties;
 import com.zl.d39.knowledge.retrieval.RetrievalException;
@@ -115,6 +116,16 @@ public class KeywordSearchService {
      */
     public List<KeywordMatchView> search(String query, int topN,
                                          String documentId, String version, String strategy) {
+        return search(query, topN, documentId, version, strategy, null);
+    }
+
+    /**
+     * D39 权限重载：{@code scope} 非空时先按权限三键过滤、再进入 BM25 评分（Top-N 截断
+     * 之前，过滤先于截断与向量路口径一致）；{@code scope=null}=关闭态原语义（零差异 H1）。
+     */
+    public List<KeywordMatchView> search(String query, int topN,
+                                         String documentId, String version, String strategy,
+                                         AccessPolicyService.PermissionScope scope) {
         if (query == null || query.isBlank()) {
             throw new RetrievalException(ResultCode.PARAM_INVALID,
                     "查询内容不能为空", "QUERY_BLANK");
@@ -148,6 +159,10 @@ public class KeywordSearchService {
                 String chunkId = entry.getKey();
                 ChunkRow row = index.document(chunkId);
                 if (!matchesFilter(row, docFilter, versionFilter, strategyFilter)) {
+                    continue;
+                }
+                // D39：权限过滤先于评分与截断（缺失键行被 scope.allows 天然拒绝）
+                if (scope != null && !scope.allows(row.tenantId(), row.deptId(), row.deviceId())) {
                     continue;
                 }
                 double tf = entry.getValue();
