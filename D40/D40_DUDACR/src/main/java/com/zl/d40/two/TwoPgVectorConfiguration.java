@@ -126,6 +126,10 @@ public class TwoPgVectorConfiguration implements DisposableBean {
                 twoStore, twoAccess, twoRepository, idGenerator, hasher,
                 vectorIndexProperties, descriptor, chunkingService, transactionManager,
                 documentMetaRepository);
+        // D40 R02-06：two_ 手动装配显式声明走 legacy 兼容通道（不进 d40_document_sync；
+        // two_ 表前缀隔离，事件由 TwoCorpusIndexService 自管）。生产 Spring 装配默认
+        // syncStateRequired=true，syncService 缺席时删除入口 fail-fast。
+        twoIndexService.setSyncStateRequired(false);
         QueryEmbeddingService twoQueryEmbeddingService = new QueryEmbeddingService(
                 embeddingModel, descriptor, retrievalProperties);
         SimilarityRetrievalService twoRetrievalService = new SimilarityRetrievalService(

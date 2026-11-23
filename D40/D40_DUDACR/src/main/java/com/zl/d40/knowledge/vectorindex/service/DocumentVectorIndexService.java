@@ -106,6 +106,17 @@ public class DocumentVectorIndexService {
      */
     private DocumentSyncService syncService;
 
+    /**
+     * R02-06 装配约束：默认 true——syncService 缺席时删除入口 fail-fast，
+     * 生产路径不得静默绕过同步状态机；仅显式声明（two_ 手动装配
+     * {@code setSyncStateRequired(false)}）才允许 legacy 兼容通道。
+     */
+    private boolean syncStateRequired = true;
+
+    public void setSyncStateRequired(boolean syncStateRequired) {
+        this.syncStateRequired = syncStateRequired;
+    }
+
     @org.springframework.beans.factory.annotation.Autowired(required = false)
     public void setSyncService(DocumentSyncService syncService) {
         this.syncService = syncService;
@@ -405,7 +416,13 @@ public class DocumentVectorIndexService {
      */
     private void deleteClosedLoop(String documentId, String version) {
         if (syncService == null) {
-            // two_ 手动装配实例（无 syncService）：保持骨架原语义（D40-01 偏差记录）
+            if (syncStateRequired) {
+                throw new IllegalStateException(
+                        "SyncService 未装配：生产装配必须注入同步状态机；"
+                                + "兼容 legacy 通道仅限显式 setSyncStateRequired(false) 的手动装配"
+                                + "（D40 R02-06）");
+            }
+            // two_ 手动装配实例（已显式声明无 sync）：保持骨架原语义（D40-01 偏差记录）
             deleteLegacy(documentId, version);
             return;
         }

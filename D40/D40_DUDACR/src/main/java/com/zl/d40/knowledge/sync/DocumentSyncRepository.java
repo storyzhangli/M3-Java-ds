@@ -120,6 +120,32 @@ public class DocumentSyncRepository {
     }
 
     /**
+     * 重试认领（R02-01 D 并发安全，最小方案=条件更新 CAS，无新中间件）。
+     *
+     * <p>WHERE 以自然键 + 期望旧状态 + 期望旧计数 + next_retry_at 空值安全等值
+     * （{@code <=>}）三条件锁定快照；SET 推进为 PENDING、清空原因码、写入执行租约
+     * （next_retry_at=leaseUntil，行被物理修改，第二个并发执行者条件不再匹配）。
+     * 返回 0 行=并发竞争失败或状态已被其他执行者推进，调用方必须放弃。</p>
+     *
+     * <p>attempt_count 仅在 {@code resetAttempt=true}（RETRY_EXHAUSTED 恢复入口）时清零，
+     * 普通重试保留原计数——一次失败只增加一次的语义前提。</p>
+     */
+    public int claimForRetry(String documentId, String operation, String version,
+                             String expectedStatus, int expectedAttempt,
+                             LocalDateTime expectedNextRetryAt, boolean resetAttempt,
+                             LocalDateTime now, LocalDateTime leaseUntil) {
+        String sql = "UPDATE d40_document_sync SET sync_status = 'PENDING',"
+                + " reason_code = '', attempt_count = CASE WHEN ? THEN 0 ELSE attempt_count END,"
+                + " next_retry_at = ?, updated_at = ?"
+                + " WHERE document_id = ? AND operation = ? AND version = ?"
+                + " AND sync_status = ? AND attempt_count = ? AND next_retry_at <=> ?";
+        return jdbcTemplate.update(sql, resetAttempt ? 1 : 0,
+                toTimestamp(leaseUntil), toTimestamp(now),
+                documentId, operation, blankToEmpty(version),
+                expectedStatus, expectedAttempt, toTimestamp(expectedNextRetryAt));
+    }
+
+    /**
      * 计数（夹具清理终验与 SYNCED 判定用）。
      */
     public long countByDocumentPrefix(String prefix) {

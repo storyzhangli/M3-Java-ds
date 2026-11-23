@@ -51,8 +51,13 @@ public class DocumentSyncService {
     // ------------------------------------------------------------------
 
     /**
-     * 标记操作开始：PENDING。已存在 SYNCED 行视为新事件重开（attempt 归零）；
-     * FAILED 行的重试推进由 retryOne 负责，此处不吞并其计数。
+     * 标记操作开始：PENDING。
+     *
+     * <p>R02-01 A 语义修正：attemptCount=该同步事件已发生的失败次数，
+     * 开始重试不得清零。仅当既有行为 SYNCED（上一事件已收敛，本次为新事件，
+     * 如新版本导入/重复删除）时归零；PENDING（重试管线预置）与 FAILED
+     * （事件重开）均保留原计数，防止 retryOne→handler→markPending 链路
+     * 把历史失败次数抹掉。</p>
      */
     public void markPending(String documentId, SyncOperation operation,
                             String version, String payloadHash) {
@@ -62,8 +67,8 @@ public class DocumentSyncService {
             LocalDateTime now = LocalDateTime.now();
             if (existing.isPresent()) {
                 DocumentSyncRow row = existing.get();
-                int attempt = SyncStatus.FAILED.name().equals(row.getSyncStatus())
-                        ? row.getAttemptCount() : 0;
+                int attempt = SyncStatus.SYNCED.name().equals(row.getSyncStatus())
+                        ? 0 : row.getAttemptCount();
                 repository.updateState(documentId, operation.name(), version,
                         SyncStatus.PENDING.name(), "", attempt, null, now);
             } else {
@@ -138,8 +143,17 @@ public class DocumentSyncService {
     /**
      * 重试单条同步事件。
      *
-     * <p>返回处理结果描述；SYNCED 行为 no-op（E4 重复事件幂等）；
-     * RETRY_EXHAUSTED 行手动重试时先重置尝试计数（ADMIN 通道）。</p>
+     * <p>R02-01 语义修正（B/D）：</p>
+     * <ul>
+     *   <li>进入执行前必须经 {@code claimForRetry} 条件更新（CAS：状态+计数+租约三条件），
+     *       并发或重复消费第二个执行者得 0 行，直接放弃，避免同一事件被多执行者同时处理；</li>
+     *   <li>普通重试不清零 attemptCount；仅 RETRY_EXHAUSTED 的人工/调度恢复显式重置
+     *       （人工恢复入口语义，与既有 H7 一致）；</li>
+     *   <li>失败落账单一责任层：处理器能识别原因时自行 markFailed；外层仅在处理器
+     *       抛异常且最新持久化状态仍为 PENDING（未落账）时兜底记录——绝不重复计数。</li>
+     * </ul>
+     *
+     * <p>返回处理结果描述；SYNCED 行为 no-op（E4 重复事件幂等）。</p>
      */
     public String retryOne(String documentId, SyncOperation operation, String version) {
         Optional<DocumentSyncRow> found =
@@ -151,32 +165,44 @@ public class DocumentSyncService {
         if (SyncStatus.SYNCED.name().equals(row.getSyncStatus())) {
             return "NO_OP_ALREADY_SYNCED";
         }
-        if (SyncStatus.PENDING.name().equals(row.getSyncStatus())) {
-            // PENDING 卡滞（标记后进程崩溃）：直接经处理器重放闭环
-        }
         SyncRetryHandler handler = handlers.get(operation);
         if (handler == null) {
             return "NO_HANDLER_REGISTERED";
         }
-        if (SyncReasonCode.RETRY_EXHAUSTED.equals(row.getReasonCode())) {
-            repository.updateState(documentId, operation.name(), version,
-                    SyncStatus.PENDING.name(), "", 0, null, LocalDateTime.now());
-            log.info("RETRY_EXHAUSTED 手动重置并重试 documentId={} operation={}",
+        boolean manualReset = SyncReasonCode.RETRY_EXHAUSTED.equals(row.getReasonCode());
+        if (manualReset) {
+            log.info("RETRY_EXHAUSTED 恢复入口：重置尝试计数后重试 documentId={} operation={}",
                     documentId, operation);
-        } else {
-            repository.updateState(documentId, operation.name(), version,
-                    SyncStatus.PENDING.name(), "", row.getAttemptCount(), null,
-                    LocalDateTime.now());
+        }
+        // CAS claim：status/attempt/next_retry_at 三条件，0 行=并发竞争失败或状态已被推进
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime leaseUntil = now.plusNanos(
+                Math.max(properties.getRetryBackoffMs() * 8_000_000L, 5_000_000_000L));
+        int claimed = repository.claimForRetry(documentId, operation.name(), version,
+                row.getSyncStatus(), row.getAttemptCount(), row.getNextRetryAt(),
+                manualReset, now, leaseUntil);
+        if (claimed == 0) {
+            log.info("重试 claim 失败（并发消费或状态推进）documentId={} operation={} version={}",
+                    documentId, operation, version);
+            return "NO_OP_CONCURRENT_CLAIM";
         }
         DocumentSyncRow pending =
                 repository.find(documentId, operation.name(), version).orElse(row);
         try {
             handler.execute(pending);
         } catch (RuntimeException ex) {
-            // 处理器未自行归因时的兜底：状态机不允许失败逃逸无痕
-            markFailed(documentId, operation, version, classify(ex), row.getPayloadHash());
-            log.warn("重试处理器异常已由状态机兜底落库 documentId={} operation={} reason={}",
-                    documentId, operation, classify(ex));
+            // 单一责任层兜底：仅当处理器未落账（最新状态仍 PENDING）时外层记录
+            String latestStatus = repository.find(documentId, operation.name(), version)
+                    .map(DocumentSyncRow::getSyncStatus).orElse("");
+            if (SyncStatus.PENDING.name().equals(latestStatus) || latestStatus.isEmpty()) {
+                markFailed(documentId, operation, version, classify(ex), row.getPayloadHash());
+                log.warn("重试处理器异常未落账，状态机兜底记录 documentId={} operation={} reason={}",
+                        documentId, operation, classify(ex));
+            } else {
+                log.warn("重试处理器异常已由管线层落账，外层不重复计数 documentId={} operation={} "
+                        + "latestStatus={} error={}", documentId, operation, latestStatus,
+                        ex.getMessage());
+            }
         }
         return repository.find(documentId, operation.name(), version)
                 .map(latest -> latest.getSyncStatus()).orElse("UNKNOWN");
