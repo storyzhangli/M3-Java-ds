@@ -1,0 +1,7 @@
+P6 D37 IN_MEMORY_LOCAL 重跑 vs 冻结基线（剔除耗时列 queryEmbeddingMs/retrievalElapsedMillis/totalElapsedMillis/inMemorySearchMs）
+quality-columns diff = 0
+rows compared = 61
+pre-frozen-sha = CD875F83611F356537790CE856797DA8057A5DCF735D82B63508A80CE1369C3F
+new-run-sha = E9B43CE756AEC5AAE5D65F96FCCE3A07853A79DCC4E8728FD5B3123E5D7F0802
+raw full-file diff = 4 行（全部位于耗时列 inMemorySearchMs：QA-001 R2 0->4, QA-001 R3 3->0，非质量列）
+verdict = PASS (60x12 质量列逐字节一致)

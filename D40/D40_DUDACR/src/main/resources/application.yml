@@ -162,6 +162,17 @@ app:
     retry-backoff-ms: ${VECTOR_INDEX_RETRY_BACKOFF_MS:500}
     split-version: ${VECTOR_INDEX_SPLIT_VERSION:split-v1}
     reconcile-enabled: ${VECTOR_INDEX_RECONCILE_ENABLED:false}
+    # D40 R01：同步状态机重试调度（默认关闭=零差异；开启后周期性收敛 PENDING/FAILED 记录，
+    # 走 DocumentSyncService 管线，禁止直改 SQL）。
+    sync-retry:
+      enabled: ${D40_SYNC_RETRY_ENABLED:false}
+    # D40 R01：受控故障注入装饰器（默认关闭；仅 E1–E5 异常矩阵演练时开启，开启后以
+    # @Primary 装饰器包裹 pgVectorStore。触发参数语义：0=该路径永不注入；N=第 N 次调用
+    # 抛受控异常。测试经命令行 -D 显式预设，可复现，不落敏感信息）。
+    fault-injection:
+      enabled: ${D40_FAULT_INJECTION_ENABLED:false}
+      fail-add-call: ${D40_FAULT_INJECTION_FAIL_ADD_CALL:0}
+      fail-delete-call: ${D40_FAULT_INJECTION_FAIL_DELETE_CALL:0}
     reconcile-cron: ${VECTOR_INDEX_RECONCILE_CRON:0 0 2 * * *}
   # --------------------------------------------------------------------------
   # 相似度检索：Top-K、查询长度与相似度下限。

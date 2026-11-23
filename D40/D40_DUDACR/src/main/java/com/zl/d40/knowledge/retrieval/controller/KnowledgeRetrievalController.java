@@ -38,12 +38,18 @@ public class KnowledgeRetrievalController {
 
     private final ObjectProvider<AccessGuard> accessGuardProvider;
 
+    /** D40 R01：corpus/index 审计（随 access.enabled；disabled 缺席零差异）。 */
+    private final ObjectProvider<com.zl.d40.knowledge.sync.AuditService> auditServiceProvider;
+
     public KnowledgeRetrievalController(SimilarityRetrievalService retrievalService,
                                         CorpusIndexService corpusIndexService,
-                                        ObjectProvider<AccessGuard> accessGuardProvider) {
+                                        ObjectProvider<AccessGuard> accessGuardProvider,
+                                        ObjectProvider<com.zl.d40.knowledge.sync.AuditService>
+                                                auditServiceProvider) {
         this.retrievalService = retrievalService;
         this.corpusIndexService = corpusIndexService;
         this.accessGuardProvider = accessGuardProvider;
+        this.auditServiceProvider = auditServiceProvider;
     }
 
     /**
@@ -62,10 +68,16 @@ public class KnowledgeRetrievalController {
             @RequestParam(required = false) String version,
             @RequestParam(required = false) String strategy) {
         AccessGuard guard = accessGuardProvider.getIfAvailable();
-        if (guard != null) {
-            guard.requireAdmin();
-        }
+        com.zl.d40.access.AuthContext actor = guard == null ? null : guard.requireAdmin();
         log.info("触发语料入库: version={}, strategy={}", version, strategy);
-        return Result.success(corpusIndexService.indexCorpus(version, strategy));
+        List<VectorIndexResultView> results = corpusIndexService.indexCorpus(version, strategy);
+        if (actor != null) {
+            com.zl.d40.knowledge.sync.AuditService audit = auditServiceProvider.getIfAvailable();
+            if (audit != null) {
+                audit.recordAllowed(actor, "CORPUS_INDEX", "",
+                        "version=" + (version == null ? "default" : version));
+            }
+        }
+        return Result.success(results);
     }
 }

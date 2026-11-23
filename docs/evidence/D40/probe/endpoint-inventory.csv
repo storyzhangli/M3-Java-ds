@@ -1,0 +1,38 @@
+Http,Path,Controller.Method,Classification,理由
+POST,/api/v1/knowledge/retrieval/search,KnowledgeRetrievalController.search,FILTER_REQUIRED,PG 知识检索主入口；Top-K 前权限谓词下推
+POST,/api/v1/rag/answer,RagController.answer,FILTER_REQUIRED,RAG 复用 SimilarityRetrievalService；只消费已过滤结果
+POST,/api/v1/hybrid/retrieval/search,HybridSearchController.search,FILTER_REQUIRED,双路融合入口；两路先过滤+RRF 闭包
+POST,/api/v1/hybrid/rag/answer,HybridRagController.answer,FILTER_REQUIRED,hybrid RAG 继承链；同上
+POST,/api/v1/two/knowledge/retrieval/search,TwoKnowledgeRetrievalController.search,FILTER_REQUIRED,two_ 检索共享 SimilarityRetrievalService 类；权限谓词经构造注入就位（真实端到端 NOT RUN 预算约束）
+POST,/api/v1/knowledge/documents,KnowledgeDocumentController.register,ADMIN_ONLY,文档写操作（登记）
+POST,/api/v1/knowledge/documents/{documentId}/import,KnowledgeDocumentController.importFile,ADMIN_ONLY,文档写操作（导入）
+POST,/api/v1/knowledge/retrieval/corpus/index,KnowledgeRetrievalController.indexCorpus,ADMIN_ONLY,语料入库运维（写）
+POST,/api/v1/two/knowledge/retrieval/corpus/index,TwoKnowledgeRetrievalController.indexCorpus,ADMIN_ONLY,two_ 入库运维（写；预算门禁另计）
+POST,/api/v1/hybrid/index/rebuild,HybridSearchController.rebuild,ADMIN_ONLY,倒排重建运维
+POST,/api/v1/knowledge/documents/{documentId}/vector-index,VectorIndexController.index,ADMIN_ONLY,向量写入运维
+DELETE,/api/v1/knowledge/documents/{documentId}/vector-index,VectorIndexController.delete,ADMIN_ONLY,向量删除运维
+POST,/api/v1/knowledge/documents/{documentId}/vector-index/recover,VectorIndexController.recover,ADMIN_ONLY,恢复运维
+POST,/api/v1/knowledge/documents/{documentId}/vector-index/retry,VectorIndexController.retry,ADMIN_ONLY,重试运维
+POST,/api/v1/knowledge/vector-index/reconcile,VectorIndexController.reconcile,ADMIN_ONLY,对账运维（T9 admin 可见性通道）
+GET,/api/v1/knowledge/documents/{documentId},KnowledgeDocumentController.detail,DOCUMENT_SCOPE,文档级范围校验后返回元数据
+GET,/api/v1/knowledge/documents/{documentId}/pages,KnowledgeDocumentController.pages,DOCUMENT_SCOPE,含原文正文
+GET,/api/v1/knowledge/documents/{documentId}/chunks,KnowledgeDocumentChunkingController.preview,DOCUMENT_SCOPE,含切分正文
+GET,/api/v1/knowledge/documents/{documentId}/chunks/compare,KnowledgeDocumentChunkingController.compare,DOCUMENT_SCOPE,含切分正文
+GET,/api/v1/knowledge/documents/{documentId}/embeddings,EmbeddingController.embedDocument,DOCUMENT_SCOPE,含向量与内容
+GET,/api/v1/knowledge/documents/{documentId}/vector-index,VectorIndexController.status,DOCUMENT_SCOPE,任务状态含 documentId 归属信息
+GET,/api/v1/knowledge/documents/{documentId}/vector-index/chunks,VectorIndexController.chunks,DOCUMENT_SCOPE,含 chunk 正文
+POST,/api/v1/ai/chat,ChatController.chat,OWNER_SCOPED+PUBLIC_STATIC,owner 从 AuthContext（enabled 时）；retrieveEnabled 走 classpath 教学语料（静态公开夹具；断言不含 d39- 夹具/权限标签）
+POST,/api/v1/ai/chat/stream,ChatStreamController.streamChat,OWNER_SCOPED+PUBLIC_STATIC,SSE 分支；授权快照在请求线程内传递
+POST,/api/v1/equipment/chat,EquipmentChatController.chat,OWNER_SCOPED+PUBLIC_STATIC,同 classpath 语料口径
+GET,/api/v1/ai/sessions,HistoryController.listSessions,OWNER_SCOPED,owner 隔离（enabled 时 owner=AuthContext.userId）
+GET,/api/v1/ai/sessions/{sessionId}/messages,HistoryController.listMessages,OWNER_SCOPED,requireOwnedSession 语义复用；T4 测试面
+GET,/api/v1/ai/health,ChatController.health,OUT_OF_SCOPE,健康信息不含知识内容
+GET,/api/v1/embeddings/model,EmbeddingController.model,OUT_OF_SCOPE,模型元信息不含知识内容
+GET,/api/v1/ai/prompts,PromptTemplateController.list,OUT_OF_SCOPE,全局配置资产非知识（D6 裁决）
+GET,/api/v1/ai/prompts/{templateId},PromptTemplateController.detail,OUT_OF_SCOPE,同上；内容断言不含 d39- 夹具数据
+GET,/api/v1/ai/prompts/{templateId}/versions,PromptTemplateController.versions,OUT_OF_SCOPE,同上
+POST,/api/v1/ai/prompts,PromptTemplateController.create,OUT_OF_SCOPE,配置写操作非知识暴露面（本轮不扩权收口）
+PUT,/api/v1/ai/prompts/{templateId},PromptTemplateController.update,OUT_OF_SCOPE,同上
+PATCH,/api/v1/ai/prompts/{templateId}/status,PromptTemplateController.changeStatus,OUT_OF_SCOPE,同上
+DELETE,/api/v1/ai/prompts/{templateId},PromptTemplateController.delete,OUT_OF_SCOPE,同上
+GET,/api/v1/ai/roles,PromptTemplateController.roles,OUT_OF_SCOPE,角色配置枚举非知识

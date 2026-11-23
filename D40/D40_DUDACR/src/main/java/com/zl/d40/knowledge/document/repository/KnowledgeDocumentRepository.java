@@ -33,4 +33,10 @@ public interface KnowledgeDocumentRepository {
 
     void fail(String documentId, String errorCode, String errorMessage,
               LocalDateTime updatedAt);
+
+    /**
+     * D40 R01（D3 裁决）：SWITCH 事务内权威化版本指针——knowledge_document.version
+     * 更新为当前活动索引版本。行不存在返回 0（no-op，不新增 lifecycle 列，D2）。
+     */
+    int updateVersionPointer(String documentId, String version, LocalDateTime updatedAt);
 }

@@ -38,14 +38,20 @@ public class VectorIndexController {
 
     private final ObjectProvider<AccessGuard> accessGuardProvider;
 
+    /** D40 R01：特权写面审计（随 access.enabled；disabled 缺席零差异，响应契约不变）。 */
+    private final ObjectProvider<com.zl.d40.knowledge.sync.AuditService> auditServiceProvider;
+
     public VectorIndexController(DocumentVectorIndexService indexService,
                                  VectorReconciliationService reconciliationService,
                                  KnowledgeDocumentService documentService,
-                                 ObjectProvider<AccessGuard> accessGuardProvider) {
+                                 ObjectProvider<AccessGuard> accessGuardProvider,
+                                 ObjectProvider<com.zl.d40.knowledge.sync.AuditService>
+                                         auditServiceProvider) {
         this.indexService = indexService;
         this.reconciliationService = reconciliationService;
         this.documentService = documentService;
         this.accessGuardProvider = accessGuardProvider;
+        this.auditServiceProvider = auditServiceProvider;
     }
 
     /**
@@ -55,7 +61,7 @@ public class VectorIndexController {
     public Result<VectorIndexResultView> index(
             @PathVariable String documentId,
             @RequestParam(required = false) String strategy) {
-        requireAdmin();
+        requireAdmin("VECTOR_INDEX", documentId, "");
         return Result.success(indexService.indexFromPages(documentId, strategy));
     }
 
@@ -86,7 +92,7 @@ public class VectorIndexController {
     public Result<Void> delete(
             @PathVariable String documentId,
             @RequestParam(required = false) String version) {
-        requireAdmin();
+        requireAdmin("VECTOR_DELETE", documentId, version == null ? "ALL" : version);
         if (version == null || version.isBlank()) {
             indexService.deleteByDocument(documentId);
         } else {
@@ -100,7 +106,7 @@ public class VectorIndexController {
      */
     @PostMapping("/api/v1/knowledge/documents/{documentId}/vector-index/recover")
     public Result<List<VectorIndexResultView>> recover(@PathVariable String documentId) {
-        requireAdmin();
+        requireAdmin("VECTOR_RECOVER", documentId, "");
         log.info("手动触发卡住任务恢复 documentId={}", documentId);
         return Result.success(indexService.recoverStuckTasks());
     }
@@ -110,7 +116,7 @@ public class VectorIndexController {
      */
     @PostMapping("/api/v1/knowledge/documents/{documentId}/vector-index/retry")
     public Result<List<VectorIndexResultView>> retry(@PathVariable String documentId) {
-        requireAdmin();
+        requireAdmin("VECTOR_RETRY_FAILED", documentId, "");
         log.info("手动触发失败任务重试 documentId={}", documentId);
         return Result.success(indexService.retryFailedTasks());
     }
@@ -121,14 +127,18 @@ public class VectorIndexController {
     @PostMapping("/api/v1/knowledge/vector-index/reconcile")
     public Result<ReconciliationReportView> reconcile(
             @RequestParam(defaultValue = "true") boolean dryRun) {
-        requireAdmin();
+        requireAdmin("VECTOR_RECONCILE", "", "dryRun=" + dryRun);
         return Result.success(reconciliationService.reconcile(dryRun));
     }
 
-    private void requireAdmin() {
+    private void requireAdmin(String action, String target, String version) {
         AccessGuard guard = accessGuardProvider.getIfAvailable();
         if (guard != null) {
-            guard.requireAdmin();
+            com.zl.d40.access.AuthContext actor = guard.requireAdmin();
+            com.zl.d40.knowledge.sync.AuditService audit = auditServiceProvider.getIfAvailable();
+            if (audit != null && actor != null) {
+                audit.recordAllowed(actor, action, target, version);
+            }
         }
     }
 

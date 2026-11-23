@@ -28,11 +28,25 @@ public class ReconciliationReportView {
 
     private final List<Issue> stuckTasks = new ArrayList<>();
 
+    /**
+     * D40 R01：版本指针漂移（权威 active 指针 vs knowledge_document.version / 关联行 / PG metadata，
+     * 分类 DRIFT_VERSION_MISMATCH；SUPERSEDED 历史行不计入，STALE_VERSION 在 orphanVectors
+     * 明细 detail 含 status=SUPERSEDED 区分）。
+     */
+    private final List<Issue> versionMismatches = new ArrayList<>();
+
+    /**
+     * D40 R01：d40_document_sync 卡死（PENDING 超 next_retry_at 宽限未收敛，分类 DRIFT_SYNC_STUCK；
+     * 修复通道=同步重试端点管线，禁止直改 SQL）。
+     */
+    private final List<Issue> syncStuck = new ArrayList<>();
+
     private final List<String> actionsTaken = new ArrayList<>();
 
     public int totalIssues() {
         return orphanVectors.size() + missingVectors.size()
-                + countMismatches.size() + stuckTasks.size();
+                + countMismatches.size() + stuckTasks.size()
+                + versionMismatches.size() + syncStuck.size();
     }
 
     /**

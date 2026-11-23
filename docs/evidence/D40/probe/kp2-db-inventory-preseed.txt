@@ -1,0 +1,25 @@
+QUERY: SELECT document_id, version, status, COALESCE(tenant_id,'NULL') t, COALESCE(dept_id,'NULL') d FROM knowledge_document ORDER BY document_id
+document_id | version | status | t | d
+d40-doc-a | 1 | PENDING | NULL | NULL
+d40-doc-b | 1 | PENDING | NULL | NULL
+d40-doc-c | 1 | PENDING | NULL | NULL
+d40-doc-d | 1 | PENDING | NULL | NULL
+d40-doc-e1 | 1 | FAILED | NULL | NULL
+d40-doc-f | 1 | PENDING | NULL | NULL
+d40-doc-f2 | 1 | PENDING | NULL | NULL
+d40-doc-g | 1 | PENDING | NULL | NULL
+d40-doc-up | 2 | PENDING | NULL | NULL
+DOC-CNC-COOLING-001 | 1 | COMPLETED | NULL | NULL
+DOC-SERVO-TROUBLE-002 | 1 | COMPLETED | NULL | NULL
+DOC-WORKORDER-SPEC-003 | 1 | COMPLETED | NULL | NULL
+DONE
+
+
+
+QUERY: SELECT user_id, tenant_id, dept_id, device_scopes, role, enabled, COALESCE(expires_at,'NULL') exp, CONCAT(LEFT(token_sha256,8),'...') tok8 FROM d40_auth_principal ORDER BY user_id
+user_id | tenant_id | dept_id | device_scopes | role | enabled | exp | tok8
+adminA1 | T1 | D-HQ | [] | ADMIN | 1 | NULL | 457c746d...
+userA1 | T1 | D1 | ["DEV-A"] | USER | 1 | NULL | 682d8b2a...
+userB1 | T1 | D2 | ["DEV-B"] | USER | 1 | NULL | e4ccbc0a...
+userC1 | T2 | D1 | ["DEV-A"] | USER | 1 | NULL | 10822cf9...
+DONE

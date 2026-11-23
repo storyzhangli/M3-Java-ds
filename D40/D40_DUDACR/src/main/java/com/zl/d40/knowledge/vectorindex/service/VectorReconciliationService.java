@@ -4,6 +4,9 @@ import com.zl.d40.knowledge.chunking.ChunkBoundaryType;
 import com.zl.d40.knowledge.chunking.ChunkSource;
 import com.zl.d40.knowledge.chunking.ChunkStrategy;
 import com.zl.d40.knowledge.chunking.DocumentChunk;
+import com.zl.d40.knowledge.document.repository.KnowledgeDocumentRepository;
+import com.zl.d40.knowledge.sync.DocumentSyncRepository;
+import com.zl.d40.knowledge.sync.DocumentSyncRow;
 import com.zl.d40.knowledge.vectorindex.config.VectorIndexProperties;
 import com.zl.d40.knowledge.vectorindex.dto.ReconciliationReportView;
 import com.zl.d40.knowledge.vectorindex.dto.VectorIndexResultView;
@@ -47,16 +50,25 @@ public class VectorReconciliationService {
 
     private final VectorIndexProperties properties;
 
+    /** D40 R01：同步状态机与文档权威指针，用于版本漂移/卡死检测（只读，不改写）。 */
+    private final DocumentSyncRepository syncRepository;
+
+    private final KnowledgeDocumentRepository documentRepository;
+
     public VectorReconciliationService(VectorStore vectorStore,
                                        PgVectorAccess pgVectorAccess,
                                        VectorChunkRepository repository,
                                        DocumentVectorIndexService indexService,
-                                       VectorIndexProperties properties) {
+                                       VectorIndexProperties properties,
+                                       DocumentSyncRepository syncRepository,
+                                       KnowledgeDocumentRepository documentRepository) {
         this.vectorStore = vectorStore;
         this.pgVectorAccess = pgVectorAccess;
         this.repository = repository;
         this.indexService = indexService;
         this.properties = properties;
+        this.syncRepository = syncRepository;
+        this.documentRepository = documentRepository;
     }
 
     /**
@@ -148,13 +160,76 @@ public class VectorReconciliationService {
             }
         }
 
+        // 5) D40 R01：版本指针漂移（DRIFT_VERSION_MISMATCH）
+        //    5a 权威口径：d40_vector_index_task.status=COMPLETED 的 active 版本
+        //       vs knowledge_document.version（SWITCH 同事务更新，脱节=外部篡改/半途修改）
+        Map<String, String> activeVersionByDoc = new LinkedHashMap<>();
+        for (VectorIndexTaskRow row : tasks) {
+            if (VectorIndexStatus.COMPLETED.name().equals(row.getStatus())) {
+                activeVersionByDoc.put(row.getDocumentId(), row.getVersion());
+            }
+        }
+        for (Map.Entry<String, String> entry : activeVersionByDoc.entrySet()) {
+            String documentId = entry.getKey();
+            String active = entry.getValue();
+            documentRepository.findByDocumentId(documentId).ifPresent(doc -> {
+                if (doc.getVersion() != null && !doc.getVersion().equals(active)) {
+                    report.getVersionMismatches().add(new ReconciliationReportView.Issue(
+                            "POINTER:" + documentId, documentId, active,
+                            "knowledge_document.version=" + doc.getVersion() + " ≠ active=" + active));
+                }
+            });
+            // 5b 同文档多 COMPLETED 版本并存（删除闭环应将其 SUPERSEDED，并存=半途漂移）
+            long completedOfDoc = tasks.stream()
+                    .filter(t -> documentId.equals(t.getDocumentId())
+                            && VectorIndexStatus.COMPLETED.name().equals(t.getStatus()))
+                    .count();
+            if (completedOfDoc > 1) {
+                report.getVersionMismatches().add(new ReconciliationReportView.Issue(
+                        "MULTI-COMPLETED:" + documentId, documentId, active,
+                        "同一文档存在 %d 个 COMPLETED 版本（应唯一）".formatted(completedOfDoc)));
+            }
+        }
+        // 5c 同一 chunkId 两端版本不一致：PG 行 version vs MySQL 关联行 version
+        //    （脱节=半途修改/外部直写库；PgVectorRow 仅暴露 id/documentId/version 直列）
+        for (PgVectorAccess.PgVectorRow row : pgRows) {
+            VectorChunkRow relation = relationByChunkId.get(row.id());
+            if (relation != null && row.version() != null && relation.getVersion() != null
+                    && !row.version().equals(relation.getVersion())) {
+                report.getVersionMismatches().add(new ReconciliationReportView.Issue(
+                        row.id(), row.documentId(), row.version(),
+                        "PG 行 version=" + row.version() + " ≠ 关联行 version="
+                                + relation.getVersion()));
+            }
+        }
+
+        // 6) D40 R01：同步状态机卡死（DRIFT_SYNC_STUCK；修复通道=同步重试管线，禁止直改 SQL）
+        LocalDateTime syncCutoff = LocalDateTime.now().minusMinutes(properties.getStuckMinutes());
+        for (DocumentSyncRow row : syncRepository.findStuck(properties.getStuckMinutes())) {
+            report.getSyncStuck().add(new ReconciliationReportView.Issue(
+                    row.getOperation() + ":" + row.getDocumentId() + ":" + row.getVersion(),
+                    row.getDocumentId(), row.getVersion(),
+                    "同步记录停留在 %s 超过 %d 分钟（reason=%s, attemptCount=%d, nextRetryAt=%s）"
+                            .formatted(row.getSyncStatus(), properties.getStuckMinutes(),
+                                    row.getReasonCode(), row.getAttemptCount(), row.getNextRetryAt())));
+            if (!dryRun && row.getNextRetryAt() != null && row.getNextRetryAt().isAfter(syncCutoff)) {
+                report.getActionsTaken().add("SYNC_STUCK 收敛交由同步重试管线（recoverStuck 周期扫描），"
+                        + "不在核查服务内直改: " + row.getDocumentId());
+            }
+        }
+
         if (!dryRun) {
             applyCompensation(report, orphanIds, missingByVersion);
+            if (!report.getVersionMismatches().isEmpty()) {
+                report.getActionsTaken().add("版本指针漂移不在核查内直改；修复通道=重新导入/SWITCH 管线"
+                        + "（共 %d 条）".formatted(report.getVersionMismatches().size()));
+            }
         }
-        log.info("核对完成 dryRun={} issues={} (orphan={}, missing={}, mismatch={}, stuck={})",
+        log.info("核对完成 dryRun={} issues={} (orphan={}, missing={}, mismatch={}, stuck={}, version={}, syncStuck={})",
                 dryRun, report.totalIssues(), report.getOrphanVectors().size(),
                 report.getMissingVectors().size(), report.getCountMismatches().size(),
-                report.getStuckTasks().size());
+                report.getStuckTasks().size(), report.getVersionMismatches().size(),
+                report.getSyncStuck().size());
         return report;
     }
 

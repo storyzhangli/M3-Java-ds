@@ -1,0 +1,48 @@
+{
+  "iteration": "D40/R01",
+  "probedAt": "2026-11-23T17:40:00+08:00",
+  "skeletonHead": "ec86b7590347cf4981e7ec310b13e2619c6f0118",
+  "skeletonHeadNote": "任务书编制时 HEAD=5faaf4b 且骨架未提交；执行时实读：用户已于 16:59 提交 D40 骨架（D40 项目基础骨架，300 files），P0 骨架提交动作已被用户完成，本迭代基线=ec86b75。偏差已裁决，不重复提交。",
+  "syncTable": "d40_document_sync",
+  "auditTable": "d40_admin_audit",
+  "principalTable": "d40_auth_principal",
+  "fixturePrefix": "d40t-",
+  "reasonCodes": {
+    "new": ["PG_UNREACHABLE", "PG_DELETE_FAILED", "CONFIRM_MISMATCH", "MARK_FAILED", "SNAPSHOT_MISSING", "RETRY_EXHAUSTED"],
+    "kept": ["EMBED_WRITE_FAILED", "COUNT_MISMATCH", "NO_COMPLETE_SNAPSHOT", "STALE_VERSION_REJECTED", "PARSE_FAILED"]
+  },
+  "syncStateMachine": {
+    "states": ["PENDING", "SYNCED", "FAILED"],
+    "transitions": ["PENDING->SYNCED(双端确认)", "PENDING->FAILED(原因码)", "FAILED->PENDING(retry,attempt+1,退避)", "FAILED+attempt>=max->RETRY_EXHAUSTED(待人工,ADMIN重置)"],
+    "exhaustionEncoding": "sync_status=FAILED + reason_code=RETRY_EXHAUSTED（不新增第四状态，列值冻结 ENUM 三态）",
+    "naturalKey": "uk(document_id, operation, version)"
+  },
+  "driftTaxonomy": {
+    "DRIFT_META_ONLY": "vector_chunk_index 行存在 ∧ PG 无对应 id（=missingVectors 显式标类）",
+    "DRIFT_VECTOR_ONLY": "PG 有 ∧ 无有效关联/任务非活动（=orphanVectors 标类）；SUPERSEDED 残留子集=DRIFT_STALE_VERSION",
+    "DRIFT_VERSION_MISMATCH": "knowledge_document.version ≠ 活动 COMPLETED 版本 ∨ PG metadata.version ≠ 关联行 version（新增）",
+    "DRIFT_SYNC_STUCK": "sync FAILED ∧ (next_retry_at 超期 ∨ RETRY_EXHAUSTED)（新增）"
+  },
+  "fingerprintMethod": "幂等证明=五元组前后对比逐字节一致：payloadHash + 排序 chunkId 集合 + PG count + 关联 count + INDEXED count（KP4 冻结，替代指纹门禁）",
+  "faultInjectionGate": {
+    "bean": "FaultInjectingVectorStore（装饰器，包装 VectorStore Bean，非 JdbcTemplate——PgVectorAccess 非通用 Bean，包装 JdbcTemplate 触发自动配置退让）",
+    "property": "app.vector-index.fault-injection.enabled 默认 false，主 profile 永不装配，仅测试显式 true",
+    "semantics": "AtomicLong 调用计数，配置预设第 N 次 add/delete 抛受控 RuntimeException；PG 本体不动，失败点=客户端连接边界≡连接丢失",
+    "aux": "坏端口启动 fail-fast（PG_VECTOR_URL 不可达）仅验证启动期",
+    "forbidden": ["防火墙", "停 PG 服务", "pg_terminate_backend", "DROP", "Docker prune/删卷/重建"]
+  },
+  "baselineFingerprint": "a6a6bd4fe0aed45c14d1c059339d2a156cbc75c86fa4af4d31e14aec69e31b07",
+  "fingerprintProof": "2026-11-23 /corpus/index（3 文档 idempotent=true 零写入）+ /api/v1/hybrid/index/rebuild → docCount=30 termCount=1045 fp 逐字符一致（kp2-seeding-rebuild.json）",
+  "legacyRowCount": 30,
+  "legacyDocIdsFile": "kp2-legacy-docids.txt",
+  "legacyDocIdDistribution": "DOC-*×3 + d36exp-*×15 + d34-real-*×2 + hex×2 = 22 distinct（与 D39 冻结一致）",
+  "ledgerSha": "9A620A583FA0950993785784381F94B8A950FE3211C41E025421377DEC95E10E",
+  "ledgerRows": 17,
+  "datasetHash": "896BCEAA1EDE76DC40577A8B97473A532BA1984414AB0E52D61C0FFFA5234BEC",
+  "twoTrackClosed": true,
+  "twoTrackNote": "yml 默认开（TWO_PGVECTOR/TWO_EMBEDDING_ENABLED=true），本轮所有测试实例 env 覆盖 false；two_vector_store 现 8 行零写入",
+  "denyChannel": "RetrievalException 4001 + AUTH_FORBIDDEN/AUTH_CONTEXT_MISSING（非 4030，不新增 ResultCode）",
+  "auditDesign": "模式=写面 requireAdmin 成功后写 ALLOWED 审计行（actor/tenant/role/action/target/version/result/reason_code/request_id）；DENIED 由既有 4001 异常链+过滤器日志覆盖（D39 矩阵已证可观测）；AuditService 经 ObjectProvider 随 access.enabled 装配，disabled 缺席零差异",
+  "driftNote": "外部预建资产取证（详见 kp2-db-inventory-preseed.txt）：1) d40_auth_principal 预存 4 行（adminA1/userA1/userB1/userC1，enabled=4，token 前缀 457c746d/682d8b2a/e4ccbc0a/10822cf9）——疑似 one 仓 D40 或用户预建；本轮不覆盖不删除，如需 access=true 演示以 d40t- 前缀 user_id 增量 INSERT 新行（明文 token 仅 temp_docs）；2) knowledge_document 预存 9 行 d40-doc-*（PENDING×8+FAILED×1，up version=2）= one 仓 D40 夹具残留（ai_db 跨仓共享实证，H6 d40t- 防撞裁决成立），零触碰；3) 待核验：d40_document_sync/d40_admin_audit 表存在性（MySQL 只读盘点命令连续 2 次触发风险确认弹窗超时未执行，见 OPEN 项）。",
+  "pendingVerification": ["d40_document_sync/d40_admin_audit 表存在性（MySQL 通道受阻）", "vector_chunk_index/vector_index_task 中 d40-/d40t- 前缀分布（同上）"]
+}

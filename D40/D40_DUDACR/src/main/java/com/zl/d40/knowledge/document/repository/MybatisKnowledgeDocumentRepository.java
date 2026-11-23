@@ -176,6 +176,16 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
                         .set(KnowledgeDocumentPO::getUpdatedAt, updatedAt));
     }
 
+    @Override
+    public int updateVersionPointer(String documentId, String version, LocalDateTime updatedAt) {
+        // D40 R01（D3 裁决）：SWITCH 事务内版本指针权威化；行不存在=0 行 no-op，不抛。
+        return documentMapper.update(null,
+                new LambdaUpdateWrapper<KnowledgeDocumentPO>()
+                        .eq(KnowledgeDocumentPO::getDocumentId, documentId)
+                        .set(KnowledgeDocumentPO::getVersion, version)
+                        .set(KnowledgeDocumentPO::getUpdatedAt, updatedAt));
+    }
+
     private KnowledgeDocumentPO toPO(KnowledgeDocument document) {
         KnowledgeDocumentPO po = new KnowledgeDocumentPO();
         po.setId(document.getId());
