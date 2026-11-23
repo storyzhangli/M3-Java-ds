@@ -1,0 +1,11 @@
+-- SQL: SHOW CREATE TABLE d40_document_sync
+Table	Create Table
+d40_document_sync	CREATE TABLE `d40_document_sync` (\n  `id` bigint NOT NULL AUTO_INCREMENT,\n  `document_id` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,\n  `operation` enum('DELETE','UPDATE_CLEANUP') COLLATE utf8mb4_general_ci NOT NULL,\n  `version` int NOT NULL DEFAULT '0' COMMENT '0=ȫ�汾(DELETE)',\n  `sync_status` enum('PENDING','SYNCED','FAILED') COLLATE utf8mb4_general_ci NOT NULL,\n  `reason_code` varchar(64) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',\n  `attempt_count` int NOT NULL DEFAULT '0',\n  `next_retry_at` datetime DEFAULT NULL,\n  `payload_hash` char(64) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',\n  `created_at` datetime NOT NULL,\n  `updated_at` datetime NOT NULL,\n  PRIMARY KEY (`id`),\n  UNIQUE KEY `uk_doc_op_version` (`document_id`,`operation`,`version`),\n  KEY `idx_sync_status_retry` (`sync_status`,`next_retry_at`)\n) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+-- rows=1
+
+-- SQL: SHOW CREATE TABLE d40_admin_audit
+Table	Create Table
+d40_admin_audit	CREATE TABLE `d40_admin_audit` (\n  `id` bigint NOT NULL AUTO_INCREMENT,\n  `actor_user_id` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,\n  `tenant_id` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,\n  `role` varchar(16) COLLATE utf8mb4_general_ci NOT NULL,\n  `action` varchar(64) COLLATE utf8mb4_general_ci NOT NULL,\n  `target_document_id` varchar(64) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',\n  `version` int NOT NULL DEFAULT '0',\n  `result` varchar(16) COLLATE utf8mb4_general_ci NOT NULL,\n  `reason_code` varchar(64) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',\n  `request_id` varchar(64) COLLATE utf8mb4_general_ci NOT NULL DEFAULT '',\n  `created_at` datetime NOT NULL,\n  PRIMARY KEY (`id`),\n  KEY `idx_audit_actor_time` (`actor_user_id`,`created_at`),\n  KEY `idx_audit_action` (`action`)\n) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+-- rows=1
+
+-- DONE statements=2 failures=0

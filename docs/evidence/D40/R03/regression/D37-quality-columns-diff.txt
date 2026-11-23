@@ -1,0 +1,8 @@
+R03-09 D37 IN_MEMORY_LOCAL 重跑 vs 冻结基线（剔除耗时列 queryEmbeddingMs/retrievalElapsedMillis/totalElapsedMillis/inMemorySearchMs）
+quality-columns diff = 0
+rows compared = 60
+quality columns compared = 20
+pre-frozen-sha = CD875F83611F356537790CE856797DA8057A5DCF735D82B63508A80CE1369C3F
+new-run-sha = 407606590E55A12ACDF55A5FC20232D4228B567D2FB4D7684C586C35EF2C7034
+new-run-dir = E:\AI\project\AI-Learning-two-lp\M3-Java-ds\docs\evidence\D40\R03\regression\d37-rerun\baseline\v1.0\IN_MEMORY_LOCAL\20261123-235205
+verdict = PASS

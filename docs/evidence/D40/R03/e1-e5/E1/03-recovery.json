@@ -1,0 +1,10 @@
+{
+  "relationResidual": "-- SQL: SELECT COUNT(*) AS c FROM vector_chunk_index WHERE document_id='86256bf96b464e319a3ce1c0cb8f9d16' AND version='1'\nc\n0\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "pgResidual": "-- SQL: SELECT COUNT(*) AS c FROM vector_store WHERE metadata->>'documentId'='86256bf96b464e319a3ce1c0cb8f9d16' AND metadata->>'version'='1'\nc\n0\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "retryResponse": {
+    "code": 200,
+    "msg": "success",
+    "data": "SYNCED"
+  },
+  "syncRow": "-- SQL: SELECT document_id, operation, version, sync_status, reason_code, attempt_count, next_retry_at, payload_hash FROM d40_document_sync WHERE document_id='86256bf96b464e319a3ce1c0cb8f9d16' AND operation='DELETE' AND version='1'\ndocument_id\toperation\tversion\tsync_status\treason_code\tattempt_count\tnext_retry_at\tpayload_hash\n86256bf96b464e319a3ce1c0cb8f9d16\tDELETE\t1\tSYNCED\t\t0\tNULL\t96e0713e409781cb40512985685fb699aca675308831f3cde0323ceb846dc29f\n-- rows=1\n\n-- DONE statements=1 failures=0"
+}

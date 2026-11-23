@@ -349,5 +349,7 @@ app:
   # ------------------------------------------------------------------
   access:
     enabled: ${APP_ACCESS_ENABLED:false}
+    # D40 R03-08：生产管理员权限强制门禁（生产 Profile 设 true；AccessGuard 缺席即启动失败）
+    enforce-admin: ${APP_ACCESS_ENFORCE_ADMIN:false}
     protected-path-patterns:
       - /api/v1/*

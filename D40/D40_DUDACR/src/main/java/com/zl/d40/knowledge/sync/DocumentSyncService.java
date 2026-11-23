@@ -58,6 +58,10 @@ public class DocumentSyncService {
      * 如新版本导入/重复删除）时归零；PENDING（重试管线预置）与 FAILED
      * （事件重开）均保留原计数，防止 retryOne→handler→markPending 链路
      * 把历史失败次数抹掉。</p>
+     *
+     * <p>R03-01 租约保护：既有行经条件更新推进——若行处于有效执行租约中的
+     * PENDING（已被其他执行者认领），条件更新 0 行，本方法幂等跳过，
+     * 绝不清除 claim 写入的 next_retry_at 租约（deleteClosedLoop 重入场景）。</p>
      */
     public void markPending(String documentId, SyncOperation operation,
                             String version, String payloadHash) {
@@ -69,8 +73,13 @@ public class DocumentSyncService {
                 DocumentSyncRow row = existing.get();
                 int attempt = SyncStatus.SYNCED.name().equals(row.getSyncStatus())
                         ? 0 : row.getAttemptCount();
-                repository.updateState(documentId, operation.name(), version,
-                        SyncStatus.PENDING.name(), "", attempt, null, now);
+                int updated = repository.markPendingConditional(documentId, operation.name(),
+                        version, attempt, now);
+                if (updated == 0) {
+                    log.info("PENDING 初始化跳过：事件处于有效执行租约中（并发保护）"
+                            + " documentId={} operation={} version={}",
+                            documentId, operation, version);
+                }
             } else {
                 DocumentSyncRow row = newRow(documentId, operation, version, payloadHash);
                 row.setSyncStatus(SyncStatus.PENDING.name());
@@ -165,6 +174,12 @@ public class DocumentSyncService {
         if (SyncStatus.SYNCED.name().equals(row.getSyncStatus())) {
             return "NO_OP_ALREADY_SYNCED";
         }
+        LocalDateTime now = LocalDateTime.now();
+        // R03-01：有效租约中的 PENDING=已被其他执行者认领，快速拒绝（CAS 之外的第一道闸）
+        if (SyncStatus.PENDING.name().equals(row.getSyncStatus())
+                && row.getNextRetryAt() != null && row.getNextRetryAt().isAfter(now)) {
+            return "NO_OP_LEASED";
+        }
         SyncRetryHandler handler = handlers.get(operation);
         if (handler == null) {
             return "NO_HANDLER_REGISTERED";
@@ -175,9 +190,7 @@ public class DocumentSyncService {
                     documentId, operation);
         }
         // CAS claim：status/attempt/next_retry_at 三条件，0 行=并发竞争失败或状态已被推进
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime leaseUntil = now.plusNanos(
-                Math.max(properties.getRetryBackoffMs() * 8_000_000L, 5_000_000_000L));
+        LocalDateTime leaseUntil = now.plusNanos(leaseDurationNanos());
         int claimed = repository.claimForRetry(documentId, operation.name(), version,
                 row.getSyncStatus(), row.getAttemptCount(), row.getNextRetryAt(),
                 manualReset, now, leaseUntil);
@@ -208,17 +221,30 @@ public class DocumentSyncService {
                 .map(latest -> latest.getSyncStatus()).orElse("UNKNOWN");
     }
 
-    /** 自动重试扫描（调度器入口；sync-retry.enabled=false 时永不被调度）。 */
+    /**
+     * 自动重试扫描（调度器入口；sync-retry.enabled=false 时永不被调度）。
+     *
+     * <p>R03-02：除到期 FAILED 外，同时恢复租约过期的 PENDING（认领后进程崩溃）；
+     * 首建 null 租约 PENDING 以 updated_at + 租约时长宽限判定，避免误判正常执行。
+     * 恢复复用 retryOne 同一 CAS 认领，多调度器竞争仅一个成功；计数保留不清零。</p>
+     */
     public List<String> retryDue() {
         List<String> results = new ArrayList<>();
+        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime stalePendingCutoff = now.minusNanos(leaseDurationNanos());
         for (DocumentSyncRow row : repository.findDueForRetry(
-                properties.getMaxAttempts(), LocalDateTime.now())) {
+                properties.getMaxAttempts(), now, stalePendingCutoff)) {
             results.add(row.getDocumentId() + "|" + row.getOperation()
                     + "|" + row.getVersion()
                     + "=" + retryOne(row.getDocumentId(),
                             SyncOperation.valueOf(row.getOperation()), row.getVersion()));
         }
         return results;
+    }
+
+    /** 执行租约时长（claim 租约与 null 租约 PENDING 宽限共用同一口径）。 */
+    private long leaseDurationNanos() {
+        return Math.max(properties.getRetryBackoffMs() * 8_000_000L, 5_000_000_000L);
     }
 
     // ------------------------------------------------------------------

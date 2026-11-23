@@ -1,0 +1,17 @@
+D40 R03 并发测试汇总
+====================
+1) 单元级 CAS 竞争（内存替身，语义对齐生产 SQL 三条件 <=> null 安全）：
+   DocumentSyncServiceTest T-R03-05/06：CAS 条件不符拒绝；双执行者仅一方认领成功。
+2) 真实 HTTP + MySQL 并发认领（E4 场景 03-concurrent-race）：
+   构造过期 PENDING 行（模拟认领后崩溃），两个 Start-ThreadJob 并发 POST
+   /api/v1/knowledge/sync/retry 同一自然键；
+   结果：一方 SYNCED，另一方 NO_OP_*（CAS 拒绝），最终行 SYNCED 且 attempt 不叠加。
+   证据：e1-e5/E4/03-concurrent-race.json。
+3) 重复事件幂等（E4 场景 01-duplicate-delete）：
+   同一 (documentId, DELETE, version) 连续两次 HTTP DELETE，d40_document_sync 行数=1。
+   证据：e1-e5/E4/01-duplicate-delete.json。
+4) 租约保护（E4 场景 02-lease-recovery + 单元 T-R03-04/07/08/09）：
+   未过期 PENDING 拒绝重试（NO_OP_LEASED）；过期 PENDING 可恢复。
+
+并发安全实现依据：MySQL 条件 UPDATE（CAS）+ 自然键唯一约束，非 JVM 本地锁；
+本轮未引入任何新中间件或分布式事务（任务书§十五合规）。

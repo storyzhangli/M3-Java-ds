@@ -1,0 +1,31 @@
+D40 R03 单元测试汇总（A 层：状态机/失败计数/CAS/租约/异常分类/幂等）
+====================================================================
+执行命令（离线 Maven，JDK21）：
+  mvn -o -f D40/D40_DUDACR/pom.xml test
+原始日志：test/full-module-test-run.log；Surefire 报告：test/surefire/
+
+单元测试类与数量：
+1) com.zl.d40.knowledge.sync.DocumentSyncServiceTest — 24 例
+   - 既有 12 例（R01/R02 状态机基线，含 markPending 仅 SYNCED 清零、retryOne CAS claim、单层落账）
+   - T-R03-01~12（本轮新增）：
+     T-R03-01 markPending 不清除有效 PENDING 租约（条件更新 0 行 no-op）
+     T-R03-02 markPending 对 FAILED/无租约行正常置 PENDING
+     T-R03-03 SYNCED 行重新标记时 attempt 清零语义保持
+     T-R03-04 retryOne 对未过期 PENDING 快速拒绝 NO_OP_LEASED
+     T-R03-05 CAS 三条件（status/attempt/next_retry_at）任一不符拒绝认领
+     T-R03-06 并发双认领仅一方成功（内存 CAS 替身语义对齐生产 SQL）
+     T-R03-07 未过期 PENDING 不被 findDueForRetry 恢复
+     T-R03-08 过期 PENDING（租约过期）可被重新认领
+     T-R03-09 无租约且 updated_at 超宽限截止的 PENDING 可恢复
+     T-R03-10 FAILED 退避到期恢复、attempt 递增
+     T-R03-11 EXHAUSTED 不再恢复
+     T-R03-12 单次失败只落账一次（markFailed 不叠加计数）
+2) com.zl.d40.knowledge.vectorindex.service.IndexFailureRecoveryTest — 9 例（T-R03-22~30）
+   解析失败/空白 Chunk/顺序不连续/部分写入 PARTIAL/COUNT_MISMATCH/重试收敛/幂等重复/
+   MySQL 快照失败分类/Embedding 失败可追踪（六类失败显式区分）
+3) com.zl.d40.knowledge.sync.SyncAssemblyBoundaryTest — 6 例（T-R03-31~36）
+   生产 fail-fast/legacy 放行/enforce-admin fail-closed/在场通过/管理员校验/两轨不污染
+
+单元测试合计：39 例；成功 39；失败 0；跳过 0。
+替身纪律：Mockito 仅替代存储层；同步仓储用与生产 SQL 语义对齐的内存 CAS 替身
+（InMemoryDocumentSyncRepository）；重桩一律 doReturn/doAnswer/doThrow 风格。

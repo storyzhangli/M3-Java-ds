@@ -1,0 +1,70 @@
+{
+  "batch": "d40t-r03-20261123-234654",
+  "register": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "documentId": "86256bf96b464e319a3ce1c0cb8f9d16",
+      "source": "d40t-r03-20261123-234654-e1",
+      "title": "d40t-r03-20261123-234654-e1",
+      "version": "1",
+      "status": "PENDING",
+      "updatedAt": "2026-11-23T23:47:18.0232141",
+      "fileName": null,
+      "contentType": null,
+      "fileSize": null,
+      "contentHash": null,
+      "parsedChars": null,
+      "pageCount": 0,
+      "errorCode": "",
+      "errorMessage": "",
+      "duplicate": false,
+      "tenantId": null,
+      "deptId": null,
+      "deviceId": null
+    }
+  },
+  "documentId": "86256bf96b464e319a3ce1c0cb8f9d16",
+  "index": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "documentId": "86256bf96b464e319a3ce1c0cb8f9d16",
+      "version": "1",
+      "strategy": "FIXED_LENGTH",
+      "status": "COMPLETED",
+      "stage": "CLEANUP",
+      "chunkCount": 2,
+      "processed": 2,
+      "idempotent": false,
+      "attemptCount": 1,
+      "errorCode": "",
+      "errorMessage": ""
+    }
+  },
+  "import": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "documentId": "86256bf96b464e319a3ce1c0cb8f9d16",
+      "source": "d40t-r03-20261123-234654-e1",
+      "title": "d40t-r03-20261123-234654-e1",
+      "version": "1",
+      "status": "COMPLETED",
+      "updatedAt": "2026-11-23T23:47:21",
+      "fileName": "d40t-r03-20261123-234654-e1.pdf",
+      "contentType": "application/pdf",
+      "fileSize": 910,
+      "contentHash": "aee74fb2902972e1a68c6013fc0e621d8a6fb5d93ae01ab4b57becdadad5b5ef",
+      "parsedChars": 661,
+      "pageCount": 1,
+      "errorCode": "",
+      "errorMessage": "",
+      "duplicate": false,
+      "tenantId": null,
+      "deptId": null,
+      "deviceId": null
+    }
+  },
+  "injection": "fail-delete-call=1"
+}

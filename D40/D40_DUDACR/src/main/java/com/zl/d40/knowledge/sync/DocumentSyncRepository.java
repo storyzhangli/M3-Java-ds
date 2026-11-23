@@ -84,14 +84,22 @@ public class DocumentSyncRepository {
     }
 
     /**
-     * 到期可自动重试：FAILED ∧ 非耗尽 ∧ attempt &lt; max ∧ next_retry_at 到期。
+     * 到期可自动重试（R03-02 扩展）：
+     * FAILED ∧ 非耗尽 ∧ attempt &lt; max ∧ next_retry_at 到期；
+     * 或 PENDING ∧ attempt &lt; max ∧ 执行租约已过期（next_retry_at 到期，
+     * 或首建 null 租约且 updated_at 早于宽限截止）——认领后进程崩溃的恢复入口。
      */
-    public List<DocumentSyncRow> findDueForRetry(int maxAttempts, LocalDateTime now) {
-        String sql = "SELECT * FROM d40_document_sync WHERE sync_status = 'FAILED'"
-                + " AND reason_code <> 'RETRY_EXHAUSTED' AND attempt_count < ?"
-                + " AND (next_retry_at IS NULL OR next_retry_at <= ?)"
+    public List<DocumentSyncRow> findDueForRetry(int maxAttempts, LocalDateTime now,
+                                                 LocalDateTime stalePendingCutoff) {
+        String sql = "SELECT * FROM d40_document_sync WHERE"
+                + " (sync_status = 'FAILED' AND reason_code <> 'RETRY_EXHAUSTED'"
+                + " AND attempt_count < ? AND (next_retry_at IS NULL OR next_retry_at <= ?))"
+                + " OR (sync_status = 'PENDING' AND attempt_count < ?"
+                + " AND ((next_retry_at IS NOT NULL AND next_retry_at <= ?)"
+                + " OR (next_retry_at IS NULL AND updated_at <= ?)))"
                 + " ORDER BY next_retry_at";
-        return jdbcTemplate.query(sql, ROW_MAPPER, maxAttempts, toTimestamp(now));
+        return jdbcTemplate.query(sql, ROW_MAPPER, maxAttempts, toTimestamp(now),
+                maxAttempts, toTimestamp(now), toTimestamp(stalePendingCutoff));
     }
 
     /**
@@ -117,6 +125,25 @@ public class DocumentSyncRepository {
         return jdbcTemplate.update(sql, syncStatus, blankToEmpty(reasonCode), attemptCount,
                 toTimestamp(nextRetryAt), toTimestamp(updatedAt),
                 documentId, operation, blankToEmpty(version));
+    }
+
+    /**
+     * 条件化 PENDING 初始化（R03-01 租约保护）：
+     * 仅当行不处于"有效执行租约中的 PENDING"时才推进——
+     * 非 PENDING 行（SYNCED 新事件 / FAILED 业务重开）转 PENDING 并清空 next_retry_at；
+     * PENDING 且租约未过期（next_retry_at &gt; now）→ 0 行，调用方必须视为
+     * "已被其他执行者认领"，不得覆盖其租约与计数（deleteClosedLoop 重入保护）。
+     */
+    public int markPendingConditional(String documentId, String operation, String version,
+                                      int attemptCount, LocalDateTime now) {
+        String sql = "UPDATE d40_document_sync SET sync_status = 'PENDING', reason_code = '',"
+                + " attempt_count = ?,"
+                + " next_retry_at = CASE WHEN sync_status = 'PENDING' THEN next_retry_at ELSE NULL END,"
+                + " updated_at = ?"
+                + " WHERE document_id = ? AND operation = ? AND version = ?"
+                + " AND (sync_status <> 'PENDING' OR next_retry_at IS NULL OR next_retry_at <= ?)";
+        return jdbcTemplate.update(sql, attemptCount, toTimestamp(now),
+                documentId, operation, blankToEmpty(version), toTimestamp(now));
     }
 
     /**

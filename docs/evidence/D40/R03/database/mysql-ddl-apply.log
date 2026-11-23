@@ -1,0 +1,27 @@
+-- SQL: SELECT COUNT(*) AS sync_rows_before FROM d40_document_sync
+sync_rows_before
+0
+-- rows=1
+
+-- SQL: SELECT COUNT(*) AS audit_rows_before FROM d40_admin_audit
+audit_rows_before
+0
+-- rows=1
+
+-- SQL: ALTER TABLE d40_document_sync MODIFY COLUMN document_id VARCHAR(128) NOT NULL COMMENT '�ĵ�ҵ���ʶ', MODIFY COLUMN version VARCHAR(32) NOT NULL DEFAULT '' COMMENT '�ĵ��汾���մ�=�ĵ�������', MODIFY COLUMN sync_status ENUM('PENDING','SYNCED','FAILED') NOT NULL DEFAULT 'PENDING' COMMENT '������ͬ��״̬', MODIFY COLUMN attempt_count INT NOT NULL DEFAULT 0 COMMENT 'ʧ�����Լ������ֶ� retry �Ժľ������ã�', MODIFY COLUMN next_retry_at DATETIME(6) NULL COMMENT 'FAILED=�´��Զ�����ʱ�䣻PENDING=ִ����Լ����ʱ��', MODIFY COLUMN payload_hash VARCHAR(64) NOT NULL DEFAULT '' COMMENT '�غ�ָ�ƣ����� chunkId SHA-256��', MODIFY COLUMN created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), MODIFY COLUMN updated_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) ON UPDATE CURRENT_TIMESTAMP(6), RENAME INDEX idx_sync_status_retry TO idx_status_retry, COMMENT = 'D40 ������ͬ��״̬������ vector_index_task ����״̬���������棩'
+-- affected=0
+
+-- SQL: ALTER TABLE d40_admin_audit MODIFY COLUMN actor_user_id VARCHAR(128) NOT NULL COMMENT '����˿������� userId', MODIFY COLUMN tenant_id VARCHAR(64) NOT NULL DEFAULT '' COMMENT '�����⻧', MODIFY COLUMN role VARCHAR(16) NOT NULL DEFAULT '' COMMENT 'USER/ADMIN', MODIFY COLUMN target_document_id VARCHAR(128) NOT NULL DEFAULT '' COMMENT 'Ŀ���ĵ�', MODIFY COLUMN version VARCHAR(32) NOT NULL DEFAULT '' COMMENT 'Ŀ��汾��ģʽ���', MODIFY COLUMN request_id VARCHAR(64) NOT NULL COMMENT 'MDC traceId ���ȣ�ȱʧ UUID', MODIFY COLUMN created_at DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6), RENAME INDEX idx_audit_actor_time TO idx_actor_time, DROP INDEX idx_audit_action, ADD INDEX idx_action_target (action, target_document_id), COMMENT = 'D40 ��Ȩд��������ۣ��� access.enabled=true װ��д�룩'
+-- affected=0
+
+-- SQL: SELECT COUNT(*) AS sync_rows_after FROM d40_document_sync
+sync_rows_after
+0
+-- rows=1
+
+-- SQL: SELECT COUNT(*) AS audit_rows_after FROM d40_admin_audit
+audit_rows_after
+0
+-- rows=1
+
+-- DONE statements=6 failures=0

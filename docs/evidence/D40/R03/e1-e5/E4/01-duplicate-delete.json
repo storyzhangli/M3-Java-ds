@@ -1,0 +1,14 @@
+{
+  "documentId": "b4b8b5dee5f044119dd1fc4ba0389c1c",
+  "second": {
+    "code": 200,
+    "msg": "success",
+    "data": null
+  },
+  "syncRowCount": "-- SQL: SELECT COUNT(*) AS c FROM d40_document_sync WHERE document_id='b4b8b5dee5f044119dd1fc4ba0389c1c'\nc\n1\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "first": {
+    "code": 200,
+    "msg": "success",
+    "data": null
+  }
+}

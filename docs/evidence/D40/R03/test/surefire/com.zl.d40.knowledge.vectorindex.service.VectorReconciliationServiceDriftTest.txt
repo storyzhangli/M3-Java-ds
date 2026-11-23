@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.zl.d40.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.177 s -- in com.zl.d40.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest

@@ -1,0 +1,25 @@
+{
+  "pgCount": "-- SQL: SELECT COUNT(*) AS c FROM vector_store WHERE metadata->>'documentId'='166c53ed857c4389bf69702f00148f24' AND metadata->>'version'='1'\nc\n5\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "indexedCount": "-- SQL: SELECT COUNT(*) AS c FROM vector_chunk_index WHERE document_id='166c53ed857c4389bf69702f00148f24' AND version='1' AND status='INDEXED'\nc\n5\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "retryResponse": {
+    "code": 200,
+    "msg": "success",
+    "data": [
+      {
+        "documentId": "166c53ed857c4389bf69702f00148f24",
+        "version": "1",
+        "strategy": "FIXED_LENGTH",
+        "status": "COMPLETED",
+        "stage": "CLEANUP",
+        "chunkCount": 5,
+        "processed": 5,
+        "idempotent": false,
+        "attemptCount": 2,
+        "errorCode": "",
+        "errorMessage": ""
+      }
+    ]
+  },
+  "relationCount": "-- SQL: SELECT COUNT(*) AS c FROM vector_chunk_index WHERE document_id='166c53ed857c4389bf69702f00148f24' AND version='1'\nc\n5\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "taskRow": "-- SQL: SELECT status, stage, error_code, attempt_count, chunk_count FROM vector_index_task WHERE document_id='166c53ed857c4389bf69702f00148f24' AND version='1'\nstatus\tstage\terror_code\tattempt_count\tchunk_count\nCOMPLETED\tCLEANUP\t\t2\t5\n-- rows=1\n\n-- DONE statements=1 failures=0"
+}

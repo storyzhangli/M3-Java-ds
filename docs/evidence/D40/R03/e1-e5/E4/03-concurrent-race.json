@@ -1,0 +1,13 @@
+{
+  "executor2": {
+    "code": 200,
+    "msg": "success",
+    "data": "NO_OP_ALREADY_SYNCED"
+  },
+  "finalRow": "-- SQL: SELECT document_id, operation, version, sync_status, reason_code, attempt_count, next_retry_at, payload_hash FROM d40_document_sync WHERE document_id='d40t-r03-20261123-234654-e4-race' AND operation='DELETE' AND version=''\ndocument_id\toperation\tversion\tsync_status\treason_code\tattempt_count\tnext_retry_at\tpayload_hash\nd40t-r03-20261123-234654-e4-race\tDELETE\t\tSYNCED\t\t0\tNULL\te4\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "executor1": {
+    "code": 200,
+    "msg": "success",
+    "data": "SYNCED"
+  }
+}

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.zl.d40.knowledge.sync.SyncAssemblyBoundaryTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.562 s -- in com.zl.d40.knowledge.sync.SyncAssemblyBoundaryTest

@@ -1,0 +1,18 @@
+{
+  "scenarios": {
+    "E1": "PASS",
+    "E2": "PASS",
+    "E3": "PASS",
+    "E5": "PASS",
+    "E4": "PASS"
+  },
+  "fingerprintMatch": true,
+  "batch": "d40t-r03-20261123-234654",
+  "docIds": [
+    "86256bf96b464e319a3ce1c0cb8f9d16",
+    "166c53ed857c4389bf69702f00148f24",
+    "9d08060fe20a408a8f8e1cd9ea607d81",
+    "b4b8b5dee5f044119dd1fc4ba0389c1c",
+    "7ed412bcd3aa4bb198b48e646336263d"
+  ]
+}

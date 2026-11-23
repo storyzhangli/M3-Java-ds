@@ -1,0 +1,11 @@
+{
+  "relationOldResidual": "-- SQL: SELECT COUNT(*) AS c FROM vector_chunk_index WHERE document_id='9d08060fe20a408a8f8e1cd9ea607d81' AND version='1'\nc\n0\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "pointer": "-- SQL: SELECT version FROM knowledge_document WHERE document_id='9d08060fe20a408a8f8e1cd9ea607d81'\nversion\n2\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "pgOldResidual": "-- SQL: SELECT COUNT(*) AS c FROM vector_store WHERE metadata->>'documentId'='9d08060fe20a408a8f8e1cd9ea607d81' AND metadata->>'version'='1'\nc\n0\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "response": {
+    "code": 200,
+    "msg": "success",
+    "data": "SYNCED"
+  },
+  "syncRow": "-- SQL: SELECT document_id, operation, version, sync_status, reason_code, attempt_count, next_retry_at, payload_hash FROM d40_document_sync WHERE document_id='9d08060fe20a408a8f8e1cd9ea607d81' AND operation='UPDATE_CLEANUP' AND version='1'\ndocument_id\toperation\tversion\tsync_status\treason_code\tattempt_count\tnext_retry_at\tpayload_hash\n9d08060fe20a408a8f8e1cd9ea607d81\tUPDATE_CLEANUP\t1\tSYNCED\t\t0\tNULL\te3-construct\n-- rows=1\n\n-- DONE statements=1 failures=0"
+}

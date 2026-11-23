@@ -1,0 +1,24 @@
+D40 R03 集成/跨库测试汇总（B/C 层）
+====================================
+B 层（MySQL Repository 真实 SQL/事务/唯一键/并发认领）：
+  由 E1–E5 真实演练覆盖（真实 MySQL 127.0.0.1:3306/ai_db，HTTP 9090 实例）：
+  - E1：d40_document_sync 条件更新/FAILED 落账/退避时间/重试 SYNCED（真实 SQL）
+  - E3：UPDATE_CLEANUP 遗留行 CAS 认领/attempt 递增/清理收敛（真实 SQL）
+  - E4：重复删除不产生第二行（唯一键自然键语义）+ 过期 PENDING 恢复
+  - E5：knowledge_document 指针漂移发现与管线修复（真实 SQL + 一致性核查端点）
+  证据：e1-e5/E*/0*.json、e1-e5/run-all.log、e1-e5/summary.json
+
+C 层（MySQL+PG/pgvector 跨库组件组合）：
+  com.zl.d40.knowledge.vectorindex.service.DeleteClosedLoopChainTest — 9 例（T-R03-13~21）
+  真实 DocumentVectorIndexService + DocumentSyncService 全链（retryOne→Handler→deleteClosedLoop
+  →PG 删→MySQL 清理→双端确认→markSynced/markFailed）；Mockito 仅替代存储层。
+  T-R03-13 正常删除 SYNCED；14 PG 失败 FAILED+原因码；15 MySQL 失败 CONFIRM_MISMATCH；
+  16 双端核验失败；17 单次失败单层落账；18 重试收敛；19 重复删除幂等；
+  20 重复事件不产生破坏性副作用；21 UPDATE_CLEANUP 失败后恢复。
+  原始日志：test/chain-test-run.log（9/9 绿）。
+
+  真实跨库端到端（C 层真实环境）：E1/E2/E3/E5 演练同时操作 MySQL 与 PG vector_store，
+  双端计数核验见各场景 03-recovery.json / 02-repair.json。
+
+跨库组件测试合计：9 例；成功 9；失败 0；跳过 0。
+PRE 失败基线（R03-03 证据）：test/pre-existing-test-run.log（修复前 12 例 3 NPE BUILD FAILURE）。

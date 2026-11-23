@@ -1,0 +1,19 @@
+-- SQL: SHOW INDEX FROM d40_document_sync
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+d40_document_sync	0	PRIMARY	1	id	A	0	NULL	NULL		BTREE			YES	NULL
+d40_document_sync	0	uk_doc_op_version	1	document_id	A	0	NULL	NULL		BTREE			YES	NULL
+d40_document_sync	0	uk_doc_op_version	2	operation	A	0	NULL	NULL		BTREE			YES	NULL
+d40_document_sync	0	uk_doc_op_version	3	version	A	0	NULL	NULL		BTREE			YES	NULL
+d40_document_sync	1	idx_sync_status_retry	1	sync_status	A	0	NULL	NULL		BTREE			YES	NULL
+d40_document_sync	1	idx_sync_status_retry	2	next_retry_at	A	0	NULL	NULL	YES	BTREE			YES	NULL
+-- rows=6
+
+-- SQL: SHOW INDEX FROM d40_admin_audit
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+d40_admin_audit	0	PRIMARY	1	id	A	0	NULL	NULL		BTREE			YES	NULL
+d40_admin_audit	1	idx_audit_actor_time	1	actor_user_id	A	0	NULL	NULL		BTREE			YES	NULL
+d40_admin_audit	1	idx_audit_actor_time	2	created_at	A	0	NULL	NULL		BTREE			YES	NULL
+d40_admin_audit	1	idx_audit_action	1	action	A	0	NULL	NULL		BTREE			YES	NULL
+-- rows=4
+
+-- DONE statements=2 failures=0

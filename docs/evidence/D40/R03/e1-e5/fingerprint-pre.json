@@ -1,0 +1,4 @@
+{
+  "pg": "-- SQL: SELECT (SELECT COUNT(*) FROM vector_store) AS vector_store, (SELECT COUNT(*) FROM two_vector_store) AS two_vector_store\nvector_store\ttwo_vector_store\n30\t8\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "mysql": "-- SQL: SELECT (SELECT COUNT(*) FROM knowledge_document) AS knowledge_document, (SELECT COUNT(*) FROM vector_chunk_index) AS vector_chunk_index, (SELECT COUNT(*) FROM vector_index_task) AS vector_index_task, (SELECT COUNT(*) FROM d40_document_sync) AS d40_document_sync, (SELECT COUNT(*) FROM d40_admin_audit) AS d40_admin_audit, (SELECT COUNT(*) FROM d40_auth_principal) AS d40_auth_principal\nknowledge_document\tvector_chunk_index\tvector_index_task\td40_document_sync\td40_admin_audit\td40_auth_principal\n3\t27\t20\t0\t0\t4\n-- rows=1\n\n-- DONE statements=1 failures=0"
+}

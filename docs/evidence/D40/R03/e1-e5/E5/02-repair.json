@@ -1,0 +1,75 @@
+{
+  "rebuild": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "documentId": "7ed412bcd3aa4bb198b48e646336263d",
+      "version": "9",
+      "strategy": "FIXED_LENGTH",
+      "status": "COMPLETED",
+      "stage": "CLEANUP",
+      "chunkCount": 2,
+      "processed": 2,
+      "idempotent": false,
+      "attemptCount": 1,
+      "errorCode": "",
+      "errorMessage": ""
+    }
+  },
+  "pointerAfter": "-- SQL: SELECT document_id, version FROM knowledge_document WHERE document_id='7ed412bcd3aa4bb198b48e646336263d'\ndocument_id\tversion\n7ed412bcd3aa4bb198b48e646336263d\t9\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "consistency": {
+    "code": 200,
+    "msg": "success",
+    "data": {
+      "dryRun": true,
+      "pgTotalRows": 37,
+      "relationRows": 34,
+      "taskRows": 23,
+      "orphanVectors": [
+        {
+          "key": "8acec469-02ab-4679-9873-8e09a749ba3e",
+          "documentId": "d34-real-conflict-d0b2a1452a5d4cfaad1a5ec07c506a50",
+          "version": "1",
+          "detail": "PG 向量无 MySQL 关联行"
+        },
+        {
+          "key": "5e9f77f2-a6e5-485c-9eab-9cef6ceabc3f",
+          "documentId": "d34-real-conflict-d0b2a1452a5d4cfaad1a5ec07c506a50",
+          "version": "1",
+          "detail": "PG 向量无 MySQL 关联行"
+        },
+        {
+          "key": "b247c7e1-f6c5-4b37-905b-1ccce5fe118b",
+          "documentId": "d34-real-injection-d0b2a1452a5d4cfaad1a5ec07c506a50",
+          "version": "1",
+          "detail": "PG 向量无 MySQL 关联行"
+        }
+      ],
+      "missingVectors": [],
+      "countMismatches": [],
+      "stuckTasks": [],
+      "versionMismatches": [
+        {
+          "key": "POINTER:DOC-CNC-COOLING-001",
+          "documentId": "DOC-CNC-COOLING-001",
+          "version": "corpus-v1",
+          "detail": "knowledge_document.version=1 ≠ active=corpus-v1"
+        },
+        {
+          "key": "POINTER:DOC-SERVO-TROUBLE-002",
+          "documentId": "DOC-SERVO-TROUBLE-002",
+          "version": "corpus-v1",
+          "detail": "knowledge_document.version=1 ≠ active=corpus-v1"
+        },
+        {
+          "key": "POINTER:DOC-WORKORDER-SPEC-003",
+          "documentId": "DOC-WORKORDER-SPEC-003",
+          "version": "corpus-v1",
+          "detail": "knowledge_document.version=1 ≠ active=corpus-v1"
+        }
+      ],
+      "syncStuck": [],
+      "actionsTaken": []
+    }
+  }
+}

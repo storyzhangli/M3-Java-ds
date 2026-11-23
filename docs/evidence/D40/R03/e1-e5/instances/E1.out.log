@@ -1,0 +1,154 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.16)
+
+2026-11-23 23:47:02.185 [34mINFO [0;39m [background-preinit] [traceId=] [36mo.h.validator.internal.util.Version[0;39m - HV000001: Hibernate Validator 8.0.3.Final
+2026-11-23 23:47:02.279 [34mINFO [0;39m [main] [traceId=] [36mcom.zl.d40.D40SpringAiApplication[0;39m - Starting D40SpringAiApplication using Java 21.0.7 with PID 24256 (E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D40\D40_DUDACR\target\classes started by zl in E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D40\D40_DUDACR)
+2026-11-23 23:47:02.282 [34mINFO [0;39m [main] [traceId=] [36mcom.zl.d40.D40SpringAiApplication[0;39m - No active profile set, falling back to 1 default profile: "default"
+2026-11-23 23:47:04.483 [34mINFO [0;39m [main] [traceId=] [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-23 23:47:04.487 [34mINFO [0;39m [main] [traceId=] [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-23 23:47:04.679 [34mINFO [0;39m [main] [traceId=] [36mo.s.d.r.c.RepositoryConfigurationDelegate[0;39m - Finished Spring Data repository scanning in 142 ms. Found 0 Redis repository interfaces.
+2026-11-23 23:47:06.530 [34mINFO [0;39m [main] [traceId=] [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat initialized with port 9090 (http)
+2026-11-23 23:47:06.564 [34mINFO [0;39m [main] [traceId=] [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Initializing ProtocolHandler ["http-nio-9090"]
+2026-11-23 23:47:06.567 [34mINFO [0;39m [main] [traceId=] [36mo.a.catalina.core.StandardService[0;39m - Starting service [Tomcat]
+2026-11-23 23:47:06.570 [34mINFO [0;39m [main] [traceId=] [36mo.a.catalina.core.StandardEngine[0;39m - Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-11-23 23:47:06.765 [34mINFO [0;39m [main] [traceId=] [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring embedded WebApplicationContext
+2026-11-23 23:47:06.767 [34mINFO [0;39m [main] [traceId=] [36mo.s.b.w.s.c.ServletWebServerApplicationContext[0;39m - Root WebApplicationContext: initialization completed in 4393 ms
+2026-11-23 23:47:08.175 [34mINFO [0;39m [main] [traceId=] [36mc.zl.d40.knowledge.KnowledgeCorpus[0;39m - 设备故障知识语料加载完成，文档数=3，片段数=8
+2026-11-23 23:47:10.404 [34mINFO [0;39m [main] [traceId=] [36mcom.zaxxer.hikari.HikariDataSource[0;39m - pgvector-pool - Starting...
+2026-11-23 23:47:10.813 [34mINFO [0;39m [main] [traceId=] [36mcom.zaxxer.hikari.HikariDataSource[0;39m - pgvector-pool - Start completed.
+2026-11-23 23:47:11.008 [34mINFO [0;39m [main] [traceId=] [36mo.s.a.v.pgvector.PgVectorStore[0;39m - Using the vector table name: vector_store. Is empty: false
+2026-11-23 23:47:11.012 [34mINFO [0;39m [main] [traceId=] [36mc.z.d.k.v.PgVectorStoreConfiguration[0;39m - PgVectorStore 装配完成: table=public.vector_store, dimensions=384, distance=COSINE, index=HNSW, initializeSchema=false
+2026-11-23 23:47:11.015 [34mINFO [0;39m [main] [traceId=] [36mo.s.a.v.pgvector.PgVectorStore[0;39m - Initializing PGVectorStore schema for table: vector_store in schema: public
+2026-11-23 23:47:11.015 [34mINFO [0;39m [main] [traceId=] [36mo.s.a.v.pgvector.PgVectorStore[0;39m - vectorTableValidationsEnabled false
+2026-11-23 23:47:11.850 [34mINFO [0;39m [main] [traceId=] [36mcom.zaxxer.hikari.HikariDataSource[0;39m - two-pgvector-pool - Starting...
+2026-11-23 23:47:11.869 [34mINFO [0;39m [main] [traceId=] [36mcom.zaxxer.hikari.HikariDataSource[0;39m - two-pgvector-pool - Start completed.
+2026-11-23 23:47:11.974 [34mINFO [0;39m [main] [traceId=] [36mo.s.a.v.pgvector.PgVectorStore[0;39m - Using the vector table name: two_vector_store. Is empty: false
+2026-11-23 23:47:11.982 [34mINFO [0;39m [main] [traceId=] [36mc.z.d40.two.TwoPgVectorConfiguration[0;39m - two_ 向量空间装配完成: provider=BAILIAN, model=qwen3.7-text-embedding, dimensions=1024, vectorSpaceId=vs_3a789450fd0d86601065c98057ac1adb, table=public.two_vector_store, indexVersion=two-bailian-1024-v1, apiBatchSize=10
+2026-11-23 23:47:12.283 [34mINFO [0;39m [main] [traceId=] [36mo.s.b.a.w.s.WelcomePageHandlerMapping[0;39m - Adding welcome page: class path resource [static/index.html]
+2026-11-23 23:47:12.821 [34mINFO [0;39m [main] [traceId=] [36mc.b.m.s.MybatisPlusApplicationContextAware[0;39m - Register ApplicationContext instances org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@71a9b4c7
+2026-11-23 23:47:13.454 [34mINFO [0;39m [main] [traceId=] [36mo.a.coyote.http11.Http11NioProtocol[0;39m - Starting ProtocolHandler ["http-nio-9090"]
+2026-11-23 23:47:13.495 [34mINFO [0;39m [main] [traceId=] [36mo.s.b.w.e.tomcat.TomcatWebServer[0;39m - Tomcat started on port 9090 (http) with context path '/'
+2026-11-23 23:47:13.517 [34mINFO [0;39m [main] [traceId=] [36mcom.zl.d40.D40SpringAiApplication[0;39m - Started D40SpringAiApplication in 12.142 seconds (process running for 12.93)
+2026-11-23 23:47:13.730 [34mINFO [0;39m [main] [traceId=] [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Starting...
+2026-11-23 23:47:13.942 [34mINFO [0;39m [main] [traceId=] [36mcom.zaxxer.hikari.pool.HikariPool[0;39m - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a2c0fb9
+2026-11-23 23:47:13.944 [34mINFO [0;39m [main] [traceId=] [36mcom.zaxxer.hikari.HikariDataSource[0;39m - HikariPool-1 - Start completed.
+2026-11-23 23:47:14.044 [34mINFO [0;39m [main] [traceId=] [36mc.z.d.p.PromptTemplateVersionInitializer[0;39m - Prompt 模板历史快照回填检查完成，处理模板数=10
+2026-11-23 23:47:14.089 [34mINFO [0;39m [main] [traceId=] [36mc.z.d40.prompt.PromptSeedInitializer[0;39m - Prompt 种子初始化完成，新增 0 条，跳过（数据库已存在）8 条，失败 0 条，资源=prompt-templates/seed-templates.json
+2026-11-23 23:47:14.198 [34mINFO [0;39m [main] [traceId=] [36mc.z.d.k.v.PgVectorEnvironmentVerifier[0;39m - pgvector 环境检查通过: table=public.vector_store, embedding=vector(384), extension=0.8.7, pg=PostgreSQL 18.7 (Debian 18.7-1.pgdg12+2) on x86_64-pc-linux-gnu
+2026-11-23 23:47:14.200 [34mINFO [0;39m [main] [traceId=] [36mc.z.d.k.v.PgVectorStoreConfiguration[0;39m - pgvector 环境报告: healthy=true, table=public.vector_store, embedding=vector(384), extension=0.8.7, pg=PostgreSQL 18.7 (Debian 18.7-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+====== D40 hello Spring AI (日常线) ======
+2026-11-23 23:47:17.952 [34mINFO [0;39m [http-nio-9090-exec-1] [traceId=] [36mo.a.c.c.C.[Tomcat].[localhost].[/][0;39m - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-23 23:47:17.957 [34mINFO [0;39m [http-nio-9090-exec-1] [traceId=] [36mo.s.web.servlet.DispatcherServlet[0;39m - Initializing Servlet 'dispatcherServlet'
+2026-11-23 23:47:17.957 [34mINFO [0;39m [http-nio-9090-exec-1] [traceId=] [36mo.s.web.servlet.DispatcherServlet[0;39m - Completed initialization in 0 ms
+2026-11-23 23:47:18.054 [34mINFO [0;39m [http-nio-9090-exec-1] [traceId=731c825c086345099c18c303a07d94d5] [36mc.z.d.k.d.KnowledgeDocumentService[0;39m - 知识文档已登记，documentId=86256bf96b464e319a3ce1c0cb8f9d16，version=1
+2026-11-23 23:47:18.279 [34mINFO [0;39m [http-nio-9090-exec-1] [traceId=731c825c086345099c18c303a07d94d5] [36mACCESS_LOG[0;39m - {"event":"HTTP_REQUEST","traceId":"731c825c086345099c18c303a07d94d5","requestId":"731c825c086345099c18c303a07d94d5","method":"POST","uri":"/api/v1/knowledge/documents","query":null,"clientIp":"127.0.0.1","headers":{"host":"127.0.0.1:9090","authorization":"*****","user-agent":"Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.26200; zh-CN) PowerShell/7.6.4","accept-encoding":"gzip, deflate, br","content-type":"application/json; charset=utf-8","content-length":"109"},"requestBody":{"contentType":"application/json; charset=utf-8","size":109,"body":"{\"source\":\"d40t-r03-20261123-234654-e1\",\"version\":\"1\",\"title\":\"d40t-r03-20261123-234654-e1\"}","truncated":false}}
+2026-11-23 23:47:18.286 [34mINFO [0;39m [http-nio-9090-exec-1] [traceId=731c825c086345099c18c303a07d94d5] [36mACCESS_LOG[0;39m - {"event":"HTTP_RESPONSE","traceId":"731c825c086345099c18c303a07d94d5","requestId":"731c825c086345099c18c303a07d94d5","method":"POST","uri":"/api/v1/knowledge/documents","httpStatus":200,"elapsedMs":304,"responseBody":{"contentType":"application/json","size":437,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"documentId\":\"86256bf96b464e319a3ce1c0cb8f9d16\",\"source\":\"d40t-r03-20261123-234654-e1\",\"title\":\"d40t-r03-20261123-234654-e1\",\"version\":\"1\",\"status\":\"PENDING\",\"updatedAt\":\"2026-11-23T23:47:18.0232141\",\"fileName\":null,\"contentType\":null,\"fileSize\":null,\"contentHash\":null,\"parsedChars\":null,\"pageCount\":0,\"errorCode\":\"\",\"errorMessage\":\"\",\"duplicate\":false,\"tenantId\":null,\"deptId\":null,\"deviceId\":null}}","truncated":false}}
+2026-11-23 23:47:20.987 [34mINFO [0;39m [http-nio-9090-exec-3] [traceId=c3a179bce15645fc82be7c3b2eb85e86] [36mc.z.d.k.d.KnowledgeDocumentService[0;39m - 知识文档导入完成，documentId=86256bf96b464e319a3ce1c0cb8f9d16，contentType=application/pdf，chars=661，pages=1，parser=Apache PDFBox 3.0.7
+2026-11-23 23:47:21.036 [34mINFO [0;39m [http-nio-9090-exec-3] [traceId=c3a179bce15645fc82be7c3b2eb85e86] [36mACCESS_LOG[0;39m - {"event":"HTTP_REQUEST","traceId":"c3a179bce15645fc82be7c3b2eb85e86","requestId":"c3a179bce15645fc82be7c3b2eb85e86","method":"POST","uri":"/api/v1/knowledge/documents/86256bf96b464e319a3ce1c0cb8f9d16/import","query":null,"clientIp":"127.0.0.1","headers":{"host":"127.0.0.1:9090","authorization":"*****","user-agent":"Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.26200; zh-CN) PowerShell/7.6.4","accept-encoding":"gzip, deflate, br","content-type":"multipart/form-data; boundary=\"952d71ab-3650-469d-92df-cecea992dc30\"","content-length":"1171"},"requestBody":{"contentType":"multipart/form-data; boundary=\"952d71ab-3650-469d-92df-cecea992dc30\"","size":0,"body":null,"skipReason":"binary/multipart/streaming content, body not cached"}}
+2026-11-23 23:47:21.036 [34mINFO [0;39m [http-nio-9090-exec-3] [traceId=c3a179bce15645fc82be7c3b2eb85e86] [36mACCESS_LOG[0;39m - {"event":"HTTP_RESPONSE","traceId":"c3a179bce15645fc82be7c3b2eb85e86","requestId":"c3a179bce15645fc82be7c3b2eb85e86","method":"POST","uri":"/api/v1/knowledge/documents/86256bf96b464e319a3ce1c0cb8f9d16/import","httpStatus":200,"elapsedMs":1447,"responseBody":{"contentType":"application/json","size":533,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"documentId\":\"86256bf96b464e319a3ce1c0cb8f9d16\",\"source\":\"d40t-r03-20261123-234654-e1\",\"title\":\"d40t-r03-20261123-234654-e1\",\"version\":\"1\",\"status\":\"COMPLETED\",\"updatedAt\":\"2026-11-23T23:47:21\",\"fileName\":\"d40t-r03-20261123-234654-e1.pdf\",\"contentType\":\"application/pdf\",\"fileSize\":910,\"contentHash\":\"aee74fb2902972e1a68c6013fc0e621d8a6fb5d93ae01ab4b57becdadad5b5ef\",\"parsedChars\":661,\"pageCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\",\"duplicate\":false,\"tenantId\":null,\"deptId\":null,\"deviceId\":null}}","truncated":false}}
+2026-11-23 23:47:21.244 [34mINFO [0;39m [http-nio-9090-exec-5] [traceId=259e21218d47471fb72a8b09ba2b4c2c] [36mc.z.d.k.v.s.DocumentVectorIndexService[0;39m - 向量索引完成 documentId=86256bf96b464e319a3ce1c0cb8f9d16 version=1 chunks=2 attempt=1
+2026-11-23 23:47:21.251 [34mINFO [0;39m [http-nio-9090-exec-5] [traceId=259e21218d47471fb72a8b09ba2b4c2c] [36mACCESS_LOG[0;39m - {"event":"CONTROLLER_ACCESS","traceId":"259e21218d47471fb72a8b09ba2b4c2c","requestId":"259e21218d47471fb72a8b09ba2b4c2c","controllerMethod":"VectorIndexController#index","elapsedMs":183,"args":{"documentId":{"value":"\"86256bf96b464e319a3ce1c0cb8f9d16\"","truncated":false},"strategy":null},"result":"{\"code\":200,\"msg\":\"success\",\"data\":{\"documentId\":\"86256bf96b464e319a3ce1c0cb8f9d16\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}}","resultTruncated":false}
+2026-11-23 23:47:21.287 [34mINFO [0;39m [http-nio-9090-exec-5] [traceId=259e21218d47471fb72a8b09ba2b4c2c] [36mACCESS_LOG[0;39m - {"event":"HTTP_REQUEST","traceId":"259e21218d47471fb72a8b09ba2b4c2c","requestId":"259e21218d47471fb72a8b09ba2b4c2c","method":"POST","uri":"/api/v1/knowledge/documents/86256bf96b464e319a3ce1c0cb8f9d16/vector-index","query":null,"clientIp":"127.0.0.1","headers":{"host":"127.0.0.1:9090","authorization":"*****","user-agent":"Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.26200; zh-CN) PowerShell/7.6.4","accept-encoding":"gzip, deflate, br","content-type":"application/x-www-form-urlencoded","content-length":"0"},"requestBody":{"contentType":"application/x-www-form-urlencoded","size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-11-23 23:47:21.287 [34mINFO [0;39m [http-nio-9090-exec-5] [traceId=259e21218d47471fb72a8b09ba2b4c2c] [36mACCESS_LOG[0;39m - {"event":"HTTP_RESPONSE","traceId":"259e21218d47471fb72a8b09ba2b4c2c","requestId":"259e21218d47471fb72a8b09ba2b4c2c","method":"POST","uri":"/api/v1/knowledge/documents/86256bf96b464e319a3ce1c0cb8f9d16/vector-index","httpStatus":200,"elapsedMs":232,"responseBody":{"contentType":"application/json","size":262,"body":"{\"code\":200,\"msg\":\"success\",\"data\":{\"documentId\":\"86256bf96b464e319a3ce1c0cb8f9d16\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":2,\"processed\":2,\"idempotent\":false,\"attemptCount\":1,\"errorCode\":\"\",\"errorMessage\":\"\"}}","truncated":false}}
+2026-11-23 23:47:22.542 [31mWARN [0;39m [http-nio-9090-exec-7] [traceId=5d3f254f5e5645a3ae7d8abfa911a3d1] [36mc.z.d.k.v.s.DocumentVectorIndexService[0;39m - 按版本删除向量删除失败 documentId=86256bf96b464e319a3ce1c0cb8f9d16 version=1 reason=INJECTED simulated connection loss on vectorStore.delete call #1 (fault-injection, D40 R01)
+2026-11-23 23:47:22.557 [31mWARN [0;39m [http-nio-9090-exec-7] [traceId=5d3f254f5e5645a3ae7d8abfa911a3d1] [36mc.z.d.k.sync.DocumentSyncService[0;39m - 同步标记 FAILED documentId=86256bf96b464e319a3ce1c0cb8f9d16 operation=DELETE version=1 reason=PG_UNREACHABLE attempt=1
+2026-11-23 23:47:22.559 [31mWARN [0;39m [http-nio-9090-exec-7] [traceId=5d3f254f5e5645a3ae7d8abfa911a3d1] [36mACCESS_LOG[0;39m - {"event":"CONTROLLER_ERROR","traceId":"5d3f254f5e5645a3ae7d8abfa911a3d1","requestId":"5d3f254f5e5645a3ae7d8abfa911a3d1","controllerMethod":"VectorIndexController#delete","elapsedMs":39,"args":{"documentId":{"value":"\"86256bf96b464e319a3ce1c0cb8f9d16\"","truncated":false},"version":{"value":"\"1\"","truncated":false}},"exception":"java.lang.RuntimeException"}
+2026-11-23 23:47:22.564 [1;31mERROR[0;39m [http-nio-9090-exec-7] [traceId=5d3f254f5e5645a3ae7d8abfa911a3d1] [36mc.z.d.common.GlobalExceptionHandler[0;39m - 未预期的系统异常，category=UNKNOWN
+java.lang.RuntimeException: INJECTED simulated connection loss on vectorStore.delete call #1 (fault-injection, D40 R01)
+	at com.zl.d40.knowledge.vectorstore.FaultInjectingVectorStore.delete(FaultInjectingVectorStore.java:57)
+	at com.zl.d40.knowledge.vectorindex.service.DocumentVectorIndexService.deleteVectorsSafely(DocumentVectorIndexService.java:791)
+	at com.zl.d40.knowledge.vectorindex.service.DocumentVectorIndexService.deleteClosedLoop(DocumentVectorIndexService.java:447)
+	at com.zl.d40.knowledge.vectorindex.service.DocumentVectorIndexService.deleteByDocumentVersion(DocumentVectorIndexService.java:403)
+	at com.zl.d40.knowledge.vectorindex.controller.VectorIndexController.delete(VectorIndexController.java:99)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:360)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.zl.d40.logging.ControllerAccessLogAspect.aroundController(ControllerAccessLogAspect.java:68)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:649)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:631)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:728)
+	at com.zl.d40.knowledge.vectorindex.controller.VectorIndexController$$SpringCGLIB$$0.delete(<generated>)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doDelete(FrameworkServlet.java:936)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:596)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at com.zl.d40.access.AuthContextFilter.doFilterInternal(AuthContextFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at com.zl.d40.logging.CachedBodyAccessLogFilter.doFilterInternal(CachedBodyAccessLogFilter.java:72)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at com.zl.d40.logging.TraceIdFilter.doFilterInternal(TraceIdFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-11-23 23:47:22.570 [34mINFO [0;39m [http-nio-9090-exec-7] [traceId=5d3f254f5e5645a3ae7d8abfa911a3d1] [36mACCESS_LOG[0;39m - {"event":"HTTP_REQUEST","traceId":"5d3f254f5e5645a3ae7d8abfa911a3d1","requestId":"5d3f254f5e5645a3ae7d8abfa911a3d1","method":"DELETE","uri":"/api/v1/knowledge/documents/86256bf96b464e319a3ce1c0cb8f9d16/vector-index","query":"version=1","clientIp":"127.0.0.1","headers":{"host":"127.0.0.1:9090","authorization":"*****","user-agent":"Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.26200; zh-CN) PowerShell/7.6.4","accept-encoding":"gzip, deflate, br","content-length":"0"},"requestBody":{"contentType":null,"size":0,"body":null,"skipReason":"empty body or input stream never read by framework"}}
+2026-11-23 23:47:22.571 [34mINFO [0;39m [http-nio-9090-exec-7] [traceId=5d3f254f5e5645a3ae7d8abfa911a3d1] [36mACCESS_LOG[0;39m - {"event":"HTTP_RESPONSE","traceId":"5d3f254f5e5645a3ae7d8abfa911a3d1","requestId":"5d3f254f5e5645a3ae7d8abfa911a3d1","method":"DELETE","uri":"/api/v1/knowledge/documents/86256bf96b464e319a3ce1c0cb8f9d16/vector-index","httpStatus":200,"elapsedMs":53,"responseBody":{"contentType":"application/json","size":64,"body":"{\"code\":5000,\"msg\":\"系统繁忙，请稍后重试\",\"data\":null}","truncated":false}}
+2026-11-23 23:47:23.835 [34mINFO [0;39m [http-nio-9090-exec-9] [traceId=aa31a74a48254fad906ef9201e47c0e4] [36mc.z.d.k.sync.DocumentSyncService[0;39m - PENDING 初始化跳过：事件处于有效执行租约中（并发保护） documentId=86256bf96b464e319a3ce1c0cb8f9d16 operation=DELETE version=1
+2026-11-23 23:47:23.844 [34mINFO [0;39m [http-nio-9090-exec-9] [traceId=aa31a74a48254fad906ef9201e47c0e4] [36mc.z.d.k.v.s.DocumentVectorIndexService[0;39m - 按版本删除向量删除完成 documentId=86256bf96b464e319a3ce1c0cb8f9d16 version=1 count=2
+2026-11-23 23:47:23.866 [34mINFO [0;39m [http-nio-9090-exec-9] [traceId=aa31a74a48254fad906ef9201e47c0e4] [36mc.z.d.k.sync.DocumentSyncService[0;39m - 同步收敛 SYNCED documentId=86256bf96b464e319a3ce1c0cb8f9d16 operation=DELETE version=1
+2026-11-23 23:47:23.866 [34mINFO [0;39m [http-nio-9090-exec-9] [traceId=aa31a74a48254fad906ef9201e47c0e4] [36mc.z.d.k.v.s.DocumentVectorIndexService[0;39m - 删除同步闭环完成 documentId=86256bf96b464e319a3ce1c0cb8f9d16 version=1 chunks=2
+2026-11-23 23:47:23.876 [34mINFO [0;39m [http-nio-9090-exec-9] [traceId=aa31a74a48254fad906ef9201e47c0e4] [36mACCESS_LOG[0;39m - {"event":"HTTP_REQUEST","traceId":"aa31a74a48254fad906ef9201e47c0e4","requestId":"aa31a74a48254fad906ef9201e47c0e4","method":"POST","uri":"/api/v1/knowledge/sync/retry","query":null,"clientIp":"127.0.0.1","headers":{"host":"127.0.0.1:9090","authorization":"*****","user-agent":"Mozilla/5.0 (Windows NT 10.0; Microsoft Windows 10.0.26200; zh-CN) PowerShell/7.6.4","accept-encoding":"gzip, deflate, br","content-type":"application/json; charset=utf-8","content-length":"101"},"requestBody":{"contentType":"application/json; charset=utf-8","size":101,"body":"{\"documentId\":\"86256bf96b464e319a3ce1c0cb8f9d16\",\"version\":\"1\",\"operation\":\"DELETE\"}","truncated":false}}
+2026-11-23 23:47:23.876 [34mINFO [0;39m [http-nio-9090-exec-9] [traceId=aa31a74a48254fad906ef9201e47c0e4] [36mACCESS_LOG[0;39m - {"event":"HTTP_RESPONSE","traceId":"aa31a74a48254fad906ef9201e47c0e4","requestId":"aa31a74a48254fad906ef9201e47c0e4","method":"POST","uri":"/api/v1/knowledge/sync/retry","httpStatus":200,"elapsedMs":60,"responseBody":{"contentType":"application/json","size":44,"body":"{\"code\":200,\"msg\":\"success\",\"data\":\"SYNCED\"}","truncated":false}}

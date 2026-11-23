@@ -1,0 +1,17 @@
+{
+  "batch": "d40t-r03-20261123-234654",
+  "indexResponse": {
+    "code": 4223,
+    "msg": "向量写入失败，已记录可恢复状态: INJECTED simulated connection loss on vectorStore.add call #2 (fault-injection, D40 R01)",
+    "data": null
+  },
+  "pgWritten": "-- SQL: SELECT COUNT(*) AS c FROM vector_store WHERE metadata->>'documentId'='166c53ed857c4389bf69702f00148f24' AND metadata->>'version'='1'\nc\n1\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "taskRow": "-- SQL: SELECT status, stage, error_code, attempt_count, chunk_count FROM vector_index_task WHERE document_id='166c53ed857c4389bf69702f00148f24' AND version='1'\nstatus\tstage\terror_code\tattempt_count\tchunk_count\nPARTIAL\tEMBED_WRITE\tEMBED_WRITE_FAILED\t1\t5\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "documentId": "166c53ed857c4389bf69702f00148f24",
+  "taskStatus": {
+    "code": 4001,
+    "msg": "无权访问该文档",
+    "data": null
+  },
+  "injection": "batch-size=1, fail-add-call=2"
+}
