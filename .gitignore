@@ -41,3 +41,5 @@ Thumbs.db
 #/D01/D01_SpringAI_init/src/test/java/com/zl/d01/springai/self/
 # 临时文件目录,不上传
 /docs/temp_docs/
+# 评测器 `out` 目录忽略
+/docs/evidence/D37/evaluator/out/
