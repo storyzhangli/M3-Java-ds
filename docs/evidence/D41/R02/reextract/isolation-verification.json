@@ -1,0 +1,10 @@
+{
+  "task": "R02-04 document/version isolation",
+  "verification": [
+    {"scenario": "同文档 v1/v2 双版本入库，仅重抽 v1 → v2 行数不受影响", "test": "TableRecordPersistenceIntegrationTest.versionIsolation (v1 3行→1行, v2 保持2行)", "result": "PASS"},
+    {"scenario": "文档 A/B 双文档，重抽 A（清空）→ B 表格与行完全不受影响", "test": "TableRecordPersistenceIntegrationTest.documentIsolation", "result": "PASS"},
+    {"scenario": "version 非数字串 → VERSION_NOT_PERSISTABLE，零 DB 调用（R01 语义不回退）", "test": "TableRecordServiceReplaceSemanticsTest.nonNumericVersionNoTouch", "result": "PASS"}
+  ],
+  "scopeGuard": "deleteByDocumentVersion 精确限定 (document_id, version)；不动 D37 冻结资产/D40 历史行/他线共享表（测试全程 d41r02-doc- 前缀 + 基线指纹复原断言）",
+  "evidence": ["test/maven-test-run.log", "test/surefire-summary.txt"]
+}

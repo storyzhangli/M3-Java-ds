@@ -1,0 +1,10 @@
+{
+  "task": "R02-04 re-extraction atomic replacement - table count reduction and empty result",
+  "verification": [
+    {"scenario": "2 张表 → 1 张表，旧表与其行整体清除", "test": "TableRecordPersistenceIntegrationTest.tableCountReductionRemovesStaleTables", "result": "PASS"},
+    {"scenario": "成功解析但无表格（纯文本）→ 旧表格全部清理（区别于解析失败）", "test": "TableRecordPersistenceIntegrationTest.successfulEmptyParseClearsAll + TableRecordServiceReplaceSemanticsTest.successfulEmptyResultClearsOldData", "result": "PASS"},
+    {"scenario": "重复抽取同内容不产生重复记录（幂等）", "test": "TableRecordPersistenceIntegrationTest.repeatExtractionNoDuplicates", "result": "PASS"}
+  ],
+  "keySemantics": "parsed=true 且 tables 为空 → 仍执行 delete（清理旧域）后正常返回；parsed=false(PARSE_FAILED) → 零写零删。两态严格区分，防止『解析失败被当成无表格→清理丢数据』",
+  "evidence": ["test/maven-test-run.log"]
+}

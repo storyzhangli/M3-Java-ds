@@ -1,0 +1,18 @@
+
+test                                                                          tests failures errors skipped timeSec
+----                                                                          ----- -------- ------ ------- -------
+com.zl.d41.knowledge.sync.DocumentSyncServiceTest                                24        0      0       0    0.21
+com.zl.d41.knowledge.sync.SyncAssemblyBoundaryTest                                6        0      0       0    1.29
+com.zl.d41.knowledge.table.HtmlTableExtractorTest                                 3        0      0       0    0.15
+com.zl.d41.knowledge.table.PdfTableExtractorTest                                 10        0      0       0    0.64
+com.zl.d41.knowledge.table.TableRecordPersistenceIntegrationTest                  8        0      0       0    3.86
+com.zl.d41.knowledge.table.TableRecordServiceReplaceSemanticsTest                 5        0      0       0    0.02
+com.zl.d41.knowledge.table.TableTextsUnitTypingTest                               4        0      0       0    0.01
+com.zl.d41.knowledge.table.TextTableExtractorTest                                 7        0      0       0    0.03
+com.zl.d41.knowledge.vectorindex.service.DeleteClosedLoopChainTest                9        0      0       0    0.09
+com.zl.d41.knowledge.vectorindex.service.IndexFailureRecoveryTest                 9        0      0       0    0.12
+com.zl.d41.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest     3        0      0       0    0.24
+com.zl.d41.knowledge.vectorstore.FaultInjectingVectorStoreTest                    3        0      0       0    0.00
+
+
+TOTAL tests=91 failures=0 errors=0 skipped=0

@@ -1,0 +1,21 @@
+{
+  "task": "D41-R02-05 maven real test execution",
+  "command": "mvn -o -B -f D41/D41_TASIIEM/pom.xml clean test",
+  "executedAt": "2026-11-24T21:21:49",
+  "durationSeconds": 31,
+  "jdk": "java version \"21.0.7\" 2025-04-15 LTS (JAVA_HOME=D:\\SoftwareInstall\\JDK\\JDK21)",
+  "maven": "Apache Maven 3.9.16 (offline -o, batch -B)",
+  "mysqlPasswordInjected": "env MYSQL_PASSWORD only (value never logged)",
+  "exitCode": 0,
+  "totals": {
+    "tests": 91,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "integrationNote": "skipped=0 proves TableRecordPersistenceIntegrationTest (8 real MySQL scenarios) executed, not assumption-skipped; fake-only semantics tests additionally cover call-order/no-touch assertions",
+  "r01Baseline": "71 (69+2) fully covered inside 91; +20 = Pdf4 + Txt3 + Semantics5 + IntegrationIT8",
+  "consoleLog": "maven-test-run.log",
+  "surefire": "surefire-summary.txt",
+  "failureHistoryNote": "Intermediate R02 rounds had 6 assertion failures (Pdf anchors pseudo-column x4, Txt line-number fixture typo x1, real-manual header-null NPE x1). Root causes fixed in product code (anchor support filter, col_i header placeholder) — assertions were NOT weakened; full clean test then 91/91."
+}

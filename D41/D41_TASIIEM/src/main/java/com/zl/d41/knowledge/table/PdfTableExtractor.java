@@ -226,14 +226,37 @@ public final class PdfTableExtractor {
     /** 区域 → 表格：列锚聚类、表头、类型化、合并/错位检出、置信度。 */
     private ExtractedTable buildTable(int pageNumber, int tableIndex,
                                       List<List<CellRun>> region, int startRow, int endRowExclusive) {
-        // 列锚：区域全部单元格 x 起点 24pt 聚类
-        List<Double> starts = region.stream().flatMap(List::stream)
-                .map(CellRun::x).sorted().toList();
-        List<Double> anchors = new ArrayList<>();
-        for (double x : starts) {
-            if (anchors.isEmpty() || x - anchors.get(anchors.size() - 1) > COL_GAP_PT) {
-                anchors.add(x);
+        // R02-02 列锚=至少 2 行支持的起点簇：单次出现的错位起点不再成"伪列"，
+        // 该 run 转为 surplus 由 assignColumns 偏移/EXTRA 处置（R01 直接聚入会产生虚假列结构）。
+        List<Double> clusterReps = new ArrayList<>();
+        List<Set<Integer>> clusterSupport = new ArrayList<>();
+        for (int r = 0; r < region.size(); r++) {
+            for (CellRun cell : region.get(r)) {
+                int target = -1;
+                for (int c = 0; c < clusterReps.size(); c++) {
+                    if (Math.abs(cell.x() - clusterReps.get(c)) <= COL_GAP_PT) {
+                        target = c;
+                        break;
+                    }
+                }
+                if (target < 0) {
+                    clusterReps.add(cell.x());
+                    clusterSupport.add(new LinkedHashSet<>());
+                    target = clusterReps.size() - 1;
+                }
+                clusterSupport.get(target).add(r);
             }
+        }
+        List<Double> anchors = new ArrayList<>();
+        for (int c = 0; c < clusterReps.size(); c++) {
+            if (clusterSupport.get(c).size() >= 2) {
+                anchors.add(clusterReps.get(c));
+            }
+        }
+        if (anchors.size() < 2) {
+            // 两行区域/极端稀疏表兜底：全簇为锚（维持 R01 口径，宁多判不错构）
+            anchors = new ArrayList<>(clusterReps);
+            anchors.sort(Comparator.naturalOrder());
         }
         int colCount = anchors.size();
         List<Double> spacings = new ArrayList<>();
@@ -251,17 +274,18 @@ public final class PdfTableExtractor {
         int anomalyRows = 0;
         for (int r = 1; r < region.size(); r++) {
             List<CellRun> row = region.get(r);
-            List<CellRun>[] buckets = assignBuckets(row, anchors, colCount);
+            ColumnAssignment assignment = assignColumns(row, anchors, colCount);
+            List<List<CellRun>> buckets = assignment.buckets();
             List<TableCell> cells = new ArrayList<>(colCount);
-            List<String> rowFlags = new ArrayList<>();
+            List<String> rowFlags = new ArrayList<>(assignment.flags());
             boolean mergedHere = false;
             boolean missingHere = false;
             for (int c = 0; c < colCount; c++) {
-                if (buckets[c].isEmpty()) {
+                if (buckets.get(c).isEmpty()) {
                     // 右邻缺失：检查左邻单元是否覆盖本列锚（合并）
                     double anchorX = anchors.get(c);
-                    if (c > 0 && !buckets[c - 1].isEmpty()) {
-                        CellRun left = last(buckets[c - 1]);
+                    if (c > 0 && !buckets.get(c - 1).isEmpty()) {
+                        CellRun left = last(buckets.get(c - 1));
                         if (left.end() > anchorX + 2.0) {
                             mergedHere = true;
                             cells.add(TableCell.missing(header.get(c)));
@@ -271,7 +295,7 @@ public final class PdfTableExtractor {
                     missingHere = true;
                     cells.add(TableCell.missing(header.get(c)));
                 } else {
-                    String text = joinBucketText(buckets[c]);
+                    String text = joinBucketText(buckets.get(c));
                     cells.add(UnitTyping.typeOf(header.get(c), TableTexts.cleanCell(text)));
                 }
             }
@@ -280,6 +304,13 @@ public final class PdfTableExtractor {
             }
             if (missingHere) {
                 rowFlags.add(TableDegrade.COLUMN_MISALIGNMENT);
+            }
+            // R02-02：无法可靠映射的独立剩余单元格——不并入任何列值，原文按 EXTRA_COL_* 追加保留
+            int extraIndex = 1;
+            for (CellRun extra : assignment.extraCells()) {
+                cells.add(new TableCell("EXTRA_COL_" + extraIndex,
+                        TableTexts.cleanCell(extra.text()), "string", null));
+                extraIndex++;
             }
             if (!rowFlags.isEmpty()) {
                 anomalyRows++;
@@ -303,32 +334,118 @@ public final class PdfTableExtractor {
                 null, startRow, endRowExclusive - 1, "ACTIVE");
     }
 
-    @SuppressWarnings("unchecked")
-    private List<CellRun>[] assignBuckets(List<CellRun> row, List<Double> anchors, int colCount) {
-        List<CellRun>[] buckets = new List[colCount];
+    /**
+     * R02-02 列归属校验：三阶段取代 R01 的"最近锚+桶内全拼接"。
+     * ① nearest 入桶（R01 口径）；② 桶内 surplus 优先再分配给空锚（修复他列留空时的静默合并/错捕）；
+     * ③ 各桶主元=距锚最近 run，其余 run 区分"列内文本片段"（legitimate 拼接，保留 R01 正常表格语义）
+     * 与"独立剩余单元格"（越过列横跨度或异常大间隙→EXTRA_CELL，**不静默拼接**，原文保留）；
+     * 主元距锚偏差 &gt; 列间隙阈值 → COLUMN_MISALIGNMENT（横向偏移不猜归属，原文保留）。
+     */
+    private record ColumnAssignment(List<List<CellRun>> buckets, List<CellRun> extraCells,
+                                    Set<String> flags) {
+    }
+
+    private ColumnAssignment assignColumns(List<CellRun> row, List<Double> anchors, int colCount) {
+        List<List<CellRun>> buckets = new ArrayList<>(colCount);
         for (int i = 0; i < colCount; i++) {
-            buckets[i] = new ArrayList<>();
+            buckets.add(new ArrayList<>());
         }
         for (CellRun cell : row) {
-            int best = 0;
-            double bestDiff = Double.MAX_VALUE;
-            for (int i = 0; i < colCount; i++) {
-                double diff = Math.abs(cell.x() - anchors.get(i));
-                if (diff < bestDiff) {
-                    bestDiff = diff;
-                    best = i;
+            buckets.get(nearestAnchor(anchors, cell.x())).add(cell);
+        }
+        // 阶段②：surplus run 若更贴近某空锚（距离 ≤ 列间隙阈值）→ 再分配
+        boolean moved = true;
+        while (moved) {
+            moved = false;
+            outer:
+            for (int b = 0; b < colCount; b++) {
+                List<CellRun> runs = buckets.get(b);
+                for (int i = 0; i < runs.size(); i++) {
+                    CellRun run = runs.get(i);
+                    if (Math.abs(run.x() - anchors.get(b)) <= COL_GAP_PT) {
+                        continue; // 本身在列跨度内，非错捕
+                    }
+                    int target = -1;
+                    double targetDiff = Double.MAX_VALUE;
+                    for (int e = 0; e < colCount; e++) {
+                        if (buckets.get(e).isEmpty()) {
+                            double diff = Math.abs(run.x() - anchors.get(e));
+                            if (diff < targetDiff) {
+                                targetDiff = diff;
+                                target = e;
+                            }
+                        }
+                    }
+                    if (target >= 0 && targetDiff < Math.abs(run.x() - anchors.get(b))) {
+                        runs.remove(i);
+                        buckets.get(target).add(run);
+                        buckets.get(target).sort(Comparator.comparingDouble(CellRun::x));
+                        moved = true;
+                        break outer;
+                    }
                 }
             }
-            buckets[best].add(cell);
         }
-        return buckets;
+        // 阶段③：主元选择 + 片段/独立单元格区分
+        Set<String> flags = new LinkedHashSet<>();
+        List<CellRun> extraCells = new ArrayList<>();
+        for (int b = 0; b < colCount; b++) {
+            List<CellRun> runs = buckets.get(b);
+            if (runs.isEmpty()) {
+                continue;
+            }
+            int primaryIdx = 0;
+            double primaryDiff = Math.abs(runs.get(0).x() - anchors.get(b));
+            for (int i = 1; i < runs.size(); i++) {
+                double diff = Math.abs(runs.get(i).x() - anchors.get(b));
+                if (diff < primaryDiff) {
+                    primaryDiff = diff;
+                    primaryIdx = i;
+                }
+            }
+            if (primaryDiff > COL_GAP_PT) {
+                flags.add(TableDegrade.COLUMN_MISALIGNMENT);
+            }
+            List<CellRun> primaryList = new ArrayList<>();
+            primaryList.add(runs.remove(primaryIdx));
+            for (CellRun run : runs) { // 剩余按 x 升序（入桶序）
+                double nextAnchor = b + 1 < colCount ? anchors.get(b + 1) : Double.MAX_VALUE;
+                double prevEnd = primaryList.get(primaryList.size() - 1).end();
+                boolean crossesSpan = run.x() >= nextAnchor - 4.0;
+                boolean wideGap = run.x() - prevEnd > LOW_CONFIDENCE_SPACING_PT;
+                if (crossesSpan || wideGap) {
+                    extraCells.add(run);
+                    flags.add(TableDegrade.EXTRA_CELL);
+                } else {
+                    primaryList.add(run); // 列内文本片段：保持拼接（正常单元格长文本形态）
+                }
+            }
+            buckets.set(b, primaryList);
+        }
+        return new ColumnAssignment(buckets, extraCells, flags);
+    }
+
+    private int nearestAnchor(List<Double> anchors, double x) {
+        int best = 0;
+        double bestDiff = Double.MAX_VALUE;
+        for (int i = 0; i < anchors.size(); i++) {
+            double diff = Math.abs(x - anchors.get(i));
+            if (diff < bestDiff) {
+                bestDiff = diff;
+                best = i;
+            }
+        }
+        return best;
     }
 
     private List<String> assignHeader(List<CellRun> headerRow, List<Double> anchors, int colCount) {
         List<String> header = new ArrayList<>();
-        List<CellRun>[] buckets = assignBuckets(headerRow, anchors, colCount);
+        List<List<CellRun>> buckets = assignColumns(headerRow, anchors, colCount).buckets();
         for (int i = 0; i < colCount; i++) {
-            header.add(buckets[i].isEmpty() ? ("col_" + i) : joinBucketText(buckets[i]));
+            // 真实手册暴露（R02-01）：空白/无映射表头桶 cleanCell→null，
+            // List.copyOf 不容 null；空表头列统一 col_i 占位（与文本侧异常组占位一致）
+            String text = buckets.get(i).isEmpty() ? null : joinBucketText(buckets.get(i));
+            header.add(text == null ? "col_" + i : text);
         }
         return header;
     }

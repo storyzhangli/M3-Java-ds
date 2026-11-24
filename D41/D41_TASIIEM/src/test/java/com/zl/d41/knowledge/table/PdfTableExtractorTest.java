@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -211,5 +212,97 @@ class PdfTableExtractorTest {
         assertEquals(List.of("HeadA", "HeadB", "HeadC", "HeadD"), tables.get(0).header());
         assertEquals(2, tables.get(0).rows().size());
         assertEquals("A1v", tables.get(0).rows().get(0).cells().get(0).value());
+    }
+
+    // ------------------------------------------------------------------
+    // R02-02：列分桶静默合并修复（异常场景矩阵）
+    // ------------------------------------------------------------------
+
+    private List<ExtractedTable> extractOf(byte[] pdf) throws Exception {
+        try (PDDocument document = org.apache.pdfbox.Loader.loadPDF(pdf)) {
+            return extractor.extract(document, List.of(new ExtractedPage(1, "t", false)));
+        }
+    }
+
+    /** R02 场景2：两个独立单元格落入同一列桶——不得静默拼接，surplus 原文以 EXTRA_COL 保留。 */
+    @Test
+    void independentCellsInSameBucketAreNotSilentlyJoined() throws Exception {
+        List<Cell> cells = new ArrayList<>(headerTable(80, new double[]{40, 140, 300}, List.of(
+                List.of("Code", "Value", "Note"))));
+        cells.add(new Cell(40, 96, 10f, "E-101"));
+        cells.add(new Cell(140, 96, 10f, "12.5 mm"));
+        cells.add(new Cell(300, 96, 10f, "ok"));
+        // 异常行：B 桶内 "V"(x=140) 与独立单元格 "W"(x=210，距 B 锚 70pt、距 C 锚 90pt、
+        // 与前一 run 间隙 ~63pt > 低置信列距 60pt) —— R01 会拼成 "VW" 静默放行
+        cells.add(new Cell(40, 112, 10f, "E-102"));
+        cells.add(new Cell(140, 112, 10f, "V"));
+        cells.add(new Cell(210, 112, 10f, "W"));
+        List<ExtractedTable> tables = extractOf(pdfWithPages(List.of(cells)));
+        assertEquals(1, tables.size());
+        ExtractedTable table = tables.get(0);
+        assertTrue(table.detectFlags().contains(TableDegrade.EXTRA_CELL),
+                "EXTRA_CELL flag expected, got " + table.detectFlags());
+        var anomalyRow = table.rows().get(1);
+        assertEquals("V", anomalyRow.cells().get(1).value()); // 未拼接
+        assertEquals("W", anomalyRow.cells().get(3).value()); // EXTRA_COL_1 原文保留
+        assertTrue(anomalyRow.cells().get(2).isMissing());    // Note 列缺失 null 不串列
+        assertTrue(anomalyRow.flags().contains(TableDegrade.EXTRA_CELL));
+    }
+
+    /** R02 场景3：单元格横向偏移过大——错位标记 + 原文保留，不猜归属。 */
+    @Test
+    void shiftedCellProducesMisalignmentFlag() throws Exception {
+        List<Cell> cells = new ArrayList<>(headerTable(80, new double[]{40, 140, 300}, List.of(
+                List.of("Code", "Value", "Note"))));
+        cells.add(new Cell(40, 96, 10f, "E-101"));
+        cells.add(new Cell(140, 96, 10f, "12.5 mm"));
+        cells.add(new Cell(300, 96, 10f, "ok"));
+        cells.add(new Cell(40, 112, 10f, "E-102"));
+        cells.add(new Cell(175, 112, 10f, "12.5 mm")); // 距 B 锚 35pt > 24pt 阈值
+        cells.add(new Cell(300, 112, 10f, "warn"));
+        List<ExtractedTable> tables = extractOf(pdfWithPages(List.of(cells)));
+        ExtractedTable table = tables.get(0);
+        assertTrue(table.detectFlags().contains(TableDegrade.COLUMN_MISALIGNMENT),
+                "COLUMN_MISALIGNMENT expected, got " + table.detectFlags());
+        assertEquals("12.5 mm", table.rows().get(1).cells().get(1).value()); // 原文仍在 B 列可读
+        assertTrue(table.rows().get(1).flags().contains(TableDegrade.COLUMN_MISALIGNMENT));
+    }
+
+    /** R02 场景4：行多出一个独立单元格（越过末列右缘大间隙）——异常信息保留不静默拼接。 */
+    @Test
+    void extraCellBeyondLastColumnKept() throws Exception {
+        List<Cell> cells = new ArrayList<>(headerTable(80, new double[]{40, 140, 300}, List.of(
+                List.of("Code", "Value", "Note"))));
+        cells.add(new Cell(40, 96, 10f, "E-101"));
+        cells.add(new Cell(140, 96, 10f, "12.5 mm"));
+        cells.add(new Cell(300, 96, 10f, "ok"));
+        cells.add(new Cell(40, 112, 10f, "E-102"));
+        cells.add(new Cell(140, 112, 10f, "400 V"));
+        cells.add(new Cell(300, 112, 10f, "note"));
+        cells.add(new Cell(398, 112, 10f, "X")); // 末列外独立单元格（距前段尾 ~76pt）
+        List<ExtractedTable> tables = extractOf(pdfWithPages(List.of(cells)));
+        var anomalyRow = tables.get(0).rows().get(1);
+        assertEquals("note", anomalyRow.cells().get(2).value());
+        assertEquals("X", anomalyRow.cells().get(3).value()); // EXTRA_COL_1 保留
+        assertTrue(anomalyRow.flags().contains(TableDegrade.EXTRA_CELL));
+    }
+
+    /** R02 场景7：列内正常长文本片段（间隙 24–60pt 且未越列跨度）仍拼接，不误判独立单元格。 */
+    @Test
+    void inColumnTextFragmentStillJoinedNotFlagged() throws Exception {
+        List<Cell> cells = new ArrayList<>(headerTable(80, new double[]{40, 140, 300}, List.of(
+                List.of("Code", "Value", "Note"))));
+        cells.add(new Cell(40, 96, 10f, "E-101"));
+        cells.add(new Cell(140, 96, 10f, "Over"));
+        cells.add(new Cell(200, 96, 10f, "pressure")); // 列内片段：gap≈38pt、未越 300 锚
+        cells.add(new Cell(300, 96, 10f, "ok"));
+        cells.add(new Cell(40, 112, 10f, "E-102"));
+        cells.add(new Cell(140, 112, 10f, "220 V"));
+        cells.add(new Cell(300, 112, 10f, "warn"));
+        List<ExtractedTable> tables = extractOf(pdfWithPages(List.of(cells)));
+        ExtractedTable table = tables.get(0);
+        assertFalse(table.detectFlags().contains(TableDegrade.EXTRA_CELL),
+                "fragment must not be flagged, got " + table.detectFlags());
+        assertEquals("Overpressure", table.rows().get(0).cells().get(1).value());
     }
 }

@@ -1,0 +1,2768 @@
+### page=3 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	1 简介	3	col_2
+ROW0	<null>	3	1.1 本手册的目的	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW1	<null>	3	1.2 其他资源	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	3	1.3 手册和软件版本	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW3	<null>	3	1.4 批准和认证	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW4	<null>	3	1.5 处置	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW5	2 安全性	4	<null>	line=9	flags=[MERGED_CELL]
+ROW6	<null>	4	2.1 安全符号	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW7	<null>	4	2.2 具备资质的人员	line=11	flags=[COLUMN_MISALIGNMENT]
+ROW8	<null>	4	2.3 安全事项	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW9	3 产品概述	6	<null>	line=13	flags=[MERGED_CELL]
+ROW10	<null>	6	3.1 预期用途	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW11	<null>	6	3.2 额定功率、重量和尺寸	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW12	<null>	7	3.3 机箱 E1h/E2h 的内部视图	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW13	<null>	8	3.4 机箱 E3h/E4h 的内部视图	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW14	<null>	9	3.5 控制架	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW15	<null>	10	3.6 本地控制面板 (LCP)	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW16	4 机械安装	12	<null>	line=20	flags=[MERGED_CELL]
+ROW17	<null>	12	4.1 提供的物品	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW18	<null>	12	4.2 所需工具	line=22	flags=[COLUMN_MISALIGNMENT]
+ROW19	<null>	12	4.3 存放	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW20	<null>	12	4.4 工作环境	line=24	flags=[COLUMN_MISALIGNMENT]
+ROW21	<null>	13	4.5 安装和冷却要求	line=25	flags=[COLUMN_MISALIGNMENT]
+ROW22	<null>	14	4.6 起吊设备	line=26	flags=[COLUMN_MISALIGNMENT]
+ROW23	<null>	14	4.7 E1h/E2h 机械安装	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW24	<null>	16	4.8 E3h/E4h 机械安装	line=28	flags=[COLUMN_MISALIGNMENT]
+ROW25	5 电气安装	20	<null>	line=29	flags=[MERGED_CELL]
+ROW26	<null>	20	5.1 安全说明	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW27	<null>	20	5.2 符合 EMC 规范的安装	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW28	<null>	23	5.3 接线示意图	line=32	flags=[COLUMN_MISALIGNMENT]
+ROW29	<null>	24	5.4 连接电机	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW30	<null>	26	5.5 连接交流主电源	line=34	flags=[COLUMN_MISALIGNMENT]
+ROW31	<null>	28	5.6 接地	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW32	<null>	30	5.7 端子尺寸	line=36	flags=[COLUMN_MISALIGNMENT]
+ROW33	<null>	40	5.8 控制线路	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW34	<null>	44	5.9 启动前检查清单	line=38	flags=[COLUMN_MISALIGNMENT]
+ROW35	MG38A141	1	Danfoss A/S © 01/2017 全权所有。	line=39	flags=[COLUMN_MISALIGNMENT]
+
+### page=4 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	目录	VLT® AutomationDrive FC 302	col_2	col_3	col_4
+ROW0	<null>	<null>	6 调试	45	<null>	line=2	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	<null>	45	6.1 安全说明	line=3	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	45	6.2 接通电源	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW3	<null>	<null>	<null>	45	6.3 LCP 菜单	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW4	<null>	<null>	<null>	46	6.4 设置变频器	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW5	<null>	<null>	<null>	49	6.5 系统启动前测试	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW6	<null>	<null>	<null>	50	6.6 系统启动	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW7	<null>	<null>	<null>	50	6.7 参数设置	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW8	<null>	<null>	7 接线配置示例	52	<null>	line=10	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	<null>	<null>	<null>	52	7.1 开环速度控制的接线	line=11	flags=[COLUMN_MISALIGNMENT]
+ROW10	<null>	<null>	<null>	53	7.2 启动/停止的接线	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW11	<null>	<null>	<null>	54	7.3 外部报警复位的接线	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW12	<null>	<null>	<null>	55	7.4 电机热敏电阻的接线	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW13	<null>	<null>	<null>	55	7.5 再生的接线	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW14	<null>	<null>	8 维护、诊断和故障排除	56	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW15	<null>	<null>	<null>	56	8.1 维护和保养	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW16	<null>	<null>	<null>	56	8.2 散热片罩板	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW17	<null>	<null>	<null>	57	8.3 状态信息	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW18	<null>	<null>	<null>	59	8.4 警告和报警类型	line=20	flags=[COLUMN_MISALIGNMENT]
+ROW19	<null>	<null>	<null>	59	8.5 警告和报警列表	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW20	<null>	<null>	<null>	67	8.6 故障诊断	line=22	flags=[COLUMN_MISALIGNMENT]
+ROW21	<null>	<null>	9 规格	69	<null>	line=23	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW22	<null>	<null>	<null>	69	9.1 电气数据	line=24	flags=[COLUMN_MISALIGNMENT]
+ROW23	<null>	<null>	<null>	73	9.2 主电源	line=25	flags=[COLUMN_MISALIGNMENT]
+ROW24	<null>	<null>	<null>	73	9.3 电机输出和电机数据	line=26	flags=[COLUMN_MISALIGNMENT]
+ROW25	<null>	<null>	<null>	73	9.4 环境条件	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW26	<null>	<null>	<null>	74	9.5 电缆规格	line=28	flags=[COLUMN_MISALIGNMENT]
+ROW27	<null>	<null>	<null>	74	9.6 控制输入/输出和控制数据	line=29	flags=[COLUMN_MISALIGNMENT]
+ROW28	<null>	<null>	<null>	77	9.7 熔断器	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW29	<null>	<null>	<null>	78	9.8 机箱尺寸	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW30	<null>	<null>	<null>	94	9.9 机箱气流	line=32	flags=[COLUMN_MISALIGNMENT]
+ROW31	<null>	<null>	<null>	95	9.10 紧固件转矩额定值	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW32	<null>	<null>	10 附录	96	<null>	line=34	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW33	<null>	<null>	<null>	96	10.1 缩略语与约定	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW34	<null>	<null>	<null>	97	10.2 国际/北美默认参数设置	line=36	flags=[COLUMN_MISALIGNMENT]
+ROW35	<null>	<null>	<null>	97	10.3 参数菜单结构	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW36	<null>	<null>	索引	103	<null>	line=38	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW37	2	Danfoss A/S © 01/2017 全权所有。	<null>	MG38A141	<null>	line=39	flags=[MERGED_CELL]
+
+### page=5 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	简介	操作指南	col_2	col_3
+ROW0	1简介	<null>	<null>	11	line=2	flags=[COLUMN_MISALIGNMENT]
+ROW1	1.1 本手册的目的	<null>	1.4 批准和认证	<null>	line=3	flags=[COLUMN_MISALIGNMENT]
+
+### page=5 tableIndex=1 status=ACTIVE flags=[]
+HEADER	近。	表 1.2 批准和认证
+ROW0	VLT® 为注册商标。	还通过更多批准和认证。请与当地的 Danfoss 办事处或	line=10	flags=[]
+
+### page=5 tableIndex=2 status=ACTIVE flags=[]
+HEADER	1.2 其他资源	中，只有 525–600 V 通过 UL 认证。
+ROW0	此外还可以利用其他资源来了解高级 E1h–E4h 变频器的	本变频器符合 UL 61800-5-1 热存储器保持要求。有关详	line=13	flags=[]
+ROW1	功能和编程。	细信息，请参阅产品的专用设计指南中的电机热保护部	line=14	flags=[]
+
+### page=5 tableIndex=3 status=ACTIVE flags=[]
+HEADER	设计指南 详细介绍了用于设计自动化应用的电	也将昀大输出频率限制在 590 Hz，但这些版本无法刷
+ROW0	机控制系统的能力和功能。	新，即，无法降级或升级。	line=24	flags=[]
+
+### page=5 tableIndex=4 status=ACTIVE flags=[]
+HEADER	•Safe Torque Off 操作指南 提供了 Safe	col_1
+ROW0	Torque Off 功能的详细规格、要求和安装说	1.4.1符合 ADN 标准	line=26	flags=[]
+
+### page=5 tableIndex=5 status=ACTIVE flags=[]
+HEADER	还可从 Danfoss 获得补充资料和手册。请参阅	有关符合国际内陆水道运输危险货物有关的欧洲协议
+ROW0	drives.danfoss.com/knowledge-center/technical-	(ADN) 的信息，请参考设计指南中的 ADN 合规安装。	line=29	flags=[]
+ROW1	documentation/ 中的列表。	1.5 处置	line=30	flags=[]
+
+### page=5 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	我们将对本手册定期进行审核和更新。欢迎所有改进建	处理。	col_2	col_3
+ROW0	议。表 1.1列出了手册版本和相应的软件版本。	必须按照地方和现行法规单独回收。	<null>	<null>	line=34	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	手册版本	<null>	备注	软件版本	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW2	MG38A1xx	<null>	初始版本	7.51	line=36	flags=[COLUMN_MISALIGNMENT]
+
+### page=6 tableIndex=0 status=ACTIVE flags=[]
+HEADER	22	col_1
+ROW0	2.1 安全符号	警告	line=4	flags=[]
+ROW1	本指南使用了下述符号：	意外启动	line=5	flags=[]
+
+### page=6 tableIndex=1 status=ACTIVE flags=[]
+HEADER	警告	会导致死亡、严重人身伤害或财产损失。可利用外部开
+ROW0	表明某种潜在危险情况，将可能导致死亡或严重伤害。	关、现场总线命令、从 LCP 或 LOP 提供输入参考值信	line=9	flags=[]
+
+### page=6 tableIndex=2 status=ACTIVE flags=[]
+HEADER	注意	•断开变频器与主电源的连接。
+ROW0	表示重要信息，包括可能导致设备或财产损坏的情况。	•将变频器连接到交流主电源、直流电源或负载共	line=18	flags=[]
+
+### page=6 tableIndex=3 status=ACTIVE flags=[]
+HEADER	运输、存放、安装、操作和维护。仅允许具备资质的人员	警告
+ROW0	安装或操作本设备。	放电时间	line=23	flags=[]
+
+### page=6 tableIndex=4 status=ACTIVE flags=[]
+HEADER	具备资质的人员是指经过培训且经授权按照相关法律和法	器仍带电。即使警告指示灯熄灭，也可能存在高压。在切
+ROW0	规安装、调试和维护设备、系统和电路的人员。此外，该	断电源后，如果没有等待 40 分钟过后就执行维护或修理	line=26	flags=[]
+ROW1	人员还必须熟悉本文档中所述的说明和安全措施。	作业，则可能导致死亡或严重伤害。	line=27	flags=[]
+ROW2	2.3 安全事项	•停止电机。	line=28	flags=[]
+
+### page=6 tableIndex=5 status=ACTIVE flags=[]
+HEADER	•	col_1
+ROW0	池）、UPS 以及与其它变频器的直流回路连接。	警告	line=30	flags=[]
+ROW1	•断开或锁定电机。	高电压	line=31	flags=[]
+ROW2	•等待 40 分钟以便电容器完全放电。	变频器与交流主电源输入线路、直流电源、负载共享或永	line=32	flags=[]
+
+### page=6 tableIndex=6 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	•按照本指南中的过程执行。	col_3
+ROW0	4	Danfoss A/S © 01/2017 全权所有。	<null>	MG38A141	line=50	flags=[MERGED_CELL]
+
+### page=8 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	机箱规格	E1h	E2h	E3h	E4h
+ROW0	380–500 V 下的额定功率 [kW (hp)]	315–400	450–500	315–400	450–500	line=18	flags=[]
+ROW1	<null>	(450–550)	(600–650)	(450–550)	(600–650)	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW2	525–690 V 下的额定功率 [kW (hp)]	355–560	630–710	355–560	630–710	line=20	flags=[]
+ROW3	<null>	(400–600)	(650–950)	(400–600)	(650–950)	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW4	机箱防护等级	IP21/类型 1	IP21/类型 1	IP20/	IP 20/	line=22	flags=[]
+ROW5	<null>	IP54/类型 12IP54/类型 12	<null>	机架	机架	line=23	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=8 tableIndex=1 status=ACTIVE flags=[]
+HEADER	高度 [mm (in)]	2043 (80.4)	2043 (80.4)	1578 (62.1)	1578 (62.1)
+ROW0	宽度 [mm(in)]	602 (23.7)	698 (27.5)	506 (19.9)	604 (23.89)	line=26	flags=[]
+ROW1	深度 [mm(in)]	513 (20.2)	513 (20.2)	482 (19.0)	482 (19.0)	line=27	flags=[]
+ROW2	昀大重量 [kg (lb)]	295 (650)	318 (700)	272 (600)	295 (650)	line=28	flags=[]
+
+### page=8 tableIndex=2 status=ACTIVE flags=[]
+HEADER	高度 [mm (in)]	768 (30.2)	768 (30.2)	746 (29.4)	746 (29.4)
+ROW0	宽度 [mm(in)]	2191 (86.3)	2191 (86.3)	1759 (69.3)	1759 (69.3)	line=31	flags=[]
+ROW1	深度 [mm(in)]	870 (34.3)	870 (34.3)	794 (31.3)	794 (31.3)	line=32	flags=[]
+ROW2	昀大重量 [kg (lb)]	–	–	–	–	line=33	flags=[]
+
+### page=9 tableIndex=0 status=ACTIVE flags=[]
+HEADER	1控制架（如图 3.3 所示）	7风扇功率卡
+ROW0	2本地控制面板 (LCP) 底座	8空间加热器（选配）	line=19	flags=[]
+ROW1	3射频干扰滤波器（选配）	9主电源隔离器（选配）	line=20	flags=[]
+ROW2	4主电源熔断器（UL 标准要求，但其他情况下为选配）	10制动/再生端子（选配）	line=21	flags=[]
+ROW3	5主电源端子	11电机端子	line=22	flags=[]
+ROW4	6射频干扰屏蔽端子	12接地端子	line=23	flags=[]
+
+### page=10 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	33	2	col_2
+ROW0	<null>	3	10	line=9	flags=[COLUMN_MISALIGNMENT]
+
+### page=10 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	6	13	col_2
+ROW0	7	<null>	130BF211.11	line=18	flags=[COLUMN_MISALIGNMENT]
+
+### page=10 tableIndex=2 status=ACTIVE flags=[]
+HEADER	2控制架（如图 3.3 所示）	9风扇（用于冷却机箱前部）
+ROW0	3本地控制面板 (LCP) 底座	10风扇功率卡	line=23	flags=[]
+ROW1	4射频干扰滤波器（选配）	11空间加热器（选配）	line=24	flags=[]
+ROW2	5主电源熔断器（选配）	12制动端子（选配）	line=25	flags=[]
+ROW3	6主电源端子	13电机端子	line=26	flags=[]
+ROW4	7接地端子	––	line=27	flags=[]
+
+### page=11 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	2	col_1	10
+ROW0	<null>	61 68 69 39 42 50 53 54 55	11	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=11 tableIndex=1 status=ACTIVE flags=[]
+HEADER	1LCP 底座（LCP 未示出）	8控制架
+ROW0	2总线端子开关	9USB 端口	line=22	flags=[]
+
+### page=11 tableIndex=2 status=ACTIVE flags=[]
+HEADER	4数字输入/输出端子（如表 5.2 所示）	11模拟输入/输出端子（如表 5.3 所示）
+ROW0	5电缆/EMC 夹	12制动电阻器端子，104–106	line=27	flags=[]
+
+### page=11 tableIndex=3 status=ACTIVE flags=[]
+HEADER	6继电器 1 和继电器 2（如图 5.19 所示）	13功率卡（位于控制架下）
+ROW0	7控制卡（位于 LCP 和控制端子下）	––	line=30	flags=[]
+
+### page=12 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Status	col_1	1(1)
+ROW0	0 RPMA1.1	0.00 A0.00 kW	A1.3	line=5	flags=[]
+ROW1	33	0.0 Hz	A2	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	0.0 %	A3	line=7	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	B1	col_1	QuickMainAlarm	col_3	B4
+ROW0	<null>	Status	<null>	Info	<null>	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=2 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	MenuMenuLog	col_1
+ROW0	el	B	line=12	flags=[]
+ROW1	nc	ac	line=13	flags=[]
+ROW2	CaB2	k	B3	line=14	flags=[EXTRA_CELL]
+
+### page=12 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	D2	col_1	C4
+ROW0	<null>	Alarm	C5	line=22	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	on	on	col_3	col_4
+ROW0	E2	<null>	<null>	E4	130BF155.10	line=27	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	A. 显示区	编号按键功能
+ROW0	每个显示读数都有一个与之关联的参数。请参阅表 3.2。	B4报警记录显示出当前警告和昀近 10 个报警的列	line=30	flags=[]
+ROW1	LCP 上显示的信息可以根据具体应用进行定制。请参考	表。	line=31	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	编号	参数编号	默认设置	col_3
+ROW0	A1.1	0-20	速度 [RPM]	C. 导航键	line=35	flags=[]
+ROW1	A1.2	0-21	电动机电流 [A]	导航键用于设置功能和移动屏幕光标。在本地（手动）操	line=36	flags=[]
+ROW2	A1.3	0-22	功率 [kW]	作模式下，还可以使用导航键来执行速度控制。显示屏的	line=37	flags=[]
+ROW3	A2	0-23	频率 [Hz]	对比度可通过按 [Status]（状态）和 [▲]/[▼] 键进行	line=38	flags=[]
+ROW4	A3	0-24	参考值 [%]	调节。	line=39	flags=[]
+ROW5	表 3.2 LCP 显示区	<null>	<null>	编号按键功能	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=7 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	C1	后退	用于返回菜单结构的上一步或上一列表。	col_3
+ROW0	C2取消取消昀近的改动或命令（只要显示模式尚未	<null>	<null>	B. 菜单键	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	发生变化）。	菜单键用于访问设置参数的菜单、切换正常操作期间的状	line=43	flags=[COLUMN_MISALIGNMENT]
+ROW2	C3信息显示所显示出的功能的定义。	<null>	<null>	态显示模式以及查看故障日志数据。	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	C4	OK访问参数组或启用某个选项。	<null>	<null>	line=45	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	<null>	<null>	<null>	编号按键功能	line=46	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=8 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	C5	▲ ▼ ◄在菜单各项之间移动。
+ROW0	B1	状态显示运行信息。	<null>	<null>	line=48	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=9 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	B2	快捷菜单可以访问用于初始设置指导的参数。还	col_2	col_3
+ROW0	<null>	<null>	提供详细的应用步骤。请参考	表 3.4 LCP 导航键	line=51	flags=[COLUMN_MISALIGNMENT]
+
+### page=13 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, EXTRA_CELL, LOW_CONFIDENCE]
+HEADER	编号	指示	指示灯功能
+ROW0	D1	亮	绿色当变频器通过主电源电压或 24	line=6	flags=[]
+ROW1	<null>	<null>	V 外接电源加电时激活。	33	line=7	flags=[COLUMN_MISALIGNMENT, EXTRA_CELL, COLUMN_MISALIGNMENT]
+
+### page=14 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	•	col_1
+ROW0	•各种尺寸的十字形和平头螺丝刀。	•确保提供的物品和铭牌上的信息与订单确认表一	line=7	flags=[]
+ROW1	<null>	致。44	line=8	flags=[COLUMN_MISALIGNMENT]
+
+### page=14 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	VLTR	AutomationDrive	col_2
+ROW0	<null>	www.danfoss.com	•I 形梁和吊钩用于吊起变频器的重量。请参考	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW1	T/C: FC-302N710T7E21H2XGC7XKSXXXXA0BXCXXXXD01	<null>	130BF698.12	line=17	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW2	P/N: 131N2885 S/N: 123456H123	<null>	章 3.2 额定功率、重量和尺寸。	line=18	flags=[MERGED_CELL]
+
+### page=14 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, EXTRA_CELL, LOW_CONFIDENCE]
+HEADER	4	IN: 3x525-600V 50/60Hz 743/711 A (UL)
+ROW0	5	OUT: MOTOR 3x0-Vin 0-500Hz 763/730 A	line=23	flags=[]
+ROW1	<null>	800 kW / 950 HP, Normal Overload	4.3 存放	line=24	flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+
+### page=14 tableIndex=3 status=ACTIVE flags=[]
+HEADER	Tamb. 55 C/131 F at Full Output Current Derating	装密封状态。请参阅章 9.4 环境条件 了解建议的环境温
+ROW0	SCCR 100 kA at UL Voltage range 525-600 V	度。	line=31	flags=[]
+
+### page=14 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	Denmark	（电容器充电）。
+ROW0	CSeAe mUaTnuIaOl foNr s p-e AciaTl cToEndNitioTnI O/ prNefu:ses	<null>	4.4 工作环境	line=38	flags=[COLUMN_MISALIGNMENT]
+
+### page=14 tableIndex=5 status=ACTIVE flags=[]
+HEADER	WARNING - AVERTISSEMENT:	在具有空气传播的液体、颗粒或腐蚀性气体的环境中，确
+ROW0	Stored charge, wait 40 min.	保设备的 IP/类型等级符合安装环境。有关环境条件的规	line=42	flags=[]
+
+### page=14 tableIndex=6 status=ACTIVE flags=[]
+HEADER	1类型代码	注意
+ROW0	2部件号和序列号	冷凝	line=46	flags=[]
+ROW1	3额定功率	水分会在电子元件上凝结，造成短路。避免安装在易受霜	line=47	flags=[]
+ROW2	4输入电压、频率和电流（低/高电压时）	冻影响的地方。当变频器温度低于周围温度时，安装可选	line=48	flags=[]
+ROW3	5输出电压、频率和电流（低/高电压时）	的空间加热器。只要功率耗散保持电路不受潮，在待机模	line=49	flags=[]
+ROW4	6放电时间	式下工作可降低冷凝风险。	line=50	flags=[]
+ROW5	图 4.1 E2h 机箱的产品铭牌（示例）	注意	line=51	flags=[]
+
+### page=14 tableIndex=7 status=ACTIVE flags=[]
+HEADER	注意	•请勿在环境温度超过 55 °C (131 °F) 的条件下
+ROW0	从变频器上拆下铭牌将导致保修无效。	运行。	line=55	flags=[]
+
+### page=14 tableIndex=8 status=ACTIVE flags=[]
+HEADER	col_0	•变频器可在温度低达 -10 °C (14 °F) 时运行。
+ROW0	4.2 所需工具	但是，只有在 0 °C (32 °F) 或更高温度下才能	line=57	flags=[]
+
+### page=14 tableIndex=9 status=ACTIVE flags=[]
+HEADER	•通过吊车或其他起吊辅助设备将设备安放到位。	col_1	col_2
+ROW0	12	Danfoss A/S © 01/2017 全权所有。	MG38A141	line=65	flags=[]
+
+### page=15 tableIndex=0 status=ACTIVE flags=[]
+HEADER	机械安装	操作指南
+ROW0	4.4.1气体	•正弦波输出滤波器（未使用屏蔽电机电缆时）。	line=2	flags=[]
+ROW1	腐蚀性气体，如硫化氢、氯气或氨气，可损害电气和机械	注意	line=3	flags=[]
+ROW2	部件。本设备使用带有保形涂层的电路板来降低腐蚀性气	电机热敏电阻传感器监测	line=4	flags=[]
+
+### page=15 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	层灰尘会降低组件的冷却能力，组件将会变得更热。环境	安装要求	col_2
+ROW0	温度更高，会缩短电子组件的使用寿命。	•请将设备放在尽可能靠近电机的位置。请参阅	<null>	line=16	flags=[MERGED_CELL]
+ROW1	保持散热片和风扇上未堆积灰尘。有关更多保养和维护信	<null>	章 9.5 电缆规格 了解昀大电机电缆长度。	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW2	息，请参考章 8 维护、诊断和故障排除。	•通过将设备安装在稳定表面上来确保设备稳定	<null>	line=18	flags=[MERGED_CELL]
+ROW3	冷却风扇	<null>	性。	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW4	风扇提供气流来冷却变频器。当风扇暴露于满是灰尘的环	•可通过以下方式安装机箱 E3h 和 E4h：	<null>	line=20	flags=[MERGED_CELL]
+
+### page=15 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	警告	col_1	col_2	1)
+ROW0	爆炸性环境	<null>	-侧放水平安装在控制柜的背板上。	<null>	line=32	flags=[COLUMN_MISALIGNMENT]
+ROW1	不要在可能爆炸的环境中安装变频器。将设备安装在此区	•确保安装位置具有足以支撑设备重量的强度。	<null>	<null>	line=33	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=15 tableIndex=3 status=ACTIVE flags=[]
+HEADER	•d 类表示出现火花时，该火花被控制在一个受保	col_1
+ROW0	护的区域。	冷却要求	line=43	flags=[]
+ROW1	•e 类禁止出现任何火花。	•确保在顶部和底部留出空气冷却间隙。间隙要	line=44	flags=[]
+
+### page=15 tableIndex=4 status=ACTIVE flags=[]
+HEADER	无需审核。需要进行特殊接线和控制。	•提供足够的气流流速。请参阅 表 4.1。
+ROW0	保护类别为 e 的电机	•当温度达到 45 °C (113 °F) 和 50 °C	line=48	flags=[]
+ROW1	当与 VLT® PTC 热敏电阻卡 MCB 112 这类 ATEX 认证的	(122 °F) 之间，并且海拔超过 1000 米（3300	line=49	flags=[]
+ROW2	PTC 监测设备组合使用时，系统并不需要获得某个一致认	英尺）时，应考虑降容。有关详细信息，请参阅	line=50	flags=[]
+ROW3	可机构的单独认可。	设计指南。	line=51	flags=[]
+ROW4	保护类别为 d/e 的电机	变频器采用背部散热风道冷却方式来排出散热片冷却空	line=52	flags=[]
+ROW5	电动机本身具有 e 点火防护等级，而电动机接线和连接	气。散热片冷却空气带走的热量约占变频器背部散热风道	line=53	flags=[]
+ROW6	环境符合 d 类标准。要减弱高峰电压，请在变频器输出	散热量的 90%。如需让面板或房间的背部散热风道空气改	line=54	flags=[]
+ROW7	处使用正弦波滤波器。	向，请执行以下操作：	line=55	flags=[]
+ROW8	在可能发生爆炸的环境中使用变频器时，使用以下组件：	•风道冷却	line=56	flags=[]
+
+### page=15 tableIndex=5 status=ACTIVE flags=[]
+HEADER	•点火保护类别为 d 或 e 的电机。	时，可以借助背部风道冷却套件将散热片冷却空
+ROW0	•用于监测电机温度的 PTC 温度传感器。	气排出到控制柜之外。通过使用此套件，可以减	line=59	flags=[]
+
+### page=15 tableIndex=6 status=ACTIVE flags=[]
+HEADER	•短电动机电缆。	col_1	col_2
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	13	line=61	flags=[]
+
+### page=16 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	机架	门装风扇/顶装风扇	散热片风扇
+ROW0	<null>	[m3/hr (cfm)]	[m3/hr (cfm)]	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW1	E1h	510 (300)	994 (585)	line=15	flags=[]
+ROW2	E2h	552 (325)	1053–1206 (620–710)	line=16	flags=[]
+ROW3	E3h	595 (350)	994 (585)	line=17	flags=[]
+ROW4	E4h	629 (370)	1053–1206 (620–710)	line=18	flags=[]
+ROW5	表 4.1 气流流速	<null>	图 4.2 建议的起吊方法	line=19	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+
+### page=16 tableIndex=1 status=ACTIVE flags=[]
+HEADER	警告	底座尺寸为 200 mm (7.9 in)，前部有一个开口，以便让
+ROW0	存在伤亡危险	必需的气流通过来冷却变频器的电源组件。	line=26	flags=[]
+
+### page=16 tableIndex=2 status=ACTIVE flags=[]
+HEADER	•确保起重设备的工作状况正常。	供冷却空气，保持 IP21/类型 1 或 IP54/类型 12 防护
+ROW0	•有关不同机箱类型的重量，请参阅章 3.2 额定	等级。	line=31	flags=[]
+
+### page=16 tableIndex=3 status=ACTIVE flags=[]
+HEADER	•起吊棍的昀大直径： 20 mm (0.8 in)。	4.7.1将底座固定到地面
+ROW0	•变频器顶端与提升索之间应成 60° 或更大角	安装机箱之前，必须先使用 6 个螺栓将底座固定到地	line=35	flags=[]
+ROW1	度。	面。	line=36	flags=[]
+
+### page=17 tableIndex=0 status=ACTIVE flags=[]
+HEADER	吊起变频器并将它置于底座上。底座后部有 21.	col_1	col_2
+ROW0	个螺栓，将它滑到机箱后部的 2 个带槽孔中。	1机箱	4机箱中的带槽孔	line=10	flags=[]
+ROW1	通过上下调整螺栓将变频器安置到位。使用 2	2底座	5底座后部的螺栓	line=11	flags=[]
+
+### page=18 tableIndex=0 status=ACTIVE flags=[]
+HEADER	机械安装	VLT® AutomationDrive FC 302
+ROW0	4.7.3制作电缆开口	4.8 E3h/E4h 机械安装	line=2	flags=[]
+ROW1	密封板是外缘带有螺柱的金属薄片。密封板提供电缆入口	E3h 和 E4h 机箱规格适用于安装在墙上或机箱内的安装	line=3	flags=[]
+ROW2	和电缆端接点，必须安装以保持 IP21/IP54（类型 1/类	面板上。塑料密封板安装在机箱上。它适用于在 IP20/保	line=4	flags=[]
+ROW3	型 12）防护等级。该板置于变频器机箱和底座之间。根	护机架式设备中防止意外触到端子。	line=5	flags=[]
+
+### page=18 tableIndex=1 status=ACTIVE flags=[MERGED_CELL]
+HEADER	1.	使用金属板打孔器在密封板中制作电缆插入孔。	col_2
+ROW0	2.使用以下方法之一插入密封板：	<null>	4.8.1将 E3h/E4h 连接到安装板或墙壁	line=12	flags=[MERGED_CELL]
+
+### page=18 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	2a	要将密封板穿过底座，将密封板滑过底	col_2	col_3	col_4
+ROW0	<null>	座前部的插槽 (4)。	1.根据机箱尺寸钻取安装孔。请参考章 9.8 机箱	<null>	<null>	line=14	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	<null>	尺寸。	130BF209.10	line=15	flags=[COLUMN_MISALIGNMENT]
+
+### page=18 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	要将密封板穿过机箱，倾斜密封板直到2b	col_1
+ROW0	它可在带槽支架下滑动。	2.将变频器机箱顶部固定到安装板或墙壁。	line=17	flags=[]
+ROW1	3.将密封板上的螺柱与底座中的孔对齐并使用 10	3.将变频器机箱底部固定到安装板或墙壁。	line=18	flags=[COLUMN_MISALIGNMENT]
+
+### page=18 tableIndex=4 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	3.	根据电缆的测量值和位置，通过切割必要的方块
+ROW0	4	<null>	在塑料密封板中制作开口。	line=35	flags=[COLUMN_MISALIGNMENT]
+
+### page=18 tableIndex=5 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	6.	确保端子盖的侧面板位于外部导轨 (5) 上。	col_2	col_3
+ROW0	7.推动端子盖，直到它靠到带槽变频器支架上。	<null>	1电缆插入孔	4底座底部的插槽	line=40	flags=[MERGED_CELL]
+ROW1	8.向上倾斜端子盖前部，直到变频器底部的紧固孔	<null>	2M5 螺母	5前盖/格栅	line=41	flags=[MERGED_CELL]
+ROW2	<null>	与端子中的钥匙形开口 (9) 对齐。使用 2 个	3密封板	––	line=42	flags=[COLUMN_MISALIGNMENT]
+
+### page=20 tableIndex=0 status=ACTIVE flags=[]
+HEADER	1负载共享/再生端子（选配）	6带槽变频器支架
+ROW0	2底部面板	7塑料密封板（已安装）	line=13	flags=[]
+ROW1	3端子盖	8紧固点	line=14	flags=[]
+ROW2	4用于控制线路的索孔出入孔	9钥匙形开口	line=15	flags=[]
+ROW3	5导轨	––	line=16	flags=[]
+
+### page=22 tableIndex=0 status=ACTIVE flags=[]
+HEADER	5.1 安全说明	5.2 符合 EMC 规范的安装
+ROW0	请参阅 章 2 安全性 了解一般安全说明。	要使安装符合 EMC 规范，请遵循以下各章中的操作说	line=4	flags=[]
+
+### page=22 tableIndex=1 status=ACTIVE flags=[]
+HEADER	警告	•章 5.3 接线示意图.
+ROW0	感生电压	•章 5.4 连接电机.	line=7	flags=[]
+
+### page=22 tableIndex=2 status=ACTIVE flags=[]
+HEADER	•章 5.8 控制线路.	55加锁的状态，也会如此。如果未单独布置电机输出电缆或
+ROW0	注意	使用屏蔽电缆，则可能导致死亡或严重伤害。	line=12	flags=[]
+ROW1	扭结的屏蔽端部（辫状）	•单独布置输出电机电缆，或	line=13	flags=[]
+ROW2	屏蔽丝网端部扭结会增加屏蔽丝网在高频下的阻抗，从而	•使用屏蔽电缆。	line=14	flags=[]
+ROW3	降低屏蔽效果并增大泄漏电流。为避免屏蔽丝网端部扭	•同时锁定所有变频器。	line=15	flags=[]
+
+### page=22 tableIndex=3 status=ACTIVE flags=[]
+HEADER	col_0	•对电机输出电缆使用屏蔽电缆。或者在金属线管
+ROW0	过电流保护	内使用非屏蔽电机电缆。	line=31	flags=[]
+
+### page=22 tableIndex=4 status=ACTIVE flags=[]
+HEADER	•对于具有多个电机的应用，需要在变频器和电机	col_1
+ROW0	之间使用诸如短路保护或电机热保护等额外的保	注意	line=33	flags=[]
+ROW1	护设备。	屏蔽电缆	line=34	flags=[]
+ROW2	•需要使用熔断器来提供短路和过电流保护。如果	如果未使用屏蔽电缆或金属线管，则设备和系统不符合有	line=35	flags=[]
+ROW3	出厂时没有附带熔断器，则须由安装商提供。请	关射频 (RF) 辐射水平的法规限制。	line=36	flags=[]
+
+### page=22 tableIndex=5 status=ACTIVE flags=[]
+HEADER	•所有接线都必须符合国家和地方法规中关于横截	col_1
+ROW0	面积和环境温度的要求。	•不要将传送敏感信号电平的电缆与电动机电缆和	line=42	flags=[]
+
+### page=22 tableIndex=6 status=ACTIVE flags=[]
+HEADER	•建议的电源连接线： 至少 75 °C (167 °F) 等	col_1
+ROW0	级的铜线。	•对于通讯和命令/控制线路，请遵循特定通讯协议	line=45	flags=[]
+
+### page=22 tableIndex=7 status=ACTIVE flags=[]
+HEADER	小心	•确保所有控制端子连接都是 PELV。
+ROW0	财产损害！	注意	line=52	flags=[]
+
+### page=23 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	和地方的 PELV 规定。	col_1	col_2	55
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	21	<null>	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=24 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	4	PE	col_3
+ROW0	L1	<null>	<null>	17	line=20	flags=[COLUMN_MISALIGNMENT]
+
+### page=24 tableIndex=1 status=ACTIVE flags=[]
+HEADER	1PLC	10主电源电缆（非屏蔽）
+ROW0	2昀小横截面积为 16 mm2 的均衡电缆	11输出接触器等	line=28	flags=[]
+ROW1	3控制电缆	12已剥开的电缆绝缘层	line=29	flags=[]
+
+### page=24 tableIndex=2 status=ACTIVE flags=[]
+HEADER	5主电源电压	14制动电阻器
+ROW0	6裸（未涂漆）表面	15金属箱	line=33	flags=[]
+ROW1	7星形垫圈	16电机接头	line=34	flags=[]
+ROW2	8制动电缆（屏蔽）	17电机	line=35	flags=[]
+ROW3	9电机电缆（屏蔽）	18EMC 电缆夹	line=36	flags=[]
+
+### page=25 tableIndex=0 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	91 (L1)	(U) 96
+ROW0	92 (L2)3-phase	(V) 97	===	line=7	flags=[EXTRA_CELL]
+
+### page=25 tableIndex=1 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, EXTRA_CELL]
+HEADER	input	93 (L3)	(W) 98	col_3	col_4
+ROW0	<null>	95PE	(PE) 99	<null>	<null>	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	<null>	ON	<null>	Motor	line=11	flags=[EXTRA_CELL, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	Load share	88 (-)	<null>	<null>	Switch mode	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW3	<null>	<null>	Regen +12	55	power supply	line=13	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW4	(optional)	89 (+)	<null>	<null>	<null>	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW5	<null>	<null>	(R+) 82Brake	<null>	10 V DC24 V DC	line=15	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	<null>	<null>	<null>	resistorRegen (optional)	15 mA200 mA	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW7	<null>	50 (+10 V OUT)	(R-) 81(optional)	<null>	+-+-	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=25 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	-10 V DC - +10 V DC	53 (A IN)	col_2	col_3
+ROW0	<null>	<null>	ON=0-20 mA	Relay1	line=22	flags=[COLUMN_MISALIGNMENT]
+ROW1	0/4-20 mA	A54 U-I (S202)	<null>	03	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	OFF=0-10 V	240 V AC, 2A	line=24	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW3	-10 V DC - +10 V DC	54 (A IN)	<null>	<null>	line=25	flags=[COLUMN_MISALIGNMENT]
+
+### page=25 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	0/4-20 mA	col_1	col_2	400 V AC, 2A
+ROW0	<null>	55 (COM A IN)	01	<null>	line=28	flags=[COLUMN_MISALIGNMENT]
+
+### page=25 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	12 (+24 V OUT)	06	col_2	col_3
+ROW0	<null>	<null>	ONON	240 V AC, 2A	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW1	13 (+24 V OUT)	05	P 5-00	<null>	line=32	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	1212	400 V AC, 2A	line=33	flags=[COLUMN_MISALIGNMENT]
+
+### page=25 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	27(D IN/OUT)	col_1	0 V (PNP)	OFF-ON	col_4
+ROW0	<null>	24V	<null>	<null>	ON=Terminated	line=45	flags=[COLUMN_MISALIGNMENT]
+
+### page=25 tableIndex=6 status=ACTIVE flags=[EXTRA_CELL, MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	RS485	col_1	0V
+ROW0	<null>	(P RS485) 68	<null>	RS485	line=55	flags=[EXTRA_CELL, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	interface	<null>	24 V (NPN)	line=56	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	(N RS485) 69	0 V (PNP)32 (D IN)	line=57	flags=[COLUMN_MISALIGNMENT]
+
+### page=25 tableIndex=7 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	24 V (NPN)	(COM RS485) 61
+ROW0	33 (D IN)	0 V (PNP)	<null>	line=60	flags=[COLUMN_MISALIGNMENT]
+
+### page=26 tableIndex=0 status=ACTIVE flags=[]
+HEADER	col_0	•IP21/IP54（类型 1/类型 12）设备底部提供了电机接线孔或罩板。
+ROW0	55	•请勿在变频器和电机之间连接启动或变极设备（如 Dahlander 电机或滑环式异步电机）。	line=10	flags=[]
+
+### page=26 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	5.	按照 章 9.10.1 紧固件转矩额定值 中提供的信息拧紧端子。	col_2	col_3
+ROW0	24	<null>	Danfoss A/S © 01/2017 全权所有。	MG38A141	line=17	flags=[COLUMN_MISALIGNMENT]
+
+### page=28 tableIndex=0 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	4.	将三相交流输入电源线路连接到端子 R、S 和 T 上（请参阅图 5.4）。
+ROW0	55	5.当使用隔离主电源（IT 主电源或浮动三角形连接电源）或带有接地脚的 TT/TN-S 主电源（接地三角形连接电	<null>	line=10	flags=[MERGED_CELL]
+
+### page=28 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	6.	按照 章 9.10.1 紧固件转矩额定值 中提供的信息拧紧端子。	col_2	col_3
+ROW0	26	<null>	Danfoss A/S © 01/2017 全权所有。	MG38A141	line=14	flags=[COLUMN_MISALIGNMENT]
+
+### page=30 tableIndex=0 status=ACTIVE flags=[]
+HEADER	col_0	•按照相应标准和指令将变频器接地。
+ROW0	55	•对输入电源、电机电源和控制接线使用专用接地线。	line=9	flags=[]
+
+### page=31 tableIndex=0 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	col_0	55
+ROW0	FASTENER TORQUE M10 19Nm (14FT-LB), M12 35Nm (26FT-LB)	FASTENER TORQUE M10 19Nm (14FT-LB), M12 35Nm (26FT-LB)	line=3	flags=[]
+ROW1	R/L1 91S/L2 92	U/T1 96T/L3 93	V/T2 97	W/T3 98	line=4	flags=[EXTRA_CELL]
+
+### page=32 tableIndex=0 status=ACTIVE flags=[]
+HEADER	361 (14.2)485 (19.1)	383 (15.1)4
+ROW0	414 (16.3)	423 (16.7)	line=18	flags=[]
+ROW1	431 (17.0)	472 (18.6)	line=19	flags=[]
+
+### page=32 tableIndex=1 status=ACTIVE flags=[]
+HEADER	1主电源端子	3电机端子
+ROW0	2制动或再生端子	4接地端子，M10 螺母	line=27	flags=[]
+
+### page=33 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	649 (25.5)	649 (25.5)	col_2
+ROW0	18 (0.7)	<null>	55	line=6	flags=[COLUMN_MISALIGNMENT]
+
+### page=34 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	1主电源端子	3电机端子
+ROW0	2制动或再生端子	4接地端子，M10 螺母	line=30	flags=[]
+
+### page=35 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	649 (25.5)	649 (25.5)	col_2
+ROW0	18 (0.7)	<null>	55	line=6	flags=[COLUMN_MISALIGNMENT]
+
+### page=36 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	314 (12.3)	4	col_3
+ROW0	50 (2.0)	<null>	<null>	336 (13.2)	line=18	flags=[COLUMN_MISALIGNMENT]
+
+### page=36 tableIndex=1 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	1主电源端子	3电机端子
+ROW0	2制动或再生端子	4接地端子，M8 和 M10 螺母	line=30	flags=[]
+
+### page=39 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	410 (16.1)	33 (1.3)	col_2
+ROW0	435 (17.1)	<null>	432 (17.0)	line=20	flags=[COLUMN_MISALIGNMENT]
+
+### page=39 tableIndex=1 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	1主电源端子	3电机端子
+ROW0	2制动或再生端子	4接地端子，M8 和 M10 螺母	line=29	flags=[]
+
+### page=40 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	5	5	col_2	col_3	col_4
+ROW0	<null>	<null>	0 (0.0)	18 (0.7)	0 (0.0)	line=9	flags=[COLUMN_MISALIGNMENT]
+
+### page=41 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	0 (0.0)	15 (0.6)	col_2
+ROW0	<null>	0 (0.0)	55	line=6	flags=[COLUMN_MISALIGNMENT]
+
+### page=42 tableIndex=0 status=ACTIVE flags=[]
+HEADER	•当变频器连接到一个热敏电阻时，确保该热敏电	col_1
+ROW0	阻器控制线路受到屏蔽且采取加强绝缘/双重绝	130BF715.10	line=12	flags=[]
+
+### page=42 tableIndex=1 status=ACTIVE flags=[]
+HEADER	3模拟输入/输出端子	col_1
+ROW0	图 5.18 连接器上的13的0B端F14子5.号10	130BF144.10	line=26	flags=[]
+
+### page=42 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	68 (+)参数组 8-3*	–RS485 接口。控制卡	col_2	col_3
+ROW0	<null>	<null>	FC 端口设置	上提供了一个用于总	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW1	69 (-)参数组 8-3*	–线端接阻抗的开关	<null>	<null>	line=38	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	5.8.2控制端子类型	<null>	FC 端口设置	(BUS TER.)。请参阅	line=39	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=43 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	电气安装	操作指南	col_2	col_3	col_4	col_5	col_6
+ROW0	<null>	<null>	模拟输入/输出端子	串行通讯端子	<null>	<null>	<null>	line=2	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW1	端子	说明	参数	默认参数	端子	默认	说明	line=3	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	设置	<null>	设置	<null>	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW3	01, 02,参数 5-40 继[0] 无功能C 型继电器输出。用	<null>	–	<null>	39	–模拟输出的公共端	<null>	line=5	flags=[MERGED_CELL]
+ROW4	03电器功能 [0]	于交流或直流电压及	<null>	<null>	<null>	<null>	子。	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW5	04, 05,参数 5-40 继[0] 无功能电阻性或电感性负	<null>	<null>	<null>	42参数 6-50 端[0] 无功能可编程模拟输出。在	<null>	<null>	line=7	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	06电器功能 [1]	载。	子 42 输出	<null>	<null>	<null>	昀大值 500 Ω 下为	line=8	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=43 tableIndex=1 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	表 5.1 串行通讯端子说明	col_1	col_2	col_3	20 mA。
+ROW0	<null>	50	–	+10 V 直电位计或热敏电阻的	<null>	line=11	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=43 tableIndex=2 status=ACTIVE flags=[EXTRA_CELL, MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	10 V DC 模拟供电电	col_1	col_2	col_3	col_4	col_5	col_6
+ROW0	压。昀大值为 15	端子	参数	默认	<null>	<null>	说明	line=14	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW1	mA。	<null>	<null>	设置	<null>	<null>	<null>	55	line=15	flags=[EXTRA_CELL, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	12, 13	–	+24 V 直24 V 直流供电电	53	参数组 6-1*参考值模拟输入。用于电压	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	或电流。利用开关	<null>	<null>	流压，用于数字输入和	<null>	模拟输入 1	<null>	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	A53 和 A54 来选择	<null>	<null>	<null>	<null>	<null>	外部传感器。所有	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	<null>	<null>	<null>	<null>	54	参数组 6-2*反馈	<null>	line=19	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	mA 或 V。	<null>	<null>	<null>	<null>	<null>	24 V 负载的昀大输	line=20	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=43 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	19	参数 5-11 端[10] 反向	col_2
+ROW0	<null>	子 19 数字输	继电器端子：	line=29	flags=[COLUMN_MISALIGNMENT]
+
+### page=43 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	33	参数 5-15 端[0] 无功能	col_2
+ROW0	<null>	子 33 数字输	图 5.19 继电器 1 和继电器 2 端子	line=35	flags=[COLUMN_MISALIGNMENT]
+
+### page=43 tableIndex=5 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, EXTRA_CELL]
+HEADER	27	参数 5-12 端[2] 惯性停用于数字输入或输	col_2
+ROW0	<null>	子 27 数字输车反逻辑出。默认设置为“输	•继电器 1 和继电器 2 输出位置取决于变频器配	line=38	flags=[COLUMN_MISALIGNMENT]
+ROW1	<null>	入	置。请参阅章 3.5 控制架。	入”。	line=39	flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+ROW2	29参数 5-13 端[14] JOG	<null>	•位于内置可选设备上的端子。请参阅随设备选件	line=40	flags=[MERGED_CELL]
+ROW3	<null>	子 29 数字输	提供的手册。	line=41	flags=[COLUMN_MISALIGNMENT]
+
+### page=44 tableIndex=0 status=ACTIVE flags=[]
+HEADER	电气安装	VLT® AutomationDrive FC 302
+ROW0	5.8.3控制端子的接线	5.8.5配置 RS485 串行通讯	line=2	flags=[]
+ROW1	为了便于安装，控制端子连接器可从变频器上拔下来，如	RS485 是一种兼容多分支网络拓扑的 2 线总线接口，具	line=3	flags=[]
+ROW2	图 5.20 所示。	有以下特点：	line=4	flags=[]
+
+### page=44 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	•借助协议软件和 RS-485 连接可从远程设置各项	10
+ROW0	1213181927293233	<null>	m	line=8	flags=[COLUMN_MISALIGNMENT]
+
+### page=44 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	[0	m
+ROW0	功能，此外也可以在参数组 8-** 通讯和选件中	.4	<null>	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=44 tableIndex=3 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	1b	有关正确的接地，请参阅章 5.6 接	col_2
+ROW0	<null>	地。	1.将一把小螺丝刀插入触点上方的槽中，向上轻推	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW1	2.选择以下参数设置：	<null>	螺丝刀以打开触点。	line=31	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW2	2a参数 8-30 协议 中的协议类型。	<null>	2.将裸露控制线缆插入触点中。	line=32	flags=[MERGED_CELL]
+ROW3	2b参数 8-31 地址 中的变频器地址。	<null>	3.抽出螺丝刀，从而使控制线缆被卡在触点中。	line=33	flags=[MERGED_CELL]
+ROW4	2c参数 8-32 波特率 中的波特率。	<null>	4.确保与触点具有良好接触，并且不会松脱。控制	line=34	flags=[MERGED_CELL]
+
+### page=44 tableIndex=4 status=ACTIVE flags=[]
+HEADER	为了使变频器能够使用出厂默认的编程值工作，需要在端	+68
+ROW0	子 12（或 13）和端子 27 之间安装跳线。	RS485	line=42	flags=[]
+
+### page=44 tableIndex=5 status=ACTIVE flags=[]
+HEADER	•当未使用任何互锁装置时，请在控制端子 12	col_1
+ROW0	（建议的端子）或 13 和端子 27 之间连接一个	图 5.21 串行通讯接线图	line=47	flags=[]
+
+### page=45 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	电气安装	操作指南	col_2
+ROW0	5.8.7空间加热器接线	<null>	5.8.10选择电压/电流输入信号	line=2	flags=[COLUMN_MISALIGNMENT]
+
+### page=45 tableIndex=1 status=ACTIVE flags=[]
+HEADER	空间加热器是用于防止设备处于关闭状态时在机箱内形成	使用模拟输入端子 53 和 54，可将输入信号设置为电压
+ROW0	冷凝的选件。它专用于现场接线并由 HVAC 管理系统控	（0 到 10 V）或电流（0/4 到 20 mA）。	line=5	flags=[]
+
+### page=45 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	默认参数设置：	col_1
+ROW0	•端子 53： 开环中的速度参考值信号（请参阅12	规格	line=8	flags=[]
+ROW1	参数 16-61 53端切换设置）。	•额定电压： 100–240	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW2	•端子 54： 闭环中的反馈信号（请参阅 参12	•线缆规格： 12–24 AWG	line=10	flags=[]
+
+### page=45 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	5.8.8将辅助触点连接到隔离器	注意	col_2
+ROW0	<null>	在转换开关位置之前断开变频器的电源。	55	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=45 tableIndex=4 status=ACTIVE flags=[]
+HEADER	根据这些触点的功能，必须将它们安装在隔离器上的特定	2.拆下盖住开关的任何可选设备。
+ROW0	位置。请参考变频器附带的附件包中包括的数据表。	3.设置开关 A53 和 A54 以选择信号类型（U =	line=20	flags=[]
+
+### page=45 tableIndex=5 status=ACTIVE flags=[]
+HEADER	•Ith/[A]： 16	col_1
+ROW0	•电缆规格： 1...2x0.75...2.5 mm2	N O	line=28	flags=[]
+
+### page=45 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	U- I	col_1
+ROW0	U- I	制动电阻器端子块位于功率卡上，可用于连接外部制动电	line=37	flags=[]
+ROW1	130BF146.10	阻器温度开关。可将该开关配置为常关或常开。如果输入	line=38	flags=[COLUMN_MISALIGNMENT]
+
+### page=46 tableIndex=0 status=ACTIVE flags=[]
+HEADER	检查内容	说明
+ROW0	辅助设备	•查看位于变频器的输入电源侧或电机输出侧的任何辅助设备、开关、隔离器或输入熔断器/断路器。确保	line=5	flags=[]
+
+### page=46 tableIndex=1 status=ACTIVE flags=[MERGED_CELL]
+HEADER	冷却间隙	•测量顶部间隙以保证足够的冷却气流，请参阅章 4.5.1 安装和冷却要求。	col_2
+ROW0	环境条件	•检查是否满足环境条件的要求 请参阅章 9.4 环境条件。	<null>	line=17	flags=[]
+ROW1	熔断器和断路器•检查熔断器或断路器是否适宜。	<null>	<null>	line=18	flags=[MERGED_CELL]
+
+### page=46 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	输入和输出电源线•检查松脱的连接。	col_1	col_2
+ROW0	缆	<null>	•检查电动机和主电源线路是否用单独线管布置或是否采用单独屏蔽的电缆。	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW1	面板内部	<null>	•检查设备内部是否无尘、无金属碎屑、无潮气并且无锈蚀。	line=24	flags=[]
+
+### page=46 tableIndex=3 status=ACTIVE flags=[]
+HEADER	开关	•确保所有开关和断路器都设在正确的位置。	col_2
+ROW0	振动	•检查设备是否牢靠安装，或者是否根据需要使用了防震座。	<null>	line=28	flags=[]
+
+### page=46 tableIndex=4 status=ACTIVE flags=[]
+HEADER	•加电之前，确保所有安全盖板（门和面板）安装到位且牢靠固定。请参考 章 9.10.1 紧固件转矩额定值。	col_1	col_2
+ROW0	44	Danfoss A/S © 01/2017 全权所有。	MG38A141	line=35	flags=[]
+
+### page=47 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	2.	确保选件设备的线路（如果存在）符合系统的应	col_2
+ROW0	<null>	用要求。	警告	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW1	3.确保所有操作人员设备都位于 OFF（关）位置。	<null>	高电压	line=8	flags=[MERGED_CELL]
+ROW2	4.关闭所有面板门，紧固所有盖板。	<null>	变频器与交流主电源输入线路相连时带有高电压。如果执	line=9	flags=[MERGED_CELL]
+
+### page=47 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	•只能由具备资质的人员安装、启动和维护变频	位置，以便为变频器加电。	col_2
+ROW0	器。	<null>	66	line=15	flags=[COLUMN_MISALIGNMENT]
+
+### page=47 tableIndex=2 status=ACTIVE flags=[]
+HEADER	接通电源前：	（自动 远程 惯性停车）或“报警 60 外部互锁”时，即
+ROW0	1.正确合上盖板。	表明设备已做好运行准备，只不过端子 27 上缺少输入信	line=19	flags=[]
+ROW1	2.检查所有电缆密封管是否已牢固拧紧。	号。有关详细信息，请参阅章 5.8.4 启用电机操作（端	line=20	flags=[]
+
+### page=47 tableIndex=3 status=ACTIVE flags=[]
+HEADER	验证输入端子 L1 (91)、L2 (92) 和 L3 (93)4.	6.3 LCP 菜单
+ROW0	上以及相相和相地之间是否无电压。	有关菜单或参数的详细说明，请参考编程指南。	line=24	flags=[]
+
+### page=47 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	5.	验证输出端子 96 (U)、97(V) 和 98 (W) 上以	col_2
+ROW0	<null>	及相相和相地之间是否无电压。	6.3.1.1快捷菜单模式	line=26	flags=[COLUMN_MISALIGNMENT]
+
+### page=47 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	6.	测量 U-V (96-97)、V-W (97-98) 和 W-U	col_2
+ROW0	<null>	(98-96) 上的欧姆值，确认电机的导通性。	借助 LCP 可以通过“快捷菜单”访问参数。要列出快捷	line=28	flags=[COLUMN_MISALIGNMENT]
+
+### page=47 tableIndex=6 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	7.检查变频器及电机是否正确接地。	col_1
+ROW0	8.检查变频器的端子接线是否松脱。	0.0% 0.00	1(1)	line=31	flags=[EXTRA_CELL]
+ROW1	9.确认供电电压是否与变频器和电机的电压相匹	Quick Menus	line=32	flags=[]
+
+### page=47 tableIndex=7 status=ACTIVE flags=[]
+HEADER	当变频器连接到交流主电源、直流电源或负载共享时，电	06 Loggings
+ROW0	机可随时启动。在编程、维护或维修过程中意外启动可能	07 Motor Setup	line=39	flags=[]
+
+### page=47 tableIndex=8 status=ACTIVE flags=[]
+HEADER	•按 LCP 上的 [Off/Reset]（停止/复位）键，然	col_1
+ROW0	后再设置参数。	“个人菜单”用于确定显示区域中显示的内容。请参考	line=46	flags=[]
+
+### page=48 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	调试	VLT® AutomationDrive FC 302	col_2
+ROW0	6.3.1.3Q2 快捷设置	<null>	在主菜单中可以更改所有参数。添加到设备上的选件卡会	line=2	flags=[COLUMN_MISALIGNMENT]
+
+### page=48 tableIndex=1 status=ACTIVE flags=[]
+HEADER	6.3.1.4Q5 已完成的更改	息，请参阅编程指南。
+ROW0	选择 Q5 已完成的更改 可以得到有关下述内容的信息：	参数概要	line=9	flags=[]
+ROW1	•昀近 10 次更改	参数设置用于控制变频器的操作，通过 LCP 访问。这些	line=10	flags=[]
+
+### page=48 tableIndex=2 status=ACTIVE flags=[]
+HEADER	数 0-20 显示行 1.1(小) 至参数 0-24 显示行 3(大)	0-** 操作/显示	参数组
+ROW0	中选择的参数。寄存器中昀多可存储 120 个示例，供日	0-0* 基本设置	参数子组	line=22	flags=[]
+
+### page=48 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	参数 0-02 电动机速度单位	参数	col_2	col_3
+ROW0	<null>	<null>	参数 0-20 显示行 1.1(小)	速度 [RPM]	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW1	参数 0-03 区域性设置	参数	<null>	<null>	line=28	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	参数 0-21 显示行 1.2(小)	电机电流	line=29	flags=[COLUMN_MISALIGNMENT]
+ROW3	表 6.2 参数组层次结构示例	<null>	参数 0-22 显示行 1.3(小)	功率 [kW]	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW4	<null>	<null>	参数 0-23 显示行 2(大)	频率	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW5	浏览参数	<null>	参数 0-24 显示行 3(大)	参考值 %	line=32	flags=[COLUMN_MISALIGNMENT]
+
+### page=48 tableIndex=4 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	•	col_1
+ROW0	移动小数点。	6.3.1.6Q7 电机设置	line=36	flags=[]
+ROW1	•按 [OK]（确定）接受所做的更改。	Q7 电机设置 中的参数包含对于配置变频器始终必要的基	line=37	flags=[]
+ROW2	•按 [Cancel]（取消）放弃更改并退出编辑模	本和高级电机数据。该选项还包括用于编码器设置的参	line=38	flags=[]
+ROW3	式。	数。	line=39	flags=[]
+
+### page=49 tableIndex=0 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	调试	操作指南
+ROW0	69.3% 5.20A 1(1)	14.7% 0.00A 1(1)	line=2	flags=[]
+ROW1	Quick Menus	Analog Reference	Q3-21	line=3	flags=[EXTRA_CELL]
+ROW2	Q1 My Personal Menu	3-02 Minimum Reference	line=4	flags=[]
+
+### page=49 tableIndex=1 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	图 6.3 Q3 功能设置	图 6.6 参数 3-02 昀小参考值
+ROW0	3.选择 Q3-2 开环设置 然后按 [OK]（确定）。	163.0BF726选.10择参数 3-03 昀大参考值。130BF725.1066	130BT112.12	line=9	flags=[EXTRA_CELL]
+
+### page=49 tableIndex=2 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	28.4% 2.05A 1(1)	按 [OK]（确定）。
+ROW0	Function Setups	14.7% 0.00A 1(1)Q3	line=12	flags=[]
+ROW1	Q3-1 General Settings	Analog Reference	Q3-21	line=13	flags=[EXTRA_CELL]
+ROW2	Q3-2 Open Loop Settings	3-03 Maximum Reference	line=14	flags=[]
+
+### page=49 tableIndex=3 status=ACTIVE flags=[MERGED_CELL]
+HEADER	4.	选择 Q3-21 模拟参考 然后按 [OK]（确定）。	col_2
+ROW0	14.7% 0.00A 1(1)	<null>	7.选择参数 6-10 端子 53 低电压。	line=20	flags=[MERGED_CELL]
+
+### page=49 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Open Loop Settings	Q3-2	然后按 [OK]（确定）。	col_3	col_4
+ROW0	<null>	130BF729.10	<null>	130BF728.11	130BF727.10	line=23	flags=[COLUMN_MISALIGNMENT]
+
+### page=49 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	5.	选择参数 3-02 昀小参考值。	col_2
+ROW0	<null>	将昀小内部变频器参考值设为 0 Hz 然后	图 6.8 参数 6-10 端子 53 低电压	line=32	flags=[COLUMN_MISALIGNMENT]
+
+### page=50 tableIndex=0 status=ACTIVE flags=[]
+HEADER	14.7% 0.00A 1(1)	在图 6.11 中，显示屏右侧的滚动条位于底部。该位置指
+ROW0	Analog Reference	明操作过程已完成。Q3-21	line=4	flags=[]
+ROW1	6-11 Terminal 53 High	图 6.12 显示出用于启用外部设备设置的接线。	line=5	flags=[]
+
+### page=50 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	A53	55	col_4	col_5
+ROW0	66	9.选择参数 6-14 53端参考/反馈低。将端子1 305B3F732.10	<null>	<null>	130BF731.10	130BF730.10	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=50 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	14.7 % 0.00 A 1(1)	图 6.12 由外部设备提供 0–10 V 控制信号的接线示例
+ROW0	Analog Reference	Q3-21	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW1	6 - 14 Terminal 53 Low	6.4.2输入系统信息	line=18	flags=[]
+
+### page=50 tableIndex=3 status=ACTIVE flags=[]
+HEADER	Analog Reference	南。Q3-21
+ROW0	6 - 15 Terminal 53 High	1.按 LCP 上的 [Main Menu]。	line=34	flags=[]
+
+### page=50 tableIndex=4 status=ACTIVE flags=[]
+HEADER	2.	col_1
+ROW0	3.选择 0* 基本设置 然后按 [OK]（确定）。	<null>	line=37	flags=[]
+ROW1	4.选择 参数 0-03 区域性设置 然后按 [OK]（确	50.000	line=38	flags=[]
+
+### page=50 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	5.	相应地选择 [0] 国际 或 [1] 北美，然后按
+ROW0	图 6.11 参数 6-15 53端参考/反馈高	<null>	[OK]（确定）。（该操作将更改一些基本参数的	line=41	flags=[COLUMN_MISALIGNMENT]
+
+### page=51 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	调试	操作指南	col_2
+ROW0	参数	默认设置	1.按 [Main Menu]（主菜单）。	line=2	flags=[]
+ROW1	参数 0-01 语言	英语	2.选择 1-** 负载和电机 然后按 [OK]（确定）。	line=3	flags=[]
+ROW2	参数 1-20 电动机功率 [kW]	4.00 kW	<null>	line=4	flags=[COLUMN_MISALIGNMENT]
+
+### page=51 tableIndex=1 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	3.	选择 1-2** 电机数据 然后按 [OK]（确定）。	col_2	col_3
+ROW0	<null>	<null>	参数 1-22 电动机电压	400 V	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW1	4.选择 参数 1-29 自动电动机调整 (AMA) 然后	<null>	参数 1-23 电动机频率	50 Hz	line=7	flags=[MERGED_CELL]
+ROW2	<null>	按 [OK]（确定）。	参数 1-24 电动机电流	9.00 A	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW3	5.选择 [1] 启用完整 AMA 然后按 [OK]（确	<null>	参数 1-25 电动机额定转速	1420 RPM	line=9	flags=[MERGED_CELL]
+ROW4	<null>	定）。	参数 5-12 端子 27 数字输入	惯性停车反逻辑	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW5	<null>	<null>	参数 3-02 昀小参考值	0.000 RPM	line=11	flags=[COLUMN_MISALIGNMENT]
+
+### page=51 tableIndex=2 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	6.	按 [Hand On]（手动启动）然后按 [OK]（确	col_2	col_3
+ROW0	<null>	定）。	参数 3-03 昀大参考值	1500.000 RPM	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW1	<null>	该测试将自动运行，并会表明它何时完成。	参数 3-41 斜坡1加速时间	3.00 s	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	参数 3-42 斜坡1减速时间	3.00 s	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW3	6.5 系统启动前测试	<null>	参数 3-13 参考值位置	联接到手动/自动	line=16	flags=[MERGED_CELL]
+ROW4	<null>	<null>	参数 1-29 自动电动机调整 (AMA)	关闭	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW5	警告	66	表 6.3 快捷设置	<null>	line=18	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=51 tableIndex=3 status=ACTIVE flags=[]
+HEADER	注意	备，将可能造成人身伤害或设备损害。启动之前：
+ROW0	输入信号缺失	•确保设备可在任何条件下安全操作。	line=22	flags=[]
+
+### page=51 tableIndex=4 status=ACTIVE flags=[]
+HEADER	部互锁 时，即表明设备已做好运行准备，但缺少输入信	•确保电机、系统和任何相连设备都已做好启动准
+ROW0	号。有关详细信息，请参阅 章 5.8.4 启用电机操作（端	备。	line=25	flags=[]
+
+### page=51 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	2.	选择 1-** 负载和电机 然后按 [OK]（确定）。	col_2
+ROW0	3.选择 1-0* 一般设置 然后按 [OK]（确定）。	<null>	1.按 [Hand On]（手动启动）。	line=37	flags=[MERGED_CELL]
+ROW1	4.选择 参数 1-03 转矩特性 然后按 [OK]（确	<null>	2.使用左箭头键将光标移到小数点左侧，然后输入	line=38	flags=[MERGED_CELL]
+ROW2	<null>	定）。	一个会导致电机缓慢旋转的 RPM 值。	line=39	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW3	5.选择 [2] 自动能量优化 CT 或 [3] 自动能量	<null>	3.按 [OK]（确定）。	line=40	flags=[MERGED_CELL]
+ROW4	<null>	优化 VT 然后按 [OK]（确定）。	4.如果电机旋转方向错误，则将参数 1-06 顺时针	line=41	flags=[COLUMN_MISALIGNMENT]
+
+### page=51 tableIndex=6 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	1.	在 参数 1-00 配置模式 中选择 [0] 开环。	col_2
+ROW0	2.选择在 参数 7-00 速度 PID 反馈源中的 [1]	<null>	变频器会建立一个用于调节电机输出电流的数学模型。该	line=48	flags=[MERGED_CELL]
+ROW1	<null>	24 V 编码器。	程序还测试电力输入的相位平衡情况， 并将电机特性与	line=49	flags=[COLUMN_MISALIGNMENT]
+
+### page=51 tableIndex=7 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	3.	按 [Hand On]（手动启动）。
+ROW0	注意	4.按 [►] 设置正的速度参考值（当 参	<null>	line=52	flags=[MERGED_CELL]
+
+### page=51 tableIndex=8 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	某些电机无法运行该测试的完整版本。在这种情况下，或	5.在 参数 16-57 Feedback [RPM] 中检查反馈是	col_2
+ROW0	者电机连接了输出滤波器，请选择 [2] 启用精简 AMA。	<null>	否为正值。	line=56	flags=[COLUMN_MISALIGNMENT]
+
+### page=52 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	调试	VLT® AutomationDrive FC 302	col_2
+ROW0	注意	<null>	6.7.1上载和下载参数设置	line=2	flags=[COLUMN_MISALIGNMENT]
+
+### page=52 tableIndex=1 status=ACTIVE flags=[]
+HEADER	如果反馈为负值，则说明编码器连接错误。使用 参	变频器通过使用存储在变频器内的控制卡上的参数来运
+ROW0	数 5-71 29/33码盘方向 或 参数 17-60 反馈方向 调	行。上载和下载功能可在控制卡和 LCP 之间移动参数。	line=5	flags=[]
+
+### page=52 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	2.	转到参数 0-50 LCP 复制 然后按 [OK]（确
+ROW0	6.6 系统启动	<null>	定）。	line=9	flags=[COLUMN_MISALIGNMENT]
+
+### page=52 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	选择以下一项操作：	col_1
+ROW0	3a要从控制卡将数据上载到 LCP，选择	警告	line=11	flags=[]
+ROW1	[1] 所有参数到 LCP。	电动机启动	line=12	flags=[COLUMN_MISALIGNMENT]
+
+### page=52 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	col_0	•确保设备可在任何条件下安全操作。	col_2	col_3
+ROW0	66	<null>	4.按 [OK]（确定）。一个进度条将显示上载或下	<null>	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	•确保电机、系统和任何相连设备都已做好启动准	<null>	载进度。	line=19	flags=[COLUMN_MISALIGNMENT]
+
+### page=52 tableIndex=5 status=ACTIVE flags=[]
+HEADER	成应用设置后，建议执行下述程序。	6.7.2恢复出厂默认设置
+ROW0	1.按 [Auto On]（自动启动）。	注意	line=25	flags=[]
+ROW1	2.施加一个外部运行命令。	丢失数据	line=26	flags=[]
+
+### page=52 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	开关、按键或可编程逻辑控制器 (PLC) 都是外	恢复默认设置会丢失设置数据、电机数据、本地化数据和
+ROW0	部运行命令的示例。	监测记录。要创建备份，将数据上载到 LCP 然后再初始	line=28	flags=[]
+ROW1	3.在整个速度范围内调整速度参考值。	化。请参考章 6.7.1 上载和下载参数设置。	line=29	flags=[COLUMN_MISALIGNMENT]
+
+### page=52 tableIndex=7 status=ACTIVE flags=[]
+HEADER	5.终止外部运行命令。	col_1
+ROW0	如果发生警告或报警，请参阅 章 8.5 警告和报警列	参数 14-22 工作模式 不会复位诸如以下内容等设置：	line=35	flags=[]
+ROW1	表 。	•运转时间	line=36	flags=[]
+ROW2	6.7 参数设置	•串行通讯选项	line=37	flags=[]
+
+### page=52 tableIndex=8 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	•	col_1
+ROW0	故障日志、报警日志和其他监视功能	注意	line=39	flags=[]
+ROW1	•	区域设置	line=40	flags=[]
+ROW2	建议的初始化	对于“国际”或“北美”选项 ，一些参数具有不同的默	line=41	flags=[]
+ROW3	1.按两下 [Main Menu]（主菜单），以访问参数。	认设置。有关不同默认值的列表，请参阅章 10.2 国际/	line=42	flags=[]
+ROW4	2.转到参数 14-22 工作模式 然后按 [OK]（确	北美默认参数设置。	line=43	flags=[]
+
+### page=52 tableIndex=9 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	4.	切断设备电源，并等显示器关闭。	col_2	col_3
+ROW0	5.接通设备电源。在启动期间将恢复默认参数设	<null>	参数设置存储在变频器内部，可提供以下好处：	<null>	line=48	flags=[MERGED_CELL]
+ROW1	<null>	置。启动时间会比正常启动过程略长。	•可将参数设置上载到 LCP 存储器中并存储为备	<null>	line=49	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	6.出现报警 80，变频器初始化为默认值 后，按	<null>	<null>	份。	line=50	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	<null>	[Reset]（复位）。	•可通过将 LCP 连接到每个设备并下载存储的参	<null>	line=51	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	手册初始化	<null>	<null>	数设置来快速设置多个设备。	line=52	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	手动初始化可复位以下参数以外的所有出厂设置：	<null>	•恢复出厂默认设置时，存储在 LCP 中的设置不	<null>	line=53	flags=[MERGED_CELL]
+ROW6	•参数 15-00 运行时间	<null>	<null>	会被更改。	line=54	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	•参数 15-03 加电次数	<null>	•对默认设置所作的更改以及在参数中输入的任何	<null>	line=55	flags=[MERGED_CELL]
+ROW8	•参数 15-04 过温次数	<null>	<null>	设置都将被存储起来，并可以在快捷菜单中查	line=56	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=53 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	col_2	6	6
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	51	<null>	<null>	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=54 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	本节的示例旨在提供与常见应用有关的简单参考 。	col_1	col_2	参数	col_4
+ROW0	<null>	<null>	功能	<null>	设置	line=4	flags=[COLUMN_MISALIGNMENT]
+
+### page=54 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	•除非另有说明，否则参数设置都采用相关区域	参数e 360-b1b292 6端.11子4 mA*	col_2
+ROW0	（在 参数 0-03 区域性设置 中选择）的默认	53 低电流	<null>	line=7	flags=[MERGED_CELL]
+ROW1	值。	参数 6-13 端子20 mA*	<null>	line=8	flags=[MERGED_CELL]
+ROW2	<null>	53 高电流	+10 V50	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW3	•与端子及其设置相关的参数显示在插图的旁侧	+	<null>	line=10	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW4	<null>	参数 6-14 53端0 Hz	A IN 53	line=11	flags=[COLUMN_MISALIGNMENT]
+ROW5	•在需要对模拟端子 A53 或 A54 进行开关设置时	参考/反馈低	A IN	line=12	flags=[]
+
+### page=54 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	注意	A OUT42	4 - 20mA参考/反馈高	col_3
+ROW0	<null>	COM39	<null>	* = 默认值	line=17	flags=[COLUMN_MISALIGNMENT]
+
+### page=54 tableIndex=3 status=ACTIVE flags=[]
+HEADER	默认的设置值工作，需要在端子 12（或 13）和端子 37	说明/备注：U - I
+ROW0	之间安装跳线。	假定条件为 4 mA 输入 = 0	line=20	flags=[]
+
+### page=54 tableIndex=4 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	参数	col_3	col_4	col_5
+ROW0	<null>	功能	<null>	设置	<null>	<null>	line=26	flags=[COLUMN_MISALIGNMENT]
+ROW1	FC	<null>	<null>	<null>	<null>	参数	line=27	flags=[COLUMN_MISALIGNMENT]
+
+### page=54 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	参数 6-10 端子	0.07 V*	col_2	col_3	col_4
+ROW0	<null>	<null>	<null>	功能	设置	line=29	flags=[COLUMN_MISALIGNMENT]
+ROW1	53 低电压	<null>	FC	<null>	<null>	line=30	flags=[COLUMN_MISALIGNMENT]
+
+### page=54 tableIndex=6 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	+10 V50	53 高电压	col_2
+ROW0	<null>	+	参数 6-13 端子20 mA*	line=35	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW1	A IN 53	参数 6-14 53端0 Hz	e30bb683.11+10 V50	e30bb927.11	line=36	flags=[EXTRA_CELL]
+
+### page=54 tableIndex=7 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	参数 6-14 53端	col_1	col_2	col_3	col_4
+ROW0	<null>	COM55	参数 6-15 53端50 Hz	A IN 54	<null>	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	参考/反馈低	<null>	<null>	<null>	-	line=41	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	A OUT42	参考/反馈高	COM55	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	参数 6-15 53端50 Hz	<null>	<null>	<null>	0 – 10 V	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	<null>	COM39	<null>	A OUT42	<null>	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=54 tableIndex=8 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	COM39	参考/反馈高
+ROW0	U - I	说明/备注：	<null>	<null>	line=47	flags=[COLUMN_MISALIGNMENT]
+
+### page=54 tableIndex=9 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	0 Hz 速度以及 10 V 直流输	U - I	col_3
+ROW0	A53	<null>	<null>	假定条件为 0 V 直流输入 =	line=52	flags=[COLUMN_MISALIGNMENT]
+
+### page=55 tableIndex=0 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	接线配置示例	操作指南
+ROW0	<null>	参数	7.2 启动/停止的接线	line=2	flags=[EXTRA_CELL]
+ROW1	<null>	设置功能	line=3	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=55 tableIndex=1 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, EXTRA_CELL]
+HEADER	+24 V	12	col_2	col_3	col_4	col_5
+ROW0	+24 V13	<null>	数字输入	*	FC	功能	设置	line=7	flags=[EXTRA_CELL, MERGED_CELL]
+ROW1	D IN	18	参数 5-12 端子 27[19] 锁	<null>	+24 V12	参数 5-10 端[8] 启动*	line=8	flags=[MERGED_CELL]
+ROW2	D IN	19	数字输入	定参考值	+24 V13	子 18 数字输	e30bb804.12	line=9	flags=[EXTRA_CELL]
+ROW3	COM20	<null>	参数 5-13 端子 29[21] 加	<null>	D IN18	入	line=10	flags=[MERGED_CELL]
+ROW4	D IN	27	数字输入	速	D IN19	参数 5-12 端[0] 无功能	line=11	flags=[]
+ROW5	D IN	29	参数 5-14 端子 32[22] 减	<null>	COM20	子 27 数字输	line=12	flags=[MERGED_CELL]
+ROW6	D IN	32	数字输入	<null>	D IN27	入	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=55 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	D IND IN 37	32
+ROW0	说明/备注：	报警	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW1	D IN	33	line=19	flags=[]
+
+### page=55 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	表 7.4 加速/减速	A IN	53	col_3
+ROW0	<null>	A IN	54	入 设为 [0] 无功能 时，与	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW1	Speed	COM55	<null>	端子 27 之间无需跳线。	line=28	flags=[MERGED_CELL]
+ROW2	Reference	A OUT42	<null>	77	line=29	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+
+### page=56 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	接线配置示例	VLT® AutomationDrive FC 302	col_2	col_3	col_4
+ROW0	<null>	参数	<null>	<null>	参数	line=2	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW1	<null>	设置	<null>	功能	功能设置	line=3	flags=[COLUMN_MISALIGNMENT]
+ROW2	FC	<null>	FC	<null>	<null>	line=4	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	+24 V12	[9] 自锁启动	<null>	参	参数 5-10 端[8] 启动	line=5	flags=[COLUMN_MISALIGNMENT]
+
+### page=56 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	+24 V	12	col_4
+ROW0	+24 V13	数 5-10 端	<null>	<null>	子 18 数字输	line=7	flags=[COLUMN_MISALIGNMENT]
+
+### page=56 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE, EXTRA_CELL]
+HEADER	+24 V	13
+ROW0	D IND IN18	18	子 18 数字	入	line=9	flags=[EXTRA_CELL]
+
+### page=56 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	D IN	19	输入	D IN	19	参数 5-11 端[10] 反向*	col_6
+ROW0	COM20	<null>	参	COM20	<null>	子 19 数字输	[6] 停止反逻	line=12	flags=[MERGED_CELL]
+ROW1	D IN	27	数 5-12 端	D IN	27	入	辑	line=13	flags=[]
+ROW2	D IN	29	子 27 数字	D IN	29	参数 5-12 端[0] 无功能	<null>	line=14	flags=[MERGED_CELL]
+ROW3	D IN	32	输入	D IN	32	子 27 数字输	<null>	line=15	flags=[MERGED_CELL]
+ROW4	D IN	33	* = 默认值	D IN	33	入	<null>	line=16	flags=[MERGED_CELL]
+ROW5	D IN	37	说明/备注：	<null>	<null>	参数 5-14 端[16] 预置参	<null>	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=56 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	子 32 数字输	col_1	col_2
+ROW0	入	+10 V50	+10 V50	line=19	flags=[]
+ROW1	<null>	A IN 53	A IN 53	line=20	flags=[COLUMN_MISALIGNMENT]
+
+### page=56 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	子 33 数字输	考值位 1
+ROW0	COM55	COM55	<null>	<null>	line=24	flags=[COLUMN_MISALIGNMENT]
+
+### page=56 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	A OUT42	A OUT42
+ROW0	<null>	参数 3-10 预	line=27	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW1	COM3977	COM39	line=28	flags=[]
+
+### page=56 tableIndex=7 status=ACTIVE flags=[]
+HEADER	预置参考值 0	25%
+ROW0	预置参考值 1	50%	line=31	flags=[]
+ROW1	预置参考值 2	75%	line=32	flags=[]
+
+### page=56 tableIndex=8 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	Speed	7.3 外部报警复位的接线	col_2	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	<null>	参数	<null>	line=40	flags=[COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	<null>	功能	<null>	设置	line=41	flags=[COLUMN_MISALIGNMENT]
+
+### page=56 tableIndex=9 status=ACTIVE flags=[MERGED_CELL]
+HEADER	+24 V12	参数 5-11 端[1] 复位	col_2
+ROW0	+24 V13	子 19 数字输	<null>	line=44	flags=[MERGED_CELL]
+ROW1	D IN	入	18	line=45	flags=[]
+ROW2	D INLatched Start (18)	* = 默认值	19	line=46	flags=[]
+ROW3	COM20	说明/备注：	<null>	line=47	flags=[MERGED_CELL]
+
+### page=56 tableIndex=10 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	D IN	27
+ROW0	D IN	29	line=50	flags=[]
+ROW1	D IN	32	line=51	flags=[]
+
+### page=57 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, EXTRA_CELL]
+HEADER	接线配置示例	操作指南	col_2	col_3	col_4	col_5	col_6	col_7
+ROW0	7.4 电机热敏电阻的接线	<null>	7.5 再生的接线	<null>	<null>	<null>	<null>	<null>	line=2	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	警告	<null>	<null>	<null>	参数	<null>	<null>	<null>	line=3	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	<null>	功能	<null>	<null>	<null>	设置	line=4	flags=[EXTRA_CELL, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	热敏电阻绝缘	<null>	FC	<null>	<null>	<null>	<null>	<null>	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW4	<null>	<null>	+24 V12	<null>	参数 1-90 电动100%*	<null>	<null>	<null>	line=6	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	可能导致人身伤害或设备损坏。	<null>	<null>	130BB686.12	<null>	<null>	<null>	<null>	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW6	<null>	<null>	+24 V13	<null>	机热保护	<null>	<null>	<null>	line=8	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	•为了符合 PELV 绝缘要求，必须在热敏电阻上使	<null>	D IN	18	* = 默认值	<null>	<null>	<null>	line=9	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW8	<null>	<null>	D IN	19	<null>	用加强绝缘或双重绝缘。	<null>	<null>	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW9	<null>	<null>	COM20	<null>	说明/备注：	<null>	<null>	<null>	line=11	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW10	<null>	<null>	D IN	27	要禁用再生，请将参	<null>	<null>	<null>	line=12	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW11	<null>	参数	<null>	<null>	<null>	<null>	<null>	<null>	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW12	<null>	<null>	D IN	29	数 1-90 电动机热保护 降至	<null>	<null>	<null>	line=14	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW13	<null>	<null>	D IN	32	<null>	<null>	功能	设置	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW14	<null>	<null>	<null>	<null>	0%。如果应用使用电机制动功	VLT	<null>	<null>	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW15	<null>	<null>	D IN	33	<null>	<null>	参数 1-90 电[2] 热敏电阻	<null>	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW16	+24 V12	<null>	<null>	<null>	率且未启用再生功能，则设备	<null>	<null>	<null>	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW17	+24 V13	<null>	D IN 37	<null>	<null>	<null>	动机热保护	跳闸	line=19	flags=[COLUMN_MISALIGNMENT]
+
+### page=57 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	D IN	18	参数 1-93 热[1] 模拟输入	col_3
+ROW0	D IN	19	敏电阻源	+10 V5053	line=22	flags=[]
+ROW1	<null>	<null>	* = 默认值	A IN 53	line=23	flags=[COLUMN_MISALIGNMENT]
+
+### page=57 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	A IN	54
+ROW0	D IN	27	<null>	<null>	line=26	flags=[COLUMN_MISALIGNMENT]
+
+### page=57 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	col_2	COM	55	col_5
+ROW0	D IN	29	说明/备注：	<null>	<null>	77	line=28	flags=[COLUMN_MISALIGNMENT]
+
+### page=57 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	col_2	A OUT	42
+ROW0	D IN	32	如果仅希望发出警告，则将参	<null>	<null>	line=30	flags=[COLUMN_MISALIGNMENT]
+
+### page=57 tableIndex=5 status=ACTIVE flags=[]
+HEADER	col_0	col_1	COM39
+ROW0	D IN	33	数 1-90 电动机热保护 设为	line=32	flags=[]
+ROW1	D IN	37	[1] 热敏电阻警告。	line=33	flags=[]
+
+### page=57 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	A IN	54	col_2
+ROW0	COM	<null>	130BD667.11	line=37	flags=[COLUMN_MISALIGNMENT]
+
+### page=58 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	col_0	连接并组装完毕。	图 8.1 从变频器后部拆除散热片气流罩板	col_3
+ROW0	8.2 散热片罩板	<null>	<null>	130BF210.10	line=29	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=58 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	1.	给变频器断电，等待 40 分钟以便电容器完全放
+ROW0	订购变频器时，可选择同时订购在设备后部使用的罩板。	<null>	电。请参考章 2 安全性。	line=31	flags=[COLUMN_MISALIGNMENT]
+
+### page=59 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	维护、诊断和故障排除	操作指南	col_2	col_3
+ROW0	8.3 状态信息	<null>	交流制动	交流制动在参数 2-10 制动功能 中被选中。	line=2	flags=[COLUMN_MISALIGNMENT]
+
+### page=59 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	当变频器处于状态模式时，状态消息将自动出现在 LCP	速。	col_2
+ROW0	显示屏底行。请参考 图 8.2。状态消息在表 8.1 –	<null>	AMA成功完成电机自动整定 (AMA) 成功执行。	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW1	表 8.3 中定义。	AMA 做好开始准备。要启动，请按 [Hand	AMA 就绪	line=6	flags=[]
+
+### page=59 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	AMA运行中	正在执行 AMA 过程。	col_2	col_3
+ROW0	1(1)	<null>	Status	<null>	line=9	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW1	制动	制动斩波器正在工作。制动电阻器将吸收生成	799RPM 7.83A 36.4kW	<null>	line=10	flags=[MERGED_CELL]
+ROW2	<null>	的能量。	<null>	0.000	line=11	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	昀大制动	制动斩波器正在工作。在 参数 2-12 制动功	<null>	53.2%	line=12	flags=[MERGED_CELL]
+
+### page=59 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	AutoRemote	Ramping	col_2
+ROW0	HandLocal	Stop	未连接。	line=18	flags=[]
+ROW1	O1	Running	130BB037.11	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	Jogging	•串行通讯激活了惯性停车。	line=20	flags=[COLUMN_MISALIGNMENT]
+
+### page=59 tableIndex=4 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	2	.
+ROW0	<null>	.	受控减速	[1] 控制减速在参数 14-10 主电源故障 中	line=23	flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+ROW1	3	Stand-by	line=24	flags=[]
+
+### page=59 tableIndex=5 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	1停止/启动命令的来源。请参考 表 8.1。	数 14-11 主电源故障时的主电源电压中
+ROW0	2速度控制的来源。请参考 表 8.2。	设置的值。	88	line=28	flags=[EXTRA_CELL]
+
+### page=59 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	电流过低	变频器输出电流低于在参数 4-52 警告速度	col_2
+ROW0	<null>	过低 中设置的极限。	注意	line=34	flags=[COLUMN_MISALIGNMENT]
+ROW1	直流夹持	在 参数 1-80 停止功能 中选择了直流夹	<null>	line=35	flags=[MERGED_CELL]
+ROW2	<null>	持，并且一个停止命令处于活动状态。电机被	在自动/远程模式下，变频器要求利用外部命令来执行功	line=36	flags=[COLUMN_MISALIGNMENT]
+ROW3	<null>	参数 2-00 直流夹持电流 中设置的直流电流	能。	line=37	flags=[COLUMN_MISALIGNMENT]
+
+### page=59 tableIndex=7 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	关闭	变频器未对任何控制信号作出反应，直到按下	动时间)。
+ROW0	<null>	[Auto On]（自动启动）或 [Hand On]（手动	•在 参数 2-03 直流制动切入速度 [RPM]	line=42	flags=[COLUMN_MISALIGNMENT]
+ROW1	<null>	启动）。	中激活了直流制动，并且一个停止命令处	line=43	flags=[COLUMN_MISALIGNMENT]
+ROW2	自动	启动/停止命令通过控制端子和/或串行通讯发	于活动状态。	line=44	flags=[]
+
+### page=59 tableIndex=8 status=ACTIVE flags=[]
+HEADER	LCP 上的导航键可用于控制变频器。施加在控手动	（反向）（参数组 5-1* 数字输入）。对
+ROW0	制端子上的停止命令、复位、反向、直流制动	应的端子处于非活动状态。	line=48	flags=[]
+
+### page=59 tableIndex=9 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	速度参考值来自：远程	col_1
+ROW0	<null>	所有有效反馈的和低于在 参数 4-56 警告反反馈过低	line=54	flags=[COLUMN_MISALIGNMENT]
+ROW1	•外部信号。	馈过低	line=55	flags=[]
+
+### page=59 tableIndex=10 status=ACTIVE flags=[]
+HEADER	•串行通讯。	远程参考值处于活动状态，它保持着当前速锁定输出
+ROW0	•内部预置参照值。	度。	line=58	flags=[]
+
+### page=60 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	维护、诊断和故障排除	VLT® AutomationDrive FC 302	col_2	col_3
+ROW0	锁定参考值[19] 锁定参考值被选为一个数字输入功能	运行请求	已经给出了启动命令，但除非通过数字输入收	<null>	line=2	flags=[MERGED_CELL]
+ROW1	<null>	<null>	到“允许运行”信号，否则电动机将被停止。	（参数组 5-1* 数字输入）。对应的端子处	line=3	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	运行	变频器正在驱动电机。	于活动状态。变频器将保存实际参考值。现在	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW3	<null>	睡眠模式	节能功能被启用。启用此功能意味着电机此时	只能通过端子的加速和减速功能来更改参考	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW4	<null>	<null>	已停止运行，但可根据需要自动重新启动。	值。	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW5	点动请求	速度过高	电机速度高于在参数 4-53 警告速度过高 中	已经发出了点动命令，但除非通过数字输入收	line=7	flags=[]
+ROW6	<null>	<null>	设置的值。	到“允许运行”信号，否则电机保持停止状	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW7	<null>	速度过低	电机速度低于在参数 4-52 警告速度过低 中	态。	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW8	点动	<null>	设置的值。	电机正按 参数 3-19 点动速度 [RPM] 中的	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW9	<null>	待机	在自动启动模式下，变频器将使用来自数字输	设置运行。	line=11	flags=[COLUMN_MISALIGNMENT]
+ROW10	<null>	<null>	入或串行通讯的启动信号来启动电机。	•[14] 点动被选为一个数字输入功能（参数	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW11	<null>	启动延迟	在 参数 1-71 启动延迟 中设置了启动时间	组 5-1* 数字输入）。对应的端子（如端	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW12	<null>	<null>	延迟。一个启动命令被激活，电机将在启动延	子 29）处于活动状态。	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW13	<null>	<null>	时过后启动。	•点动功能通过串行通讯激活。	line=15	flags=[COLUMN_MISALIGNMENT]
+
+### page=60 tableIndex=1 status=ACTIVE flags=[]
+HEADER	在 参数 1-80 停止功能 中选择了 [2] 电电机检查	变频器已收到来自以下之一的停止命令：停止
+ROW0	机检查 功能。一个停止命令被激活。为确保	•LCP	line=24	flags=[]
+
+### page=60 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	的测试电流。	88	col_2
+ROW0	在 参数 2-17 过压控制 [2] 启用中激活了	OVC 控制	•串行通讯	line=28	flags=[]
+ROW1	过电压控制。相连电机正在向变频器提供生成	<null>	发生一个报警，并且电机被停止。一旦报警原跳闸	line=29	flags=[MERGED_CELL]
+ROW2	能量。过压控制功能通过调整 U/Hz 比来实	<null>	因被清除，便可以通过以下方式之一复位变频	line=30	flags=[MERGED_CELL]
+ROW3	现电机的受控运行，并且防止跳闸。	<null>	器：	line=31	flags=[MERGED_CELL]
+ROW4	<null>	电源单元关闭（仅限安装了外接 24 V 电源的变频器）。	•点按 [Reset]（复位）。	line=32	flags=[COLUMN_MISALIGNMENT]
+
+### page=60 tableIndex=3 status=ACTIVE flags=[]
+HEADER	保护模式处于活动状态。设备检测到一个临界保护模式	•通过串行通讯。
+ROW0	状态（过电流或过压）。	按 [Reset]（复位）或通过控制端子或串行通	line=37	flags=[]
+ROW1	•如果参数 14-55 输出滤波器 被设置为	讯以远程方式复位。	line=38	flags=[]
+ROW2	[2] 固定式正弦滤波器，为避免跳闸，开	发生一个报警，并且电机被停止。一旦报警原跳闸锁定	line=39	flags=[]
+ROW3	关频率被降低到 1500 kHz。否则，开关	因被清除，则对变频器执行电源循环。通过以	line=40	flags=[]
+ROW4	频率将被降低到 1000 Hz。	下方式之一手动复位变频器：	line=41	flags=[]
+ROW5	•如果可能，保护模式会在 10 秒钟左右之	•点按 [Reset]（复位）。	line=42	flags=[]
+ROW6	后结束。	•由控制端子远程执行。	line=43	flags=[]
+ROW7	•在 参数 14-26 逆变器故障时的跳闸延迟	•通过串行通讯。	line=44	flags=[]
+
+### page=60 tableIndex=4 status=ACTIVE flags=[]
+HEADER	•[4] 快速反向停止被选为一个数字输入功	注意
+ROW0	能（参数组 5-1* 数字输入）。对应的端	在自动/远程模式下，变频器要求利用外部命令来执行功	line=49	flags=[]
+ROW1	子处于非活动状态。	能。	line=50	flags=[]
+
+### page=61 tableIndex=0 status=ACTIVE flags=[]
+HEADER	型	Ca
+ROW0	警告	警告表示出现了导致报警的异常运行条件。当异	line=7	flags=[]
+
+### page=61 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	On	col_1
+ROW0	<null>	报警表示出现需要立即干预的故障。故障始终触报警	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW1	Warn.	发跳闸或跳闸锁定。在报警后复位变频器。	line=11	flags=[]
+ROW2	Alarm	可通过 4 种方式之一复位变频器：	line=12	flags=[]
+
+### page=61 tableIndex=2 status=ACTIVE flags=[]
+HEADER	•数字复位输入命令。	警告指示灯	报警指示灯
+ROW0	警告	亮	关闭	line=16	flags=[]
+
+### page=61 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	变频器逻辑会继续运行并监测变频器的状态。清除故障状	8.5 警告和报警列表	col_2
+ROW0	态后，变频器即准备好复位。	<null>	88	line=26	flags=[COLUMN_MISALIGNMENT]
+
+### page=61 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	当变频器处于跳闸锁定状态时，变频器会为了防止自身及	B	col_2
+ROW0	<null>	ac	排查程序。	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW1	其他设备受到损害而暂停运行。当出现跳闸锁定时，电机	k	<null>	line=32	flags=[MERGED_CELL]
+ROW2	将惯性停车至停止。变频器逻辑会继续运行并监测变频器	<null>	警告 1, 10 V 电压低	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW3	的状态。仅当发生可能损坏变频器或其他设备的严重故障	<null>	控制卡端子 50 的电压低于 10 V。	line=34	flags=[COLUMN_MISALIGNMENT]
+ROW4	时，变频器才会启动跳闸锁定操作。清除故障后，在复位	<null>	请移除端子 50 的部分负载，因为 10 V 电源已经过	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW5	变频器之前，必须关闭然后重新打开输入电源。	<null>	载。昀大 15 mA 或昀小 590 Ω。	line=36	flags=[COLUMN_MISALIGNMENT]
+ROW6	警告和报警显示	<null>	相连电位计的短路或电位计的接线不当可能会造成这种情	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW7	•警告与警告编号一起显示在 LCP 上。	<null>	况。	line=38	flags=[COLUMN_MISALIGNMENT]
+ROW8	•报警连同报警编号一起闪烁。	<null>	故障诊断	line=39	flags=[COLUMN_MISALIGNMENT]
+
+### page=61 tableIndex=5 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	Status	1(1)
+ROW0	0.0Hz 0.000kW 0.00A	警告/报警 2, 断线故障	line=43	flags=[]
+ROW1	<null>	仅当在 参数 6-01 断线超时功能 中设置后才会出现此警	130BB467.11	line=44	flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+
+### page=61 tableIndex=6 status=ACTIVE flags=[]
+HEADER	col_0	检查所有模拟主电源端子上的连接。•
+ROW0	Earth Fault [A14]	-控制卡端子 53 和 54 传送信号，端子	line=51	flags=[]
+ROW1	Auto Remote Trip	55 是公共端子。	line=52	flags=[]
+ROW2	图 8.3 报警示例	-VLT® General Purpose I/O MCB 101	line=53	flags=[]
+
+### page=61 tableIndex=7 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	•执行输入端子信号测试。	col_3
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	<null>	59	line=63	flags=[MERGED_CELL]
+
+### page=62 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	维护、诊断和故障排除	VLT® AutomationDrive FC 302	col_2
+ROW0	警告/报警 3, 无电机	选择这些选项之一：	<null>	line=2	flags=[MERGED_CELL]
+ROW1	变频器的输出端子上没有连接电动机。	•如果将参数 1-90 电动机热保护 设置为警告选	<null>	line=3	flags=[MERGED_CELL]
+ROW2	警告/报警 4, 主电源缺相	<null>	项，则当计数器超过 90% 时，变频器将发出警	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW3	电源的相位缺失，或者主电源电压太不稳定。输入整流器	<null>	告或报警。	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW4	发生故障时，也会出现此消息。选项在 参数 14-12 输入	•如果将参数 1-90 电动机热保护 设置为跳闸选	<null>	line=6	flags=[MERGED_CELL]
+ROW5	缺相功能 中设置。	<null>	项，则当计数器达到 100% 时，变频器将跳闸。	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW6	故障诊断	当电机过载超过 100% 的持续时间过长时，会发生该故	<null>	line=8	flags=[MERGED_CELL]
+ROW7	•检查变频器的供电电压和电流。	障。	<null>	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW8	警告 5, 直流回路电压高	故障诊断	<null>	line=10	flags=[MERGED_CELL]
+ROW9	直流回路电压 (DC) 高于高压警告极限。该极限取决于变	•检查电机是否过热。	<null>	line=11	flags=[MERGED_CELL]
+ROW10	频器的额定电压。设备仍处于活动状态。	•检查电机是否发生机械过载。	<null>	line=12	flags=[MERGED_CELL]
+ROW11	警告 6, 直流回路电压低	•检查 参数 1-24 电动机电流 中的电动机电流设	<null>	line=13	flags=[MERGED_CELL]
+ROW12	直流回路电压 (DC) 低于低压警告极限。该极限取决于变	<null>	置是否正确。	line=14	flags=[COLUMN_MISALIGNMENT]
+
+### page=62 tableIndex=1 status=ACTIVE flags=[]
+HEADER	col_0	•确保参数 1-20 至 1-25 中的电机数据设置正
+ROW0	警告/报警 7, 直流回路过压	确。	line=17	flags=[]
+
+### page=62 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	•增大加减速时间。	•通过参数 1-29 自动电动机调整 (AMA) 运行
+ROW0	88	AMA，可以根据电机来更准确地调整变频器，并且	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW1	•更改加减速类型。	降低热负载。	line=24	flags=[]
+ROW2	•增大 参数 14-26 逆变器故障时的跳闸延迟。	警告/报警 11, 电机热电阻温度高	line=25	flags=[]
+ROW3	•确认供电电压是否与变频器的有源前端电压相匹	检查热敏电阻是否断开。在参数 1-90 电动机热保护	line=26	flags=[]
+ROW4	配。	中，选择变频器是发出警告还是报警。	line=27	flags=[]
+ROW5	•执行输入电压测试。	故障诊断	line=28	flags=[]
+ROW6	警告/报警 8, 直流回路欠压	•检查电机是否过热。	line=29	flags=[]
+ROW7	如果直流回路电压下降到欠压极限之下，变频器将检查是	•检查电机是否发生机械过载。	line=30	flags=[]
+ROW8	否连接了 24 V 直流备用电源。如果未连接 24 V 直流	•使用端子 53 或 54 时，检查是否已在端子 53	line=31	flags=[]
+ROW9	备用电源，变频器将在固定的延时后跳闸。这个延时随设	或 54（模拟电压输入）和端子 50 （+10 伏电	line=32	flags=[]
+ROW10	备规格而异。	压）之间正确连接了热敏电阻。同时检查 53 或	line=33	flags=[]
+ROW11	故障诊断	54 的端子开关是否设为电压。检查 参	line=34	flags=[]
+ROW12	•确认供电电压是否与变频器的电压相匹配。	数 1-93 热敏电阻源 是否选择了端子 53 或	line=35	flags=[]
+ROW13	•执行输入电压测试。	54。	line=36	flags=[]
+ROW14	•执行软充电电路测试。	•使用端子 18、19、31、32 或 33（数字输入）	line=37	flags=[]
+
+### page=62 tableIndex=3 status=ACTIVE flags=[]
+HEADER	警告/报警 9, 逆变器过载	输入 PNP）和端子 50 之间正确连接了热敏电
+ROW0	变频器在超过 100% 过载的情况下运行了过长时间，即将	阻。在 参数 1-93 热敏电阻源 中选择要使用的	line=40	flags=[]
+ROW1	停止。逆变器电子热保护装置的计数器在达到 98% 时给	端子。	line=41	flags=[]
+
+### page=62 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	故障诊断	电时转矩极限 中的值。借助 参数 14-25 转矩极限跳闸	col_2	col_3
+ROW0	•将 LCP 上显示的输出电流与变频器额定电流进	延迟，可将这个仅发出警告的情况更改为先发出警告然后	<null>	<null>	line=46	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	再给出报警。	行对比。	<null>	line=47	flags=[COLUMN_MISALIGNMENT]
+ROW2	•将 LCP 上显示的输出电流与测得的电机电流进	故障诊断	<null>	<null>	line=48	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	<null>	•如果在加速期间超过电机转矩极限，则加速时间	行对比。	<null>	line=49	flags=[COLUMN_MISALIGNMENT]
+ROW4	•在 LCP 上显示变频器的热负载并监视该值。当	<null>	<null>	将延长。	line=50	flags=[COLUMN_MISALIGNMENT]
+ROW5	<null>	•如果在减速期间超过发电机转矩极限，则减速时	在变频器的持续额定电流之上运行时，计数器应	<null>	line=51	flags=[COLUMN_MISALIGNMENT]
+ROW6	<null>	<null>	增加。如果在变频器的持续额定电流之下运行，	间将延长。	line=52	flags=[COLUMN_MISALIGNMENT]
+
+### page=62 tableIndex=5 status=ACTIVE flags=[]
+HEADER	col_0	•如果在运行期间达到转矩极限，转矩极限会被提
+ROW0	警告/报警 10, 电机因温度过高而过载	高。确保系统可以在更高的转矩下安全工作。	line=55	flags=[]
+
+### page=62 tableIndex=6 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	•检查应用中的电机电流是否过大。	col_3
+ROW0	60	Danfoss A/S © 01/2017 全权所有。	<null>	MG38A141	line=58	flags=[MERGED_CELL]
+
+### page=63 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	维护、诊断和故障排除	操作指南
+ROW0	警告/报警 13, 过电流	警告/报警 17, 控制字超时	line=2	flags=[]
+ROW1	超过了逆变器峰值电流极限（约为额定电流的 200%）。	变频器无通讯。	line=3	flags=[]
+ROW2	该警告持续约 1.5 秒，随后变频器将跳闸，并且发出报	只有当 参数 8-04 控制字超时功能 未被设为 [0] 关	line=4	flags=[]
+ROW3	警。冲击负载或高惯量负载的快速加速可能造成该故障。	时，此警告才有效。	line=5	flags=[]
+ROW4	如果在加速期间加速很快，则在借能运行之后也可能出现	如果将参数 8-04 控制字超时功能 设为 [5] 停止并跳	line=6	flags=[]
+ROW5	该故障。	闸，变频器将先给出一个警告，然后减速至停止，随后给	line=7	flags=[]
+ROW6	如果选择了扩展机械制动控制，则可在外部将跳闸复位。	出报警。	line=8	flags=[]
+ROW7	故障诊断	故障诊断	line=9	flags=[]
+ROW8	•切断电源，然后检查电机轴能否转动。	•检查串行通讯电缆上的连接。	line=10	flags=[]
+ROW9	•请检查电动机的型号是否同变频器匹配。	•增大 参数 8-03 控制字超时时间。	line=11	flags=[]
+ROW10	•检查参数 1-20 到 1-25 中的电机数据是否正	•检查通讯设备的工作是否正常。	line=12	flags=[]
+ROW11	确。	•验证是否正确执行了 EMC 安装。	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW12	报警 14, 接地故障	警告/报警 20, 温度输入错	line=14	flags=[]
+ROW13	输出相通过电机与变频器之间的电缆或电机本身向大地放	未连接温度传感器。	line=15	flags=[]
+
+### page=63 tableIndex=1 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, EXTRA_CELL]
+HEADER	频器的电流，以此来检测接地故障。如果两个电流之差太	警告/报警 21, 参数错误	col_2
+ROW0	大，则将发出接地故障。变频器的输出电流必须与变频器	参数超出范围。显示屏中会显示相关参数号。	<null>	line=18	flags=[MERGED_CELL]
+ROW1	的输入电流相同。	故障诊断	<null>	line=19	flags=[MERGED_CELL]
+ROW2	故障诊断	•将受影响的参数设为有效值。	<null>	line=20	flags=[MERGED_CELL]
+ROW3	•请切断变频器电源，然后排除接地故障。	警告 22，起重机械制动	<null>	88	line=21	flags=[EXTRA_CELL, MERGED_CELL]
+ROW4	•检查电机中的接地故障，方法是，用兆欧表测量	0 = 在超时之前未达到转矩参考值。	<null>	line=22	flags=[MERGED_CELL]
+ROW5	<null>	1 = 超时之前没有制动反馈。	电机引线和电机的对地电阻。	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW6	•在变频器中的 3 个电流互感器中复位任何可能	警告 23, 内部风扇故障	<null>	line=24	flags=[MERGED_CELL]
+ROW7	<null>	风扇警告功能是一个保护功能，它检查风扇是否在运行或	的各个偏移。执行手动初始化或完整 AMA。更换	line=25	flags=[COLUMN_MISALIGNMENT]
+ROW8	<null>	是否安装了风扇。可在 参数 14-53 风扇监测（[0] 禁	电源卡后，很可能需要采用该方法。	line=26	flags=[COLUMN_MISALIGNMENT]
+
+### page=63 tableIndex=2 status=ACTIVE flags=[]
+HEADER	•参数 15-41 功率范围.	了解与该警告相关的报告值。
+ROW0	•参数 15-42 电压.	如果报告值为 2，则说明某一风扇中出现硬件故障。如果	line=35	flags=[]
+ROW1	•参数 15-43 SWversion.	报告值为 2，则表明风扇功率卡与控制卡之间出现通讯错	line=36	flags=[]
+ROW2	•参数 15-45 类型代码字符串.	误。	line=37	flags=[]
+ROW3	•参数 15-49 控制卡软件标志.	风扇故障排除	line=38	flags=[]
+
+### page=63 tableIndex=3 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	•	col_1
+ROW0	否会转动片刻。	•参数 15-50 功率卡软件标志.	line=40	flags=[]
+ROW1	•检查风扇是否正常工作。使用参数组 43-** 设	•参数 15-60 安装的选件.	line=41	flags=[]
+ROW2	备读数 以显示每个风扇的速度。	•参数 15-61 选件软件版本（对于每个选件插	line=42	flags=[]
+ROW3	风扇功率卡故障排除	槽）。	line=43	flags=[]
+ROW4	•检查风扇功率卡与控制卡之间的接线。	报警 16, 短路	line=44	flags=[]
+ROW5	•可能需要更换风扇功率卡。	电动机或电动机线路中发生短路。	line=45	flags=[]
+ROW6	•可能需要更换控制卡。	故障诊断	line=46	flags=[]
+
+### page=63 tableIndex=4 status=ACTIVE flags=[]
+HEADER	时带有高电压。如果执行变频器的安装、启动和维护的人	风扇中安装有一个反馈传感器。如果指示风扇运行且传感
+ROW0	员缺乏资质，则可能导致死亡或严重伤害。	器未提供反馈，则出现此警报。该报警还指示出功率卡与	line=55	flags=[]
+
+### page=63 tableIndex=5 status=ACTIVE flags=[]
+HEADER	•断开电源，然后再继续。	col_1	col_2
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	61	line=58	flags=[]
+
+### page=64 tableIndex=0 status=ACTIVE flags=[]
+HEADER	维护、诊断和故障排除	VLT® AutomationDrive FC 302
+ROW0	检查报警日志（请参阅章 3.6 本地控制面板 (LCP)），	-变频器周围的气流受阻	line=2	flags=[]
+ROW1	了解与该警告相关的报告值。	-散热片风扇损坏	line=3	flags=[]
+ROW2	如果报告值为 1，则说明某一风扇中出现硬件故障。如果	-散热片变脏	line=4	flags=[]
+
+### page=64 tableIndex=1 status=ACTIVE flags=[]
+HEADER	误。	•检查风扇电阻。
+ROW0	风扇故障排除	•检查软充电熔断器。	line=7	flags=[]
+ROW1	•对变频器执行电源循环，并检查风扇在启动时是	•检查 IGBT 热传感器。	line=8	flags=[]
+
+### page=64 tableIndex=2 status=ACTIVE flags=[]
+HEADER	功率卡故障排除	警告
+ROW0	•检查功率卡与控制卡之间的接线。	高电压	line=14	flags=[]
+
+### page=64 tableIndex=3 status=ACTIVE flags=[]
+HEADER	•可能需要更换控制卡。	员缺乏资质，则可能导致死亡或严重伤害。
+ROW0	警告 25, 制动电阻器短路	•断开电源，然后再继续。	line=19	flags=[]
+
+### page=64 tableIndex=4 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	•	col_1
+ROW0	<null>	故障诊断88	line=24	flags=[COLUMN_MISALIGNMENT]
+ROW1	报警 31, 电机缺 V 相	•请切断变频器的电源，然后更换制动电阻器（请	line=25	flags=[]
+ROW2	变频器与电机之间的电机 V 相缺失。	参阅参数 2-15 制动检查）。	line=26	flags=[COLUMN_MISALIGNMENT]
+ROW3	警告	警告/报警 26, 制动电阻功率极限	line=27	flags=[]
+
+### page=64 tableIndex=5 status=ACTIVE flags=[]
+HEADER	在运行过程中会对制动晶体管进行监测，如果发生短路，	故障诊断
+ROW0	则会禁用制动功能，并发出警告。变频器仍可运行，但由	•请切断变频器电源，然后检查电机的 V 相。	line=40	flags=[]
+
+### page=64 tableIndex=6 status=ACTIVE flags=[]
+HEADER	•请切断变频器的电源，然后拆除制动电阻器。	警告
+ROW0	警告/报警 28, 制动检查失败	高电压	line=47	flags=[]
+ROW1	没有连接制动电阻器，或者它无法正常工作。	变频器与交流主电源输入线路、直流电源相连或负载共享	line=48	flags=[]
+
+### page=64 tableIndex=7 status=ACTIVE flags=[]
+HEADER	内的散热片传感器所测得的温度。在温度未降到指定的散	故障诊断
+ROW0	热片温度之前，温度故障不会复位。跳闸和复位点因变频	•请切断变频器电源，然后检查电机的 W 相。	line=57	flags=[]
+
+### page=64 tableIndex=8 status=ACTIVE flags=[]
+HEADER	-环境温度过高	•让设备冷却到工作温度。
+ROW0	-电动机电缆太长	•检查是否存在可能的直流回路接地故障。	line=64	flags=[]
+ROW1	-变频器上方和下方的气流间隙不正确	警告/报警 34, 现场总线通讯故障	line=65	flags=[]
+
+### page=65 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	维护、诊断和故障排除	操作指南	col_2
+ROW0	警告/报警 35, 选件故障	数量文本	<null>	line=2	flags=[MERGED_CELL]
+ROW1	收到一条选件报警。该报警与选件相关。昀可能的原因是	1318插槽 C1 中的选件软件版本不受支持（不允	<null>	line=3	flags=[MERGED_CELL]
+ROW2	发生了加电或通讯故障。	<null>	许）。	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW3	警告/报警 36, 主电源故障	1360–2819内部故障。与 Danfoss 供应商或 Danfoss 服务	<null>	line=5	flags=[MERGED_CELL]
+ROW4	只有当变频器系统的电源电压断开且参数 14-10 主电源	<null>	部门联系。	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW5	故障未被设为 [0] 无功能 时，此警告/报警才有效。	2561更换控制卡。	<null>	line=7	flags=[MERGED_CELL]
+
+### page=65 tableIndex=1 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	2821	串行端口溢出。	col_2	col_3
+ROW0	2822USB 端口溢出。	<null>	•检查主电源电压是否符合产品规格。	<null>	line=11	flags=[MERGED_CELL]
+ROW1	3072–5122参数值超出了其极限。	<null>	•检查是否存在以下条件：	<null>	line=12	flags=[MERGED_CELL]
+ROW2	5123插槽 A 中的选件： 硬件与控制板硬件不兼容。	<null>	<null>	报警 307，THD(V) 过大；报警 321，电压失	line=13	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	5124插槽 B 中的选件： 硬件与控制板硬件不兼容。	<null>	<null>	衡；警告 417，主电源欠压；或警告 418，主电	line=14	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	5125插槽 C0 中的选件： 硬件与控制板硬件不兼容。	<null>	<null>	源过压 被报告出来且以下所列的任一条件为	line=15	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	5126插槽 C1 中的选件： 硬件与控制板硬件不兼容。	<null>	<null>	真：	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	5127非法选件组合（安装了同一种类的 2 个选件，或	<null>	<null>	-三相电压值降至额定主电源电压的 25%	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	<null>	在 E0 中安装了编码器，在 E1 中安装了旋变	<null>	以下。	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=2 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	-相或值失衡的百分比超过 8%。	5376–内部故障。与 Danfoss 供应商或 Danfoss 服务
+ROW0	-电压 THD 超过 10%。	65535部门联系。	88	line=25	flags=[EXTRA_CELL]
+ROW1	报警 37, 相位不平衡	表 8.4 内部故障代号	line=26	flags=[COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=3 status=ACTIVE flags=[]
+HEADER	报警 38, 内部故障	报警 39, 散热片传感器
+ROW0	发生内部故障时，会显示表 8.4定义的代码。	散热片温度传感器无反馈。	line=29	flags=[]
+ROW1	故障诊断	功率卡无法获得来自 IGBT 热传感器的信号。问题可能出	line=30	flags=[]
+ROW2	•执行供电循环。	在功率卡、门驱动器卡或功率卡和门驱动器卡之间的带状	line=31	flags=[]
+
+### page=65 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	可能需要与 Danfoss 供应商或服务部门联系。记下代	数 5-00 数字 I/O 模式 和 参数 5-01 端子 27 的模	col_2
+ROW0	号，以备进一步的故障排查之用。	式。	<null>	line=38	flags=[MERGED_CELL]
+ROW1	数量文本	警告 41, 数字输出端子 29 过载	<null>	line=39	flags=[MERGED_CELL]
+ROW2	0	检查与端子 29 相连的负载，或拆除短路连接。另外检查	串行端口无法初始化。与 Danfoss 供应商或	line=40	flags=[]
+ROW3	<null>	参数 5-00 数字 I/O 模式和参数 5-02 端子 29 的模	Danfoss 服务部门联系。	line=41	flags=[COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	512–519内部故障。与 Danfoss 供应商或 Danfoss 服务	col_1	对于端子 X30/7，请检查与端子 X30/7 相连的负载，或
+ROW0	<null>	部门联系。	拆除短路连接。检查参数 5-33 端子 X30/7 数字输出	line=50	flags=[COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	783	参数值超出昀小/昀大极限。	col_2
+ROW0	1024–1284内部故障。请与 Danfoss 供应商或 Danfoss 服	<null>	报警 43, 扩展电源	line=53	flags=[MERGED_CELL]
+ROW1	<null>	务部门联系。	VLT® Extended Relay Option MCB 113在安装时没有为	line=54	flags=[COLUMN_MISALIGNMENT]
+ROW2	1299插槽 A 中的选件软件版本过旧。	<null>	其配备外接 24 V 直流电源。配备外接 24 V 直流电	line=55	flags=[MERGED_CELL]
+ROW3	1300插槽 B 中的选件软件版本过旧。	<null>	源，或者通过参数 14-80 选件由外部 24VDC 电源供电	line=56	flags=[MERGED_CELL]
+ROW4	1301插槽 C0 中的选件软件版本过旧。	<null>	[0] 无指定该选件不使用外接电源。更改 参数 14-80 选	line=57	flags=[MERGED_CELL]
+ROW5	1302插槽 C1 中的选件软件版本过旧。	<null>	件由外部 24VDC 电源供电 后，需要执行电源循环。	line=58	flags=[MERGED_CELL]
+
+### page=66 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	维护、诊断和故障排除	VLT® AutomationDrive FC 302
+ROW0	故障诊断	报警 53, AMA 电机过大	line=2	flags=[]
+ROW1	•检查是否正确接地并且接地线路是否松脱。	电机太大，无法执行 AMA。	line=3	flags=[]
+ROW2	•检查线缆规格是否正确。	报警 54, AMA 电机过小	line=4	flags=[]
+ROW3	•检查电机电缆是否发生短路或存在泄漏电流。	电动机太小，无法执行 AMA。	line=5	flags=[]
+ROW4	报警 46, 功率卡电源	报警 55, AMA 参数超出范围	line=6	flags=[]
+ROW5	功率卡的电源超出范围。	电机的参数值超出可接受的范围，AMA 无法运行。	line=7	flags=[]
+ROW6	功率卡上的开关模式电源 (SMPS) 产生 3 个电源：	报警 56, AMA 被用户中断	line=8	flags=[]
+ROW7	•24 V.	AMA 手动中断。	line=9	flags=[]
+ROW8	•5 V.	报警 57, AMA 内部故障	line=10	flags=[]
+
+### page=66 tableIndex=1 status=ACTIVE flags=[]
+HEADER	故障诊断	1-20 至 1-25 中的电机数据设置正确。如果需要，增大
+ROW0	•检查功率卡是否有问题。	电流极限。确保系统可以在更高极限下安全工作。	line=21	flags=[]
+ROW1	•检查控制卡是否有问题。	警告 60, 外部互锁	line=22	flags=[]
+ROW2	•检查选件卡是否有问题。	一个数字输入信号表明在变频器外部存在故障状态。已向	line=23	flags=[]
+
+### page=66 tableIndex=2 status=ACTIVE flags=[]
+HEADER	•如果使用了 24 V 直流电源，请检查其供电是否88	态。要继续正常运行，请对设置为外部互锁的端子施加
+ROW0	正常。	24 V 直流电，并将变频器复位。	line=26	flags=[]
+ROW1	警告 47, 24 V 电源故障	警告 61，跟踪错误	line=27	flags=[]
+ROW2	功率卡的电源超出范围。	检测到计算所得的电动机速度与来自反馈设备的速度测量	line=28	flags=[]
+ROW3	功率卡上的开关模式电源 (SMPS) 产生 3 个电源：	值之间存在偏差。警告/报警/禁用功能在参数 4-30 电动	line=29	flags=[]
+ROW4	•24 V。	机反馈损耗功能 中设置。在参数 4-31 电动机反馈速度	line=30	flags=[]
+
+### page=66 tableIndex=3 status=ACTIVE flags=[]
+HEADER	•±18 V。	很有用。
+ROW0	故障诊断	警告 62, 输出频率极限	line=35	flags=[]
+ROW1	•检查功率卡是否有问题。	输出频率达到在 参数 4-19 昀大输出频率 中设置的值。	line=36	flags=[]
+ROW2	警告 48, 1.8 V 电源下限	检查应用了解可能原因。输出频率极限可能被提高。确保	line=37	flags=[]
+ROW3	控制卡上使用的 1.8 V 直流电源超出了所允许的限制。	系统可以在更高输出频率下安全工作。当输出低于昀大极	line=38	flags=[]
+ROW4	该电源在控制卡上测量。	限时，警告便会消除。	line=39	flags=[]
+ROW5	故障诊断	报警 63, 机械制动低	line=40	flags=[]
+ROW6	•检查控制卡是否有问题。	实际电机电流尚未超过启动延时期间的抱闸释放电流。	line=41	flags=[]
+ROW7	•如果存在选件卡，请检查是否发生过压情况。	警告 64, 电压极限	line=42	flags=[]
+
+### page=66 tableIndex=4 status=ACTIVE flags=[]
+HEADER	当速度不在 参数 4-11 电机速度下限 与 参数 4-13 电	警告/报警 65, 控制卡温度过高
+ROW0	机速度上限 中指定的范围内时，将显示该警告。当速度	控制卡的断开温度为 85 °C (185 °F)。	line=46	flags=[]
+ROW1	低于在参数 1-86 跳闸速度下限 [RPM] 中指定的极限时	故障诊断	line=47	flags=[]
+ROW2	（启动或停止时除外），变频器将跳闸。	•检查环境工作温度是否在极限范围内。	line=48	flags=[]
+ROW3	报警 50, AMA 调整失败	•检查过滤器是否堵塞。	line=49	flags=[]
+
+### page=66 tableIndex=5 status=ACTIVE flags=[]
+HEADER	报警 52, AMA Inom 过低	参数 2-00 直流夹持/预热电流 设为 5% 和参
+ROW0	电机电流过低。	数 1-80 停止功能，在电机停止时为变频器提供涓流电	line=61	flags=[]
+ROW1	故障诊断	流。	line=62	flags=[]
+
+### page=66 tableIndex=6 status=ACTIVE flags=[]
+HEADER	•请检查 参数 1-24 电动机电流 中的设置。	col_1	col_2
+ROW0	64	Danfoss A/S © 01/2017 全权所有。	MG38A141	line=64	flags=[]
+
+### page=67 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	维护、诊断和故障排除	操作指南
+ROW0	报警 67, 选件模块配置已更改	警告 77, 精简功率模式	line=2	flags=[]
+ROW1	自上次关机以来添加或移除了一个或多个选件。检查配置	此警告表示变频器正在精简功率模式（即低于逆变器部分	line=3	flags=[]
+ROW2	变化是否符合预期，然后将设备复位。	所允许的数量）下运转。将变频器设为与较少的逆变器一	line=4	flags=[]
+ROW3	报警 68, 安全停止已激活	起运行时，在电源循环过程中将生成该警告，并会一直显	line=5	flags=[]
+
+### page=67 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	已激活 Safe Torque Off (STO)。要恢复正常运行，请对	示。
+ROW0	端子 37 施加 24 V 直流电，然后通过总线、数字 I/O	报警 78, 跟踪错误	line=7	flags=[]
+ROW1	或通过按 [Reset]（复位）发送复位信号。	给定值和实际值之间的差值超过了 参数 4-35 跟踪误差	line=8	flags=[]
+ROW2	报警 69, 功率卡温度	中的值。	line=9	flags=[]
+ROW3	功率卡上的温度传感器温度过高或过低。	故障诊断	line=10	flags=[]
+ROW4	故障诊断	•禁用该功能，或在 参数 4-34 跟踪误差功能 中	line=11	flags=[]
+ROW5	•检查环境工作温度是否在极限范围内。	选择一个报警/警告。	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW6	•检查过滤器是否堵塞。	•检查负载和电机周围的机械装置。检查从电机编	line=13	flags=[]
+
+### page=67 tableIndex=2 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	•	col_1
+ROW0	反馈功能。	•检查功率卡。	line=17	flags=[]
+ROW1	•在 参数 4-35 跟踪误差 和 参数 4-37 加减速	报警 70, FC 配置不合规	line=18	flags=[]
+ROW2	时的跟踪误差 中调整跟踪误差带。	控制卡和功率卡不兼容。要检查兼容性，请与 Danfoss	line=19	flags=[]
+
+### page=67 tableIndex=3 status=ACTIVE flags=[]
+HEADER	运行时，将发送一个复位信号（通过串行通讯、数字 I/O	报警 81，CSIV 损坏
+ROW0	或通过按 LCP 上的 [Reset]（复位））。如果启用了自	CSIV 文件存在语法误差。	line=32	flags=[]
+ROW1	动重启，电机可能会在故障消除时启动。	报警 82, CSIV 参数错	line=33	flags=[]
+ROW2	报警 72, 危险故障	CSIV 无法初始化某个参数。	line=34	flags=[]
+ROW3	Safe Torque Off (STO) 并跳闸锁定。在 Safe Torque	报警 83, 非法选件组合	line=35	flags=[]
+
+### page=67 tableIndex=4 status=ACTIVE flags=[]
+HEADER	警告 73, 安全停止自动重新启动	在未执行总体复位操作的情况下移走了安全选件。请重新
+ROW0	Safe torque off (STO)。在启用了自动重启的情况下，	连接安全选件。	line=41	flags=[]
+
+### page=67 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	匹配。在更换机箱规格 F 模块时，如果该模块功率卡中	警告 89, 机械制动滑移
+ROW0	特定于功率的数据与变频器其余部分不匹配，则会出现此	起重制动监测器检测到电机速度超过 10 RPM。	line=58	flags=[]
+ROW1	警告。如果功率卡连接断开，则设备还将触发此警告。	报警 90, 反馈监视	line=59	flags=[]
+ROW2	故障诊断	检查与编码器/解析器选件的连接，必要时，更换 VLT®	line=60	flags=[]
+ROW3	•请确认备件及其功率卡的部件号正确。	Encoder Input MCB 102 或 VLT® Resolver Input MCB	line=61	flags=[]
+ROW4	•确保在 MDCIC 与电源卡之间安装正确了 44 针	103。	line=62	flags=[]
+ROW5	电缆。	报警 91, 模拟输入 54 设置错误	line=63	flags=[COLUMN_MISALIGNMENT]
+
+### page=68 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	维护、诊断和故障排除	VLT® AutomationDrive FC 302
+ROW0	报警 99, 堵转	•散热片变脏。	line=2	flags=[]
+ROW1	转子被阻塞。	警告 251, 新类型代码	line=3	flags=[]
+ROW2	警告/报警 104, 混合风扇故障	更换了功率卡或其他组件，并且类型代码发生变化。	line=4	flags=[]
+ROW3	风扇不工作。在加电时，风扇监测器发现风扇在空转，或	报警 421, 温度故障	line=5	flags=[]
+ROW4	者在任何时候发现混合风扇被开启。可在 参数 14-53 风	在风扇功率卡上检测到因板载温度传感器导致的故障。	line=6	flags=[]
+
+### page=68 tableIndex=1 status=ACTIVE flags=[]
+HEADER	•对变频器执行电源循环，以确定是否返回相关警	col_1
+ROW0	告/报警。	•检查传感器。	line=11	flags=[]
+ROW1	警告/报警 122, 电机意外旋转。	•更换风扇功率卡。	line=12	flags=[]
+ROW2	变频器正在执行一项功能（如 PM 电机的直流夹持），要	报警 423, FPC 更新	line=13	flags=[]
+ROW3	求电机保持静止。	当风扇功率卡报告它具有无效的 PUD 时，将生成该报	line=14	flags=[]
+ROW4	警告 163, ATEX ETR 电流极限警告	警。控制卡尝试更新 PUD。根据更新情况，随后可能会出	line=15	flags=[]
+ROW5	变频器已在特征曲线之上运行了 50 秒钟以上。该警告在	现报警。请参阅 A424 和 A425。	line=16	flags=[]
+
+### page=68 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	热过载达到允许水平的 83% 时被激活，在降至 65% 后消	报警 424, FPC 成功更新
+ROW0	失。	当控制卡成功更新风扇功率卡 PUD 时，将生成该报警。	line=18	flags=[]
+ROW1	报警 164, ATEX ETR 电流极限报警	必须复位变频器以停止该报警。	line=19	flags=[]
+ROW2	在 600 秒的时段内，在特征曲线之上工作 60 多	报警 425, FPC 更新失败	line=20	flags=[]
+ROW3	秒将激活报警，并且变频器跳闸。	当控制卡未能更新风扇功率卡 PUD 时，将生成该报警。	line=21	flags=[]
+ROW4	88警告 165, ATEX ETR 频率极限警告	故障诊断	line=22	flags=[COLUMN_MISALIGNMENT]
+ROW5	变频器在所允许的昀低频率之下运行了 50 秒钟以上（参	•检查风扇功率卡接线。	line=23	flags=[]
+
+### page=68 tableIndex=3 status=ACTIVE flags=[]
+HEADER	一个 600 秒钟的时段内）（参数 1-98 ATEX ETR	报警 426, FPC 配置
+ROW0	interpol. points freq.）。	发现的风扇功率卡的数量与已配置的风扇功率卡的数量不	line=30	flags=[]
+
+### page=68 tableIndex=4 status=ACTIVE flags=[]
+HEADER	度之前，温度故障不会复位。跳闸和复位点因功率大小不	故障诊断
+ROW0	同而异。该报警等同于报警 29，散热片温度。	•检查风扇功率卡接线。	line=36	flags=[]
+ROW1	故障诊断	•更换风扇功率卡。	line=37	flags=[]
+ROW2	检查是否存在下述情况：	报警 427, FPC 电源	line=38	flags=[]
+ROW3	•环境温度过高。	在风扇故障卡上检测到电源电压故障（5 V、24 V 或 48	line=39	flags=[]
+ROW4	•电机电缆太长。	V）。	line=40	flags=[]
+ROW5	•交流变频器上方或下方的气流间隙不正确。	故障诊断	line=41	flags=[]
+
+### page=68 tableIndex=5 status=ACTIVE flags=[]
+HEADER	•散热片风扇损坏。	col_1	col_2
+ROW0	66	Danfoss A/S © 01/2017 全权所有。	MG38A141	line=46	flags=[]
+
+### page=69 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	故障现象可能原因	测试	解决办法
+ROW0	黑屏/无功能无输入功率。	请参阅表 5.4。	检查输入电源。	line=4	flags=[]
+ROW1	熔断器缺失或开路。	有关可能原因，请参阅本表中的电源熔断器请遵照执行所提供的建议。	<null>	line=5	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+
+### page=69 tableIndex=1 status=ACTIVE flags=[]
+HEADER	不兼容的 LCP（专供 VLT®	请仅使用 LCP 101（部件号 130B1124）–
+ROW0	2800 或 5000/6000/8000/	或 LCP 102（部件号 130B1107）。	line=12	flags=[]
+
+### page=69 tableIndex=2 status=ACTIVE flags=[]
+HEADER	显示屏 (LCP) 有问题。用不同 LCP 进行测试。	更换有问题的 LCP 电缆或接好电缆。
+ROW0	内部供电故障或 SMPS 有问	与供应商联系。–	line=17	flags=[]
+
+### page=69 tableIndex=3 status=ACTIVE flags=[]
+HEADER	由于控制线路有误或交流变频要排除控制线路问题，请拆卸端子组，从而如果屏幕保持点亮状态，则说明问题在控间歇显示	col_1
+ROW0	器内部出现故障，导致电源断开所有控制线路。	制线路中。检查线路是否短路或连接有	line=20	flags=[]
+ROW1	(SMPS) 过载。	误。如果屏幕仍然无显示，请执行黑屏88	line=21	flags=[]
+
+### page=69 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	电机未运行	维修开关被打开，或电机连接检查是否已连接电机，并且连接是否被维修连接电机，并检查维修开关。	col_2
+ROW0	<null>	缺失。	开关或其他装置断开。	line=24	flags=[COLUMN_MISALIGNMENT]
+
+### page=69 tableIndex=5 status=ACTIVE flags=[]
+HEADER	24 V DC 选件卡未接通主电	如果显示屏可工作但无输出，请检查交流变应用主电源。
+ROW0	源。	频器是否接通了主电源。	line=26	flags=[]
+ROW1	LCP 停止。	检查是否按了 [Off]（停止）键。按 [Auto On]（自动启动）或 [Hand	line=27	flags=[]
+
+### page=69 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	态（惯性停车）。	子 27 的设置是否正确（使用默认设置）。端子设为 [0] 无功能。	col_2
+ROW0	错误的参考值信号源。	检查参考值信号：	进行正确设置。检查 参数 3-13 参考值	line=33	flags=[]
+ROW1	<null>	•本地	位置。请在参数组 3-1* 参考值 中启用	line=34	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	•是远程还是总线参考值？	预置参考值。检查接线是否正确。检查端	line=35	flags=[COLUMN_MISALIGNMENT]
+
+### page=69 tableIndex=7 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	电机运动方向电机转速极限。	检查 参数 4-10 电动机速度方向 是否正确进行正确设置。
+ROW0	错误	设置。	line=42	flags=[]
+ROW1	启用了反向信号。	检查是否在参数组 5-1* 数字输入 中为端子禁用反向信号。	line=43	flags=[COLUMN_MISALIGNMENT]
+
+### page=69 tableIndex=8 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	请参阅章 6.5.1 警告 - 电机启动。	电机相连接有误。	–
+ROW0	设置正确的极限。	电机未达到昀频率极限设置有误。	检查 参数 4-13 电机速度上限、参	line=46	flags=[]
+ROW1	<null>	大速度	数 4-14 电动机速度上限 [Hz] 和 参	line=47	flags=[COLUMN_MISALIGNMENT]
+
+### page=69 tableIndex=9 status=ACTIVE flags=[]
+HEADER	电机速度不稳参数设置可能不当。	检查所有电机参数的设置，包括所有电机补检查参数组 1-6* 与负载相关 设置 中
+ROW0	定	偿设置。对于闭环运行，请检查 PID 设置。的设置。对于闭环运行，请检查参数组	line=52	flags=[]
+
+### page=70 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, EXTRA_CELL]
+HEADER	维护、诊断和故障排除	VLT® AutomationDrive FC 302
+ROW0	故障现象可能原因	测试	解决办法	line=2	flags=[EXTRA_CELL]
+ROW1	电机运行困难可能发生过磁化。	检查所有电机参数中的电机设置是否正确。检查参数组 1-2* 电机数据、1-3* 高级	line=3	flags=[]
+
+### page=70 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	电机不能制动可能是制动参数的设置不正检查制动参数。检查加减速时间设置。	检查参数组 2-0* 直流制动 和 3-0* 参	col_2	col_3
+ROW0	<null>	考值极限。	确。减速时间可能太短。	<null>	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW1	电源熔断器开相到相短路。	<null>	<null>	电机或面板存在相间短路问题。检查电机和排除所发现的任何短路。	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW2	路	<null>	<null>	面板的各相是否发生短路。	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW3	<null>	执行启动测试，并验证电机电流是否符合	电机过载。	电机在当前应用中过载。	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=70 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	主电源电流不主电源问题（请参阅报警 4，将输入电源引线依次调换一个位置： A 至	如果不平衡现象随线缆转移，则说明是电	col_2
+ROW0	平衡超过 3%主电源缺相 说明）。	源问题。检查主电源电压。	B、B 至 C、C 至 A。	line=17	flags=[]
+ROW1	交流变频器出现问题。	<null>	在交流变频器中将输入电源引线的位置依次如果不平衡现象停留在同一输入端子上，	line=18	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=70 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	调换一个位置： A 至 B、B 至 C、C 至	则说明交流变频器存在问题。与供应商联	col_2
+ROW0	A。	系。	<null>	line=20	flags=[MERGED_CELL]
+ROW1	将电机输出电缆依次调换一个位置： U 至如果不平衡现象跟随接线转移，则说明问	<null>	电机电流不平电机或电机接线问题。	line=21	flags=[MERGED_CELL]
+ROW2	V、V 至 W、W 至 U。	题在电机或电机接线上。检查电机和电机	衡度过 3%	line=22	flags=[]
+ROW3	<null>	接线。	88	line=23	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW4	将电机输出电缆依次调换一个位置： U 至如果不平衡现象停留在同一输出端子上，	<null>	交流变频器出现问题。	line=24	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW5	V、V 至 W、W 至 U。	则说明是设备问题。与供应商联系。	<null>	line=25	flags=[MERGED_CELL]
+ROW6	如果发生警告或报警，请参阅章 8.5 警告和在 参数 3-41 斜坡1加速时间 中增大	<null>	交流变频器出电机数据未正确输入。	line=26	flags=[MERGED_CELL]
+ROW7	报警列表。	加速时间。在 参数 4-18 电流极限 中	现加速问题	line=27	flags=[]
+ROW8	检查电机数据是否正确输入。	增大电流极限。在 参数 4-16 电动时转	<null>	line=28	flags=[MERGED_CELL]
+
+### page=70 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	交流变频器出电机数据未正确输入。	如果发生警告或报警，请参阅章 8.5 警告和增大参数 3-42 斜坡1减速时间减速时	col_2
+ROW0	现减速问题	报警列表。	间。在 参数 2-17 过压控制 中启用过	line=31	flags=[]
+ROW1	<null>	检查电机数据是否正确输入。	电压控制。	line=32	flags=[COLUMN_MISALIGNMENT]
+
+### page=71 tableIndex=0 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	VLT® AutomationDrive FC 302	N355N315	N400
+ROW0	高/正常过载	HO（高过HO（高过载）NO	HO（高过NO	NO	line=6	flags=[EXTRA_CELL]
+ROW1	<null>	载）	载）	line=7	flags=[COLUMN_MISALIGNMENT]
+
+### page=71 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	400 V 时的典型主轴输出 [kW]	315	355	355	400	400	450
+ROW0	460 V 时的典型主轴输出 [hp]	450	500	500	600	550	600	line=12	flags=[]
+ROW1	500 V 时的典型主轴输出 [kW]	355	400	400	500	500	530	line=13	flags=[]
+
+### page=71 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	810	649	885	746	1017	803	col_6
+ROW0	<null>	<null>	<null>	<null>	<null>	99	（460/500 V 时）[A]	line=24	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW1	416	456	456	516	482	554	持续 kVA 值（400 V 时）[kVA]	line=25	flags=[]
+ROW2	430	470	470	540	540	582	持续 kVA 值（460 V 时）[kVA]	line=26	flags=[]
+ROW3	468	511	511	587	587	632	持续 kVA 值（500 V 时）[kVA]	line=27	flags=[]
+
+### page=71 tableIndex=3 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续（400 V 时）[A]	578	634	634	718	670	771
+ROW0	持续（460/500 V 时）[A]	520	569	569	653	653	704	line=30	flags=[]
+
+### page=71 tableIndex=4 status=ACTIVE flags=[]
+HEADER	- 无制动的主电源和电机 [mm2 (AWG)]1)	5x240 (5x500 mcm)	5x240 (5x500 mcm)	5x240 (5x500 mcm)
+ROW0	- 带制动的主电源和电机 [mm2 (AWG)]1)	4x240 (4x500 mcm)	4x240 (4x500 mcm)	4x240 (4x500 mcm)	line=34	flags=[]
+ROW1	- 制动或再生 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	line=35	flags=[]
+
+### page=71 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	- 主电源和电机 [mm2 (AWG)]1)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	col_4	col_5	col_6	col_7
+ROW0	- 制动 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	<null>	<null>	<null>	<null>	line=39	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	- 负载共享或再生 [mm2 (AWG)]1)	4x185 (4x350 mcm)	4x185 (4x350 mcm)	4x185 (4x350 mcm)	<null>	<null>	<null>	<null>	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	昀大外置主电源熔断器 [A]2)	<null>	<null>	<null>	800	800	800	<null>	line=41	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	预计功率损耗（400 V 时） [W]3) 4)	6178	6851	7297	<null>	8036	8783	6928	line=42	flags=[MERGED_CELL]
+ROW4	460 V 时的预计功率损耗 [W] 3)4)	5322	5846	7240	<null>	6933	7969	5910	line=43	flags=[MERGED_CELL]
+ROW5	效率4)	<null>	<null>	<null>	0.98	0.98	0.98	<null>	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	输出频率	<null>	<null>	<null>	0–590 Hz	0–590 Hz	0–590 Hz	<null>	line=45	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	散热片过热跳闸 [°C (°F)]	<null>	<null>	<null>	110 (230)	110 (230)	110 (230)	<null>	line=46	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW8	控制卡过热跳闸 [°C (°F)]	<null>	<null>	<null>	80 (176)	80 (176)	80 (176)	<null>	line=47	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	功率卡过热跳闸 [°C (°F)]	<null>	<null>	<null>	85 (185)	85 (185)	85 (185)	<null>	line=48	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW10	风扇功率卡过热跳闸 [°C (°F)]	<null>	<null>	<null>	85 (185)	85 (185)	85 (185)	<null>	line=49	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=72 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	规格	VLT® AutomationDrive FC 302	col_2	col_3	col_4	col_5	col_6	col_7
+ROW0	VLT® AutomationDrive FC 302	<null>	<null>	N450	<null>	<null>	N500	<null>	line=2	flags=[COLUMN_MISALIGNMENT]
+ROW1	高/正常过载	<null>	HO（高过载）	<null>	NO	HO（高过载）	<null>	NO	line=3	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=72 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	400 V 时的典型主轴输出 [kW]	450	500	500	560
+ROW0	460 V 时的典型主轴输出 [hp]	600	650	650	750	line=8	flags=[]
+ROW1	500 V 时的典型主轴输出 [kW]	530	560	560	630	line=9	flags=[]
+ROW2	机箱规格	E2h/E4h	<null>	E2h/E4h	<null>	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=72 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续 kVA 值（400 V 时）[kVA]	554	610	610	686
+ROW0	持续 kVA 值（460 V 时）[kVA]	582	621	621	709	line=21	flags=[]
+
+### page=72 tableIndex=3 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续（400 V 时）[A]	771	848	848	954
+ROW0	持续（460/500 V 时）[A]	704	752	752	858	line=27	flags=[]
+
+### page=72 tableIndex=4 status=ACTIVE flags=[]
+HEADER	和尺寸 (E2h)99	col_1	col_2
+ROW0	- 无制动的主电源和电机 [mm2 (AWG)]1)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	line=30	flags=[]
+ROW1	- 带制动的主电源和电机 [mm2 (AWG)]1)	5x240 (5x500 mcm)	5x240 (5x500 mcm)	line=31	flags=[]
+ROW2	- 制动或再生 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	line=32	flags=[]
+
+### page=72 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	- 主电源和电机 [mm2 (AWG)]1)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	col_3	col_4	col_5	col_6
+ROW0	- 制动 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	<null>	<null>	<null>	<null>	line=36	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	- 负载共享或再生 [mm2 (AWG)]1)	4x185 (4x350 mcm)	4x185 (4x350 mcm)	<null>	<null>	<null>	<null>	line=37	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	昀大外置主电源熔断器 [A]2)	<null>	<null>	1200	1200	<null>	<null>	line=38	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	400 V 时的预计功率损耗 [W]3)4)	8352	9449	<null>	<null>	9473	11102	line=39	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	预计功率损耗（460 V 时） [W]3) 4)	7182	7771	<null>	<null>	7809	9236	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	效率4)	<null>	<null>	0.98	0.98	<null>	<null>	line=41	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	输出频率 [Hz]	<null>	<null>	0–590	0–590	<null>	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	散热片过热跳闸 [°C (°F)]	<null>	<null>	110 (230)	100 (212)	<null>	<null>	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW8	控制卡过热跳闸 [°C (°F)]	<null>	<null>	80 (176)	80 (176)	<null>	<null>	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	功率卡过热跳闸 [°C (°F)]	<null>	<null>	85 (185)	85 (185)	<null>	<null>	line=45	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW10	风扇功率卡过热跳闸 [°C (°F)]	<null>	<null>	85 (185)	85 (185)	<null>	<null>	line=46	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW11	活动浪涌电流冲击卡过热跳闸 [°C (°F)]	<null>	<null>	85 (185)	85 (185)	<null>	<null>	line=47	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=73 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	VLT® AutomationDrive FC 302	col_1	N355	col_3	col_4	N400	col_6	col_7	N500	col_9
+ROW0	高/正常过载	HO（高过载）	<null>	NO	HO（高过载）	<null>	NO	HO（高过	<null>	NO	line=4	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=73 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	550 V 时的典型主轴输出 [kW]	315	355	315	400	400	450
+ROW0	575 V 时的典型主轴输出 [hp]	400	450	400	500	500	600	line=9	flags=[]
+ROW1	690 V 时的典型主轴输出 [kW]	355	450	400	500	500	560	line=10	flags=[]
+ROW2	机箱规格	E1h/E3h	<null>	E1h/E3h	<null>	E1h/E3h	<null>	line=11	flags=[COLUMN_MISALIGNMENT]
+
+### page=73 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续（550 V 时）[A]	395	470	429	523	523	596
+ROW0	间歇（60 秒过载）（550 V 时）[A]	593	517	644	575	785	656	line=14	flags=[]
+ROW1	持续（575/690 V 时）[A]	380	450	410	500	500	570	line=15	flags=[]
+
+### page=73 tableIndex=3 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续 kVA 值（550 V 时）[kVA]	376	448	409	498	498	568
+ROW0	持续 kVA 值（575 V 时）[kVA]	378	448	408	498	498	568	line=20	flags=[]
+ROW1	持续 kVA 值（690 V 时）[kVA]	454	538	490	598	598	681	line=21	flags=[]
+
+### page=73 tableIndex=4 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续（550 V 时）[A]	381	453	413	504	504	574
+ROW0	持续（575 V 时）[A]	366	434	395	482	482	549	line=24	flags=[]
+ROW1	持续（690 V 时）[A]	366	434	395	482	482	54999	line=25	flags=[]
+
+### page=73 tableIndex=5 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	- 无制动的主电源和电机 [mm2 (AWG)]1)	5x240 (5x500 mcm)	5x240 (5x500 mcm)	5x240 (5x500 mcm)
+ROW0	- 带制动的主电源和电机 [mm2 (AWG)]1)	4x240 (4x500 mcm)	4x240 (4x500 mcm)	4x240 (4x500 mcm)	line=29	flags=[]
+ROW1	- 制动或再生 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	line=30	flags=[]
+
+### page=73 tableIndex=6 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED]
+HEADER	- 主电源和电机 [mm2 (AWG)]1)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	col_4	col_5	col_6	col_7
+ROW0	- 制动 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	<null>	<null>	<null>	<null>	line=34	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	- 负载共享或再生 [mm2 (AWG)]1)	4x185 (4x350 mcm)	4x185 (4x350 mcm)	4x185 (4x350 mcm)	<null>	<null>	<null>	<null>	line=35	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	昀大外置主电源熔断器 [A]2)	<null>	<null>	<null>	800	800	<null>	800	line=36	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	预计功率损耗（600 V 时）V [W]3)4)	4989	5419	6833	<null>	8076	6062	6879	line=37	flags=[MERGED_CELL]
+ROW4	预计功率损耗（690 V 时）V [W]3)4)	4920	5332	6678	<null>	7852	5939	6715	line=38	flags=[MERGED_CELL]
+ROW5	效率4)	<null>	0.98	<null>	0.98	0.98	<null>	<null>	line=39	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	输出频率 [Hz]	<null>	0–590	<null>	0–590	0–590	<null>	<null>	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	散热片过热跳闸 [°C (°F)]	<null>	110 (230)	<null>	110 (230)	110 (230)	<null>	<null>	line=41	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW8	控制卡过热跳闸 [°C (°F)]	<null>	80 (176)	<null>	80 (176)	80 (176)	<null>	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	功率卡过热跳闸 [°C (°F)]	<null>	85 (185)	<null>	85 (185)	85 (185)	<null>	<null>	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW10	风扇功率卡过热跳闸 [°C (°F)]	<null>	85 (185)	<null>	85 (185)	85 (185)	<null>	<null>	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=74 tableIndex=0 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	规格	VLT® AutomationDrive FC 302
+ROW0	VLT® AutomationDrive FC 302	N560	N630	N710	line=2	flags=[COLUMN_MISALIGNMENT, EXTRA_CELL]
+ROW1	高/正常过载	HO（高过载）NOHO（高过载）NOHO（高过NO	line=3	flags=[]
+
+### page=74 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	550 V 时的典型主轴输出 [kW]	450	500	500	560	560	670
+ROW0	575 V 时的典型主轴输出 [hp]	600	650	650	750	750	950	line=8	flags=[]
+ROW1	690 V 时的典型主轴输出 [kW]	560	630	630	710	710	800	line=9	flags=[]
+ROW2	机箱规格	E1h/E3h	<null>	E2h/E4h	<null>	E2h/E4h	<null>	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=74 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续（550 V 时）[A]	596	630	659	763	763	889
+ROW0	间歇（60 秒过载）（550 V 时）[A]	894	693	989	839	1145	978	line=13	flags=[]
+ROW1	持续（575/690 V 时）[A]	570	630	630	730	730	850	line=14	flags=[]
+
+### page=74 tableIndex=3 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续 kVA 值（550 V 时）[kVA]	568	600	628	727	727	847
+ROW0	持续 kVA 值（575 V 时）[kVA]	568	627	627	727	727	847	line=19	flags=[]
+ROW1	持续 kVA 值（690 V 时）[kVA]	681	753	753	872	872	1016	line=20	flags=[]
+
+### page=74 tableIndex=4 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	持续（550 V 时）[A]	574	607	635	735	735	857
+ROW0	持续（575 V 时）[A]	549	607	607	704	704	819	line=23	flags=[]
+ROW1	持续（690 V 时）[A]	549	607	607	704	704	819	line=24	flags=[]
+
+### page=74 tableIndex=5 status=ACTIVE flags=[]
+HEADER	和尺寸 (E2h)99	col_1	col_2	col_3
+ROW0	- 无制动的主电源和电机 [mm2 (AWG)]1)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	line=27	flags=[]
+ROW1	- 带制动的主电源和电机 [mm2 (AWG)]1)	5x240 (5x500 mcm)	5x240 (5x500 mcm)	5x240 (5x500 mcm)	line=28	flags=[]
+ROW2	- 制动或再生 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	line=29	flags=[]
+
+### page=74 tableIndex=6 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	- 主电源和电机 [mm2 (AWG)]1)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	6x240 (6x500 mcm)	col_4	col_5	col_6	col_7	col_8
+ROW0	- 制动 [mm2 (AWG)]1)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	2x185 (2x350 mcm)	<null>	<null>	<null>	<null>	<null>	line=33	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	- 负载共享或再生 [mm2 (AWG)]1)	4x185 (4x350 mcm)	4x185 (4x350 mcm)	4x185 (4x350 mcm)	<null>	<null>	<null>	<null>	<null>	line=34	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	昀大外置主电源熔断器 [A]2)	<null>	<null>	<null>	800	1200	1200	<null>	<null>	line=35	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	预计功率损耗（600 V 时）V [W]3)4)	8069	8543	10319	<null>	<null>	12723	9208	10346	line=36	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	预计功率损耗（690 V 时）V [W]3)4)	7848	8363	10060	<null>	<null>	12321	8921	10066	line=37	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	效率4)	<null>	<null>	<null>	0.98	0.98	0.98	<null>	<null>	line=38	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	输出频率 [Hz]	<null>	<null>	<null>	0–590	0–590	0–590	<null>	<null>	line=39	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	散热片过热跳闸 [°C (°F)]	<null>	<null>	<null>	110 (230)	110 (230)	110 (230)	<null>	<null>	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW8	控制卡过热跳闸 [°C (°F)]	<null>	<null>	<null>	80 (176)	80 (176)	80 (176)	<null>	<null>	line=41	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	功率卡过热跳闸 [°C (°F)]	<null>	<null>	<null>	85 (185)	85 (185)	85 (185)	<null>	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW10	风扇功率卡过热跳闸 [°C (°F)]	<null>	<null>	<null>	85 (185)	85 (185)	85 (185)	<null>	<null>	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=75 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	供电频率	50/60 Hz ±5%	col_2
+ROW0	主电源各相位之间的昀大临时不平衡	<null>	额定供电电压的 3.0%1)	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW1	真实功率因数 (λ)	<null>	≥0.9 标称值（额定负载时）	line=10	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW2	位移功率因数 (cos ϕ) 接近 1	(>0.98)	<null>	line=11	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW3	打开输入电源 L1, L2, L3（上电）	昀多 1 次/2 分钟	<null>	line=12	flags=[MERGED_CELL]
+ROW4	环境符合 EN60664-1 标准要求	<null>	过压类别 III/污染度 2	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=75 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	输出电压	电源电压的 0 - 100%
+ROW0	输出频率	0–590 Hz1)	line=19	flags=[]
+ROW1	输出切换	无限制	line=20	flags=[]
+ROW2	加减速时间	0.01–3600 s	line=21	flags=[]
+ROW3	1) 取决于电压和功率。	99	line=22	flags=[COLUMN_MISALIGNMENT]
+
+### page=75 tableIndex=2 status=ACTIVE flags=[]
+HEADER	启动转矩（恒定转矩）	昀大 150%，持续 60 秒1)2)
+ROW0	过载转矩（恒定转矩）	昀大 150%，持续 60 秒1)2)	line=25	flags=[]
+
+### page=75 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	E1h/E2h 机箱	IP21/类型 1，IP54/类型 12
+ROW0	E3h/E4h 机箱	IP20/机架	line=31	flags=[]
+ROW1	振动测试（标准/加固）	0.7 g/1.0 g	line=32	flags=[]
+ROW2	相对湿度	5%-95%（IEC 721-3-3；工作过程中为 3K3 类（无冷凝）	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW3	腐蚀性环境(IEC 60068-2-43) H2S 测试	Kd 类	line=34	flags=[]
+ROW4	腐蚀性气体 (IEC 60721-3-3)	3C3 类	line=35	flags=[]
+ROW5	符合 IEC 60068-2-43 标准的测试方法	H2S（10 天）	line=36	flags=[]
+
+### page=75 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	- 降容	昀高 55 °C（昀高 131 °F）1)	col_2
+ROW0	- 典型 EFF2 电机的额定输出功率（高达 90% 输出电流）	昀高 50 °C（昀高 122 °F）1)	<null>	line=39	flags=[MERGED_CELL]
+ROW1	- 在 FC 额定连续输出电流时	昀高 45 °C（昀高 113 °F）1)	<null>	line=40	flags=[MERGED_CELL]
+ROW2	满负载运行时的昀低环境温度	<null>	0 °C (32 °F)	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW3	降低性能运行时的昀低环境温度	<null>	10 °C (50 °F)	line=42	flags=[COLUMN_MISALIGNMENT]
+ROW4	存放/运输时的温度	-25 至 +65/70 °C（13 至 149/158 °F）	<null>	line=43	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW5	不降容情况下的昀高海拔高度	<null>	1000 m (3281 ft)	line=44	flags=[COLUMN_MISALIGNMENT]
+ROW6	降容情况下的昀大海拔高度	<null>	3000 m (9842 ft)	line=45	flags=[COLUMN_MISALIGNMENT]
+
+### page=75 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	EMC 标准，发射	col_1	EN 61800-3	col_3
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	<null>	73	line=48	flags=[COLUMN_MISALIGNMENT]
+
+### page=76 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	规格	VLT® AutomationDrive FC 302	col_2	col_3
+ROW0	EMC 标准，安全性	<null>	EN 61800-3	<null>	line=2	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	能效等级2)	<null>	<null>	IE2	line=3	flags=[COLUMN_MISALIGNMENT]
+
+### page=76 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	昀大电机电缆长度，屏蔽/铠装	150 m (492 ft)	col_2
+ROW0	电机电缆昀大长度，非屏蔽/非铠装	300 m (984 ft)	<null>	line=12	flags=[MERGED_CELL]
+ROW1	用于电机、主电源、负载共享和制动的昀大电缆横截面积	<null>	请参阅 章 9.1 电气数据	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW2	控制端子电缆（刚性电缆）的昀大横截面积	<null>	1.5 mm2/16 AWG (2x0.75 mm2)	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW3	控制端子电缆（柔性电缆）的昀大横截面积	1 mm2/18 AWG	<null>	line=15	flags=[MERGED_CELL]
+ROW4	控制端子电缆（带封闭芯线的电缆）的昀大横截面积	0.5 mm2/20 AWG	<null>	line=16	flags=[MERGED_CELL]
+ROW5	控制端子电缆的昀小横截面积	0.25 mm2/23 AWG	<null>	line=17	flags=[MERGED_CELL]
+
+### page=76 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	数字输入99	col_1
+ROW0	可编程数字输入	4 (6)	line=21	flags=[]
+ROW1	端子号	18, 19, 271), 291), 32, 33	line=22	flags=[COLUMN_MISALIGNMENT]
+ROW2	逻辑	PNP 或 NPN	line=23	flags=[]
+ROW3	电压水平	0–24 V DC	line=24	flags=[]
+ROW4	电压水平，逻辑 0 PNP	<5 V DC	line=25	flags=[]
+ROW5	电压水平，逻辑 1 PNP	>10 V DC	line=26	flags=[]
+ROW6	电压水平，逻辑 0 NPN	>19 V DC	line=27	flags=[]
+ROW7	电压水平，逻辑 1 NPN	<14 V DC	line=28	flags=[]
+ROW8	昀高输入电压	28 V 直流	line=29	flags=[]
+ROW9	输入电阻，Ri	大约 4 kΩ	line=30	flags=[]
+
+### page=76 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	模拟输入的数量	2	col_2	col_3	col_4
+ROW0	端子号	<null>	53, 54	<null>	<null>	line=35	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	模式	<null>	电压或电流	<null>	<null>	line=36	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	模式选择	<null>	<null>	开关 A53 和 A54	<null>	line=37	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	电压模式	<null>	<null>	开关 A53/A54=(U)	<null>	line=38	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	电压水平	<null>	<null>	<null>	-10 V 到 +10 V（可标定	line=39	flags=[COLUMN_MISALIGNMENT]
+ROW5	输入电阻，Ri	<null>	大约 10 kΩ	<null>	<null>	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	昀大电压	±20 V	<null>	<null>	<null>	line=41	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	电流模式	<null>	<null>	开关 A53/A54=(I)	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW8	电流水平	<null>	<null>	<null>	0/4 到 20 mA（可调节）	line=43	flags=[COLUMN_MISALIGNMENT]
+ROW9	输入电阻，Ri	<null>	约 200 Ω	<null>	<null>	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW10	昀大电流	30 mA	<null>	<null>	<null>	line=45	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW11	模拟输入的分辨率	<null>	<null>	10 位（包括符号）	<null>	line=46	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW12	模拟输入的精度	<null>	<null>	<null>	昀大误差为满量程的 0.5%	line=47	flags=[COLUMN_MISALIGNMENT]
+ROW13	带宽	<null>	100 Hz	<null>	<null>	line=48	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=77 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	可编程脉冲输入	2	col_2	col_3
+ROW0	脉冲端子号	<null>	<null>	29, 33	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW1	端子 29、33 的昀大频率	<null>	110 kHz（推挽驱动）	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	端子 29、33 的昀大频率	<null>	5 kHz（开放式集电极）	<null>	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	端子 29 和 33 的昀小频率	4 Hz	<null>	<null>	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	电压水平	<null>	请参阅章 9.6 控制输入/输出和控制数据 中的数字输入	<null>	line=19	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	昀高输入电压	<null>	<null>	28 V 直流	line=20	flags=[COLUMN_MISALIGNMENT]
+ROW6	输入电阻，Ri	<null>	<null>	大约 4 kΩ	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW7	脉冲输入精度 (0.1-1 kHz)	<null>	昀大误差： 全范围的 0.1 %	<null>	line=22	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW8	模拟输出	99	<null>	<null>	line=23	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	可编程模拟输出的数量	1	<null>	<null>	line=24	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=77 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	端子号	42
+ROW0	模拟输出的电流范围	0/4-20 mA	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW1	模拟输出端和公共端间昀大电阻器负载	500 Ω	line=28	flags=[]
+ROW2	模拟输出精度	昀大误差： 满量程的 0.8%	line=29	flags=[COLUMN_MISALIGNMENT]
+ROW3	模拟输出分辨率	8 位	line=30	flags=[]
+
+### page=77 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	端子号	68 (P, TX+, RX+), 69 (N, TX-, RX-)	col_2
+ROW0	端子号 61	<null>	端子 68 和 69 的公共端	line=34	flags=[COLUMN_MISALIGNMENT]
+
+### page=77 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	可编程数字/脉冲输出	2	col_2
+ROW0	端子号	<null>	27, 291)	line=38	flags=[COLUMN_MISALIGNMENT]
+ROW1	数字/频率输出的电压水平	<null>	0–24 V	line=39	flags=[COLUMN_MISALIGNMENT]
+ROW2	昀大输出电流（汲入电流或供应电流）	<null>	40 mA	line=40	flags=[COLUMN_MISALIGNMENT]
+ROW3	频率输出的昀大负载	<null>	1 kΩ	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW4	频率输出的昀大电容负载	<null>	10 nF	line=42	flags=[COLUMN_MISALIGNMENT]
+ROW5	频率输出的昀小输出频率	0 Hz	<null>	line=43	flags=[MERGED_CELL]
+ROW6	频率输出的昀大输出频率	<null>	32 kHz	line=44	flags=[COLUMN_MISALIGNMENT]
+ROW7	频率输出精度	<null>	昀大误差： 全范围的 0.1 %	line=45	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW8	频率输出的分辨率	<null>	12 位	line=46	flags=[COLUMN_MISALIGNMENT]
+
+### page=77 tableIndex=4 status=ACTIVE flags=[]
+HEADER	端子号	12, 13
+ROW0	昀大负载	200 mA	line=51	flags=[]
+
+### page=78 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	可编程继电器输出	2	col_2
+ROW0	继电器端子的昀大横截面积	2.5 mm2 (12 AWG)	<null>	line=4	flags=[MERGED_CELL]
+ROW1	继电器端子的昀小横截面积	0.2 mm2 (30 AWG)	<null>	line=5	flags=[MERGED_CELL]
+ROW2	剥皮线缆的长度	8 mm (0.3 in)	<null>	line=6	flags=[MERGED_CELL]
+ROW3	继电器 01 端子号	<null>	1-3（常闭），1-2（常开）	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW4	1–2（常开）时的昀大端子负载(AC-1)1)（电阻性负载）2)3)	交流 400 V，2 A	<null>	line=8	flags=[MERGED_CELL]
+ROW5	1–2（常开）时的昀大端子负载(AC-15)1)（cosφ等于 0.4 时的电感性负载 ）	交流 240 V，0.2 A	<null>	line=9	flags=[MERGED_CELL]
+ROW6	1–2（常开）时的昀大端子负载(DC-1)1)（电阻性负载）	直流 80 V，2 A	<null>	line=10	flags=[MERGED_CELL]
+ROW7	1–2（常开）时的昀大端子负载(DC-13)1)（电感性负载）	24 V 直流，0.1 A	<null>	line=11	flags=[MERGED_CELL]
+ROW8	1–3（常闭）时的昀大端子负载(AC-1)1)（电阻性负载）	交流 240 V，2 A	<null>	line=12	flags=[MERGED_CELL]
+ROW9	1–3（常闭）时的昀大端子负载(AC-15)1)（cosφ 等于 0.4 时的电感性负载 ）	交流 240 V，0.2 A	<null>	line=13	flags=[MERGED_CELL]
+ROW10	1–3（常闭）时的昀大端子负载 (DC-1)1)（电阻性负载）	直流 50 V，2 A	<null>	line=14	flags=[MERGED_CELL]
+ROW11	1–3（常闭）时的昀大端子负载 (DC-13)1)（电感性负载）	24 V 直流，0.1 A	<null>	line=15	flags=[MERGED_CELL]
+ROW12	1–3（常闭）、1–2（常开）时的昀小端子负载	<null>	24 V DC 10 mA，24 V AC 2 mA	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW13	符合 EN 60664-1 的环境	<null>	过压类别 III/污染度 2	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW14	继电器 02 端子号	<null>	4-6（常闭），4-5（常开）	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW15	4–5（常开）时的昀大端子负载(AC-1)1)（电阻性负载）2)3)	交流 400 V，2 A	<null>	line=19	flags=[MERGED_CELL]
+ROW16	4–5（常开）时的昀大端子负载(AC-15)1)（cosφ等于 0.4 时的电感性负载 ）	交流 240 V，0.2 A	<null>	line=20	flags=[MERGED_CELL]
+ROW17	4–5（常开）时的昀大端子负载(DC-1)1)（电阻性负载）	直流 80 V，2 A	<null>	line=21	flags=[MERGED_CELL]
+ROW18	4–5（常开）时的昀大端子负载(DC-13)1)（电感性负载）	24 V 直流，0.1 A	<null>	line=22	flags=[MERGED_CELL]
+ROW19	4–6（常闭）时的昀大端子负载(AC-1)1)（电阻性负载）	交流 240 V，2 A	<null>	line=23	flags=[MERGED_CELL]
+ROW20	4–6（常闭）时的昀大端子负载(AC-15)1)（cosφ 等于 0.4 时的电感性负载 ）	交流 240 V，0.2 A	<null>	line=24	flags=[MERGED_CELL]
+ROW21	994–6（常闭）时的昀大端子负载 (DC-1)1)（电阻性负载）	直流 50 V，2 A	<null>	line=25	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW22	4–6（常闭）时的昀大端子负载 (DC-13)1)（电感性负载）	24 V 直流，0.1 A	<null>	line=26	flags=[MERGED_CELL]
+ROW23	4–6（常闭）、4–5（常开）时的昀小端子负载	<null>	24 V DC 10 mA，24 V AC 2 mA	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW24	符合 EN 60664-1 的环境	<null>	过压类别 III/污染度 2	line=28	flags=[COLUMN_MISALIGNMENT]
+
+### page=78 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	端子号	50
+ROW0	输出电压	10.5 V ±0.5 V	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW1	昀大负载	25 mA	line=36	flags=[]
+
+### page=78 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	输出频率为 0-1000 Hz 时的分辨率	±0.003 Hz
+ROW0	系统响应时间（端子 18、19、27、29、32、33）	≤2 ms	line=40	flags=[]
+ROW1	速度控制范围（开环）	1:100 同步速度	line=41	flags=[]
+ROW2	速度精度（开环）	30-4000 RPM： 昀大误差为 ±8 RPM	line=42	flags=[COLUMN_MISALIGNMENT]
+
+### page=79 tableIndex=0 status=ACTIVE flags=[MERGED_CELL]
+HEADER	USB 标准	col_1	1.1（全速）
+ROW0	USB 插头	B 类 USB 设备插头	<null>	line=6	flags=[MERGED_CELL]
+
+### page=79 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	输入电压 (V)	Bussmann 部件号
+ROW0	380–500	170M7309	line=18	flags=[]
+ROW1	525–690	170M7342	line=19	flags=[]
+ROW2	表 9.5 熔断器选项	99	line=20	flags=[COLUMN_MISALIGNMENT]
+
+### page=79 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	输入电压 (V)	额定功率 (kW)	额定短路电流 (A)	需要的保护
+ROW0	380–500	315–400	42000	断路器	line=30	flags=[]
+ROW1	<null>	<null>	100000	L 类熔断器，800 A	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW2	380–500	450–500	42000	断路器	line=32	flags=[]
+ROW3	<null>	<null>	100000	L 类熔断器，1200 A	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW4	525–690	355–560	40000	断路器	line=34	flags=[]
+ROW5	<null>	<null>	100000	L 类熔断器，800 A	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW6	525–690	630–710	42000	断路器	line=36	flags=[]
+ROW7	<null>	<null>	100000	L 类熔断器，1200 A	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW8	MG38A141	<null>	Danfoss A/S © 01/2017 全权所有。	77	line=38	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=81 tableIndex=0 status=ACTIVE flags=[]
+HEADER	2X	2X
+ROW0	280 (11.0)	35 (1.4)	line=9	flags=[]
+ROW1	513	2X	line=10	flags=[]
+ROW2	(20.2)	190 (7.5)	line=11	flags=[]
+
+### page=82 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	206	18 (0.7)
+ROW0	96 (3.8)	(8.1)	<null>	line=4	flags=[COLUMN_MISALIGNMENT]
+
+### page=82 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	4X 73 (2.8)	4X 457 (18.0)
+ROW0	69 (2.7)	464 (18.3)	line=15	flags=[]
+ROW1	散热片气流罩板（选配）1	<null>	line=16	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=83 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	558	A	col_2
+ROW0	(22.0)	<null>	14 (0.6)	line=4	flags=[COLUMN_MISALIGNMENT]
+
+### page=83 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	22 (0.8)	560 (22.0)
+ROW0	1	密封板	<null>	<null>	line=23	flags=[COLUMN_MISALIGNMENT]
+
+### page=85 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	9	9
+ROW0	1	2X	<null>	<null>	line=5	flags=[COLUMN_MISALIGNMENT]
+
+### page=86 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	4X 121 (4.8)	4X 457 (18.0)
+ROW0	69 (2.7)	560 (22.0)	line=14	flags=[]
+ROW1	散热片气流罩板（选配）1	<null>	line=15	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=87 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	653	A	col_2
+ROW0	(25.7)	<null>	14 (0.6)	line=4	flags=[COLUMN_MISALIGNMENT]
+
+### page=87 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	22 (0.8)	656 (25.8)
+ROW0	1	密封板	<null>	<null>	line=23	flags=[COLUMN_MISALIGNMENT]
+
+### page=90 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	136 (5.4)	130BF657.10
+ROW0	39 (1.5)	215 (8.5)	<null>	<null>	line=15	flags=[COLUMN_MISALIGNMENT]
+
+### page=90 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	col_0	col_1	22 (0.9)	464 (18.3)
+ROW0	1	散热片气流罩板（选配）	<null>	<null>	line=19	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=91 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	9	9
+ROW0	19 (0.7)	2X 219 (8.6)	<null>	<null>	line=11	flags=[COLUMN_MISALIGNMENT]
+
+### page=91 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	1	射频干扰屏蔽端子（带射频干扰选件时为标配）
+ROW0	2	电缆/EMC 夹	line=19	flags=[]
+ROW1	3	密封板	line=20	flags=[]
+
+### page=92 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	15 (0.6)	130BF664.10
+ROW0	30	10 (0.4)	<null>	<null>	line=12	flags=[COLUMN_MISALIGNMENT]
+
+### page=94 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	col_2	136 (5.4)	130BF665.10
+ROW0	39 (1.5)	263 (10.4)	<null>	<null>	<null>	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW1	4X 74 (2.9)	<null>	4X 457 (18.0)	<null>	<null>	line=16	flags=[COLUMN_MISALIGNMENT]
+
+### page=94 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	col_0	col_1	22 (0.9)	560 (22.0)
+ROW0	1	散热片气流罩板（选配）	<null>	<null>	line=19	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=95 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE, CONTINUATION_HEADER_SKIPPED]
+HEADER	1	射频干扰屏蔽端子（带射频干扰选件时为标配）
+ROW0	2	电缆/EMC 夹	line=18	flags=[]
+ROW1	3	密封板	line=19	flags=[]
+
+### page=97 tableIndex=0 status=ACTIVE flags=[]
+HEADER	位置	螺栓尺寸	转矩 [Nm (in-lb)]
+ROW0	主电源端子	M10/M12	19 (168)/37 (335)	line=6	flags=[]
+ROW1	电机端子	M10/M12	19 (168)/37 (335)	line=7	flags=[]
+ROW2	接地端子	M8/M10	9.6 (84)/19.1 (169)	line=8	flags=[]
+ROW3	制动端子	M8	9.6 (84)	line=9	flags=[]
+ROW4	负载共享端子	M10/M12	19 (168)/37 (335)	line=10	flags=[]
+ROW5	再生端子（E1h/E2h 机箱）	M8	9.6 (84)	line=11	flags=[]
+ROW6	再生端子（E3h/E4h 机箱）	M10/M12	19 (168)/37 (335)	line=12	flags=[]
+ROW7	继电器端子	_	0.5 (4)	line=13	flags=[]
+ROW8	门板/罩盖	M5	2.3 (20)	line=14	flags=[]
+ROW9	密封板	M5	2.3 (20)	line=15	flags=[]
+ROW10	散热片气流罩板	M5	3.9 (35)	line=16	flags=[]
+ROW11	串行通讯盖板	M5	2.3 (20)	line=17	flags=[]
+
+### page=97 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	col_2	9	9
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	95	<null>	<null>	line=20	flags=[COLUMN_MISALIGNMENT]
+
+### page=98 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	10.1 缩略语与约定	MDCIC	多变频器控制接口卡	col_3
+ROW0	<null>	mV	毫伏	<null>	line=4	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	°C	<null>	<null>	摄氏度	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	NEMA	美国电器制造商协会	<null>	line=6	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	°F	<null>	<null>	华氏度	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW4	<null>	NTC	负温度系数	<null>	line=8	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	Ω	<null>	<null>	Ohm	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW6	<null>	PM,N	额定电机功率	<null>	line=10	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	AC	<null>	<null>	交流电	line=11	flags=[COLUMN_MISALIGNMENT]
+ROW8	<null>	PCB	印刷电路板	<null>	line=12	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	AEO	<null>	<null>	自动能量优化	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW10	<null>	PE	保护性接地	<null>	line=14	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW11	ACP	<null>	<null>	应用控制处理器	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW12	<null>	PELV	保护性超低压	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW13	AMA	<null>	<null>	电机自动整定	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW14	<null>	PID	比例-积分-微分	<null>	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW15	AWG	<null>	<null>	美国线规	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW16	<null>	PLC	可编程逻辑控制器	<null>	line=20	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW17	CPU	<null>	<null>	中央处理单元	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW18	<null>	P/N	部件编号	<null>	line=22	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW19	CSIV	<null>	<null>	客户特定的初始值	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW20	<null>	PROM	可编程只读存储器	<null>	line=24	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW21	CT	<null>	<null>	变流器	line=25	flags=[COLUMN_MISALIGNMENT]
+ROW22	<null>	PS	功率范围	<null>	line=26	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW23	DC	<null>	<null>	直流电	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW24	<null>	PTC	正温度系数	<null>	line=28	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW25	DVM	<null>	<null>	数字电压表	line=29	flags=[COLUMN_MISALIGNMENT]
+ROW26	<null>	PWM	脉冲宽度调制	<null>	line=30	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW27	EEPROM	<null>	<null>	电可擦可编程只读存储器	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW28	<null>	Rs	定子阻抗	<null>	line=32	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW29	EMC	<null>	<null>	电磁兼容性	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW30	<null>	RAM	随机存取存储器	<null>	line=34	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW31	EMI	<null>	<null>	电磁干扰	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW32	<null>	RCD	漏电断路器	<null>	line=36	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW33	ESD	<null>	<null>	静电放电	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW34	<null>	再生	反馈端子	<null>	line=38	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW35	ETR	<null>	<null>	电子热敏继电器	line=39	flags=[COLUMN_MISALIGNMENT]
+ROW36	<null>	RFI	射频干扰	<null>	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW37	fM,N	<null>	<null>	额定电机频率	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW38	<null>	RMS	均方根（周期性交流电）	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW39	HF	<null>	<null>	频率过高	line=43	flags=[COLUMN_MISALIGNMENT]
+ROW40	<null>	RPM	每分钟转数	<null>	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW41	HVAC	<null>	<null>	采暖、通风和空调	line=45	flags=[COLUMN_MISALIGNMENT]
+ROW42	1010	SCR	可控硅整流器	<null>	line=46	flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+ROW43	Hz	<null>	<null>	赫兹	line=47	flags=[COLUMN_MISALIGNMENT]
+ROW44	<null>	SMPS	开关模式电源	<null>	line=48	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW45	ILIM	<null>	<null>	电流极限	line=49	flags=[COLUMN_MISALIGNMENT]
+ROW46	<null>	S/N	序列号	<null>	line=50	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW47	IINV	<null>	<null>	逆变器额定输出电流	line=51	flags=[COLUMN_MISALIGNMENT]
+ROW48	<null>	STO	Safe Torque Off	<null>	line=52	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW49	IM,N	<null>	<null>	额定电机电流	line=53	flags=[COLUMN_MISALIGNMENT]
+ROW50	<null>	TLIM	转矩极限	<null>	line=54	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=98 tableIndex=1 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, LOW_CONFIDENCE]
+HEADER	IVLT,MAX	昀大输出电流	col_2	col_3
+ROW0	<null>	<null>	UM,N	额定电机电压	line=56	flags=[COLUMN_MISALIGNMENT]
+ROW1	IVLT,N	变频器提供的额定输出电流	<null>	<null>	line=57	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	V	伏	line=58	flags=[COLUMN_MISALIGNMENT]
+ROW3	IEC	国际电工委员会	+	<null>	line=59	flags=[COLUMN_MISALIGNMENT]
+ROW4	<null>	<null>	VVC	电压矢量控制	line=60	flags=[COLUMN_MISALIGNMENT]
+ROW5	IGBT	绝缘栅双极型晶体管	<null>	<null>	line=61	flags=[COLUMN_MISALIGNMENT]
+ROW6	<null>	<null>	Xh	电机主电抗	line=62	flags=[COLUMN_MISALIGNMENT]
+ROW7	I/O	输入/输出	<null>	<null>	line=63	flags=[COLUMN_MISALIGNMENT]
+ROW8	IP	防侵入	表 10.1 缩略语、缩写词和符号	<null>	line=64	flags=[MERGED_CELL]
+ROW9	kHz	千赫兹	<null>	<null>	line=65	flags=[COLUMN_MISALIGNMENT]
+ROW10	kW	千瓦	约定	<null>	line=66	flags=[COLUMN_MISALIGNMENT]
+ROW11	Ld	电机 d 轴电感	•数字列表用于表示过程。	<null>	line=67	flags=[MERGED_CELL]
+ROW12	Lq	电机 q 轴电感	•符号列表用于表示其他信息和插图说明。	<null>	line=68	flags=[MERGED_CELL]
+ROW13	LC	电感电容电路	<null>	<null>	line=69	flags=[COLUMN_MISALIGNMENT]
+
+### page=98 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	斜体文本用于表示：•
+ROW0	LCP	本地控制面板	<null>	line=71	flags=[COLUMN_MISALIGNMENT]
+ROW1	指示灯	发光二极管	-交叉引用	line=72	flags=[]
+ROW2	LOP	本地操作面板	-链路	line=73	flags=[]
+ROW3	mA	毫安	<null>	line=74	flags=[COLUMN_MISALIGNMENT]
+
+### page=98 tableIndex=3 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	-	col_1	col_2
+ROW0	<null>	MCB	微型断路器	line=76	flags=[COLUMN_MISALIGNMENT]
+ROW1	-参数名称	MCO	运动控制选件	line=77	flags=[]
+ROW2	-参数组名	MCP	电动机控制处理器	line=78	flags=[]
+ROW3	-参数选项	MCT	运动控制工具	line=79	flags=[]
+
+### page=98 tableIndex=4 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	•所有尺寸都使用单位 mm (inch)。	col_3
+ROW0	96	Danfoss A/S © 01/2017 全权所有。	<null>	MG38A141	line=81	flags=[MERGED_CELL]
+
+### page=99 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, EXTRA_CELL]
+HEADER	参数	“国际”默认参数值	“北美”默认参数值	col_3	col_4
+ROW0	参数 0-03 区域性设置	<null>	<null>	国际	北美	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW1	参数 0-71 数据格式	<null>	<null>	DD-MM-YYYY	MM/DD/YYYY	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW2	参数 0-72 时间格式	<null>	<null>	24 h	12 h	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW3	参数 1-20 电动机功率 [kW]	<null>	<null>	1)	1)	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW4	参数 1-21 电动机功率 [HP]	<null>	<null>	2)	2)	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW5	参数 1-22 电动机电压	230 V/400 V/575 V	208 V/460 V/575 V	<null>	<null>	line=11	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	参数 1-23 电动机频率	<null>	<null>	50 Hz	60 Hz	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW7	参数 3-03 昀大参考值	<null>	<null>	50 Hz	60 Hz	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW8	参数 3-04 参考功能	<null>	<null>	总和	外部/预置	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW9	参数 4-13 电机速度上限3)	<null>	<null>	1500 RPM	1800 RPM	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW10	参数 4-14 电动机速度上限 [Hz]4)	<null>	<null>	50 Hz	60 Hz	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW11	参数 4-19 昀大输出频率	<null>	<null>	100 Hz	120 Hz	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW12	参数 4-53 警告速度过高	<null>	<null>	1500 RPM	1800 RPM	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW13	参数 5-12 端子 27 数字输入	惯性停车反逻辑	<null>	<null>	外部互锁	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW14	参数 5-40 继电器功能	<null>	<null>	报警	无报警	line=20	flags=[COLUMN_MISALIGNMENT]
+ROW15	参数 6-15 53端参考/反馈高	<null>	<null>	50	60	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW16	参数 6-50 端子 42 输出	速度 0-上限	速度 4-20 mA	<null>	<null>	line=22	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW17	参数 14-20 复位模式	<null>	无限自动复位	手动复位	<null>	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW18	参数 22-85 设计速度 [RPM]3)	<null>	<null>	1500 RPM	1800 RPM	1010	line=24	flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+ROW19	参数 22-86 设计速度 [Hz]	<null>	<null>	50 Hz	60 Hz	line=25	flags=[COLUMN_MISALIGNMENT]
+ROW20	参数 24-04 火灾模式昀大参考值	<null>	<null>	50 Hz	60 Hz	line=26	flags=[COLUMN_MISALIGNMENT]
+
+### page=100 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	附录	VLT® AutomationDrive FC 302	col_2	col_3	col_4	col_5
+ROW0	0-**操作/显示	<null>	1-1*电动机选择	1-73飞车启动	2-33Speed PID Start Lowpass Filter3-9*数字电位计	<null>	line=2	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	0-0*基本设置	<null>	1-10电动机结构	1-74启动速度 [RPM]	Time	3-90步长	line=3	flags=[COLUMN_MISALIGNMENT]
+ROW2	0-01语言	<null>	1-11电动机制造商	1-75启动速度 [hz]	3-**参考值/加减速	3-91加减速时间	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW3	0-02电动机速度单位	<null>	1-14衰减增益	1-76启动电流	3-0*参考值极限	3-92恢复通电	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW4	0-03区域性设置	<null>	1-15低速滤波时间常量	1-8*停止调整	3-00参考值范围	3-93昀大极限	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW5	0-04上电工作状态	<null>	1-16高速滤波时间常量	1-80停止功能	3-01参考值/反馈单位	3-94昀小极限	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW6	0-09性能监视	<null>	1-17电压滤波时间常量	1-81停止功能昀低速	3-02昀小参考值	3-95加减延迟	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW7	0-1*菜单操作	<null>	1-18Min. Current at No Load	1-82停止功能的昀小速度 [Hz]	3-03昀大参考值	4-**极限/警告	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW8	0-10有效设置	<null>	1-2*电动机数据	1-83精确停止功能	3-04参考功能	4-1*电动机极限	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW9	0-11编辑设置	<null>	1-20电动机功率 [kW]	1-84精确停止计数器值	3-1*参考值	4-10电动机速度方向	line=11	flags=[COLUMN_MISALIGNMENT]
+ROW10	0-12此菜单连接到	<null>	1-21电动机功率 [HP]	1-85精确停止速度补偿延迟	3-10预置参考值	4-11电机速度下限	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW11	0-13读联接的菜单	<null>	1-22电动机电压	1-9*电动机温度	3-11点动速度 [Hz]	4-12电动机速度下限 [Hz]	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW12	0-14读编辑菜单/通道	<null>	1-23电动机频率	1-90电动机热保护	3-12加速/减速值	4-13电机速度上限	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW13	0-15Readout: actual setup	<null>	1-24电动机电流	1-91电动机外部风扇	3-13参考值位置	4-14电动机速度上限 [Hz]	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW14	0-2*LCP 显示器	<null>	1-25电动机额定转速	1-93热敏电阻源	3-14预置相对参考值	4-16电动时转矩极限	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW15	0-20显示行 1.1(小)	<null>	1-26电动机持续额定转矩	1-94ATEX ETR cur.lim. speed	3-15参考值来源 1	4-17发电时转矩极限	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW16	0-21显示行 1.2(小)	<null>	1-29自动电动机调整 (AMA)	reduction	3-16参考值来源 2	4-18电流极限	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW17	0-22显示行 1.3(小)	<null>	1-3*高级电动机数据	1-95KTY 传感器类型	3-17参考值来源 3	4-19昀大输出频率	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW18	0-23显示行 2(大)	<null>	1-30定子阻抗 (Rs)	1-96KTY 热敏电阻源	3-18相对标定参考值源	4-2*极限因数	line=20	flags=[COLUMN_MISALIGNMENT]
+ROW19	0-24显示行 3(大)	<null>	1-31转子阻抗 (Rr)	1-97KTY 阈值水平	3-19点动速度 [RPM]	4-20转矩极限因数源	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW20	0-25个人菜单	<null>	1-33定子漏抗 (X1)	1-98ATEX ETR interpol. points freq.3-4*加减速 1	<null>	4-21速度极限因数源	line=22	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW21	0-3*LCP 自定义读数	<null>	1-34转子漏抗 (X2)	1-99ATEX ETR interpol points current3-40加减速 1 的类型	<null>	4-23Brake Check Limit Factor Source	line=23	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW22	0-30用户定义读数的单位	<null>	1-35主电抗 (Xh)	2-**制动	3-41斜坡1加速时间	4-24Brake Check Limit Factor	line=24	flags=[COLUMN_MISALIGNMENT]
+ROW23	0-31用户定义读数的昀大值	<null>	1-36铁损阻抗 (Rfe)	2-0*直流制动	3-42斜坡1减速时间	4-3*电动机速度监视	line=25	flags=[COLUMN_MISALIGNMENT]
+ROW24	0-32用户定义读数的昀大值	<null>	1-37d 轴电感 (Ld)	2-00直流夹持电流	3-45加减速1 S加减速比率(加速时)启动4-30电动机反馈损耗功能	<null>	line=26	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW25	0-33Source for User-defined Readout1-38q 轴电感 (Lq)	<null>	<null>	2-01直流制动电流	3-46加减速1 S加减速比率(加速时)终止4-31电动机反馈速度错误	<null>	line=27	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW26	0-37显示文字 1	<null>	1-39电动机极数	2-02直流制动时间	3-47加减速1 S加减速比率(减速时)启动4-32电动机反馈损耗超时	<null>	line=28	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW27	0-38显示文字 2	<null>	1-401000 RPM 时的后 EMF	2-03直流制动切入速度 [RPM]	3-48加减速1 S加减速比率(减速时)终止4-34跟踪误差功能	<null>	line=29	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW28	0-39显示文字 3	<null>	1-41电动机角度偏置	2-04直流制动切入速度 [Hz]	3-5*加减速 2	4-35跟踪误差	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW29	0-4*LCP 键盘	<null>	1-44d-axis Inductance Sat. (LdSat)2-05昀大参考值	<null>	3-50加减速 2 的类型	4-36跟踪误差	line=31	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW30	0-40LCP 的手动启动键	<null>	1-45q-axis Inductance Sat. (LqSat)2-06停车电流	<null>	3-51斜坡2加速时间	4-37加减速时的跟踪误差	line=32	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW31	0-41LCP 的停止键	<null>	1-46位置检测增益	2-07停车时间	3-52斜坡2减速时间	4-38加减速超时时的跟踪误差	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW32	0-42LCP 的自动启动键	<null>	1-47低速转矩校准	2-1*制动能量功能	3-55加减速2 S加减速比率(加速时)启动4-39在加减速超时后跟踪误差	<null>	line=34	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW33	0-43LCP 的复位键	<null>	1-48Inductance Sat. Point	2-10制动功能	3-56加减速2 S加减速比率(加速时)终止4-4*Speed Monitor	<null>	line=35	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW34	0-44LCP 的 [Off/Reset](停止/复位)键1-5*与负载无关的设置	<null>	<null>	2-11制动电阻(欧姆)	3-57加减速2 S加减速比率(减速时)启动4-43Motor Speed Monitor Function	<null>	line=36	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW35	0-45LCP 的 [Drive Bypass](变频器旁路)1-50零速时的电动机磁化	<null>	<null>	2-12制动功率极限 (kW)	3-58加减速2 S加减速比率(减速时)终止4-44Motor Speed Monitor Max	<null>	line=37	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW36	键	<null>	1-51正常磁化的昀小速度 [RPM]	2-13制动功率监测	3-6*加减速 3	4-45Motor Speed Monitor Timeout	line=38	flags=[COLUMN_MISALIGNMENT]
+ROW37	0-5*复制/保存	<null>	1-52正常磁化的昀小速度 [Hz]	2-15制动检查	3-60加减速 3 的类型	4-5*调整警告	line=39	flags=[COLUMN_MISALIGNMENT]
+ROW38	0-50LCP 复制	<null>	1-53模型切换频率	2-16交流制动昀大电流	3-61斜坡3加速时间	4-50警告电流过低	line=40	flags=[COLUMN_MISALIGNMENT]
+ROW39	0-51菜单复制	<null>	1-54磁场弱化情况下的电压降低	2-17过压控制	3-62斜坡3减速时间	4-51警告电流过高	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW40	0-6*密码	<null>	1-55V/f 特性 - U	2-18制动检查条件	3-65加减速3 S加减速比率(加速时)启动4-52警告速度过低	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW41	0-60扩展菜单密码	<null>	1-56V/f 特性 - F	2-19过压增益	3-66加减速3 S加减速比率(加速时)终止4-53警告速度过高	<null>	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW42	0-61扩展菜单无密码	<null>	1-58跟踪启动测试脉冲电流	2-2*机械制动	3-67加减速3 S加减速比率(减速时)启动4-54警告参考值过低	<null>	line=44	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW43	0-65快捷菜单密码	<null>	1-59跟踪启动测试脉冲频率	2-20抱闸释放电流	3-68加减速3 S加减速比率(减速时)终止4-55警告参考值过高	<null>	line=45	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW44	0-66快捷菜单无密码	<null>	1-6*与负载相关的设置	2-21激活制动速度	3-7*加减速 4	4-56警告反馈过低	line=46	flags=[COLUMN_MISALIGNMENT]
+ROW45	0-67总线密码访问	<null>	1-60低速负载补偿	2-22激活制动速度 [Hz]	3-70加减速 4 的类型	4-57警告反馈过高	line=47	flags=[COLUMN_MISALIGNMENT]
+ROW46	10100-68Safety Parameters Password	<null>	1-61高速负载补偿	2-23激活制动延时	3-71斜坡4加速时间	4-58电机缺相功能	line=48	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW47	0-69Password Protection of Safety1-62滑差补偿	<null>	<null>	2-24停止延时	3-72斜坡4减速时间	4-59Motor Check At Start	line=49	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW48	Parameters	<null>	1-63滑差补偿时间	2-25抱闸释放时间	3-75加减速4 S加减速比率(加速时)启动4-6*频率跳越	<null>	line=50	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW49	1-**负载和电动机	<null>	1-64共振衰减	2-26转矩参考值	3-76加减速4 S加减速比率(加速时)终止4-60跳频始速[RPM]	<null>	line=51	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW50	1-0*一般设置	<null>	1-65共振衰减时间	2-27转矩加减速时间	3-77加减速4 S加减速比率(减速时)启动4-61跳频始速 [Hz]	<null>	line=52	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW51	1-00配置模式	<null>	1-66低速昀小电流	2-28增益放大因数	3-78加减速4 S加减速比率(减速时)终止4-62跳频终速[RPM]	<null>	line=53	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW52	1-01电动控制原理	<null>	1-67负载类型	2-29Torque Ramp Down Time	3-8*其他加减速	4-63跳频终速 [Hz]	line=54	flags=[COLUMN_MISALIGNMENT]
+ROW53	1-02磁通矢量电动机反馈源	<null>	1-68昀小惯量	2-3*Adv. Mech Brake	3-80点动加减速时间	5-**数字输入/输出	line=55	flags=[COLUMN_MISALIGNMENT]
+ROW54	1-03转矩特性	<null>	1-69昀大惯量	2-30Position P Start Proportional3-81快停减速时间	<null>	5-0*数字 I/O 模式	line=56	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW55	1-04过载模式	<null>	1-7*启动调整	Gain	3-82快停加减速类型	5-00数字 I/O 模式	line=57	flags=[COLUMN_MISALIGNMENT]
+ROW56	1-05本地模式配置	<null>	1-70PM 启动模式	2-31Speed PID Start Proportional3-83快停 S 加减速比率(减速 开始时)5-01端子 27 的模式	<null>	<null>	line=58	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW57	1-06顺时针方向	<null>	1-71启动延迟	Gain	3-84快停 S 加减速比率(减速 终止时)5-02端子 29 的模式	<null>	line=59	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW58	1-07Motor Angle Offset Adjust	<null>	1-72启动功能	2-32Speed PID Start Integral Time3-89Ramp Lowpass Filter Time	<null>	<null>	line=60	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW59	98	Danfoss A/S © 01/2017 全权所有。	<null>	<null>	MG38A141	<null>	line=61	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=101 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	5附-1录*数字输入	6-0*模拟操 作I/O指 模南式	7-01Speed PID Droop	8-13可配置状态字 STW	9-64Device Identification
+ROW0	5-10端子 18 数字输入	6-00断线超时时间	7-02速度 PID 比例增益	8-14可配置控制字 CTW	9-65Profile Number	line=2	flags=[]
+ROW1	5-11端子 19 数字输入	6-01断线超时功能	7-03速度 PID 积分时间	8-17Configurable Alarm and	9-67Control Word 1	line=3	flags=[]
+ROW2	5-12端子 27 数字输入	6-1*模拟输入1	7-04速度 PID 微分时间	Warningword	9-68Status Word 1	line=4	flags=[]
+ROW3	5-13端子 29 数字输入	6-10端子 53 低电压	7-05速度PID 微分极限	8-19Product Code	9-70Edit Set-up	line=5	flags=[]
+ROW4	5-14端子 32 数字输入	6-11端子 53 高电压	7-06速度 PID低通滤波	8-3*FC 端口设置	9-71Profibus Save Data Values	line=6	flags=[]
+ROW5	5-15端子 33 数字输入	6-12端子 53 低电流	7-07速度 PID 反馈传动比	8-30协议	9-72ProfibusDriveReset	line=7	flags=[]
+ROW6	5-16端子 X30/2 数字输入	6-13端子 53 高电流	7-08速度 PID前馈因数	8-31地址	9-75DO Identification	line=8	flags=[]
+ROW7	5-17端子 X30/3 数字输入	6-1453端参考/反馈低	7-09Speed PID Error Correction w/8-32FC 端口波特率	<null>	9-80Defined Parameters (1)	line=9	flags=[MERGED_CELL]
+ROW8	5-18端子 X30/4 数字输入	6-1553端参考/反馈高	Ramp	8-33奇偶校验/停止位	9-81Defined Parameters (2)	line=10	flags=[]
+ROW9	5-19端子 37 安全停止	6-1653端滤波器时间	7-1*转矩 PI 控制	8-34估计的周期时间	9-82Defined Parameters (3)	line=11	flags=[]
+ROW10	5-20端子 X46/1 数字输入	6-2*模拟输入 2	7-10Torque PI Feedback Source	8-35昀小响应延迟	9-83Defined Parameters (4)	line=12	flags=[]
+ROW11	5-21端子 X46/3 数字输入	6-20端子 54 低电压	7-12转矩 PI 比例增益	8-36昀大响应延迟	9-84Defined Parameters (5)	line=13	flags=[]
+ROW12	5-22端子 X46/5 数字输入	6-21端子 54 高电压	7-13转矩 PI 积分时间	8-37昀大字节间延迟	9-85Defined Parameters (6)	line=14	flags=[]
+ROW13	5-23端子 X46/7 数字输入	6-22端子 54 低电流	7-16Torque PI Lowpass Filter Time8-4*FC MC 协议设置	<null>	9-90Changed Parameters (1)	line=15	flags=[MERGED_CELL]
+ROW14	5-24端子 X46/9 数字输入	6-23端子 54 高电流	7-18Torque PI Feed Forward Factor8-40报文选择	<null>	9-91Changed Parameters (2)	line=16	flags=[MERGED_CELL]
+ROW15	5-25端子 X46/11 数字输入	6-2454端参考/反馈低	7-19Current Controller Rise Time8-41信号参数	<null>	9-92Changed Parameters (3)	line=17	flags=[MERGED_CELL]
+ROW16	5-26端子 X46/13 数字输入	6-2554端参考/反馈高	7-2*过程控制器反馈	8-42PCD 写配置	9-93Changed Parameters (4)	line=18	flags=[]
+ROW17	5-3*数字输出	6-2654端滤波器时间	7-20过程 CL 反馈 1 的源	8-43PCD 读配置	9-94Changed Parameters (5)	line=19	flags=[]
+ROW18	5-30端子 27 数字输出	6-3*模拟输入端 3	7-22过程 CL 反馈 2 的源	8-45BTM Transaction Command	9-99Profibus Revision Counter	line=20	flags=[]
+ROW19	5-31端子 29 数字输出	6-30端子 X30/11 电压下限	7-3*过程 PID 控制器	8-46BTM Transaction Status	10-**CAN 现场总线	line=21	flags=[]
+ROW20	5-32端子 X30/6 数字输出 (MCB 101)6-31端子 X30/11 电压上限	<null>	7-30过程 PID 正常/反向控制	8-47BTM Timeout	10-0*通用设置	line=22	flags=[MERGED_CELL]
+ROW21	5-33端子 X30/7 数字输出 (MCB 101)6-34端子 X30/11参考值/反馈值下限7-31过程 PID 防积分饱和	<null>	<null>	8-48BTM Maximum Errors	10-00Can 协议	line=23	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW22	5-4*继电器	6-35端子 X30/11参考值/反馈值上限7-32过程 PID 控制启动速度值	<null>	8-49BTM Error Log	10-01波特率选择	line=24	flags=[MERGED_CELL]
+ROW23	5-40继电器功能	6-36端子 X30/11 滤波器时间常数	7-33过程 PID 比例增益	8-5*数字/总线	10-02MAC ID	line=25	flags=[]
+ROW24	5-41继电器打开延时	6-4*模拟输入端 4	7-34过程 PID 积分时间	8-50选择惯性停车	10-05读传输错误次数	line=26	flags=[]
+ROW25	5-42继电器关闭延时	6-40端子 X30/12 电压下限	7-35过程 PID 微分时间	8-51快速停止选择	10-06读接收错误次数	line=27	flags=[]
+ROW26	5-5*脉冲输入	6-41端子 X30/12 电压上限	7-36过程 PID 微分增益极限	8-52直流制动选择	10-07读总线停止次数	line=28	flags=[]
+ROW27	5-50端子29 低频	6-44端子 X30/12 参考值/反馈值下限7-38过程 PID 前馈因数	<null>	8-53启动选择	10-1*DeviceNet 1	line=29	flags=[MERGED_CELL]
+ROW28	5-51端子29 高频	6-45端子 X30/12参考值/反馈值上限7-39使用参考值带宽	<null>	8-54反向选择	10-10过程数据类型	line=30	flags=[MERGED_CELL]
+ROW29	5-5229端参考/反馈低	6-46端子 X30/12 滤波器时间常数	7-4*高级过程 PID I	8-55菜单选择	10-11过程数据写入	line=31	flags=[]
+ROW30	5-5329端参考/反馈高	6-5*模拟输出 1	7-40过程 PID I 部分复位	8-56预置参考值选择	10-12过程数据读取	line=32	flags=[]
+ROW31	5-54端子29滤波时间	6-50端子 42 输出	7-41过程 PID 输出负 箝位	8-57Profidrive OFF2 选择	10-13警告参数	line=33	flags=[]
+ROW32	5-55端子33 低频	6-51端子 42 的输出昀小标定	7-42过程 PID 输出正 箝位	8-58Profidrive OFF3 选择	10-14网络参考值	line=34	flags=[]
+ROW33	5-56端子33 高频	6-52端子 42 输出昀大比例	7-43过程 PID 比例增益(昀小 参考值时)8-8*FC 端口诊断	<null>	10-15网络控制	line=35	flags=[MERGED_CELL]
+ROW34	5-5733端参考/反馈低	6-53端子 42 输出总线控制	7-44过程 PID 比例增益(昀大 参考值时)8-80总线消息计数	<null>	10-2*DeviceNet 2	line=36	flags=[MERGED_CELL]
+ROW35	5-5833端参考/反馈高	6-54端子 42 输出超时预置	7-45过程 PID 前馈源	8-81总线错误计数	10-20COS 滤波器 1	line=37	flags=[]
+ROW36	5-59端子33滤波时间	6-55端子 42 输出滤波器	7-46过程 PID 前馈正常/反向 控制8-82从站消息数	<null>	10-21COS 滤波器 2	line=38	flags=[MERGED_CELL]
+ROW37	5-6*脉冲输出	6-6*模拟输出端 2	7-48PCD Feed Forward	8-83从站错误计数	10-22COS 滤波器 3	line=39	flags=[]
+ROW38	5-6027端脉冲输出量	6-60端子 X30/8 输出	7-49过程 PID 输出正常/反向 控制8-9*总线点动	<null>	10-23COS 滤波器 4	line=40	flags=[MERGED_CELL]
+ROW39	5-62脉冲输出昀大频率 #27	6-61端子 X30/8 昀小标定	7-5*高级过程 PID II	8-90总线点动 1 速度	10-3*DeviceNet 3	line=41	flags=[]
+ROW40	5-6329端脉冲输出量	6-62端子 X30/8 昀大标定	7-50过程 PID 扩展 PID	8-91总线点动 2 速度	10-30数组索引	line=42	flags=[]
+ROW41	5-65脉冲输出昀大频率 #29	6-63端子 X30/8 总线控制	7-51过程 PID 前馈增益	9-**PROFIdrive	10-31存储数据值	line=43	flags=[]
+ROW42	5-66端子 X30/6 脉冲输出变量	6-64端子 X30/8 输出超时预置	7-52过程 PID 前馈加速	9-00Setpoint	10-32Devicenet 修订	line=44	flags=[]
+ROW43	5-68脉冲输出昀大频率 #X30/6	6-7*模拟输出 3	7-53过程 PID 前馈减速	9-07Actual Value	10-33总是存储	line=45	flags=[]
+ROW44	5-7*24V 编码器输入	6-70端子 X45/1 输出	7-56过程 PID 参考值 滤波时间	9-15PCD Write Configuration	10-34DeviceNet 产品代码	line=46	flags=[]
+ROW45	5-70端子 32/33 每转脉冲	6-71端子 X45/1 昀小标定	7-57过程 PID 反馈 滤波时间	9-16PCD Read Config1ura0tion1010-39Devicenet F 参数	<null>	line=47	flags=[MERGED_CELL]
+ROW46	5-7129/33码盘方向	6-72端子 X45/1 昀大标定	8-**通讯和选件	9-18Node Address	10-5*CANopen	line=48	flags=[]
+ROW47	5-8*编码器输出	6-73端子 X45/1 输出总线控制	8-0*一般设置	9-19Drive Unit System Number	10-50过程数据写入。	line=49	flags=[]
+ROW48	5-80AHF 电容器重连延迟	6-74端子 X45/1 输出超时预置	8-01控制地点	9-22Telegram Selection	10-51过程数据读取。	line=50	flags=[]
+ROW49	5-9*总线控制	6-8*模拟输出 4	8-02控制字源	9-23Parameters for Signals	12-**以太网	line=51	flags=[]
+ROW50	5-90数字和继电器总线控制	6-80端子 X45/3 输出	8-03控制字超时时间	9-27Parameter Edit	12-0*IP 设置	line=52	flags=[]
+ROW51	5-93脉冲输出 #27 总线控制	6-81端子 X45/3 昀小标定	8-04控制字超时功能	9-28Process Control	12-00IP 地址分配	line=53	flags=[]
+ROW52	5-94脉冲输出 #27 超时预置	6-82端子 X45/3 昀大标定	8-05超时结束功能	9-44Fault Message Counter	12-01IP 地址	line=54	flags=[]
+ROW53	5-95脉冲输出 #29 总线控制	6-83端子 X45/3 输出总线控制	8-06控制字超时复位	9-45Fault Code	12-02子网掩码	line=55	flags=[]
+ROW54	5-96脉冲输出 #29 超时预置	6-84端子 X45/3 输出超时预置	8-07诊断触发器	9-47Fault Number	12-03默认网关	line=56	flags=[]
+ROW55	5-97脉冲输出 #X30/6 总线控制	7-**控制器	8-08读数过滤	9-52Fault Situation Counter	12-04DHCP 服务器	line=57	flags=[]
+ROW56	5-98脉冲输出 #X30/6 超时预置	7-0*速度 PID 控制器	8-1*控制字设置	9-53Profibus Warning Word	12-05租约到期	line=58	flags=[]
+ROW57	6-**模拟输入/输出	7-00速度 PID 反馈源	8-10控制字格式	9-63Actual Baud Rate	12-06名称服务器	line=59	flags=[]
+ROW58	MG38A141	Danfoss A/S © 01/2017 全权所有。	<null>	99	<null>	line=60	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=102 tableIndex=0 status=ACTIVE flags=[MERGED_CELL, COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED]
+HEADER	附录	VLT® AutomationDrive FC 302	col_2	col_3	col_4	col_5
+ROW0	12-07域名	<null>	12-95广播风暴过滤器	14-37Fieldweakening Speed	15-49控制卡软件标志	16-34散热片温度	line=2	flags=[COLUMN_MISALIGNMENT]
+ROW1	12-08主机名	<null>	12-96端口配置	14-4*能量优化	15-50功率卡软件标志	16-35逆变器热保护	line=3	flags=[COLUMN_MISALIGNMENT]
+ROW2	12-09物理地址	<null>	12-97QoS Priority	14-40VT 级别	15-51变频器序列号	16-36逆变器额定电流	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW3	12-1*以太网链路参数	<null>	12-98接口计数器	14-41AEO 昀小磁化	15-53功率卡序列号	16-37逆变器昀大电流	line=5	flags=[COLUMN_MISALIGNMENT]
+ROW4	12-10链路状态	<null>	12-99介质计数器	14-42昀小 AEO 频率	15-54Config File Name	16-38条件控制器状态	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW5	12-11链路持续时间	<null>	13-**编程功能	14-43电动机 Cosphi	15-59CSIV 文件名	16-39控制卡温度	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW6	12-12自动协商	<null>	13-0*SLC 设置	14-5*环境	15-6*选件标识	16-40日志缓冲区满。	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW7	12-13链路速度	<null>	13-00条件控制器模式	14-50射频干扰滤波器	15-60安装的选件	16-41LCP 底部状态行	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW8	12-14链路双工	<null>	13-01启动事件	14-51直流回路补偿	15-61选件软件版本	16-45Motor Phase U Current	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW9	12-18Supervisor MAC	<null>	13-02停止事件	14-52风扇控制	15-62选件订购号	16-46Motor Phase V Current	line=11	flags=[COLUMN_MISALIGNMENT]
+ROW10	12-19Supervisor IP Addr.	<null>	13-03复位 SLC	14-53风扇监测	15-63选件序列号	16-47Motor Phase W Current	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW11	12-2*过程数据	<null>	13-1*比较器	14-55输出滤波器	15-70插槽 A 中的选件	16-48Speed Ref. After Ramp [RPM]	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW12	12-20控制实例	<null>	13-10比较器操作数	14-56输出滤波器的电容	15-71插槽 A 选件的软件版本	16-49电流故障源	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW13	12-21过程数据写入	<null>	13-11比较器运算符	14-57输出滤波器的电感	15-72插槽 B 中的选件	16-5*参考值源;反馈	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW14	12-22过程数据读取	<null>	13-12比较值	14-59逆变器的实际数量	15-73插槽 B 选件的软件版本	16-50外部参考值	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW15	12-23Process Data Config Write Size13-1*RS Flip Flops	<null>	<null>	14-7*兼容性	15-74插槽 C0 中的选件	16-51脉冲参考值	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW16	12-24Process Data Config Read Size13-15RS-FF Operand S	<null>	<null>	14-72VLT 报警字	15-75插槽 C0 选件的软件版本	16-52反馈 [单位]	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW17	12-27基本主站	<null>	13-16RS-FF Operand R	14-73VLT 警告字	15-76插槽 C1 中的选件	16-53数字电位计参考值	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW18	12-28存储数据值	<null>	13-2*计时器	14-74VLT 扩展 状态字	15-77插槽 C1 选件的软件版本	16-57Feedback [RPM]	line=20	flags=[COLUMN_MISALIGNMENT]
+ROW19	12-29总是存储	<null>	13-20SL 控制器定时器	14-8*选件	15-8*运行数据 II	16-6*输入和输出	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW20	12-3*以太网/IP	<null>	13-4*逻辑规则	14-80选件由外部 24VDC 电源供电	15-80风扇运转时间	16-60数字输入	line=22	flags=[COLUMN_MISALIGNMENT]
+ROW21	12-30警告参数	<null>	13-40逻辑布尔值1	14-88Option Data Storage	15-81将风扇运转时间复位	16-6153端切换设置	line=23	flags=[COLUMN_MISALIGNMENT]
+ROW22	12-31网络参考值	<null>	13-41逻辑运算符1	14-89Option Detection	15-89Configuration Change Counter16-62模拟输入端 53	<null>	line=24	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW23	12-32网络控制	<null>	13-42逻辑布尔值2	14-9*故障设置	15-9*参数信息	16-6354端切换设置	line=25	flags=[COLUMN_MISALIGNMENT]
+ROW24	12-33CIP 修订	<null>	13-43逻辑运算符2	14-90故障级别	15-92已定义参数	16-64模拟输入端 54	line=26	flags=[COLUMN_MISALIGNMENT]
+ROW25	12-34CIP 产品代码	<null>	13-44逻辑布尔值3	15-**变频器信息	15-93已修改参数	16-65模拟输出端 42 [mA]	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW26	12-35EDS 参数	<null>	13-5*状态	15-0*运行数据	15-98变频器标识	16-66数字输出	line=28	flags=[COLUMN_MISALIGNMENT]
+ROW27	12-37COS 抑制计时器	<null>	13-51条件控制器事件	15-00运行时间	15-99参数元数据	16-67端子29频率	line=29	flags=[COLUMN_MISALIGNMENT]
+ROW28	12-38COS 滤波器	<null>	13-52条件控制器动作	15-01运转时间	16-**数据读数	16-68端子33频率	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW29	12-4*Modbus TCP	<null>	14-**特殊功能	15-02千瓦时计数器	16-0*一般状态	16-69端子27脉冲输出	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW30	12-40状态参数	<null>	14-0*逆变器开关	15-03加电次数	16-00控制字	16-70端子29脉冲输出	line=32	flags=[COLUMN_MISALIGNMENT]
+ROW31	12-41从站信息数	<null>	14-00开关模式	15-04过温次数	16-01参考值 [单位]	16-71继电器输出 [二进制]	line=33	flags=[COLUMN_MISALIGNMENT]
+ROW32	12-42从站意外消息数	<null>	14-01开关频率	15-05过压次数	16-02参考值 %	16-72计数器 A	line=34	flags=[COLUMN_MISALIGNMENT]
+ROW33	12-5*EtherCAT	<null>	14-03超调	15-06复位能耗计数	16-03状态字 [二进制]	16-73计数器 B	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW34	12-50Configured Station Alias	<null>	14-04PWM 随机	15-07复位运行时间	16-05总线实速A信号	16-74精确 停止计数器	line=36	flags=[COLUMN_MISALIGNMENT]
+ROW35	12-51Configured Station Address	<null>	14-06空载时间补偿	15-1*数据日志设置	16-06Actual Position	16-75模拟输入 X30/11	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW36	12-59EtherCAT Status	<null>	14-1*Mains Failure	15-10日志源	16-09自定义读数	16-76模拟输入 X30/12	line=38	flags=[COLUMN_MISALIGNMENT]
+ROW37	12-6*Ethernet PowerLink	<null>	14-10主电源故障	15-11日志记录时间间隔	16-1*电动机状态	16-77模拟输出 X30/8 [mA]	line=39	flags=[COLUMN_MISALIGNMENT]
+ROW38	12-60Node ID	<null>	14-11主电源故障时的主电源电压	15-12触发事件	16-10功率 [kW]	16-78模拟输出 X45/1 [mA]	line=40	flags=[COLUMN_MISALIGNMENT]
+ROW39	12-62SDO Timeout	<null>	14-12输入缺相功能	15-13日志记录模式	16-11功率 [hp]	16-79模拟输出 X45/3 [mA]	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW40	12-63Basic Ethernet Timeout	<null>	14-14Kin. Back-up Time-out	15-14触发前采样	16-12电动机电压	16-8*总线和FC端口	line=42	flags=[COLUMN_MISALIGNMENT]
+ROW41	12-66Threshold	<null>	14-15Kin. Back-up Trip Recovery Level15-2*历史记录日志	<null>	16-13频率	16-80控制字1信号	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW42	12-67Threshold Counters	<null>	14-16Kin. Back-up Gain	15-20事件记录	16-14电动机电流	16-82总线设定A信号	line=44	flags=[COLUMN_MISALIGNMENT]
+ROW43	12-68Cumulative Counters	<null>	14-2*跳闸复位	15-21运行值记录	16-15频率 [%]	16-84通讯卡状态字	line=45	flags=[COLUMN_MISALIGNMENT]
+ROW44	12-69Ethernet PowerLink Status	<null>	14-20复位模式	15-22时间记录	16-16转矩 (Nm)	16-85FC口控制字1	line=46	flags=[COLUMN_MISALIGNMENT]
+ROW45	12-8*其它以太网服务	<null>	14-21自动复位时间	15-3*故障记录	16-17速度 [RPM]	16-86FC速度给定A	line=47	flags=[COLUMN_MISALIGNMENT]
+ROW46	101012-80FTP 服务器	<null>	14-22工作模式	15-30故障错误代码	16-18电动机发热	16-87Bus Readout Alarm/Warning	line=48	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW47	12-81HTTP 服务器	<null>	14-23类型代码设置	15-31故障记录:值	16-19KTY 传感器温度	16-89Configurable Alarm/Warning Word	line=49	flags=[COLUMN_MISALIGNMENT]
+ROW48	12-82SMTP 服务	<null>	14-24转矩极限跳闸延迟	15-32故障记录:时间	16-20电动机角度	16-9*诊断读数	line=50	flags=[COLUMN_MISALIGNMENT]
+ROW49	12-83SNMP Agent	<null>	14-25转矩极限跳闸延迟	15-4*变频器标识	16-21转矩 [%] 高分辨率	16-90报警字	line=51	flags=[COLUMN_MISALIGNMENT]
+ROW50	12-84Address Conflict Detection	<null>	14-26逆变器故障时的跳闸延迟	15-40FC 类型	16-22转矩 [%]	16-91报警字 2	line=52	flags=[COLUMN_MISALIGNMENT]
+ROW51	12-85ACD Last Conflict	<null>	14-28生产设置	15-41功率范围	16-23Motor Shaft Power [kW]	16-92警告字	line=53	flags=[COLUMN_MISALIGNMENT]
+ROW52	12-89透明套接字通道端口	<null>	14-29服务代码	15-42电压	16-24Calibrated Stator Resistance16-93警告字 2	<null>	line=54	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW53	12-9*高级以太网服务	<null>	14-3*电流极限控制器	15-43SWversion	16-25转矩 [Nm] 高	16-94扩展状态字	line=55	flags=[COLUMN_MISALIGNMENT]
+ROW54	12-90电缆诊断	<null>	14-30电流控制器比例	15-44订购代码字符串	16-3*变频器状态	17-**反馈选件	line=56	flags=[COLUMN_MISALIGNMENT]
+ROW55	12-91自动跨接	<null>	14-31电流控制器积分	15-45类型代码字符串	16-30直流回路电压	17-1*增量编码器接口	line=57	flags=[COLUMN_MISALIGNMENT]
+ROW56	12-92IGMP 探查	<null>	14-32电流极限控制器,滤波器时间	15-46变频器订购号	16-31System Temp.	17-10信号类型	line=58	flags=[COLUMN_MISALIGNMENT]
+ROW57	12-93电缆错误长度	<null>	14-35失速保护	15-47功率卡订购号	16-32制动能量/秒	17-11分辨率 (PPR)	line=59	flags=[COLUMN_MISALIGNMENT]
+ROW58	12-94广播风暴保护	<null>	14-36Field-weakening Function	15-48LCP Id 号	16-33制动能量/2分钟	<null>	line=60	flags=[COLUMN_MISALIGNMENT]
+ROW59	100	Danfoss A/S © 01/2017 全权所有。	<null>	<null>	MG38A141	<null>	line=61	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=103 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	1附7-录2*绝对编码器接口	30-01摆频操频作率指变南化 [Hz]	32-32绝对协议	33-17主站标记距离	33-9*MCO 端口设置
+ROW0	17-20协议选择	30-02摆频频率变化 [%]	32-33绝对分辨率	33-18从站标记距离	33-90X62 MCO CAN node ID	line=2	flags=[]
+ROW1	17-21分辨率(位置/转)	30-03摆频频率变化 标定源	32-35绝对编码器数据长度	33-19主站标记类型	33-91X62 MCO CAN baud rate	line=3	flags=[]
+ROW2	17-22Multiturn Revolutions	30-04摆频跳频 [Hz]	32-36绝对编码器时钟频率	33-20从站标记类型	33-94X60 MCO RS485 serial termination	line=4	flags=[]
+ROW3	17-24SSI 数据长度	30-05摆频跳频 [%]	32-37绝对编码器时钟生成	33-21主站标记误差窗口	33-95X60 MCO RS485 serial baud rate	line=5	flags=[]
+ROW4	17-25时钟速率	30-06摆频跳跃时间	32-38绝对编码器电缆长度	33-22从站标记误差窗口	34-**MCO 数据读数	line=6	flags=[]
+ROW5	17-26SSI 数据格式	30-07摆频序列时间	32-39编码器监测	33-23主站同步的启动行为	34-0*PCD 写参数	line=7	flags=[]
+ROW6	17-34HIPERFACE 波特率	30-08摆频加速/减速时间	32-40编码器端接	33-24故障标记数量	34-01PCD 1 写入 MCO	line=8	flags=[]
+ROW7	17-5*解析器接口	30-09摆频随机函数	32-43Enc.1 Control	33-25就绪标记数量	34-02PCD 2 写入 MCO	line=9	flags=[]
+ROW8	17-50极数	30-10摆频比	32-44Enc.1 node ID	33-26速度滤波器	34-03PCD 3 写入 MCO	line=10	flags=[]
+ROW9	17-51输入电压	30-11昀大随机摆频比	32-45Enc.1 CAN guard	33-27偏移滤波时间	34-04PCD 4 写入 MCO	line=11	flags=[]
+ROW10	17-52输入频率	30-12昀小随机摆频比	32-5*反馈来源	33-28标记滤波器配置	34-05PCD 5 写入 MCO	line=12	flags=[]
+ROW11	17-53变压比	30-19摆频频率变化 (经标定)	32-50源从站	33-29标记滤波器的滤波时间	34-06PCD 6 写入 MCO	line=13	flags=[]
+ROW12	17-56Encoder Sim. Resolution	30-2*高级 启动调整	32-51MCO 302 昀后意愿	33-30昀大标记修正量	34-07PCD 7 写入 MCO	line=14	flags=[]
+ROW13	17-59解析器接口	30-20高启动转矩时间	32-52Source Master	33-31同步类型	34-08PCD 8 写入 MCO	line=15	flags=[]
+ROW14	17-6*监视和应用	30-21High Starting Torque Current [%]32-6*PID 控制器	<null>	33-32Feed Forward Velocity Adaptation34-09PCD 9 写入 MCO	<null>	line=16	flags=[MERGED_CELL]
+ROW15	17-60反馈方向	30-22转子锁定保护	32-60比例因数	33-33Velocity Filter Window	34-10PCD 10 写入 MCO	line=17	flags=[]
+ROW16	17-61反馈信号监测	30-23转子锁定检测时间 [s]	32-61微分因数	33-34Slave Marker filter time	34-2*PCD 读参数	line=18	flags=[]
+ROW17	17-7*Position Scaling	30-24Locked Rotor Detection Speed32-62积分因数	<null>	33-4*限位处理	34-21PCD 1 从 MCO 读取	line=19	flags=[MERGED_CELL]
+ROW18	17-70Position Unit	Error [%]	32-63积分和的极限值	33-40终止极限开关处的行为	34-22PCD 2 从 MCO 读取	line=20	flags=[]
+ROW19	17-71Position Unit Scale	30-25Light Load Delay [s]	32-64PID 带宽	33-41负向软件终止极限	34-23PCD 3 从 MCO 读取	line=21	flags=[]
+ROW20	17-72Position Unit Numerator	30-26Light Load Current [%]	32-65前馈速度	33-42正向软件终止极限	34-24PCD 4 从 MCO 读取	line=22	flags=[]
+ROW21	17-73Position Unit Denominator	30-27Light Load Speed [%]	32-66前馈加速度	33-43负向软件终止极限已激活	34-25PCD 5 从 MCO 读取	line=23	flags=[]
+ROW22	17-74Position Offset	30-5*Unit Configuration	32-67所允许的昀大位置误差	33-44正向软件终止极限已激活	34-26PCD 6 从 MCO 读取	line=24	flags=[]
+ROW23	18-**数据读数 2	30-50Heat Sink Fan Mode	32-68从站的反向行为	33-45目标窗口内的时间	34-27PCD 7 从 MCO 读取	line=25	flags=[]
+ROW24	18-2* Motor Readouts	30-8*兼容性 (I)	32-69PID 控制的采样时间	33-46目标窗口极限值	34-28PCD 8 从 MCO 读取	line=26	flags=[]
+ROW25	18-27Safe Opt. Est. Speed	30-80d 轴电感 (Ld)	32-70特征生成器的扫描时间	33-47目标窗口的大小	34-29PCD 9 从 MCO 读取	line=27	flags=[]
+ROW26	18-28Safe Opt. Meas. Speed	30-81制动电阻器(欧姆)	32-71控制窗口的大小(启用)	33-5*I/O 配置	34-30PCD 10 从 MCO 读取	line=28	flags=[]
+ROW27	18-29Safe Opt. Speed Error	30-83速度 PID 比例增益	32-72控制窗口的大小(禁用)	33-50端子 X57/1 数字输入	34-4*输入 & 输出	line=29	flags=[]
+ROW28	18-3*Analog Readouts	30-84过程 PID 比例增益	32-73Integral limit filter time	33-51端子 X57/2 数字输入	34-40数字输入	line=30	flags=[]
+ROW29	18-36模拟输入 X48/2 [mA]	31-**旁路选件	32-74Position error filter time	33-52端子 X57/3 数字输入	34-41数字输出	line=31	flags=[]
+ROW30	18-37温度输入 X48/4	31-00Bypass Mode	32-8*速度 & 加速度	33-53端子 X57/4 数字输入	34-5*过程数据	line=32	flags=[]
+ROW31	18-38温度输入 X48/7	31-01Bypass Start Time Delay	32-80昀大速度(编码器)	33-54端子 X57/5 数字输入	34-50实际位置	line=33	flags=[]
+ROW32	18-39温度输入 X48/10	31-02Bypass Trip Time Delay	32-81昀短加减速时间	33-55端子 X57/6 数字输入	34-51命令的位置	line=34	flags=[]
+ROW33	18-4*PGIO Data Readouts	31-03Test Mode Activation	32-82加减速类型	33-56端子 X57/7 数字输入	34-52实际主站位置	line=35	flags=[]
+ROW34	18-43Analog Out X49/7	31-10Bypass Status Word	32-83速度分解	33-57端子 X57/8 数字输入	34-53从站索引位置	line=36	flags=[]
+ROW35	18-44Analog Out X49/9	31-11Bypass Running Hours	32-84默认速度	33-58端子 X57/9 数字输入	34-54主索引位置	line=37	flags=[]
+ROW36	18-45Analog Out X49/11	31-19Remote Bypass Activation	32-85默认加速度	33-59端子 X57/10 数字输入	34-55曲线位置	line=38	flags=[]
+ROW37	18-5*Active Alarms/Warnings	32-**MCO 基本设置	32-86Acc. up for limited jerk	33-60端子 X59/1 和 X59/2 的模式	34-56跟踪错误	line=39	flags=[]
+ROW38	18-55Active Alarm Numbers	32-0*编码器 2	32-87Acc. down for limited jerk	33-61端子 X59/1 数字输入	34-57同步错误	line=40	flags=[]
+ROW39	18-56Active Warning Numbers	32-00增量信号类型	32-88Dec. up for limited jerk	33-62端子 X59/2 数字输入	34-58实际速度	line=41	flags=[]
+ROW40	18-6*Inputs & Outputs 2	32-01增量分辨率	32-89Dec. down for limited jerk	33-63端子 X59/1 数字输出	34-59实际主站速度	line=42	flags=[]
+ROW41	18-60Digital Input 2	32-02绝对协议	32-9*开发	33-64端子 X59/2 数字输出	34-60同步状态	line=43	flags=[]
+ROW42	18-7*Rectifier Status	32-03绝对分辨率	32-90调试源	33-65端子 X59/3 数字输出	34-61轴状态	line=44	flags=[]
+ROW43	18-70Mains Voltage	32-04Absolute Encoder Baudrate X5533-**MCO 高级设置	<null>	33-66端子 X59/4 数字输出	34-62程序状态	line=45	flags=[MERGED_CELL]
+ROW44	18-71Mains Frequency	32-05绝对编码器数据长度	33-0*归位运动	33-67端子 X59/5 数字输出	34-64MCO 302 状态	line=46	flags=[]
+ROW45	18-72Mains Imbalance	32-06绝对编码器时钟频率	33-00强制归位	33-68端子 X59/6 数字1输出01034-65MCO 302 控制	<null>	line=47	flags=[MERGED_CELL]
+ROW46	18-75Rectifier DC Volt.	32-07绝对编码器时钟生成	33-01零点同归位点之间的偏移	33-69端子 X59/7 数字输出	34-66SPI Error Counter	line=48	flags=[]
+ROW47	18-9*PID 读数	32-08绝对编码器电缆长度	33-02归位运动的加减速	33-70端子 X59/8 数字输出	34-7*诊断读数	line=49	flags=[]
+ROW48	18-90过程 PID 错误	32-09编码器监测	33-03归位运动的速度	33-8*全局参数	34-70MCO 报警字 1	line=50	flags=[]
+ROW49	18-91过程 PID 输出	32-10旋转方向	33-04归位运动期间的行为	33-80已启动程序的编号	34-71MCO 报警字 2	line=51	flags=[]
+ROW50	18-92过程 PID 箝位输出	32-11用户单位的分母	33-1*同步	33-81加电状态	35-**传感器输入选件	line=52	flags=[]
+ROW51	18-93过程 PID 增益标定输出	32-12用户单位的分子	33-10主站同步因数(主:从)	33-82变频器状态监视	35-0*温度 输入模式	line=53	flags=[]
+ROW52	22-**应用功能	32-13Enc.2 Control	33-11从站同步因数(主:从)	33-83发生错误后的行为	35-00Term. X48/4 Temperature Unit	line=54	flags=[]
+ROW53	22-0*其他	32-14Enc.2 node ID	33-12同步位置偏移	33-84执行 [Esc](退出)后的行为	35-01端子 X48/4 输入类型	line=55	flags=[]
+ROW54	22-00外部互锁延迟	32-15Enc.2 CAN guard	33-13位置同步的精度窗口	33-85MCO 由外部 24V 直流电源供电35-02Term. X48/7 Temperature Unit	<null>	line=56	flags=[MERGED_CELL]
+ROW55	30-**特殊特性	32-3*编码器 1	33-14从站速度相对限制	33-86报警时的端子	35-03端子 X48/7 输入类型	line=57	flags=[]
+ROW56	30-0*摆频机	32-30增量信号类型	33-15主站标记数量	33-87报警时的端子状态	35-04Term. X48/10 Temperature Unit	line=58	flags=[]
+ROW57	30-00摆频模式	32-31增量分辨率	33-16从站标记数量	33-88报警时的状态字	35-05端子 X48/10 输入类型	line=59	flags=[]
+ROW58	MG38A141	Danfoss A/S © 01/2017 全权所有。	<null>	101	<null>	line=60	flags=[COLUMN_MISALIGNMENT, MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=104 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	附录	VLT® AutomationDrive FC 302	col_2
+ROW0	35-06温度传感器报警功能	42-2*Safe Input	43-21FPC Fan B Speed	line=2	flags=[]
+ROW1	35-1*温度输入 X48/4	42-20Safe Function	43-22FPC Fan C Speed	line=3	flags=[]
+ROW2	35-14Term. X48/4 Filter Time Constant42-21Type	<null>	43-23FPC Fan D Speed	line=4	flags=[MERGED_CELL]
+ROW3	35-15Term. X48/4 Temp. Monitor	42-22Discrepancy Time	43-24FPC Fan E Speed	line=5	flags=[]
+ROW4	35-16Term. X48/4 Low Temp. Limit42-23Stable Signal Time	<null>	43-25FPC Fan F Speed	line=6	flags=[MERGED_CELL]
+ROW5	35-17Term. X48/4 High Temp. Limit42-24Restart Behaviour	<null>	600-**PROFIsafe	line=7	flags=[MERGED_CELL]
+ROW6	35-2*温度输入 X48/7	42-3*General	600-22PROFIdrive/safe Tel. Selected	line=8	flags=[]
+ROW7	35-24Term. X48/7 Filter Time Constant42-30External Failure Reaction	<null>	600-44Fault Message Counter	line=9	flags=[MERGED_CELL]
+ROW8	35-25Term. X48/7 Temp. Monitor	42-31Reset Source	600-47Fault Number	line=10	flags=[]
+ROW9	35-26Term. X48/7 Low Temp. Limit42-33Parameter Set Name	<null>	600-52Fault Situation Counter	line=11	flags=[MERGED_CELL]
+ROW10	35-27Term. X48/7 High Temp. Limit42-35S-CRC Value	<null>	601-**PROFIdrive 2	line=12	flags=[MERGED_CELL]
+ROW11	35-3*温度输入 X48/10	42-36Level 1 Password	601-22PROFIdrive Safety Channel Tel.	line=13	flags=[]
+ROW12	35-34Term. X48/10 Filter Time	42-4*SS1	No.	line=14	flags=[]
+ROW13	Constant	42-40Type	<null>	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW14	35-35Term. X48/10 Temp. Monitor	42-41Ramp Profile	<null>	line=16	flags=[COLUMN_MISALIGNMENT]
+
+### page=104 tableIndex=1 status=ACTIVE flags=[]
+HEADER	35-37Term. X48/10 High Temp. Limit	42-43Delta T
+ROW0	35-4*模拟输入 X48/2	42-44Deceleration Rate	line=19	flags=[]
+ROW1	35-42端子 X48/2 低电流	42-45Delta V	line=20	flags=[]
+ROW2	35-43端子 X48/2 高电流	42-46Zero Speed	line=21	flags=[]
+
+### page=104 tableIndex=2 status=ACTIVE flags=[]
+HEADER	35-44Term. X48/2 Low Ref./Feedb.	42-47Ramp Time
+ROW0	Value	42-48S-ramp Ratio at Decel. Start	line=23	flags=[]
+
+### page=104 tableIndex=3 status=ACTIVE flags=[]
+HEADER	35-45Term. X48/2 High Ref./Feedb.	42-49S-ramp Ratio at Decel. End
+ROW0	Value	42-5*SLS	line=25	flags=[]
+
+### page=104 tableIndex=4 status=ACTIVE flags=[]
+HEADER	36-**Programmable I/O Option	42-51Speed Limit
+ROW0	36-0*I/O Mode	42-52Fail Safe Reaction	line=28	flags=[]
+ROW1	36-03Terminal X49/7 Mode	42-53Start Ramp	line=29	flags=[]
+ROW2	36-04Terminal X49/9 Mode	42-54Ramp Down Time	line=30	flags=[]
+ROW3	36-05Terminal X49/11 Mode	42-6*Safe Fieldbus	line=31	flags=[]
+ROW4	36-4*Output X49/7	42-60Telegram Selection	line=32	flags=[]
+
+### page=104 tableIndex=5 status=ACTIVE flags=[]
+HEADER	36-40Terminal X49/7 Analogue Output	42-61Destination Address
+ROW0	36-42Terminal X49/7 Min. Scale	42-8*Status	line=34	flags=[]
+ROW1	36-43Terminal X49/7 Max. Scale	42-80Safe Option Status	line=35	flags=[]
+ROW2	36-44Terminal X49/7 Bus Control	42-81Safe Option Status 2	line=36	flags=[]
+
+### page=104 tableIndex=6 status=ACTIVE flags=[]
+HEADER	36-45Terminal X49/7 Timeout Preset	42-82Safe Control Word
+ROW0	36-5*Output X49/9	42-83Safe Status Word	line=38	flags=[]
+
+### page=104 tableIndex=7 status=ACTIVE flags=[]
+HEADER	36-50Terminal X49/9 Analogue Output	42-85Active Safe Func.
+ROW0	36-52Terminal X49/9 Min. Scale	42-86Safe Option Info	line=40	flags=[]
+ROW1	36-53Terminal X49/9 Max. Scale	42-87Time Until Manual Test	line=41	flags=[]
+ROW2	36-54Terminal X49/9 Bus Control	42-88Supported Customization File	line=42	flags=[]
+ROW3	36-55Terminal X49/9 Timeout Preset	Version	line=43	flags=[]
+ROW4	36-6*Output X49/11	42-89Customization File Version	line=44	flags=[]
+
+### page=104 tableIndex=8 status=ACTIVE flags=[]
+HEADER	36-62Terminal X49/11 Min. Scale	42-90Restart Safe Option
+ROW0	36-63Terminal X49/11 Max. Scale	43-**Unit Readouts	line=47	flags=[]
+
+### page=104 tableIndex=9 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	36-65Terminal X49/11 Timeout Preset	43-00Component Temp.
+ROW0	42-**Safety Functions	43-01Auxiliary Temp.	line=50	flags=[]
+ROW1	42-1*Speed Monitoring	43-02Component SW ID	line=51	flags=[]
+ROW2	42-10Measured Speed Source	43-1*Power Card Status	line=52	flags=[]
+ROW3	42-11Encoder Resolution	43-10HS Temp. ph.U	line=53	flags=[]
+ROW4	42-12Encoder Direction	43-11HS Temp. ph.V	line=54	flags=[]
+ROW5	42-13Gear Ratio	43-12HS Temp. ph.W	line=55	flags=[]
+ROW6	42-14Feedback Type	43-13PC Fan A Speed	line=56	flags=[]
+ROW7	42-15Feedback Filter	43-14PC Fan B Speed	line=57	flags=[]
+ROW8	42-17Tolerance Error	43-15PC Fan C Speed	line=58	flags=[]
+ROW9	42-18Zero Speed Timer	43-2*Fan Pow.Card Status	line=59	flags=[]
+ROW10	42-19Zero Speed Limit	43-20FPC Fan A Speed	line=60	flags=[]
+ROW11	102	Danfoss A/S © 01/2017 全权所有。	MG38A141	line=61	flags=[COLUMN_MISALIGNMENT, EXTRA_CELL]
+
+### page=105 tableIndex=0 status=ACTIVE flags=[]
+HEADER	A53/A54 开关..................................... 9	端子........................................ 7, 8
+ROW0	ADN 合规性....................................... 3	端子转矩额定值................................ 95	line=7	flags=[]
+
+### page=105 tableIndex=1 status=ACTIVE flags=[]
+HEADER	EMC......................................... 20, 22	主菜单.......................................... 46
+ROW0	F	互	line=17	flags=[]
+
+### page=105 tableIndex=2 status=ACTIVE flags=[]
+HEADER	L	交流主电源...................................... 26
+ROW0	LCP	另请参阅 主电源	line=22	flags=[]
+
+### page=106 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	索引	VLT® AutomationDrive FC 302	col_2
+ROW0	出	<null>	回	line=2	flags=[COLUMN_MISALIGNMENT]
+
+### page=106 tableIndex=1 status=ACTIVE flags=[]
+HEADER	出厂默认设置.................................... 50	回收............................................. 3
+ROW0	初	处	line=4	flags=[]
+
+### page=106 tableIndex=2 status=ACTIVE flags=[]
+HEADER	初始设置........................................ 45	处理说明......................................... 3
+ROW0	制	复	line=6	flags=[]
+ROW1	制动	复位.................................... 11, 59, 65	line=7	flags=[]
+
+### page=106 tableIndex=3 status=ACTIVE flags=[]
+HEADER	端子转矩额定值................................ 95	外
+ROW0	制动电阻器	外部尺寸	line=11	flags=[]
+ROW1	接线.......................................... 43	E1h........................................... 78	line=12	flags=[]
+ROW2	接线 示意图................................... 23	E2h........................................... 82	line=13	flags=[]
+ROW3	端子位置....................................... 9	E3h........................................... 86	line=14	flags=[]
+ROW4	警告.......................................... 62	E4h........................................... 90	line=15	flags=[]
+
+### page=106 tableIndex=4 status=ACTIVE flags=[]
+HEADER	变频器	状态信息...................................... 57
+ROW0	初始化........................................ 50	警报和报警.................................... 59	line=47	flags=[]
+
+### page=107 tableIndex=0 status=ACTIVE flags=[]
+HEADER	索引	操作指南
+ROW0	密	手	line=2	flags=[]
+ROW1	密封板	手册	line=3	flags=[]
+ROW2	E1h 的尺寸.................................... 81	版本号......................................... 3	line=4	flags=[]
+
+### page=107 tableIndex=1 status=ACTIVE flags=[]
+HEADER	开关	启动/停止..................................... 53
+ROW0	A53/A54....................................... 43	外部报警复位.................................. 54	line=44	flags=[]
+ROW1	制动电阻器温度................................ 43	开环.......................................... 52	line=45	flags=[]
+ROW2	总线端接...................................... 42	热敏电阻...................................... 55	line=46	flags=[]
+
+### page=107 tableIndex=2 status=ACTIVE flags=[]
+HEADER	速度控制的接线................................ 52	控制卡
+ROW0	速度精确度.................................... 76	RS485......................................... 75	line=51	flags=[]
+
+### page=107 tableIndex=3 status=ACTIVE flags=[]
+HEADER	快	警告.......................................... 64
+ROW0	快捷菜单.................................... 10, 45	过热跳闸点.................................... 69	line=55	flags=[]
+
+### page=108 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	索引	VLT® AutomationDrive FC 302	col_2
+ROW0	故	<null>	温	line=2	flags=[COLUMN_MISALIGNMENT]
+
+### page=108 tableIndex=1 status=ACTIVE flags=[]
+HEADER	警告.............................. 62, 63, 64, 66	热敏电阻
+ROW0	过热跳闸点.................................... 69	接线配置...................................... 55	line=20	flags=[]
+ROW1	需要的气流.................................... 14	电缆布线...................................... 40	line=21	flags=[]
+
+### page=109 tableIndex=0 status=ACTIVE flags=[]
+HEADER	保护类别...................................... 13	端子
+ROW0	接线 示意图................................... 23	E1h 尺寸（正视图和侧视图）.................... 30	line=5	flags=[]
+ROW1	故障诊断.................................. 67, 68	E2h 尺寸（正视图和侧视图）.................... 32	line=6	flags=[]
+ROW2	数据.......................................... 68	E3h 尺寸（正视图和侧视图）.................... 34	line=7	flags=[]
+ROW3	热敏电阻...................................... 55	E4h 尺寸（正视图和侧视图）.................... 37	line=8	flags=[]
+ROW4	电缆...................................... 20, 24	串行通讯...................................... 41	line=9	flags=[]
+ROW5	端子........................................... 7	控制位置................................... 9, 40	line=10	flags=[]
+ROW6	端子转矩额定值................................ 95	数字输入/输出................................. 41	line=11	flags=[]
+ROW7	警告...................................... 60, 62	模拟输入/输出................................. 41	line=12	flags=[]
+ROW8	设置.......................................... 46	37........................................ 41, 42	line=13	flags=[]
+ROW9	转速.......................................... 49	继电器........................................ 41	line=14	flags=[]
+
+### page=109 tableIndex=1 status=ACTIVE flags=[]
+HEADER	连接.......................................... 24	继
+ROW0	电机自动整定	继电器	line=18	flags=[]
+ROW1	警告.......................................... 64	位置....................................... 9, 41	line=19	flags=[]
+ROW2	配置.......................................... 49	输出规格...................................... 76	line=20	flags=[]
+
+### page=109 tableIndex=2 status=ACTIVE flags=[]
+HEADER	电气规格 525–690 V............................. 71	维
+ROW0	电流	维护........................................ 13, 56	line=23	flags=[]
+
+### page=109 tableIndex=3 status=ACTIVE flags=[]
+HEADER	规格.......................................... 74	缺相............................................ 60
+ROW0	睡	能	line=40	flags=[]
+
+### page=109 tableIndex=4 status=ACTIVE flags=[]
+HEADER	睡眠模式........................................ 58	能效等级........................................ 73
+ROW0	瞬	自	line=42	flags=[]
+
+### page=110 tableIndex=0 status=ACTIVE flags=[]
+HEADER	负	E2h........................................... 85
+ROW0	负载共享	E3h........................................... 89	line=10	flags=[]
+ROW1	接线 示意图................................... 23	E4h........................................... 93	line=11	flags=[]
+
+### page=110 tableIndex=1 status=ACTIVE flags=[]
+HEADER	警告........................................... 4	隔离器............................... 7, 43, 45, 77
+ROW0	起	额	line=16	flags=[]
+
+### page=110 tableIndex=2 status=ACTIVE flags=[]
+HEADER	极限...................................... 60, 68	风扇
+ROW0	特性.......................................... 73	位置........................................... 8	line=22	flags=[]
+ROW1	紧固件额定值.................................. 95	维修.......................................... 13	line=23	flags=[]
+
+### page=111 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, EXTRA_CELL]
+HEADER	索引	操作指南
+ROW0	MG38A141	Danfoss A/S © 01/2017 全权所有。	109	line=2	flags=[EXTRA_CELL]
+
+### page=112 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	DD丹aa佛nn斯ffoo(ss上ss 海DKfr)ti自.ve动s丹佛斯(上海)自动控制Da丹nf佛os斯s( D上r海iv)e自s动控制	丹佛斯(上海)自动控制	丹佛斯(上海)自动控制丹佛斯(上海)自动控制
+ROW0	ÐuJVZ控ola op.ž制 vCrearđ有hrttakanr限 u ziSjcaa t公2anma3 n1o司1e7ow 61js/e61kva2ić 5a 1有4限公司北京办事处Továren有s限ká公 4司9广州办事处	有限公司成都办事处	有限公司青岛办事处有限公司西安办事处	line=3	flags=[]
+ROW1	4H4-10113 N9. BBuedll aSpcehsotol Rd.	8800 W. Bradley Rd.	<null>	line=4	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=112 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	LV科oá技vcie 大ús t楼P9a1Cr楼k 2lL0 层61111 甲US2号A盈科中心A栋20层Mil高w德au置ke地e广, W场lB 5塔3720244室 USA	col_1	国际广场11层1103-1104室广发金融大厦1102A室	老三届世纪星大厦25层C座
+ROW0	TTTSTeeellfolll:..e v::+0 fe+o31n4n8 i/2j:1 (a602 10 2(162) )274 8050395 7 8 000 15745 0 01011	Slovenská republika	<null>	<null>	line=7	flags=[COLUMN_MISALIGNMENT]
+
+### page=112 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	PT电ehl话oenf:o0en2: 1:1 -(-6181)05 41053-04003 2025-3613电6话7:010-85352588	Pho电n话e:: 102-80-0208-36428010-08806	电话:0532-85018100电话:028-87774346,43	电话:029-88360550
+ROW0	TFFTFeeaaaxxxll.e::::00 f++a1143x/ /:285( 6201102 8(16)2 16 7 )4 1 2580 0053 898 000871 5 405 11123	Tel.: +421 37 640 6280	<null>	<null>	line=9	flags=[COLUMN_MISALIGNMENT]
+ROW1	T传 e l真 e f : a 0 x2 :1 (-116-)18 541155301-60 203593-98传60真0:010-85352599 传 真 : 012-04-1248-33485050-18800传真:028-87774347	<null>	传真:0532-85018160传真:029-88360551	<null>	line=10	flags=[MERGED_CELL]
+ROW2	eEEFE邮a----mmmmx编.:aaaa:0iii2i1llll0:::: /i0dddn52aaaf13onnn39@fff ooo2dsss3asss 6...nhcc1fszro@@@sdsdd邮.aapa编nnnlfff:ooo1sss0sss0...0ccc2ooo7mmmTelefax邮: +编4:2511 03672 3640 6290邮编:610016	<null>	邮编:266071	邮编:710065	line=11	flags=[MERGED_CELL]
+
+### page=112 tableIndex=3 status=ACTIVE flags=[]
+HEADER	hwwEw-twwwmtpwwwa:/i.../lddd:w aaadwnnnafffnwooofsss.odssss...achcsn.ozrsf.ioy@usds.apnlfoss.com	E-mail: danfoss.sk@danfoss.com
+ROW0	wwwwww..ddaannffoossss.dhruives.com	www.danfossdrives.com	line=14	flags=[]
+

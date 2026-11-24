@@ -1,0 +1,5 @@
+sha256=9041B14E2EA9DBC55AEDAEE0612FB0B98075CE90D5DD6BF629A93AB03AA4747A
+file=danfoss-mg38a141-fc302-zh.pdf
+bytes=12427018
+url=https://files.danfoss.com/download/Drives/MG38A141.pdf
+note=copyrighted vendor PDF intentionally NOT committed; temp_docs/D41/manuals/ is gitignored

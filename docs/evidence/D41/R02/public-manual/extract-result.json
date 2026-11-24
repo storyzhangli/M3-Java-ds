@@ -1,0 +1,21 @@
+{
+  "task": "D41-R02-01 real public manual extraction verification",
+  "manual": "MG38A141 VLT AutomationDrive FC 302 operating guide 315-710 kW chassis E (zh-CN), Danfoss A/S 01/2017",
+  "extractor": "com.zl.d41.knowledge.table.PdfTableExtractor (R02 build)",
+  "pages": 112,
+  "totalTables": 411,
+  "activeTables": 411,
+  "degradedTables": 0,
+  "tablesWithRows": 411,
+  "anomalyTables": 234,
+  "flagDistribution": {
+    "CONTINUATION_HEADER_SKIPPED": 22,
+    "LOW_CONFIDENCE": 47,
+    "EXTRA_CELL": 29,
+    "COLUMN_MISALIGNMENT": 212,
+    "MERGED_CELL": 86
+  },
+  "limitationNote": "Region clustering splits one large spec grid into sub-regions and reads two-column prose as tables; extraction is recall-biased, R02 goal is anomaly visibility (flags + original text) rather than 100% precision. See source-vs-extracted.md.",
+  "generatedAt": "2026-11-24T21:17:28",
+  "command": "java -cp target/classes;<deps> ProbeD41Manual.java <pdf> <outDir>  (scripts/ProbeD41Manual.java)"
+}

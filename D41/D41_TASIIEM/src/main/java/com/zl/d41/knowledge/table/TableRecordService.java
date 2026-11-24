@@ -72,6 +72,12 @@ public class TableRecordService {
     /**
      * 抽取并持久化。extension 为 inspect 已白名单校验的小写扩展名；
      * pages 仅 PDF 有值（既有解析链输出复用）；parsedText 非 PDF 文本源。
+     *
+     * <p>R02-04 语义（三态显式化，禁以 isEmpty 区分成败）：
+     * ① 解析成功且有表格 → 事务内先清理本 documentId+version 全部旧表/旧行，再整体写入本次结果；
+     * ② 解析成功且无表格 → 清理旧数据后空集提交（"成功为空"允许清空，任务书语义4）；
+     * ③ 解析失败（异常/不支持扩展名）→ **不写不删**，返回 PARSE_FAILED，旧结构化记录完整保留；
+     * 清理+写入+关联重算同处 @Transactional 事务，任何 DB 写失败整体回滚，不留半套数据。</p>
      */
     @Transactional
     public TableExtractSummary extractAndPersist(String documentId, String version, String extension,
@@ -82,7 +88,16 @@ public class TableRecordService {
             return new TableExtractSummary(documentId, version, 0, 0, 0, 0,
                     List.of(TableDegrade.VERSION_NOT_PERSISTABLE));
         }
-        List<ExtractedTable> tables = route(extension, content, pages, parsedText);
+        ParseOutcome outcome = route(extension, content, pages, parsedText);
+        if (!outcome.parsed()) {
+            log.warn("表格解析失败，保留既有结构化记录 documentId={} version={} reason={}",
+                    documentId, version, outcome.reason());
+            return new TableExtractSummary(documentId, version, 0, 0, 0, 0,
+                    List.of(TableDegrade.PARSE_FAILED));
+        }
+        List<ExtractedTable> tables = outcome.tables();
+        // R02-04 原子结果替换：先清本域旧数据（同事务），再整体写入（含成功为空 → 清空）
+        repository.deleteByDocumentVersion(documentId, numericVersion);
         Map<String, Long> idByLocation = new HashMap<>();
         List<String> degraded = new ArrayList<>();
         int rowCount = 0;
@@ -113,39 +128,56 @@ public class TableRecordService {
                 linkage[0], linkage[1], List.copyOf(degraded));
     }
 
-    private List<ExtractedTable> route(String extension, byte[] content,
-                                       List<ExtractedPage> pages, String parsedText) {
+    /**
+     * R02-04：解析三态显式化。parsed=false（抽取异常/不支持扩展名）与
+     * parsed=true + 空表集合（成功但无表格）严格区分——禁止以 List.isEmpty() 判定成败，
+     * 防止失败被误当"无表格"而在原子替换时清空有效旧数据。
+     */
+    record ParseOutcome(boolean parsed, List<ExtractedTable> tables, String reason) {
+        static ParseOutcome ok(List<ExtractedTable> tables) {
+            return new ParseOutcome(true, tables, null);
+        }
+
+        static ParseOutcome failed(String reason) {
+            return new ParseOutcome(false, List.of(), reason);
+        }
+    }
+
+    private ParseOutcome route(String extension, byte[] content,
+                               List<ExtractedPage> pages, String parsedText) {
         String ext = extension == null ? "" : extension.toLowerCase(Locale.ROOT);
         try {
             switch (ext) {
                 case "pdf" -> {
                     try (PDDocument document = Loader.loadPDF(content)) {
-                        return pdfTableExtractor.extract(document, pages == null ? List.of() : pages);
+                        return ParseOutcome.ok(pdfTableExtractor.extract(document,
+                                pages == null ? List.of() : pages));
                     }
                 }
                 case "txt", "md", "markdown" -> {
                     String text = parsedText != null ? parsedText
                             : new String(content, StandardCharsets.UTF_8);
-                    return textTableExtractor.extract(text);
+                    return ParseOutcome.ok(textTableExtractor.extract(text));
                 }
                 case "html", "htm" -> {
                     String text = parsedText != null ? parsedText
                             : new String(content, StandardCharsets.UTF_8);
-                    return htmlTableExtractor.extract(text);
+                    return ParseOutcome.ok(htmlTableExtractor.extract(text));
                 }
                 case "docx" -> {
-                    // D3：Tika 文本轨既有、结构轨诚实退化（POI 接线 D42 候选）
-                    return List.of(new ExtractedTable(0, 0, List.of(), List.of(), 0,
+                    // D3：Tika 文本轨既有、结构轨诚实退化（POI 接线 D42 候选）——属"成功+退化记录"非失败
+                    return ParseOutcome.ok(List.of(new ExtractedTable(0, 0, List.of(), List.of(), 0,
                             Set.of(TableDegrade.DOCX_TABLE_NOT_STRUCTURED), "LOW",
-                            null, null, null, "DEGRADED"));
+                            null, null, null, "DEGRADED")));
                 }
                 default -> {
-                    return List.of();
+                    // 不支持/未知扩展名：保守失败态，不触碰旧数据（inspect 白名单外的防御路径）
+                    return ParseOutcome.failed("UNSUPPORTED_EXTENSION:" + ext);
                 }
             }
         } catch (Exception ex) {
             log.warn("表格分支抽取失败（不影响文档状态机）extension={} cause={}", ext, ex.toString());
-            return List.of();
+            return ParseOutcome.failed(ext + ":" + ex);
         }
     }
 

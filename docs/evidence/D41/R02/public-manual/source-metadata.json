@@ -1,0 +1,22 @@
+{
+  "task": "D41-R02-01 real public device manual source record",
+  "name": "VLT AutomationDrive FC 302 操作指南（315–710 kW，机箱规格 E）",
+  "documentId": "MG38A141",
+  "manufacturer": "Danfoss A/S",
+  "productLine": "VLT AutomationDrive FC 302 (frequency converter / 变频器)",
+  "language": "zh-CN",
+  "edition": "MG38A141, Danfoss A/S © 01/2017（页脚版权行，逐页可见）",
+  "publisherHost": "files.danfoss.com（Danfoss 官方下载域）",
+  "url": "https://files.danfoss.com/download/Drives/MG38A141.pdf",
+  "accessedAt": "2026-11-24T21:10+08:00",
+  "httpStatus": "200，直接可下载（无需登录/授权）",
+  "fileName": "danfoss-mg38a141-fc302-zh.pdf",
+  "bytes": 12427018,
+  "sha256": "9041B14E2EA9DBC55AEDAEE0612FB0B98075CE90D5DD6BF629A93AB03AA4747A",
+  "pdfPages": 112,
+  "pdfProducer": "GPL Ghostscript 10.03.1（Danfoss 官方站点发布的压缩重制版）",
+  "pdfCreationDate": "2024-06-09T02:22:56+02:00（元数据生成日期，非手册出版日期）",
+  "selectionRationale": "真实公开设备手册：官方直接可访问；文本型 PDF（PDFBox 提取 129628 字符文本层，非扫描件）；含电气参数表（表 9.1 主电源 3x380-500 V AC 等规格表）与警告/报警故障条目（第 8 章 8.5 节，故障码 3/4/7/11 等）；中文与工程场景匹配。",
+  "copyrightHandling": "版权 PDF 仅本地校验用，故意不提交 Git（temp_docs/D41/manuals/ 已加入 .gitignore）；证据仅含元数据、哈希与短引用（fair citation）。",
+  "localPathOutsideRepo": "E:/AI/project/AI-Learning-two-lp/M3-Java-ds/temp_docs/D41/manuals/danfoss-mg38a141-fc302-zh.pdf"
+}

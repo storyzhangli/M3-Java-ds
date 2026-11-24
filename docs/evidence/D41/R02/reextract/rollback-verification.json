@@ -1,0 +1,11 @@
+{
+  "task": "R02-04 transaction rollback and parse-failure protection",
+  "verification": [
+    {"scenario": "数据库中途写入失败（第 3 次 upsertRow 注入异常）→ delete+前 2 次 insert 整体回滚，旧 3 行数据 record_hash 逐一复原", "test": "TableRecordPersistenceIntegrationTest.midWriteFailureRollsBackAtomically", "layer": "真实 MySQL + TransactionTemplate(DataSourceTransactionManager)，覆盖无 Spring 代理的内部调用路径", "result": "PASS"},
+    {"scenario": "解析失败（损坏 PDF 字节）→ 返回 degradedCodes=[PARSE_FAILED]，旧数据完整保留，仓储零调用", "test": "TableRecordPersistenceIntegrationTest.parseFailureKeepsValidOldData + TableRecordServiceReplaceSemanticsTest.parseFailureTouchesNothing", "result": "PASS"},
+    {"scenario": "不支持扩展名 → UNSUPPORTED_EXTENSION 保守失败，不触碰旧数据", "test": "TableRecordService.route→ParseOutcome(三态) 语义，fake docx 用例 docxDegradedIsParsedSuccessNotFailure 验证成功+退化≠失败", "result": "PASS"}
+  ],
+  "threeStateDesign": "ParseOutcome(parsed, tables, reason)：parsed=false 仅在解析异常/不支持扩展名时出现；零模型零写入；审计面 PARSE_FAILED 使 result=false（已知小瑕疵：auditIfPresent 成功判定只看 REEXTRACT_TEXT_TRACK_ONLY，PARSE_FAILED 审计 ALLOWED 语义待 R03 校准，已在状态文档标注）",
+  "mockPolicyNote": "对齐任务书执行纪律4：数据库事务不以 Mock 宣称，真实 MySQL 集成 8/8 执行（Skipped=0），Mock 仅作调用序补充",
+  "evidence": ["test/maven-test-run.log", "test/test-summary.md"]
+}

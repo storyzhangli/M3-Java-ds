@@ -43,3 +43,5 @@ Thumbs.db
 /docs/temp_docs/
 # 评测器 `out` 目录忽略
 /docs/evidence/D37/evaluator/out/
+# D41 R02: copyrighted vendor manual PDFs stay out of the repo
+temp_docs/D41/manuals/

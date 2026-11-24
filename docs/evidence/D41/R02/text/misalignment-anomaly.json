@@ -1,0 +1,20 @@
+{
+  "task": "R02-03 TXT/Markdown column-anomaly rows must not vanish silently",
+  "productChanges": [
+    "TextTableExtractor 重写：列数不一致行不再断裂区域/当新表首行/无痕丢弃",
+    "switchProbe：候选错位行后首个内容行列数与之一致(≥2 行共识) → 判换表断裂成新区（合法新表）；否则进 misaligned 收集器继续原表",
+    "buildMisalignedTable：孤立错位行独立成 DEGRADED 表，tableIndex=MISALIGNED_INDEX_BASE(10000)+n 自然键隔离；header 取区域正常表头否则 col_i；缺列 null 占位、超列 EXTRA_COL_N 原文保留",
+    "行级 flags [COLUMN_MISALIGNMENT, EXPECTED_COLS_<c>_ACTUAL_<n>] 并附表级 detect_flags，GET /tables(activeOnly=false) 可查；不参与续表匹配/findTables(activeOnly=true)/精确检索(status=ACTIVE)"
+  ],
+  "testScenarios": [
+    {"test": "basicPipeTableWithSeparatorRow", "expect": "R01 基础管道表语义不回退", "result": "PASS"},
+    {"test": "repeatedHeaderBecomesContinuation", "expect": "R01 重复表头→续表语义不回退（DEGRADED 组不参与续表匹配）", "result": "PASS"},
+    {"test": "misalignedRowIsKeptInAnomalyGroupNotSilentlyDropped", "expect": "孤立错位行进 DEGRADED 异常组表，不再无痕丢弃/不断裂正常表", "result": "PASS"},
+    {"test": "misalignedRowWithExtraColumnKeepsRawValue", "expect": "超列值 stray 以 EXTRA_COL_1 原文保留 + EXPECTED_COLS_3_ACTUAL_4 + sourceLineNumber 可溯", "result": "PASS"},
+    {"test": "switchToNewColumnCountStillFormsTable", "expect": "新列数持续≥2行 → switchProbe 判换表成独立正常表", "result": "PASS"},
+    {"test": "midTableMisalignmentIsolated", "expect": "表中间错位行被隔离进异常组，既有表行不丢失", "result": "PASS"},
+    {"test": "missingCellFlaggedNotColumnShifted", "expect": "缺列行保持列对齐（null 占位）并带标志，值不左移串列", "result": "PASS"}
+  ],
+  "history": "首轮 1 例失败为测试 text block 无分隔行导致的期望行号笔误（fixture 4→3），非产品缺陷；未降低任何断言。",
+  "evidence": ["test/surefire-summary.txt TextTableExtractorTest tests=7 failures=0", "test/maven-test-run.log"]
+}

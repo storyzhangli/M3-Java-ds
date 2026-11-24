@@ -1,0 +1,10 @@
+{
+  "task": "R02-04 re-extraction atomic replacement - row count reduction",
+  "mechanism": "TableRecordService.extractAndPersist 解析成功路径改为 @Transactional 内先 repository.deleteByDocumentVersion(documentId, numericVersion) 全域清除，再整体写入新表/行；失败(解析或 DB 异常)整体回滚，旧数据保留",
+  "verification": [
+    {"scenario": "5 行 → 3 行，旧 row_index=3/4 必须清除", "test": "TableRecordPersistenceIntegrationTest.rowCountReductionRemovesStaleRows", "layer": "真实 MySQL 127.0.0.1:3306/ai_db, doc d41r02-doc-*", "result": "PASS"},
+    {"scenario": "fake 仓储调用序：deleteByDocumentVersion 必须为第一调用，先于任何 upsert", "test": "TableRecordServiceReplaceSemanticsTest.atomicReplaceDeletesBeforeInserts", "result": "PASS"}
+  ],
+  "isolation": "测试数据 d41r02- 前缀；@AfterAll 前缀清理 + 全库 d41_table_extract/d41_table_row 指纹复原断言（日志 D41R02-IT cleanup tables=3 rows=5）",
+  "evidence": ["test/maven-test-run.log", "test/surefire-summary.txt"]
+}

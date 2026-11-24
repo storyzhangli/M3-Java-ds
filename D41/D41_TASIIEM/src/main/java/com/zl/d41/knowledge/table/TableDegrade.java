@@ -38,6 +38,15 @@ public final class TableDegrade {
     /** 重抽取端点对 PDF 字节源不可得时的能力边界标注（D41-02 错误清单）。 */
     public static final String REEXTRACT_TEXT_TRACK_ONLY = "REEXTRACT_TEXT_TRACK_ONLY";
 
+    /** R02-02：本行存在无法可靠映射到列锚的独立剩余单元格（原文以 EXTRA_COL_* 单元格保留，不静默拼接）。 */
+    public static final String EXTRA_CELL = "EXTRA_CELL";
+
+    /** R02-04：抽取失败（异常/不支持扩展名），本次不写不删，旧版本数据完整保留（禁止误当"无表格"清理）。 */
+    public static final String PARSE_FAILED = "PARSE_FAILED";
+
+    /** R02-03：文本轨列数异常行独立成组保留（原始行文本/行号/预期实际列数可追溯，不无痕丢弃）。 */
+    public static final String MISALIGNED_LINE_GROUP = "MISALIGNED_LINE_GROUP";
+
     private TableDegrade() {
     }
 }

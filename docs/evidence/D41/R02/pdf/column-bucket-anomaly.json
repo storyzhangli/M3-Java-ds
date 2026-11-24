@@ -1,0 +1,19 @@
+{
+  "task": "R02-02 PDF column-bucket silent-merge fix",
+  "productChanges": [
+    "PdfTableExtractor.assignBuckets 删除，重写为三阶段 assignColumns + ColumnAssignment(buckets/extraCells/flags)",
+    "列锚聚类新增行支持度过滤：起点簇须 ≥2 行支持才成正式列（真实手册首轮 4 例失败根因：单次错位起点成伪列锚）",
+    "surplus run 优先再分配给空锚（取更小距离）；主元距锚 >24pt → 行级 COLUMN_MISALIGNMENT 且值留列可读",
+    "非主元 run：crossesSpan(x≥nextAnchor-4) 或 wideGap(>60pt) → EXTRA_CELL 进 extraCells，以 EXTRA_COL_N 单元格追加行尾，绝不并入列值；否则视为列内文本片段拼接（保 R01 正常语义）",
+    "buildTable 合并判定 left.end>anchorX+2 保留；真实手册暴露修复：空白/无映射表头桶以 col_i 占位（原 cleanCell→null 触发 List.copyOf NPE）"
+  ],
+  "testScenarios": [
+    {"test": "independentCellsInSameBucketAreNotSilentlyJoined", "expect": "同桶两独立单元格不拼接 + EXTRA_CELL 标志 + EXTRA_COL_1 原文保留", "result": "PASS"},
+    {"test": "extraCellBeyondLastColumnKept", "expect": "越末列独立单元 EXTRA_COL_1 保留 + EXTRA_CELL", "result": "PASS"},
+    {"test": "shiftedCellProducesMisalignmentFlag", "expect": "行整体右移 35pt：COLUMN_MISALIGNMENT 标志 + 值仍归属可读列(12.5 mm)", "result": "PASS"},
+    {"test": "inColumnTextFragmentStillJoinedNotFlagged", "expect": "列内文本片段(间距<60pt 且未越列跨度)正常拼接 Overpressure，无 EXTRA_CELL", "result": "PASS"},
+    {"test": "R01 原 6 项(单位/重复表头/续表/缺失/合并/正常表格)", "expect": "无回归", "result": "PASS (10/10)"}
+  ],
+  "geometry": {"anchors": [40, 140, 300], "COL_GAP_PT": 24, "LOW_CONFIDENCE_SPACING_PT": 60, "crossesSpan": "x >= nextAnchor - 4"},
+  "evidence": ["test/surefire-summary.txt PdfTableExtractorTest tests=10 failures=0", "test/maven-test-run.log"]
+}
