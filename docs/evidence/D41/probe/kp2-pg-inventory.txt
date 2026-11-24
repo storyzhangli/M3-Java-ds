@@ -1,0 +1,44 @@
+-- SQL: SELECT count(*) AS vector_store FROM vector_store
+vector_store
+30
+-- rows=1
+
+-- SQL: SELECT count(*) AS two_vector_store FROM two_vector_store
+two_vector_store
+8
+-- rows=1
+
+-- SQL: SELECT (metadata->>'documentId') AS doc_id, count(*) FROM vector_store GROUP BY 1 ORDER BY 1
+doc_id	count
+21cd26c1bfe172866ea8767426161c8c	1
+d34-real-conflict-d0b2a1452a5d4cfaad1a5ec07c506a50	2
+d34-real-injection-d0b2a1452a5d4cfaad1a5ec07c506a50	1
+d36exp-g0-DOC-CNC-COOLING-001	1
+d36exp-g0-DOC-SERVO-TROUBLE-002	1
+d36exp-g0-DOC-WORKORDER-SPEC-003	1
+d36exp-g1-DOC-CNC-COOLING-001	2
+d36exp-g1-DOC-SERVO-TROUBLE-002	2
+d36exp-g1-DOC-WORKORDER-SPEC-003	1
+d36exp-g2-DOC-CNC-COOLING-001	1
+d36exp-g2-DOC-SERVO-TROUBLE-002	1
+d36exp-g2-DOC-WORKORDER-SPEC-003	1
+d36exp-g3-DOC-CNC-COOLING-001	1
+d36exp-g3-DOC-SERVO-TROUBLE-002	1
+d36exp-g3-DOC-WORKORDER-SPEC-003	1
+d36exp-g4-DOC-CNC-COOLING-001	1
+d36exp-g4-DOC-SERVO-TROUBLE-002	1
+d36exp-g4-DOC-WORKORDER-SPEC-003	1
+d57fc9f7a28e4ae87f20d558720fe6a0	1
+DOC-CNC-COOLING-001	3
+DOC-SERVO-TROUBLE-002	3
+DOC-WORKORDER-SPEC-003	2
+-- rows=22
+
+-- SQL: SELECT (metadata->>'documentId') AS doc_id, count(*) FROM two_vector_store GROUP BY 1 ORDER BY 1
+doc_id	count
+DOC-CNC-COOLING-001	3
+DOC-SERVO-TROUBLE-002	3
+DOC-WORKORDER-SPEC-003	2
+-- rows=3
+
+-- DONE statements=4 failures=0

@@ -1,0 +1,68 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m1.qw:D41_TASIIEM >----------------------
+[INFO] Building D41_TASIIEM 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (resolve-dependency-paths) @ D41_TASIIEM ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D41_TASIIEM ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 15 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D41_TASIIEM ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 316 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/TableRecordService.java:[6,37] �Ҳ�������
+  ����:   �� KnowledgeDocumentRepository
+  λ��: ����� com.zl.d41.knowledge.document
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/TableRecordService.java:[48,19] �Ҳ�������
+  ����:   �� KnowledgeDocumentRepository
+  λ��: �� com.zl.d41.knowledge.table.TableRecordService
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/TableRecordService.java:[57,31] �Ҳ�������
+  ����:   �� KnowledgeDocumentRepository
+  λ��: �� com.zl.d41.knowledge.table.TableRecordService
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/document/KnowledgeDocumentService.java:[14,34] �Ҳ�������
+  ����:   �� TableExtractSummary
+  λ��: ����� com.zl.d41.knowledge.table
+[INFO] 4 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.028 s
+[INFO] Finished at: 2026-11-24T16:14:26+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project D41_TASIIEM: Compilation failure: Compilation failure: 
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/TableRecordService.java:[6,37] �Ҳ�������
+[ERROR]   ����:   �� KnowledgeDocumentRepository
+[ERROR]   λ��: ����� com.zl.d41.knowledge.document
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/TableRecordService.java:[48,19] �Ҳ�������
+[ERROR]   ����:   �� KnowledgeDocumentRepository
+[ERROR]   λ��: �� com.zl.d41.knowledge.table.TableRecordService
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/TableRecordService.java:[57,31] �Ҳ�������
+[ERROR]   ����:   �� KnowledgeDocumentRepository
+[ERROR]   λ��: �� com.zl.d41.knowledge.table.TableRecordService
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/document/KnowledgeDocumentService.java:[14,34] �Ҳ�������
+[ERROR]   ����:   �� TableExtractSummary
+[ERROR]   λ��: ����� com.zl.d41.knowledge.table
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+

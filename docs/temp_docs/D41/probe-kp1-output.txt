@@ -1,0 +1,5 @@
+P-DOCX wordsIn=true raw=DOCX 表格夹具（受控构造） Code Value D-01 77
+P-DOCX tikaLineSequence=[DOCX 表格夹具（受控构造）, Code, Value, D-01, 77]
+P-DOCX 裁决依据：Tika 输出无 <tbl>/行列坐标/列数信息，2x2 表与任意单行序列不可区分 → 结构轨判 DOCX_TABLE_NOT_STRUCTURED，文本轨词面完整保留
+P-HTML rows=3 cells=[{"Code","Value"},{"H-01","12.5 mm"},{"H-02",""},]
+P-OCR engineAbsent=true

@@ -1,0 +1,18 @@
+D41 C01 编译 + D40 测试迁移继承基线（P0）
+执行时间：2026-11-24（本地）
+命令：mvn -o -B -f D41\D41_TASIIEM\pom.xml test   （JDK21，JAVA_HOME=D:\SoftwareInstall\JDK\JDK21）
+退出码：0（MVN_EXIT=0）
+
+结果逐类（迁移自 D40 7 测试文件，d40→d41 包名/夹具前缀 d41t-/表名 d41_ 适配，R03 租约语义不回退）：
+com.zl.d41.knowledge.sync.DocumentSyncServiceTest              Tests run: 24, F0, E0   （R03 权威 24/24 一致）
+com.zl.d41.knowledge.sync.SyncAssemblyBoundaryTest             Tests run:  6, F0, E0
+com.zl.d41.knowledge.vectorindex.service.DeleteClosedLoopChainTest   Tests run: 9, F0, E0  （T-R03-13~21）
+com.zl.d41.knowledge.vectorindex.service.IndexFailureRecoveryTest    Tests run: 9, F0, E0  （T-R03-22~30）
+com.zl.d41.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest Tests run: 3, F0, E0
+com.zl.d41.knowledge.vectorstore.FaultInjectingVectorStoreTest Tests run:  3, F0, E0
+合计 Tests run: 54, Failures: 0, Errors: 0, Skipped: 0 —— BUILD SUCCESS
+
+全量日志：c01-migrated-test-run.log（同目录）
+备注：首轮失败两项已修复并复跑通过——①Copy-Item 目录语义致 com\zl\d41\d40 嵌套错位（Move-Item 修正）；
+②PowerShell UTF8 写盘带 BOM 触发 javac \ufeff 非法字符（改无 BOM UTF8Encoding 重写）。
+溯源注释（javadoc 中「D40 R01/R03」字样）按迁移源史实保留，不视为残留缺陷。

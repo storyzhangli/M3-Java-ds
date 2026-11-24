@@ -1,0 +1,12 @@
+{
+  "task": "D41 R01 成本与预算实证（任务书 §5 / C20）",
+  "generatedAt": "2026-11-24T17:30:00+08:00",
+  "remoteCalls": {
+    "deepseek": { "calls": 0, "tokens": 0, "evidence": "全程 AI_MODE=mock（未注入 AI_API_KEY），演练/OFF/回归三实例启动日志一致" },
+    "bailian_embedding": { "calls": 0, "note": "任务书 §5 原计划 TWO_EMBEDDING_ENABLED=false 显式覆盖；执行实证该 env=false 时 TwoPgVectorConfiguration→EmbeddingProperties.requireValid:72 启动崩溃（无条件装配），裁决 D11 改为本切片全程不启动/不调用 two_ 轨（默认 enabled=true + 未注入 DASHSCOPE_API_KEY + 演练仅 LOCAL 主轨），零远程等效；two_vector_store=8 恒等指纹佐证", "evidence": "scripts\\run-d41-table-r01.ps1 头部注释留痕 + cleanup\\s9-cleanup-post-fingerprint.json" },
+    "ocr": { "calls": 0, "note": "无引擎，app.knowledge.table.ocr.enabled=false 默认，仅 OcrTablePort 接口占位", "evidence": "capability\\table-params.json + PdfTableExtractorTest/DisabledOcrTablePort" }
+  },
+  "compute": "夹具 9 文件（6 PDF+2 txt+1 docx，KB 级）；坐标聚类 O(n) TextPosition；对账 113 格毫秒级；D37 回归 IN_MEMORY_LOCAL Rounds=3/Warmup=3/TopK=5/Threshold=0.0 与 R03 同参",
+  "credentialHygiene": "PG_VECTOR_PASSWORD 取 User 级环境变量只验存在不回显；夹具 token 明文仅 temp_docs\\D41\\credentials-d41t-*.json（git 忽略不提交）；DB 侧 d41_auth_principal 存 SHA-256；全轮无 sk-/Bearer/token 值外泄（提交后 git 扫描留证见 git\\pre-commit-info.md）",
+  "verdict": "PASS（DeepSeek 0 / 百炼 0 / OCR 0 / Token 0）"
+}

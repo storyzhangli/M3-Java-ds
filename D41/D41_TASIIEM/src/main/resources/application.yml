@@ -232,6 +232,13 @@ app:
       overlap: ${KNOWLEDGE_CHUNK_OVERLAP:60}
       min-chunk-size: ${KNOWLEDGE_CHUNK_MIN_SIZE:80}
       max-chunk-size: ${KNOWLEDGE_CHUNK_MAX_SIZE:720}
+    table:
+      # D41 表格结构化记录独立分支（H1 追加式：不影响页文本/切分 480/60/遗留 Chunk）。
+      # enabled=false 时 table 包全部 Bean 缺席，端点 404、钩子零调用=与 D40 基线零差异（H2）。
+      enabled: ${KNOWLEDGE_TABLE_ENABLED:true}
+      ocr:
+        # OCR 引擎未引入（熔断 3 约束：禁新框架）；仅占位开关，启用需另立项请示。
+        enabled: ${KNOWLEDGE_TABLE_OCR_ENABLED:false}
   ai:
     # 单一应用配置源。真实 Key 只通过环境变量/安全配置注入，默认空值。
     mode: ${AI_MODE:mock}

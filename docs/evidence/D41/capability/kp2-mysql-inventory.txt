@@ -1,0 +1,57 @@
+-- SQL: SELECT table_name FROM information_schema.tables WHERE table_schema='ai_db' AND (table_name LIKE 'd41_%' OR table_name LIKE 'knowledge_%' OR table_name LIKE 'vector%')
+TABLE_NAME
+d41_admin_audit
+d41_auth_principal
+d41_document_sync
+d41_table_extract
+d41_table_row
+knowledge_document
+knowledge_document_content
+knowledge_document_page
+vector_chunk_index
+vector_index_task
+-- rows=10
+
+-- SQL: SELECT count(*) AS kd FROM knowledge_document
+kd
+3
+-- rows=1
+
+-- SQL: SELECT document_id FROM knowledge_document ORDER BY document_id
+document_id
+DOC-CNC-COOLING-001
+DOC-SERVO-TROUBLE-002
+DOC-WORKORDER-SPEC-003
+-- rows=3
+
+-- SQL: SELECT count(*) AS pages FROM knowledge_document_page
+pages
+18
+-- rows=1
+
+-- SQL: SELECT count(*) AS chunks FROM vector_chunk_index
+chunks
+27
+-- rows=1
+
+-- SQL: SELECT count(*) AS tasks FROM vector_index_task
+tasks
+20
+-- rows=1
+
+-- SQL: SELECT count(*) AS dsync FROM d41_document_sync
+dsync
+3
+-- rows=1
+
+-- SQL: SELECT count(*) AS daudit FROM d41_admin_audit
+daudit
+0
+-- rows=1
+
+-- SQL: SELECT count(*) AS dprinc FROM d41_auth_principal
+dprinc
+4
+-- rows=1
+
+-- DONE statements=9 failures=0

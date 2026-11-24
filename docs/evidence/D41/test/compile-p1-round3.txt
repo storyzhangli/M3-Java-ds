@@ -1,0 +1,55 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m1.qw:D41_TASIIEM >----------------------
+[INFO] Building D41_TASIIEM 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (resolve-dependency-paths) @ D41_TASIIEM ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D41_TASIIEM ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 15 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D41_TASIIEM ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 316 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D41\D41_TASIIEM\src\main\java\com\zl\d41\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/logging/CachedBodyAccessLogFilter.java:[66,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/model/ClassifiedResponseErrorHandler.java:[32,17] org.springframework.web.client.ResponseErrorHandler �е� handleError(org.springframework.http.client.ClientHttpResponse) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] 2 warnings 
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/PdfTableExtractor.java:[143,18] ����Ӧ�� try ��������в����׳��쳣����java.io.IOException
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.710 s
+[INFO] Finished at: 2026-11-24T16:16:04+08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project D41_TASIIEM: Compilation failure
+[ERROR] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/knowledge/table/PdfTableExtractor.java:[143,18] ����Ӧ�� try ��������в����׳��쳣����java.io.IOException
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+

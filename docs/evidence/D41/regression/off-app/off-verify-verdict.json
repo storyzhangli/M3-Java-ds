@@ -1,0 +1,10 @@
+{
+  "导入主链": "PASS",
+  "表格域零写入(te=0)": "PASS",
+  "tables 端点未装配(证据=app 日志 NoResourceFoundException)": "PASS",
+  "extract 端点未装配": "PASS",
+  "vector-index 照常": "PASS",
+  "reconcile 照常(tableOrphans=0)": "PASS",
+  "删除闭环照常": "PASS",
+  "基线复原(kd=10 pg=30 prin=4 aud=0/0)": "PASS"
+}

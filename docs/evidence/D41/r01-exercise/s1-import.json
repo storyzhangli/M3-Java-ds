@@ -1,0 +1,14 @@
+{
+  "docIds": {
+    "d41-fx-faultcode.pdf": "064aba8123df44d28b50eccde158f33e",
+    "d41-fx-params.pdf": "ac2e9e3a70974763ad775b2e80cdde56",
+    "d41-fx-anomaly-a2.pdf": "cd1620e668544012b99dd42cdd8a6fa7",
+    "d41-fx-anomaly-a3.pdf": "d95305f2ed2b49648b93a7f1ef23ad34",
+    "d41-fx-anomaly-a4.pdf": "d76d7ec1a5dd445fa0a9402028508937",
+    "d41-fx-anomaly-a5.pdf": "0c49e36221b744aaa075a438fa4333a4",
+    "d41-fx-pipe.md": "b2b31971e0444210b2715ec70dd235da",
+    "d41-fx-pipe.txt": "649803335b1645e49ad0034c52f95ff3",
+    "d41-fx-table.docx": "0605e0a7a9184241b08925cf8017bde6"
+  },
+  "verdict": "PASS"
+}

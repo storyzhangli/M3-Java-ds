@@ -1,0 +1,23 @@
+{
+  "task": "D41 R01 源表 vs 抽取逐格对账记录（任务书 §6 交付物 #6）",
+  "generatedAt": "2026-11-24T17:00:00+08:00",
+  "tool": "docs/temp_docs/D41/D41TableReconcile.java（truth 网格逐格比对 + A5 降级区表级校验，禁以抽取结果反推真值）",
+  "truthSource": "docs/temp_docs/D41/fixtures/truth/d41-fixture-truth.json（受控构造坐标真值，104 cells：T1-faultcode=24, T2-params=25, T3-a2=14, T4-a3=24, T5-a4=11, T6-a5p1=6）",
+  "extractedSnapshot": "extract/samples/s1-tables-snapshot.json（S1 导入后 GET /tables 全量快照）",
+  "summary": {
+    "cellsCompared": 113,
+    "diffCount": 0,
+    "composition": "113 = 104 个网格级真值格 + 9 项 T7-a5p2 图片降级区表级校验（IMAGE_DEGRADED_TABLE_ABSENT/STATUS_NOT_DEGRADED/FLAG_IMAGE_TABLE_NOT_PARSED_MISSING/MISSING_DOC 等，均在 diffs 侧计入 compared）",
+    "rawReport": "extract/s2-reconcile-report.json（diffs=[] 原始件）"
+  },
+  "samplingReview": {
+    "T1-faultcode": "row0 = E-101/Overpressure/Pressure exceeds limit/Check valve，4 格 string、unit=null、missing=false，recordHash=07e155baf7cafc5aa2336250bcb1da817b1b4a6113d8cfaa90bc945a2b114775（linkage/s4-dualtrack.json）",
+    "T2-params-单位同记录": "number 格数值与单位同记录（如 1500 rpm）；尺寸记号 25x52x15 判 string/unit=null（D13）",
+    "T3-a2-合并与宽表头": "Merged Cells 判 MERGED_CELL 值归首列其余 null；宽排表头经 pendingRow 半间隙(12pt)重切吸收（D13）",
+    "T4-a3-跨页续表": "第 2 页重复表头未入数据行（A3 CONTINUATION 校验 true）",
+    "T5-a4-空格与错位": "空单元格 null 占位不串列、END NOTE 界外、COLUMN_MISALIGNMENT 检出（A4/A2c）",
+    "T6/T7-a5-图片降级": "IMAGE_TABLE_NOT_PARSED + status=DEGRADED，主路径零崩溃（A5）"
+  },
+  "adjudication": "diffs=0 熔断条件（任务书 4.4-5：对账不一致静默放行=立即停止）未触发；对账在 D13 修复后重生成夹具+truth 之后执行，为最终权威口径。",
+  "verdict": "PASS"
+}

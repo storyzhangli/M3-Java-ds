@@ -1,0 +1,299 @@
+{
+  "d41-fx-faultcode.pdf": [
+    {
+      "id": 54,
+      "documentId": "064aba8123df44d28b50eccde158f33e",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "Code",
+        "Fault",
+        "Description",
+        "Action"
+      ],
+      "rowCount": 5,
+      "colCount": 4,
+      "sourceLineStart": 2,
+      "sourceLineEnd": 6,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    }
+  ],
+  "d41-fx-params.pdf": [
+    {
+      "id": 55,
+      "documentId": "ac2e9e3a70974763ad775b2e80cdde56",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "Parameter",
+        "Value",
+        "Unit",
+        "Note"
+      ],
+      "rowCount": 6,
+      "colCount": 4,
+      "sourceLineStart": 2,
+      "sourceLineEnd": 7,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "COLUMN_MISALIGNMENT",
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    }
+  ],
+  "d41-fx-anomaly-a2.pdf": [
+    {
+      "id": 56,
+      "documentId": "cd1620e668544012b99dd42cdd8a6fa7",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "Col_A",
+        "Col_B",
+        "Col_C",
+        "Col_D"
+      ],
+      "rowCount": 3,
+      "colCount": 4,
+      "sourceLineStart": 2,
+      "sourceLineEnd": 4,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "LOW_CONFIDENCE",
+        "COLUMN_MISALIGNMENT",
+        "MERGED_CELL",
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "LOW",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    }
+  ],
+  "d41-fx-anomaly-a3.pdf": [
+    {
+      "id": 57,
+      "documentId": "d95305f2ed2b49648b93a7f1ef23ad34",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "Name",
+        "Spec",
+        "Batch"
+      ],
+      "rowCount": 3,
+      "colCount": 3,
+      "sourceLineStart": 2,
+      "sourceLineEnd": 4,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    },
+    {
+      "id": 58,
+      "documentId": "d95305f2ed2b49648b93a7f1ef23ad34",
+      "version": "1",
+      "pageNumber": 2,
+      "tableIndex": 0,
+      "header": [
+        "Name",
+        "Spec",
+        "Batch"
+      ],
+      "rowCount": 3,
+      "colCount": 3,
+      "sourceLineStart": 2,
+      "sourceLineEnd": 4,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "CONTINUATION_HEADER_SKIPPED",
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": 57,
+      "status": "ACTIVE"
+    }
+  ],
+  "d41-fx-anomaly-a4.pdf": [
+    {
+      "id": 59,
+      "documentId": "d76d7ec1a5dd445fa0a9402028508937",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "ID",
+        "Val",
+        "Flag"
+      ],
+      "rowCount": 3,
+      "colCount": 3,
+      "sourceLineStart": 2,
+      "sourceLineEnd": 4,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "COLUMN_MISALIGNMENT",
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    }
+  ],
+  "d41-fx-anomaly-a5.pdf": [
+    {
+      "id": 60,
+      "documentId": "0c49e36221b744aaa075a438fa4333a4",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "Page",
+        "Content",
+        "Kind"
+      ],
+      "rowCount": 1,
+      "colCount": 3,
+      "sourceLineStart": 2,
+      "sourceLineEnd": 2,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    },
+    {
+      "id": 61,
+      "documentId": "0c49e36221b744aaa075a438fa4333a4",
+      "version": "1",
+      "pageNumber": 2,
+      "tableIndex": 0,
+      "header": [],
+      "rowCount": 0,
+      "colCount": 0,
+      "sourceLineStart": null,
+      "sourceLineEnd": null,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "IMAGE_TABLE_NOT_PARSED"
+      ],
+      "confidence": "LOW",
+      "continuationOfTableId": null,
+      "status": "DEGRADED"
+    }
+  ],
+  "d41-fx-pipe.md": [
+    {
+      "id": 62,
+      "documentId": "b2b31971e0444210b2715ec70dd235da",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "Code",
+        "Part",
+        "Qty"
+      ],
+      "rowCount": 3,
+      "colCount": 3,
+      "sourceLineStart": 3,
+      "sourceLineEnd": 7,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "COLUMN_MISALIGNMENT",
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    }
+  ],
+  "d41-fx-pipe.txt": [
+    {
+      "id": 63,
+      "documentId": "649803335b1645e49ad0034c52f95ff3",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 0,
+      "header": [
+        "CODE",
+        "DESC",
+        "LIMIT"
+      ],
+      "rowCount": 2,
+      "colCount": 3,
+      "sourceLineStart": 1,
+      "sourceLineEnd": 3,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": null,
+      "status": "ACTIVE"
+    },
+    {
+      "id": 64,
+      "documentId": "649803335b1645e49ad0034c52f95ff3",
+      "version": "1",
+      "pageNumber": 1,
+      "tableIndex": 1,
+      "header": [
+        "CODE",
+        "DESC",
+        "LIMIT"
+      ],
+      "rowCount": 1,
+      "colCount": 3,
+      "sourceLineStart": 4,
+      "sourceLineEnd": 5,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "CONTINUATION_HEADER_SKIPPED",
+        "LINKAGE_MISSING"
+      ],
+      "confidence": "HIGH",
+      "continuationOfTableId": 63,
+      "status": "ACTIVE"
+    }
+  ],
+  "d41-fx-table.docx": [
+    {
+      "id": 65,
+      "documentId": "0605e0a7a9184241b08925cf8017bde6",
+      "version": "1",
+      "pageNumber": 0,
+      "tableIndex": 0,
+      "header": [],
+      "rowCount": 0,
+      "colCount": 0,
+      "sourceLineStart": null,
+      "sourceLineEnd": null,
+      "linkedChunkIds": [],
+      "detectFlags": [
+        "DOCX_TABLE_NOT_STRUCTURED"
+      ],
+      "confidence": "LOW",
+      "continuationOfTableId": null,
+      "status": "DEGRADED"
+    }
+  ]
+}

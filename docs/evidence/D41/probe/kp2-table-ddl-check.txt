@@ -1,0 +1,68 @@
+-- SQL: SELECT count(*) AS extract_rows FROM d41_table_extract
+extract_rows
+0
+-- rows=1
+
+-- SQL: SELECT count(*) AS row_rows FROM d41_table_row
+row_rows
+0
+-- rows=1
+
+-- SQL: SHOW COLUMNS FROM d41_table_extract
+Field	Type	Null	Key	Default	Extra
+id	bigint	NO	PRI	NULL	auto_increment
+document_id	varchar(64)	NO	MUL	NULL	
+version	int	NO		NULL	
+page_number	int	NO		NULL	
+table_index	int	NO		NULL	
+header_snapshot_json	json	NO		NULL	
+row_count	int	NO		0	
+col_count	int	NO		0	
+source_global_start	int	YES		NULL	
+source_global_end	int	YES		NULL	
+source_line_start	int	YES		NULL	
+source_line_end	int	YES		NULL	
+detect_flags	varchar(255)	NO			
+confidence	varchar(16)	NO		HIGH	
+continuation_of_table_id	bigint	YES		NULL	
+status	varchar(16)	NO		ACTIVE	
+created_at	datetime	NO		NULL	
+updated_at	datetime	NO		NULL	
+-- rows=18
+
+-- SQL: SHOW COLUMNS FROM d41_table_row
+Field	Type	Null	Key	Default	Extra
+id	bigint	NO	PRI	NULL	auto_increment
+table_id	bigint	NO	MUL	NULL	
+row_index	int	NO		NULL	
+cells_json	json	NO		NULL	
+source_line_number	int	YES		NULL	
+record_hash	char(64)	NO	MUL	NULL	
+created_at	datetime	NO		NULL	
+-- rows=7
+
+-- DONE statements=4 failures=0
+-- SQL: SHOW INDEX FROM d41_table_extract
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+d41_table_extract	0	PRIMARY	1	id	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	0	uk_d41_doc_ver_page_table	1	document_id	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	0	uk_d41_doc_ver_page_table	2	version	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	0	uk_d41_doc_ver_page_table	3	page_number	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	0	uk_d41_doc_ver_page_table	4	table_index	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	1	idx_d41_table_doc_ver	1	document_id	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	1	idx_d41_table_doc_ver	2	version	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	1	idx_d41_table_global	1	document_id	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	1	idx_d41_table_global	2	version	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_extract	1	idx_d41_table_global	3	source_global_start	A	0	NULL	NULL	YES	BTREE			YES	NULL
+d41_table_extract	1	idx_d41_table_global	4	source_global_end	A	0	NULL	NULL	YES	BTREE			YES	NULL
+-- rows=11
+
+-- SQL: SHOW INDEX FROM d41_table_row
+Table	Non_unique	Key_name	Seq_in_index	Column_name	Collation	Cardinality	Sub_part	Packed	Null	Index_type	Comment	Index_comment	Visible	Expression
+d41_table_row	0	PRIMARY	1	id	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_row	0	uk_d41_table_row	1	table_id	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_row	0	uk_d41_table_row	2	row_index	A	0	NULL	NULL		BTREE			YES	NULL
+d41_table_row	1	idx_d41_row_hash	1	record_hash	A	0	NULL	NULL		BTREE			YES	NULL
+-- rows=4
+
+-- DONE statements=2 failures=0

@@ -1,0 +1,42 @@
+{
+  "reextract": 200,
+  "linkedCount": 1,
+  "index": 200,
+  "missingCount": 0,
+  "rowSample": {
+    "tableId": 54,
+    "rowIndex": 0,
+    "cells": [
+      {
+        "header": "Code",
+        "value": "E-101",
+        "type": "string",
+        "unit": null,
+        "missing": false
+      },
+      {
+        "header": "Fault",
+        "value": "Overpressure",
+        "type": "string",
+        "unit": null,
+        "missing": false
+      },
+      {
+        "header": "Description",
+        "value": "Pressure exceeds limit",
+        "type": "string",
+        "unit": null,
+        "missing": false
+      },
+      {
+        "header": "Action",
+        "value": "Check valve",
+        "type": "string",
+        "unit": null,
+        "missing": false
+      }
+    ],
+    "sourceLineNumber": 3,
+    "recordHash": "07e155baf7cafc5aa2336250bcb1da817b1b4a6113d8cfaa90bc945a2b114775"
+  }
+}

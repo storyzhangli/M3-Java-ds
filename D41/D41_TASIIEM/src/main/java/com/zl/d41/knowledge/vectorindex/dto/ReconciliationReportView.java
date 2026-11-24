@@ -41,12 +41,20 @@ public class ReconciliationReportView {
      */
     private final List<Issue> syncStuck = new ArrayList<>();
 
+    /**
+     * D41 追加式：d41_table_extract/d41_table_row 孤儿记录
+     * （文档不存在或版本与权威 active 指针不符；检出分类 TABLE_ORPHAN，
+     * 修复通道=删除闭环/重抽取端点管线，禁止直改 SQL；table.enabled=false 时恒空，H4）。
+     */
+    private final List<Issue> tableOrphans = new ArrayList<>();
+
     private final List<String> actionsTaken = new ArrayList<>();
 
     public int totalIssues() {
         return orphanVectors.size() + missingVectors.size()
                 + countMismatches.size() + stuckTasks.size()
-                + versionMismatches.size() + syncStuck.size();
+                + versionMismatches.size() + syncStuck.size()
+                + tableOrphans.size();
     }
 
     /**

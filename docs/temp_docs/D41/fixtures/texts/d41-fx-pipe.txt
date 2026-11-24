@@ -1,0 +1,5 @@
+CODE | DESC | LIMIT
+E-101 | Overpressure | 12 bar
+E-102 | Low oil | 0.5 bar
+CODE | DESC | LIMIT
+E-310 | Drift | 2 %

@@ -7,6 +7,7 @@ import com.zl.d41.knowledge.chunking.DocumentChunk;
 import com.zl.d41.knowledge.document.repository.KnowledgeDocumentRepository;
 import com.zl.d41.knowledge.sync.DocumentSyncRepository;
 import com.zl.d41.knowledge.sync.DocumentSyncRow;
+import com.zl.d41.knowledge.table.TableRecordService;
 import com.zl.d41.knowledge.vectorindex.config.VectorIndexProperties;
 import com.zl.d41.knowledge.vectorindex.dto.ReconciliationReportView;
 import com.zl.d41.knowledge.vectorindex.dto.VectorIndexResultView;
@@ -18,6 +19,8 @@ import com.zl.d41.knowledge.vectorindex.service.DocumentVectorIndexService;
 import com.zl.d41.knowledge.vectorstore.PgVectorAccess;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
@@ -54,6 +57,13 @@ public class VectorReconciliationService {
     private final DocumentSyncRepository syncRepository;
 
     private final KnowledgeDocumentRepository documentRepository;
+
+    /**
+     * D41 追加式：d41_table_extract/row 孤儿检出（TABLE_ORPHAN）。
+     * ObjectProvider 缺席（table.enabled=false 或测试手动装配=null）时零检出零差异（H4）。
+     */
+    @Autowired(required = false)
+    private ObjectProvider<TableRecordService> tableRecordProvider;
 
     public VectorReconciliationService(VectorStore vectorStore,
                                        PgVectorAccess pgVectorAccess,
@@ -218,6 +228,24 @@ public class VectorReconciliationService {
             }
         }
 
+        // 7) D41 追加式：表格结构化记录孤儿检出（TABLE_ORPHAN；修复通道=删除闭环/重抽管线，H4 禁直改 SQL）
+        TableRecordService tableService = tableRecordProvider == null
+                ? null : tableRecordProvider.getIfAvailable();
+        if (tableService != null) {
+            for (Map<String, Object> orphan : tableService.detectOrphanRecords()) {
+                report.getTableOrphans().add(new ReconciliationReportView.Issue(
+                        "TABLE:" + orphan.get("id"), String.valueOf(orphan.get("document_id")),
+                        String.valueOf(orphan.get("version")),
+                        "d41_table_extract id=%s page=%s table=%s 文档缺失或版本≠权威指针"
+                                .formatted(orphan.get("id"), orphan.get("page_number"),
+                                        orphan.get("table_index"))));
+            }
+            if (!report.getTableOrphans().isEmpty() && !dryRun) {
+                report.getActionsTaken().add("TABLE_ORPHAN 不在核查内直删；修复通道=删除闭环或重抽取端点"
+                        + "（共 %d 条）".formatted(report.getTableOrphans().size()));
+            }
+        }
+
         if (!dryRun) {
             applyCompensation(report, orphanIds, missingByVersion);
             if (!report.getVersionMismatches().isEmpty()) {
@@ -225,11 +253,11 @@ public class VectorReconciliationService {
                         + "（共 %d 条）".formatted(report.getVersionMismatches().size()));
             }
         }
-        log.info("核对完成 dryRun={} issues={} (orphan={}, missing={}, mismatch={}, stuck={}, version={}, syncStuck={})",
+        log.info("核对完成 dryRun={} issues={} (orphan={}, missing={}, mismatch={}, stuck={}, version={}, syncStuck={}, tableOrphan={})",
                 dryRun, report.totalIssues(), report.getOrphanVectors().size(),
                 report.getMissingVectors().size(), report.getCountMismatches().size(),
                 report.getStuckTasks().size(), report.getVersionMismatches().size(),
-                report.getSyncStuck().size());
+                report.getSyncStuck().size(), report.getTableOrphans().size());
         return report;
     }
 

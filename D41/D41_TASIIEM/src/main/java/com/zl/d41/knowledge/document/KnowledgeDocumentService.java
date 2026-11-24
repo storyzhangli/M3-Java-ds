@@ -11,7 +11,11 @@ import com.zl.d41.knowledge.document.dto.KnowledgeDocumentPageView;
 import com.zl.d41.knowledge.document.dto.KnowledgeDocumentRegistrationRequest;
 import com.zl.d41.knowledge.document.dto.KnowledgeDocumentView;
 import com.zl.d41.knowledge.document.repository.KnowledgeDocumentRepository;
+import com.zl.d41.knowledge.table.TableRecordService;
+import com.zl.d41.knowledge.table.dto.TableExtractSummary;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -31,6 +35,13 @@ public class KnowledgeDocumentService {
     private final KnowledgeDocumentRepository repository;
 
     private final KnowledgeDocumentParser parser;
+
+    /**
+     * D41 P2 追加式表格分支钩子（D1 裁决：独立处理器，不触碰页文本/状态机/错误码）。
+     * ObjectProvider 字段注入零签名改动；table.enabled=false 时 Bean 缺席=零差异（H1/H2）。
+     */
+    @Autowired
+    private ObjectProvider<TableRecordService> tableRecordProvider;
 
     public KnowledgeDocumentService(KnowledgeDocumentRepository repository,
                                     KnowledgeDocumentParser parser) {
@@ -131,6 +142,7 @@ public class KnowledgeDocumentService {
                     parsed.pages().size(),
                     parsed.parserName(),
                     parsed.parserVersion());
+            extractTableRecordsQuietly(documentId, completed.getVersion(), inspected, parsed);
             return view(completed, parsed.characterCount(), parsed.pages().size(), false);
         } catch (RuntimeException ex) {
             try {
@@ -143,6 +155,32 @@ public class KnowledgeDocumentService {
                         documentId, failUpdate.getClass().getSimpleName());
             }
             throw ex;
+        }
+    }
+
+    /**
+     * D41 P2 表格结构化抽取钩子：table.enabled=false 时 Bean 缺席零调用；
+     * 任何失败仅告警降级，绝不阻断文档 COMPLETED（H1 追加式边界）。
+     */
+    private void extractTableRecordsQuietly(String documentId, String version,
+                                            KnowledgeDocumentParser.InspectedFile inspected,
+                                            KnowledgeDocumentParser.ParsedFile parsed) {
+        TableRecordService service = tableRecordProvider.getIfAvailable();
+        if (service == null) {
+            return;
+        }
+        try {
+            TableExtractSummary summary = service.extractAndPersist(documentId, version,
+                    inspected.extension(), inspected.content(),
+                    parsed.pages(), parsed.parsedText());
+            log.info("表格结构化记录抽取完成，documentId={}，version={}，tables={}，rows={}，"
+                            + "linked={}，linkageMissing={}，degraded={}",
+                    documentId, version, summary.tables(), summary.rows(),
+                    summary.linkageHitTables(), summary.linkageMissingTables(),
+                    summary.degradedCodes());
+        } catch (RuntimeException ex) {
+            log.warn("表格结构化记录抽取失败（不影响文档状态机），documentId={}，异常类型={}",
+                    documentId, ex.getClass().getSimpleName());
         }
     }
 

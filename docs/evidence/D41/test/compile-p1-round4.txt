@@ -1,0 +1,35 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m1.qw:D41_TASIIEM >----------------------
+[INFO] Building D41_TASIIEM 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (resolve-dependency-paths) @ D41_TASIIEM ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D41_TASIIEM ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 15 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D41_TASIIEM ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 316 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/logging/CachedBodyAccessLogFilter.java:[66,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/model/ClassifiedResponseErrorHandler.java:[32,17] org.springframework.web.client.ResponseErrorHandler �е� handleError(org.springframework.http.client.ClientHttpResponse) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D41\D41_TASIIEM\src\main\java\com\zl\d41\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D41/D41_TASIIEM/src/main/java/com/zl/d41/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  16.779 s
+[INFO] Finished at: 2026-11-24T16:16:46+08:00
+[INFO] ------------------------------------------------------------------------
+

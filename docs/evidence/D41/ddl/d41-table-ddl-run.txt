@@ -1,0 +1,62 @@
+== DDL 幂等验证（C03）：同脚本执行两遍均 failures=0，affected=0（IF NOT EXISTS 命中既有 one 线预建表，结构逐列一致）
+== RUN1 ==
+-- SQL: CREATE TABLE IF NOT EXISTS d41_table_extract ( id BIGINT NOT NULL AUTO_INCREMENT, document_id VARCHAR(64) NOT NULL, version INT NOT NULL, page_number INT NOT NULL, table_index INT NOT NULL, header_snapshot_json JSON NOT NULL, row_count INT NOT NULL DEFAULT 0, col_count INT NOT NULL DEFAULT 0, source_global_start INT NULL, source_global_end INT NULL, source_line_start INT NULL, source_line_end INT NULL, detect_flags VARCHAR(255) NOT NULL DEFAULT '', confidence VARCHAR(16) NOT NULL DEFAULT 'HIGH', continuation_of_table_id BIGINT NULL, status VARCHAR(16) NOT NULL DEFAULT 'ACTIVE', created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY (id), UNIQUE KEY uk_d41_doc_ver_page_table (document_id, version, page_number, table_index), KEY idx_d41_table_doc_ver (document_id, version), KEY idx_d41_table_global (document_id, version, source_global_start, source_global_end) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+-- affected=0
+
+-- SQL: CREATE TABLE IF NOT EXISTS d41_table_row ( id BIGINT NOT NULL AUTO_INCREMENT, table_id BIGINT NOT NULL, row_index INT NOT NULL, cells_json JSON NOT NULL, source_line_number INT NULL, record_hash CHAR(64) NOT NULL, created_at DATETIME NOT NULL, PRIMARY KEY (id), UNIQUE KEY uk_d41_table_row (table_id, row_index), KEY idx_d41_row_hash (record_hash) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+-- affected=0
+
+-- DONE statements=2 failures=0
+== RUN2 ==
+-- SQL: CREATE TABLE IF NOT EXISTS d41_table_extract ( id BIGINT NOT NULL AUTO_INCREMENT, document_id VARCHAR(64) NOT NULL, version INT NOT NULL, page_number INT NOT NULL, table_index INT NOT NULL, header_snapshot_json JSON NOT NULL, row_count INT NOT NULL DEFAULT 0, col_count INT NOT NULL DEFAULT 0, source_global_start INT NULL, source_global_end INT NULL, source_line_start INT NULL, source_line_end INT NULL, detect_flags VARCHAR(255) NOT NULL DEFAULT '', confidence VARCHAR(16) NOT NULL DEFAULT 'HIGH', continuation_of_table_id BIGINT NULL, status VARCHAR(16) NOT NULL DEFAULT 'ACTIVE', created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY (id), UNIQUE KEY uk_d41_doc_ver_page_table (document_id, version, page_number, table_index), KEY idx_d41_table_doc_ver (document_id, version), KEY idx_d41_table_global (document_id, version, source_global_start, source_global_end) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+-- affected=0
+
+-- SQL: CREATE TABLE IF NOT EXISTS d41_table_row ( id BIGINT NOT NULL AUTO_INCREMENT, table_id BIGINT NOT NULL, row_index INT NOT NULL, cells_json JSON NOT NULL, source_line_number INT NULL, record_hash CHAR(64) NOT NULL, created_at DATETIME NOT NULL, PRIMARY KEY (id), UNIQUE KEY uk_d41_table_row (table_id, row_index), KEY idx_d41_row_hash (record_hash) ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+-- affected=0
+
+-- DONE statements=2 failures=0
+== POST-STRUCT ==
+-- SQL: SHOW COLUMNS FROM d41_table_extract
+Field	Type	Null	Key	Default	Extra
+id	bigint	NO	PRI	NULL	auto_increment
+document_id	varchar(64)	NO	MUL	NULL	
+version	int	NO		NULL	
+page_number	int	NO		NULL	
+table_index	int	NO		NULL	
+header_snapshot_json	json	NO		NULL	
+row_count	int	NO		0	
+col_count	int	NO		0	
+source_global_start	int	YES		NULL	
+source_global_end	int	YES		NULL	
+source_line_start	int	YES		NULL	
+source_line_end	int	YES		NULL	
+detect_flags	varchar(255)	NO			
+confidence	varchar(16)	NO		HIGH	
+continuation_of_table_id	bigint	YES		NULL	
+status	varchar(16)	NO		ACTIVE	
+created_at	datetime	NO		NULL	
+updated_at	datetime	NO		NULL	
+-- rows=18
+
+-- SQL: SHOW COLUMNS FROM d41_table_row
+Field	Type	Null	Key	Default	Extra
+id	bigint	NO	PRI	NULL	auto_increment
+table_id	bigint	NO	MUL	NULL	
+row_index	int	NO		NULL	
+cells_json	json	NO		NULL	
+source_line_number	int	YES		NULL	
+record_hash	char(64)	NO	MUL	NULL	
+created_at	datetime	NO		NULL	
+-- rows=7
+
+-- SQL: SELECT count(*) AS c1 FROM d41_table_extract
+c1
+0
+-- rows=1
+
+-- SQL: SELECT count(*) AS c2 FROM d41_table_row
+c2
+0
+-- rows=1
+
+-- DONE statements=4 failures=0

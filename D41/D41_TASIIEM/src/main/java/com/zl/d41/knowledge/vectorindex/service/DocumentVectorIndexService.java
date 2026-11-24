@@ -30,10 +30,13 @@ import com.zl.d41.knowledge.sync.DocumentSyncService;
 import com.zl.d41.knowledge.sync.SyncOperation;
 import com.zl.d41.knowledge.sync.SyncReasonCode;
 import com.zl.d41.knowledge.sync.SyncRetryHandler;
+import com.zl.d41.knowledge.table.TableRecordService;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -121,6 +124,14 @@ public class DocumentVectorIndexService {
     public void setSyncService(DocumentSyncService syncService) {
         this.syncService = syncService;
     }
+
+    /**
+     * D41 P2 同步绑定（D7 裁决）：删除闭环与旧版本清理的 MySQL 事务内追加清理
+     * d41_table_extract/d41_table_row；table.enabled=false 或手动装配（provider=null）
+     * 时零调用零差异，two_ legacy 面不触碰。
+     */
+    @Autowired(required = false)
+    private ObjectProvider<TableRecordService> tableRecordProvider;
 
     public DocumentVectorIndexService(VectorStore vectorStore,
                                       PgVectorAccess pgVectorAccess,
@@ -464,6 +475,8 @@ public class DocumentVectorIndexService {
                     repository.deleteChunks(documentId, version);
                     repository.deleteTask(documentId, version);
                 }
+                // D41 P2 追加式表格残留清理（同事务；disabled/手动装配零调用，D7）
+                deleteTableRecordsIfEnabled(documentId, version);
             });
         } catch (RuntimeException ex) {
             // MySQL 侧清理失败=双端必然不齐，归因 CONFIRM_MISMATCH 收敛于确认步骤语义
@@ -799,6 +812,24 @@ public class DocumentVectorIndexService {
         }
     }
 
+    /**
+     * D41 追加式表格清理（删除闭环/旧版本清理共用）：
+     * tableRecordProvider 未注入（手动装配）或 Bean 缺席（table.enabled=false）时零调用；
+     * 与关联行清理同事务语义，失败随外层事务上抛（不静默）。
+     */
+    private void deleteTableRecordsIfEnabled(String documentId, String version) {
+        TableRecordService service = tableRecordProvider == null
+                ? null : tableRecordProvider.getIfAvailable();
+        if (service == null) {
+            return;
+        }
+        if (version == null) {
+            service.deleteForDocument(documentId);
+        } else {
+            service.deleteForDocumentVersion(documentId, version);
+        }
+    }
+
     private void cleanupSupersededVersions(String documentId) {
         for (VectorIndexTaskRow task : repository.findTasksByDocument(documentId)) {
             if (!VectorIndexStatus.SUPERSEDED.name().equals(task.getStatus())) {
@@ -822,6 +853,8 @@ public class DocumentVectorIndexService {
                         rows.stream().map(VectorChunkRow::getChunkId).toList(), "旧版本清理");
                 repository.deleteChunks(documentId, version);
             }
+            // D41 P2 追加式：SUPERSEDED 版本表格记录一并清理（幂等，零残留也安全）
+            deleteTableRecordsIfEnabled(documentId, version);
             // 双端确认：旧版本 PG 残留与关联行必须归零
             long pgResidual = pgVectorAccess.countByDocumentVersion(documentId, version);
             int relationResidual = repository.findChunks(documentId, version).size();
