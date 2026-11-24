@@ -1,0 +1,12 @@
+package com.zl.d41.knowledge.chunking;
+
+/**
+ * End boundary selected for a chunk.
+ */
+public enum ChunkBoundaryType {
+    PARAGRAPH,
+    SENTENCE,
+    WHITESPACE,
+    HARD_LIMIT,
+    DOCUMENT_END
+}
