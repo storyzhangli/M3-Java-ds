@@ -1,0 +1,10 @@
+{
+  "verdict": "PASS",
+  "checks": {
+    "USER 同域读=200": true,
+    "跨部门文档入库": true,
+    "跨部门读拒绝": true,
+    "USER 重抽拒绝": true,
+    "无 token 拒绝": true
+  }
+}

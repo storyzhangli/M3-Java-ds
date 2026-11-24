@@ -1,0 +1,12 @@
+{
+  "totalIssues": null,
+  "orphanDoc": "d41t-r01-20261124-220506-orphan-demo",
+  "tableOrphans": [
+    {
+      "key": "TABLE:151",
+      "documentId": "d41t-r01-20261124-220506-orphan-demo",
+      "version": "99",
+      "detail": "d41_table_extract id=151 page=1 table=0 文档缺失或版本≠权威指针"
+    }
+  ]
+}

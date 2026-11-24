@@ -1,0 +1,20 @@
+{
+  "iteration": "D41-R03",
+  "purpose": "第二厂商公开手册交叉验证（R02 未解决项③：单一样本扩展）",
+  "vendor": "SICK AG",
+  "document": "Operating Instructions CSS/CSX High Speed Color Sensor",
+  "doc_id": "8028100.1JAW / IM0104782",
+  "source_url": "https://www.sick.com/media/docs/2/82/782/operating_instructions_css_csx_high_speed_en_im0104782.pdf",
+  "source_host": "www.sick.com (SICK 官方 media CDN，general_search 命中，2024-04-22 发布)",
+  "local_file": "temp_docs/D41/manuals/sick-css-csx-highspeed-en.pdf",
+  "bytes": 7317818,
+  "sha256": "0048F317A3520E2AF6E34640CE9325B084C97DCC91ADD1FBB7CD94E69068267F",
+  "pages": 86,
+  "producer": "Antenna House PDF Output Library 7.2.1790; modified using iText 5.5.12",
+  "download_tool": "PowerShell Invoke-WebRequest (官方直链，无登录)",
+  "parser_entry": "docs/evidence/D41/R02/scripts/ProbeD41Manual.java（R02 只读探针原样复用，零改动）",
+  "run_cmd": "java -Dstdout.encoding=UTF-8 -cp target\\classes;<r02-cp.txt> ProbeD41Manual.java sick-css-csx-highspeed-en.pdf <outDir>",
+  "run_time_utc": "2026-11-24T13:58Z",
+  "constraint": "禁新增框架/禁 OCR（整改书约束延续）；仅 PDFBox 文本层坐标路径",
+  "copyright_note": "PDF 本体存 gitignore 目录 temp_docs/D41/manuals/，不入 Git；证据仅存元数据与摘录"
+}

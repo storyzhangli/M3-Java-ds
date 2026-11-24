@@ -1,0 +1,32 @@
+{
+  "phase": "POST",
+  "at": "2026-11-24T22:06:16.0457024+08:00",
+  "counts": {
+    "knowledge_document": 10,
+    "knowledge_document_page": 27,
+    "knowledge_document_content": 12,
+    "vector_chunk_index": 27,
+    "vector_index_task": 20,
+    "d41_document_sync": 10,
+    "d41_admin_audit": 0,
+    "d41_auth_principal": 4,
+    "d41_table_extract": 0,
+    "d41_table_row": 0,
+    "vector_store": 30,
+    "two_vector_store": 8
+  },
+  "fixtureResidual": {
+    "kd_d41fix": 7,
+    "te_d41fix": 0,
+    "sync_d41fix": 6,
+    "chunk_d41fix": 0,
+    "d41te_total": 0,
+    "d41tr_total": 0,
+    "pg_vs_d41fix": 0,
+    "pg_two_d41fix": 0
+  },
+  "legacyCheck": {
+    "two_vector_store": 8,
+    "vector_store": 30
+  }
+}

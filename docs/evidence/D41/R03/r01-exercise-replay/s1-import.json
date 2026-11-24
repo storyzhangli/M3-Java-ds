@@ -1,0 +1,14 @@
+{
+  "verdict": "PASS",
+  "docIds": {
+    "d41-fx-faultcode.pdf": "b6fbacc009a44f5d9e60a3f7d551d5ac",
+    "d41-fx-params.pdf": "75019c200628438a8504db1b724b075c",
+    "d41-fx-anomaly-a2.pdf": "faa1a8d03403460fb1e01779891da435",
+    "d41-fx-anomaly-a3.pdf": "ed85f9a2347d4ea98eb1cc9430021fbb",
+    "d41-fx-anomaly-a4.pdf": "ab2b2ec4eb004a3590e9643fa0afe5e9",
+    "d41-fx-anomaly-a5.pdf": "99532971a7d24baaa82ed4a3a3e18ff0",
+    "d41-fx-pipe.md": "f4567592339f4227a99e7f95a9e0c049",
+    "d41-fx-pipe.txt": "e1114350f86a4f419927b4a5b1154e68",
+    "d41-fx-table.docx": "151754170833459fadd4c54ba21b2533"
+  }
+}

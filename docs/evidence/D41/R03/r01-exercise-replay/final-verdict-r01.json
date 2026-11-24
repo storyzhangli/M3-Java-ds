@@ -1,0 +1,11 @@
+{
+  "S1 夹具入库": "PASS",
+  "S2 逐格对账": "PASS",
+  "S3 A1–A5 矩阵": "PASS",
+  "S4 C08 双轨": "PASS",
+  "S5 重抽幂等+审计": "PASS",
+  "S6 C09 权限": "PASS",
+  "S7 TABLE_ORPHAN": "PASS",
+  "S8 删除闭环绑定": "PASS",
+  "S9 清理+POST 指纹": "PASS"
+}

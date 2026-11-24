@@ -1,0 +1,890 @@
+### page=3 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	8.3	Troubleshooting integrated IO-Link devices (xxxxxxxxxA variants).........61	col_3	col_4
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	3	line=40	flags=[COLUMN_MISALIGNMENT]
+
+### page=4 tableIndex=0 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	13.4Licenses....................................................................................................	col_3	85
+ROW0	4	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	8028100.1JAW/2024-04-22 | SICK	<null>	line=19	flags=[MERGED_CELL]
+
+### page=5 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	1	About this document
+ROW0	1.1	Information on the operating instructions	line=3	flags=[]
+
+### page=5 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	•Accessories
+ROW0	1.4	Explanation of symbols	<null>	line=32	flags=[MERGED_CELL]
+
+### page=7 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	2	Safety information
+ROW0	2.1	Basic safety notes	line=3	flags=[]
+
+### page=7 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	•Outdoors, without additional protection	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	7	line=43	flags=[COLUMN_MISALIGNMENT]
+
+### page=8 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	►All information in these operating instructions must be strictly complied with.
+ROW0	2.4	Limitation of liability	<null>	line=8	flags=[MERGED_CELL]
+
+### page=9 tableIndex=0 status=ACTIVE flags=[]
+HEADER	Activities	Qualification
+ROW0	Electrical installation,	■Practical electrical training	line=3	flags=[]
+ROW1	device replacement	■Knowledge of current electrical safety regulations	line=4	flags=[]
+
+### page=9 tableIndex=1 status=ACTIVE flags=[]
+HEADER	Commissioning,	■Basic knowledge of the design and setup of the described
+ROW0	configuration	connections and interfaces	line=8	flags=[]
+
+### page=10 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	3	Product description
+ROW0	3.1	Product ID	line=3	flags=[]
+ROW1	3.1.1	Product identification via the SICK product ID	line=4	flags=[]
+
+### page=10 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	col_0	col_1	5	Specification for pre-configured devices	col_4
+ROW0	10	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	<null>	8028100.1JAW/2024-04-22 | SICK	line=24	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=11 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	8	Sensing distance
+ROW0	3.1.3	Type code	<null>	<null>	line=9	flags=[COLUMN_MISALIGNMENT]
+
+### page=11 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	CSS	B-WFA	21425AA10
+ROW0	Position	Meaning	<null>	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW1	1	Basic type	CS = Color sensor	line=14	flags=[]
+ROW2	2	Form factor	S = Small	line=15	flags=[]
+
+### page=11 tableIndex=2 status=ACTIVE flags=[]
+HEADER	3	Light sender	W = RGB
+ROW0	4	Digital output	B = Push-pull	line=18	flags=[]
+
+### page=11 tableIndex=3 status=ACTIVE flags=[]
+HEADER	5	Function	F = High Speed
+ROW0	6	Light spot direction	1 = Longitudinal	line=21	flags=[]
+
+### page=11 tableIndex=4 status=ACTIVE flags=[]
+HEADER	8	Filtering	4 = No filter
+ROW0	9	Light emission	1 = Long side	line=26	flags=[]
+
+### page=11 tableIndex=5 status=ACTIVE flags=[]
+HEADER	10	Operation	2 = Short side
+ROW0	11	Connection type	5 = M12; male connector, 5-	line=29	flags=[]
+
+### page=12 tableIndex=0 status=ACTIVE flags=[EXTRA_CELL, LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	3.2	Product features and functions
+ROW0	3.2.1	Device view	line=3	flags=[]
+ROW1	<null>	123	4	5	line=4	flags=[COLUMN_MISALIGNMENT, EXTRA_CELL, COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	5	Light emission	col_2	col_3	col_4	col_5	col_6
+ROW0	<null>	<null>	1	2	3	4	5	line=11	flags=[COLUMN_MISALIGNMENT]
+
+### page=12 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	5	Light emission
+ROW0	3.2.2	Product characteristics	<null>	<null>	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=13 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	•Connecting cables	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	13	line=33	flags=[COLUMN_MISALIGNMENT]
+
+### page=14 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	4	Mounting
+ROW0	4.1	Scope of delivery	line=3	flags=[]
+
+### page=14 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	•Safety notes
+ROW0	4.2	Mounting requirements	<null>	line=7	flags=[MERGED_CELL]
+
+### page=14 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	•Shock and vibration resistant mounting.
+ROW0	4.3	Mounting the device	<null>	line=19	flags=[MERGED_CELL]
+
+### page=14 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	CSS / CSX-	xxxx1xxxxxxxxx	xxxx5xxxxxxxxx
+ROW0	Working range	13 mm	60 mm	line=29	flags=[]
+ROW1	Light spot size	2x4 mm	12 mm round	line=30	flags=[]
+ROW2	15°	15°	<null>	line=31	flags=[COLUMN_MISALIGNMENT]
+ROW3	X	l	<null>	line=32	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=16 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	5	Electrical installation
+ROW0	5.1	Notes on electrical installation	line=3	flags=[]
+
+### page=18 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	CSS/CSX	xBxxxxxx5A	xNxxxxxx52
+ROW0	<null>	Push/Pull	NPN	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW1	1 - BN	L+	L+	line=5	flags=[]
+ROW2	2 - WH	QL/IN1	QL2 / IN1	line=6	flags=[]
+ROW3	3 - BU	M	M	line=7	flags=[]
+ROW4	4 - BK	QL1 / C	QL1	line=8	flags=[]
+ROW5	5 - GY	IN2	IN2	line=9	flags=[]
+ROW6	<null>	2	1	line=10	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=18 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	CSS / CSX	xBxxxxxx8A	xNxxxxxx82	xBxxxxxx8R
+ROW0	<null>	Push/Pull	NPN	RS485	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW1	1 - WH	QL1 / IN1	IN1	IN1	line=16	flags=[]
+ROW2	2 - BN	L+	L+	L+	line=17	flags=[]
+ROW3	3 - GN	QL1 / C	QL1	QL1 / C	line=18	flags=[]
+ROW4	4 - YE	QL2	QL2	QL2	line=19	flags=[]
+ROW5	5 - GY	IN2	IN2	IN2	line=20	flags=[]
+ROW6	6 - PK	QL3	QL3	RS485_A	line=21	flags=[]
+ROW7	7 - BU	M	M	M	line=22	flags=[]
+ROW8	8 - RD	QL4	QL4	RS485_B	line=23	flags=[]
+ROW9	<null>	<null>	2	1	line=24	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=19 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	5.5	Wiring the interfaces
+ROW0	5.5.1	Wiring the digital inputs	line=19	flags=[]
+
+### page=20 tableIndex=0 status=ACTIVE flags=[]
+HEADER	PPWWRR	PWR
+ROW0	QQ	Q	line=6	flags=[]
+
+### page=20 tableIndex=1 status=ACTIVE flags=[]
+HEADER	Q	Q
+ROW0	‒ (M)	‒ (M)	line=12	flags=[]
+
+### page=20 tableIndex=2 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	PPWWRR	PWR
+ROW0	QQ	Q	line=15	flags=[]
+
+### page=20 tableIndex=3 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	Q	Q
+ROW0	‒ (M)	‒ (M)	line=21	flags=[]
+ROW1	Integration of the sensor in IO-Link mode5.6	<null>	line=22	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=23 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	TCH	TCH	col_2	col_3
+ROW0	<null>	<null>	PWR	PWR	line=14	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	<null>	<null>	line=15	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	Q	Q	line=16	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	<null>	<null>	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=24 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	6.3	First steps for commissioning with Modbus RTU (xxxxxxxxxR variants)
+ROW0	6.3.1	Radio interference	line=15	flags=[]
+
+### page=26 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	7	Operation
+ROW0	7.1	Operation via the control panel	line=3	flags=[]
+
+### page=26 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	7.1.1	Control elements	col_2	col_3	col_4
+ROW0	<null>	<null>	1	2	1	line=11	flags=[COLUMN_MISALIGNMENT]
+
+### page=26 tableIndex=2 status=ACTIVE flags=[]
+HEADER	TCH	Illuminates when the “teach-in” menu is selected.
+ROW0	SEN	Illuminates when the “sensitivity” menu is selected.	line=28	flags=[]
+ROW1	PRO	Illuminates when the “advanced settings” menu is	line=29	flags=[]
+
+### page=26 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	2	Segment display	Shows menu item, values, or qualities.
+ROW0	3	Plus	Scrolls through menu items or increases values.	line=32	flags=[]
+ROW1	<null>	SET/Teach	Press < 1 s:	line=33	flags=[COLUMN_MISALIGNMENT]
+
+### page=27 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Display	Meaning
+ROW0	1P	Single Value Teach-in	line=4	flags=[]
+ROW1	Add	Add another teach-in to the existing teach-in	line=5	flags=[]
+ROW2	At	Blanking	line=6	flags=[]
+ROW3	b-F	Best Fit mode	line=7	flags=[]
+ROW4	bSY	Busy	line=8	flags=[]
+ROW5	Cod	Coded mode	line=9	flags=[]
+ROW6	CoL	Color	line=10	flags=[]
+ROW7	dlY	Delay	line=11	flags=[]
+ROW8	dSP	Display switch	line=12	flags=[]
+ROW9	Err	Error	line=13	flags=[]
+ROW10	FUII	Number of colors that can be taught in exceeded	line=14	flags=[]
+ROW11	In	Inverted	line=15	flags=[]
+ROW12	Job	Parameter sets	line=16	flags=[]
+ROW13	Jo1	Parameter set 1	line=17	flags=[]
+ROW14	Jo2	Parameter set 2	line=18	flags=[]
+ROW15	Jo3	Parameter set 3	line=19	flags=[]
+ROW16	Jo4	Parameter set 4	line=20	flags=[]
+ROW17	LoA	Loading	line=21	flags=[]
+ROW18	LoC	Locked	line=22	flags=[]
+ROW19	LOG	Input function for Smart Task	line=23	flags=[]
+ROW20	nF	Deactivate pin	line=24	flags=[]
+ROW21	nIn	Not inverted	line=25	flags=[]
+ROW22	n P	Multi-Value teach-in	line=26	flags=[]
+ROW23	oFF	Off	line=27	flags=[]
+ROW24	PI2	Pin 2 configuration	line=28	flags=[]
+ROW25	PI5	Pin 5 configuration	line=29	flags=[]
+ROW26	PIL	Pin logic inversion	line=30	flags=[]
+ROW27	Pro	Pro level (advanced settings)	line=31	flags=[]
+ROW28	q_1	Switching output 1	line=32	flags=[]
+ROW29	q_2	Switching output 2	line=33	flags=[]
+ROW30	q_3	Switching output 3	line=34	flags=[]
+ROW31	q_4	Switching output 4	line=35	flags=[]
+ROW32	q-F	Output Mode	line=36	flags=[]
+ROW33	rES	Reset	line=37	flags=[]
+ROW34	rSP	Response time	line=38	flags=[]
+ROW35	Sen	Sensitivity	line=39	flags=[]
+ROW36	Std	Standard	line=40	flags=[]
+ROW37	Sto	Store	line=41	flags=[]
+ROW38	tch	Teach-in	line=42	flags=[]
+ROW39	toF	Timer – OFF delay	line=43	flags=[]
+ROW40	ton	Timer – ON delay	line=44	flags=[]
+ROW41	tP	Pulse generator	line=45	flags=[]
+ROW42	8028100.1JAW/2024-04-22 | SICK	OPERATING INSTRUCTIONS | CSS/CSX High Speed27	line=46	flags=[COLUMN_MISALIGNMENT]
+
+### page=28 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	Display	Meaning
+ROW0	tq1	Teach-in switching output 1	line=3	flags=[]
+ROW1	tq2	Teach-in switching output 2	line=4	flags=[]
+ROW2	tSh	Switch-on/switch-off delay (on/off delay)	line=5	flags=[]
+ROW3	tur	Turn (display)	line=6	flags=[]
+ROW4	Activating or deactivating the pushbutton lock7.1.3	<null>	line=7	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=28 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	2.The pushbutton lock is active or deactivated.
+ROW0	7.1.4	Resetting the device (factory setting)	<null>	line=15	flags=[MERGED_CELL]
+
+### page=28 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=19	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=20	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=21	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=28 tableIndex=3 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	col_0	–The display shows Factory Reset. The factory settings are active.
+ROW0	7.1.5	Teach-in	line=32	flags=[]
+ROW1	7.1.5.1	Teach-in modes	line=33	flags=[]
+
+### page=29 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	7.1.5.2	Teach-in via control panel	col_2
+ROW0	7.1.5.2.1	<null>	Single Value Teach-in	line=3	flags=[COLUMN_MISALIGNMENT]
+
+### page=29 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=9	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=10	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=11	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=29 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=39	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=40	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	<null>	TCH	TCH	<null>	<null>	<null>	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	<null>	<null>	<null>	<null>	PWR	PWR	line=44	flags=[COLUMN_MISALIGNMENT]
+ROW6	<null>	SEN	SEN	<null>	<null>	<null>	line=45	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	<null>	<null>	<null>	<null>	Q	Q	line=46	flags=[COLUMN_MISALIGNMENT]
+ROW8	<null>	PRO	PRO	<null>	<null>	<null>	line=47	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=29 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	6.Select n P with the +/- pushbutton	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	29	line=56	flags=[COLUMN_MISALIGNMENT]
+
+### page=30 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	xBxxxxxx5A	xBxxxxxx8A	col_2	col_3
+ROW0	Pin 2	Pin 1	<null>	<null>	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW1	Teach QL1: External teach-in for QL1	Teach QL1: External teach-in for QL1	<null>	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	Teach QL2: External teach-in for QL2	Teach QL2: External teach-in for QL2	<null>	<null>	line=17	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	Pin 5	Pin 5	<null>	<null>	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW4	Teach QL1: External teach-in for QL1	Teach QL1: External teach-in for QL1	<null>	<null>	line=19	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	Teach QL2: External teach-in for QL2	Teach QL2: External teach-in for QL2	<null>	<null>	line=20	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	<null>	TCH	TCH	<null>	line=21	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	<null>	PWR	<null>	PWR	line=22	flags=[COLUMN_MISALIGNMENT]
+ROW8	<null>	SEN	SEN	<null>	line=23	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	<null>	Q	<null>	Q	line=24	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW10	<null>	PRO	PRO	<null>	line=25	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=30 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	col_2	col_3
+ROW0	<null>	<null>	PWR	PWR	line=32	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	<null>	<null>	line=33	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	Q	Q	line=34	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	<null>	<null>	line=35	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=30 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Push-pull	NPN
+ROW0	1	1	line=50	flags=[COLUMN_MISALIGNMENT]
+ROW1	(24 V) UV	(24 V) UV	line=51	flags=[]
+ROW2	0 V	0 V	line=52	flags=[]
+
+### page=31 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	7.1.6	Additional settings (Settings menu)
+ROW0	7.1.6.1	Output Mode	line=3	flags=[]
+
+### page=31 tableIndex=1 status=ACTIVE flags=[]
+HEADER	QL4	QL3	QL2	QL1	col_4
+ROW0	-	-	-	X	Color 1	line=20	flags=[]
+ROW1	-	-	X	-	Color 2	line=21	flags=[]
+ROW2	-	-	X	X	Color 3	line=22	flags=[]
+ROW3	-	X	-	-	Color 4	line=23	flags=[]
+
+### page=31 tableIndex=2 status=ACTIVE flags=[]
+HEADER	Color 15X	X	X	X
+ROW0	No Teach-in color-	-	-	-	line=26	flags=[]
+
+### page=31 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=36	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=37	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=38	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=31 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	7.Confirm the selection with the SET pushbutton.	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	31	line=48	flags=[COLUMN_MISALIGNMENT]
+
+### page=32 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=13	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=14	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=32 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	6.Confirm the selection with the SET pushbutton.	col_1	col_2	col_3	col_4	col_5
+ROW0	Setting the switch-on and switch-off delay7.1.6.3	<null>	<null>	<null>	<null>	<null>	line=25	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+ROW1	<null>	TCH	TCH	TCH	<null>	<null>	line=26	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	PWR	<null>	<null>	<null>	PWR	PWR	line=27	flags=[COLUMN_MISALIGNMENT]
+ROW3	<null>	SEN	SEN	SEN	<null>	<null>	line=28	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	Q	<null>	<null>	<null>	Q	Q	line=29	flags=[COLUMN_MISALIGNMENT]
+ROW5	<null>	PRO	PRO	PRO	<null>	<null>	line=30	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW6	<null>	<null>	TCH	TCH	<null>	<null>	line=31	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW7	<null>	<null>	<null>	<null>	PWR	PWR	line=32	flags=[COLUMN_MISALIGNMENT]
+ROW8	<null>	<null>	SEN	SEN	<null>	<null>	line=33	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW9	<null>	<null>	<null>	<null>	Q	Q	line=34	flags=[COLUMN_MISALIGNMENT]
+ROW10	<null>	<null>	PRO	PRO	<null>	<null>	line=35	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=32 tableIndex=2 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED]
+HEADER	Display	Meaning
+ROW0	oFF	Off	line=39	flags=[]
+ROW1	toF	Timer – OFF delay	line=40	flags=[]
+ROW2	ton	Timer – ON delay	line=41	flags=[]
+ROW3	tP	Pulse generator	line=42	flags=[]
+ROW4	tSh	Switch-on/switch-off delay (on/off delay)	line=43	flags=[]
+
+### page=33 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=19	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=20	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=21	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=22	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=33 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	7.Confirm with the SET pushbutton.
+ROW0	7.1.6.5	Pin settings	<null>	line=32	flags=[COLUMN_MISALIGNMENT]
+
+### page=33 tableIndex=2 status=ACTIVE flags=[]
+HEADER	xBxxxxxx5A	Function
+ROW0	Pin 2	Output or input (IN1)	line=36	flags=[]
+ROW1	Pin 5	Input (IN2)	line=37	flags=[]
+
+### page=33 tableIndex=3 status=ACTIVE flags=[]
+HEADER	xBxxxxxx8A:	Function
+ROW0	Pin 1	Output or input (IN1)	line=40	flags=[]
+ROW1	Pin 5	Input (IN2)	line=41	flags=[]
+
+### page=33 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	•Output QL2 (q_2): QL2 digital output (only available for xBxxxxxx5A)	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	33	line=49	flags=[COLUMN_MISALIGNMENT]
+
+### page=34 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	IN2 Low	IN2 High	col_2
+ROW0	Job 1	←→Job 2	IN1 Low	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW1	↓↑	↓↑	↓↑	line=31	flags=[]
+ROW2	Job 3	Job 4	IN1 High	line=32	flags=[]
+
+### page=34 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	col_2	col_3
+ROW0	<null>	<null>	PWR	PWR	line=42	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	<null>	<null>	line=43	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	Q	Q	line=44	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	<null>	<null>	line=45	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=34 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	col_2	col_3
+ROW0	<null>	<null>	PWR	PWR	line=48	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	<null>	<null>	line=49	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	Q	Q	line=50	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	<null>	<null>	line=51	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=34 tableIndex=3 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	1.Open the menu with the SET pushbutton.	col_3
+ROW0	34	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	8028100.1JAW/2024-04-22 | SICK	line=55	flags=[MERGED_CELL]
+
+### page=35 tableIndex=0 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	7.Confirm with the SET pushbutton.
+ROW0	7.1.6.6	Aligning display	<null>	line=8	flags=[MERGED_CELL]
+
+### page=35 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=15	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=35 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	–The display shows tur in the respective direction
+ROW0	7.1.6.7	Activating jobs	<null>	line=34	flags=[COLUMN_MISALIGNMENT]
+
+### page=35 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	•Modbus RTU parity setting	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	35	line=51	flags=[COLUMN_MISALIGNMENT]
+
+### page=36 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	TCH	TCH	TCH	col_3	col_4	col_5
+ROW0	<null>	<null>	<null>	PWR	PWR	PWR	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW1	SEN	SEN	SEN	<null>	<null>	<null>	line=7	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	<null>	Q	Q	Q	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW3	PRO	PRO	PRO	<null>	<null>	<null>	line=9	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=36 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	7.Confirm the selection with the SET pushbutton.
+ROW0	7.1.6.8	Other displays and functions	<null>	line=24	flags=[MERGED_CELL]
+
+### page=37 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	3Navigation area	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	37	line=33	flags=[COLUMN_MISALIGNMENT]
+
+### page=38 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	5Display of the operating mode
+ROW0	7.2.1.1	Overview of the Setup Wizard	<null>	line=4	flags=[MERGED_CELL]
+
+### page=40 tableIndex=0 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	•000 greatest possible dissimilarity	col_3
+ROW0	40	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	8028100.1JAW/2024-04-22 | SICK	line=9	flags=[MERGED_CELL]
+
+### page=42 tableIndex=0 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	•Pin settings	col_3
+ROW0	42	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	8028100.1JAW/2024-04-22 | SICK	line=10	flags=[MERGED_CELL]
+
+### page=47 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	•Device status history = List of active error and warning messages	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	47	line=14	flags=[COLUMN_MISALIGNMENT]
+
+### page=51 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	•Teach in objects according to the instructions in the Setup Wizard.	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	51	line=23	flags=[COLUMN_MISALIGNMENT]
+
+### page=57 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	4.Select the desired Color mode.
+ROW0	7.2.3.3	Sender configuration	<null>	line=30	flags=[MERGED_CELL]
+
+### page=57 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	4.Select Sender active or Sender not active.
+ROW0	7.2.3.4	Setting Find me	<null>	line=36	flags=[MERGED_CELL]
+
+### page=58 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	4.Activate or deactivate the function.
+ROW0	7.2.3.7	Setting Energy saving mode for display	<null>	line=20	flags=[MERGED_CELL]
+
+### page=58 tableIndex=1 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	4.Activate or deactivate the function.
+ROW0	7.2.3.8	Setting Display direction switch	<null>	line=25	flags=[MERGED_CELL]
+
+### page=58 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	4.Select the desired setting.
+ROW0	7.2.3.9	Setting Job assurance	<null>	line=30	flags=[MERGED_CELL]
+
+### page=58 tableIndex=3 status=ACTIVE flags=[MERGED_CELL]
+HEADER	col_0	col_1	7.The new color is taught in and displayed in the table.	col_3
+ROW0	58	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	8028100.1JAW/2024-04-22 | SICK	line=46	flags=[MERGED_CELL]
+
+### page=59 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	col_0	4.Select the function.
+ROW0	7.2.4	Diagnostic settings	line=21	flags=[]
+ROW1	7.2.4.1	Setting thresholds	line=22	flags=[]
+
+### page=59 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	✓The operating hours counter is set to 0 and the status history table is cleared.	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	59	line=30	flags=[COLUMN_MISALIGNMENT]
+
+### page=60 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	8	Troubleshooting	col_2	col_3
+ROW0	8.1	Possible errors during commissioning	<null>	<null>	line=3	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	LED indicator/fault patternCause	Measures	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW2	<null>	<null>	- Q-LED flashes- Short-circuit / Overcurrent	- Disconnect sensor from the	line=5	flags=[COLUMN_MISALIGNMENT]
+
+### page=60 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	- Indicator on display “Err”	- Sensor is not connected prop‐power network	col_2
+ROW0	<null>	erly	- Check pin assignment	line=7	flags=[COLUMN_MISALIGNMENT]
+
+### page=60 tableIndex=2 status=ACTIVE flags=[]
+HEADER	Low quality of teach after	Variance of the individual teach-Teach in object again
+ROW0	teach-in	in values for a multi-value teach-	line=12	flags=[]
+
+### page=60 tableIndex=3 status=ACTIVE flags=[]
+HEADER	Sensor does not switch for anSensitivity not set appropri‐	Check the Color Matching
+ROW0	object of the taught-in colorately for the application	Value (CMV), if necessary	line=19	flags=[]
+
+### page=60 tableIndex=4 status=ACTIVE flags=[]
+HEADER	taught-in color when transi‐	that is within the tolerancechange the color of the back‐
+ROW0	tioning to an object	range of another taught-inground	line=28	flags=[]
+
+### page=60 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	object from the background	ors in a teach-in, the larger	the object using Add-Teach-in
+ROW0	<null>	the tolerance range	instead of Multi-Value Teach-in	line=32	flags=[COLUMN_MISALIGNMENT]
+ROW1	Isolated faulty switching	Direct light / reflection fromCheck light sources and reflec‐	<null>	line=33	flags=[MERGED_CELL]
+
+### page=60 tableIndex=6 status=ACTIVE flags=[]
+HEADER	the sun, spotlights or flash‐	tions (e.g. from metal) in the
+ROW0	lights	field of view and shield the sen‐	line=35	flags=[]
+
+### page=60 tableIndex=7 status=ACTIVE flags=[MERGED_CELL]
+HEADER	Strongly fluctuating Color	Deviation from recommendedEnsure a lateral entry of the	col_2
+ROW0	Matching Value (CMV) whenentry direction	<null>	object	line=38	flags=[MERGED_CELL]
+
+### page=60 tableIndex=8 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	Unstable switching and	Shiny object	Tilt the sensor sideways by
+ROW0	strongly fluctuating (color &	<null>	15°, select C mode if neces‐	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW1	CMV) values on an object sur‐	<null>	sary (see "Color Mode (C Mode,	line=42	flags=[COLUMN_MISALIGNMENT]
+ROW2	face at a constant distance	<null>	C+I Mode)")	line=43	flags=[COLUMN_MISALIGNMENT]
+ROW3	Sensor does not switch forResponse time is set to	<null>	Set the response time to min.	line=44	flags=[MERGED_CELL]
+ROW4	every taught-in color (e.g.	36/72 µs, which limits the150 ms or select Multi Value	<null>	line=45	flags=[MERGED_CELL]
+ROW5	Color 3 or Add-Teach-in)	memory capacity	Teach-in instead of the Add	line=46	flags=[]
+
+### page=60 tableIndex=9 status=ACTIVE flags=[]
+HEADER	Transparent objects cannot beSignal loss due to opacity	Attach reflective tape in the
+ROW0	distinguished	background to amplify the sig‐	line=49	flags=[]
+
+### page=61 tableIndex=0 status=ACTIVE flags=[]
+HEADER	Display, error situation	Cause
+ROW0	FULL!	Number of colors that canIf possible, change the	line=3	flags=[]
+
+### page=61 tableIndex=1 status=ACTIVE flags=[]
+HEADER	be taught in exceeded. This	response time to 150 ms or
+ROW0	depends on the selected	higher	line=5	flags=[]
+
+### page=62 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	9	Maintenance
+ROW0	9.1	Maintenance	line=3	flags=[]
+
+### page=62 tableIndex=1 status=ACTIVE flags=[]
+HEADER	Maintenance work	Interval
+ROW0	Clean housing and front screen	Cleaning interval depends on ambi‐Specialist	line=9	flags=[]
+
+### page=64 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	10	Decommissioning
+ROW0	10.1	Disassembly and disposal	line=3	flags=[]
+
+### page=64 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	col_0	col_1	■Description of the fault that occurred
+ROW0	10.3	Sensor replacement/data storage	<null>	line=31	flags=[MERGED_CELL]
+
+### page=65 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	11	Technical data
+ROW0	11.1	Technical data	line=3	flags=[]
+
+### page=65 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	CSS/CSX	xxxx1	xxxx5
+ROW0	Sensing distance	13 mm	60 mm	line=11	flags=[]
+ROW1	Light sender	<null>	LED, RGB	line=12	flags=[COLUMN_MISALIGNMENT]
+ROW2	LED risk group according to	<null>	1	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	Wavelength	460 nm, 530 nm, 625 nm	col_2	col_3
+ROW0	Light emission	Short device side/long device side	<null>	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	Light spot size	<null>	2 mm x 4 mm	12 mm	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW2	Light spot direction	<null>	Round	Round, large	line=18	flags=[COLUMN_MISALIGNMENT]
+ROW3	Teach-in method	Single Value Teach-in	<null>	<null>	line=19	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Adjustment of the sensitivity	Continuous: 0...999	col_2
+ROW0	Available job banks	<null>	4	line=27	flags=[COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	CSS/CSX	xxxxxxxx5	col_2	col_3	xxxxxxxx8
+ROW0	Supply voltage	<null>	10.8 V DC ... 28.8 V DC1	<null>	<null>	line=31	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	Ripple	<null>	<null>	≤ 5 V2	<null>	line=32	flags=[COLUMN_MISALIGNMENT]
+
+### page=65 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Initialization time	< 2 s
+ROW0	Switching frequency max.	13.8 kHz	line=37	flags=[]
+ROW1	Response time min.	36 μs	line=38	flags=[]
+ROW2	Jitter min.	18 μs	line=39	flags=[]
+ROW3	Switching output	Push-pull: PNP/NPN or NPN (depends on variant)	line=40	flags=[COLUMN_MISALIGNMENT]
+ROW4	Digital output (voltage)	Push-pull	line=41	flags=[]
+
+### page=66 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	CSS/CSX	xxxxxxxx5	col_2	xxxxxxxx8
+ROW0	Output current I	<null>	100 mA3	<null>	line=3	flags=[COLUMN_MISALIGNMENT]
+
+### page=66 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Channel output	2x hardware switching outputs4x hardware switching outputs	col_2
+ROW0	Input, teach-in (ET)	<null>	Push-pull	line=6	flags=[COLUMN_MISALIGNMENT]
+
+### page=66 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	Storage time (ET)	col_1	col_2	3 sec, non-volatile memory	col_4
+ROW0	Connection type	Male connector, M12, 5-pinMale connector, M12, 8-pin	<null>	<null>	<null>	line=23	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	Protection class	<null>	<null>	<null>	III	line=24	flags=[COLUMN_MISALIGNMENT]
+ROW2	Circuit protection	<null>	UV connections, reverse polarity protected	<null>	<null>	line=25	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=66 tableIndex=3 status=ACTIVE flags=[]
+HEADER	CSS/CSX	xxxxxxxxxR
+ROW0	Communication interfaceIO-Link	Modbus RS-485	line=36	flags=[]
+ROW1	Maximum cable length	20 m	line=37	flags=[]
+
+### page=66 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Impact load	According to IEC 60068-2-27 (30 g / 11 ms)
+ROW0	UL file no.	E181493	line=47	flags=[]
+ROW1	Dimensional drawing11.2	<null>	line=48	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=67 tableIndex=0 status=ACTIVE flags=[MERGED_CELL]
+HEADER	6	Sensing distance	col_2
+ROW0	7Display and setting elements	<null>	68 (2.68)	line=27	flags=[MERGED_CELL]
+
+### page=68 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	21 (0.83)	3	col_3
+ROW0	30.4 (1.2)	<null>	<null>	15 (0.59)	line=16	flags=[COLUMN_MISALIGNMENT]
+
+### page=68 tableIndex=1 status=ACTIVE flags=[]
+HEADER	1Optical axis light emission short housing side	col_1
+ROW0	2M5 threaded mounting hole	68 (2.68)	line=21	flags=[]
+ROW1	3Male connector M12, delivery state	78.5 (3.09)	line=22	flags=[]
+
+### page=68 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	col_0	col_1	7	Display and setting elements	col_4
+ROW0	68	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	<null>	8028100.1JAW/2024-04-22 | SICK	line=27	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=69 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	2	col_1	28 (1.1)	col_3	15 (0.59)
+ROW0	<null>	5	<null>	72 (2.83)	<null>	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=70 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	2	col_1	28 (1.1)	col_3
+ROW0	<null>	5	<null>	72 (2.83)	line=10	flags=[COLUMN_MISALIGNMENT]
+
+### page=70 tableIndex=1 status=ACTIVE flags=[CONTINUATION_HEADER_SKIPPED, COLUMN_MISALIGNMENT]
+HEADER	col_0	21 (0.83)	3	col_3
+ROW0	30.4 (1.2)	<null>	<null>	15 (0.59)	line=13	flags=[COLUMN_MISALIGNMENT]
+
+### page=70 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	col_0	20 (0.79)	20 (0.79)	28 (1.1)	col_4	60 (2.36)
+ROW0	Figure 46: CSX High Speed TW 60 mm, light emission on short side	<null>	<null>	<null>	68 (2.68)	<null>	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=70 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	2	M5 threaded mounting hole	col_2
+ROW0	<null>	Male connector M12, delivery state	83.4 (3.28)	line=20	flags=[COLUMN_MISALIGNMENT]
+
+### page=70 tableIndex=4 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	col_0	col_1	7	Display and setting elements	col_4
+ROW0	70	OPERATING INSTRUCTIONS | CSS/CSX High Speed	<null>	<null>	8028100.1JAW/2024-04-22 | SICK	line=26	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=71 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	43.3 (1.7)	13 (0.51)	col_4
+ROW0	26 (1.02)	<null>	32 (1.26)	<null>	<null>	line=6	flags=[COLUMN_MISALIGNMENT]
+ROW1	<null>	2	<null>	<null>	7	line=7	flags=[COLUMN_MISALIGNMENT]
+
+### page=71 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	6	Sensing distance	col_2	col_3
+ROW0	<null>	<null>	53.6 (2.11)	4.2 (0.17)	line=22	flags=[COLUMN_MISALIGNMENT]
+
+### page=72 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	43.3 (1.7)26 (1.02)	col_1
+ROW0	32 (1.26)20 (0.79)	<null>	line=7	flags=[COLUMN_MISALIGNMENT]
+ROW1	2	7	line=8	flags=[COLUMN_MISALIGNMENT]
+ROW2	1	20 (0.79)	line=9	flags=[COLUMN_MISALIGNMENT]
+
+### page=72 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	5M12 male connector, end stop left	col_1
+ROW0	6Sensing distance	53.6 (2.11)4.2 (0.17)	line=22	flags=[]
+ROW1	7Display and setting elements	62 (2.44)	line=23	flags=[]
+ROW2	OPERATING INSTRUCTIONS | CSS/CSX High Speed72	8028100.1JAW/2024-04-22 | SICK	line=24	flags=[COLUMN_MISALIGNMENT]
+
+### page=73 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	col_0	►www.sick.com/CSS_CSX_High_Speed	col_2	col_3
+ROW0	8028100.1JAW/2024-04-22 | SICK	<null>	OPERATING INSTRUCTIONS | CSS/CSX High Speed	73	line=6	flags=[COLUMN_MISALIGNMENT]
+
+### page=74 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	13	Annex
+ROW0	13.1	Modbus RTU (xxxxxxxxxR variants)	line=3	flags=[]
+
+### page=75 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	3	Read Holding RegistersRead/write (r/w)for reading r/w configuration param‐	col_2
+ROW0	<null>	<null>	registereters	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW1	4	Read Input Registers	Read only (ro)for reading the ro process data	line=31	flags=[]
+
+### page=75 tableIndex=1 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	6	Write Single Holding Regis‐Write one param‐for writing a single configuration	col_2	col_3
+ROW0	<null>	ter	eter - only 1 regis‐parameter or a command (only 1 reg‐	<null>	line=34	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	ter	ister = 16 bits)	line=35	flags=[COLUMN_MISALIGNMENT]
+ROW2	16	Write Multiple Holding Reg‐Write a block offor blockwise writing of several con‐	<null>	<null>	line=36	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	<null>	isters	parameters	figuration parameters or parameters	line=37	flags=[COLUMN_MISALIGNMENT]
+
+### page=75 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Field 1Field 2	Field 4	col_2
+ROW0	ServerFunction codeStart addressNumber of reg‐	CRC	Parameter	line=43	flags=[]
+ROW1	address	isters	value	line=44	flags=[COLUMN_MISALIGNMENT]
+
+### page=75 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	Request	DeliveryRead processResult sectionNumber of reg‐Telegram	col_2	col_3	col_4	col_5
+ROW0	from serveraddress	<null>	data	202	isters	check	line=48	flags=[MERGED_CELL]
+ROW1	<null>	10	4	<null>	3	<null>	line=49	flags=[COLUMN_MISALIGNMENT]
+ROW2	Server →	0x0A	0x04	0x00CA	0x0003	0x914E	line=50	flags=[]
+
+### page=76 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	Field 1	Field 2	Field 3	Field 4	col_4	col_5	col_6
+ROW0	AddressCode repeatedNumber of	<null>	<null>	CRC	Response	Data	<null>	line=3	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	<null>	<null>	<null>	<null>	from CSSrepeated	<null>	bytes	line=4	flags=[COLUMN_MISALIGNMENT]
+ROW2	0x0A	0x04	0x0009003500x5E0B	<null>	Client →	<null>	0x06	line=5	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	<null>	<null>	<null>	<null>	Server	08A	<null>	line=6	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW4	<null>	<null>	Red =	Blue	Result in	9	<null>	line=7	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=76 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	Green =	53
+ROW0	Blue =	138	line=10	flags=[]
+
+### page=76 tableIndex=2 status=ACTIVE flags=[COLUMN_MISALIGNMENT, CONTINUATION_HEADER_SKIPPED, MERGED_CELL]
+HEADER	Field 1	Field 2	Field 3	Field 4	col_4	col_5	col_6
+ROW0	ServerFunction codeRegister	<null>	<null>	CRC	Parameter	<null>	<null>	line=14	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	address	<null>	<null>	<null>	value	address	<null>	line=15	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW2	<null>	Write SingleResult sectionTeach-in com‐Telegram	<null>	<null>	<null>	<null>	CommandDelivery	line=16	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW3	address	Register	<null>	check	mand for QL1	133	from the	line=17	flags=[COLUMN_MISALIGNMENT]
+ROW4	10	6	<null>	<null>	0	<null>	server	line=18	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW5	0x0A	0x06	<null>	0x9958	0x0000	0x0085	Server →	line=19	flags=[COLUMN_MISALIGNMENT]
+
+### page=76 tableIndex=3 status=ACTIVE flags=[COLUMN_MISALIGNMENT, MERGED_CELL]
+HEADER	Response	AddressCode repeatedStart addressParameters	CRC	col_3	col_4
+ROW0	from CSSrepeated	<null>	<null>	repeated	repeated	line=22	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+ROW1	Client →	0x0A	0x9958	0x00850x06	0x0000	line=23	flags=[]
+
+### page=76 tableIndex=4 status=ACTIVE flags=[]
+HEADER	RegisterName	Num‐DataDescription / default
+ROW0	address	ber oftype	line=31	flags=[]
+
+### page=76 tableIndex=5 status=ACTIVE flags=[COLUMN_MISALIGNMENT, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	0	Vendor name	4	StringSICK AG
+ROW0	4	Product Code	4	StringOrder no. 7-digit	line=35	flags=[]
+ROW1	8	Firmware version	6	Stringn.n.n**	line=36	flags=[]
+ROW2	14	Vendor URL	6	Stringwww.sick.com	line=37	flags=[]
+ROW3	20	Product Name	16	StringColor Sensor	line=38	flags=[]
+ROW4	36	Model Name	9	StringFull model designation	line=39	flags=[]
+ROW5	45	Serial No.	4	StringJJWWnnnn	line=40	flags=[]
+ROW6	49	Application Name	16	String****************	line=41	flags=[]
+ROW7	65	SickModbus ProfileVersion6	<null>	String	line=42	flags=[MERGED_CELL]
+ROW8	71	Hardware version	2	String	line=43	flags=[]
+ROW9	73	Device-specific name	16	String****************	line=44	flags=[]
+ROW10	OPERATING INSTRUCTIONS | CSS/CSX High Speed76	<null>	<null>	8028100.1JAW/2024-04-22 | SICK	line=45	flags=[COLUMN_MISALIGNMENT, COLUMN_MISALIGNMENT]
+
+### page=77 tableIndex=0 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	192	QL and Status	1	UINT16Siehe Abb.
+ROW0	193	Qint	2	UINT32Bit pattern shows the Qint sta‐	line=12	flags=[]
+
+### page=77 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	196	CMV QL2	1	UINT16ColorMatchValue for QL2
+ROW0	197	CMV QL3	1	UINT16ColorMatchValue for QL3	line=17	flags=[]
+ROW1	198	CMV QL4	1	UINT16ColorMatchValue for QL4	line=18	flags=[]
+ROW2	199	Color Value L	1	INT16Each of the Lab values have 2	line=19	flags=[]
+
+### page=77 tableIndex=2 status=ACTIVE flags=[LOW_CONFIDENCE]
+HEADER	200	Color Value a	1	INT16a = Green - red scale (1/100)
+ROW0	201	Color Value b	1	INT16b = Blue - yellow scale (1/100)	line=24	flags=[]
+ROW1	202	Color Value R	1	INT16R = Red Intensity	line=25	flags=[]
+ROW2	203	Color Value G	1	INT16G = Green Intensity	line=26	flags=[]
+ROW3	204	Color Value B	1	INT16B = Blue Intensity	line=27	flags=[]
+
+### page=77 tableIndex=3 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	Bit 5Bit 7Bit 6	Bit 4	Bit 3	Bit 2	Bit 1	Bit 0
+ROW0	PD inva‐QoRStatusNot used	<null>	QL4	QL3	QL2	QL1	line=30	flags=[COLUMN_MISALIGNMENT]
+ROW1	lid	Alarm	<null>	<null>	<null>	<null>	line=31	flags=[COLUMN_MISALIGNMENT]
+
+### page=77 tableIndex=4 status=ACTIVE flags=[EXTRA_CELL]
+HEADER	Byte no.Byte 0	col_1
+ROW0	Bit offset31	283029	27	26	25	24	line=36	flags=[EXTRA_CELL]
+ROW1	Bitmap	Not used	line=37	flags=[]
+
+### page=77 tableIndex=5 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	Byte no.	Byte 1	col_2	col_3	col_4	col_5	col_6	col_7	col_8
+ROW0	Bit offset23	<null>	22	21	20	19	18	17	16	line=40	flags=[MERGED_CELL]
+
+### page=77 tableIndex=6 status=ACTIVE flags=[LOW_CONFIDENCE, MERGED_CELL]
+HEADER	Byte no.	Byte 2	col_2	col_3	col_4	col_5	col_6	col_7	col_8
+ROW0	Bit offset15	<null>	14	13	12	11	10	9	8	line=44	flags=[MERGED_CELL]
+
+### page=77 tableIndex=7 status=ACTIVE flags=[EXTRA_CELL, COLUMN_MISALIGNMENT]
+HEADER	Byte no.Byte 3	col_1
+ROW0	Bit offset7	465	3	2	1	0	line=48	flags=[EXTRA_CELL]
+ROW1	8028100.1JAW/2024-04-22 | SICK	OPERATING INSTRUCTIONS | CSS/CSX High Speed77	line=49	flags=[COLUMN_MISALIGNMENT]
+
+### page=78 tableIndex=0 status=ACTIVE flags=[]
+HEADER	4097	Current Temperature	1	INT16	Internal device temperature in °C
+ROW0	4098	Max. Temperature all time	1	INT16	Maximum internal device temperature	line=16	flags=[]
+
+### page=79 tableIndex=0 status=ACTIVE flags=[]
+HEADER	4145	Quality of Run	1	UINT16Process quality in percent
+ROW0	4146	Active Job Bank	1	UINT16The currently active job bank in the sensor	line=26	flags=[]
+
+### page=79 tableIndex=1 status=ACTIVE flags=[]
+HEADER	113	Restore factory settings	1	UINT16any value >= 1 for reset to factory setting
+ROW0	114	Application Reset	1	UINT16any value >= 1 for resetting the application	line=40	flags=[]
+
+### page=80 tableIndex=0 status=ACTIVE flags=[]
+HEADER	144	Modbus RTU Slave Address	1	UINT161 - 247 (factory setting: 10)
+ROW0	145	Modbus RTU Baud Rate	1	UINT163 = 9,600 bps	line=29	flags=[]
+
+### page=82 tableIndex=0 status=ACTIVE flags=[]
+HEADER	160 - Qint 1Qint. Teach Data	Record44Teach-in data content for Qint, see22
+ROW0	184 - Qint 2	table 33	line=8	flags=[]
+ROW1	208 - Qint 3	the 3-dimensional color data for the	line=9	flags=[]
+ROW2	232 - Qint 4	switching behavior of the Qint outputs are	line=10	flags=[]
+ROW3	256 - Qint 5	stored here.	line=11	flags=[]
+
+### page=82 tableIndex=1 status=ACTIVE flags=[]
+HEADER	182 - Qint 1Qint. Configuration	UINT32Byte 0-1:2
+ROW0	206 - Qint 2	Reference to the teach object linked to the	line=32	flags=[]
+ROW1	230 - Qint 3	Qint.	line=33	flags=[]
+ROW2	254 - Qint 4	Byte 2:	line=34	flags=[]
+ROW3	278 - Qint 5	Sensitivity of the switching output	line=35	flags=[]
+
+### page=84 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT, LOW_CONFIDENCE, MERGED_CELL]
+HEADER	ContentsNucleuNucleuNucleuRota‐	col_1	Rota‐	Rota‐	ExtendExtendExtendHyste‐Hyste‐Hyste‐Signal	col_5	col_6	col_7
+ROW0	<null>	s Ls as btion Ltion ation bL	<null>	<null>	<null>	a	b	resis Rresis Gresis BDamp‐	line=42	flags=[MERGED_CELL, COLUMN_MISALIGNMENT]
+
+### page=84 tableIndex=1 status=ACTIVE flags=[LOW_CONFIDENCE, COLUMN_MISALIGNMENT]
+HEADER	col_0	col_1	16	16	16	16
+ROW0	13.2	EU declaration of conformity	<null>	<null>	<null>	<null>	line=46	flags=[COLUMN_MISALIGNMENT]
+
+### page=86 tableIndex=0 status=ACTIVE flags=[COLUMN_MISALIGNMENT]
+HEADER	Australia	Hungary	Slovenia
+ROW0	Phone+61 (3) 9457 0600	Phone+36 1 371 2680	Phone+386 591 78849	line=3	flags=[]
+ROW1	1800 33 48 02 – tollfree	E-Mail ertekesites@sick.hu	E-Mail office@sick.si	line=4	flags=[]
+ROW2	E-Mailsales@sick.com.au	India	South Africa	line=5	flags=[]
+ROW3	Austria	Phone+91-22-6119 8900	Phone+27 10 060 0550	line=6	flags=[]
+ROW4	Phone+43 (0) 2236 62288-0	E-Mail info@sick-india.com	E-Mail info@sickautomation.co.za	line=7	flags=[]
+ROW5	E-Mail office@sick.at	Israel	South Korea	line=8	flags=[]
+ROW6	Belgium/Luxembourg	Phone+972 97110 11	Phone+82 2 786 6321/4	line=9	flags=[]
+ROW7	Phone +32 (0) 2 466 55 66	E-Mail info@sick-sensors.com	E-Mail infokorea@sick.com	line=10	flags=[]
+ROW8	E-Mail info@sick.be	Italy	Spain	line=11	flags=[]
+ROW9	Brazil	Phone+39 02 27 43 41	Phone+34 93 480 31 00	line=12	flags=[]
+ROW10	Phone+55 11 3215-4900	E-Mail info@sick.it	E-Mail info@sick.es	line=13	flags=[]
+ROW11	E-Mail comercial@sick.com.br	Japan	Sweden	line=14	flags=[]
+ROW12	Canada	Phone+81 3 5309 2112	Phone+46 10 110 10 00	line=15	flags=[]
+ROW13	Phone+1 905.771.1444	E-Mail support@sick.jp	E-Mail info@sick.se	line=16	flags=[]
+ROW14	E-Mail cs.canada@sick.com	Malaysia	Switzerland	line=17	flags=[]
+ROW15	Czech Republic	Phone+603-8080 7425	Phone +41 41 619 29 39	line=18	flags=[]
+ROW16	Phone+420 234 719 500	E-Mail enquiry.my@sick.com	E-Mail contact@sick.ch	line=19	flags=[]
+ROW17	E-Mail sick@sick.cz	Mexico	Taiwan	line=20	flags=[]
+ROW18	Chile	Phone+52 (472) 748 9451	Phone+886-2-2375-6288	line=21	flags=[]
+ROW19	Phone +56 (2) 2274 7430	E-Mail mexico@sick.com	E-Mail sales@sick.com.tw	line=22	flags=[]
+ROW20	E-Mailchile@sick.com	Netherlands	Thailand	line=23	flags=[]
+ROW21	China	Phone +31 (0) 30 204 40 00	Phone+66 2 645 0009	line=24	flags=[]
+ROW22	Phone +86 20 2882 3600	E-Mail info@sick.nl	E-Mail marcom.th@sick.com	line=25	flags=[]
+ROW23	E-Mailinfo.china@sick.net.cn	New Zealand	Turkey	line=26	flags=[]
+ROW24	Denmark	Phone+64 9 415 0459	Phone+90 (216) 528 50 00	line=27	flags=[]
+ROW25	Phone+45 45 82 64 00	0800 222 278 – tollfree	E-Mail info@sick.com.tr	line=28	flags=[]
+ROW26	E-Mail sick@sick.dk	E-Mailsales@sick.co.nz	United Arab Emirates	line=29	flags=[]
+ROW27	Finland	Norway	Phone+971 (0) 4 88 65 878	line=30	flags=[]
+ROW28	Phone+358-9-25 15 800	Phone+47 67 81 50 00	E-Mail contact@sick.ae	line=31	flags=[]
+ROW29	E-Mail sick@sick.fi	E-Mail sick@sick.no	United Kingdom	line=32	flags=[]
+ROW30	France	Poland	Phone+44 (0)17278 31121	line=33	flags=[]
+ROW31	Phone+33 1 64 62 35 00	Phone+48 22 539 41 00	E-Mail info@sick.co.uk	line=34	flags=[]
+ROW32	E-Mail info@sick.fr	E-Mail info@sick.pl	USA	line=35	flags=[]
+ROW33	Germany	Romania	Phone+1 800.325.7425	line=36	flags=[]
+ROW34	Phone+49 (0) 2 11 53 010	Phone+40 356-17 11 20	E-Mail info@sick.com	line=37	flags=[]
+ROW35	E-Mail info@sick.de	E-Mailoffice@sick.ro	Vietnam	line=38	flags=[]
+ROW36	Greece	Singapore	Phone+65 6744 3732	line=39	flags=[]
+ROW37	Phone+30 210 6825100	Phone+65 6744 3732	E-Mail sales.gsg@sick.com	line=40	flags=[]
+ROW38	E-Mailoffice@sick.com.gr	E-Mail sales.gsg@sick.com	<null>	line=41	flags=[COLUMN_MISALIGNMENT]
+ROW39	Hong Kong	Slovakia	<null>	line=42	flags=[COLUMN_MISALIGNMENT]
+ROW40	Phone +852 2153 6300	Phone+421 482 901 201	<null>	line=43	flags=[COLUMN_MISALIGNMENT]
+ROW41	E-Mailghk@sick.com.hk	E-Mail mail@sick-sk.sk	<null>	line=44	flags=[COLUMN_MISALIGNMENT]
+

@@ -1,0 +1,10 @@
+{
+  "syncRow": "-- SQL: SELECT sync_status FROM d41_document_sync WHERE document_id='b6fbacc009a44f5d9e60a3f7d551d5ac' AND operation='DELETE' AND version='1'\nsync_status\nSYNCED\n-- rows=1\n\n-- DONE statements=1 failures=0",
+  "rowResidual": "0",
+  "delete": {
+    "code": 200,
+    "msg": "success",
+    "data": null
+  },
+  "extractResidual": "0"
+}

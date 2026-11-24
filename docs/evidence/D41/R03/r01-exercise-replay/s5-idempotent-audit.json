@@ -1,0 +1,5 @@
+{
+  "cntA": "1",
+  "audit": "-- SQL: SELECT action, target_document_id, version, result FROM d41_admin_audit WHERE id > 0 AND action='TABLE_EXTRACT'\naction\ttarget_document_id\tversion\tresult\nTABLE_EXTRACT\tb6fbacc009a44f5d9e60a3f7d551d5ac\t1\tALLOWED\nTABLE_EXTRACT\tb6fbacc009a44f5d9e60a3f7d551d5ac\t1\tALLOWED\n-- rows=2\n\n-- DONE statements=1 failures=0",
+  "cntB": "1"
+}

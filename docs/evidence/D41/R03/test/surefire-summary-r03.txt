@@ -1,0 +1,13 @@
+com.zl.d41.knowledge.sync.DocumentSyncServiceTest	tests=24	fail=0	err=0	skip=0
+com.zl.d41.knowledge.sync.SyncAssemblyBoundaryTest	tests=6	fail=0	err=0	skip=0
+com.zl.d41.knowledge.table.HtmlTableExtractorTest	tests=3	fail=0	err=0	skip=0
+com.zl.d41.knowledge.table.PdfTableExtractorTest	tests=10	fail=0	err=0	skip=0
+com.zl.d41.knowledge.table.TableControllerAuditTest	tests=4	fail=0	err=0	skip=0
+com.zl.d41.knowledge.table.TableRecordPersistenceIntegrationTest	tests=8	fail=0	err=0	skip=0
+com.zl.d41.knowledge.table.TableRecordServiceReplaceSemanticsTest	tests=5	fail=0	err=0	skip=0
+com.zl.d41.knowledge.table.TableTextsUnitTypingTest	tests=4	fail=0	err=0	skip=0
+com.zl.d41.knowledge.table.TextTableExtractorTest	tests=7	fail=0	err=0	skip=0
+com.zl.d41.knowledge.vectorindex.service.DeleteClosedLoopChainTest	tests=9	fail=0	err=0	skip=0
+com.zl.d41.knowledge.vectorindex.service.IndexFailureRecoveryTest	tests=9	fail=0	err=0	skip=0
+com.zl.d41.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest	tests=3	fail=0	err=0	skip=0
+com.zl.d41.knowledge.vectorstore.FaultInjectingVectorStoreTest	tests=3	fail=0	err=0	skip=0

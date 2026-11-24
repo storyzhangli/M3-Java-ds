@@ -1,0 +1,14 @@
+{
+  "verdict": "PASS",
+  "checks": {
+    "A1b docx status DEGRADED": true,
+    "A4 MISALIGN": true,
+    "A1 DOCX_TABLE_NOT_STRUCTURED": true,
+    "A3 CONTINUATION": true,
+    "A5 IMAGE_TABLE_NOT_PARSED": true,
+    "A4b END NOTE 界外": true,
+    "A2c COLUMN_MISALIGNMENT": true,
+    "A2 LOW_CONFIDENCE": true,
+    "A2b MERGED_CELL": true
+  }
+}

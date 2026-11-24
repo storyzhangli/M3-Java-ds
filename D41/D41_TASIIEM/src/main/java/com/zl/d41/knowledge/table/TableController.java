@@ -89,8 +89,13 @@ public class TableController {
         KnowledgeDocument document = documentService.documentForScope(documentId);
         TableExtractSummary summary = tableRecordService.reExtract(
                 documentId, document.getVersion(), document.getFileName());
+        // R03 语义校准（R02 遗留瑕疵）：PARSE_FAILED 属执行失败，审计必须记 FAILED 且 reason 如实；
+        // REEXTRACT_TEXT_TRACK_ONLY 维持 R01 口径（非表格域退化→FAILED 该码）
+        boolean parseFailed = summary.degradedCodes().contains(TableDegrade.PARSE_FAILED);
+        boolean textTrackOnly = summary.degradedCodes().contains(TableDegrade.REEXTRACT_TEXT_TRACK_ONLY);
         auditIfPresent(actor, ACTION_TABLE_EXTRACT, documentId, document.getVersion(),
-                !summary.degradedCodes().contains(TableDegrade.REEXTRACT_TEXT_TRACK_ONLY));
+                !textTrackOnly && !parseFailed,
+                parseFailed ? TableDegrade.PARSE_FAILED : TableDegrade.REEXTRACT_TEXT_TRACK_ONLY);
         return Result.success(summary);
     }
 
@@ -110,7 +115,7 @@ public class TableController {
     }
 
     private void auditIfPresent(AuthContext actor, String action, String target,
-                                String version, boolean ok) {
+                                String version, boolean ok, String failedReason) {
         AuditService audit = auditServiceProvider.getIfAvailable();
         if (audit == null || actor == null) {
             return;
@@ -118,7 +123,7 @@ public class TableController {
         if (ok) {
             audit.recordAllowed(actor, action, target, version);
         } else {
-            audit.recordFailed(actor, action, target, version, TableDegrade.REEXTRACT_TEXT_TRACK_ONLY);
+            audit.recordFailed(actor, action, target, version, failedReason);
         }
     }
 }
