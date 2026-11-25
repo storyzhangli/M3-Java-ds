@@ -1,0 +1,7 @@
+D42 安全扫描（H9/C19/C20 零密钥零泄露）扫描范围：main+test com.zl.d42.rerank 全部 31 个 .java 文件
+规则：sk- 前缀真 Key / DASHSCOPE_API_KEY 硬编码赋值 / Bearer 后接凭据明文
+
+命中：0（PASS）
+说明：测试夹具值 'fixture-not-a-real-key-0000' 为自证假值（BailianTextRerankerTest/RerankAccessBoundaryTest），非任何真实凭据。
+Key 唯一读取路径 = System.getenv("DASHSCOPE_API_KEY")（RerankConfiguration）与构造参数 Supplier 注入（测试），yml 零明文。
+PASS 判定：硬编码真凭据 0 命中。

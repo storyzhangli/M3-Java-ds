@@ -15,3 +15,11 @@ app:
   # 保证回归轮与骨架基线（776de40）行为零差异可复现（H1/C05）。
   access:
     enabled: false
+
+  # D42：实验轮装配本地重排端口（R1/R2 需要 LocalLexicalReranker Bean）；
+  # remote.enabled=false —— R3 组按 BLOCKED=RERANK_REMOTE_DISABLED 记录，mock 轮零外呼（H6 熔断契约）。
+  rerank:
+    enabled: true
+    remote:
+      enabled: false
+      ledger-path: docs/temp_docs/D42/rerank-ledger.jsonl

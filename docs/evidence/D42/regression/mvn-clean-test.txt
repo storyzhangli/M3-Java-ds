@@ -1,0 +1,175 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m1.qw:D42_RERANK >-----------------------
+[INFO] Building D42_RERANK 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ D42_RERANK ---
+[INFO] Deleting E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D42\D42_RERANK\target
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (resolve-dependency-paths) @ D42_RERANK ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D42_RERANK ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 15 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D42_RERANK ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 316 source files with javac [debug parameters release 21] to target\classes
+[INFO] 由于在类路径中发现了一个或多个处理程序，因此启用了
+  批注处理。未来发行版的 javac 可能会禁用批注处理，
+  除非至少按名称指定了一个处理程序 (-processor)，
+  或指定了搜索路径 (--processor-path, --processor-module-path)，
+  或显式启用了批注处理 (-proc:only, -proc:full)。
+  可使用 -Xlint:-options 隐藏此消息。
+  可使用 -proc:none 禁用批注处理。
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/logging/CachedBodyAccessLogFilter.java:[66,55] org.springframework.web.util.ContentCachingRequestWrapper 中的 ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) 已过时, 且标记为待删除
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/model/ClassifiedResponseErrorHandler.java:[32,17] org.springframework.web.client.ResponseErrorHandler 中的 handleError(org.springframework.http.client.ClientHttpResponse) 已过时, 且标记为待删除
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D42\D42_RERANK\src\main\java\com\zl\d42\conversation\ConversationMemory.java使用或覆盖了已过时的 API。
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/conversation/ConversationMemory.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D42_RERANK ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D42_RERANK ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 14 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] 由于在类路径中发现了一个或多个处理程序，因此启用了
+  批注处理。未来发行版的 javac 可能会禁用批注处理，
+  除非至少按名称指定了一个处理程序 (-processor)，
+  或指定了搜索路径 (--processor-path, --processor-module-path)，
+  或显式启用了批注处理 (-proc:only, -proc:full)。
+  可使用 -Xlint:-options 隐藏此消息。
+  可使用 -proc:none 禁用批注处理。
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ D42_RERANK ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.zl.d42.knowledge.sync.DocumentSyncServiceTest
+17:03:45.826 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.830 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:03:45.830 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=RETRY_EXHAUSTED attempt=3
+17:03:45.849 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-r03-05 operation=DELETE version=v1 reason=PG_UNREACHABLE attempt=1
+17:03:45.849 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-r03-05 operation=DELETE version=v1
+17:03:45.853 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.857 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-r03-02 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.858 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-r03-02 operation=DELETE version=v1
+17:03:45.860 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:03:45.866 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-doc-2 operation=UPDATE_CLEANUP version=v1
+17:03:45.869 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-r03-04 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.873 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=CONFIRM_MISMATCH attempt=1
+17:03:45.874 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:03:45.874 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 重试处理器异常未落账，状态机兜底记录 documentId=d42t-doc-1 operation=DELETE reason=PG_DELETE_FAILED
+17:03:45.877 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-r03-10 operation=DELETE version=v1
+17:03:45.879 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-r03-11 operation=DELETE version=v1
+17:03:45.886 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_UNREACHABLE attempt=1
+17:03:45.886 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:03:45.889 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:03:45.892 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-r03-12 operation=DELETE version=v1 reason=RETRY_EXHAUSTED attempt=3
+17:03:45.892 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 重试处理器异常未落账，状态机兜底记录 documentId=d42t-r03-12 operation=DELETE reason=PG_DELETE_FAILED
+17:03:45.894 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.894 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:03:45.898 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-r03-03 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.898 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- PENDING 初始化跳过：事件处于有效执行租约中（并发保护） documentId=d42t-r03-03 operation=DELETE version=v1
+17:03:45.907 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-r03-06 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.907 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-r03-06 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:03:45.907 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 重试处理器异常已由管线层落账，外层不重复计数 documentId=d42t-r03-06 operation=DELETE latestStatus=FAILED error=pg delete failed after recording
+17:03:45.910 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:03:45.910 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:03:45.910 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=RETRY_EXHAUSTED attempt=3
+17:03:45.910 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- RETRY_EXHAUSTED 恢复入口：重置尝试计数后重试 documentId=d42t-doc-1 operation=DELETE
+17:03:45.910 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.221 s -- in com.zl.d42.knowledge.sync.DocumentSyncServiceTest
+[INFO] Running com.zl.d42.knowledge.sync.SyncAssemblyBoundaryTest
+17:03:47.231 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-boundary-doc version=1 count=1
+17:03:47.236 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 向量已删除（legacy 通道）documentId=d42t-boundary-doc version=1 chunks=1
+17:03:47.406 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-boundary-doc version=1 count=1
+17:03:47.406 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 向量已删除（legacy 通道）documentId=d42t-boundary-doc version=1 chunks=1
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.485 s -- in com.zl.d42.knowledge.sync.SyncAssemblyBoundaryTest
+[INFO] Running com.zl.d42.knowledge.table.HtmlTableExtractorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.129 s -- in com.zl.d42.knowledge.table.HtmlTableExtractorTest
+[INFO] Running com.zl.d42.knowledge.table.PdfTableExtractorTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.730 s -- in com.zl.d42.knowledge.table.PdfTableExtractorTest
+[INFO] Running com.zl.d42.knowledge.table.TableControllerAuditTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.223 s -- in com.zl.d42.knowledge.table.TableControllerAuditTest
+[INFO] Running com.zl.d42.knowledge.table.TableRecordPersistenceIntegrationTest
+17:03:50.434 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- 表格分支抽取失败（不影响文档状态机）extension=pdf cause=java.io.IOException: Error: End-of-File, expected line at offset 33
+17:03:50.435 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- 表格解析失败，保留既有结构化记录 documentId=d42r01-doc-ed1024d1fc8f413898c177fd73e8fc11 version=1 reason=pdf:java.io.IOException: Error: End-of-File, expected line at offset 33
+D42R01-IT cleanup tables=3 rows=5
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.758 s -- in com.zl.d42.knowledge.table.TableRecordPersistenceIntegrationTest
+[INFO] Running com.zl.d42.knowledge.table.TableRecordServiceReplaceSemanticsTest
+17:03:52.275 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- 版本非数字串，表格记录不落既有 int 版本列（KP2 适配，documentId=d42r01-doc-a version=v1）
+17:03:52.277 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- 表格分支抽取失败（不影响文档状态机）extension=pdf cause=java.io.IOException: Error: End-of-File, expected line at offset 9
+17:03:52.277 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- 表格解析失败，保留既有结构化记录 documentId=d42r01-doc-a version=1 reason=pdf:java.io.IOException: Error: End-of-File, expected line at offset 9
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.zl.d42.knowledge.table.TableRecordServiceReplaceSemanticsTest
+[INFO] Running com.zl.d42.knowledge.table.TableTextsUnitTypingTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.zl.d42.knowledge.table.TableTextsUnitTypingTest
+[INFO] Running com.zl.d42.knowledge.table.TextTableExtractorTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in com.zl.d42.knowledge.table.TextTableExtractorTest
+[INFO] Running com.zl.d42.knowledge.vectorindex.service.DeleteClosedLoopChainTest
+17:03:52.334 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除失败 documentId=d42t-chain-doc version=1 reason=Connect timed out
+17:03:52.334 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=PG_UNREACHABLE attempt=1
+17:03:52.338 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.342 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+17:03:52.347 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.348 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:03:52.348 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 删除同步闭环完成 documentId=d42t-chain-doc version=1 chunks=2
+17:03:52.349 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:03:52.349 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 删除同步闭环完成 documentId=d42t-chain-doc version=1 chunks=0
+17:03:52.355 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.356 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+17:03:52.360 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除失败 documentId=d42t-chain-doc version=1 reason=Connect timed out
+17:03:52.361 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=PG_UNREACHABLE attempt=1
+17:03:52.361 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- PENDING 初始化跳过：事件处于有效执行租约中（并发保护） documentId=d42t-chain-doc operation=DELETE version=1
+17:03:52.362 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除失败 documentId=d42t-chain-doc version=1 reason=Connect timed out
+17:03:52.362 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=PG_UNREACHABLE attempt=2
+17:03:52.362 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 重试处理器异常已由管线层落账，外层不重复计数 documentId=d42t-chain-doc operation=DELETE latestStatus=FAILED error=Connect timed out
+17:03:52.372 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.373 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:03:52.373 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 删除同步闭环完成 documentId=d42t-chain-doc version=1 chunks=2
+17:03:52.383 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.384 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+17:03:52.385 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- PENDING 初始化跳过：事件处于有效执行租约中（并发保护） documentId=d42t-chain-doc operation=DELETE version=1
+17:03:52.385 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.386 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- 同步收敛 SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:03:52.386 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 删除同步闭环完成 documentId=d42t-chain-doc version=1 chunks=2
+17:03:52.390 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=UPDATE_CLEANUP version=1 reason=PG_DELETE_FAILED attempt=1
+17:03:52.392 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 旧版本清理向量删除失败 documentId=d42t-chain-doc version=1 reason=socket closed
+17:03:52.392 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=UPDATE_CLEANUP version=1 reason=PG_UNREACHABLE attempt=2
+17:03:52.392 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 旧版本清理失败，已落库 UPDATE_CLEANUP 待收敛 documentId=d42t-chain-doc version=1 reason=socket closed
+17:03:52.392 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 旧版本清理向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.393 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 旧版本向量已清理 documentId=d42t-chain-doc version=1 chunks=2
+17:03:52.399 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 按版本删除向量删除完成 documentId=d42t-chain-doc version=1 count=2
+17:03:52.400 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- 同步标记 FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.078 s -- in com.zl.d42.knowledge.vectorindex.service.DeleteClosedLoopChainTest
+[INFO] Running com.zl.d42.knowledge.vectorindex.service.IndexFailureRecoveryTest
+17:03:52.484 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 向量写入中断 documentId=d42t-index-doc version=1 processed=1 reason=simulated PG write failure
+17:03:52.494 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 向量写入中断 documentId=d42t-index-doc version=1 processed=1 reason=simulated PG write failure
+17:03:52.497 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 向量索引完成 documentId=d42t-index-doc version=1 chunks=3 attempt=2
+17:03:52.511 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 向量写入中断 documentId=d42t-index-doc version=1 processed=0 reason=embedding model timeout after 30s
+17:03:52.517 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 向量索引完成 documentId=d42t-index-doc version=1 chunks=3 attempt=1
+17:03:52.517 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- 重复导入命中幂等，documentId=d42t-index-doc version=1 chunks=3
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.115 s -- in com.zl.d42.knowledge.vectorindex.service.IndexFailureRecoveryTest
+[INFO] Running com.zl.d42.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest
+17:03:52.633 [main] INFO com.zl.d42.knowledge.vectorindex.service.VectorReconciliationService -- 核对完成 dryRun=true issues=4 (orphan=0, missing=0, mismatch=0, stuck=0, version=3, syncStuck=1, tableOrphan=0)
+17:03:52.636 [main] INFO com.zl.d42.knowledge.vectorindex.service.VectorReconciliationService -- 核对完成 dryRun=true issues=4 (orphan=0, missing=0, mismatch=0, stuck=0, version=3, syncStuck=1, tableOrphan=0)
+17:03:52.641 [main] INFO com.zl.d42.knowledge.vectorindex.service.VectorReconciliationService -- 核对完成 dryRun=true issues=4 (orphan=0, missing=0, mismatch=0, stuck=0, version=3, syncStuck=1, tableOrphan=0)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.122 s -- in com.zl.d42.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest
+[INFO] Running com.zl.d42.knowledge.vectorstore.FaultInjectingVectorStoreTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.zl.d42.knowledge.vectorstore.FaultInjectingVectorStoreTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 95, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  26.949 s
+[INFO] Finished at: 2026-11-25T17:03:52+08:00
+[INFO] ------------------------------------------------------------------------

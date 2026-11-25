@@ -1,0 +1,34 @@
+{
+  "gate": "KP4", "probedAt": "2026-11-25", "frozenImmutable": true,
+  "changeRule": "改口径=新 R 轮+留痕；实现期禁私改",
+  "localRerank": {
+    "normalization": "KeywordTokenizer.normalize 静态复用：NFKC → toLowerCase(Locale.ROOT) → strip（§6.2 空白折叠为词元切分副作用：非 letterOrDigit 即断词，等价覆盖）",
+    "tokenizer": "new KeywordTokenizer(\"w\")（整词特征；实例无状态线程安全；禁改 hybrid 类）",
+    "score": "lexicalScore = |Q_w ∩ D_w| / |Q_w|；|Q_w|=0（query 空白/无词元）→ 0；raw: 回退分支不参与 Q∩D（w 子集下 Map 无 raw 键，自然排除）",
+    "ordering": "lexicalScore DESC → cosineScore DESC（null→-1）→ originalRank ASC（严格全序）",
+    "truncation": "topN；rerankScore=lexicalScore；newRank 1..topN 连续",
+    "emptyCandidates": "空 hits + RERANK_EMPTY_CANDIDATES（非异常）"
+  },
+  "experiment": {
+    "groups": {"R0": {"candidateK": 5,  "rerank": "none",         "finalK": 5},
+               "R1": {"candidateK": 5,  "rerank": "local",        "finalK": 5},
+               "R2": {"candidateK": 20, "rerank": "local",        "finalK": 5},
+               "R3": {"candidateK": 20, "rerank": "remote",       "finalK": 5, "mockPolicy": "BLOCKED(RERANK_REMOTE_DISABLED)"}},
+    "index": {"documentIdPrefix": "d42rr-base-", "version": "rr-v1", "chunking": "FIXED_LENGTH 480/60 CODE_POINT", "embedding": "local-hash-ngram-v1 384 COSINE（=G0/D36 口径）", "similarityThreshold": 0.0},
+    "warmup": 1, "repeat": 3, "questions": "Q01–Q10",
+    "latency": {"clock": "System.nanoTime", "segments": ["retrievalMs", "rerankMs", "totalMs"], "excluded": "判题与落盘", "stats": "LatencyStats 线性插值 P50/P95 复用"},
+    "remote": {"model": "gte-rerank-v2", "documentsOrder": "候选 content 原序", "topN": 5, "returnDocuments": false,
+               "timeoutMs": 10000, "retry": {"maxAttempts": 1, "backoffMs": 500, "retryable": "429/5xx/网络类；4xx 一律不重试（含限额 HTTP 400）"},
+               "limitsCheck": "单请求预算=1 query+20 doc，chunk≤720码点 → 估算 <30000 tok，超限按 API_FAILED 暴露不截断"}
+  },
+  "decisionGates": {
+    "G-A": {"deltaMRR5_min": 0.05, "deltaHitRate5_min": 0.10, "combinator": "OR"},
+    "G-B": {"groupFailMax": 0, "undeclaredDegrade": 0, "honestBlockedRule": "BLOCKED 组自身不可 ADOPTED，不使他组失格"},
+    "G-C": {"localP95DeltaMaxMs": 50, "remoteP95DeltaMaxMs": 2000},
+    "G-D": {"remoteCostPerQuestionMaxCny": 0.02, "roundBudgetMaxCny": 0.5, "priceCnyPerMillionTokens": 0.8, "adjudication": "D4 BLOCKED 解除（KP1 双源单价 0.8元/百万实证）；本地组恒 0"},
+    "G-E": {"repeatTop5DivergenceMax": 0},
+    "verdicts": ["ADOPTED_OPTIONAL", "NOT_ADOPTED", "NOT_ADOPTED_PENDING_COST", "BLOCKED"],
+    "defaultPathPolicy": "任何结论下 app.rerank.enabled 默认 false（H2）"
+  },
+  "budget": {"remoteApiCallsMax": 30, "remoteDocScoreUnitsMax": 600, "mockRemoteCallsMustBe": 0}
+}

@@ -1,0 +1,181 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.ai.m1.qw:D42_RERANK >-----------------------
+[INFO] Building D42_RERANK 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33: MySQL Connector/J artifacts moved to reverse-DNS compliant Maven 2+ coordinates.
+[INFO] 
+[INFO] --- dependency:3.8.1:properties (resolve-dependency-paths) @ D42_RERANK ---
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ D42_RERANK ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 15 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ D42_RERANK ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 340 source files with javac [debug parameters release 21] to target\classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/logging/CachedBodyAccessLogFilter.java:[66,55] org.springframework.web.util.ContentCachingRequestWrapper �е� ContentCachingRequestWrapper(jakarta.servlet.http.HttpServletRequest) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[WARNING] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/model/ClassifiedResponseErrorHandler.java:[32,17] org.springframework.web.client.ResponseErrorHandler �е� handleError(org.springframework.http.client.ClientHttpResponse) �ѹ�ʱ, �ұ��Ϊ��ɾ��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/conversation/ConversationMemory.java: E:\AI\project\AI-Learning-two-lp\M3-Java-ds\D42\D42_RERANK\src\main\java\com\zl\d42\conversation\ConversationMemory.javaʹ�û򸲸����ѹ�ʱ�� API��
+[INFO] /E:/AI/project/AI-Learning-two-lp/M3-Java-ds/D42/D42_RERANK/src/main/java/com/zl/d42/conversation/ConversationMemory.java: �й���ϸ��Ϣ, ��ʹ�� -Xlint:deprecation ���±��롣
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ D42_RERANK ---
+[INFO] Copying 2 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ D42_RERANK ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 20 source files with javac [debug parameters release 21] to target\test-classes
+[INFO] ��������·���з�����һ�����������������������
+  ��ע������δ�����а�� javac ���ܻ������ע������
+  �������ٰ�����ָ����һ���������� (-processor)��
+  ��ָ��������·�� (--processor-path, --processor-module-path)��
+  ����ʽ��������ע���� (-proc:only, -proc:full)��
+  ��ʹ�� -Xlint:-options ���ش���Ϣ��
+  ��ʹ�� -proc:none ������ע������
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ D42_RERANK ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.zl.d42.knowledge.sync.DocumentSyncServiceTest
+17:20:32.980 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:32.984 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:20:32.985 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=RETRY_EXHAUSTED attempt=3
+17:20:33.003 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-r03-05 operation=DELETE version=v1 reason=PG_UNREACHABLE attempt=1
+17:20:33.004 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-r03-05 operation=DELETE version=v1
+17:20:33.007 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:33.012 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-r03-02 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:33.012 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-r03-02 operation=DELETE version=v1
+17:20:33.016 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:20:33.022 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-doc-2 operation=UPDATE_CLEANUP version=v1
+17:20:33.026 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-r03-04 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:33.031 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=CONFIRM_MISMATCH attempt=1
+17:20:33.032 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:20:33.032 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ���Դ������쳣δ���ˣ�״̬�����׼�¼ documentId=d42t-doc-1 operation=DELETE reason=PG_DELETE_FAILED
+17:20:33.037 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-r03-10 operation=DELETE version=v1
+17:20:33.040 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-r03-11 operation=DELETE version=v1
+17:20:33.048 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_UNREACHABLE attempt=1
+17:20:33.048 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:20:33.051 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:20:33.055 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-r03-12 operation=DELETE version=v1 reason=RETRY_EXHAUSTED attempt=3
+17:20:33.055 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ���Դ������쳣δ���ˣ�״̬�����׼�¼ documentId=d42t-r03-12 operation=DELETE reason=PG_DELETE_FAILED
+17:20:33.058 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:33.059 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+17:20:33.063 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-r03-03 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:33.064 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- PENDING ��ʼ���������¼�������Чִ����Լ�У����������� documentId=d42t-r03-03 operation=DELETE version=v1
+17:20:33.074 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-r03-06 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:33.074 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-r03-06 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:20:33.074 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ���Դ������쳣���ɹ��߲����ˣ���㲻�ظ����� documentId=d42t-r03-06 operation=DELETE latestStatus=FAILED error=pg delete failed after recording
+17:20:33.078 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=1
+17:20:33.078 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=PG_DELETE_FAILED attempt=2
+17:20:33.078 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-doc-1 operation=DELETE version=v1 reason=RETRY_EXHAUSTED attempt=3
+17:20:33.078 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- RETRY_EXHAUSTED �ָ���ڣ����ó��Լ��������� documentId=d42t-doc-1 operation=DELETE
+17:20:33.078 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-doc-1 operation=DELETE version=v1
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.293 s -- in com.zl.d42.knowledge.sync.DocumentSyncServiceTest
+[INFO] Running com.zl.d42.knowledge.sync.SyncAssemblyBoundaryTest
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+17:20:34.519 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-boundary-doc version=1 count=1
+17:20:34.524 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ������ɾ����legacy ͨ����documentId=d42t-boundary-doc version=1 chunks=1
+17:20:34.688 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-boundary-doc version=1 count=1
+17:20:34.688 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ������ɾ����legacy ͨ����documentId=d42t-boundary-doc version=1 chunks=1
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.598 s -- in com.zl.d42.knowledge.sync.SyncAssemblyBoundaryTest
+[INFO] Running com.zl.d42.knowledge.table.HtmlTableExtractorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.169 s -- in com.zl.d42.knowledge.table.HtmlTableExtractorTest
+[INFO] Running com.zl.d42.knowledge.table.PdfTableExtractorTest
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.679 s -- in com.zl.d42.knowledge.table.PdfTableExtractorTest
+[INFO] Running com.zl.d42.knowledge.table.TableControllerAuditTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.261 s -- in com.zl.d42.knowledge.table.TableControllerAuditTest
+[INFO] Running com.zl.d42.knowledge.table.TableRecordPersistenceIntegrationTest
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 s -- in com.zl.d42.knowledge.table.TableRecordPersistenceIntegrationTest
+[INFO] Running com.zl.d42.knowledge.table.TableRecordServiceReplaceSemanticsTest
+17:20:36.026 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- �汾�����ִ��������¼������� int �汾�У�KP2 ���䣬documentId=d42r01-doc-a version=v1��
+17:20:36.029 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- �����֧��ȡʧ�ܣ���Ӱ���ĵ�״̬����extension=pdf cause=java.io.IOException: Error: End-of-File, expected line at offset 9
+17:20:36.029 [main] WARN com.zl.d42.knowledge.table.TableRecordService -- �������ʧ�ܣ��������нṹ����¼ documentId=d42r01-doc-a version=1 reason=pdf:java.io.IOException: Error: End-of-File, expected line at offset 9
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.197 s -- in com.zl.d42.knowledge.table.TableRecordServiceReplaceSemanticsTest
+[INFO] Running com.zl.d42.knowledge.table.TableTextsUnitTypingTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.zl.d42.knowledge.table.TableTextsUnitTypingTest
+[INFO] Running com.zl.d42.knowledge.table.TextTableExtractorTest
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in com.zl.d42.knowledge.table.TextTableExtractorTest
+[INFO] Running com.zl.d42.knowledge.vectorindex.service.DeleteClosedLoopChainTest
+17:20:36.105 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ��ʧ�� documentId=d42t-chain-doc version=1 reason=Connect timed out
+17:20:36.105 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=PG_UNREACHABLE attempt=1
+17:20:36.114 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.120 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+17:20:36.128 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.129 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:20:36.129 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ɾ��ͬ���ջ���� documentId=d42t-chain-doc version=1 chunks=2
+17:20:36.130 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:20:36.131 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ɾ��ͬ���ջ���� documentId=d42t-chain-doc version=1 chunks=0
+17:20:36.138 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.139 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+17:20:36.146 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ��ʧ�� documentId=d42t-chain-doc version=1 reason=Connect timed out
+17:20:36.146 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=PG_UNREACHABLE attempt=1
+17:20:36.147 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- PENDING ��ʼ���������¼�������Чִ����Լ�У����������� documentId=d42t-chain-doc operation=DELETE version=1
+17:20:36.149 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ��ʧ�� documentId=d42t-chain-doc version=1 reason=Connect timed out
+17:20:36.149 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=PG_UNREACHABLE attempt=2
+17:20:36.149 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ���Դ������쳣���ɹ��߲����ˣ���㲻�ظ����� documentId=d42t-chain-doc operation=DELETE latestStatus=FAILED error=Connect timed out
+17:20:36.156 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.156 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:20:36.156 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ɾ��ͬ���ջ���� documentId=d42t-chain-doc version=1 chunks=2
+17:20:36.163 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.164 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+17:20:36.165 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- PENDING ��ʼ���������¼�������Чִ����Լ�У����������� documentId=d42t-chain-doc operation=DELETE version=1
+17:20:36.165 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.165 [main] INFO com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ������ SYNCED documentId=d42t-chain-doc operation=DELETE version=1
+17:20:36.166 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ɾ��ͬ���ջ���� documentId=d42t-chain-doc version=1 chunks=2
+17:20:36.171 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=UPDATE_CLEANUP version=1 reason=PG_DELETE_FAILED attempt=1
+17:20:36.173 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- �ɰ汾��������ɾ��ʧ�� documentId=d42t-chain-doc version=1 reason=socket closed
+17:20:36.173 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=UPDATE_CLEANUP version=1 reason=PG_UNREACHABLE attempt=2
+17:20:36.173 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- �ɰ汾����ʧ�ܣ������ UPDATE_CLEANUP ������ documentId=d42t-chain-doc version=1 reason=socket closed
+17:20:36.173 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- �ɰ汾��������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.175 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- �ɰ汾���������� documentId=d42t-chain-doc version=1 chunks=2
+17:20:36.181 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ���汾ɾ������ɾ����� documentId=d42t-chain-doc version=1 count=2
+17:20:36.182 [main] WARN com.zl.d42.knowledge.sync.DocumentSyncService -- ͬ����� FAILED documentId=d42t-chain-doc operation=DELETE version=1 reason=CONFIRM_MISMATCH attempt=1
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.090 s -- in com.zl.d42.knowledge.vectorindex.service.DeleteClosedLoopChainTest
+[INFO] Running com.zl.d42.knowledge.vectorindex.service.IndexFailureRecoveryTest
+17:20:36.262 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ����д���ж� documentId=d42t-index-doc version=1 processed=1 reason=simulated PG write failure
+17:20:36.270 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ����д���ж� documentId=d42t-index-doc version=1 processed=1 reason=simulated PG write failure
+17:20:36.277 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ����������� documentId=d42t-index-doc version=1 chunks=3 attempt=2
+17:20:36.296 [main] WARN com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ����д���ж� documentId=d42t-index-doc version=1 processed=0 reason=embedding model timeout after 30s
+17:20:36.303 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- ����������� documentId=d42t-index-doc version=1 chunks=3 attempt=1
+17:20:36.304 [main] INFO com.zl.d42.knowledge.vectorindex.service.DocumentVectorIndexService -- �ظ����������ݵȣ�documentId=d42t-index-doc version=1 chunks=3
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.120 s -- in com.zl.d42.knowledge.vectorindex.service.IndexFailureRecoveryTest
+[INFO] Running com.zl.d42.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest
+17:20:36.424 [main] INFO com.zl.d42.knowledge.vectorindex.service.VectorReconciliationService -- �˶���� dryRun=true issues=4 (orphan=0, missing=0, mismatch=0, stuck=0, version=3, syncStuck=1, tableOrphan=0)
+17:20:36.428 [main] INFO com.zl.d42.knowledge.vectorindex.service.VectorReconciliationService -- �˶���� dryRun=true issues=4 (orphan=0, missing=0, mismatch=0, stuck=0, version=3, syncStuck=1, tableOrphan=0)
+17:20:36.434 [main] INFO com.zl.d42.knowledge.vectorindex.service.VectorReconciliationService -- �˶���� dryRun=true issues=4 (orphan=0, missing=0, mismatch=0, stuck=0, version=3, syncStuck=1, tableOrphan=0)
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.130 s -- in com.zl.d42.knowledge.vectorindex.service.VectorReconciliationServiceDriftTest
+[INFO] Running com.zl.d42.knowledge.vectorstore.FaultInjectingVectorStoreTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in com.zl.d42.knowledge.vectorstore.FaultInjectingVectorStoreTest
+[INFO] Running com.zl.d42.rerank.BailianTextRerankerTest
+17:20:36.857 [main] WARN com.zl.d42.rerank.RerankCallLedger -- rerank ledger write failed (file=C:\Users\zl\AppData\Local\Temp\junit-3858486824272786694\blocker.txt\nested-ledger.jsonl, err=java.nio.file.FileAlreadyExistsException: C:\Users\zl\AppData\Local\Temp\junit-3858486824272786694\blocker.txt)
+[INFO] Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.470 s -- in com.zl.d42.rerank.BailianTextRerankerTest
+[INFO] Running com.zl.d42.rerank.experiment.RerankDecisionEvaluatorTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s -- in com.zl.d42.rerank.experiment.RerankDecisionEvaluatorTest
+[INFO] Running com.zl.d42.rerank.LocalLexicalRerankerTest
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 s -- in com.zl.d42.rerank.LocalLexicalRerankerTest
+[INFO] Running com.zl.d42.rerank.RerankConfigurationTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.792 s -- in com.zl.d42.rerank.RerankConfigurationTest
+[INFO] Running com.zl.d42.rerank.RerankContractValidationTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in com.zl.d42.rerank.RerankContractValidationTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 122, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  26.587 s
+[INFO] Finished at: 2026-11-25T17:20:37+08:00
+[INFO] ------------------------------------------------------------------------

@@ -24,3 +24,9 @@ app:
   # 保证回归轮与骨架基线（776de40）行为零差异可复现（H1/C05）。
   access:
     enabled: false
+
+  # D42：测试上下文显式关闭重排装配（H2 默认口径的显式声明；端口单测不依赖容器 Bean）。
+  rerank:
+    enabled: false
+    remote:
+      enabled: false

@@ -1,0 +1,34 @@
+[ {
+  "group" : "R1",
+  "verdict" : "NOT_ADOPTED",
+  "gateA" : false,
+  "gateB" : true,
+  "gateC" : true,
+  "gateE" : true,
+  "deltaMrrAtK" : 0.0,
+  "deltaHitRateAtK" : 0.0,
+  "p95DeltaMs" : 0.4672500000000017,
+  "basis" : "dMRR5=0.0000(>=0.05) dHit5=0.0000(>=0.10) P95增量=0.5ms(<=50) FAIL=0 零分歧=true"
+}, {
+  "group" : "R2",
+  "verdict" : "NOT_ADOPTED",
+  "gateA" : false,
+  "gateB" : true,
+  "gateC" : true,
+  "gateE" : true,
+  "deltaMrrAtK" : 0.0,
+  "deltaHitRateAtK" : 0.0,
+  "p95DeltaMs" : 0.0886849999999999,
+  "basis" : "dMRR5=0.0000(>=0.05) dHit5=0.0000(>=0.10) P95增量=0.1ms(<=50) FAIL=0 零分歧=true"
+}, {
+  "group" : "R3",
+  "verdict" : "BLOCKED",
+  "gateA" : false,
+  "gateB" : false,
+  "gateC" : false,
+  "gateE" : false,
+  "deltaMrrAtK" : 0.0,
+  "deltaHitRateAtK" : 0.0,
+  "p95DeltaMs" : 0.0,
+  "basis" : "组被阻断: RERANK_REMOTE_DISABLED（不使他组失格）"
+} ]

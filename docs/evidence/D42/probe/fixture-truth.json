@@ -1,0 +1,28 @@
+{
+  "gate": "KP3", "probedAt": "2026-11-25",
+  "goldSource": "D25 questions.jsonl expected_chunk_ids（ExperimentQuestion.load limit=10 → Q01..Q10 逐题提取，只读；与 D36 判题同源）",
+  "gold": {
+    "Q01": ["DOC-CNC-COOLING-001-C01"], "Q02": ["DOC-CNC-COOLING-001-C02"], "Q03": ["DOC-CNC-COOLING-001-C03"],
+    "Q04": ["DOC-SERVO-TROUBLE-002-C01"], "Q05": ["DOC-SERVO-TROUBLE-002-C02"], "Q06": ["DOC-WORKORDER-SPEC-003-C01"],
+    "Q07": ["DOC-WORKORDER-SPEC-003-C02"], "Q08": ["DOC-CNC-COOLING-003-C03*"], "Q09": ["DOC-SERVO-TROUBLE-002-C01"], "Q10": ["DOC-CNC-COOLING-001-C01"],
+    "NOTE_Q08": "原文为 DOC-CNC-COOLING-001-C03（此处键名速记带*为笔误占位，实现期以 jsonl 逐字为准）"
+  },
+  "goldCorrection": {"Q08": "DOC-CNC-COOLING-001-C03"},
+  "mappingMechanism": "沿用 D36 chunk-id-mapping：vectorChunkId(UUID) ↔ documentId(前缀 d42rr-base-) ↔ chunkIndex → pageNumbers → logicalChunkIds；R2 候选 Top-20 与 R1 Top-5 共享同一映射表（同索引同批入库）",
+  "mrrDefinition": "MRR@K = mean over questions of 1/rank(first hit in top-K by newRank)，无命中记 0；多 Gold 取最先命中位置",
+  "tinyFixtures": [
+    {"id": "T1-zero-and-hit", "questions": [
+      {"gold": ["X"], "returned": ["a","b","c"], "expectedRR": 0.0},
+      {"gold": ["Y"], "returned": ["a","Y","c"], "expectedRR": 0.5}],
+     "expectedMRR": 0.25, "expectedHitRate": 0.5},
+    {"id": "T2-single-hit", "questions": [{"gold": ["C1"], "returned": ["C1"], "expectedRR": 1.0}],
+     "expectedMRR": 1.0, "expectedHitRate": 1.0},
+    {"id": "T3-empty-returned", "questions": [{"gold": ["C1"], "returned": [], "expectedRR": 0.0}],
+     "expectedMRR": 0.0, "expectedHitRate": 0.0, "reasonCode": "ZERO_HITS_AFTER_THRESHOLD"},
+    {"id": "T4-multi-gold-first-hit-rank1", "questions": [{"gold": ["C2","C4"], "returned": ["C2","n","C4"], "expectedRR": 1.0}],
+     "expectedMRR": 1.0, "expectedHitRate": 1.0},
+    {"id": "T5-tie-local-ordering", "candidates": [{"chunkId": "A", "cosineScore": 0.7, "lexical": 0.0, "originalRank": 1}, {"chunkId": "B", "cosineScore": 0.7, "lexical": 0.0, "originalRank": 2}],
+     "expectedNewOrder": ["A","B"], "lock": "同 lexical 同 cosine 按 originalRank 升序（§6.2.4 全序）"}
+  ],
+  "manualCheck": "Q01–Q10 与 D36 experiment-summary gold 列逐字一致（limit=10 截断口径复核 PASS）"
+}

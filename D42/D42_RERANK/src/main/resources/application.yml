@@ -344,6 +344,8 @@ app:
       - /api/v1/two/**
       # 混合检索/混合问答响应含两路命中原文与融合分数，同等排除正文访问日志。
       - /api/v1/hybrid/**
+      # D42：重排验证面请求/响应含候选原文，与检索面同等排除正文访问日志。
+      - /api/v1/rerank/**
       # D14：SSE 异步流式响应不能被请求/响应缓存包装器缓冲，否则增量无法实时推送且过滤器提前收尾会截断流，
       # 因此整条路径跳过正文缓存过滤器；TraceIdFilter 独立生效，requestId 照常生成与回写。
       - /api/v1/ai/chat/stream
@@ -360,3 +362,20 @@ app:
     enforce-admin: ${APP_ACCESS_ENFORCE_ADMIN:false}
     protected-path-patterns:
       - /api/v1/*
+  # ------------------------------------------------------------------
+  # D42：可插拔重排层（本地确定性 + 百炼远程适配器）。
+  # enabled=false（默认）：RerankConfiguration/RerankController 不装配，与基线 7c9d382 零行为差异；
+  # remote.enabled=false（默认）：BailianTextReranker 不装配，mock 轮零外呼（H6 熔断契约）。
+  # 全部参数为冻结口径（docs/evidence/D42/probe/rerank-params.json）；
+  # Key 仅经 DASHSCOPE_API_KEY 环境变量注入，配置零明文（H9）。
+  # ------------------------------------------------------------------
+  rerank:
+    enabled: ${RERANK_ENABLED:false}
+    remote:
+      enabled: ${RERANK_REMOTE_ENABLED:false}
+      model: ${RERANK_MODEL:gte-rerank-v2}
+      timeout-millis: 10000
+      retry-max-attempts: 1
+      retry-backoff-millis: 500
+      ledger-path: docs/temp_docs/D42/rerank-ledger.jsonl
+      cost-cap-per-question-cny: 0.02

@@ -1,0 +1,22 @@
+{
+  "gate": "KP1", "iteration": "D42-R01", "probedAt": "2026-11-25",
+  "sdk": {"artifact": "com.alibaba:dashscope-sdk-java:2.23.6",
+    "rerankClasses": ["TextReRank","TextReRankParam","TextReRankOutput","TextReRankOutput$Result","TextReRankOutput$Document","TextReRankResult","TextReRankUsage","TextReRank$Models"],
+    "method": "jar 条目枚举 + javap 实签（零新依赖，H3 满足）"},
+  "paramFields": {"query": "String", "documents": "List<String>", "topN": "Integer", "returnDocuments": "Boolean", "instruct": "String", "builder": "TextReRankParam.builder()（extends HalfDuplexServiceParam，apiKey 走父类）"},
+  "outputFields": {"results[].index": "Integer", "results[].relevanceScore": "Double", "results[].document.text": "String（returnDocuments=true 才回填）", "usage.totalTokens": "Integer", "requestId": "String", "statusCode/code/message": "Result 层错误三元组"},
+  "sdkBuiltinModelConst": {"TextReRank$Models.GTE_RERANK_V2": "static final String（类存在，值以编译期读取为准）"},
+  "models": [
+    {"name": "gte-rerank-v2", "status": "在售", "limits": {"maxDocuments": 500, "maxTokensPerDoc": 4000, "maxTokensPerRequest": 30000, "overLimitBehavior": "HTTP 400，API 不截断"},
+     "price": {"verified": true, "value_cny_per_million_tokens": 0.8, "region": "华北2(北京)",
+       "sources": ["https://help.aliyun.com/zh/model-studio/gte-rerank-v2", "https://help.aliyun.com/en/model-studio/use-bailian-in-langchain 重排序模型表(0.0005元/千token 体系, gte-rerank-v2=0.0008元/千)"],
+       "crossCheck": "两独立官方页一致（0.8元/百万 = 0.0008元/千）"},
+     "rpm": 5040, "selectedAsDefault": true},
+    {"name": "qwen3-rerank", "status": "在售", "price": {"verified": true, "value_cny_per_million_tokens": 0.5}, "limits": {"maxDocuments": 500, "maxTokensPerDoc": 4000}, "rpm": 5400, "role": "备选"},
+    {"name": "qwen3.7-text-rerank", "status": "在售", "price": {"verified": true, "value_cny_per_million_tokens": 0.5}, "context": "32K", "rpm": 3000, "role": "备选"},
+    {"name": "gte-rerank(一代)", "status": "已停服 2026-05-30", "usable": false}
+  ],
+  "costAdjudication": "D4 费用 BLOCKED 裁决因单价双源核实而解除：费用=Σ totalTokens × 0.8元/百万；G-D 可实判",
+  "localCapability": {"input": "RetrievalHitView.content（≤720 码点 chunk）+ score", "dependency": "零外部、零网络、确定性", "tokenizer": "复用 hybrid.keyword.KeywordTokenizer（w 特征子集，KP4 冻结）"},
+  "remoteProbePolicy": {"mockRemoteCalls": 0, "realProbe": "需独立授权+DASHSCOPE_API_KEY 注入，R01 轮未执行"}
+}

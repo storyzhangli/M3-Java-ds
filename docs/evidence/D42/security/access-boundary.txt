@@ -1,0 +1,5 @@
+C18 access 边界证据：RerankAccessBoundaryTest（surefire 原始输出，133 终版轮）
+-------------------------------------------------------------------------------
+Test set: com.zl.d42.rerank.RerankAccessBoundaryTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.166 s -- in com.zl.d42.rerank.RerankAccessBoundaryTest

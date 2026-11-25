@@ -1,0 +1,18 @@
+D42 P6 清理后对账（2026-11-25）
+基线=KP2 实测值；偏差与处置：
+- vector_store 曾 +3（d42rr-base-* 实验行）→ DELETE 后复归 30（rr_rows 复核=0，见下）
+- d42_document_sync 曾 +3（实验轮 indexChunks 链路对原文档产生 DELETE/SYNCED 审计副作用行，非业务数据）→ DELETE 后复归 0
+期望终态：vector_store=30 / rr_rows=0 / two_vector_store=8 / d41_sync=10 / d42_* 业务表=0 / kd=10 / Redis db0=1
+=== PG rr_rows 复核 ===
+-- SQL: SELECT count(*) AS rr_rows FROM vector_store WHERE metadata->>'documentId' LIKE 'd42rr-base-%'
+rr_rows
+0
+-- rows=1
+
+-- DONE statements=1 failures=0
+
+=== MYSQL 清理输出 ===
+-- SQL: DELETE FROM d42_document_sync WHERE document_id IN ('DOC-CNC-COOLING-001','DOC-SERVO-TROUBLE-002','DOC-WORKORDER-SPEC-003') AND operation='DELETE' AND version='0'
+-- affected=3
+
+-- DONE statements=1 failures=0

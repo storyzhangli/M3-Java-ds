@@ -1,0 +1,14 @@
+{
+  "gate": "KP2", "probedAt": "2026-11-25", "mode": "只读盘点零写入",
+  "fingerprints": {
+    "questionsSha256": "44426B1771C379343A2239147AF0ADF4C4D9A2D80E547E0BCF3259C65634750A",
+    "corpusSha256": "AAD6AC4DF5585AAD5078D1C94DF4E5093AF15A9730E230149CFDE0940335AB0B",
+    "matchWithD36Frozen": true
+  },
+  "mysql": {"d41_document_sync": 10, "d41_admin_audit": 0, "d41_table_extract": 0, "knowledge_document": 10},
+  "pg": {"vector_store_total": 30, "two_vector_store": 8,
+    "vector_store_prefix_dist": {"d36exp-g*": 17, "d34-real*": 3, "DOC-SERV*": 3, "DOC-CNC-*": 3, "DOC-WORK*": 2, "21cd26c1*(uuid)": 1, "d57fc9f7*(uuid)": 1}},
+  "redis": {"dbsize_db0": 1, "method": "RESP inline（redis-cli.exe 本机未装；msys2 --scan --pattern 静默失效教训延续，以 DBSIZE 为权威）"},
+  "experimentNamespace": {"documentIdPrefix": "d42rr-base-", "version": "rr-v1", "cleanup": "UUID 清单登记逐行删（D10），two_vector_store 与 sync 基线零触碰"},
+  "baselineNote": "F01 漂移：D42 骨架已提交 7c9d382（非留痕所述未提交），工作区 clean；sync=10 与 D41 R03 一致"
+}

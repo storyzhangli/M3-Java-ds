@@ -1,0 +1,59 @@
+{
+  "groups" : [ {
+    "group" : "R0",
+    "candidateTopK" : 5,
+    "finalTopK" : 5,
+    "rerankApplied" : false,
+    "provider" : "none",
+    "description" : "基线：候选5、无重排"
+  }, {
+    "group" : "R1",
+    "candidateTopK" : 5,
+    "finalTopK" : 5,
+    "rerankApplied" : true,
+    "provider" : "local",
+    "description" : "候选5、本地词面重排"
+  }, {
+    "group" : "R2",
+    "candidateTopK" : 20,
+    "finalTopK" : 5,
+    "rerankApplied" : true,
+    "provider" : "local",
+    "description" : "候选20、本地词面重排"
+  }, {
+    "group" : "R3",
+    "candidateTopK" : 20,
+    "finalTopK" : 5,
+    "rerankApplied" : true,
+    "provider" : "bailian",
+    "description" : "候选20、百炼远程重排"
+  } ],
+  "index" : {
+    "questionCount" : 10,
+    "version" : "rr-v1",
+    "strategy" : "FIXED_LENGTH",
+    "overlap" : 60,
+    "embedding" : "local-hash-ngram-v1/384/COSINE",
+    "repeatRuns" : 3,
+    "indexedDocuments" : 3,
+    "documentIdPrefix" : "d42rr-base-",
+    "chunkSize" : 480,
+    "indexedChunks" : 3,
+    "chunkIdMapping" : [ {
+      "vectorChunkId" : "a71bb5d5-082d-55be-b089-139bf15e912a",
+      "experimentDocumentId" : "d42rr-base-DOC-CNC-COOLING-001",
+      "chunkIndex" : 0,
+      "logicalChunkIds" : [ "DOC-CNC-COOLING-001-C01", "DOC-CNC-COOLING-001-C02", "DOC-CNC-COOLING-001-C03" ]
+    }, {
+      "vectorChunkId" : "32149d79-a796-50dc-8673-f8bfb422095c",
+      "experimentDocumentId" : "d42rr-base-DOC-SERVO-TROUBLE-002",
+      "chunkIndex" : 0,
+      "logicalChunkIds" : [ "DOC-SERVO-TROUBLE-002-C01", "DOC-SERVO-TROUBLE-002-C02", "DOC-SERVO-TROUBLE-002-C03" ]
+    }, {
+      "vectorChunkId" : "30121031-63d7-5536-93a0-436a6f343acf",
+      "experimentDocumentId" : "d42rr-base-DOC-WORKORDER-SPEC-003",
+      "chunkIndex" : 0,
+      "logicalChunkIds" : [ "DOC-WORKORDER-SPEC-003-C01", "DOC-WORKORDER-SPEC-003-C02" ]
+    } ]
+  }
+}
