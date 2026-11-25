@@ -1,0 +1,1018 @@
+package com.zl.d42.knowledge.vectorindex.service;
+
+import com.zl.d42.common.ResultCode;
+import com.zl.d42.knowledge.chunking.ChunkBoundaryType;
+import com.zl.d42.knowledge.chunking.ChunkSource;
+import com.zl.d42.knowledge.chunking.ChunkStrategy;
+import com.zl.d42.knowledge.chunking.ChunkingResult;
+import com.zl.d42.knowledge.chunking.DocumentChunk;
+import com.zl.d42.knowledge.chunking.KnowledgeDocumentChunkingService;
+import com.zl.d42.knowledge.document.KnowledgeDocument;
+import com.zl.d42.knowledge.document.repository.KnowledgeDocumentRepository;
+import com.zl.d42.knowledge.embedding.EmbeddingModelDescriptor;
+import com.zl.d42.knowledge.vectorindex.VectorIndexException;
+import com.zl.d42.knowledge.vectorindex.config.VectorIndexProperties;
+import com.zl.d42.knowledge.vectorindex.dto.ChunkIndexView;
+import com.zl.d42.knowledge.vectorindex.dto.VectorIndexResultView;
+import com.zl.d42.knowledge.vectorindex.dto.VectorIndexTaskView;
+import com.zl.d42.knowledge.vectorindex.model.ChunkRowStatus;
+import com.zl.d42.knowledge.vectorindex.model.VectorIndexStage;
+import com.zl.d42.knowledge.vectorindex.model.VectorIndexStatus;
+import com.zl.d42.knowledge.vectorindex.repository.VectorChunkRepository;
+import com.zl.d42.knowledge.vectorindex.repository.VectorChunkRow;
+import com.zl.d42.knowledge.vectorindex.repository.VectorIndexTaskRow;
+import com.zl.d42.knowledge.vectorindex.support.ContentHasher;
+import com.zl.d42.knowledge.vectorindex.support.StableChunkIdGenerator;
+import com.zl.d42.knowledge.vectorstore.PgVectorAccess;
+import com.zl.d42.knowledge.vectorstore.VectorMetadataBuilder;
+import com.zl.d42.knowledge.sync.DocumentSyncRow;
+import com.zl.d42.knowledge.sync.DocumentSyncService;
+import com.zl.d42.knowledge.sync.SyncOperation;
+import com.zl.d42.knowledge.sync.SyncReasonCode;
+import com.zl.d42.knowledge.sync.SyncRetryHandler;
+import com.zl.d42.knowledge.table.TableRecordService;
+import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.ai.document.Document;
+import org.springframework.ai.vectorstore.VectorStore;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.support.TransactionTemplate;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * 文档向量索引编排服务：核心。
+ *
+ * <p>在既有切分（{@link KnowledgeDocumentChunkingService}）、Embedding
+ * （经 {@link VectorStore} 内部调用）与 PostgreSQL/pgvector 持久化能力之上，
+ * 补齐工程化的幂等、版本切换、删除与恢复：</p>
+ * <ul>
+ *   <li>稳定 Chunk ID（UUID v5）+ 框架原生阿 Upsert（ON CONFLICT (id) DO UPDATE）
+ *       + MySQL 唯一约束，重复导入与失败重试不产生重复数据；</li>
+ *   <li>新版本先写后切（SWITCH），旧版本在新版本确认成功后才清理，
+ *       避免“先删旧、再因新版本失败而全丢”；</li>
+ *   <li>按文档或版本删除分批执行且可重复执行，PG 对不存在 id 不报错；</li>
+ *   <li>失败落账（状态/阶段/错误/尝试次数）与基于 Outbox 快照的幂等恢复。</li>
+ * </ul>
+ *
+ * <p>不使用跨库分布式事务：MySQL 与 PostgreSQL 各自本地原子，跨系统一致性由
+ * 状态机 + 核对补偿（{@code VectorReconciliationService}）收敛。</p>
+ */
+@Slf4j
+@Service
+@ConditionalOnProperty(name = "app.vectorstore.pgvector.enabled", havingValue = "true",
+        matchIfMissing = true)
+public class DocumentVectorIndexService {
+
+    private static final int MAX_ERROR_MESSAGE = 480;
+
+    private final VectorStore vectorStore;
+
+    private final PgVectorAccess pgVectorAccess;
+
+    private final VectorChunkRepository repository;
+
+    private final StableChunkIdGenerator idGenerator;
+
+    private final ContentHasher hasher;
+
+    private final VectorIndexProperties properties;
+
+    private final EmbeddingModelDescriptor descriptor;
+
+    private final KnowledgeDocumentChunkingService chunkingService;
+
+    private final TransactionTemplate transactionTemplate;
+
+    /** 权限三键元数据读取端口（Spring 无条件装配；仅用于写入链读取，不参与过滤）。 */
+    private final KnowledgeDocumentRepository documentMetaRepository;
+
+    /**
+     * R01 操作级同步状态机（随删除/清理主链路恒生效，功能本体，H2）。
+     *
+     * <p>采用 setter 注入而非构造参数：白名单外的 {@code TwoPgVectorConfiguration}
+     * 手动 {@code new} 本服务（two_ 隔离轨），构造签名变更会破坏其编译；
+     * two_ 实例 syncService=null → 删除保持骨架 fire-and-forget 语义
+     * （two_ 环境本轮显式关闭，NOT RUN 面）。</p>
+     */
+    private DocumentSyncService syncService;
+
+    /**
+     * R02-06 装配约束：默认 true——syncService 缺席时删除入口 fail-fast，
+     * 生产路径不得静默绕过同步状态机；仅显式声明（two_ 手动装配
+     * {@code setSyncStateRequired(false)}）才允许 legacy 兼容通道。
+     */
+    private boolean syncStateRequired = true;
+
+    public void setSyncStateRequired(boolean syncStateRequired) {
+        this.syncStateRequired = syncStateRequired;
+    }
+
+    @Autowired(required = false)
+    public void setSyncService(DocumentSyncService syncService) {
+        this.syncService = syncService;
+    }
+
+    /**
+     * P2 同步绑定（D7 裁决）：删除闭环与旧版本清理的 MySQL 事务内追加清理
+     * d42_table_extract/d42_table_row；table.enabled=false 或手动装配（provider=null）
+     * 时零调用零差异，two_ legacy 面不触碰。
+     */
+    @Autowired(required = false)
+    private ObjectProvider<TableRecordService> tableRecordProvider;
+
+    public DocumentVectorIndexService(VectorStore vectorStore,
+                                      PgVectorAccess pgVectorAccess,
+                                      VectorChunkRepository repository,
+                                      StableChunkIdGenerator idGenerator,
+                                      ContentHasher hasher,
+                                      VectorIndexProperties properties,
+                                      EmbeddingModelDescriptor descriptor,
+                                      KnowledgeDocumentChunkingService chunkingService,
+                                      PlatformTransactionManager transactionManager,
+                                      KnowledgeDocumentRepository documentMetaRepository) {
+        this.vectorStore = vectorStore;
+        this.pgVectorAccess = pgVectorAccess;
+        this.repository = repository;
+        this.idGenerator = idGenerator;
+        this.hasher = hasher;
+        this.properties = properties;
+        this.descriptor = descriptor;
+        this.chunkingService = chunkingService;
+        this.transactionTemplate = new TransactionTemplate(transactionManager);
+        this.documentMetaRepository = documentMetaRepository;
+    }
+
+    /**
+     * 向同步状态机注册本管线为 DELETE / UPDATE_CLEANUP 收敛处理器
+     * （注册方向 index→sync，构造期无环；重试执行即重放幂等闭环，H4 修复走管线）。
+     */
+    @PostConstruct
+    void registerSyncHandlers() {
+        if (syncService == null) {
+            return;
+        }
+        syncService.registerHandler(SyncOperation.DELETE, new SyncRetryHandler() {
+            @Override
+            public SyncOperation operation() {
+                return SyncOperation.DELETE;
+            }
+
+            @Override
+            public void execute(DocumentSyncRow row) {
+                deleteClosedLoop(row.getDocumentId(),
+                        row.getVersion().isBlank() ? null : row.getVersion());
+            }
+        });
+        syncService.registerHandler(SyncOperation.UPDATE_CLEANUP, new SyncRetryHandler() {
+            @Override
+            public SyncOperation operation() {
+                return SyncOperation.UPDATE_CLEANUP;
+            }
+
+            @Override
+            public void execute(DocumentSyncRow row) {
+                cleanupSupersededVersion(row.getDocumentId(), row.getVersion());
+            }
+        });
+    }
+
+    // ------------------------------------------------------------------
+    // 入口：从已解析页面切分并入库（真实链路）
+    // ------------------------------------------------------------------
+
+    /**
+     * 从知识文档的页面级文本重新切分，并将 Chunk 幂等写入向量库。
+     *
+     * <p>文档必须已完成解析（COMPLETED），版本取知识文档登记版本。</p>
+     */
+    public VectorIndexResultView indexFromPages(String documentId, String strategy) {
+        requireDocumentId(documentId);
+        ChunkStrategy targetStrategy = resolveStrategy(strategy);
+        ChunkingResult chunking = chunkingService.preview(documentId, targetStrategy);
+        return indexChunks(chunking.documentId(), chunking.version(),
+                chunking.strategy().name(), chunking.title(), chunking.chunks());
+    }
+
+    // ------------------------------------------------------------------
+    // 核心：幂等入库（新增 / 重复导入 / 同版本覆盖 / 新版本切换）
+    // ------------------------------------------------------------------
+
+    /**
+     * 对给定 Chunk 集合执行幂等向量化入库。
+     *
+     * <p>幂等键为 (documentId, version) 任务行 + 稳定 chunkId；重复执行同一输入不会新增
+     * 任何行，同版本内容变化按稳定 ID 覆盖并清理旧行，新版本先写后切换。</p>
+     *
+     * @param documentId 文档业务标识
+     * @param version    文档版本，空则默认 "1"
+     * @param strategy   切分策略，空则使用配置默认值
+     * @param title      标题（空则沿用 Chunk 自带标题）
+     * @param chunks     待索引 Chunk
+     */
+    public VectorIndexResultView indexChunks(String documentId, String version,
+                                             String strategy, String title,
+                                             List<DocumentChunk> chunks) {
+        requireDocumentId(documentId);
+        if (chunks == null || chunks.isEmpty()) {
+            throw new IllegalArgumentException("待索引 Chunk 不能为空");
+        }
+        String targetVersion = version == null || version.isBlank() ? "1" : version.strip();
+        ChunkStrategy targetStrategy = resolveStrategy(strategy);
+        List<DocumentChunk> normalized = normalize(
+                documentId, targetVersion, targetStrategy, title, chunks);
+        String payloadHash = hasher.hash(payloadText(normalized));
+
+        VectorIndexTaskRow existing = repository.findTask(documentId, targetVersion).orElse(null);
+        // 迟到任务保护：已被取代的旧版本不得在更新版本活动期间回写，避免版本回滚
+        if (existing != null && VectorIndexStatus.SUPERSEDED.name().equals(existing.getStatus())) {
+            boolean hasNewerActive = repository.findTasksByDocument(documentId).stream()
+                    .anyMatch(row -> !targetVersion.equals(row.getVersion())
+                            && VectorIndexStatus.COMPLETED.name().equals(row.getStatus()));
+            if (hasNewerActive) {
+                throw new VectorIndexException(ResultCode.VECTOR_INDEX_STATE_CONFLICT,
+                        "版本 " + targetVersion + " 已被更新版本取代，拒绝迟到写入；"
+                                + "如确需回滚，请先删除当前活动版本再重建",
+                        null, "STALE_VERSION_REJECTED");
+            }
+        }
+        if (existing != null && isIdempotentHit(existing, payloadHash, normalized.size())) {
+            log.info("重复导入命中幂等，documentId={} version={} chunks={}",
+                    documentId, targetVersion, normalized.size());
+            return toResult(existing, normalized.size(), 0, true);
+        }
+
+        int attempt = existing == null ? 1 : existing.getAttemptCount() + 1;
+        LocalDateTime now = LocalDateTime.now();
+        List<String> previousChunkIds = repository.findChunks(documentId, targetVersion).stream()
+                .map(VectorChunkRow::getChunkId)
+                .toList();
+
+        VectorIndexTaskRow task = existing == null ? new VectorIndexTaskRow() : existing;
+        task.setDocumentId(documentId);
+        task.setVersion(targetVersion);
+        task.setStrategy(targetStrategy.name());
+        task.setContentHash(payloadHash);
+        task.setSplitVersion(properties.getSplitVersion());
+        task.setVectorSpaceId(descriptor.vectorSpaceId());
+        task.setChunkCount(normalized.size());
+        task.setStatus(VectorIndexStatus.INDEXING.name());
+        task.setStage(VectorIndexStage.REGISTER.name());
+        task.setErrorCode("");
+        task.setErrorMessage("");
+        task.setAttemptCount(attempt);
+        task.setNextRetryAt(null);
+        task.setUpdatedAt(now);
+        if (existing == null) {
+            task.setCreatedAt(now);
+            // 并发首建由唯一键 (document_id, version) 兜底，Upsert 不会产生第二行
+            repository.upsertTask(task);
+        } else {
+            repository.updateTaskState(task);
+        }
+
+        List<PreparedChunk> prepared = prepare(normalized);
+
+        // 读取文档权限三键（无标签/无行=null → 不写权限键，与骨架逐字节一致）
+        KnowledgeDocument accessMeta = documentMetaRepository.findByDocumentId(documentId)
+                .orElse(null);
+
+        // 阶段 1：Outbox 快照完整落库（MySQL 本地事务）。
+        // 先存快照再写向量：任何一步中断都能从完整快照按稳定 ID 幂等重建。
+        LocalDateTime snapshotTime = LocalDateTime.now();
+        List<VectorChunkRow> snapshotRows = new ArrayList<>(prepared.size());
+        for (PreparedChunk pc : prepared) {
+            snapshotRows.add(toChunkRow(pc, snapshotTime, ChunkRowStatus.PENDING.name()));
+        }
+        transactionTemplate.executeWithoutResult(status ->
+                repository.upsertChunks(snapshotRows));
+
+        int processed = 0;
+        int batchSize = Math.max(1, properties.getBatchSize());
+        try {
+            for (int from = 0; from < prepared.size(); from += batchSize) {
+                int to = Math.min(from + batchSize, prepared.size());
+                List<PreparedChunk> batch = prepared.subList(from, to);
+                List<Document> documents = new ArrayList<>(batch.size());
+                List<String> batchIds = new ArrayList<>(batch.size());
+                for (PreparedChunk pc : batch) {
+                    documents.add(toVectorDocument(pc, accessMeta));
+                    batchIds.add(pc.chunkId());
+                }
+                // 框架原生 DB 级 Upsert：稳定 UUID 冲突即更新，不产生重复行
+                vectorStore.add(documents);
+                repository.updateChunkStatuses(documentId, targetVersion, batchIds,
+                        ChunkRowStatus.INDEXED.name(), LocalDateTime.now());
+                processed += batch.size();
+                repository.updateTaskProgress(documentId, targetVersion,
+                        VectorIndexStatus.INDEXING.name(), VectorIndexStage.EMBED_WRITE.name(),
+                        "", "", attempt, null, LocalDateTime.now());
+            }
+        } catch (RuntimeException ex) {
+            persistFailure(documentId, targetVersion, attempt, processed, ex);
+            throw new VectorIndexException(ResultCode.VECTOR_INDEX_FAILED,
+                    "向量写入失败，已记录可恢复状态: " + safeMessage(ex), ex,
+                    ex instanceof VectorIndexException vectorEx
+                            ? vectorEx.getErrorCode() : "EMBED_WRITE_FAILED");
+        }
+
+        // 同版本内容变更：先清理不再使用或超出新数量的旧 Chunk 向量与关联，
+        // 再核对数量；顺序颠倒会让"旧行仍在"被误判为写入失败。
+        Set<String> newIds = new LinkedHashSet<>();
+        for (PreparedChunk pc : prepared) {
+            newIds.add(pc.chunkId());
+        }
+        List<String> staleIds = previousChunkIds.stream()
+                .filter(id -> !newIds.contains(id))
+                .toList();
+        deleteVectorsSafely(documentId, targetVersion, staleIds, "同版本旧向量");
+        repository.deleteChunksFromIndex(documentId, targetVersion, normalized.size());
+
+        // 写入后核对：PG 行数、MySQL 关联数与已索引行数都必须等于 Chunk 数
+        long pgCount = pgVectorAccess.countByDocumentVersion(documentId, targetVersion);
+        int relationCount = repository.countChunks(documentId, targetVersion);
+        int indexedCount = repository.countChunksByStatus(documentId, targetVersion,
+                ChunkRowStatus.INDEXED.name());
+        if (pgCount != normalized.size() || relationCount != normalized.size()
+                || indexedCount != normalized.size()) {
+            String detail = "pg=%d relation=%d indexed=%d expected=%d"
+                    .formatted(pgCount, relationCount, indexedCount, normalized.size());
+            repository.updateTaskProgress(documentId, targetVersion,
+                    VectorIndexStatus.PARTIAL.name(), VectorIndexStage.VERIFY.name(),
+                    "COUNT_MISMATCH", safeMessage(detail), attempt,
+                    now.plusNanos(properties.getRetryBackoffMs() * 1_000_000L),
+                    LocalDateTime.now());
+            throw new VectorIndexException(ResultCode.VECTOR_INDEX_FAILED,
+                    "写入后核对不一致：" + detail, null, "COUNT_MISMATCH");
+        }
+
+        // 版本切换（MySQL 本地事务）：旧活动版本 SUPERSEDED，当前版本 COMPLETED
+        List<VectorIndexTaskRow> olderCompleted = repository.findTasksByDocument(documentId)
+                .stream()
+                .filter(row -> !targetVersion.equals(row.getVersion()))
+                .filter(row -> VectorIndexStatus.COMPLETED.name().equals(row.getStatus()))
+                .toList();
+        LocalDateTime switchTime = LocalDateTime.now();
+        transactionTemplate.executeWithoutResult(status -> {
+            for (VectorIndexTaskRow older : olderCompleted) {
+                repository.updateTaskProgress(documentId, older.getVersion(),
+                        VectorIndexStatus.SUPERSEDED.name(), older.getStage(),
+                        "", "", older.getAttemptCount(), null, switchTime);
+            }
+            repository.updateTaskProgress(documentId, targetVersion,
+                    VectorIndexStatus.COMPLETED.name(), VectorIndexStage.SWITCH.name(),
+                    "", "", attempt, null, switchTime);
+            // R01（D3 裁决）：同一本地事务内权威化文档元数据版本指针，
+            // 消除 knowledge_document.version 与活动索引版本的天然漂移；
+            // doc 行不存在（裸管线调用）时为 no-op，不报错。
+            documentMetaRepository.updateVersionPointer(documentId, targetVersion, switchTime);
+        });
+
+        // 清理旧版本向量（失败不阻断新版本，留给核对补偿）
+        cleanupSupersededVersions(documentId);
+
+        repository.updateTaskProgress(documentId, targetVersion,
+                VectorIndexStatus.COMPLETED.name(), VectorIndexStage.CLEANUP.name(),
+                "", "", attempt, null, LocalDateTime.now());
+
+        log.info("向量索引完成 documentId={} version={} chunks={} attempt={}",
+                documentId, targetVersion, normalized.size(), attempt);
+        VectorIndexTaskRow finalTask = repository.findTask(documentId, targetVersion)
+                .orElse(task);
+        return toResult(finalTask, normalized.size(), processed, false);
+    }
+
+    // ------------------------------------------------------------------
+    // 删除（按文档 / 按版本）
+    // ------------------------------------------------------------------
+
+    /**
+     * 删除指定文档版本的全部向量与关联（R01 同步闭环）。
+     *
+     * <p>顺序冻结：sync DELETE PENDING 标记 → PG 分批删除 → MySQL 关联/任务行清理 →
+     * 双端确认（PG count=0 ∧ 关联行=0）→ SYNCED；任一步失败 FAILED+原因码落库后异常上抛
+     * （响应契约不变：HTTP 侧仍报错；失败已可查询可重试，H8）。
+     * knowledge_document 行保留为 tombstone（D2 裁决，不新增 lifecycle 列）。</p>
+     */
+    public void deleteByDocumentVersion(String documentId, String version) {
+        requireDocumentId(documentId);
+        if (version == null || version.isBlank()) {
+            throw new IllegalArgumentException("version 不能为空");
+        }
+        deleteClosedLoop(documentId, version.strip());
+    }
+
+    /**
+     * 删除指定文档全部版本的向量与关联；重复执行安全（同上闭环，version 键=空串）。
+     */
+    public void deleteByDocument(String documentId) {
+        requireDocumentId(documentId);
+        deleteClosedLoop(documentId, null);
+    }
+
+    /**
+     * 删除同步闭环（首次调用与 sync 管线重试共用；全链路幂等）。
+     */
+    private void deleteClosedLoop(String documentId, String version) {
+        if (syncService == null) {
+            if (syncStateRequired) {
+                throw new IllegalStateException(
+                        "SyncService 未装配：生产装配必须注入同步状态机；"
+                                + "兼容 legacy 通道仅限显式 setSyncStateRequired(false) 的手动装配"
+                                + "（R02-06）");
+            }
+            // two_ 手动装配实例（已显式声明无 sync）：保持骨架原语义（偏差记录）
+            deleteLegacy(documentId, version);
+            return;
+        }
+        List<VectorChunkRow> rows = version == null
+                ? repository.findChunksByDocument(documentId)
+                : repository.findChunks(documentId, version);
+        String versionKey = version == null ? "" : version;
+        String payloadHash = hasher.hash(
+                rows.stream().map(VectorChunkRow::getChunkId).sorted().toList().toString());
+
+        // 步骤 0：sync 标记（PENDING 与清向量同事务起点语义；标记失败无行可落，直接上抛）
+        try {
+            syncService.markPending(documentId, SyncOperation.DELETE, versionKey, payloadHash);
+        } catch (RuntimeException markEx) {
+            throw new VectorIndexException(ResultCode.VECTOR_INDEX_FAILED,
+                    "同步标记失败，未执行删除: " + safeMessage(markEx), markEx,
+                    SyncReasonCode.MARK_FAILED);
+        }
+
+        // 步骤 1：PG 分批删除（对不存在 id 不报错，可重复执行）
+        try {
+            deleteVectorsSafely(documentId, version,
+                    rows.stream().map(VectorChunkRow::getChunkId).toList(),
+                    version == null ? "按文档删除" : "按版本删除");
+        } catch (RuntimeException ex) {
+            String reason = DocumentSyncService.classify(ex);
+            syncService.markFailed(documentId, SyncOperation.DELETE, versionKey, reason,
+                    payloadHash);
+            throw ex;
+        }
+
+        // 步骤 2：MySQL 关联/任务行清理（本地事务）
+        try {
+            transactionTemplate.executeWithoutResult(status -> {
+                if (version == null) {
+                    repository.deleteChunksByDocument(documentId);
+                    repository.deleteTasksByDocument(documentId);
+                } else {
+                    repository.deleteChunks(documentId, version);
+                    repository.deleteTask(documentId, version);
+                }
+                // P2 追加式表格残留清理（同事务；disabled/手动装配零调用，D7）
+                deleteTableRecordsIfEnabled(documentId, version);
+            });
+        } catch (RuntimeException ex) {
+            // MySQL 侧清理失败=双端必然不齐，归因 CONFIRM_MISMATCH 收敛于确认步骤语义
+            syncService.markFailed(documentId, SyncOperation.DELETE, versionKey,
+                    SyncReasonCode.CONFIRM_MISMATCH, payloadHash);
+            throw ex;
+        }
+
+        // 步骤 3：双端确认（SYNCED 唯一判据，缺一不可，§3.4）
+        long pgResidual = countPgResidual(documentId, version);
+        int relationResidual = version == null
+                ? repository.findChunksByDocument(documentId).size()
+                : repository.findChunks(documentId, version).size();
+        if (pgResidual != 0 || relationResidual != 0) {
+            String detail = "双端确认不齐 pg=%d relation=%d".formatted(pgResidual, relationResidual);
+            syncService.markFailed(documentId, SyncOperation.DELETE, versionKey,
+                    SyncReasonCode.CONFIRM_MISMATCH, payloadHash);
+            throw new VectorIndexException(ResultCode.VECTOR_INDEX_FAILED,
+                    detail, null, SyncReasonCode.CONFIRM_MISMATCH);
+        }
+
+        syncService.markSynced(documentId, SyncOperation.DELETE, versionKey, payloadHash);
+        log.info("删除同步闭环完成 documentId={} version={} chunks={}",
+                documentId, version, rows.size());
+    }
+
+    /** PG 残留计数：版本级用参数化 count；文档级用全表投影过滤（行数小，毫秒级）。 */
+    private long countPgResidual(String documentId, String version) {
+        if (version != null) {
+            return pgVectorAccess.countByDocumentVersion(documentId, version);
+        }
+        return pgVectorAccess.listAll().stream()
+                .filter(row -> documentId.equals(row.documentId()))
+                .count();
+    }
+
+    /**
+     * 骨架原删除语义（仅 two_ 手动装配实例使用：无 sync 落库，失败上抛）。
+     */
+    private void deleteLegacy(String documentId, String version) {
+        List<VectorChunkRow> rows = version == null
+                ? repository.findChunksByDocument(documentId)
+                : repository.findChunks(documentId, version);
+        deleteVectorsSafely(documentId, version,
+                rows.stream().map(VectorChunkRow::getChunkId).toList(),
+                version == null ? "按文档删除" : "按版本删除");
+        transactionTemplate.executeWithoutResult(status -> {
+            if (version == null) {
+                repository.deleteChunksByDocument(documentId);
+                repository.deleteTasksByDocument(documentId);
+            } else {
+                repository.deleteChunks(documentId, version);
+                repository.deleteTask(documentId, version);
+            }
+        });
+        log.info("向量已删除（legacy 通道）documentId={} version={} chunks={}",
+                documentId, version, rows.size());
+    }
+
+    // ------------------------------------------------------------------
+    // 恢复（卡住任务 / 可重试失败）
+    // ------------------------------------------------------------------
+
+    /**
+     * 恢复卡住任务：扫描 PENDING/INDEXING 且超过 stuckMinutes 的行。
+     *
+     * <p>仅当 Outbox 快照完整（快照条数等于任务 chunkCount）时才能幂等重建；
+     * 快照不完整说明在写入前即崩溃，无法凭空重建全量，标记 FAILED 等待重新切分。</p>
+     */
+    public List<VectorIndexResultView> recoverStuckTasks() {
+        LocalDateTime cutoff = LocalDateTime.now().minusMinutes(properties.getStuckMinutes());
+        List<VectorIndexResultView> results = new ArrayList<>();
+        for (VectorIndexTaskRow task : repository.findStuckTasks(cutoff)) {
+            if (task.getAttemptCount() >= properties.getMaxAttempts()) {
+                markManualRequired(task, "卡住任务已达最大尝试次数，需人工处理");
+                continue;
+            }
+            VectorIndexResultView result = resumeFromSnapshot(task);
+            if (result != null) {
+                results.add(result);
+            }
+        }
+        return results;
+    }
+
+    /**
+     * 重试可恢复失败任务（PARTIAL/FAILED 且未达最大尝试次数）。
+     */
+    public List<VectorIndexResultView> retryFailedTasks() {
+        List<VectorIndexResultView> results = new ArrayList<>();
+        for (VectorIndexTaskRow task : repository.findRetryableTasks(properties.getMaxAttempts())) {
+            VectorIndexResultView result = resumeFromSnapshot(task);
+            if (result != null) {
+                results.add(result);
+            }
+        }
+        return results;
+    }
+
+    private VectorIndexResultView resumeFromSnapshot(VectorIndexTaskRow task) {
+        List<VectorChunkRow> snapshot =
+                repository.findChunks(task.getDocumentId(), task.getVersion());
+        if (snapshot.isEmpty() || snapshot.size() < task.getChunkCount()) {
+            markManualRequired(task, "Outbox 快照不完整，需重新切分后重新索引");
+            return null;
+        }
+        List<DocumentChunk> chunks = toDocumentChunks(snapshot, task.getStrategy());
+        log.info("从 Outbox 快照恢复索引 documentId={} version={} chunks={}",
+                task.getDocumentId(), task.getVersion(), chunks.size());
+        return indexChunks(task.getDocumentId(), task.getVersion(),
+                task.getStrategy(), null, chunks);
+    }
+
+    private void markManualRequired(VectorIndexTaskRow task, String message) {
+        repository.updateTaskProgress(task.getDocumentId(), task.getVersion(),
+                VectorIndexStatus.FAILED.name(), task.getStage(),
+                "NO_COMPLETE_SNAPSHOT", safeMessage(message), task.getAttemptCount(),
+                null, LocalDateTime.now());
+        log.warn("任务无法自动恢复，需人工介入 documentId={} version={} reason={}",
+                task.getDocumentId(), task.getVersion(), message);
+    }
+
+    // ------------------------------------------------------------------
+    // 查询
+    // ------------------------------------------------------------------
+
+    public List<VectorIndexTaskView> getStatus(String documentId) {
+        requireDocumentId(documentId);
+        return repository.findTasksByDocument(documentId).stream()
+                .map(this::toTaskView)
+                .toList();
+    }
+
+    /**
+     * 查询文档的 Chunk 关联；version 为空时返回全部版本。
+     */
+    public List<ChunkIndexView> listChunks(String documentId, String version) {
+        requireDocumentId(documentId);
+        List<VectorChunkRow> rows = version == null || version.isBlank()
+                ? repository.findChunksByDocument(documentId)
+                : repository.findChunks(documentId, version.strip());
+        return rows.stream().map(this::toChunkView).toList();
+    }
+
+    // ------------------------------------------------------------------
+    // 内部：载荷准备
+    // ------------------------------------------------------------------
+
+    private boolean isIdempotentHit(VectorIndexTaskRow task, String payloadHash, int chunkCount) {
+        if (!VectorIndexStatus.COMPLETED.name().equals(task.getStatus())) {
+            return false;
+        }
+        if (!payloadHash.equals(task.getContentHash())) {
+            return false;
+        }
+        if (task.getChunkCount() != chunkCount) {
+            return false;
+        }
+        if (!properties.getSplitVersion().equals(task.getSplitVersion())) {
+            return false;
+        }
+        if (!descriptor.vectorSpaceId().equals(task.getVectorSpaceId())) {
+            return false;
+        }
+        if (repository.countChunks(task.getDocumentId(), task.getVersion()) != chunkCount) {
+            return false;
+        }
+        if (repository.countChunksByStatus(task.getDocumentId(), task.getVersion(),
+                ChunkRowStatus.INDEXED.name()) != chunkCount) {
+            return false;
+        }
+        return pgVectorAccess.countByDocumentVersion(task.getDocumentId(), task.getVersion())
+                == chunkCount;
+    }
+
+    private List<PreparedChunk> prepare(List<DocumentChunk> chunks) {
+        List<PreparedChunk> prepared = new ArrayList<>(chunks.size());
+        for (DocumentChunk chunk : chunks) {
+            String chunkHash = hasher.hash(chunk.content());
+            String chunkId = idGenerator.generate(chunk.documentId(), chunk.version(),
+                    chunk.strategy() == null ? "" : chunk.strategy().name(), chunk.chunkIndex(),
+                    chunkHash, properties.getSplitVersion(), descriptor.vectorSpaceId());
+            prepared.add(new PreparedChunk(chunk, chunkHash, chunkId));
+        }
+        return prepared;
+    }
+
+    private List<DocumentChunk> normalize(String documentId, String version,
+                                          ChunkStrategy strategy, String title,
+                                          List<DocumentChunk> source) {
+        List<DocumentChunk> result = new ArrayList<>(source.size());
+        for (DocumentChunk original : source) {
+            if (original == null || original.content() == null
+                    || original.content().isBlank()) {
+                throw new IllegalArgumentException("存在空白 Chunk，禁止写入无意义向量");
+            }
+            String content = original.content();
+            result.add(new DocumentChunk(
+                    documentId,
+                    title != null && !title.isBlank() ? title : original.title(),
+                    version,
+                    original.chunkIndex(),
+                    strategy,
+                    content,
+                    content.codePointCount(0, content.length()),
+                    original.pageNumbers(),
+                    original.sources(),
+                    original.endBoundary()));
+        }
+        result.sort(Comparator.comparingInt(DocumentChunk::chunkIndex));
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i).chunkIndex() != i) {
+                throw new IllegalArgumentException(
+                        "Chunk 顺序必须为 0..n-1 连续，当前第 " + i + " 块索引为 "
+                                + result.get(i).chunkIndex());
+            }
+        }
+        return result;
+    }
+
+    private Document toVectorDocument(PreparedChunk pc, KnowledgeDocument accessMeta) {
+        DocumentChunk chunk = pc.chunk();
+        Map<String, Object> metadata = new LinkedHashMap<>(VectorMetadataBuilder.buildTrace(
+                chunk, descriptor,
+                accessMeta == null ? null : accessMeta.getTenantId(),
+                accessMeta == null ? null : accessMeta.getDeptId(),
+                accessMeta == null ? null : accessMeta.getDeviceId()));
+        metadata.put("chunkContentHash", pc.chunkContentHash());
+        metadata.put("splitVersion", properties.getSplitVersion());
+        metadata.put("lifecycleStatus", chunk.lifecycleStatus());
+        if (chunk.effectiveAt() != null) {
+            metadata.put("effectiveAt", chunk.effectiveAt().toString());
+        }
+        if (chunk.expiresAt() != null) {
+            metadata.put("expiresAt", chunk.expiresAt().toString());
+        }
+        return Document.builder()
+                .id(pc.chunkId())
+                .text(chunk.content())
+                .metadata(metadata)
+                .build();
+    }
+
+    private VectorChunkRow toChunkRow(PreparedChunk pc, LocalDateTime time, String status) {
+        DocumentChunk chunk = pc.chunk();
+        VectorChunkRow row = new VectorChunkRow();
+        row.setDocumentId(chunk.documentId());
+        row.setVersion(chunk.version());
+        row.setStrategy(chunk.strategy().name());
+        row.setChunkId(pc.chunkId());
+        row.setChunkIndex(chunk.chunkIndex());
+        row.setContent(chunk.content());
+        row.setChunkContentHash(pc.chunkContentHash());
+        row.setCharacterCount(chunk.characterCount());
+        row.setPageNumbers(joinPageNumbers(chunk.pageNumbers()));
+        row.setStatus(status);
+        row.setCreatedAt(time);
+        row.setUpdatedAt(time);
+        return row;
+    }
+
+    private List<DocumentChunk> toDocumentChunks(List<VectorChunkRow> rows, String strategy) {
+        ChunkStrategy chunkStrategy = ChunkStrategy.valueOf(strategy);
+        List<DocumentChunk> chunks = new ArrayList<>(rows.size());
+        for (VectorChunkRow row : rows) {
+            chunks.add(new DocumentChunk(
+                    row.getDocumentId(),
+                    null,
+                    row.getVersion(),
+                    row.getChunkIndex(),
+                    chunkStrategy,
+                    row.getContent(),
+                    row.getCharacterCount(),
+                    splitPageNumbers(row.getPageNumbers()),
+                    List.<ChunkSource>of(),
+                    // 快照未保存边界类型；仅用于载荷重建，不参与稳定 ID
+                    ChunkBoundaryType.HARD_LIMIT));
+        }
+        return chunks;
+    }
+
+    private String payloadText(List<DocumentChunk> chunks) {
+        StringBuilder builder = new StringBuilder();
+        for (DocumentChunk chunk : chunks) {
+            builder.append(chunk.chunkIndex()).append(':').append(chunk.content()).append('\n');
+        }
+        return builder.toString();
+    }
+
+    // ------------------------------------------------------------------
+    // 内部：失败与清理
+    // ------------------------------------------------------------------
+
+    private void persistFailure(String documentId, String version, int attempt,
+                                int processed, RuntimeException ex) {
+        String errorCode = ex instanceof VectorIndexException vectorEx
+                ? vectorEx.getErrorCode() : "EMBED_WRITE_FAILED";
+        String status = processed > 0
+                ? VectorIndexStatus.PARTIAL.name()
+                : VectorIndexStatus.FAILED.name();
+        try {
+            repository.updateTaskProgress(documentId, version, status,
+                    VectorIndexStage.EMBED_WRITE.name(), errorCode, safeMessage(ex), attempt,
+                    LocalDateTime.now().plusNanos(
+                            properties.getRetryBackoffMs() * 1_000_000L),
+                    LocalDateTime.now());
+        } catch (RuntimeException persistEx) {
+            log.error("失败状态落账失败 documentId={} version={} 异常类型={}",
+                    documentId, version, persistEx.getClass().getSimpleName());
+        }
+        log.warn("向量写入中断 documentId={} version={} processed={} reason={}",
+                documentId, version, processed, safeMessage(ex));
+    }
+
+    private void deleteVectorsSafely(String documentId, String version,
+                                     List<String> ids, String scene) {
+        if (ids == null || ids.isEmpty()) {
+            return;
+        }
+        List<String> distinct = new ArrayList<>(new LinkedHashSet<>(ids));
+        int batchSize = Math.max(1, properties.getBatchSize());
+        try {
+            for (int from = 0; from < distinct.size(); from += batchSize) {
+                int to = Math.min(from + batchSize, distinct.size());
+                vectorStore.delete(distinct.subList(from, to));
+            }
+            log.info("{}向量删除完成 documentId={} version={} count={}",
+                    scene, documentId, version, distinct.size());
+        } catch (RuntimeException ex) {
+            log.warn("{}向量删除失败 documentId={} version={} reason={}",
+                    scene, documentId, version, safeMessage(ex));
+            throw ex;
+        }
+    }
+
+    /**
+     * 追加式表格清理（删除闭环/旧版本清理共用）：
+     * tableRecordProvider 未注入（手动装配）或 Bean 缺席（table.enabled=false）时零调用；
+     * 与关联行清理同事务语义，失败随外层事务上抛（不静默）。
+     */
+    private void deleteTableRecordsIfEnabled(String documentId, String version) {
+        TableRecordService service = tableRecordProvider == null
+                ? null : tableRecordProvider.getIfAvailable();
+        if (service == null) {
+            return;
+        }
+        if (version == null) {
+            service.deleteForDocument(documentId);
+        } else {
+            service.deleteForDocumentVersion(documentId, version);
+        }
+    }
+
+    private void cleanupSupersededVersions(String documentId) {
+        for (VectorIndexTaskRow task : repository.findTasksByDocument(documentId)) {
+            if (!VectorIndexStatus.SUPERSEDED.name().equals(task.getStatus())) {
+                continue;
+            }
+            cleanupSupersededVersion(documentId, task.getVersion());
+        }
+    }
+
+    /**
+     * 单版本旧向量清理（R01：失败落库 UPDATE_CLEANUP FAILED+原因码，替代仅 warn；
+     * 成功时若存在失败遗留行则经双端确认收敛 SYNCED）。可经 sync 管线幂等重试。
+     */
+    private void cleanupSupersededVersion(String documentId, String version) {
+        List<VectorChunkRow> rows = repository.findChunks(documentId, version);
+        String payloadHash = hasher.hash(
+                rows.stream().map(VectorChunkRow::getChunkId).sorted().toList().toString());
+        try {
+            if (!rows.isEmpty()) {
+                deleteVectorsSafely(documentId, version,
+                        rows.stream().map(VectorChunkRow::getChunkId).toList(), "旧版本清理");
+                repository.deleteChunks(documentId, version);
+            }
+            // P2 追加式：SUPERSEDED 版本表格记录一并清理（幂等，零残留也安全）
+            deleteTableRecordsIfEnabled(documentId, version);
+            // 双端确认：旧版本 PG 残留与关联行必须归零
+            long pgResidual = pgVectorAccess.countByDocumentVersion(documentId, version);
+            int relationResidual = repository.findChunks(documentId, version).size();
+            if (pgResidual != 0 || relationResidual != 0) {
+                throw new VectorIndexException(ResultCode.VECTOR_INDEX_FAILED,
+                        "旧版本清理后残留 pg=%d relation=%d".formatted(pgResidual, relationResidual),
+                        null, SyncReasonCode.CONFIRM_MISMATCH);
+            }
+            if (syncService != null) {
+                syncService.markSyncedIfRowExists(documentId, SyncOperation.UPDATE_CLEANUP,
+                        version, payloadHash);
+            }
+            log.info("旧版本向量已清理 documentId={} version={} chunks={}",
+                    documentId, version, rows.size());
+        } catch (RuntimeException ex) {
+            // 非致命：新版本已活动；失败落库（sync 管线可收敛，替代"仅 warn 留给核对"）
+            String reason = ex instanceof VectorIndexException vectorEx
+                    && SyncReasonCode.CONFIRM_MISMATCH.equals(vectorEx.getErrorCode())
+                    ? SyncReasonCode.CONFIRM_MISMATCH
+                    : DocumentSyncService.classify(ex);
+            if (syncService != null) {
+                syncService.markFailed(documentId, SyncOperation.UPDATE_CLEANUP,
+                        version, reason, payloadHash);
+            }
+            log.warn("旧版本清理失败，已落库 UPDATE_CLEANUP 待收敛 documentId={} version={} reason={}",
+                    documentId, version, safeMessage(ex));
+        }
+    }
+
+    // ------------------------------------------------------------------
+    // 内部：视图转换
+    // ------------------------------------------------------------------
+
+    private VectorIndexResultView toResult(VectorIndexTaskRow task, int chunkCount,
+                                           int processed, boolean idempotent) {
+        VectorIndexResultView view = new VectorIndexResultView();
+        view.setDocumentId(task.getDocumentId());
+        view.setVersion(task.getVersion());
+        view.setStrategy(task.getStrategy());
+        view.setStatus(task.getStatus());
+        view.setStage(task.getStage());
+        view.setChunkCount(chunkCount);
+        view.setProcessed(processed);
+        view.setIdempotent(idempotent);
+        view.setAttemptCount(task.getAttemptCount());
+        view.setErrorCode(task.getErrorCode());
+        view.setErrorMessage(task.getErrorMessage());
+        return view;
+    }
+
+    private VectorIndexTaskView toTaskView(VectorIndexTaskRow row) {
+        VectorIndexTaskView view = new VectorIndexTaskView();
+        view.setDocumentId(row.getDocumentId());
+        view.setVersion(row.getVersion());
+        view.setStrategy(row.getStrategy());
+        view.setContentHash(row.getContentHash());
+        view.setSplitVersion(row.getSplitVersion());
+        view.setVectorSpaceId(row.getVectorSpaceId());
+        view.setChunkCount(row.getChunkCount());
+        view.setStatus(row.getStatus());
+        view.setStage(row.getStage());
+        view.setErrorCode(row.getErrorCode());
+        view.setErrorMessage(row.getErrorMessage());
+        view.setAttemptCount(row.getAttemptCount());
+        view.setNextRetryAt(row.getNextRetryAt());
+        view.setCreatedAt(row.getCreatedAt());
+        view.setUpdatedAt(row.getUpdatedAt());
+        return view;
+    }
+
+    private ChunkIndexView toChunkView(VectorChunkRow row) {
+        ChunkIndexView view = new ChunkIndexView();
+        view.setChunkId(row.getChunkId());
+        view.setDocumentId(row.getDocumentId());
+        view.setVersion(row.getVersion());
+        view.setStrategy(row.getStrategy());
+        view.setChunkIndex(row.getChunkIndex());
+        view.setCharacterCount(row.getCharacterCount());
+        view.setChunkContentHash(row.getChunkContentHash());
+        view.setPageNumbers(row.getPageNumbers());
+        view.setStatus(row.getStatus());
+        view.setContent(row.getContent());
+        return view;
+    }
+
+    // ------------------------------------------------------------------
+    // 内部：基础工具
+    // ------------------------------------------------------------------
+
+    private void requireDocumentId(String documentId) {
+        if (documentId == null || documentId.isBlank()) {
+            throw new IllegalArgumentException("documentId 不能为空");
+        }
+    }
+
+    private ChunkStrategy resolveStrategy(String strategy) {
+        String value = strategy == null || strategy.isBlank()
+                ? properties.getDefaultStrategy() : strategy.strip();
+        try {
+            return ChunkStrategy.valueOf(value.toUpperCase(Locale.ROOT));
+        } catch (IllegalArgumentException ex) {
+            throw new IllegalArgumentException(
+                    "不支持的切分策略: " + value + "，可选 FIXED_LENGTH / STRUCTURE_AWARE");
+        }
+    }
+
+    private String joinPageNumbers(List<Integer> pageNumbers) {
+        if (pageNumbers == null || pageNumbers.isEmpty()) {
+            return "";
+        }
+        StringBuilder builder = new StringBuilder();
+        for (Integer page : pageNumbers) {
+            if (page == null) {
+                continue;
+            }
+            if (builder.length() > 0) {
+                builder.append(',');
+            }
+            builder.append(page);
+        }
+        return builder.toString();
+    }
+
+    private List<Integer> splitPageNumbers(String value) {
+        if (value == null || value.isBlank()) {
+            return List.of();
+        }
+        List<Integer> pages = new ArrayList<>();
+        for (String part : value.split(",")) {
+            String trimmed = part.strip();
+            if (trimmed.isEmpty()) {
+                continue;
+            }
+            try {
+                pages.add(Integer.valueOf(trimmed));
+            } catch (NumberFormatException ignored) {
+                // 历史脏值忽略，不阻断恢复
+            }
+        }
+        return pages;
+    }
+
+    private String safeMessage(RuntimeException ex) {
+        return safeMessage(ex.getMessage() == null ? ex.getClass().getSimpleName() : ex.getMessage());
+    }
+
+    private String safeMessage(String message) {
+        if (message == null) {
+            return "";
+        }
+        return message.length() > MAX_ERROR_MESSAGE
+                ? message.substring(0, MAX_ERROR_MESSAGE)
+                : message;
+    }
+
+    /**
+     * 预处理后的 Chunk 三元组。
+     */
+    private record PreparedChunk(DocumentChunk chunk, String chunkContentHash, String chunkId) {
+    }
+}
