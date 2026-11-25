@@ -19,7 +19,7 @@
 |---|---|---|---|
 | 迁移回归 | `mvn -o -B -f D42\D42_RERANK\pom.xml clean test`（P2 后） | Tests run 95, F0, E0, Skipped0 | 已通过（mvn-clean-test.txt） |
 | P4 全量 | 同上（新增 27 单测） | 首轮 7 红（嵌套 stubbing）→ 修复后 122/122 | 已执行并失败→修复→通过 |
-| 终版回归 | 同上（含 C18 三例） | **133/133, Failures 0, Errors 0, Skipped 0** | 已通过（mvn-clean-test-final.txt） |
+| 终版回归 | 同上（含 C18 三例）**前提：注入 MYSQL_PASSWORD**（TableRecordPersistenceIntegrationTest 8 例真实 MySQL 集成依赖该 env；未注入时整类 assumption 中止，surefire 显示 Tests run 0/ Skipped 0 而非 skipped 计数） | **133/133, Failures 0, Errors 0, Skipped 0** | 已通过（mvn-clean-test-final.txt；R02 复跑双口径复验：离线 125/125 + 注 env 133/133，见 mvn-rescan-offline-125.txt / mvn-rescan-with-mysql-133.txt） |
 | 实验轮 | profile=experiment + D42_EXP_RUN=true + -Dtest=RerankValueExperimentIT | 首轮契约拦截（topN=5>候选 3）→ Runner effTopN 修复 → **真实执行 12.37s 通过** | 已通过（mvn-p5-experiment-run.txt） |
 | R3 远程真实轮 | 需独立授权 + DASHSCOPE_API_KEY | **未执行（BLOCKED=RERANK_REMOTE_DISABLED，按任务书预设路径）** | 未执行，如实登记 |
 
