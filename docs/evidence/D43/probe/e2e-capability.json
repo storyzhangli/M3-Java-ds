@@ -1,0 +1,37 @@
+{
+  "kp": "KP1", "date": "2026-11-26", "module": "D43_RAG_ETEPAR",
+  "lifecycle": {
+    "documentLifecycleStatus": ["DRAFT","ACTIVE","DEPRECATED","EXPIRED"],
+    "deletedValueAbsent": true,
+    "adjudication": "DELETED 以字符串写 knowledge_document.lifecycle_status(varchar16 NOT NULL DEFAULT ACTIVE)，不改枚举（白名单外）；唯一 valueOf 消费点 EvidenceAssessmentService.parseLifecycle L316 已实测 catch IllegalArgumentException→warn→null=不参与过滤，无崩溃风险；检索排除由向量删除达成（S09）",
+    "knowledgeDocumentStatus": ["PENDING","PROCESSING","COMPLETED","FAILED"],
+    "repositoryInPlace": ["register","findByDocumentId","findByContentHash","claimForProcessing","complete","findExtractedPages","countExtractedPages","fail","updateVersionPointer"],
+    "appendMethodSet": {
+      "KnowledgeDocumentRepository": ["markLifecycleStatus(documentId,lifecycleStatus,updatedAt)","deletePagesByDocument(documentId)"],
+      "KnowledgeDocumentService": ["deleteDocument(documentId)：编排 markLifecycleStatus=DELETED + indexService.deleteByDocument + 返回终态视图", "publishVersion(documentId,file)：解析→chunks→indexChunks(newVersion)（SWITCH/updateVersionPointer/cleanupSupersededVersions 自动）→deletePagesByDocument→complete 刷新 content/pages→version 指针 int+1"],
+      "rationale": "updateVersionPointer 与 indexChunks 尾链（L375-390 SWITCH 事务+cleanupSupersededVersions）已在码；删除闭环 deleteClosedLoop(markPending→PG 批删→MySQL 清→双端确认→markSynced)已在码，本轮只编排暴露"
+    },
+    "gapEvidence": "knowledge_document_page uk_doc_page(document_id,page_number) 唯一键 + complete() 仅 insert 不删旧页 → 版本重导入必须 deletePagesByDocument，否则 DataIntegrityViolation（KP1 实测判决）",
+    "syncOperations": ["DELETE","UPDATE_CLEANUP"],
+    "importFileGuard": "COMPLETED 且 hash 不同→DOCUMENT_STATE_CONFLICT（不可复用 importFile 做新版本，publishVersion 另路编排）"
+  },
+  "access": {
+    "filterRejectCodes": ["AUTH_REQUIRED","AUTH_FORMAT_INVALID","AUTH_INVALID","AUTH_DISABLED","AUTH_EXPIRED","AUTH_STORE_UNAVAILABLE"],
+    "filterTransport": "HTTP 200 + body code 4001 + 拒绝访问：<code>（AuthContextFilter.reject 实测）",
+    "guardCodes": ["AUTH_CONTEXT_MISSING(require)","AUTH_FORBIDDEN(requireAdmin/requireDocumentVisible)"],
+    "enforceAdminAssertion": "SyncAdminBoundaryConfiguration @ConditionalOnProperty(app.access.enforce-admin=true)：AccessGuard 未装配即启动 IllegalStateException fail-fast——D40 R03 OPEN 项本轮实证收口（C12）",
+    "principalTable": "d43_auth_principal（列：token_sha256 PK,user_id,tenant_id,dept_id,device_scopes JSON,role ENUM(USER,ADMIN),enabled,expires_at,created_at）",
+    "retrievalPushdown": "SimilarityRetrievalService L94-101：ObjectProvider<AccessPolicyService> + AuthContextHolder；开启态无 AuthContext→AUTH_CONTEXT_MISSING（P10 实码依据）；ADMIN=租户内 bypass dept/device、租户硬边界"
+  },
+  "rag": {
+    "request": "RagRequest(query @NotBlank, topK @Max(1000), documentId, version, strategy)",
+    "response": "RagResponse(query, status 七态, statusMessage, answer, decision(ANSWER/CLARIFY/REFUSE/CONFLICT), sources, citedSourceIds, citedSources)",
+    "noEvidence": "空检索→REFUSE+NO_EVIDENCE+模型零调用（RagOrchestrator L118-126 实码）",
+    "citationAfterDelete": "CitationExistenceValidator(VectorChunkRepository) 存在性判定→CITATION_TARGET_DELETED（S12 底座在码）",
+    "mock": "MockAiChatService：@ConditionalOnProperty(matchIfMissing=true)、零字段零 ChatModel 注入纯字符串拼装、结构上禁外呼（H 系列 mock 零远程实证）"
+  },
+  "evaluator": {
+    "d37": "源码在库(12 java)+out/Main.class 可运行：--help 未知参数异常=类加载与 main 入口成功；参数面 -BaseUrl -DatasetVersion -Rounds -Warmup -Backend -Threshold -TopK -DatasetDir -CorpusPath；-SelftestOnly 存在",
+    "e2eChoice": "E2E 固定评估复用检索层真实指标（SimilarityRetrievalService+Gold 判题，同 D42 Runner 机制），不依赖 D37 HTTP 评测器，避免端口/进程外因；D37 资产只读（H6）"
+  },
+  "probePitfall": "DbExec 输出含 -- SQL: 回显行；LIKE 'table' 存在性判定若匹配回显行会假阳性——本轮 d43_* 三表曾误判 EXISTS，真实判定必须剔除 -- 前缀行（已修正重验：建表前三表均缺失）"}

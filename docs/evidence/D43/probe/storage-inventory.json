@@ -1,0 +1,20 @@
+{
+  "kp": "KP2", "date": "2026-11-26",
+  "baselineNote": "F01 漂移：骨架已由用户提交 30315a0『D43 项目基础骨架』（留痕记载 AM/??未提交）→ 裁决以 30315a0 为基线；链 1a467dc(D42 R02)→30315a0(D43骨架)；本轮交付默认不 commit（任务书 §十 Git 纪律）",
+  "mysql": {
+    "d43_auth_principal": "建表前 MISSING → d43-core-ddl.sql 执行后 EXISTS rows=0（×2 幂等零报错，exec-run1/run2 留痕）",
+    "d43_document_sync": "同上 rows=0", "d43_admin_audit": "同上 rows=0",
+    "d43_ddl_provenance": "模板=D40 d40-sync-ddl.sql + D39 d39-access-ddl.sql 前缀机械替换 d43_，列结构零变化",
+    "knowledge_document": 18, "knowledge_document_vs_D42": "漂移 +8（D42 记录 10，D42 交付后本机新增，非本轮产生；清理目标按 d43e2e- 前缀归零口径）",
+    "d42_document_sync": 0, "d41_document_sync": 10, "d42_auth_principal": "EXISTS（只读，零触碰）", "d42_admin_audit": "EXISTS（只读）"
+  },
+  "pg": { "vector_store": 30, "two_vector_store": 8, "note": "PG_VECTOR_PASSWORD 用户级环境变量在位；凭据不落盘不回显" },
+  "redis": { "db0_dbsize": 1, "method": "TcpClient RESP inline DBSIZE（权威口径，禁 --pattern 先例沿用）" },
+  "fingerprints": {
+    "questionsSha256": "44426B1771C379343A2239147AF0ADF4C4D9A2D80E547E0BCF3259C65634750A",
+    "corpusSha256": "AAD6AC4DF5585AAD5078D1C94DF4E5093AF15A9730E230149CFDE0940335AB0B",
+    "d37QuestionsSha256": "896BCEAA1EDE76DC40577A8B97473A532BA1984414AB0E52D61C0FFFA5234BEC",
+    "d37ManifestSha256": "CA69A0F8AB09FF9B260355106063A4FDFDB10BFAA311C7F5399E110BA3F56518",
+    "verify": "本机 Get-FileHash 实测，questions/corpus 与 D36/D42 冻结值逐字一致（F11 复验通过）"
+  },
+  "regressionBaseline": { "full": "133/133 F0 E0 S0（mvn-test-full.txt）", "offline": "125/125 + TableRecordPersistenceIntegrationTest 8 例 NOT RUN（Tests run 0，mvn-test-offline.txt）", "incident": "clean test 首跑 exit=1 编译截断（非代码错误），复跑即通过；同根因 1 次未触发熔断线" }}

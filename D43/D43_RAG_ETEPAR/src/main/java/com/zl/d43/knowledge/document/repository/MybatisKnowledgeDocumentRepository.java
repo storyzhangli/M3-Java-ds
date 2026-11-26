@@ -251,4 +251,58 @@ public class MybatisKnowledgeDocumentRepository implements KnowledgeDocumentRepo
         String trimmed = value.strip();
         return trimmed.length() <= max ? trimmed : trimmed.substring(0, max);
     }
+    @Override
+    @Transactional
+    public int markLifecycleStatus(String documentId, String lifecycleStatus, LocalDateTime updatedAt) {
+        // 字符串列包装：lifecycle_status 列在表存在但 PO 未映射（白名单不扩 PO，KP1 裁决）
+        return documentMapper.update(null,
+                new com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper<KnowledgeDocumentPO>()
+                        .eq("document_id", documentId)
+                        .set("lifecycle_status", lifecycleStatus)
+                        .set("updated_at", java.sql.Timestamp.valueOf(updatedAt)));
+    }
+
+    @Override
+    public String findLifecycleStatus(String documentId) {
+        java.util.List<Object> rows = documentMapper.selectObjs(
+                new com.baomidou.mybatisplus.core.conditions.query.QueryWrapper<KnowledgeDocumentPO>()
+                        .select("lifecycle_status")
+                        .eq("document_id", documentId)
+                        .last("LIMIT 1"));
+        return rows.isEmpty() || rows.get(0) == null ? null : rows.get(0).toString();
+    }
+
+    @Override
+    @Transactional
+    public void republishClaim(String documentId, String fileName, String contentType,
+                               long fileSize, String contentHash, byte[] content,
+                               LocalDateTime updatedAt) {
+        int updated = documentMapper.update(null,
+                new LambdaUpdateWrapper<KnowledgeDocumentPO>()
+                        .eq(KnowledgeDocumentPO::getDocumentId, documentId)
+                        .eq(KnowledgeDocumentPO::getStatus, KnowledgeDocumentStatus.COMPLETED.name())
+                        .set(KnowledgeDocumentPO::getStatus, KnowledgeDocumentStatus.PROCESSING.name())
+                        .set(KnowledgeDocumentPO::getFileName, fileName)
+                        .set(KnowledgeDocumentPO::getContentType, contentType)
+                        .set(KnowledgeDocumentPO::getFileSize, fileSize)
+                        .set(KnowledgeDocumentPO::getContentHash, contentHash)
+                        .set(KnowledgeDocumentPO::getErrorCode, "")
+                        .set(KnowledgeDocumentPO::getErrorMessage, "")
+                        .set(KnowledgeDocumentPO::getUpdatedAt, updatedAt));
+        if (updated != 1) {
+            throw new KnowledgeDocumentException(
+                    ResultCode.DOCUMENT_STATE_CONFLICT,
+                    "知识文档当前状态不允许新版本发布（须为 COMPLETED）");
+        }
+        contentMapper.delete(new LambdaQueryWrapper<KnowledgeDocumentContentPO>()
+                .eq(KnowledgeDocumentContentPO::getDocumentId, documentId));
+        pageMapper.delete(new LambdaQueryWrapper<KnowledgeDocumentPagePO>()
+                .eq(KnowledgeDocumentPagePO::getDocumentId, documentId));
+        KnowledgeDocumentContentPO contentPO = new KnowledgeDocumentContentPO();
+        contentPO.setDocumentId(documentId);
+        contentPO.setContent(content);
+        contentPO.setParsedText(null);
+        contentPO.setUpdatedAt(updatedAt);
+        contentMapper.insert(contentPO);
+    }
 }

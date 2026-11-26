@@ -1,0 +1,48 @@
+# D43 清理对账验证（2026-11-26 17:22 回读，清理后）
+
+工具：DbExec.java（D40 R03）+ Redis TCP inline（DBSIZE 权威口径；msys2 scan 坑已规避）
+
+## MySQL ai_db
+
+| 检查项 | SQL 口径 | 实测 | 目标 | 判定 |
+|--------|----------|------|------|------|
+| 夹具文档残留 | document_id LIKE 'd43e2e%' OR =26636c3e… | 0 | 0 | PASS |
+| 页行残留 | knowledge_document_page 同谓词 | 0 | 0 | PASS |
+| chunk 索引残留 | vector_chunk_index 同谓词 | 0 | 0 | PASS |
+| 索引任务残留 | vector_index_task 同谓词 | 0 | 0 | PASS |
+| d43 同步台账 | d43_document_sync 全表 | 0 | 0（表 D43 建立，行全为本轮产物） | PASS |
+| d43 审计 | d43_admin_audit 全表 | 0 | 0（删除前 221 行已全量导出留证） | PASS |
+| e2e principal | user_id LIKE 'e2e-%' | 0 | 0 | PASS |
+| principal 保留面 | 全表 | 5 | 5（D39 历史行零触碰） | PASS |
+| 文档总数 | knowledge_document 全表 | 18 | 18（=P1 冻结） | PASS |
+
+## PostgreSQL spring_ai
+
+| 检查项 | 实测 | 目标 | 判定 |
+|--------|------|------|------|
+| vector_store 总数 | 30 | 30（=P1 冻结指纹） | PASS |
+| vector_store d43e2e 残留 | 0 | 0 | PASS |
+| d43_vector_store 总数（two 轨） | 8 | 8（=P1 冻结指纹） | PASS |
+| two 轨 D43E2E 残留 | 0 | 0 | PASS |
+
+two 轨清理注记：清理前实测 26 行 = 8 基线 + 18 行 D43E2E 大写前缀
+（MXA/MX-RAW/PDF-003/PIPE-001/FAQ-002），归属=本轮 158 全量回归中 D41 迁移
+测试类对 two 轨的写面产物（回归复跑会再次生成，属测试侧可再生工件，本轮按
+冻结指纹收口；非主链数据）。
+
+## Redis
+
+| 检查项 | 实测 | 目标 | 判定 |
+|--------|------|------|------|
+| db0 DBSIZE | 1 | 1（=P1 冻结指纹） | PASS（e2e 全轮零 Redis 写入） |
+
+## d41/d42 侧不变性
+
+见 sync\sync-baseline-before.txt / sync-baseline-after.txt：
+d42_document_sync=0、d42_auth_principal=0、d42_admin_audit=0、d41_document_sync=18，
+前后 diff=0。
+
+## C18 终判
+
+**PASS**——UUID/token 清单删除、vector_store 回基线 30、two=8、d42 表不变全部实证；
+无未解释差值。

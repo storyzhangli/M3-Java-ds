@@ -1,0 +1,61 @@
+{
+  "iteration": "D43",
+  "artifact": "cleanup-manifest",
+  "executedAt": "2026-11-26 17:22:09 +08:00",
+  "executor": "DbExec（JDBC，密码仅环境变量注入不回显）+ TCP inline（Redis DBSIZE）",
+  "sqlFiles": ["docs/temp_docs/D43/cleanup-mysql.sql", "docs/temp_docs/D43/cleanup-pg.sql"],
+  "executionLog": "docs/temp_docs/D43/cleanup-exec.txt",
+  "deletedDocumentIds": {
+    "e2eFixturesLowerPrefix": [
+      "d43e2e-lc-001",
+      "d43e2e-lc-002",
+      "d43e2e-perm-a",
+      "d43e2e-perm-b",
+      "d43e2e-drill-001"
+    ],
+    "d41MigrationTestArtifactsUpperPrefix": [
+      "D43E2E-MX-IMP-pre-admin",
+      "D43E2E-MXA-001",
+      "D43E2E-MXB-002",
+      "D43E2E-MX-REG-pre",
+      "D43E2E-MX-REG-152325pre",
+      "D43E2E-MX-REG-477908pre"
+    ],
+    "round1ServerIssuedUuid": ["26636c3ed53a4663880bd8797d835be8"]
+  },
+  "deletedPrincipals": [
+    {"userId": "e2e-admin-a",    "role": "ADMIN", "token": "fixture-e2e-token-admin-a",    "tokenSha256": "28a253e2581923cc745a0c38cb44f3689800ae920ade3682206a49ace81ebd21"},
+    {"userId": "e2e-user-a",     "role": "USER",  "token": "fixture-e2e-token-user-a",     "tokenSha256": "ea62eb9d70674701ed5f1e12e04b1a6f42a1677b2664cb31081c6da523931500"},
+    {"userId": "e2e-user-a2",    "role": "USER",  "token": "fixture-e2e-token-user-a2",    "tokenSha256": "991be0e86eb08f7eb6d6078e5b417087337cb2fe0b0eb71c2a37c0f4d88943bb"},
+    {"userId": "e2e-user-b",     "role": "USER",  "token": "fixture-e2e-token-user-b",     "tokenSha256": "eda810e5e0c1891dc2535851aab4e91a00fae17d7f3c51ba6331b29f85e312ac"},
+    {"userId": "e2e-disabled-a", "role": "USER",  "token": "fixture-e2e-token-disabled-a", "tokenSha256": "7effed19b62a60cf3f7f9cf964685b1b26fa6513e242f6911cdeee9e35bb761b"},
+    {"userId": "e2e-expired-a",  "role": "USER",  "token": "fixture-e2e-token-expired-a",  "tokenSha256": "d40309cca33a27add2d35548f5ce723867400e1e6aa10be643d74db6f6797b80"}
+  ],
+  "principalNote": "tokenSha256 为清理前实库回读值，与 probe/fixture-truth.json permissionFixtures.principals[].sha256 逐字一致；token 明文为夹具假值（C19 自证），非真实凭据。D39 历史 5 行 principal 保留未触碰。",
+  "affected": {
+    "mysql": {
+      "knowledge_document": 12,
+      "knowledge_document_page": 8,
+      "vector_chunk_index": 2,
+      "vector_index_task": 3,
+      "d43_document_sync": 9,
+      "d43_admin_audit": 221,
+      "d43_auth_principal": 6
+    },
+    "pg": {
+      "vector_store_d43e2e_rows": 2,
+      "d43_vector_store_D43E2E_rows": 18
+    },
+    "redis": {"deleted": 0, "note": "db0=1（P1 冻结指纹原键），e2e 全轮零写入，无清理项"}
+  },
+  "preservedAssets": {
+    "knowledge_document_history_rows": 18,
+    "vector_store_non_e2e_rows": 28,
+    "d42_tables": "0/0/0 零触碰",
+    "d41_document_sync": 18,
+    "d39_principals": 5
+  },
+  "evidenceExports": {
+    "auditFullExport": "docs/temp_docs/D43/audit-export-before-cleanup.txt（删除前 221 行全量导出，C11 证据源）"
+  }
+}

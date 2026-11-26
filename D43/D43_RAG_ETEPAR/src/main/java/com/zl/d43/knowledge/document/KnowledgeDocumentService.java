@@ -293,4 +293,69 @@ public class KnowledgeDocumentService {
                 document.getDeptId(),
                 document.getDeviceId());
     }
+    /**
+     * D43 P3（D1 裁决）：标记删除——lifecycle_status=DELETED（幂等：已 DELETED 直接返回终态视图）。
+     * 向量清除由调用方编排 DocumentVectorIndexService.deleteByDocument（D40 状态机闭环），本方法不越层。
+     */
+    public KnowledgeDocumentView markDeleted(String documentId) {
+        KnowledgeDocument document = requireDocument(documentId);
+        if ("DELETED".equalsIgnoreCase(repository.findLifecycleStatus(documentId))) {
+            return view(document, null, repository.countExtractedPages(documentId), false);
+        }
+        repository.markLifecycleStatus(documentId, "DELETED", LocalDateTime.now());
+        KnowledgeDocument deleted = requireDocument(documentId);
+        log.info("知识文档已标记删除 documentId={}", documentId);
+        return view(deleted, null, repository.countExtractedPages(documentId), false);
+    }
+
+    /**
+     * D43 P3：发布新版本（内容替换 + 版本指针 int+1）。
+     * 守卫：COMPLETED 且非 DELETED 且 hash 有变化；向量侧新写→SWITCH→旧清理由调用方
+     * 编排 DocumentVectorIndexService.indexFromPages（版本取本方法提交后的新指针）。
+     */
+    public KnowledgeDocumentView publishNewVersion(String documentId, MultipartFile file) {
+        KnowledgeDocument document = requireDocument(documentId);
+        if (document.getStatus() != KnowledgeDocumentStatus.COMPLETED) {
+            throw new KnowledgeDocumentException(ResultCode.DOCUMENT_STATE_CONFLICT,
+                    "仅已完成导入的文档可发布新版本，当前状态=" + document.getStatus());
+        }
+        if ("DELETED".equalsIgnoreCase(repository.findLifecycleStatus(documentId))) {
+            throw new KnowledgeDocumentException(ResultCode.DOCUMENT_STATE_CONFLICT,
+                    "已标记删除的文档不允许发布新版本");
+        }
+        KnowledgeDocumentParser.InspectedFile inspected = parser.inspect(file);
+        if (inspected.contentHash().equals(document.getContentHash())) {
+            throw new KnowledgeDocumentException(ResultCode.DOCUMENT_STATE_CONFLICT,
+                    "新文件内容与当前版本一致，无需发布新版本");
+        }
+        long nextVersion;
+        try {
+            nextVersion = Long.parseLong(document.getVersion().strip()) + 1;
+        } catch (RuntimeException ex) {
+            throw new KnowledgeDocumentException(ResultCode.PARAM_INVALID,
+                    "当前版本号非整数，无法自动递增: " + document.getVersion());
+        }
+        KnowledgeDocumentParser.ParsedFile parsed = parser.parse(inspected);
+        LocalDateTime claimAt = LocalDateTime.now();
+        try {
+            repository.republishClaim(documentId, inspected.fileName(), null,
+                    inspected.size(), inspected.contentHash(), inspected.content(), claimAt);
+            LocalDateTime completedAt = LocalDateTime.now();
+            repository.complete(documentId, parsed.contentType(), parsed.parsedText(),
+                    parsed.pages(), parsed.parserName(), parsed.parserVersion(), completedAt);
+            repository.updateVersionPointer(documentId, String.valueOf(nextVersion), completedAt);
+        } catch (RuntimeException ex) {
+            try {
+                repository.fail(documentId, errorCode(ex), safeFailureMessage(ex), LocalDateTime.now());
+            } catch (RuntimeException failUpdate) {
+                log.error("新版本发布失败态写入失败 documentId={} 类型={}",
+                        documentId, failUpdate.getClass().getSimpleName());
+            }
+            throw ex;
+        }
+        KnowledgeDocument published = requireDocument(documentId);
+        log.info("知识文档新版本已发布 documentId={} version={} pages={}",
+                documentId, published.getVersion(), parsed.pages().size());
+        return view(published, parsed.characterCount(), parsed.pages().size(), false);
+    }
 }

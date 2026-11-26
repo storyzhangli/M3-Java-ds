@@ -1,0 +1,36 @@
+{
+  "kp": "KP3", "date": "2026-11-26",
+  "gold": {
+    "source": "沿用 D36/D42 同源 Q01–Q10（questions.jsonl 指纹一致）；chunkId 映射机制=480/60 FIXED_LENGTH 同口径切分+mapPagesToLogicalChunkIds（D42 D42_RERANK experiment Runner 实码）",
+    "goldCorrection": "沿用 D42 probe/fixture-truth.json 的 Q08 键名笔误修正：真值 DOC-CNC-COOLING-001-C03（文件内 *C03* 为笔误）",
+    "baselineSaturation": "D42 实证 HitRate@5=1.0 饱和、MRR@5=0.7167——E2E 检索阶段预期同值，如实注记 E2E_SATURATION_NOTED（D4 裁决）"
+  },
+  "lifecycleFixtures": {
+    "adjudication": "任务书建议 txt+pdf；PDF 受控夹具在库性实证缺失（D41 manuals PDF 已被用户删除，H6 禁外网下载）→ 诚实退化改 txt×2 满足『≥2 份小文档』硬条件；pdf 登记 NOT RUN+原因（fixes/fix-records.md 与 e2e-report.md 双标注）",
+    "d43e2e-lc-001": { "type": "txt", "pages": 1, "v1_keySentence": "E2E-LC-001-V1 主轴承冷却压力设定为 3.2 兆帕", "v2_keySentence": "E2E-LC-001-V2 主轴承冷却压力设定为 4.5 兆帕", "diffAssertion": "S08 发布 v2 后：检索差异句命中 4.5 且 3.2 旧向量随 UPDATE_CLEANUP 消失" },
+    "d43e2e-lc-002": { "type": "txt", "pages": 1, "v1_keySentence": "E2E-LC-002-V1 润滑泵启动延时 15 秒", "usage": "S09 整删场景（与 S08 版本场景隔离）" },
+    "d43e2e-perm-a": { "type": "txt", "tenantId": "T-A", "keySentence": "E2E-PERM-A 租户Alpha设备手册条款" },
+    "d43e2e-perm-b": { "type": "txt", "tenantId": "T-B", "keySentence": "E2E-PERM-B 租户Beta设备手册条款（P05/P06/P07 隔离断言对象）" }
+  },
+  "permissionFixtures": {
+    "seeding": "DDL 后 INSERT d43_auth_principal 6 行（token_sha256 清单冻结，明文仅夹具文档语义自证，DB 零明文 H9）；执行与清理均留痕 temp_docs/D43/ddl",
+    "principals": [
+      { "case": "P09/P08对照", "token": "fixture-e2e-token-admin-a", "sha256": "28a253e2581923cc745a0c38cb44f3689800ae920ade3682206a49ace81ebd21", "user": "e2e-admin-a", "tenant": "T-A", "dept": "D-A1", "scopes": ["dev-a1"], "role": "ADMIN", "enabled": 1, "expires": null },
+      { "case": "P05/P06/P08", "token": "fixture-e2e-token-user-a", "sha256": "ea62eb9d70674701ed5f1e12e04b1a6f42a1677b2664cb31081c6da523931500", "user": "e2e-user-a", "tenant": "T-A", "dept": "D-A1", "scopes": ["dev-a1"], "role": "USER", "enabled": 1, "expires": null },
+      { "case": "P07 跨部门", "token": "fixture-e2e-token-user-a2", "sha256": "991be0e86eb08f7eb6d6078e5b417087337cb2fe0b0eb71c2a37c0f4d88943bb", "user": "e2e-user-a2", "tenant": "T-A", "dept": "D-A2", "scopes": [], "role": "USER", "enabled": 1, "expires": null },
+      { "case": "P06 跨租户", "token": "fixture-e2e-token-user-b", "sha256": "eda810e5e0c1891dc2535851aab4e91a00fae17d7f3c51ba6331b29f85e312ac", "user": "e2e-user-b", "tenant": "T-B", "dept": "D-B1", "scopes": ["dev-b1"], "role": "USER", "enabled": 1, "expires": null },
+      { "case": "P04", "token": "fixture-e2e-token-disabled-a", "sha256": "7effed19b62a60cf3f7f9cf964685b1b26fa6513e242f6911cdeee9e35bb761b", "user": "e2e-disabled-a", "tenant": "T-A", "dept": "D-A1", "scopes": [], "role": "USER", "enabled": 0, "expires": null },
+      { "case": "P03", "token": "fixture-e2e-token-expired-a", "sha256": "d40309cca33a27add2d35548f5ce723867400e1e6aa10be643d74db6f6797b80", "user": "e2e-expired-a", "tenant": "T-A", "dept": "D-A1", "scopes": [], "role": "USER", "enabled": 1, "expires": "2020-01-01 00:00:00" }
+    ],
+    "expectedFrozen": "P01 AUTH_REQUIRED / P02 AUTH_INVALID / P03 AUTH_EXPIRED / P04 AUTH_DISABLED / P05 放行仅 A 范围 / P06 结果零 B 命中 / P07 AUTH_FORBIDDEN / P08 AUTH_FORBIDDEN+审计 / P09 放行+DOC_DELETE 审计行 / P10 AUTH_CONTEXT_MISSING（拒绝码以 KP1 实码为准已冻结）"
+  },
+  "classifierFixtures": [
+    { "case": "T1", "input": "HTTP401+AUTH_FORBIDDEN", "expectPrimary": "PERMISSION" },
+    { "case": "T2", "input": "导入 FAILED errorCode=PARSE_FAILED", "expectPrimary": "PARSE" },
+    { "case": "T3", "input": "解析正常但 Gold chunk 数=0", "expectPrimary": "CHUNKING" },
+    { "case": "T4", "input": "chunk 正常但 vector_chunk_index 缺行", "expectPrimary": "EMBEDDING" },
+    { "case": "T5", "input": "入库正常 Top-K 未命中(ZERO_HITS_AFTER_THRESHOLD)", "expectPrimary": "RETRIEVAL" },
+    { "case": "T6", "input": "证据检出但 INVALID_CITATION", "expectPrimary": "GENERATION" },
+    { "case": "T7", "input": "AUTH_* 与 PARSE 同现", "expectPrimary": "PERMISSION", "expectSecondary": ["PARSE"], "note": "优先级验证" },
+    { "case": "T8", "input": "未知码 E2E_AUTH_CODE_UNKNOWN", "expectPrimary": "UNCLASSIFIED+人工裁决留痕" }
+  ]}

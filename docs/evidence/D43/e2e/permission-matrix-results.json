@@ -1,0 +1,85 @@
+{
+  "records" : [ {
+    "caseId" : "P01",
+    "principalRole" : "NONE",
+    "endpoint" : "GET documents/{id}",
+    "expected" : "拒绝 AUTH_REQUIRED",
+    "actual" : "200/AUTH_REQUIRED",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P02",
+    "principalRole" : "NONE",
+    "endpoint" : "POST rag/answer",
+    "expected" : "拒绝 AUTH_INVALID",
+    "actual" : "200/AUTH_INVALID",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P03",
+    "principalRole" : "EXPIRED",
+    "endpoint" : "POST rag/answer",
+    "expected" : "拒绝 AUTH_EXPIRED",
+    "actual" : "200/AUTH_EXPIRED",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P04",
+    "principalRole" : "DISABLED",
+    "endpoint" : "POST rag/answer",
+    "expected" : "拒绝 AUTH_DISABLED",
+    "actual" : "200/AUTH_DISABLED",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P05",
+    "principalRole" : "USER",
+    "endpoint" : "POST rag/answer（租户 A 文档）",
+    "expected" : "放行且仅 A 范围",
+    "actual" : "200/null",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P06",
+    "principalRole" : "USER",
+    "endpoint" : "POST rag/answer（含 B 语料）",
+    "expected" : "结果零 B 命中",
+    "actual" : "200/null",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P07",
+    "principalRole" : "USER",
+    "endpoint" : "GET documents/{B 文档}",
+    "expected" : "拒绝 AUTH_FORBIDDEN（范围外）",
+    "actual" : "200/AUTH_FORBIDDEN",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P08",
+    "principalRole" : "USER",
+    "endpoint" : "DELETE documents/{id}",
+    "expected" : "拒绝 AUTH_FORBIDDEN + 拒绝面异常链留痕（实码：不落审计行）",
+    "actual" : "200/AUTH_FORBIDDEN+NO_SIDE_EFFECT",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P09",
+    "principalRole" : "ADMIN",
+    "endpoint" : "DELETE documents/{id}",
+    "expected" : "放行 + d43_admin_audit 落行 DOC_DELETE",
+    "actual" : "200/null+AUDIT_ALLOWED",
+    "verdict" : "PASS",
+    "leakage" : false
+  }, {
+    "caseId" : "P10",
+    "principalRole" : "INTERNAL",
+    "endpoint" : "检索 Service 直调（无 AuthContext）",
+    "expected" : "fail-closed AUTH_CONTEXT_MISSING（实码为准）",
+    "actual" : "AUTH_CONTEXT_MISSING",
+    "verdict" : "PASS",
+    "leakage" : false
+  } ],
+  "expectedFrozen" : "fixture-truth.permissionFixtures.expectedFrozen verbatim",
+  "round" : "mock-full-1"
+}

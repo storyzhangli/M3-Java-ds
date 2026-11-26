@@ -16,6 +16,15 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--
+            D43 E2E 演练轮开关（E2eRoundIT/E2eFaultDrillIT 的 @EnabledIfSystemProperty 依据）。
+            默认 false：常规回归零触发、零污染（IT 显示 skipped）；
+            真实执行仅经命令行显式授权：mvn test -Dtest=E2eRoundIT -Dd43.e2e.run=true
+            （surefire 命令行属性不进入 fork JVM，必须经 systemPropertyVariables 桥接，
+            与既有 surefire.spring.profile 实验轮同一机制）。
+        -->
+        <d43.e2e.run>false</d43.e2e.run>
+        <d43.e2e.drill>false</d43.e2e.drill>
     </properties>
 
     <dependencies>
@@ -212,6 +221,8 @@
                 <configuration>
                     <systemPropertyVariables>
                         <spring.profiles.active>${surefire.spring.profile}</spring.profiles.active>
+                        <D43_E2E_RUN>${d43.e2e.run}</D43_E2E_RUN>
+                        <D43_E2E_DRILL>${d43.e2e.drill}</D43_E2E_DRILL>
                         <app.ai.mode>mock</app.ai.mode>
                         <pdfbox.fontcache>${maven.multiModuleProjectDirectory}/../docs/temp_docs/D28/pdfbox-cache</pdfbox.fontcache>
                         <!--

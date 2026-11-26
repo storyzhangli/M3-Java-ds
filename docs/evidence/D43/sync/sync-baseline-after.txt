@@ -1,0 +1,13 @@
+# d42/d41 侧基线（清理后，2026-11-26 17:22 回读，MySQL ai_db）
+
+采集时点：cleanup-exec.txt 同批回读。
+
+| 表 | after 行数 | diff vs before | 判定 |
+|----|-----------|----------------|------|
+| d42_document_sync | 0 | 0 | ✓ 不变 |
+| d42_auth_principal | 0 | 0 | ✓ 不变 |
+| d42_admin_audit | 0 | 0 | ✓ 不变 |
+| d41_document_sync | 18 | 0 | ✓ 不变 |
+| knowledge_document 总数 | 18 | -12（仅 d43e2e 归属行） | ✓ 回 P1 基线 18 |
+
+结论：C18"d42 表不变"实证成立；清理删除面严格限定于 D43 本轮工件。

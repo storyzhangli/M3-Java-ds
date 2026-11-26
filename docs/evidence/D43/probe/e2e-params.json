@@ -1,0 +1,12 @@
+{
+  "kp": "KP4", "date": "2026-11-26", "frozenAt": "执行前冻结，实现期禁看结果调参（H5）",
+  "scenarios": "S01–S12 按任务书 §6.3 全量冻结（数据前缀 d43e2e-；依赖序 S01→S04、S05←S04、S06/S07←S05 语料、S08←S01 lc-001、S09←lc-002、S10←S09 后恢复、S11 独立 e2e profile、S12←S09；前置失败→BLOCKED+E2E_PRECONDITION_BLOCKED）",
+  "permissionMatrix": "P01–P10 按 §6.4 + fixture-truth.expectedFrozen",
+  "classifierPriority": ["PERMISSION","PARSE","CHUNKING","EMBEDDING","RETRIEVAL","GENERATION"], "unclassifiedPolicy": "主阶段 UNCLASSIFIED 必附人工裁决字段，禁静默丢弃",
+  "reasonCodes": ["E2E_FIXTURE_MISSING","E2E_PRECONDITION_BLOCKED","E2E_ASSERTION_FAILED","E2E_STORAGE_UNAVAILABLE","E2E_AUTH_CODE_UNKNOWN","E2E_LEAKAGE_DETECTED","E2E_SATURATION_NOTED","E2E_SEMANTIC_NOT_AUTHORIZED","E2E_REPORT_WRITE_FAILED"],
+  "gates": { "G1": "双口径全绿：完整 ≥133+新增全过；离线 125+新增，NOT RUN 注记", "G2": "S01–S12 无 FAIL；BLOCKED 须环境原因+复跑计划", "G3": "P01–P10 全符+泄漏=0（出现即 P0 熔断）", "G4": "S06 引用白名单 100%、excerpt≤200；S12 拒绝码正确", "G5": "S08/S09/S10 sync 终态 SYNCED、d43e2e- 向量残留=0", "G6": "bad-case 全有主阶段+证据路径" },
+  "retrieval": { "topK": 5, "chunking": "480/60 FIXED_LENGTH", "threshold": 0.0, "repeat": 1, "engine": "SimilarityRetrievalService 直调（真实 PG）" },
+  "syncRetry": "D40 实码：backoff=retryBackoffMs*2^(attempt-1) 上限 300s（DDL 注释同源）；S10 故障注入 -D 显式（D43_FAULT_INJECTION_*，默认 false/0，演练后回读关闭态）",
+  "mockDiscipline": "AI_MODE 缺省 mock；远程调用计数=0 断言（ModelCallRecorder/装配缺席双重）；two/hybrid/rerank 在 e2e profile 显式 false",
+  "fingerprintsRef": "storage-inventory.json.fingerprints",
+  "budget": "token 300/400/500 万三级；真实模型授权轮未授权→S 场景语义评 NOT_RUN（E2E_SEMANTIC_NOT_AUTHORIZED）"}
