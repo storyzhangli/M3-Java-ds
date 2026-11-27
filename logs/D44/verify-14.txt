@@ -1,0 +1,12 @@
+PG chunk map size=7
+V1 [数控机床过热，已断电，请给出] http=200 code=200 cits=0
+V1 [主轴承冷却压力设定为多少？] http=200 code=200 cits=0
+V1 [租户Alpha设备手册条款说] http=200 code=200 cits=0
+V1 => FAIL (answerable=0 citations=0)
+V4 [近形词] code=200 cits=0 leak=False
+V4 [跨域] code=200 cits=0 leak=False
+V4 [空输入] code=4001 cits=0 leak=False
+V4 [超长] code=200 cits=0 leak=False
+V4 [纯符号] code=200 cits=0 leak=False
+V4 => PASS
+VERIFY V1/V4 DONE

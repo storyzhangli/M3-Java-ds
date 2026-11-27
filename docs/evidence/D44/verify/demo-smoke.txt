@@ -1,0 +1,14 @@
+D44 C18 演示冒烟 2026-11-27 18:52:11（实例=demo-service.log，默认配置+rerank 绕行参数，APP_ACCESS_ENABLED 未开=鉴权面由 V3 活体轮独立实证）
+PAGE /knowledge.html -> HTTP 200 len=2687
+PAGE /js/knowledge.js -> HTTP 200 len=4807
+PAGE /index.html -> HTTP 200 len=2939
+NAV index 含 knowledge.html 导航: True
+GET /api/v1/ai/health -> code=200
+POST retrieval/search -> code=200 hits=5 filter=[]
+POST rag/answer -> code=200 status=SUCCESS decision=ANSWER reason= hits=5 cits=0
+GET sync/status -> code=200
+零新端点：本轮仅 static 页面/JS 资源（非 @RequestMapping）；AGG_MAIN 复扫逐字一致（18:41 复扫行）为证
+--- 定界补充（冒烟后深挖）---
+SUCCESS 态实况：answer.len=411（[MOCK:D01] 模板体）· sources=5（完整 CitationDto：id=S1/sourceId=DOC-CNC-COOLING-001/chunkId=a52bb129-b29e-5021(=PG UUIDv5 主键)/title/pageNumbers=[12]/score=0.4352/excerpt=主轴过热处置句）
+citedSources=0 属 BC-19e 已知设计态：mock ChatModel 模板不含 [S 标记]→引用抽取恒空（检索/证据面正常，引用标记生成需真实模型轨 C16/O-10）；演示页对 ANSWER+零引用显示一致性说明，非缺陷。
+结论：C18 PASS——页面 200、只读端点链真实返回、零新端点（AGG_MAIN 复扫恒等）。

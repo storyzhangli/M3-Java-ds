@@ -1,0 +1,1766 @@
+{
+  "classes": [
+    {
+      "pkg": "com/zl/d44",
+      "cls": "D44SpringAiApplication",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AccessConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AccessGuard",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AccessPolicyService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AccessProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AuthContext",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AuthContextFilter",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AuthContextHolder",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AuthPrincipal",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "AuthTokenHasher",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/access",
+      "cls": "PrincipalRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/common",
+      "cls": "AiConfigurationException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/common",
+      "cls": "GlobalExceptionHandler",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/common",
+      "cls": "Result",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/common",
+      "cls": "ResultCode",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/config",
+      "cls": "AiConstants",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/config",
+      "cls": "AiProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/config",
+      "cls": "ConversationRedisProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/config",
+      "cls": "DeepSeekChatModelConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/config",
+      "cls": "ModelCallConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/config",
+      "cls": "ModelCallProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/config",
+      "cls": "PromptCacheProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/controller",
+      "cls": "ChatController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/controller",
+      "cls": "ChatStreamController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/conversation",
+      "cls": "ConversationMemory",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/conversation",
+      "cls": "HistoryMessageConverter",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/conversation",
+      "cls": "RedisSessionPayload",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/conversation",
+      "cls": "RoleConversationService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/conversation/model",
+      "cls": "ConversationMessage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/conversation/model",
+      "cls": "ConversationSession",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/dto",
+      "cls": "ChatReplyResponse",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/dto",
+      "cls": "ChatRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/dto",
+      "cls": "CitationDto",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/dto",
+      "cls": "RoleChatReplyResponse",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/dto",
+      "cls": "SsePayloads",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "BadCaseClassifier",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "BadCaseRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "E2eFixedEvalRunner",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "E2eReasonCode",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "E2eReportWriter",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "E2eScenario",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "E2eScenarioRunner",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "E2eVerdict",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "PermissionCaseRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "PermissionMatrixRunner",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/e2e",
+      "cls": "ScenarioRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment",
+      "cls": "EquipmentCandidateExtractor",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment",
+      "cls": "EquipmentCandidateParser",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment",
+      "cls": "EquipmentChatController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment",
+      "cls": "EquipmentChatService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment",
+      "cls": "EquipmentClarificationPolicy",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment",
+      "cls": "EquipmentFacts",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment",
+      "cls": "EquipmentInformationExtractor",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment/dto",
+      "cls": "EquipmentChatResponse",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment/model",
+      "cls": "CandidateSourceType",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment/model",
+      "cls": "CandidateStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment/model",
+      "cls": "EquipmentTicketCandidate",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/equipment/model",
+      "cls": "TicketCategory",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ChunkIdMappingRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ExperimentException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ExperimentGroup",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ExperimentMetricsCalculator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ExperimentQuestion",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ExperimentReasonCode",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ExperimentResultWriter",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ExperimentRunResult",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "GroupExperimentSummary",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "LatencyStats",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "QuestionExperimentRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "QuestionRunRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ReconstructedDocument",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "RelevanceJudgment",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "RetrievalExperimentMatrix",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "RetrievalExperimentParameters",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "RetrievalExperimentRunner",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/experiment",
+      "cls": "ReturnedHitRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history",
+      "cls": "ChatHistoryService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history",
+      "cls": "HistoryController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/config",
+      "cls": "HistoryProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/config",
+      "cls": "MybatisPlusConfig",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/dto",
+      "cls": "MessageView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/dto",
+      "cls": "PageView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/dto",
+      "cls": "SessionView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/mapper",
+      "cls": "ChatSessionMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/mapper",
+      "cls": "HistoryMessageMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/model",
+      "cls": "ChatSession",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/model",
+      "cls": "HistoryMessage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/model",
+      "cls": "MessageStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/model",
+      "cls": "SessionStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/po",
+      "cls": "ChatSessionPO",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/history/po",
+      "cls": "HistoryMessagePO",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid",
+      "cls": "FusionTraceEntry",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid",
+      "cls": "HybridRagRetrievalService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid",
+      "cls": "HybridSearchService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid",
+      "cls": "RrfFusionService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/config",
+      "cls": "HybridConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/config",
+      "cls": "HybridProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/controller",
+      "cls": "HybridRagController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/controller",
+      "cls": "HybridSearchController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/dto",
+      "cls": "HybridSearchResponse",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/keyword",
+      "cls": "ChunkRow",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/keyword",
+      "cls": "HybridIndexLoader",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/keyword",
+      "cls": "InvertedIndex",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/keyword",
+      "cls": "KeywordMatchView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/keyword",
+      "cls": "KeywordSearchService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/hybrid/keyword",
+      "cls": "KeywordTokenizer",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge",
+      "cls": "CitationRegistry",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge",
+      "cls": "KnowledgeChatOrchestrator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge",
+      "cls": "KnowledgeChunk",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge",
+      "cls": "KnowledgeCorpus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge",
+      "cls": "KnowledgeProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge",
+      "cls": "KnowledgeRetrievalService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkBoundaryType",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkingComparison",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkingMetrics",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkingProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkingResult",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkSource",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkSourceDocument",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkSources",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "ChunkStrategy",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "CleanedDocument",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "CleanedPage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "CleanedParagraph",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "DocumentChunk",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "DocumentChunker",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "DocumentPageText",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "KnowledgeDocumentChunkingController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "KnowledgeDocumentChunkingService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/chunking",
+      "cls": "TextCleaner",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "DocumentLifecycleStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "ExtractedPage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocument",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocumentController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocumentException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocumentLifecycleController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocumentPage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocumentParser",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocumentService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeDocumentStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document",
+      "cls": "KnowledgeImportProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/dto",
+      "cls": "KnowledgeDocumentExtractionView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/dto",
+      "cls": "KnowledgeDocumentPageView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/dto",
+      "cls": "KnowledgeDocumentRegistrationRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/dto",
+      "cls": "KnowledgeDocumentView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/mapper",
+      "cls": "KnowledgeDocumentContentMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/mapper",
+      "cls": "KnowledgeDocumentMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/mapper",
+      "cls": "KnowledgeDocumentPageMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/po",
+      "cls": "KnowledgeDocumentContentPO",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/po",
+      "cls": "KnowledgeDocumentPagePO",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/po",
+      "cls": "KnowledgeDocumentPO",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/repository",
+      "cls": "KnowledgeDocumentRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/document/repository",
+      "cls": "MybatisKnowledgeDocumentRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "ChunkEmbedding",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "ChunkEmbeddingService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "DistanceMetric",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingBatchResult",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingCostEstimate",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingLengthUnit",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingModelCatalog",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingModelConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingModelDescriptor",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingProvider",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingUsage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "EmbeddingVectorValidator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "IndexCompatibility",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "IndexCompatibilityValidator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "LocalHashNgramEmbeddingModel",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "VectorIndexMetadata",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/embedding",
+      "cls": "VectorSpaceIdentity",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval",
+      "cls": "RetrievalException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/config",
+      "cls": "RetrievalProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/controller",
+      "cls": "KnowledgeRetrievalController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/dto",
+      "cls": "RetrievalHitView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/dto",
+      "cls": "RetrievalQueryRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/dto",
+      "cls": "RetrievalResponse",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/model",
+      "cls": "QueryVector",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/service",
+      "cls": "CorpusIndexService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/service",
+      "cls": "QueryEmbeddingService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/service",
+      "cls": "SimilarityRetrievalService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/support",
+      "cls": "QueryVectorValidator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/support",
+      "cls": "RetrievalFilterBuilder",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/retrieval/support",
+      "cls": "RetrievalHitMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "AdminAuditRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "AdminAuditRow",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "AiSyncController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "AuditService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "DocumentSyncRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "DocumentSyncRow",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "DocumentSyncService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncAdminBoundaryConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncAuditConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncOperation",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncReasonCode",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncRetryHandler",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncRetryScheduler",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/sync",
+      "cls": "SyncStatusView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "DisabledOcrTablePort",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "HtmlTableExtractor",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "OcrTablePort",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "PdfTableExtractor",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "TableController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "TableDegrade",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "TableProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "TableRecordRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "TableRecordService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "TableTexts",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "TextTableExtractor",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table",
+      "cls": "UnitTyping",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table/dto",
+      "cls": "TableExtractSummary",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table/dto",
+      "cls": "TableQueryHit",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table/dto",
+      "cls": "TableRowView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table/dto",
+      "cls": "TableView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table/model",
+      "cls": "ExtractedTable",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table/model",
+      "cls": "TableCell",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/table/model",
+      "cls": "TableRowData",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex",
+      "cls": "VectorIndexException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/config",
+      "cls": "VectorIndexProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/config",
+      "cls": "VectorIndexSchedulingConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/controller",
+      "cls": "VectorIndexController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/dto",
+      "cls": "ChunkIndexView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/dto",
+      "cls": "ReconciliationReportView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/dto",
+      "cls": "VectorIndexResultView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/dto",
+      "cls": "VectorIndexTaskView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/model",
+      "cls": "ChunkRowStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/model",
+      "cls": "VectorIndexStage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/model",
+      "cls": "VectorIndexStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/repository",
+      "cls": "VectorChunkRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/repository",
+      "cls": "VectorChunkRow",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/repository",
+      "cls": "VectorIndexTaskRow",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/service",
+      "cls": "DocumentVectorIndexService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/service",
+      "cls": "VectorIndexReconcileScheduler",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/service",
+      "cls": "VectorReconciliationService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/support",
+      "cls": "ContentHasher",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorindex/support",
+      "cls": "StableChunkIdGenerator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "FaultInjectingVectorStore",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "FaultInjectionConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "KnowledgeVectorStoreService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "PgVectorAccess",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "PgVectorEnvironmentReport",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "PgVectorEnvironmentVerifier",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "PgVectorIndexType",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "PgVectorStoreConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "PgVectorStoreProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "VectorMetadataBuilder",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/knowledge/vectorstore",
+      "cls": "VectorSearchHit",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/logging",
+      "cls": "AccessLogAutoConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/logging",
+      "cls": "AccessLogProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/logging",
+      "cls": "CachedBodyAccessLogFilter",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/logging",
+      "cls": "ControllerAccessLogAspect",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/logging",
+      "cls": "LogMaskingUtils",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/logging",
+      "cls": "TraceIdFilter",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "ClassifiedResponseErrorHandler",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "ModelAttemptRetryPolicy",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "ModelFailure",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "ModelFailureCategory",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "ModelFailureClassifier",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "ModelRetryBackOffPolicy",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "ModelRetryListener",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "NonRetryableModelException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/model",
+      "cls": "RetryableModelException",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/observability",
+      "cls": "ModelCallRecorder",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/observability",
+      "cls": "ModelTokenUsage",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/observability",
+      "cls": "TokenUsageExtractor",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "InMemoryPromptTemplateRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "MybatisPromptTemplateRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "MybatisPromptTemplateVersionRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptSeedInitializer",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptTemplateController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptTemplateRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptTemplateService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptTemplateValidator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptTemplateVersionInitializer",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptTemplateVersionRepository",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt",
+      "cls": "PromptTemplateVersionService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/dto",
+      "cls": "PromptTemplateSummary",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/dto",
+      "cls": "PromptTemplateUpsertRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/dto",
+      "cls": "PromptTemplateVersionView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/dto",
+      "cls": "PromptTemplateView",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/dto",
+      "cls": "TemplateStatusUpdateRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/mapper",
+      "cls": "PromptTemplateMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/mapper",
+      "cls": "PromptTemplateVersionMapper",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/model",
+      "cls": "PromptScenes",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/model",
+      "cls": "PromptTemplateEntity",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/model",
+      "cls": "TemplateStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/model",
+      "cls": "TemplateVariable",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/po",
+      "cls": "PromptTemplatePO",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/prompt/po",
+      "cls": "PromptTemplateVersionPO",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/config",
+      "cls": "RagProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/controller",
+      "cls": "RagController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/dto",
+      "cls": "RagRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "AssembledContext",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "EvidenceAssessment",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "GenerationOutcome",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "RagDecision",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "RagDecisionDetail",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "RagReasonCode",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "RagResponse",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "RagStatus",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/model",
+      "cls": "RetrievedChunk",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/service",
+      "cls": "CitationExistenceValidator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/service",
+      "cls": "ContextAssemblyService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/service",
+      "cls": "EvidenceAssessmentService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/service",
+      "cls": "GenerationService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/service",
+      "cls": "PostGenerationValidator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/service",
+      "cls": "RagOrchestrator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/service",
+      "cls": "RagRetrievalService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/support",
+      "cls": "CitationText",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rag/support",
+      "cls": "UrlSafetyPolicy",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "BailianTextReranker",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "LocalLexicalReranker",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankCallLedger",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankCandidate",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankedHit",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankLedgerEntry",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankOutcome",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankPort",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankProperties",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankReasonCode",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankSearchRequest",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankSearchResponse",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank",
+      "cls": "RerankStageStats",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankDecisionEvaluator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankDecisionRecord",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankExperimentGroup",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankExperimentResultWriter",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankGroupSummary",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankMetricsCalculator",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankRunDetail",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/rerank/experiment",
+      "cls": "RerankValueExperimentRunner",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "AiChatResult",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "AiChatService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "ChatInvocation",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "DeepSeekAiChatService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "MockAiChatService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "ReasoningEffort",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "StreamChunk",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "ThinkingSettings",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/service",
+      "cls": "ThinkingSettingsResolver",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/two",
+      "cls": "BailianEmbeddingModel",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/two",
+      "cls": "TwoCorpusIndexService",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/two",
+      "cls": "TwoKnowledgeRetrievalController",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/two",
+      "cls": "TwoPgVectorConfiguration",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/two",
+      "cls": "TwoSpaceComponents",
+      "touchedThisRound": "NO"
+    },
+    {
+      "pkg": "com/zl/d44/two",
+      "cls": "TwoVectorChunkRepository",
+      "touchedThisRound": "NO"
+    }
+  ],
+  "classCount": 352,
+  "generatedAt": "2026-11-27T18:46:13"
+}

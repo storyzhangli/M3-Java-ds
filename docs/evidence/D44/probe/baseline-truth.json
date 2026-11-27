@@ -1,0 +1,57 @@
+{
+  "purpose": "D43 五件基准件+probe 四件+评估集指纹（语义 diff 只读基准，H6）",
+  "generatedAt": "2026-11-27T18:08:25",
+  "d43E2eBaselines": {
+    "e2e-scenario-records.json": "4c7afec8130fe047948288f91d9252b1bc1013347e4be2e9594bdc03bd0dc9ef",
+    "permission-matrix-results.json": "92e37da96f55c480805114fa606a9bbd09ff2e7967c7fa40942f56fc73f6cf59",
+    "fixed-eval-results.json": "a4fa6307636db4d512544d25a154b1a45a26e6eabfb2df6e65ed63c8b4ba73cc",
+    "fault-drill-observation.json": "c4be1842a6fe234ccdf0f9cd4c13f7a177ea0a33d8c754b387972c1157ea98b8",
+    "e2e-report.md": "eb8d4145e78e3c94b1aa895d93790523537614d4268a39eb4ae11b7895bf786f"
+  },
+  "d43ProbeRefs": {
+    "fixture-truth.json": "00b06f91813d6e7f236acd7e556a60d8409ea7505154be367265b8a021484f87"
+  },
+  "evalSetFingerprints": {
+    "questions.jsonl (D25)": "44426B1771C379343A2239147AF0ADF4C4D9A2D80E547E0BCF3259C65634750A",
+    "equipment-fault-corpus.json (D44)": "AAD6AC4DF5585AAD5078D1C94DF4E5093AF15A9730E230149CFDE0940335AB0B",
+    "verifiedAt": "2026-11-27 复算逐字一致（F10 复核 PASS）"
+  },
+  "diffKeyPolicy": {
+    "jitterWhitelist": [
+      "elapsedMillis",
+      "latencyMillis",
+      "durationMs",
+      "timestamp",
+      "p50Ms",
+      "p95Ms",
+      "maxMs",
+      "meanMs",
+      "requestId",
+      "runId",
+      "writtenAt"
+    ],
+    "mustEqual": [
+      "verdict",
+      "status",
+      "reasonCode",
+      "assertions",
+      "hits[*].chunkId",
+      "hits[*].rank",
+      "primaryStage",
+      "expected",
+      "actual",
+      "metrics(除计时)"
+    ],
+    "arraysAlignedBy": [
+      "scenarioId",
+      "caseId",
+      "questionId"
+    ],
+    "classification": [
+      "SEMANTIC_DIFF=缺陷",
+      "TIMING_ONLY=通过",
+      "STRUCT_DIFF=缺陷",
+      "BASELINE_MISSING=NOT_RUN"
+    ]
+  }
+}

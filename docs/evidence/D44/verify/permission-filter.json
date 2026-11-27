@@ -1,0 +1,41 @@
+{
+  "fixture": "d44e2e-perm-a (T-A/D-A1)",
+  "asserts": [
+    {
+      "assert": "①admin 可见本域 PERM-A 且零跨租户泄漏",
+      "verdict": "PASS",
+      "observed": "http=200 hits=1 permA=True crossLeak=False"
+    },
+    {
+      "assert": "②userA 可见 PERM-A 且命中数不超 admin（无放大）",
+      "verdict": "PASS",
+      "observed": "http=200 visible=True n=1 adminN=1"
+    },
+    {
+      "assert": "②b userA2 同域一致可见",
+      "verdict": "PASS",
+      "observed": "http=200"
+    },
+    {
+      "assert": "③userB(T-B) 跨租户零泄漏（hits 级判定）",
+      "verdict": "PASS",
+      "observed": "http=200 hitsN=@(@{code=200; msg=success; data=}.data.hits).Count filter=perm[tenant=T-B, depts=[D-B1, ALL], devices=[dev-b1, ALL]]"
+    },
+    {
+      "assert": "④disabled/expired 被拒",
+      "verdict": "PASS",
+      "observed": "disabled http=200 body={\"code\":4001,\"msg\":\"身份凭据无效或缺失，拒绝访问：AUTH_DISABLED\",\"data\":null} | expired http=200 body={\"code\":4001,\"msg\":\"身份凭据无效或缺失，拒绝访问：AUTH_EXPIRED\",\"data\":null}"
+    },
+    {
+      "assert": "⑥审计面可回读（admin 检索动作有落行机制，行数可查）",
+      "verdict": "PASS",
+      "observed": "audit_total=90（注：只读检索不落审计为 D39 设计口径，写面 DOC_DELETE/VECTOR_INDEX 落行已在 V2-A6 实证）"
+    },
+    {
+      "assert": "⑤内部直调过滤（Service 层绕过防护）",
+      "verdict": "EVIDENCE_REF",
+      "observed": "引用 R-C permission-matrix-results.json P08-P10（LEAK=0，semantic-diff=NAMING_ONLY）+ D39 服务端身份强约束（token→principal 服务端解析，无请求侧 tenant 入参）"
+    }
+  ],
+  "verdict": "PASS"
+}

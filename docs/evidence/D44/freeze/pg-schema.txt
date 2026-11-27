@@ -1,0 +1,25 @@
+## PG columns (TABLE,COLUMN,DTYPE,UDT,NULLABLE)
+table_name	column_name	data_type	udt_name	is_nullable
+d43_vector_store	id	uuid	uuid	NO
+d43_vector_store	content	text	text	YES
+d43_vector_store	metadata	json	json	YES
+d43_vector_store	embedding	USER-DEFINED	vector	YES
+two_vector_store	id	uuid	uuid	NO
+two_vector_store	content	text	text	YES
+two_vector_store	metadata	json	json	YES
+two_vector_store	embedding	USER-DEFINED	vector	YES
+vector_store	id	uuid	uuid	NO
+vector_store	content	text	text	YES
+vector_store	metadata	json	json	YES
+vector_store	embedding	USER-DEFINED	vector	YES
+
+## PG indexes
+tablename	indexname	indexdef
+d43_vector_store	d43_vector_store_index	CREATE INDEX d43_vector_store_index ON public.d43_vector_store USING hnsw (embedding vector_cosine_ops)
+d43_vector_store	d43_vector_store_pkey	CREATE UNIQUE INDEX d43_vector_store_pkey ON public.d43_vector_store USING btree (id)
+two_vector_store	two_vector_store_hnsw_idx	CREATE INDEX two_vector_store_hnsw_idx ON public.two_vector_store USING hnsw (embedding vector_cosine_ops)
+two_vector_store	two_vector_store_pkey	CREATE UNIQUE INDEX two_vector_store_pkey ON public.two_vector_store USING btree (id)
+vector_store	spring_ai_vector_index	CREATE INDEX spring_ai_vector_index ON public.vector_store USING hnsw (embedding vector_cosine_ops)
+vector_store	vector_store_pkey	CREATE UNIQUE INDEX vector_store_pkey ON public.vector_store USING btree (id)
+
+# PG_SCHEMA_SHA256=da1bd2f5de3d970d6dd0f6549a7dfba796614e281ca8488ccefd79dd205446c2

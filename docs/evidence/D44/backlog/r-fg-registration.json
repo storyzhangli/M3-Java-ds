@@ -1,0 +1,21 @@
+{
+  "R_F_experiment_track_recheck": {
+    "status": "PASS（隐式完成，正式登记）",
+    "date": "2026-11-27",
+    "scope": "D42/D38 实验轨与双轨隔离在 D44 基线上的复证",
+    "evidence": [
+      "switch-snapshot.txt：H2 八键开关态全符预期（含 rerank.enabled=false / pgvector.enabled=true / two 轨隔离键）",
+      "fixed-eval-results.json vs D43 基准：semantic-diff=TIMING_ONLY（15 题 hitRate@5=mrr@5=0.0 恒等复现，O-02 口径注记维持）",
+      "R-A 158/158 含实验包全部单测（RerankValueExperiment* 组件级）",
+      "two 轨表计数未变（d44_vector_store=8、two=8，冻结→终态一致）",
+      "RerankValueExperimentIT 门名 P_EXP_RUN 原样保留（W-1 未授权不触碰）"
+    ],
+    "conclusion": "实验轨装配、隔离、指标复现全部与冻结预期一致；真实 R3 远程组执行仍挂 O-11"
+  },
+  "R_G_gate_rename": {
+    "status": "NOT_RUN",
+    "reason": "W-1 授权问询（interaction_ask）120s 无应答，按最小权限默认不修正；决策留痕 milestone-params.json.decisionLog",
+    "impact": "无行为影响（纯命名规范项）；遗留登记 O-08",
+    "resumeCondition": "用户显式授权后另轮执行（改动点：P_EXP_RUN→D44_EXP_RUN 及 L23/L115 注释残留）"
+  }
+}

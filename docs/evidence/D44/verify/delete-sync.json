@@ -1,0 +1,45 @@
+{
+  "answerAfter": 200,
+  "fixture": "d44v2-001",
+  "preSearchHit": true,
+  "asserts": [
+    {
+      "assert": "A1 DELETE 端点 2xx+业务码200+终态视图",
+      "verdict": "PASS",
+      "observed": "http=200 code=200 lifecycle="
+    },
+    {
+      "assert": "A2 d44_document_sync DELETE 行终态 SYNCED",
+      "verdict": "PASS",
+      "observed": "rows=[sync_status\r\nSYNCED]"
+    },
+    {
+      "assert": "A3 PG 向量行数=0",
+      "verdict": "PASS",
+      "observed": "count=0 raw=[cnt|0]"
+    },
+    {
+      "assert": "A4 vector_chunk_index 视图不可见",
+      "verdict": "PASS",
+      "observed": "count=0"
+    },
+    {
+      "assert": "A5 检索 Top-K 零命中该文档",
+      "verdict": "PASS",
+      "observed": "len=1366"
+    },
+    {
+      "assert": "A6 d44_admin_audit 落 DOC_DELETE ALLOWED",
+      "verdict": "PASS",
+      "observed": "audit=[action\tresult,VECTOR_INDEX\tALLOWED,DOC_DELETE\tALLOWED]"
+    },
+    {
+      "assert": "A7 删除后回答链零引用该文档（实码登记）",
+      "verdict": "PASS",
+      "observed": "code=200 status=CLARIFY_REQUIRED reason=MISSING_REQUIRED_CONTEXT"
+    }
+  ],
+  "verdict": "PASS",
+  "deleteAttempts": 1,
+  "vectorIndexBody": "{\"code\":200,\"msg\":\"success\",\"data\":{\"documentId\":\"d44v2-001\",\"version\":\"1\",\"strategy\":\"FIXED_LENGTH\",\"status\":\"COMPLETED\",\"stage\":\"CLEANUP\",\"chunkCount\":1,\"processed\":1,\"idempotent\":false,\"attemptCoun"
+}

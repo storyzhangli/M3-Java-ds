@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-11-27T18:08:50",
+  "scope": "D44 P0 存储盘点（D43 冻结基线参照 + d44_* 表实测偏差留痕）",
+  "mysql": {
+    "knowledge_document": 18,
+    "d44_auth_principal": 5,
+    "d44_document_sync": 3,
+    "d44_admin_audit": 233,
+    "d44_table_extract": 0,
+    "d44_table_row": 0,
+    "vector_index_task": 23,
+    "vector_chunk_index": 30,
+    "d43_side": {
+      "d43_auth_principal": "5(D43表族保留不动)",
+      "d43_document_sync": "历史",
+      "d43_admin_audit": "历史"
+    }
+  },
+  "pg": {
+    "vector_store": 30,
+    "two_vector_store": 8,
+    "d44_vector_store": 8,
+    "note": "d44_vector_store 8 行=语料三篇(DOC-CNC/SERVO/WORKORDER)入库产物，属骨架沉淀期演示数据非本轮写面"
+  },
+  "redis": {
+    "db0_dbsize": 1,
+    "key_sample": "stock:sku:1001"
+  },
+  "deviation": {
+    "ref": "任务书 F06 冻结参照 sync=0/audit=0",
+    "actual": "d44_document_sync=3(DELETE SYNCED, DOC-CNC/SERVO/WORKORDER 2026-11-27 17:11)、d44_admin_audit=233(one.vector-index.* DENIED 等, 17:39-17:45)",
+    "ruling": "偏差裁决 DV-01：系 D44 骨架沉淀期(用户手工演示)既有数据，非本轮 R 轮写面产物。本轮 C19/M8 对账口径调整为“回 P0 基线”(sync 回 3、audit 回 233、principal 回 5、doc 回 18、vs 回 30、two 回 8、db0 回 1)，本轮新增写面(d44e2e-/d44v2- 前缀及联动行)全清。依据：任务书行为准则“以本地实际文件为唯一依据”+D9 不做结构性改造+H6 资产只读(不得删用户既有演示数据)。"
+  },
+  "docManifest": [
+    "D41-R03RE-008..014,MANUAL",
+    "D41-R03VERIFY-001..007",
+    "DOC-CNC-COOLING-001",
+    "DOC-SERVO-TROUBLE-002",
+    "DOC-WORKORDER-SPEC-003"
+  ]
+}

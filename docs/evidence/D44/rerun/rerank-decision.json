@@ -1,0 +1,13 @@
+{
+  "case": "C14 实验轮（R-G）决策登记",
+  "verdict": "NOT_RUN（如实登记，禁伪造）",
+  "reason": "W-1 授权问询 120s 无应答→最小权限默认不修正门名；实验 profile 需真实远程调用（百炼 rerank），本里程碑轮为 mock 轮（H4 远程调用计数=0 约束），不适合执行",
+  "gateNameDefect": "RerankValueExperimentIT 门名 P_EXP_RUN（L38）与注释残留（L23/L115）未清理 → 登记 O-01（种子项，用户裁决后执行）",
+  "decisionReproduction": {
+    "basis": "引用 D42 权威件 docs/evidence/D42/extract/rerank-decision.json（非本轮重跑，只读指针）",
+    "frozenVerdict": "R1 NOT_ADOPTED（dMRR5=0.0<0.05）/ R2 NOT_ADOPTED / R3 BLOCKED（远程 rerank 未授权）",
+    "d44BaselineConsistency": "D44 主码含完整 rerank 包（D42 迁移零改动，AGG_MAIN 指纹冻结），决策前提代码面未变"
+  },
+  "resumeCondition": "O-01 门名裁决 + O-11 R3 授权轮同批执行",
+  "evidence": ["docs/evidence/D42/extract/rerank-decision.json", "docs/evidence/D44/probe/freeze-scope.json", "docs/evidence/D44/probe/milestone-params.json decisionLog"]
+}

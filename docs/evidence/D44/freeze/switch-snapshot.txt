@@ -1,0 +1,39 @@
+application.yml L360: enabled: ${APP_ACCESS_ENABLED:false}
+application.yml L373: enabled: ${RERANK_ENABLED:false}
+application.yml L208: enabled: ${HYBRID_ENABLED:false}
+application.yml L168: enabled: ${D44_SYNC_RETRY_ENABLED:false}
+application.yml L173: enabled: ${D44_FAULT_INJECTION_ENABLED:false}
+application.yml L191: # - evidence.relevant-score 为证据评估的相关性下限（低于即拒答 LOW_RELEVANCE）。
+application.yml L198: relevant-score: ${RAG_EVIDENCE_RELEVANT_SCORE:0.15}
+application.yml L362: enforce-admin: ${APP_ACCESS_ENFORCE_ADMIN:false}
+--- e2e profile ---
+application-e2e.yml L3: # access=true：权限体系全量装配（AuthContextFilter+AccessGuard+enforce-admin 启动断言在码），
+application-e2e.yml L7: pgvector:
+application-e2e.yml L8: enabled: true
+application-e2e.yml L9: two-pgvector:
+application-e2e.yml L10: enabled: false
+application-e2e.yml L11: hybrid:
+application-e2e.yml L12: enabled: false
+application-e2e.yml L13: rerank:
+application-e2e.yml L14: enabled: false
+application-e2e.yml L16: enabled: false
+application-e2e.yml L17: access:
+application-e2e.yml L18: enabled: true
+application-e2e.yml L21: excerpt-max-chars: 200
+application-e2e.yml L22: # BC-19c（fix-records）：evidence.relevant-score 主基线默认 0.15 面向真实语义 embedding；
+application-e2e.yml L28: relevant-score: 0.0
+--- TWO_* 主配置 ---
+application.yml L89: # 新增：阿里百炼 Embedding（two_ 隔离链路专用，与本地 LOCAL 配置完全分离）。
+application.yml L97: provider: ${TWO_EMBEDDING_PROVIDER:BAILIAN}
+application.yml L98: model-name: ${TWO_EMBEDDING_MODEL:qwen3.7-text-embedding}
+application.yml L99: model-version: ${TWO_EMBEDDING_MODEL_VERSION:current}
+application.yml L100: dimensions: ${TWO_EMBEDDING_DIMENSIONS:1024}
+application.yml L101: max-input-length: ${TWO_EMBEDDING_MAX_INPUT_LENGTH:8192}
+application.yml L102: length-unit: ${TWO_EMBEDDING_LENGTH_UNIT:TOKENS}
+application.yml L103: distance-metric: ${TWO_EMBEDDING_DISTANCE_METRIC:COSINE}
+application.yml L104: index-version: ${TWO_EMBEDDING_INDEX_VERSION:two-bailian-1024-v1}
+application.yml L107: key-required: ${TWO_EMBEDDING_KEY_REQUIRED:true}
+application.yml L108: cost-per-million-input-tokens-usd: ${TWO_EMBEDDING_COST_PER_MILLION_INPUT_TOKENS_USD:0}
+application.yml L109: enabled: ${TWO_EMBEDDING_ENABLED:true}
+application.yml L110: api-batch-size: ${TWO_EMBEDDING_API_BATCH_SIZE:10}
+application.yml L111: ledger-path: ${TWO_EMBEDDING_LEDGER_PATH:}

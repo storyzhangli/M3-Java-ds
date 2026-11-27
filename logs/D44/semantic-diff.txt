@@ -1,0 +1,19 @@
+e2e-scenario-records.json => SEMANTIC_DIFF (sem=12 struct=0)
+permission-matrix-results.json => SEMANTIC_DIFF (sem=1 struct=0)
+fixed-eval-results.json => TIMING_ONLY (sem=0 struct=0)
+fault-drill-observation.json => SEMANTIC_DIFF (sem=1 struct=0)
+SEMANTIC_DIFF $.records[scenarioId=S01].elapsedMs: base=[113] rerun=[139]
+SEMANTIC_DIFF $.records[scenarioId=S03].elapsedMs: base=[71] rerun=[85]
+SEMANTIC_DIFF $.records[scenarioId=S04].assertions[0].detail: base=[documentId=d43e2e-lc-001] rerun=[documentId=d44e2e-lc-001]
+SEMANTIC_DIFF $.records[scenarioId=S05].assertions[1].detail: base=[docs=[d43e2e-lc-001#1, d43e2e-lc-002#2]] rerun=[docs=[d44e2e-lc-001#1, d44e2e-lc-002#2]]
+SEMANTIC_DIFF $.records[scenarioId=S05].elapsedMs: base=[8] rerun=[20]
+SEMANTIC_DIFF $.records[scenarioId=S06].elapsedMs: base=[162] rerun=[200]
+SEMANTIC_DIFF $.records[scenarioId=S07].elapsedMs: base=[5] rerun=[7]
+SEMANTIC_DIFF $.records[scenarioId=S08].assertions[3].detail: base=[documentId=d43e2e-lc-001] rerun=[documentId=d44e2e-lc-001]
+SEMANTIC_DIFF $.records[scenarioId=S08].elapsedMs: base=[261] rerun=[279]
+SEMANTIC_DIFF $.records[scenarioId=S09].elapsedMs: base=[73] rerun=[78]
+== permission-matrix-results.json : SEMANTIC_DIFF sem=1 struct=0 ==
+SEMANTIC_DIFF $.records[caseId=P09].expected: base=[放行 + d43_admin_audit 落行 DOC_DELETE] rerun=[放行 + d44_admin_audit 落行 DOC_DELETE]
+== fixed-eval-results.json : TIMING_ONLY sem=0 struct=0 ==
+== fault-drill-observation.json : SEMANTIC_DIFF sem=1 struct=0 ==
+SEMANTIC_DIFF $.fixtureDocumentId: base=[d43e2e-drill-001] rerun=[d44e2e-drill-001]

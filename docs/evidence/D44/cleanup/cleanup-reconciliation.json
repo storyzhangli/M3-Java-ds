@@ -1,0 +1,35 @@
+{
+  "phase": "P7 清理对账",
+  "date": "2026-11-27",
+  "caliber": "DV-01：回 P0 实测基线；仅清本轮 d44e2e-/d44v2- 数据行与 IT 播种 principal(user_id LIKE 'e2e-%')",
+  "cleanupStatements": {
+    "mysql": "docs/temp_docs/D44/ddl/cleanup-d44.sql（8 条，affected 分别 6/5/4/12/2/3/6/6，failures=0）",
+    "pg": "DELETE vector_store metadata documentId LIKE d44e2e-/d44v2-（affected=2）",
+    "redis": "无需清理（本轮专项未写 Redis 键）"
+  },
+  "finalInventory": {
+    "knowledge_document": {"p0": 18, "final": 18, "residual_prefix": 0, "verdict": "MATCH"},
+    "d44_auth_principal": {"p0": 5, "final": 5, "verdict": "MATCH（IT 播种 6 行已清）"},
+    "d44_document_sync": {"p0": 3, "final": 3, "residual_prefix": 0, "verdict": "MATCH"},
+    "d44_admin_audit": {"p0": 233, "final": 78, "verdict": "DEV-03 偏差登记（见下）"},
+    "vector_chunk_index": {"p0": 30, "final": 30, "verdict": "MATCH"},
+    "vector_index_task": {"p0": 23, "final": 23, "verdict": "MATCH"},
+    "knowledge_document_page": {"p0": 43, "final": 40, "verdict": "DEV-03 同源（清理前 43→本轮 page_prefix 6 清，P0 实测与现存差 3 行为骨架期用户演示页行随删除链消失，登记不追回）"},
+    "pg_vector_store": {"p0": 30, "final": 30, "residual_prefix": 0, "verdict": "MATCH"},
+    "redis_db0": {"p0": "DBSIZE=1 (stock:sku:1001)", "final": "DBSIZE=1", "d44_prefix_hits": 0, "verdict": "MATCH"}
+  },
+  "deviationRegistry": {
+    "DEV-03": {
+      "severity": "P2",
+      "title": "d44_admin_audit 233→90→78 历史行净减 155，不可恢复",
+      "facts": "P0 实测 233（用户骨架期手工演示 DENIED 为主，17:39-17:45）；R-C e2e IT 两轮跑后清理前实况 90；P7 清理 12 行本轮前缀残留后=78",
+      "deletionSurfacesIdentified": [
+        "E2eRoundIT L237：DELETE audit WHERE target_document_id LIKE 'd44e2e-%'（仅前缀，非主因）",
+        "AdminAuditRepository.deleteByDocument L43：DELETE audit WHERE target_document_id=?——文档删除链连坐清审计（S09/V2 删除场景按 document 精确清）"
+      ],
+      "unattributed": "233→90 的其余缺口含用户演示行，逐行归因需 binlog/时间考古，超出本轮预算，不虚构结论",
+      "impact": "审计不可变性被破坏（删除链连坐=设计缺陷面）：admin 审计作为合规证据链不应随文档物理删除而清空",
+      "action": "O-13 登记（审计与文档生命周期解耦/软删标记）+ 测试库隔离 QC-OBS-1 实证升级 → D45 输入"
+    }
+  }
+}

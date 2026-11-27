@@ -1,0 +1,25 @@
+# experiment profile：真实对照实验专用（由 D44_EXP_RUN=true 与 -Dsurefire.spring.profile=experiment 触发）。
+# 继承主 application.yml 的真实 PG/MySQL 数据源，仅打开 pgvector 装配（test profile 为关闭）。
+app:
+  vectorstore:
+    pgvector:
+      enabled: true
+    # 对照实验只跑本地链路，two_ 百炼链路不装配（避免额外计费与上下文干扰）。
+    two-pgvector:
+      enabled: false
+  # 对照实验上下文不装配混合检索分支（默认即关，显式声明保持口径一致）。
+  hybrid:
+    enabled: false
+
+  # 测试/实验上下文显式关闭权限体系——固定 false，不引用环境变量，
+  # 保证回归轮与骨架基线（776de40）行为零差异可复现（H1/C05）。
+  access:
+    enabled: false
+
+  # 实验轮装配本地重排端口（R1/R2 需要 LocalLexicalReranker Bean）；
+  # remote.enabled=false —— R3 组按 BLOCKED=RERANK_REMOTE_DISABLED 记录，mock 轮零外呼（H6 熔断契约）。
+  rerank:
+    enabled: true
+    remote:
+      enabled: false
+      ledger-path: docs/temp_docs/D44/rerank-ledger.jsonl

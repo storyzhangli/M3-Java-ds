@@ -1,0 +1,19 @@
+{
+  "scenarioId" : "S10",
+  "fixtureDocumentId" : "d44e2e-drill-001",
+  "injection" : "fault-injection enabled, fail-delete-call=1（本上下文 counter 独立起算）",
+  "seededChunks" : 1,
+  "pgRowsAfterIndex" : 1,
+  "httpDeleteStatus" : 200,
+  "httpDeleteBody" : "{\"code\":5000,\"msg\":\"系统繁忙，请稍后重试\",\"data\":null}",
+  "syncRowAfterInjectedDelete" : "FAILED",
+  "assertFailedLedgered" : true,
+  "httpRetryStatus" : 200,
+  "httpRetryBody" : "{\"code\":200,\"msg\":\"success\",\"data\":\"SYNCED\"}",
+  "syncRowAfterRetry" : "SYNCED",
+  "assertRetryConverged" : true,
+  "pgRowsAfterConverge" : 0,
+  "lifecycleAfterConverge" : "DELETED",
+  "assertVectorsGoneAndDeleted" : true,
+  "verdict" : "PASS"
+}

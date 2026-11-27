@@ -1,0 +1,42 @@
+{
+  "milestone": "RAG v3",
+  "codeBaseline": "5016c39",
+  "mainTreeSha256": "b2bd7798ac47958b8c39e4c06075279e950c05d138a18abd0a4ac2babd57066c",
+  "testTreeSha256": "7e086fb913f42c0dc697cef1b3f00d03b74abe4772ea0a3b27f965afeb69d755",
+  "mysqlSchemaSha256": "31ea63d69e4318f819d2f315f29ebabe6dac684a8053a3e23f7e6d73efec3a6f",
+  "pgSchemaSha256": "da1bd2f5de3d970d6dd0f6549a7dfba796614e281ca8488ccefd79dd2054446c2",
+  "pomSha256": {
+    "D44": "43eacc727745ad0a95ba502911aae9ec54c90832c8e4f698b1900cfb8cd49571",
+    "D44_RAG_PDAM": "323758a977a024d24932e04344cbc8aaab5c7e0c61d45ff4d8b0926e565c1a85"
+  },
+  "rerunMatrix": {
+    "R-A": "完整口径 158/158 (MYSQL_PASSWORD 注入)",
+    "R-B": "离线口径 125/125+8 NOT RUN(TableRecordPersistenceIntegrationTest Assumption 中止)",
+    "R-C": "E2eRoundIT -Dd44.e2e.run=true；预期 S=11PASS/S02 NOT_RUN/S10 双记录，与 D43 语义 diff=TIMING_ONLY",
+    "R-D": "E2eFaultDrillIT -Dd44.e2e.drill=true；FAILED→SYNCED 收敛+drill 语义 diff",
+    "R-E": "V1-V4 四类专项，独立断言独立留痕",
+    "R-F": "固定评估集(随 R-C E2eFixedEvalRunner)，饱和注记原文保留(hitRate@5=mrr@5=0.0 e2e 隔离轨双标注)",
+    "R-G": "NOT RUN(W-1 未授权，门名 P_EXP_RUN 漂移，F05/O-01)"
+  },
+  "mJudgements": [
+    "M1 冻结指纹+主码 git diff 空",
+    "M2 R-A 158 且 R-B 注记正确",
+    "M3 R-C/R-D 语义 diff=TIMING_ONLY 或 0",
+    "M4 V1 五断言 100%",
+    "M5 V2 七断言全过向量残留0",
+    "M6 V3 五断言全过泄漏0",
+    "M7 V4 契约级全过+语义轨 NOT RUN 登记",
+    "M8 四交付+演示冒烟+HITS=0+对账回基线"
+  ],
+  "storageReconcileBaseline": "回 DV-01 P0 基线(doc18/principal5/sync3/audit233/vs30/two8/db0 1)，非任务书原文 0/0",
+  "budget": {
+    "tokenWarn": [
+      "300万",
+      "400万",
+      "500万"
+    ],
+    "contextRestart": "<=4 目标",
+    "circuitBreak": "同根因2次；跨租户泄漏单次即 P0 停写面"
+  },
+  "w1Decision": "未授权(120s 无响应，按最小权限默认不改)，R-G=NOT RUN"
+}

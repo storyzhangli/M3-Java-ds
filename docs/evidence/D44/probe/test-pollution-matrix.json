@@ -1,0 +1,20 @@
+{
+  "case": "C15 测试污染量化矩阵（本轮新增段，与 D43 观察对齐）",
+  "date": "2026-11-27",
+  "method": "三时点计数：P0 基线 → R-E 专项后（清理前）→ P7 清理后；权威口径=SQL COUNT（非 redis-cli pattern，本机 msys2 版 --scan --pattern 静默失效先例）",
+  "prefixScope": "d44e2e-* / d44v2-* / e2e-* principal / fixture-e2e-token-*",
+  "matrix": [
+    {"table": "knowledge_document", "p0": 18, "afterRE": 24, "residual": 6, "afterCleanup": 18, "verdict": "CLEAN"},
+    {"table": "knowledge_document_page", "p0": 43, "afterRE": "43+6(IT播种期已收敛，实况40=43-3 演示行随删除链)", "residual_prefix": 6, "afterCleanup": 40, "verdict": "PREFIX_CLEAN（P0→40 差 3 行归 DEV-03 同源，登记不追回）"},
+    {"table": "knowledge_document_content", "p0": 16, "residual_prefix": 5, "afterCleanup": 11, "verdict": "PREFIX_CLEAN（同源差值登记）"},
+    {"table": "d44_auth_principal", "p0": 5, "afterRE": 11, "residual": 6, "afterCleanup": 5, "verdict": "CLEAN（IT 播种 6 行全清，按 user_id LIKE 'e2e-%'）"},
+    {"table": "d44_document_sync", "p0": 3, "residual_prefix": 4, "afterCleanup": 3, "verdict": "CLEAN（DV-01 基线 3 行保留）"},
+    {"table": "d44_admin_audit", "p0": 233, "beforeCleanup": 90, "residual_prefix": 12, "afterCleanup": 78, "verdict": "PREFIX_CLEAN / TOTAL 走 DEV-03 偏差通道（净减 155 不可恢复，删除面归因见 case-book）"},
+    {"table": "vector_chunk_index", "p0": 30, "afterRE": 32, "residual": 2, "afterCleanup": 30, "verdict": "CLEAN"},
+    {"table": "vector_index_task", "p0": 23, "afterRE": 26, "residual": 3, "afterCleanup": 23, "verdict": "CLEAN"},
+    {"table": "pg_vector_store", "p0": 30, "afterRE": 32, "residual": 2, "afterCleanup": 30, "verdict": "CLEAN"},
+    {"table": "redis_db0", "p0": "DBSIZE=1", "residual_d44_prefix": 0, "afterCleanup": "DBSIZE=1（仅 stock:sku:1001）", "verdict": "CLEAN（本轮专项未写 Redis）"}
+  ],
+  "alignmentWithD43": "D43 观察（QC 报告 §2）：IT 播种 principal+6/sync/audit 瞬态增行与本轮一致；差异点=本轮 audit 存量受删除链连坐影响（D43 无 233 行历史包袱），已按 O-13/O-02 通道升级",
+  "verdict": "GATE PASS：本轮新增全清，冻结基线可恢复面 9/10 表精确回值；不可恢复面 1 表（audit）如实登记"
+}

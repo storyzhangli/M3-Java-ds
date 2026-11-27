@@ -1,0 +1,4 @@
+e2e-scenario-records.json => NAMING_ONLY (sem=0 struct=0 naming=5)
+permission-matrix-results.json => NAMING_ONLY (sem=0 struct=0 naming=1)
+fixed-eval-results.json => TIMING_ONLY (sem=0 struct=0 naming=0)
+fault-drill-observation.json => NAMING_ONLY (sem=0 struct=0 naming=1)

@@ -1,0 +1,16 @@
+seed: -- affected=1 ; -- affected=1 ; -- affected=1 ; -- affected=2 ; -- affected=1 ; -- affected=1 ; 
+vector-index: http=200 body={"code":200,"msg":"success","data":{"documentId":"d44v2-001","version":"1","strategy":"FIXED_LENGTH","status":"COMPLETED","stage":"CLEANUP","chunkCount":1,"proc
+PG v2 rows=count
+1
+
+
+pre-search hits: True
+PASS  A1 DELETE 端点 2xx+业务码200+终态视图  | http=200 code=200 lifecycle=
+PASS  A2 d44_document_sync DELETE 行终态 SYNCED  | rows=[sync_status
+SYNCED]
+FAIL  A3 PG 向量行数=0  | count=
+PASS  A4 vector_chunk_index 视图不可见  | count=0
+PASS  A5 检索 Top-K 零命中该文档  | len=1366
+PASS  A6 d44_admin_audit 落 DOC_DELETE ALLOWED  | audit=[action	result,VECTOR_INDEX	ALLOWED,DOC_DELETE	ALLOWED]
+PASS  A7 删除后回答链零引用该文档（实码登记）  | code=200 status=CLARIFY_REQUIRED reason=MISSING_REQUIRED_CONTEXT
+V2 => FAIL

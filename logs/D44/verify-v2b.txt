@@ -1,0 +1,6 @@
+seed: -- affected=1 ; -- affected=0 ; -- affected=0 ; -- affected=1 ; -- affected=1 ; -- affected=1 ; 
+vector-index: http=200 body={"code":200,"msg":"success","data":{"documentId":"d44v2-001","version":"1","strategy":"FIXED_LENGTH","status":"COMPLETED","stage":"CLEANUP","chunkCount":1,"proc
+PG v2 rows=count
+1
+
+pre-search hits: True

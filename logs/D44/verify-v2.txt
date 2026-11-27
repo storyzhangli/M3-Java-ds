@@ -1,0 +1,6 @@
+seed: -- affected=0 ; -- affected=0 ; -- affected=0 ; -- affected=0 ; -- affected=1 ; -- ERROR: SQLException: Field 'updated_at' doesn't have a default value ; 
+vector-index: http=200 body={"code":4091,"msg":"知识文档没有页面级文本，不能执行 PDF Chunk 预览","data":null}
+PG v2 rows=count
+0
+
+pre-search hits: False

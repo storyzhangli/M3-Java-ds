@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D44 RAG v3 知识问答演示</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main class="chat-shell">
+    <header class="chat-header">
+        <div>
+            <h1>RAG v3 知识问答演示</h1>
+            <p class="sub">检索下推 · 证据评估 · 引用溯源 · 拒答护栏（只读端点链，零新端点）</p>
+        </div>
+        <div class="header-actions">
+            <a class="nav-link" href="/index.html">异常重试演示</a>
+            <a class="nav-link" href="/templates.html">模板管理</a>
+            <span id="healthBadge" class="badge">服务检测中…</span>
+        </div>
+    </header>
+
+    <section class="role-bar">
+        <label for="docSelect">证据文档：</label>
+        <select id="docSelect"><option value="">全部可见文档</option></select>
+        <label for="topKInput">Top-K：</label>
+        <input id="topKInput" type="number" value="5" min="1" max="20" style="width:64px">
+        <span id="tipLine" class="tip-line">输入问题后依次演示 检索 → 回答 → 引用</span>
+    </section>
+
+    <section style="padding:12px 16px">
+        <div style="display:flex;gap:8px">
+            <input id="queryInput" type="text" placeholder="例如：数控机床出现主轴过热报警，应该先检查什么？"
+                   style="flex:1;padding:10px;border:1px solid #cbd5e1;border-radius:8px">
+            <button id="askBtn" class="btn" type="button">提问</button>
+        </div>
+        <div style="display:flex;gap:8px;margin-top:8px">
+            <button id="searchBtn" class="btn btn-ghost" type="button">仅检索（看命中与分数）</button>
+            <button id="syncBtn" class="btn btn-ghost" type="button">查同步状态</button>
+        </div>
+    </section>
+
+    <section id="decisionCard" style="margin:0 16px;padding:10px 14px;border-radius:8px;background:#f1f5f9;display:none"></section>
+
+    <section style="margin:10px 16px">
+        <h3 style="margin:6px 0">检索命中</h3>
+        <div id="hitsBox" class="tip-line">（尚未检索）</div>
+    </section>
+
+    <section style="margin:10px 16px">
+        <h3 style="margin:6px 0">引用溯源（CitationDto 实码字段）</h3>
+        <div id="citesBox" class="tip-line">（尚未提问）</div>
+    </section>
+
+    <section style="margin:10px 16px 24px">
+        <h3 style="margin:6px 0">回答</h3>
+        <div id="answerBox" class="tip-line">（尚未提问）</div>
+    </section>
+</main>
+<script src="/js/knowledge.js"></script>
+</body>
+</html>

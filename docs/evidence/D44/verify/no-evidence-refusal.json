@@ -1,0 +1,55 @@
+{
+  "records": [
+    {
+      "name": "近形词",
+      "http": 200,
+      "code": 200,
+      "msg": "success",
+      "citations": 0,
+      "answerLen": 0,
+      "fabricatedParamLeak": false,
+      "refusedOrEmptyCitation": true
+    },
+    {
+      "name": "跨域",
+      "http": 200,
+      "code": 200,
+      "msg": "success",
+      "citations": 0,
+      "answerLen": 0,
+      "fabricatedParamLeak": false,
+      "refusedOrEmptyCitation": true
+    },
+    {
+      "name": "空输入",
+      "http": 200,
+      "code": 4001,
+      "msg": "查询内容不能为空",
+      "citations": 0,
+      "answerLen": 0,
+      "fabricatedParamLeak": false,
+      "refusedOrEmptyCitation": true
+    },
+    {
+      "name": "超长",
+      "http": 200,
+      "code": 200,
+      "msg": "success",
+      "citations": 0,
+      "answerLen": 0,
+      "fabricatedParamLeak": false,
+      "refusedOrEmptyCitation": true
+    },
+    {
+      "name": "纯符号",
+      "http": 200,
+      "code": 200,
+      "msg": "success",
+      "citations": 0,
+      "answerLen": 0,
+      "fabricatedParamLeak": false,
+      "refusedOrEmptyCitation": true
+    }
+  ],
+  "verdict": "PASS"
+}

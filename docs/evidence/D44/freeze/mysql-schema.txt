@@ -1,0 +1,90 @@
+## d44 MySQL columns (TABLE,COLUMN,TYPE,NULLABLE,KEY)
+TABLE_NAME	COLUMN_NAME	COLUMN_TYPE	IS_NULLABLE	COLUMN_KEY
+d44_admin_audit	id	bigint	NO	PRI
+d44_admin_audit	actor_user_id	varchar(64)	NO	MUL
+d44_admin_audit	tenant_id	varchar(64)	NO	
+d44_admin_audit	role	varchar(16)	NO	
+d44_admin_audit	action	varchar(64)	NO	MUL
+d44_admin_audit	target_document_id	varchar(64)	NO	
+d44_admin_audit	version	int	NO	
+d44_admin_audit	result	varchar(16)	NO	
+d44_admin_audit	reason_code	varchar(64)	NO	
+d44_admin_audit	request_id	varchar(64)	NO	
+d44_admin_audit	created_at	datetime	NO	
+d44_auth_principal	token_sha256	char(64)	NO	PRI
+d44_auth_principal	user_id	varchar(64)	NO	MUL
+d44_auth_principal	tenant_id	varchar(64)	NO	
+d44_auth_principal	dept_id	varchar(64)	NO	
+d44_auth_principal	device_scopes	json	NO	
+d44_auth_principal	role	enum('USER','ADMIN')	NO	
+d44_auth_principal	enabled	tinyint(1)	NO	
+d44_auth_principal	expires_at	datetime	YES	
+d44_auth_principal	created_at	datetime	NO	
+d44_document_sync	id	bigint	NO	PRI
+d44_document_sync	document_id	varchar(64)	NO	MUL
+d44_document_sync	operation	enum('DELETE','UPDATE_CLEANUP')	NO	
+d44_document_sync	version	int	NO	
+d44_document_sync	sync_status	enum('PENDING','SYNCED','FAILED')	NO	MUL
+d44_document_sync	reason_code	varchar(64)	NO	
+d44_document_sync	attempt_count	int	NO	
+d44_document_sync	next_retry_at	datetime	YES	
+d44_document_sync	payload_hash	char(64)	NO	
+d44_document_sync	created_at	datetime	NO	
+d44_document_sync	updated_at	datetime	NO	
+d44_table_extract	id	bigint	NO	PRI
+d44_table_extract	document_id	varchar(64)	NO	MUL
+d44_table_extract	version	int	NO	
+d44_table_extract	page_number	int	NO	
+d44_table_extract	table_index	int	NO	
+d44_table_extract	header_snapshot_json	json	NO	
+d44_table_extract	row_count	int	NO	
+d44_table_extract	col_count	int	NO	
+d44_table_extract	source_global_start	int	YES	
+d44_table_extract	source_global_end	int	YES	
+d44_table_extract	source_line_start	int	YES	
+d44_table_extract	source_line_end	int	YES	
+d44_table_extract	detect_flags	varchar(255)	NO	
+d44_table_extract	confidence	varchar(16)	NO	
+d44_table_extract	continuation_of_table_id	bigint	YES	
+d44_table_extract	status	varchar(16)	NO	
+d44_table_extract	created_at	datetime	NO	
+d44_table_extract	updated_at	datetime	NO	
+d44_table_row	id	bigint	NO	PRI
+d44_table_row	table_id	bigint	NO	MUL
+d44_table_row	row_index	int	NO	
+d44_table_row	cells_json	json	NO	
+d44_table_row	source_line_number	int	YES	
+d44_table_row	record_hash	char(64)	NO	MUL
+d44_table_row	created_at	datetime	NO	
+
+## d44 MySQL indexes (TABLE,INDEX,COLUMN,NONUNIQUE)
+TABLE_NAME	INDEX_NAME	COLUMN_NAME	NON_UNIQUE
+d44_admin_audit	idx_d44_audit_action	action	1
+d44_admin_audit	idx_d44_audit_actor_time	actor_user_id	1
+d44_admin_audit	idx_d44_audit_actor_time	created_at	1
+d44_admin_audit	PRIMARY	id	0
+d44_auth_principal	idx_d44_principal_user	user_id	1
+d44_auth_principal	PRIMARY	token_sha256	0
+d44_document_sync	idx_d44_sync_status_retry	sync_status	1
+d44_document_sync	idx_d44_sync_status_retry	next_retry_at	1
+d44_document_sync	PRIMARY	id	0
+d44_document_sync	uk_d44_doc_op_version	document_id	0
+d44_document_sync	uk_d44_doc_op_version	operation	0
+d44_document_sync	uk_d44_doc_op_version	version	0
+d44_table_extract	idx_d44_table_doc_ver	document_id	1
+d44_table_extract	idx_d44_table_doc_ver	version	1
+d44_table_extract	idx_d44_table_global	document_id	1
+d44_table_extract	idx_d44_table_global	version	1
+d44_table_extract	idx_d44_table_global	source_global_start	1
+d44_table_extract	idx_d44_table_global	source_global_end	1
+d44_table_extract	PRIMARY	id	0
+d44_table_extract	uk_d44_doc_ver_page_table	document_id	0
+d44_table_extract	uk_d44_doc_ver_page_table	version	0
+d44_table_extract	uk_d44_doc_ver_page_table	page_number	0
+d44_table_extract	uk_d44_doc_ver_page_table	table_index	0
+d44_table_row	idx_d44_row_hash	record_hash	1
+d44_table_row	PRIMARY	id	0
+d44_table_row	uk_d44_table_row	table_id	0
+d44_table_row	uk_d44_table_row	row_index	0
+
+# MYSQL_SCHEMA_SHA256=31ea63d69e4318f819d2f315f29ebabe6dac684a8053a3e23f7e6d73efec3a6f

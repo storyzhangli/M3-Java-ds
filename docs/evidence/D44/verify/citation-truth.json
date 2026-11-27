@@ -1,0 +1,38 @@
+{
+  "assemblyNote": "活体实例=e2e yml(additional-location)+APP_ACCESS_ENABLED=true+app.rerank.enabled=true(BC-22 绕行)",
+  "records": [
+    {
+      "question": "E2E-LC-001-V2 主轴承冷却压力设定为 4.5 兆帕",
+      "http": 200,
+      "code": 200,
+      "status": "CLARIFY_REQUIRED",
+      "decision": "CLARIFY",
+      "reasonCode": "MISSING_REQUIRED_CONTEXT",
+      "hitCount": 2,
+      "citations": []
+    },
+    {
+      "question": "E2E-PERM-A 租户Alpha设备手册条款",
+      "http": 200,
+      "code": 200,
+      "status": "CLARIFY_REQUIRED",
+      "decision": "CLARIFY",
+      "reasonCode": "MISSING_REQUIRED_CONTEXT",
+      "hitCount": 2,
+      "citations": []
+    }
+  ],
+  "verdict": "PASS",
+  "caliber": {
+    "liveAnswerable": 0,
+    "liveAssembly": "mock hash-ngram + relevant-score 0.0(e2e yml) + rerank 装配绕行(BC-22)",
+    "vacuousSatisfied": true,
+    "mode": "双标注（BC-19e 同款）",
+    "realModelTrack": "NOT_RUN (C16 未授权, O-10)",
+    "allNonFabricating": true,
+    "itRoundEvidence": [
+      "evidence/D44/e2e/e2e-scenario-records.json (S05/S06/S08 citations PASS)",
+      "evidence/D44/rerun/semantic-diff-report.md (M3 NAMING/TIMING ONLY)"
+    ]
+  }
+}

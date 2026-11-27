@@ -1,0 +1,28 @@
+# D44 e2e profile（任务书 §七-6/D3 裁决）：权限矩阵与端到端场景专用，
+# 由 -Dspring.profiles.active=e2e（或 surefire 参数）显式触发；test/experiment 既有口径零改动。
+# access=true：权限体系全量装配（AuthContextFilter+AccessGuard+enforce-admin 启动断言在码），
+# principal 夹具表 d44_auth_principal 由 temp_docs/D44/ddl 脚本先建后 INSERT（P01–P10 预期先冻结）。
+app:
+  vectorstore:
+    pgvector:
+      enabled: true
+    two-pgvector:
+      enabled: false
+  hybrid:
+    enabled: false
+  rerank:
+    enabled: false
+    remote:
+      enabled: false
+  access:
+    enabled: true
+  rag:
+    citation:
+      excerpt-max-chars: 200
+    # BC-19c（fix-records）：evidence.relevant-score 主基线默认 0.15 面向真实语义 embedding；
+    # 本地 mock hash-ngram（local-hash-ngram-v1, 384d）词面级句子 cos 实测 <0.15
+    # （round17 取证：hits=2 仍被 step4 LOW_RELEVANCE 拒绝）。e2e 为 mock 判定轨，
+    # 阈值降 0.0=检索命中即进证据评估；相关性把关职责仍在 fact-support（§6.3 断言语义不变），
+    # 主 application.yml 0.15 口径零改动。
+    evidence:
+      relevant-score: 0.0

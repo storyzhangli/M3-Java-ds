@@ -1,0 +1,378 @@
+[
+  {
+    "controller": "ChatController",
+    "http": "POST",
+    "path": "/api/v1/ai/chat",
+    "consumes": "-",
+    "method": "chat",
+    "file": "com/zl/d44/controller/ChatController.java"
+  },
+  {
+    "controller": "ChatController",
+    "http": "GET",
+    "path": "/api/v1/ai/health",
+    "consumes": "-",
+    "method": "health",
+    "file": "com/zl/d44/controller/ChatController.java"
+  },
+  {
+    "controller": "ChatStreamController",
+    "http": "POST",
+    "path": "/api/v1/ai/chat/stream",
+    "consumes": "application/json",
+    "method": "streamChat",
+    "file": "com/zl/d44/controller/ChatStreamController.java"
+  },
+  {
+    "controller": "EquipmentChatController",
+    "http": "POST",
+    "path": "/api/v1/equipment/chat",
+    "consumes": "-",
+    "method": "chat",
+    "file": "com/zl/d44/equipment/EquipmentChatController.java"
+  },
+  {
+    "controller": "HistoryController",
+    "http": "GET",
+    "path": "/api/v1/ai/sessions",
+    "consumes": "-",
+    "method": "listSessions",
+    "file": "com/zl/d44/history/HistoryController.java"
+  },
+  {
+    "controller": "HistoryController",
+    "http": "GET",
+    "path": "/api/v1/ai/sessions/{sessionId}/messages",
+    "consumes": "-",
+    "method": "listMessages",
+    "file": "com/zl/d44/history/HistoryController.java"
+  },
+  {
+    "controller": "HybridRagController",
+    "http": "POST",
+    "path": "/api/v1/hybrid/rag/answer",
+    "consumes": "-",
+    "method": "answer",
+    "file": "com/zl/d44/hybrid/controller/HybridRagController.java"
+  },
+  {
+    "controller": "HybridSearchController",
+    "http": "POST",
+    "path": "/api/v1/hybrid/retrieval/search",
+    "consumes": "-",
+    "method": "search",
+    "file": "com/zl/d44/hybrid/controller/HybridSearchController.java"
+  },
+  {
+    "controller": "HybridSearchController",
+    "http": "POST",
+    "path": "/api/v1/hybrid/index/rebuild",
+    "consumes": "-",
+    "method": "rebuild",
+    "file": "com/zl/d44/hybrid/controller/HybridSearchController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentChunkingController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/chunks",
+    "consumes": "-",
+    "method": "preview",
+    "file": "com/zl/d44/knowledge/chunking/KnowledgeDocumentChunkingController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentChunkingController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/chunks/compare",
+    "consumes": "-",
+    "method": "compare",
+    "file": "com/zl/d44/knowledge/chunking/KnowledgeDocumentChunkingController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/documents",
+    "consumes": "-",
+    "method": "register",
+    "file": "com/zl/d44/knowledge/document/KnowledgeDocumentController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/documents/{documentId}/import",
+    "consumes": "multipart/form-data",
+    "method": "importFile",
+    "file": "com/zl/d44/knowledge/document/KnowledgeDocumentController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}",
+    "consumes": "-",
+    "method": "detail",
+    "file": "com/zl/d44/knowledge/document/KnowledgeDocumentController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/pages",
+    "consumes": "-",
+    "method": "pages",
+    "file": "com/zl/d44/knowledge/document/KnowledgeDocumentController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentLifecycleController",
+    "http": "DELETE",
+    "path": "/api/v1/knowledge/documents/{documentId}",
+    "consumes": "-",
+    "method": "delete",
+    "file": "com/zl/d44/knowledge/document/KnowledgeDocumentLifecycleController.java"
+  },
+  {
+    "controller": "KnowledgeDocumentLifecycleController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/documents/{documentId}/versions",
+    "consumes": "multipart/form-data",
+    "method": "publishVersion",
+    "file": "com/zl/d44/knowledge/document/KnowledgeDocumentLifecycleController.java"
+  },
+  {
+    "controller": "EmbeddingController",
+    "http": "GET",
+    "path": "/api/v1/embeddings/model",
+    "consumes": "-",
+    "method": "model",
+    "file": "com/zl/d44/knowledge/embedding/EmbeddingController.java"
+  },
+  {
+    "controller": "EmbeddingController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/embeddings",
+    "consumes": "-",
+    "method": "embedDocument",
+    "file": "com/zl/d44/knowledge/embedding/EmbeddingController.java"
+  },
+  {
+    "controller": "KnowledgeRetrievalController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/retrieval/search",
+    "consumes": "-",
+    "method": "search",
+    "file": "com/zl/d44/knowledge/retrieval/controller/KnowledgeRetrievalController.java"
+  },
+  {
+    "controller": "KnowledgeRetrievalController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/retrieval/corpus/index",
+    "consumes": "-",
+    "method": "indexCorpus",
+    "file": "com/zl/d44/knowledge/retrieval/controller/KnowledgeRetrievalController.java"
+  },
+  {
+    "controller": "AiSyncController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/sync/status",
+    "consumes": "-",
+    "method": "status",
+    "file": "com/zl/d44/knowledge/sync/AiSyncController.java"
+  },
+  {
+    "controller": "AiSyncController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/sync/retry",
+    "consumes": "-",
+    "method": "retry",
+    "file": "com/zl/d44/knowledge/sync/AiSyncController.java"
+  },
+  {
+    "controller": "AiSyncController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/sync/consistency",
+    "consumes": "-",
+    "method": "consistency",
+    "file": "com/zl/d44/knowledge/sync/AiSyncController.java"
+  },
+  {
+    "controller": "TableController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/tables",
+    "consumes": "-",
+    "method": "tables",
+    "file": "com/zl/d44/knowledge/table/TableController.java"
+  },
+  {
+    "controller": "TableController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/tables/{tableId}/rows",
+    "consumes": "-",
+    "method": "rows",
+    "file": "com/zl/d44/knowledge/table/TableController.java"
+  },
+  {
+    "controller": "TableController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/tables/query",
+    "consumes": "-",
+    "method": "query",
+    "file": "com/zl/d44/knowledge/table/TableController.java"
+  },
+  {
+    "controller": "TableController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/documents/{documentId}/tables/extract",
+    "consumes": "-",
+    "method": "extract",
+    "file": "com/zl/d44/knowledge/table/TableController.java"
+  },
+  {
+    "controller": "VectorIndexController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/documents/{documentId}/vector-index",
+    "consumes": "-",
+    "method": "index",
+    "file": "com/zl/d44/knowledge/vectorindex/controller/VectorIndexController.java"
+  },
+  {
+    "controller": "VectorIndexController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/vector-index",
+    "consumes": "-",
+    "method": "status",
+    "file": "com/zl/d44/knowledge/vectorindex/controller/VectorIndexController.java"
+  },
+  {
+    "controller": "VectorIndexController",
+    "http": "GET",
+    "path": "/api/v1/knowledge/documents/{documentId}/vector-index/chunks",
+    "consumes": "-",
+    "method": "chunks",
+    "file": "com/zl/d44/knowledge/vectorindex/controller/VectorIndexController.java"
+  },
+  {
+    "controller": "VectorIndexController",
+    "http": "DELETE",
+    "path": "/api/v1/knowledge/documents/{documentId}/vector-index",
+    "consumes": "-",
+    "method": "delete",
+    "file": "com/zl/d44/knowledge/vectorindex/controller/VectorIndexController.java"
+  },
+  {
+    "controller": "VectorIndexController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/documents/{documentId}/vector-index/recover",
+    "consumes": "-",
+    "method": "recover",
+    "file": "com/zl/d44/knowledge/vectorindex/controller/VectorIndexController.java"
+  },
+  {
+    "controller": "VectorIndexController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/documents/{documentId}/vector-index/retry",
+    "consumes": "-",
+    "method": "retry",
+    "file": "com/zl/d44/knowledge/vectorindex/controller/VectorIndexController.java"
+  },
+  {
+    "controller": "VectorIndexController",
+    "http": "POST",
+    "path": "/api/v1/knowledge/vector-index/reconcile",
+    "consumes": "-",
+    "method": "reconcile",
+    "file": "com/zl/d44/knowledge/vectorindex/controller/VectorIndexController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "GET",
+    "path": "/api/v1/ai/prompts",
+    "consumes": "-",
+    "method": "list",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "GET",
+    "path": "/api/v1/ai/prompts/{templateId}",
+    "consumes": "-",
+    "method": "detail",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "GET",
+    "path": "/api/v1/ai/prompts/{templateId}/versions",
+    "consumes": "-",
+    "method": "versions",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "POST",
+    "path": "/api/v1/ai/prompts",
+    "consumes": "-",
+    "method": "create",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "PUT",
+    "path": "/api/v1/ai/prompts/{templateId}",
+    "consumes": "-",
+    "method": "update",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "PATCH",
+    "path": "/api/v1/ai/prompts/{templateId}/status",
+    "consumes": "-",
+    "method": "changeStatus",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "DELETE",
+    "path": "/api/v1/ai/prompts/{templateId}",
+    "consumes": "-",
+    "method": "delete",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "PromptTemplateController",
+    "http": "GET",
+    "path": "/api/v1/ai/roles",
+    "consumes": "-",
+    "method": "roles",
+    "file": "com/zl/d44/prompt/PromptTemplateController.java"
+  },
+  {
+    "controller": "RagController",
+    "http": "POST",
+    "path": "/api/v1/rag/answer",
+    "consumes": "-",
+    "method": "answer",
+    "file": "com/zl/d44/rag/controller/RagController.java"
+  },
+  {
+    "controller": "RerankController",
+    "http": "POST",
+    "path": "/api/v1/rerank/search",
+    "consumes": "-",
+    "method": "search",
+    "file": "com/zl/d44/rerank/RerankController.java"
+  },
+  {
+    "controller": "TwoKnowledgeRetrievalController",
+    "http": "POST",
+    "path": "/api/v1/two/knowledge/retrieval/corpus/index",
+    "consumes": "-",
+    "method": "indexCorpus",
+    "file": "com/zl/d44/two/TwoKnowledgeRetrievalController.java"
+  },
+  {
+    "controller": "TwoKnowledgeRetrievalController",
+    "http": "POST",
+    "path": "/api/v1/two/knowledge/retrieval/search",
+    "consumes": "-",
+    "method": "search",
+    "file": "com/zl/d44/two/TwoKnowledgeRetrievalController.java"
+  }
+]
